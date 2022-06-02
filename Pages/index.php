@@ -4,7 +4,7 @@
 		$monday = strtotime('yesterday', $monday);
 		array_push($days, date('l', $monday));
 	}
-	print_r($days);
+	print_r(implode(', ', $days));
 ?>
 <script>
 	new Chartist.Line('.ct-chart', {
