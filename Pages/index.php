@@ -1,7 +1,7 @@
 <?
 	for ($i = 0; $i < 7; $i++){
 		$monday = strtotime('yesterday', $monday);
-		array_push(date('l', $monday), $days)
+		array_push(date('l', $monday), $days);
 	}
 	print_r($days);
 ?>
