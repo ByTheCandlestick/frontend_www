@@ -1,4 +1,5 @@
 <?
+	$days = array;
 	for ($i = 0; $i < 7; $i++){
 		$monday = strtotime('yesterday', $monday);
 		array_push($days, date('l', $monday));
