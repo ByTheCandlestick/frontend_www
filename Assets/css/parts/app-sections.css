@@ -1,4 +1,4 @@
-.projects-section {
+section {
 	flex: 2;
 	background-color: var(--projects-section);
 	border-radius: 32px;
@@ -8,20 +8,20 @@
 	display: flex;
 	flex-direction: column;
 }
-.projects-section-line {
+section .line {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding-bottom: 32px;
 }
-.projects-section-header {
+section .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 24px;
 	color: var(--main-color);
 }
-.projects-section-header p {
+section .header p {
 	font-size: 24px;
 	line-height: 32px;
 	font-weight: 700;
@@ -29,10 +29,6 @@
 	margin: 0;
 	color: var(--main-color);
 }
-.projects-section-header .time {
+section .header .time {
 	font-size: 20px;
-}
-
-.projects-status {
-	display: flex;
 }
