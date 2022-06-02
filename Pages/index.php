@@ -1,5 +1,5 @@
 <?
-	for ($i = 0; $i < 7; $i--){
+	for ($i = 7; $i > 0; $i--){
 		echo date('l', $monday) . '<br>';
 		$monday = strtotime('tomorrow', $monday);
 	}
