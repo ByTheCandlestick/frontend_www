@@ -73,7 +73,7 @@
 													<polyline points="9 22 9 12 15 12 15 22" />
 												</svg>
 											</a>
-										', $item['URL']));
+										'));
 									}
 								?>
 							<a href="" class="app-sidebar-link">
