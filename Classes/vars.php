@@ -40,7 +40,6 @@
 			}
 		//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 			if($user_ok) {
-				print("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
 				$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
 				print_r(mysqli_fetch_row($query));
 			}
