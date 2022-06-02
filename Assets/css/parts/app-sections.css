@@ -1,8 +1,8 @@
 section {
 	flex: 2;
-	background-color: var(--projects-section);
-	border-radius: 32px;
-	padding: 32px 32px 0 32px;
+	background-color: var(--section);
+	border-radius: 15px;
+	padding: 15px 15px 0 15px;
 	overflow: hidden;
 	height: 100%;
 	display: flex;
