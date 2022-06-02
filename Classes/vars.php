@@ -41,7 +41,9 @@
 		//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 			if($user_ok) {
 				$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
-				print_r(mysqli_fetch_assoc($query));
+				if(mysqli_fetch_assoc($query)['Access_admin'] != 1) {
+					$user_ok = false;
+				}
 			}
 		// GET USERS DATA AND NOTIFICATIONS
 			if($user_ok) {
