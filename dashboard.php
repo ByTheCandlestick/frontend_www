@@ -69,6 +69,7 @@
 						</div>
 						<section>
 							<?
+								echo './Sections/'.$row['Name'].'.php';
 								include('./Sections/'.$row['Name'].'.php');
 							?>
 						</section>
