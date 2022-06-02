@@ -67,6 +67,7 @@
 		fullWidth: true,
 		showArea: true,
 		showLine: false,
+		showPoint: false,
 		chartPadding: {
 			right: 40
 		}
@@ -82,6 +83,7 @@
 		fullWidth: true,
 		showArea: true,
 		showLine: false,
+		showPoint: false,
 		chartPadding: {
 			right: 40
 		}
