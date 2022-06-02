@@ -10,4 +10,15 @@
 		define('ADMIN', 		['db5007320590.hosting-data.io',	'dbu1278426',	'CandleStick2603',	'dbs6031251']);
 		define('ANALYTICS',		['db5007301242.hosting-data.io',	'dbu235049',	'CandleStick2603',	'dbs6015868']);
 	}
+	define('ROOT',			realpath($_SERVER["DOCUMENT_ROOT"]));
+	define('QS_PAGE',		(isset($_GET['page'])) ? strtolower($_GET['page']) : 'index');
+	define('QS_SUBPAGE',	(isset($_GET['subpage'])) ? strtolower($_GET['subpage']) : null);
+	define('QS',			(isset($_GET['q'])) ? strtolower($_GET['q']) : null);
+	// SET USERS IP
+		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		} else {
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+	// Check if the user is logged in and allowed to access the website
 ?>
