@@ -63,11 +63,7 @@
 		ignore_user_abort(true); // optional
 		ob_start();
 		
-		print_r($_SERVER);
-		preg_match('#[^\.]+[\.]{1}[^\.]+$#', $_SERVER['HTTP_HOST'] , $matches);
-		print_r($value = $matches[0]); 
-
-		header('');
+		print_r(substr($_SERVER['HTTP_HOST'], 2));
 		
 		$size = ob_get_length();
 		header("Content-Length: $size");
