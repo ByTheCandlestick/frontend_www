@@ -46,9 +46,11 @@
 	</div>
 	<div class="row" name="Sales / day">
 		<div class="col-12 col-lg-6">
+			<h1>Sales per day</h1>
 			<chart class="ct-sales-day" />
 		</div>
 		<div class="col-12 col-lg-6">
+			<h1>Income / Profit per day</h1>
 			<chart class="ct-money-day" />
 		</div>
 	</div>
@@ -67,7 +69,6 @@
 		fullWidth: true,
 		showArea: true,
 		showLine: false,
-		showPoint: false,
 		chartPadding: {
 			right: 40
 		}
@@ -83,7 +84,6 @@
 		fullWidth: true,
 		showArea: true,
 		showLine: false,
-		showPoint: false,
 		chartPadding: {
 			right: 40
 		}
