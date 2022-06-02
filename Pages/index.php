@@ -1,6 +1,6 @@
 <section>
 	<div class="row">
-		<div class="col-12 col-md-6 col-lg-3 p-2">
+		<div class="col-12 col-md-6 col-lg-3 p-2 h-100">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">YOY Sales</h5>
@@ -8,7 +8,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
+		<div class="col-12 col-md-6 col-lg-3 p-2 h-100">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT YoY</h5>
@@ -16,7 +16,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
+		<div class="col-12 col-md-6 col-lg-3 p-2 h-100">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">SALES TODAY</h5>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
+		<div class="col-12 col-md-6 col-lg-3 p-2 h-100">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT TODAY</h5>
