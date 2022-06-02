@@ -1,10 +1,32 @@
+<?
+	for ($i = 0; $i < 7; $i++){
+		echo date('d-m-Y', $monday) . '<br>';
+		$monday = strtotime('tomorrow', $monday);
+	}
+?>
+<script>
+	new Chartist.Line('.ct-chart', {
+		labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+		series: [
+			[12, 9, 7, 8, 5]
+		]
+		}, {
+		fullWidth: true,
+			chartPadding: {
+				right: 40
+			}
+		}
+	);
+
+</script>
+
 <section>
-	<div class="row">
+	<div class="row" name="Sales snippets">
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">YOY Sales</h5>
-					<p class="card-text">With supporting text beloW.</p>
+					<p class="card-text">With supporting text below.</p>
 				</div>
 			</div>
 		</div>
@@ -32,5 +54,13 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row" name="Sales / day">
+		<div class="col-12 col-lg-6">
+			<chart class=".ct-sales-day" />
+		</div>
+	</div>
+	<div class="row" name="Website analytics">
+
 	</div>
 </section>
