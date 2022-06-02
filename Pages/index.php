@@ -61,7 +61,7 @@
 	</div>
 	<div class="row" name="Sales / day">
 		<div class="col-12 col-lg-6">
-			<chart class=".ct-sales-day" />
+			<chart class="ct-sales-day" />
 		</div>
 	</div>
 	<div class="row" name="Website analytics">
