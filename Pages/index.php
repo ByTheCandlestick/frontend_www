@@ -1,8 +1,8 @@
 <?
 	$days = array();
 	for ($i = 0; $i < 7; $i++){
-		$day = strtotime('yesterday', $day);
 		array_push($days, date('l', $day));
+		$day = strtotime('yesterday', $day);
 	}
 	print_r(implode(', ', $days));
 ?>
