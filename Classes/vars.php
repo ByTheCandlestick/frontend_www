@@ -63,7 +63,7 @@
 		ignore_user_abort(true); // optional
 		ob_start();
 		
-		print_r(substr($_SERVER['HTTP_HOST'], 2));
+		print_r(substr($_SERVER['HTTP_HOST'], 6));
 		
 		$size = ob_get_length();
 		header("Content-Length: $size");
