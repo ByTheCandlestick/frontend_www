@@ -1,5 +1,6 @@
 @import url("./parts/theme.css");
 
+@import url("./parts/colours.css");
 @import url("./parts/app-container.css");
 @import url("./parts/app-header.css");
 @import url("./parts/app-sidebar.css");
