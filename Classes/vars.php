@@ -30,6 +30,7 @@
 			if(isset($_COOKIE["session_code"])) {
 				$log_session	= $_COOKIE['session_code'];
 				$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' AND `Active`='1' LIMIT 1");
+				$log_id = mysqli_fetch_row($query)['ID']
 				$numrows = mysqli_num_rows($query);
 				if($numrows > 0){
 					$user_ok = true;
@@ -39,8 +40,8 @@
 			}
 		//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 			if($user_ok) {
-				print("SELECT * FROM `Users_permissions` WHERE `UID`=$log_session LIMIT 1");
-				$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`=$log_session LIMIT 1");
+				print("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
+				$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
 				print_r(mysqli_fetch_row($query));
 			}
 		// GET USERS DATA AND NOTIFICATIONS
