@@ -46,11 +46,11 @@
 	</div>
 	<div class="row" name="Sales / day">
 		<div class="col-12 col-lg-6">
-			<h1>Sales per day</h1>
+			<h2>Sales per day</h2>
 			<chart class="ct-sales-day" />
 		</div>
 		<div class="col-12 col-lg-6">
-			<h1>Income / Profit per day</h1>
+			<h3>Income / Profit per day</h3>
 			<chart class="ct-money-day" />
 		</div>
 	</div>
