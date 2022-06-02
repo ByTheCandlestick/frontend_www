@@ -62,8 +62,8 @@
 		header("Content-Encoding: none\r\n");
 		ignore_user_abort(true); // optional
 		ob_start();
-		
-		print_r(substr($_SERVER['HTTP_HOST'], 6));
+
+		Header('Location: '.(($_SERVER['HTTPS'])?'https://':'http://';).substr($_SERVER['HTTP_HOST'], 6));
 		
 		$size = ob_get_length();
 		header("Content-Length: $size");
