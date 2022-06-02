@@ -53,9 +53,8 @@
 					$query = DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1");
 					$row = mysqli_fetch_array($query);
 					$notifications['count'] = $row[0];
-			//
-		//
-	}
+			}
+	// redirect the user away if the user is not allowed to visit
 	if(!$user_ok) {
 		ob_end_clean();
 		header("Connection: close\r\n");
