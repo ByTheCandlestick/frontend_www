@@ -63,7 +63,7 @@
 					<div class="app-content">
 						<div class="app-sidebar">
 							<?
-									$items = mysqli_fetch_array(DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1"))
+									$items = mysqli_fetch_array(DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1"));
 									print_r($items);
 									foreach($items as $item) {
 										print_r($item);
