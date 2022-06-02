@@ -3,7 +3,7 @@
 #
 #	}
 ?>
-<link href="/Assets/css/parts/theme.css" rel="stylesheet" >
+<link href="/Assets/css/style.css" rel="stylesheet" >
 <script src="/Assets/js/theme.js"></script>
 
 <div class="app-container">
