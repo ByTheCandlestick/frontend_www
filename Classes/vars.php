@@ -57,21 +57,20 @@
 		//
 	}
 	if($user_ok) {
-		// buffer all upcoming output
+		ob_end_clean();
+		header("Connection: close\r\n");
+		header("Content-Encoding: none\r\n");
+		ignore_user_abort(true); // optional
 		ob_start();
-
-		// get the size of the output
+		echo ('Text user will see');
 		$size = ob_get_length();
-
-		// send headers to tell the browser to close the connection
 		header("Content-Length: $size");
-		header('Connection: close');
-
-		// flush all output
-		ob_end_flush();
-		ob_flush();
-		flush();
-
-		// RUN ANY REQUIRED FUNCTIONS
+		ob_end_flush();     // Strange behaviour, will not work
+		flush();            // Unless both are called !
+		ob_end_clean();
+		
+		//do processing here
+		sleep(5);
+		
 	}
 ?>
