@@ -88,7 +88,7 @@
 						</div>
 						<section>
 							<?
-								include('./Sections/'.$layout_row['Name'].'.php');
+								include('./Pages/'.$layout_row['Name'].'.php');
 							?>
 						</section>
 					</div>
