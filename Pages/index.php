@@ -1,11 +1,12 @@
 <?
 	$days = array();
+	$days_backwards = array();
 	for ($i = 0; $i < 7; $i++){
 		$day = strtotime('yesterday', $day);
-		array_push($days, date('l', $day));
+		array_push($days_backwards, date('l', $day));
 	}
-	for ($i=count($days)-1; $i>=0; $i--) {
-		echo "$days[$i] ";
+	for ($i=count($days_backwards)-1; $i>=0; $i--) {
+		array_push($days, date('l', $days_backwards[$i]));
 	}
 	print_r(implode(', ', $days));
 ?>
