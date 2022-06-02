@@ -1,9 +1,28 @@
 <?
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
-	/*
-	 *	if(!$user_ok) {}
-	 */
+
+	// Determine the required row from the page requested
+	if(QS_SUBPAGE != NULL) {
+		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' AND `Subpage_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
+		try {
+			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
+				throw new Exception();
+			}
+		} catch (Exception $er) {
+			$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Sage_url`='%s' LIMIT 1", QS_PAGE);
+		}
+	} else {
+		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Sage_url`='%s' LIMIT 1", QS_PAGE);
+	}
+	// get the page information
+	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
+		while($layout = mysqli_fetch_array($layout_results)) {
+			$info = array();
+			$info_results = DB_Query("SELECT * FROM `shop_info`");
+			while($info_row = mysqli_fetch_row($info_results)) {
+				$info[$info_row[1]] = $info_row[2]; 
+			}
 ?>
 <!DOCTYPE html>
 	<html>
@@ -78,3 +97,7 @@
 			</div>
 		</body>
 	</html>
+<?
+		}
+	}
+?>
