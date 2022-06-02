@@ -72,7 +72,7 @@ RewriteRule ^(.*)$ %{REQUEST_SCHEME}://www.%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
 
 #
-# REDIRECT ALL REQUESTS TO INDEX
+# REDIRECT ALL REQUESTS TO DASHBOARD
 #
 <IfModule mod_rewrite.c>
 	RewriteCond %{REQUEST_FILENAME} !-d
@@ -86,6 +86,7 @@ RewriteRule ^(.*)$ %{REQUEST_SCHEME}://www.%{HTTP_HOST}/$1 [R=301,L]
 	RewriteRule ^(.+)/(.+)/(.+)/$ /dashboard.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
 	RewriteRule ^(.+)/(.+)/$ /dashboard.php?page=$1&subpage=$2 [END,L,QSA]
 	RewriteRule ^(.*)/$ /dashboard.php?page=$1 [END,L,QSA]
+	RewriteRule ^$ /dashboard.php [END,L,QSA]
 </IfModule>
 
 #
