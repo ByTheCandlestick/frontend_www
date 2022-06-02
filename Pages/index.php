@@ -9,10 +9,10 @@
 	}
 ?>
 <script>
-	new Chartist.Line('.ct-chart', {
+	new Chartist.Line('.ct-sales-day', {
 		labels: [<?print(implode(', ', $days))?>],
 		series: [
-			[12, 9, 7, 8, 5]
+			[12, 9, 7, 8, 5, 11, 0]
 		]
 		}, {
 		fullWidth: true,
