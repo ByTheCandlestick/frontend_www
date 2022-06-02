@@ -3,8 +3,8 @@
 #
 #	}
 ?>
-<link src="/Assets/css/parts/theme.css" rel="stylesheet" >
-<script href="/Assets/js/theme.js"></script>
+<link href="/Assets/css/parts/theme.css" rel="stylesheet" >
+<script src="/Assets/js/theme.js"></script>
 
 <div class="app-container">
   <div class="app-header">
