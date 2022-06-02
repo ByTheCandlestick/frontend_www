@@ -69,7 +69,7 @@
 						</div>
 						<section>
 							<?
-								include('./Sections/'.$row[''].'.php');
+								include('./Sections/'.$row['Name'].'.php');
 							?>
 						</section>
 					</div>
