@@ -2,10 +2,9 @@
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
 
-	print(QS_SUBPAGE);
-
 	// Determine the required row from the page requested
 	if(QS_SUBPAGE != NULL) {
+		print('here - Working');
 		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' AND `Sub-page_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
 		try {
 			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
