@@ -58,12 +58,6 @@ RewriteRule ^.*$ / [R=301,L]
 AddType image/webp .webp
 
 #
-#
-#
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^(.*)$ %{REQUEST_SCHEME}://www.%{HTTP_HOST}/$1 [R=301,L]
-
-#
 # APPEND TRAILLING SLASH
 #
 <IfModule mod_rewrite.c>
