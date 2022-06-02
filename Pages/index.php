@@ -1,7 +1,7 @@
 <?
-	for ($i = 7; $i > 0; $i--){
+	for ($i = 0; $i < 7; $i++){
 		echo date('l', $monday) . '<br>';
-		$monday = strtotime('tomorrow', $monday);
+		$monday = strtotime('yesterday', $monday);
 	}
 ?>
 <script>
