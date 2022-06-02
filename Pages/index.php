@@ -4,7 +4,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">YOY Sales</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text">With supporting text beloW.</p>
 				</div>
 			</div>
 		</div>
@@ -12,7 +12,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT YoY</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text">With supporting text below as a natural lead-in.</p>
 				</div>
 			</div>
 		</div>
