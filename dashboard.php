@@ -57,7 +57,8 @@
 			<div class="app-sidebar">
 				<?
 					# @todo generate all page links
-					print_r(mysqli_fetch_array(DB_Query("SELECT * FROM `admin_menu_items` WHERE `Active`=1")));
+					$menu_items = mysqli_fetch_assoc(DB_Query("SELECT * FROM `admin_menu_items` WHERE `Active`=1"));
+					print_r($menu_items);
 				?>
 				<a href="" class="app-sidebar-link active">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
