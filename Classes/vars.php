@@ -34,15 +34,18 @@
 				if($numrows > 0){
 					$user_ok = true;
 				} elseif(isset($_COOKIE["session_code"])) {
-					setcookie("session_code",	'',	strtotime('-5 days'),	'/');
-				} else {
-					$user_ok = false;
+					setcookie("session_code", '', strtotime('-5 days'), '/');
 				}
 			}
-		// EVALUATE WHETHER THE USER IS LOGGED IN
+		//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
+			if($user_ok) {
+				$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`='$log_session' LIMIT 1");
+				print_r(mysqli_fetch_assoc($query));
+			}
+		// GET USERS DATA AND NOTIFICATIONS
 			if($user_ok) {
 				// USERDATA
-					$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' LIMIT 1");
+					$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' AND `Active`='1' LIMIT 1");
 					$log_id = mysqli_fetch_assoc($query)['UID'];
 					$query = DB_Query("SELECT * FROM `Users` WHERE `ID`='$log_id' LIMIT 1");
 					$userdata = mysqli_fetch_assoc($query);
