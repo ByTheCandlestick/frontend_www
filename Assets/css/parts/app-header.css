@@ -96,6 +96,11 @@
   align-items: center;
 }
 
+.mode-switch.active .moon {
+  fill: var(--main-color);
+}
+
+
 .add-btn {
   color: #fff;
   background-color: var(--button-bg);

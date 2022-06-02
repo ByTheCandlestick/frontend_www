@@ -1,7 +1,8 @@
 <?
-#	if(!$user_ok) {
-#
-#	}
+	require_once('./Classes/funcs.php');
+	require_once('./Classes/vars.php');
+	#if(!$user_ok) {
+	#}
 ?>
 <link href="/Assets/css/style.css" rel="stylesheet" >
 <script src="/Assets/js/theme.js"></script>
@@ -51,6 +52,10 @@
 		</div>
 		<div class="app-content">
 			<div class="app-sidebar">
+				<?
+					# @todo generate all page links
+					print_r(mysqli_get_assoc(DB_Query("SELECT * FROM `admin_menu_items` WHERE `Active`=1")));
+				?>
 				<a href="" class="app-sidebar-link active">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
 						<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
