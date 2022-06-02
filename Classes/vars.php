@@ -20,5 +20,43 @@
 		} else {
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
-	// Check if the user is logged in and allowed to access the website
+	// CHECK IF THE USER IS LOGGED IN
+		// SET THE VARIABLES
+			$user_ok = false;
+			$log_session = "";
+			$cookies_exist = false;
+			$session_exists = false;
+		// CHECK IF THE COOKIES EXIST, SESSION EXISTS AND ARE VALID.
+			if(isset($_COOKIE["session_code"])) {
+				$log_session	= $_COOKIE['session_code'];
+				$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' AND `Active`='1' LIMIT 1");
+				$numrows = mysqli_num_rows($query);
+				if($numrows > 0){
+					$user_ok = true;
+				} elseif(isset($_COOKIE["session_code"])) {
+					setcookie("session_code",	'',	strtotime('-5 days'),	'/');
+				} else {
+					$user_ok = false;
+				}
+			}
+		// EVALUATE WHETHER THE USER IS LOGGED IN
+			if($user_ok) {
+				// USERDATA
+					$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' LIMIT 1");
+					$log_id = mysqli_fetch_assoc($query)['UID'];
+					$query = DB_Query("SELECT * FROM `Users` WHERE `ID`='$log_id' LIMIT 1");
+					$userdata = mysqli_fetch_assoc($query);
+				// NOTIFICATIONS
+					$query = DB_Query("SELECT * FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1");
+					$notifications = mysqli_fetch_array($query);
+				// NOTIFICATION COUNT
+					$query = DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1");
+					$row = mysqli_fetch_array($query);
+					$notifications['count'] = $row[0];
+			//
+		//
+	}
+	if(!$user_ok) {
+		header ('Connection: close')
+	}
 ?>
