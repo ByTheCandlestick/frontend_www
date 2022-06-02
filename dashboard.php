@@ -10,10 +10,10 @@
 				throw new Exception();
 			}
 		} catch (Exception $er) {
-			$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Sage_url`='%s' LIMIT 1", QS_PAGE);
+			$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' LIMIT 1", QS_PAGE);
 		}
 	} else {
-		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Sage_url`='%s' LIMIT 1", QS_PAGE);
+		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' LIMIT 1", QS_PAGE);
 	}
 	// get the page information
 	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
