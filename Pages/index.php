@@ -63,13 +63,14 @@
 		series: [
 			[12, 9, 7, 8, 5, 11, 0]
 		]
-		}, {
+	}, {
 		fullWidth: true,
-			chartPadding: {
-				right: 40
-			}
+		showArea: true,
+		showLine: false,
+		chartPadding: {
+			right: 40
 		}
-	);
+	});
 	
 	new Chartist.Line('.ct-money-day', {
 		labels: ['<?print(implode('\', \'', $days))?>'],
@@ -77,12 +78,12 @@
 			[24, 18, 14, 16, 10, 22, 0],
 			[18, 13.5, 10.5, 12, 7.5, 16.5, 0]
 		]
-		}, {
+	}, {
 		fullWidth: true,
-			chartPadding: {
-				right: 40
-			}
+		showArea: true,
+		showLine: false,
+		chartPadding: {
+			right: 40
 		}
-	);
-
+	});
 </script>
