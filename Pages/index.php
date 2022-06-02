@@ -1,8 +1,9 @@
 <?
 	for ($i = 0; $i < 7; $i++){
-		echo date('l', $monday) . '<br>';
 		$monday = strtotime('yesterday', $monday);
+		array_push(date('l', $monday), $days)
 	}
+	print_r($days);
 ?>
 <script>
 	new Chartist.Line('.ct-chart', {
