@@ -57,6 +57,6 @@
 		//
 	}
 	if(!$user_ok) {
-		header ('Connection: close')
+		header ('Connection: close');
 	}
 ?>
