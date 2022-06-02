@@ -1,8 +1,11 @@
 <?
-	$days = array();
+	$days = $days_b = array();
 	for ($i = 0; $i < 7; $i++){
-		array_push($days, date('l', $day));
+		array_push($days_b, date('l', $day));
 		$day = strtotime('yesterday', $day);
+	}
+	for ($i=count($days_b)-1; $i>=0; $i--) {
+		array_push($days, $days_b[$i]);
 	}
 	print_r(implode(', ', $days));
 ?>
