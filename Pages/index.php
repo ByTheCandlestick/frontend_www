@@ -1,35 +1,31 @@
 <section>
 	<div class="row">
-		<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">YOY Sales</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				</div>
+		<div class="col-12 col-md-6 col-lg-3 p-2 card text-white bg-success mb-3" style="max-width: 18rem;">
+			<div class="card-header">Header</div>
+			<div class="card-body">
+				<h5 class="card-title">Success card title</h5>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">GROSS PROFIT YoY</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				</div>
+		<div class="col-12 col-md-6 col-lg-3 p-2 card text-white bg-danger mb-3" style="max-width: 18rem;">
+			<div class="card-header">Header</div>
+			<div class="card-body">
+				<h5 class="card-title">Danger card title</h5>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">SALES TODAY</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				</div>
+		<div class="col-12 col-md-6 col-lg-3 p-2 card text-white bg-warning mb-3" style="max-width: 18rem;">
+			<div class="card-header">Header</div>
+			<div class="card-body">
+				<h5 class="card-title">Warning card title</h5>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">GROSS PROFIT TODAY</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				</div>
+		<div class="col-12 col-md-6 col-lg-3 p-2 card text-white bg-info mb-3" style="max-width: 18rem;">
+			<div class="card-header">Header</div>
+			<div class="card-body">
+				<h5 class="card-title">Info card title</h5>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 			</div>
 		</div>
 	</div>
