@@ -64,7 +64,7 @@
 						<div class="app-sidebar">
 							<?
 									# @todo generate all page links
-									foreach(mysqli_fetch_assoc(DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1")) as $item) {
+									foreach(mysqli_fetch_array(DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1")) as $item) {
 										print_r($item);
 										print(sprintf('
 											<a href="" class="app-sidebar-link">
