@@ -58,7 +58,7 @@
 								foreach($items as $item) {
 									print(sprintf('
 										<a href="%s" class="app-sidebar-link">
-											<i class="fa fa-%s"></i>
+											<i class="fa-regular fa-%s"></i>
 										</a>
 										',
 										$item['URL'],
