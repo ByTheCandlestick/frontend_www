@@ -65,7 +65,7 @@
 		
 		print_r($_SERVER);
 		preg_match('#[^\.]+[\.]{1}[^\.]+$#', $_SERVER['HTTP_HOST'] , $matches);
-		echo $value = $matches[0]; 
+		print_r($value = $matches[0]); 
 
 		header('');
 		
