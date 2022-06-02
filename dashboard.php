@@ -4,7 +4,7 @@
 
 	// Determine the required row from the page requested
 	if(QS_SUBPAGE != NULL) {
-		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' AND `Subpage_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
+		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' AND `Sub-page_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
 		try {
 			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
 				throw new Exception();
