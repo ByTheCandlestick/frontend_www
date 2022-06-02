@@ -88,8 +88,8 @@
 						</div>
 						<section>
 							<?
-								echo './Sections/'.$row['Name'].'.php';
-								include('./Sections/'.$row['Name'].'.php');
+								echo './Sections/'.$layout_row['Name'].'.php';
+								include('./Sections/'.$layout_row['Name'].'.php');
 							?>
 						</section>
 					</div>
