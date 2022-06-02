@@ -8,21 +8,6 @@
 		array_push($days, $days_b[$i]);
 	}
 ?>
-<script>
-	new Chartist.Line('.ct-sales-day', {
-		labels: [<?print(implode(', ', $days))?>],
-		series: [
-			[12, 9, 7, 8, 5, 11, 0]
-		]
-		}, {
-		fullWidth: true,
-			chartPadding: {
-				right: 40
-			}
-		}
-	);
-
-</script>
 
 <section>
 	<div class="row" name="Sales snippets">
@@ -68,3 +53,19 @@
 
 	</div>
 </section>
+
+<script>
+	new Chartist.Line('.ct-sales-day', {
+		labels: ['<?print(implode('\', \'', $days))?>'],
+		series: [
+			[12, 9, 7, 8, 5, 11, 0]
+		]
+		}, {
+		fullWidth: true,
+			chartPadding: {
+				right: 40
+			}
+		}
+	);
+
+</script>
