@@ -1,6 +1,6 @@
 <?
-	for ($i = 0; $i < 7; $i++){
-		echo date('d-m-Y', $monday) . '<br>';
+	for ($i = 0; $i < 7; $i--){
+		echo date('l', $monday) . '<br>';
 		$monday = strtotime('tomorrow', $monday);
 	}
 ?>
