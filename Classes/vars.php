@@ -30,7 +30,7 @@
 			if(isset($_COOKIE["session_code"])) {
 				$log_session	= $_COOKIE['session_code'];
 				$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' AND `Active`='1' LIMIT 1");
-				$log_id = mysqli_fetch_row($query)['ID']
+				$log_id = mysqli_fetch_row($query)['ID'];
 				$numrows = mysqli_num_rows($query);
 				if($numrows > 0){
 					$user_ok = true;
