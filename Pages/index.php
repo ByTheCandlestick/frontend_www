@@ -7,11 +7,10 @@
 	for ($i=count($days_b)-1; $i>=0; $i--) {
 		array_push($days, $days_b[$i]);
 	}
-	print_r(implode(', ', $days));
 ?>
 <script>
 	new Chartist.Line('.ct-chart', {
-		labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+		labels: [<?print(implode(', ', $days))?>],
 		series: [
 			[12, 9, 7, 8, 5]
 		]
