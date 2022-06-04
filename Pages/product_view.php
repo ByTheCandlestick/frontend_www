@@ -15,7 +15,7 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="ProductInfo" sku="<?print($prod['SKU'])?>" slug="<?print($prod['Slug'])?>">
+	<div class="row ProductInfo" sku="<?print($prod['SKU'])?>" slug="<?print($prod['Slug'])?>">
 		<div class="col-12 col-md-6 col-lg-2">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['SKU'])?>">
