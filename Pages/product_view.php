@@ -81,10 +81,10 @@
 		</div>
 	</div>
 	<div class="col-9 col-md-10 col-lg-1">
-		<div class="input-group mb-3">
+		<div class="form-floating mb-3 input-group">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage">
-			<span class="input-group-text" id="percentage">%</span>
 			<label for="floatingInput">Markup</label>
+			<span class="input-group-text" id="percentage">%</span>
 		</div>
 	</div>
 </div>
