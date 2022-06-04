@@ -1,5 +1,5 @@
 <?
-	$prod = DB_Query(sprintf("SELECT  * FROM `products` WHERE `SKU`=%i", QS));
+	$prod = DB_Query(sprintf("SELECT  * FROM `products` WHERE `SKU`=%s", QS));
 	print_r($prod);
 ?>
 <div class="row" name="ProductInfo">
