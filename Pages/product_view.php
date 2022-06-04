@@ -81,9 +81,9 @@
 		</div>
 	</div>
 	<div class="col-9 col-md-10 col-lg-1">
-		<div class="input-group mb-3">
-			<input type="text" class="form-control" placeholder="" aria-describedby="percentage">
-			<span class="input-group-text" id="percentage">%</span>
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage">
+			<span class="form-floating-text" id="percentage">%</span>
 		</div>
 	</div>
 </div>
