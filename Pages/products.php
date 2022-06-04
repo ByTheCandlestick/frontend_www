@@ -1,3 +1,6 @@
+<?
+	print_r($products = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Products`")));
+?>
 <table class="table table-striped table-hover">
 	<thead>
 		<tr>
@@ -6,6 +9,7 @@
 			<th scope="col">Category</th>
 			<th scope="col">Range</th>
 			<th scope="col">Price</th>
+			<th scope="col">Slug</th>
 			<th scope="col"></th>
 		</tr>
 	</thead>
