@@ -1,5 +1,6 @@
 .form-control,
-.form-select {
+.form-select,
+.form-check-input {
 	background-color: var(--more-list-bg);
     border: none;
     color: var(--main-color);
