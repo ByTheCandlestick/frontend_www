@@ -214,13 +214,13 @@
 			<label for="floatingInput">QTY Shipped</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-3">
+	<div class="col-6 col-md-3 col-lg-4">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 			<label for="floatingInput">Description Long</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-2">
+	<div class="col-6 col-md-3 col-lg-3">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 			<label for="floatingInput">Description Short</label>
