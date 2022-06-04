@@ -8,7 +8,7 @@
 			<h1>Product Info</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-8 text-md-end">
-			<button class="btn btn-primary btn-lg disabled" onClick="javascript:alert('Clicked!');">
+			<button class="btn btn-primary btn-lg" onClick="javascript:alert('Clicked!');">
 				<i class="fa fa-pencil"></i>
 			</button>
 		</div>
