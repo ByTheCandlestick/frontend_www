@@ -117,24 +117,123 @@
 			<label for="floatingInput">Discount</label>
 		</div>
 	</div>
-
-
-	<!-- Container -->
-	<!-- Wick -->
-	<!-- Wickstand -->
-	<!-- Material -->
-	<!-- Fragrance -->
-	<!-- Colour -->
-	<!-- Packaging -->
-	<!-- Shipping -->
-	<!-- Qty on hand -->
-	<!-- Qty available -->
-	<!-- Qty Sold -->
-	<!-- Qty to be shipped -->
-	<!-- Qty shipped -->
-	<!-- Description short -->
-	<!-- Description Long -->
-	<!-- Slug -->
-	<!--  -->
-	<!-- Made By -->
+	
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Container</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Wick</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Wick Stand</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Material</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Fragrance</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Colour</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Packaging</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Shipping</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">QTY On Hand</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">QTY Available</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">QTY To Be Shipped</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">QTY Shipped</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">Description Long</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">Description Short</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">Slug</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">Automatically Calculate pricing</label>
+		</div>
+	</div>
+	<div class="col-6 col-md-3 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<label for="floatingInput">Made_by</label>
+		</div>
+	</div>
 </div>
