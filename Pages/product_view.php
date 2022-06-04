@@ -56,39 +56,39 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-3 col-lg-1">
+	<div class="col-6 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Currency'])?>">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="GBP">
 			<label for="floatingInput">Currency</label>
 		</div>
 	</div>
-	<div class="col-9 col-lg-1">
+	<div class="col-6 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['GrossProfit'])?>">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="-3.4">
 			<label for="floatingInput">Profit</label>
 		</div>
 	</div>
-	<div class="col-9 col-lg-1">
+	<div class="col-6 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['RetailPrice'])?>">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="5.99">
 			<label for="floatingInput">Retail</label>
 		</div>
 	</div>
-	<div class="col-12 col-lg-1">
+	<div class="col-6 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['NetPrice'])?>">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
 			<label for="floatingInput">Net</label>
 		</div>
 	</div>
-	<div class="col-12 col-lg-1">
+	<div class="col-6 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['GrossPrice'])?>">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="9.39">
 			<label for="floatingInput">Gross</label>
 		</div>
 	</div>
-	<div class="col-9 col-lg-1">
+	<div class="col-6 col-lg-1">
 		<div class="form-floating mb-3 input-group">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<? print($prod['ProfitMargin'])?>">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="100">
 			<label for="floatingInput">Markup</label>
 			<span class="input-group-text" id="percentage">%</span>
 		</div>
