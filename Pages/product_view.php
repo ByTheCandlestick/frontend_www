@@ -51,7 +51,7 @@
 				<label class="form-check-label" for="flexCheckDisabled"> Discontinued? </label>
 			</div>
 			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+				<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" disabled>
 				<label class="form-check-label" for="flexCheckDisabled"> Active? </label>
 			</div>
 		</div>
