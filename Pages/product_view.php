@@ -99,6 +99,10 @@
 				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
 				<label class="form-check-label" for="flexCheckDisabled"> Discounted? </label>
 			</div>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+				<label class="form-check-label" for="flexCheckDisabled"> Auto-calculate Pricing? </label>
+			</div>
 		</div>
 	</div>
 	<div class="col-12 col-md-3 col-lg-2">
@@ -229,14 +233,6 @@
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
 			<label for="floatingInput">Slug</label>
-		</div>
-	</div>
-	<div class="col-12 col-md-3 col-lg-2">
-		<div class="form-floating mb-3">
-			<div class="form-check form-switch">
-				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
-				<label class="form-check-label" for="flexCheckDisabled"> Auto-calculate Pricing? </label>
-			</div>
 		</div>
 	</div>
 </div>
