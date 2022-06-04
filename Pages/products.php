@@ -16,14 +16,14 @@
 	<tbody>
 		<?
 			foreach($products as $product) {
-				print($product.'
+				print(''
 					<tr>
-						<th scope="row">'.$product[0].'</th>
-						<td>'.$product[1].'</td>
-						<td>'.$product[2].'</td>
-						<td>'.$product[3].'</td>
-						<td>'.$product[4].'</td>
-						<td>'.$product[5].'</td>
+						<th scope="row">'.$product['SKU'].'</th>
+						<td>'.$product['Title'].'</td>
+						<td>'.$product['Category_ID'].'</td>
+						<td>'.$product['Range_ID'].'</td>
+						<td>'.$product['RetailPrice'].'</td>
+						<td>'.$product['Slug'].'</td>
 						<td>EDIT</td>
 					</tr>
 				');
