@@ -12,15 +12,16 @@
 	</thead>
 	<tbody>
 		<?
-			while ($product = mysqli_fetch_array(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"))) {
+			$query = DB_Query("SELECT * FROM `products`");
+			while ($row = mysqli_fetch_array($query)) {
 				print('
 					<tr>
-						<th scope="row">'.$product['SKU'].'</th>
-						<td>'.$product['Title'].'</td>
-						<td>'.$product['Category_ID'].'</td>
-						<td>'.$product['Range_ID'].'</td>
-						<td>'.$product['RetailPrice'].'</td>
-						<td>'.$product['Slug'].'</td>
+						<th scope="row">'.$row['SKU'].'</th>
+						<td>'.$row['Title'].'</td>
+						<td>'.$row['Category_ID'].'</td>
+						<td>'.$row['Range_ID'].'</td>
+						<td>'.$row['RetailPrice'].'</td>
+						<td>'.$row['Slug'].'</td>
 						<td>EDIT</td>
 					</tr>
 				');
