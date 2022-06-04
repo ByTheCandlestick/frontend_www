@@ -44,7 +44,7 @@
 			<label for="floatingInput">Subcategory</label>
 		</div>
 	</div>
-	<div class="col-12 col-md-6 col-lg-2">
+	<div class="col-12 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<div class="form-check form-switch">
 				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
