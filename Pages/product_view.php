@@ -3,7 +3,14 @@
 ?>
 <div class="row" name="ProductInfo">
 	<!-- Section Header -->
-	<h1> Product Info</h1>
+	<div class="row">
+		<div class="col-12 col-md-6 col-lg-4">
+			<h1>Product Info</h1>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 offset-lg-4">
+			<h1>Product Info</h1>
+		</div>
+	</div>
 	<hr>
 	<!-- Section Body -->
 	<div class="col-12 col-md-6 col-lg-2">
