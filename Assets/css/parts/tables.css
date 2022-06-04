@@ -1,7 +1,21 @@
+/**
+ *	TABLE
+ */
 table {
 	color: var(--main-color)!important;
 }
-
-.table-striped > tbody > tr:nth-of-type(odd)>* {
+/**
+ *	TABLE-STRIPED
+ */
+.table-striped > tbody > tr:nth-of-type(even) > * {
     color: var(--main-color);
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    color: var(--main-color);
+}
+/**
+ *	TABLE-HOVER
+ */
+.table-hover > tbody > tr:hover > * {
+	color: var(--link-color-active);
 }
