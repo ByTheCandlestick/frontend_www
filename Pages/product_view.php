@@ -235,7 +235,7 @@
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Calculate'])?>">
-			<label for="floatingInput">Automatically Calculate pricing</label>
+			<label for="floatingInput">Auto-calculate</label>
 		</div>
 	</div>
 </div>
