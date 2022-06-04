@@ -94,8 +94,22 @@
 		</div>
 	</div>
 	<!-- Discounted? -->
-	<!-- Discount Type -->
-	<!-- Discount ammount -->
+	<div class="col-12 col-md-4 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+				<option selected>Percentage</option>
+				<option selected>Value</option>
+			</select>
+			<label for="floatingInput">Discount type</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-4 col-lg-2">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DicountAmmount'])?>">
+			<label for="floatingInput">Discount</label>
+		</div>
+	</div>
 	<!-- Container -->
 	<!-- Wick -->
 	<!-- Wickstand -->
