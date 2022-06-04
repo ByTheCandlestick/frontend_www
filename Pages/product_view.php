@@ -49,6 +49,8 @@
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
 				<label class="form-check-label" for="flexCheckDisabled"> Discontinued? </label>
+			</div>
+			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
 				<label class="form-check-label" for="flexCheckDisabled"> Active? </label>
 			</div>
