@@ -49,43 +49,43 @@
 			<h3>Sales per day</h3>
 			<chart class="ct-sales-day" />
 		</div>
+			<script>
+				new Chartist.Line('.ct-sales-day', {
+					labels: ['<?print(implode('\', \'', $days))?>'],
+					series: [
+						[12, 9, 7, 8, 5, 11, 0]
+					]
+				}, {
+					fullWidth: true,
+					showArea: true,
+					showLine: false,
+					chartPadding: {
+						right: 40
+					}
+				});
+			</script>
 		<div class="col-12 col-lg-6">
 			<h3>Income / Profit per day</h3>
 			<chart class="ct-money-day" />
 		</div>
+			<script>
+				new Chartist.Line('.ct-money-day', {
+					labels: ['<?print(implode('\', \'', $days))?>'],
+					series: [
+						[24, 18, 14, 16, 10, 22, 0],
+						[18, 13.5, 10.5, 12, 7.5, 16.5, 0]
+					]
+				}, {
+					fullWidth: true,
+					showArea: true,
+					showLine: false,
+					chartPadding: {
+						right: 40
+					}
+				});
+			</script>
 	</div>
 	<div class="row" name="Website analytics">
 
 	</div>
 </section>
-
-<script>
-	new Chartist.Line('.ct-sales-day', {
-		labels: ['<?print(implode('\', \'', $days))?>'],
-		series: [
-			[12, 9, 7, 8, 5, 11, 0]
-		]
-	}, {
-		fullWidth: true,
-		showArea: true,
-		showLine: false,
-		chartPadding: {
-			right: 40
-		}
-	});
-	
-	new Chartist.Line('.ct-money-day', {
-		labels: ['<?print(implode('\', \'', $days))?>'],
-		series: [
-			[24, 18, 14, 16, 10, 22, 0],
-			[18, 13.5, 10.5, 12, 7.5, 16.5, 0]
-		]
-	}, {
-		fullWidth: true,
-		showArea: true,
-		showLine: false,
-		chartPadding: {
-			right: 40
-		}
-	});
-</script>
