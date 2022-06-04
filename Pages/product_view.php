@@ -1,23 +1,22 @@
 <?
-	$prod = mysqli_fetch_row(DB_Query(sprintf("SELECT  * FROM `products` WHERE `SKU`=%s", QS)));
-	print_r($prod);
+	$prod = mysqli_fetch_assoc(DB_Query(sprintf("SELECT  * FROM `products` WHERE `SKU`=%s", QS)));
 ?>
 <div class="row" name="ProductInfo">
 	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['SKU'])?>">
 			<label for="floatingInput">SKU</label>
 		</div>
 	</div>
 	<div class="col-12 col-md-4 col-lg-4">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Title'])?>">
 			<label for="floatingInput">Title</label>
 		</div>
 	</div>
 	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
-			<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+			<select class="form-select" id="floatingSelect">
 				<option selected>Please select</option>
 			</select>
 			<label for="floatingInput">Range</label>
@@ -25,13 +24,13 @@
 	</div>
 	<div class="col-12 col-md-6 col-lg-4">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['images'])?>">
 			<label for="floatingInput">IMAGES</label>
 		</div>
 	</div>
 	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
-			<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+			<select class="form-select" id="floatingSelect">
 				<option selected>Please select</option>
 			</select>
 			<label for="floatingInput">Category</label>
@@ -39,7 +38,7 @@
 	</div>
 	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
-			<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+			<select class="form-select" id="floatingSelect">
 				<option selected>Please select</option>
 			</select>
 			<label for="floatingInput">Subcategory</label>
