@@ -43,8 +43,10 @@
 			<div class="app-container">
 				<div class="app-header">
 					<div class="app-header-left">
+						<!-- Brand Info -->
 						<span class="app-icon"></span>
 						<p class="app-name">The Candlestick</p>
+						<!-- Search -->
 						<div class="search-wrapper">
 							<input class="search-input" type="text" placeholder="Search">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
@@ -53,6 +55,7 @@
 								</svg>
 							</div>
 						</div>
+						<!-- Profile, Notifications and Dark mode -->
 						<div class="app-header-right">
 							<button class="mode-switch" title="Switch Theme">
 								<svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -72,6 +75,7 @@
 						</div>
 					</div>
 					<div class="app-content">
+						<!-- Sidebar -->
 						<div class="app-sidebar">
 							<?
 								$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1");
@@ -87,11 +91,8 @@
 								}
 							?>
 						</div>
-						<section>
-							<?
-								include('./Pages/'.$layout_row['Name'].'.php');
-							?>
-						</section>
+						<!-- Page Content -->
+						<? include('./Pages/'.$layout_row['Name'].'.php'); ?>
 					</div>
 				</div>
 			</div>

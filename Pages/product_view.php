@@ -1,16 +1,13 @@
 <?
 	$prod = mysqli_fetch_assoc(DB_Query(sprintf("SELECT  * FROM `products` WHERE `SKU`=%s", QS)));
 ?>
-<div class="row" name="ProductInfo">
+<section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6 col-lg-4">
-			<h1>Product Info</h1>
+			<h1>Product info</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-8 text-md-end">
-			<button class="btn btn-primary btn-lg" onClick="javascript:alert('Clicked!');">
-				<i class="fa fa-pencil"></i>
-			</button>
 		</div>
 	</div>
 	<hr>
@@ -250,4 +247,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</section>

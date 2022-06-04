@@ -8,8 +8,17 @@
 		array_push($days, $days_b[$i]);
 	}
 ?>
-
 <section>
+	<!-- Section Header -->
+	<div class="row">
+		<div class="col-12 col-md-6 col-lg-4">
+			<h1>Dashboard</h1>
+		</div>
+		<div class="col-12 col-md-6 col-lg-8 text-md-end">
+		</div>
+	</div>
+	<hr>
+	<!-- Section Body -->
 	<div class="row" name="Sales snippets">
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
