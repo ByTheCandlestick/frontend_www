@@ -48,7 +48,15 @@
 		<div class="form-floating mb-3">
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
-				<label class="form-check-label" for="flexCheckDisabled"> Disabled checkbox </label>
+				<label class="form-check-label" for="flexCheckDisabled"> Discontinued? </label>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-md-4 col-lg-2">
+		<div class="form-floating mb-3">
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+				<label class="form-check-label" for="flexCheckDisabled"> Active? </label>
 			</div>
 		</div>
 	</div>
