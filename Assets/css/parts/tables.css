@@ -1,3 +1,7 @@
 table {
-	color: var(--main-color);
+	color: var(--main-color)!important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd)>* {
+    color: var(--main-color);
 }
