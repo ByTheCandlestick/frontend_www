@@ -93,7 +93,14 @@
 			<span class="input-group-text" id="percentage">%</span>
 		</div>
 	</div>
-	<!-- Discounted? -->
+	<div class="col-12 col-md-4 col-lg-2">
+		<div class="form-floating mb-3">
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+				<label class="form-check-label" for="flexCheckDisabled"> Discounted? </label>
+			</div>
+		</div>
+	</div>
 	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
 			<select class="form-select" id="floatingSelect">
