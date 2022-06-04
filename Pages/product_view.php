@@ -4,6 +4,7 @@
 <div class="row" name="ProductInfo">
 	<!-- Section Header -->
 	<h1> Product Info</h1>
+	<hr>
 	<!-- Section Body -->
 	<div class="col-12 col-md-6 col-lg-2">
 		<div class="form-floating mb-3">
