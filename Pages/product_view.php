@@ -56,7 +56,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-6 col-md-2 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="GBP">
 			<label for="floatingInput">Currency</label>
@@ -93,7 +93,7 @@
 			<span class="input-group-text" id="percentage">%</span>
 		</div>
 	</div>
-	<div class="col-12 col-md-6 col-lg-2">
+	<div class="col-12 col-md-2 col-lg-2">
 		<div class="form-floating mb-3">
 			<div class="form-check form-switch">
 				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
