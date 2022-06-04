@@ -46,7 +46,8 @@
 					<?
 						$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
 						while ($row = mysqli_fetch_array($query)) {
-							print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+							($row['ID'] == $prod['Category_ID'])? $selected=' selected' : $selected='';
+							print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
 						}
 					?>
 				</select>
