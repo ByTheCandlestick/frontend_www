@@ -84,6 +84,7 @@
 		<div class="input-group mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage">
 			<span class="input-group-text" id="percentage">%</span>
+			<label for="floatingInput">Markup</label>
 		</div>
 	</div>
 </div>
