@@ -56,4 +56,28 @@
 			</div>
 		</div>
 	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="">
+			<label for="floatingInput">Net Price</label>
+		</div>
+	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="">
+			<label for="floatingInput">Gross Price</label>
+		</div>
+	</div>
+	<div class="col-3 col-md-2 col-lg-1">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="">
+			<label for="floatingInput">Currency</label>
+		</div>
+	</div>
+	<div class="col-9 col-md-10 col-lg-2">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" placeholder="">
+			<label for="floatingInput">Retail Price</label>
+		</div>
+	</div>
 </div>
