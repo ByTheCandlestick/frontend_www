@@ -1,11 +1,11 @@
 <?
-	$products = mysqli_fetch_assoc(DB_Query("SELECT `SKU`,`Name`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"));
+	$products = mysqli_fetch_assoc(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"));
 ?>
 <table class="table table-striped table-hover">
 	<thead>
 		<tr>
 			<th scope="col">SKU</th>
-			<th scope="col">Name</th>
+			<th scope="col">Title</th>
 			<th scope="col">Category</th>
 			<th scope="col">Range</th>
 			<th scope="col">Price</th>
