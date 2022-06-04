@@ -44,7 +44,7 @@
 				<select class="form-select" id="floatingSelect">
 					<option selected>Please select</option>
 					<?
-						while($row = $DB_Query("SELECT * FROM `product_categories` WHERE `Active`=1")) {
+						while($row = $DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1")) {
 							print_r($row);
 						}
 					?>
