@@ -190,43 +190,43 @@
 			<label for="floatingInput">Made by</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyOnHand'])?>">
 			<label for="floatingInput">QTY On Hand</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyAvailable'])?>">
 			<label for="floatingInput">QTY Available</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyToBeShipped'])?>">
 			<label for="floatingInput">QTY To Be Shipped</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyShipped'])?>">
 			<label for="floatingInput">QTY Shipped</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-3">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 			<label for="floatingInput">Description Long</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 			<label for="floatingInput">Description Short</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
 			<label for="floatingInput">Slug</label>
