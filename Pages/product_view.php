@@ -101,7 +101,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-12 col-md-6 col-lg-2">
+	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
 			<select class="form-select" id="floatingSelect">
 				<option selected>Please select</option>
@@ -111,7 +111,7 @@
 			<label for="floatingInput">Discount type</label>
 		</div>
 	</div>
-	<div class="col-12 col-md-6 col-lg-2">
+	<div class="col-12 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>">
 			<label for="floatingInput">Discount</label>
