@@ -62,31 +62,31 @@
 			<label for="floatingInput">Currency</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-4 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="-3.4">
 			<label for="floatingInput">Profit</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-4 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="5.99">
 			<label for="floatingInput">Retail</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-4 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
 			<label for="floatingInput">Net</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-4 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="9.39">
 			<label for="floatingInput">Gross</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-4 col-lg-1">
+	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3 input-group">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="100">
 			<label for="floatingInput">Markup</label>
