@@ -98,8 +98,8 @@
 		<div class="form-floating mb-3">
 			<select class="form-select" id="floatingSelect">
 				<option selected>Please select</option>
-				<option selected>Percentage</option>
-				<option selected>Value</option>
+				<option>Percentage</option>
+				<option>Value</option>
 			</select>
 			<label for="floatingInput">Discount type</label>
 		</div>
