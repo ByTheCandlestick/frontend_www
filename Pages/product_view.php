@@ -190,7 +190,7 @@
 			<label for="floatingInput">Made by</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1 offset-2">
+	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
 			<label for="floatingInput">QTY On Hand</label>
