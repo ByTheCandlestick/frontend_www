@@ -28,7 +28,7 @@
 						<td>EDIT</td>
 					</tr>
 				');
-*/			}
+			}
 		?>
 	</tbody>
 </table>
