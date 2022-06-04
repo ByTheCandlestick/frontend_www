@@ -22,7 +22,7 @@
 						<td>'.$row['Range_ID'].'</td>
 						<td>'.$row['RetailPrice'].'</td>
 						<td>'.$row['Slug'].'</td>
-						<td>EDIT</td>
+						<td><i class="fa fa-ellipsis"></i></td>
 					</tr>
 				');
 			}
