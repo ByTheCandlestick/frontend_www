@@ -1,5 +1,6 @@
 <?
-	// @todo Get Product Info
+	$prod = DB_Query(sprintf("SELECT  * FROM `products` WHERE `SKU`=%i", QS));
+	print_r($prod);
 ?>
 <div class="row" name="ProductInfo">
 	<div class="col-12 col-md-4 col-lg-2">
@@ -87,4 +88,25 @@
 			<span class="input-group-text" id="percentage">%</span>
 		</div>
 	</div>
+	<!-- Discounted? -->
+	<!-- Discount Type -->
+	<!-- Discount ammount -->
+	<!-- Container -->
+	<!-- Wick -->
+	<!-- Wickstand -->
+	<!-- Material -->
+	<!-- Fragrance -->
+	<!-- Colour -->
+	<!-- Packaging -->
+	<!-- Shipping -->
+	<!-- Qty on hand -->
+	<!-- Qty available -->
+	<!-- Qty Sold -->
+	<!-- Qty to be shipped -->
+	<!-- Qty shipped -->
+	<!-- Description short -->
+	<!-- Description Long -->
+	<!-- Slug -->
+	<!--  -->
+	<!-- Made By -->
 </div>
