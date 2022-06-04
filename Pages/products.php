@@ -1,3 +1,7 @@
+<?
+	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1"))) { $categories[$row['ID']] = $row['Name'] }
+	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1"))) { $collections[$row['ID']] = $row['Name'] }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
@@ -30,8 +34,8 @@
 							<tr>
 								<th scope="row">'.$row['SKU'].'</th>
 								<td>'.$row['Title'].'</td>
-								<td>'.$row['Category_ID'].'</td>
-								<td>'.$row['Range_ID'].'</td>
+								<td>'.$categories[$row['Category_ID']].'</td>
+								<td>'.$collections[$row['Collection_ID']].'</td>
 								<td>'.$row['RetailPrice'].'</td>
 								<td>'.$row['Slug'].'</td>
 								<td>
