@@ -1,5 +1,5 @@
 <?
-	print_r($products = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Products`")));
+	print_r($products = mysqli_fetch_array(DB_Query("SELECT * FROM `Products`")));
 ?>
 <table class="table table-striped table-hover">
 	<thead>
