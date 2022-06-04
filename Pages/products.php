@@ -22,23 +22,12 @@
 						<td>'.$product[1].'</td>
 						<td>'.$product[2].'</td>
 						<td>'.$product[3].'</td>
-						<td>'.$product[4]'</td>
+						<td>'.$product[4].'</td>
 						<td>'.$product[5].'</td>
 						<td>EDIT</td>
 					</tr>
 				');
 			}
 		?>
-		<tr>
-			<th scope="row">2</th>
-			<td>Jacob</td>
-			<td>Thornton</td>
-			<td>@fat</td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td colspan="2">Larry the Bird</td>
-			<td>@twitter</td>
-		</tr>
 	</tbody>
 </table>
