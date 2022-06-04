@@ -182,6 +182,14 @@
 			<label for="floatingInput">Shipping</label>
 		</div>
 	</div>
+	<div class="col-12 col-md-3 col-lg-2">
+		<div class="form-floating mb-3">
+			<select class="form-select" id="floatingSelect">
+				<option selected>Please select</option>
+			</select>
+			<label for="floatingInput">Made by</label>
+		</div>
+	</div>
 	<div class="col-6 col-md-3 col-lg-1 offset-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
@@ -228,12 +236,6 @@
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
 			<label for="floatingInput">Automatically Calculate pricing</label>
-		</div>
-	</div>
-	<div class="col-6 col-md-3 col-lg-1">
-		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
-			<label for="floatingInput">Made_by</label>
 		</div>
 	</div>
 </div>
