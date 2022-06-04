@@ -45,7 +45,7 @@
 					<option selected>Please select</option>
 					<?
 						while($row = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1")) {
-							print_r($row);
+							print_r('<option>'.$row.'</option>');
 						}
 					?>
 				</select>
