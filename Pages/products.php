@@ -1,5 +1,5 @@
 <?
-	$products = mysqli_fetch_assoc(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"));
+	$products = mysqli_fetch_array(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"));
 ?>
 <table class="table table-striped table-hover">
 	<thead>
