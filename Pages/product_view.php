@@ -43,6 +43,11 @@
 			<div class="form-floating mb-3">
 				<select class="form-select" id="floatingSelect">
 					<option selected>Please select</option>
+					<?
+						while($row = $DB_Query("SELECT * FROM `product_categories` WHERE `Active`=1")) {
+							print_r($row);
+						}
+					?>
 				</select>
 				<label for="floatingInput">Category</label>
 			</div>
