@@ -117,7 +117,6 @@
 			<label for="floatingInput">Discount</label>
 		</div>
 	</div>
-	
 	<div class="col-12 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
 			<select class="form-select" id="floatingSelect">
@@ -232,10 +231,12 @@
 			<label for="floatingInput">Slug</label>
 		</div>
 	</div>
-	<div class="col-6 col-md-3 col-lg-1">
+	<div class="col-12 col-md-3 col-lg-2">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Calculate'])?>">
-			<label for="floatingInput">Auto-calculate</label>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+				<label class="form-check-label" for="flexCheckDisabled"> Auto-calculate Pricing? </label>
+			</div>
 		</div>
 	</div>
 </div>
