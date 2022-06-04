@@ -1,5 +1,5 @@
 <?
-	print_r($products = mysqli_fetch_assoc(DB_Query("SELECT * FROM `products`")));
+	$products = mysqli_fetch_assoc(DB_Query("SELECT `SKU`,`Name`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"));
 ?>
 <table class="table table-striped table-hover">
 	<thead>
@@ -14,12 +14,21 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
-		</tr>
+		<?
+			foreach($products as $product) {
+				print('
+					<tr>
+						<th scope="row">'.$product[0].'</th>
+						<td>'.$product[1].'</td>
+						<td>'.$product[2].'</td>
+						<td>'.$product[3].'</td>
+						<td>'.$product[4]'</td>
+						<td>'.$product[5].'</td>
+						<td>EDIT</td>
+					</tr>
+				');
+			}
+		?>
 		<tr>
 			<th scope="row">2</th>
 			<td>Jacob</td>
