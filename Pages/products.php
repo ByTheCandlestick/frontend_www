@@ -16,7 +16,7 @@
 	<tbody>
 		<?
 			foreach($products as $product) {
-				print(''
+				print('
 					<tr>
 						<th scope="row">'.$product['SKU'].'</th>
 						<td>'.$product['Title'].'</td>
