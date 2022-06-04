@@ -17,5 +17,5 @@ table {
  *	TABLE-HOVER
  */
 .table-hover > tbody > tr:hover > * {
-	color: var(--link-color-active);
+	color: var(--link-color-hover);
 }
