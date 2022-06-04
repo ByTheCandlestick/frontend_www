@@ -12,7 +12,7 @@
 	</thead>
 	<tbody>
 		<?
-			while ($product = mysqli_fetch_all(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"))) {
+			while ($product = mysqli_fetch_aSSOC(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"))) {
 				print('
 					<tr>
 						<th scope="row">'.$product['SKU'].'</th>
