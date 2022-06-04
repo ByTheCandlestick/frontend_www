@@ -1,10 +1,12 @@
 <table class="table table-striped table-hover">
 	<thead>
 		<tr>
-			<th scope="col">#</th>
-			<th scope="col">First</th>
-			<th scope="col">Last</th>
-			<th scope="col">Handle</th>
+			<th scope="col">SKU</th>
+			<th scope="col">Name</th>
+			<th scope="col">Category</th>
+			<th scope="col">Range</th>
+			<th scope="col">Price</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody>
