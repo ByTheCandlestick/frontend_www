@@ -29,6 +29,13 @@
 			<div class="form-floating mb-3">
 				<select class="form-select" id="floatingSelect">
 					<option selected>Please select</option>
+					<?
+						$query = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
+						while ($row = mysqli_fetch_array($query)) {
+							($row['ID'] == $prod['Collection_ID'])? $selected=' selected' : $selected='';
+							print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+						}
+					?>
 				</select>
 				<label for="floatingInput">Range</label>
 			</div>
@@ -42,7 +49,7 @@
 		<div class="col-12 col-md-4 col-lg-2">
 			<div class="form-floating mb-3">
 				<select class="form-select" id="floatingSelect">
-					<option  selected>Please select</option>
+					<option selected>Please select</option>
 					<?
 						$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
 						while ($row = mysqli_fetch_array($query)) {
