@@ -44,7 +44,7 @@
 				<select class="form-select" id="floatingSelect">
 					<option  selected>Please select</option>
 					<?
-						while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1"))) {
+						while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1"))) {
 							print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
 						}
 					?>
