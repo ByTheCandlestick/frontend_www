@@ -1,5 +1,5 @@
 <table class="table table-striped table-hover">
-	<thead>
+	<thead class="sticky-top">
 		<tr>
 			<th scope="col">SKU</th>
 			<th scope="col">Title</th>
