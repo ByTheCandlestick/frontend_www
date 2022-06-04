@@ -1,6 +1,6 @@
 <?
 	$products = mysqli_fetch_all(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"));
-	//print_r($products);
+	print_r($products);
 ?>
 <table class="table table-striped table-hover">
 	<thead>
