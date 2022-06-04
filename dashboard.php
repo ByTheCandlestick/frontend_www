@@ -77,7 +77,7 @@
 					<div class="app-content">
 						<div class="app-sidebar">
 							<?
-								$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1");
+								$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1");
 								foreach($items as $item) {
 									print(sprintf('
 										<a href="%s" class="app-sidebar-link">
