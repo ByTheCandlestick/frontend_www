@@ -1,6 +1,6 @@
 <?
 	$products = mysqli_fetch_array(DB_Query("SELECT `SKU`,`Title`,`Category_ID`,`Range_ID`,`RetailPrice`,`Slug` FROM `products`"));
-	print_r($products);
+	//print_r($products);
 ?>
 <table class="table table-striped table-hover">
 	<thead>
@@ -17,7 +17,7 @@
 	<tbody>
 		<?
 			foreach($products as $product) {
-				print_r($product);
+				print_r($product.' // ');
 /*				print('
 					<tr>
 						<th scope="row">'.$product['SKU'].'</th>
