@@ -22,7 +22,11 @@
 						<td>'.$row['Range_ID'].'</td>
 						<td>'.$row['RetailPrice'].'</td>
 						<td>'.$row['Slug'].'</td>
-						<td><i class="fa fa-ellipsis"></i></td>
+						<td>
+							<a href="/Product/Edit/'.$row['SKU'].'">
+								<i class="fa fa-ellipsis"></i>
+							</a>
+						</td>
 					</tr>
 				');
 			}
