@@ -28,7 +28,7 @@
 			<label for="floatingInput">IMAGES</label>
 		</div>
 	</div>
-	<div class="col-12 col-md-6 col-lg-2">
+	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
 			<select class="form-select" id="floatingSelect">
 				<option selected>Please select</option>
@@ -36,7 +36,7 @@
 			<label for="floatingInput">Category</label>
 		</div>
 	</div>
-	<div class="col-12 col-md-6 col-lg-2">
+	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
 			<select class="form-select" id="floatingSelect">
 				<option selected>Please select</option>
