@@ -61,14 +61,6 @@
 				<label for="floatingInput">Category</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-4 col-lg-2">
-			<div class="form-floating mb-3">
-				<select class="form-select" id="floatingSelect">
-					<option selected>Please select</option>
-				</select>
-				<label for="floatingInput">Subcategory</label>
-			</div>
-		</div>
 		<div class="col-12 col-md-3 col-lg-2">
 			<div class="form-floating mb-3">
 				<div class="form-check form-switch">
