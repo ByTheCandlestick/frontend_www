@@ -2,6 +2,8 @@
 	$prod = mysqli_fetch_assoc(DB_Query(sprintf("SELECT  * FROM `products` WHERE `SKU`=%s", QS)));
 ?>
 <div class="row" name="ProductInfo">
+	<!-- Section Header -->
+	<!-- Section Body -->
 	<div class="col-12 col-md-6 col-lg-2">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['SKU'])?>">
