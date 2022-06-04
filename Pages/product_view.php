@@ -106,7 +106,7 @@
 	</div>
 	<div class="col-12 col-md-4 col-lg-2">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmmount'])?>">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>">
 			<label for="floatingInput">Discount</label>
 		</div>
 	</div>
