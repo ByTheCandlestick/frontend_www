@@ -8,7 +8,7 @@
 			<h1>Product Info</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 offset-lg-4">
-			<h1>Product Info</h1>
+			<a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
 		</div>
 	</div>
 	<hr>
