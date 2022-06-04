@@ -58,37 +58,37 @@
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="GBP">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Currency'])?>">
 			<label for="floatingInput">Currency</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="-3.4">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>">
 			<label for="floatingInput">Profit</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="5.99">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['RetailPrice'])?>">
 			<label for="floatingInput">Retail</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
 			<label for="floatingInput">Net</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="9.39">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossPrice'])?>">
 			<label for="floatingInput">Gross</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3 input-group">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="100">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
 			<label for="floatingInput">Markup</label>
 			<span class="input-group-text" id="percentage">%</span>
 		</div>
@@ -192,49 +192,49 @@
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyOnHand'])?>">
 			<label for="floatingInput">QTY On Hand</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyAvailable'])?>">
 			<label for="floatingInput">QTY Available</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyToBeShipped'])?>">
 			<label for="floatingInput">QTY To Be Shipped</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyShipped'])?>">
 			<label for="floatingInput">QTY Shipped</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 			<label for="floatingInput">Description Long</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 			<label for="floatingInput">Description Short</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
 			<label for="floatingInput">Slug</label>
 		</div>
 	</div>
 	<div class="col-6 col-md-3 col-lg-1">
 		<div class="form-floating mb-3">
-			<input type="text" class="form-control" id="floatingInput" placeholder="" value="18.78">
+			<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Calculate'])?>">
 			<label for="floatingInput">Automatically Calculate pricing</label>
 		</div>
 	</div>
