@@ -56,7 +56,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-6 col-md-4 col-lg-1">
+	<div class="col-6 col-md-2 col-lg-1">
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" id="floatingInput" placeholder="" value="GBP">
 			<label for="floatingInput">Currency</label>
