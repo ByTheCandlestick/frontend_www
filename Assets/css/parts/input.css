@@ -2,7 +2,7 @@
 .form-select,
 .form-check-input {
 	background-color: var(--more-list-bg);
-    border: none;
+    border: thin var(--);
     color: var(--main-color);
 }
 .dark .form-select {
