@@ -17,7 +17,8 @@
 	<tbody>
 		<?
 			foreach($products as $product) {
-				print('
+				print_r($product);
+/*				print('
 					<tr>
 						<th scope="row">'.$product['SKU'].'</th>
 						<td>'.$product['Title'].'</td>
@@ -28,7 +29,7 @@
 						<td>EDIT</td>
 					</tr>
 				');
-			}
+*/			}
 		?>
 	</tbody>
 </table>
