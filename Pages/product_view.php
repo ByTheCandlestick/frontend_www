@@ -8,9 +8,9 @@
 			<h1>Product Info</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-8 text-md-end">
-			<a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">
+			<button class="btn btn-primary btn-lg disabled" onClick="javascript:;">
 				<i class="fa fa-pencil"></i>
-			</a>
+			</button>
 		</div>
 	</div>
 	<hr>
