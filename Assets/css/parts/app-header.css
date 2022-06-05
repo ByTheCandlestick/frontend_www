@@ -19,9 +19,7 @@
 
 .app-icon {
 	width: 26px;
-	height: 2px;
-	border-radius: 4px;
-	background-color: var(--main-color);
+	height: 26px;
 	position: relative;
 }
 
