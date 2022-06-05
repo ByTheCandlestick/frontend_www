@@ -16,10 +16,7 @@ $( document ).ready(function() {
 	});
 	$(".search-area input").focus(
 		function(){
-			$(".search-suggestions").hide();
-		},
-		function(){
-			$(".search-suggestions").show();
+			$(".search-suggestions").toggle();
 		}
 	);
 });
