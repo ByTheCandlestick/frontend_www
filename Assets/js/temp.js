@@ -1,28 +1,10 @@
-var codesEl;
-var jsonData = [ 
-	{
-		"name": "amazon",
-		"code": "aksdhfkjags"
-	}, {
-		"name": "aMaZoN",
-		"code": "qiweuryqew"
-	}, {
-		"name": "flipkart",
-		"code": "kjqwherklq"
-	}, {
-		"name": "flipkart",
-		"code": "qmbewnqbwe"
-	}, {
-		"name": "flipkart",
-		"code": "zzvzxcvvnmz"
-	}, {
-		"name": "ebay",
-		"code": "tyjutynf"
-	}, {
-		"name": "ebay",
-		"code": "asgcmngjhjser"
-	}
-];
+var codesEl, jsonData;
+jQuery.get('/Assets/search.json', function(data) {
+	alert(data);
+	//process text file line by line
+	jsonData = data;
+ });
+ 
 
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
@@ -30,7 +12,6 @@ function printData(Arr) {
 	}
 }
 
-// it is a case insensitive search
 function search(ev) {
 	var key = ev.target.value;
 	codesEl.innerText = null;
