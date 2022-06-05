@@ -23,7 +23,7 @@ function printData(Arr) {
 
 function search(ev) {
 	var key = ev.target.value;
-	searchSuggestions.text = null;
+	searchSuggestions.text("");
 	
 	printData(jsonData.filter((data)=>{
 		var regex = new RegExp(key, "i");
