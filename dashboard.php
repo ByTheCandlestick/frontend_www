@@ -71,7 +71,7 @@
 					<div class="search-wrapper">
 						<div class="search">
 							<div class="search-area input-group">
-								<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+								<input type="text" onkeyup="search(event)" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
 								<div class="input-group-append">
 									<button class="btn btn-outline-secondary">
 										<i class="fa-solid fa-magnifying-glass"></i>

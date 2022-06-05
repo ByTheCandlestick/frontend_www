@@ -1,24 +1,12 @@
 [
 	{
-		"name": "amazon",
-		"code": "aksdhfkjags"
+		"name": "Products",
+		"code": "/Products"
 	}, {
-		"name": "aMaZoN",
-		"code": "qiweuryqew"
+		"name": "Users",
+		"code": "/Users"
 	}, {
-		"name": "flipkart",
-		"code": "kjqwherklq"
-	}, {
-		"name": "flipkart",
-		"code": "qmbewnqbwe"
-	}, {
-		"name": "flipkart",
-		"code": "zzvzxcvvnmz"
-	}, {
-		"name": "ebay",
-		"code": "tyjutynf"
-	}, {
-		"name": "ebay",
-		"code": "asgcmngjhjser"
+		",": "",
+		".": ""
 	}
 ]
