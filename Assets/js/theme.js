@@ -1,4 +1,4 @@
-var codesEl, jsonData;
+var searchSuggestions, jsonData;
 $( document ).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
 		var modeSwitch	= $('.mode-switch');
@@ -10,20 +10,20 @@ $( document ).ready(function() {
 	// -----========== PRELOADER ==========----- //
 	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
-	codesEl = $(".search-suggestions");
+	searchSuggestions = $(".search-suggestions");
 	$.get('/Assets/search.json', function(data) {
 		jsonData = data;
 	});
 });
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
-		codesEl.html += `\n${Arr[i].name} code: ${Arr[i].code}`;
+		searchSuggestions.html += `\n${Arr[i].name} code: ${Arr[i].code}`;
 	}
 }
 
 function search(ev) {
 	var key = ev.target.value;
-	codesEl.html = null;
+	searchSuggestions.html = null;
 	
 	printData(jsonData.filter((data)=>{
 		var regex = new RegExp(key, "i");
