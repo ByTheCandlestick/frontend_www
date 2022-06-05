@@ -10,7 +10,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<table class="table table-striped table-hover">
+		<table class="table table-striped table-hover col-12 col-md-6">
 			<thead class="sticky-top" style="background: var(--section);">
 				<tr>
 					<th scope="col">ID</th>
@@ -40,7 +40,7 @@
 			</tbody>
 		</table>
 		
-		<table class="table table-striped table-hover">
+		<table class="table table-striped table-hover col-12 col-md-6">
 			<thead class="sticky-top" style="background: var(--section);">
 				<tr>
 					<th scope="col">ID</th>
@@ -59,7 +59,7 @@
 								<td>'.$row['Name'].'</td>
 								<td>'.$row['Active'].'</td>
 								<td>
-									<a href="/User/View/'.$row['ID'].'">
+									<a href="/Product/Collection/'.$row['ID'].'">
 										<i class="fa fa-ellipsis"></i>
 									</a>
 								</td>
@@ -81,6 +81,7 @@
 			</thead>
 			<tbody>
 				<?
+					/*
 					$query = DB_Query("SELECT * FROM `product_tags`");
 					while ($row = mysqli_fetch_array($query)) {
 						print('
@@ -96,6 +97,7 @@
 							</tr>
 						');
 					}
+					*/
 				?>
 			</tbody>
 		</table>
