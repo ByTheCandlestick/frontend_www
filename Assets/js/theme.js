@@ -10,20 +10,20 @@ $( document ).ready(function() {
 	// -----========== PRELOADER ==========----- //
 	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
-	codesEl = document.getElementById("codes");
+	codesEl = $(".search-suggestions");
 	$.get('/Assets/search.json', function(data) {
 		jsonData = data;
 	});
 });
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
-		codesEl.innerText += `\n${Arr[i].name} code: ${Arr[i].code}`;
+		codesEl.html += `\n${Arr[i].name} code: ${Arr[i].code}`;
 	}
 }
 
 function search(ev) {
 	var key = ev.target.value;
-	codesEl.innerText = null;
+	codesEl.html = null;
 	
 	printData(jsonData.filter((data)=>{
 		var regex = new RegExp(key, "i");
