@@ -1,4 +1,3 @@
-var searchSuggestions, jsonData;
 $( document ).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
 		var modeSwitch	= $('.mode-switch');
@@ -10,9 +9,9 @@ $( document ).ready(function() {
 	// -----========== PRELOADER ==========----- //
 	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
-	searchSuggestions = $(".search-suggestions");
+	var searchSuggestions = $(".search-suggestions");
 	$.get('/Assets/search.json', function(data) {
-		jsonData = data;
+		var jsonData = data;
 	});
 });
 function printData(Arr) {
