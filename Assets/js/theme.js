@@ -1,8 +1,9 @@
 $( document ).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
-		var modeSwitch = $('.mode-switch');
+		var modeSwitch	= $('.mode-switch');
+		var root		= $('html');
 		modeSwitch.click(function () {
-			$( document ).toggleClass('dark');
+			root.toggleClass('dark');
 			modeSwitch.toggleClass('active');
 		});
 	// -----========== PRELOADER ==========----- //
