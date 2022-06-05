@@ -73,9 +73,9 @@
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
 								<div class="input-group-append">
-									<button class="btn btn-outline-secondary" type="button">
+									<input class="btn btn-outline-secondary" type="button">
 										<i class="fa-solid fa-magnifying-glass"></i>
-									</button>
+									</input>
 								</div>
 							</div>
 						</div>
