@@ -1,3 +1,4 @@
+var searchSuggestions, jsonData;
 $( document ).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
 		var modeSwitch	= $('.mode-switch');
@@ -9,14 +10,14 @@ $( document ).ready(function() {
 	// -----========== PRELOADER ==========----- //
 	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
-	var searchSuggestions = $(".search-suggestions");
+	searchSuggestions = $(".search-suggestions");
 	$.get('/Assets/search.json', function(data) {
-		var jsonData = data;
+		jsonData = data;
 	});
 });
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
-		searchSuggestions.html(searchSuggestions.html() + `\n${Arr[i].name} code: ${Arr[i].code}`);
+		searchSuggestions.text(searchSuggestions.text() + `\n${Arr[i].name} code: ${Arr[i].code}`);
 	}
 }
 
