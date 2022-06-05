@@ -19,6 +19,10 @@
 	height: 40px;
 	border-radius: 20px;
 }
+.search input,
+.search button {
+	background: transparent;
+}
 .search ~ input:active {
 	border-radius: 20px 20px 20px;
 }
