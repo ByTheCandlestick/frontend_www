@@ -69,7 +69,9 @@
 					</div>
 					<!-- Search -->
 					<div class="search-wrapper">
-						<div class="search"> </div>
+						<div class="search">
+							<input class="search-box" type="text"></input>
+						</div>
 						<div class="search-suggestions"> </div>
 					</div>
 					<!-- Profile, Notifications and Dark mode -->

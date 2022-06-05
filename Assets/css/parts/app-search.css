@@ -19,7 +19,7 @@
 	height: 40px;
 	border-radius: 20px;
 }
-.search:active {
+.search ~ input:active {
 	border-radius: 20px 20px 20px;
 }
 .search-suggestions {
