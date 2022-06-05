@@ -17,7 +17,7 @@
     position: fixed;
 }
 .app-preloader .pl_ring {
-	stroke: hsla(var(--hue),10%,10%,0.15);
+	stroke: var(--section);
 	transition: stroke 0.3s;
 }
 .app-preloader .pl_worm1,
@@ -31,17 +31,6 @@
 .app-preloader .pl_worm2 {
 	animation-name: worm2;
 	visibility: hidden;
-}
-
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--bg: hsl(var(--hue),10%,10%);
-		--fg: hsl(var(--hue),10%,90%);
-	}
-	.pl_ring {
-		stroke: hsla(var(--hue),10%,90%,0.1);
-	}
 }
 
 /* Animtions */
