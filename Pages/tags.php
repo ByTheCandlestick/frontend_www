@@ -21,7 +21,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `Products_categories`");
+					$query = DB_Query("SELECT * FROM `products_categories`");
 					while ($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
@@ -55,7 +55,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `Products_collections`");
+					$query = DB_Query("SELECT * FROM `products_collections`");
 					while ($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
@@ -89,7 +89,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `Product_tags`");
+					$query = DB_Query("SELECT * FROM `product_tags`");
 					while ($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
