@@ -15,7 +15,9 @@ $( document ).ready(function() {
 		jsonData = data;
 	});
 	$(".search-area input").focusout( function(){
+		if($(".search-suggestions").not(":focus")) {
 			$(".search-suggestions").hide();
+		}
 	});
 	$(".search-area input").focusin( function(){
 			$(".search-suggestions").show();
