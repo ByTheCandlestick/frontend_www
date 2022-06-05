@@ -43,6 +43,12 @@
     z-index: 2;
 	padding-top: 40px;
 }
-.search-suggestions > * {
+.search-suggestions > li {
 	margin: 10px;
+	list-style: none;
+	padding: 8px 12px;
+	display: none;
+	width: 100%;
+	cursor: default;
+	border-radius: 3px;
 }
