@@ -14,11 +14,12 @@ $( document ).ready(function() {
 	$.get('/Assets/search.json', function(data) {
 		jsonData = data;
 	});
-	$(".search-area input").focus(
-		function(){
-			$(".search-suggestions").toggle();
-		}
-	);
+	$(".search-area input").focusout( function(){
+			$(".search-suggestions").hide();
+	});
+	$(".search-area input").focusin( function(){
+			$(".search-suggestions").show();
+	});
 });
 
 function search(ev) {
