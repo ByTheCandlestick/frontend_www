@@ -70,7 +70,7 @@
 					<!-- Search -->
 					<div class="search-wrapper">
 						<div class="search"> </div>
-						<div class="search-suggestions" style="height:100px;"> </div>
+						<div class="search-suggestions"> </div>
 					</div>
 					<!-- Profile, Notifications and Dark mode -->
 					<div class="app-header-right">
