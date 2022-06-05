@@ -5,12 +5,13 @@
 			<h1>Users</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			<input type="text" class="tableFilter"> </input>
 		</div>
 	</div>
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<table class="table table-striped table-hover">
+		<table class="usersTable table table-striped table-hover">
 			<thead class="sticky-top" style="background: var(--section);">
 				<tr>
 					<th scope="col">ID</th>
@@ -49,3 +50,13 @@
 		</table>
 	</div>
 </section>
+<script>
+	$(document).ready(function(){
+		$(".tableFilter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$(".usersTable tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
