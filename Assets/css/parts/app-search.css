@@ -26,7 +26,7 @@
 }
 .search input:focus,
 .search button:focus {
-	border: none;
+	box-shadow: none;
 }
 .search ~ input:active {
 	border-radius: 20px 20px 20px;
