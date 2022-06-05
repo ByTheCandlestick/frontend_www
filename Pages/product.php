@@ -4,10 +4,10 @@
 <section>
 	<!-- Section Header -->
 	<div class="row">
-		<div class="col-12 col-md-6 col-lg-4">
+		<div class="col-12 col-md-6 col-lg-8">
 			<h1>Product info</h1>
 		</div>
-		<div class="col-12 col-md-6 col-lg-8 text-md-end">
+		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 		</div>
 	</div>
 	<hr>
@@ -19,7 +19,7 @@
 				<label for="floatingInput">SKU</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-4">
+		<div class="col-12 col-md-6 col-lg-8">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Title'])?>">
 				<label for="floatingInput">Title</label>
@@ -40,7 +40,7 @@
 				<label for="floatingInput">Range</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-4">
+		<div class="col-12 col-md-6 col-lg-8">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['images'])?>">
 				<label for="floatingInput">IMAGES</label>
