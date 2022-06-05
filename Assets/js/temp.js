@@ -1,5 +1,4 @@
-
-window.onload = function() {
+$( document ).load( function() {
 	var codesEl = document.getElementById("codes");
 	$.get('/Assets/search.json', function(data) { var jsonData = data; });
 
