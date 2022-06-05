@@ -258,6 +258,6 @@
 </section>
 <?
 	} else {
-		
+		header("Location: /Products/");		
 	}
 ?>
