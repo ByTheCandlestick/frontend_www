@@ -1,5 +1,5 @@
 $( document ).on( "load", function() {
-	var codesEl = document.getElementById("codes");
+	const codesEl = document.getElementById("codes");
 	$.get('/Assets/search.json', function(data) { var jsonData = data; });
 });
 
