@@ -87,7 +87,6 @@
 							<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
 						</button>
 					</div>
-					</div>
 				</div>
 				<div class="app-content">
 					<!-- Sidebar -->
