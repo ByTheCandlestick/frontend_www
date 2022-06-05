@@ -15,7 +15,7 @@ $( document ).ready(function() {
 		jsonData = data;
 	});
 	$(".search-area input").focusout( function(){
-		if($(".search-suggestions").not(":hover")) {
+		if($(".search-suggestions *").not(":hover")) {
 			$(".search-suggestions").hide();
 		}
 	});
