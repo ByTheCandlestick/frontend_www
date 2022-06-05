@@ -2,7 +2,7 @@
 .search-wrapper {
 	width: 100%;
 	max-width: 480px;
-	display: initial;
+	position: inherit;
 }
 .dark .search-wrapper {
 	box-shadow: none;
