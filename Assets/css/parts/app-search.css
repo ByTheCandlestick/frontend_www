@@ -1,7 +1,6 @@
 
 .search-wrapper {
 	background-color: var(--search-area-bg);
-	height: 40px;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
@@ -12,31 +11,7 @@
 .dark .search-wrapper {
 	box-shadow: none;
 }
-
-.search-input {
-	border: none;
-	flex: 1;
-	outline: none;
-	height: 100%;
-	padding: 0 20px;
-	font-size: 16px;
-	background-color: var(--search-area-bg);
-	color: var(--main-color);
-}
-.search-input:placeholder {
-	color: var(--main-color);
-	opacity: 0.6;
-}
-.search-suggestions + .search {
-	border-radius: 20px 20px 20px 20px;
-}
-.search-suggestions.hidden + .search {
-	border-radius: 20px;
-}
 .search,
 .search-suggestions {
-	padding-right: 12px;
-	width: 100%;
-    height: 100%;
-    background: blue;
+	height: 40px;
 }
