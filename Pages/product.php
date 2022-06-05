@@ -271,7 +271,7 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			<button class="btn btn-outline-primary col-12 col-md-3 offset-md-3 col-lg-2 offset-lg-2" onclick="history.go(-1)">Go back</buton>
+			<button class="btn btn-outline-primary col-12 col-md-3 col-lg-1" onclick="history.go(-1)">Go back</buton>
 		</div>
 	</section>
 <?
