@@ -15,8 +15,8 @@
 		<div class="row">
 			An error has occurred, Please try again later.
 			<br>
-			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1" onclick="history.go(-1)">Go back</a>
-			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 offset-md-1" onclick="/">Go home</a>
+			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 m-1" onclick="history.go(-1)">Go back</a>
+			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 m-1" onclick="/">Go home</a>
 		</div>
 	</section>
 <?
@@ -36,8 +36,8 @@
 		<div class="row">
 			An error has occurred, Please try again later.
 			<br>
-			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1" onclick="history.go(-1)">Go back</a>
-			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 offset-md-1" onclick="/">Go home</a>
+			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 m-1" onclick="history.go(-1)">Go back</a>
+			<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 m-1" onclick="/">Go home</a>
 		</div>
 	</section>
 <?
