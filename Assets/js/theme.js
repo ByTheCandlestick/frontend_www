@@ -27,6 +27,6 @@ function search(ev) {
 }
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
-		searchSuggestions.html(searchSuggestions.html() + Arr[i].name + " - " + Arr[i].desc + "<br>");
+		searchSuggestions.html(searchSuggestions.html() + "<p>" + Arr[i].name + " - " + Arr[i].desc + "</p><br>");
 	}
 }
