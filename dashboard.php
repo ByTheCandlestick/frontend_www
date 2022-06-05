@@ -87,28 +87,28 @@
 							</button>
 						</div>
 					</div>
-					<div class="app-content">
-						<!-- Sidebar -->
-						<div class="app-sidebar">
-							<?
-								$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
-								foreach($items as $item) {
-									($item['Page_url'] == QS_PAGE)? $active = ' active' : $active = '';
-									print(sprintf('
-										<a href="%s" class="app-sidebar-link%s">
-											<i class="fa fa-%s"></i>
-										</a>
-										',
-										$item['URL'],
-										$active,
-										$item['Icon']
-									));
-								}
-							?>
-						</div>
-						<!-- Page Content -->
-						<? include('./Pages/'.$layout_row['Name'].'.php'); ?>
+				</div>
+				<div class="app-content">
+					<!-- Sidebar -->
+					<div class="app-sidebar">
+						<?
+							$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
+							foreach($items as $item) {
+								($item['Page_url'] == QS_PAGE)? $active = ' active' : $active = '';
+								print(sprintf('
+									<a href="%s" class="app-sidebar-link%s">
+										<i class="fa fa-%s"></i>
+									</a>
+									',
+									$item['URL'],
+									$active,
+									$item['Icon']
+								));
+							}
+						?>
 					</div>
+					<!-- Page Content -->
+					<? include('./Pages/'.$layout_row['Name'].'.php'); ?>
 				</div>
 			</div>
 		</body>
