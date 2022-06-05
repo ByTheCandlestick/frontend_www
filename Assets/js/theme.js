@@ -22,11 +22,11 @@ function search(ev) {
 	
 	printData(jsonData.filter((data)=>{
 		var regex = new RegExp(key, "i");
-		return data.name.match(regex) || data.code.match(regex);
+		return data.name.match(regex) || data.desc.match(regex) || data.url.match(regex);
 	}));
 }
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
-		searchSuggestions.html(searchSuggestions.html() + Arr[i].name + " url: " + Arr[i].code + "<br>");
+		searchSuggestions.html(searchSuggestions.html() + Arr[i].name + " - " + Arr[i].desc + "<br>");
 	}
 }
