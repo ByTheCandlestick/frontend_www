@@ -30,7 +30,7 @@
 	box-shadow: none;
 	background-color: transparent;
 }
-.search ~ input:active {
+.search ~ input:focus {
 	border-radius: 20px 20px 20px 20px;
 }
 .search-suggestions {
