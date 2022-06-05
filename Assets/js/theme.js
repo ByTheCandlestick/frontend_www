@@ -17,13 +17,13 @@ $( document ).ready(function() {
 });
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
-		searchSuggestions.text(searchSuggestions.text() + "<br>" + Arr[i].name + " code: " + Arr[i].code);
+		searchSuggestions.html(searchSuggestions.html() + "<br>" + Arr[i].name + " code: " + Arr[i].code);
 	}
 }
 
 function search(ev) {
 	var key = ev.target.value;
-	searchSuggestions.text("");
+	searchSuggestions.html("");
 	
 	printData(jsonData.filter((data)=>{
 		var regex = new RegExp(key, "i");
