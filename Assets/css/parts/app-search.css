@@ -53,6 +53,9 @@
     cursor: default;
     border-radius: 15px;
 }
+.search-suggestions > li:nth-child(1) {
+	padding-top: 10px;
+}
 .search-suggestions > li:hover {
 	background-color: rgb(0 0 0 / 5%);
 }
