@@ -1,5 +1,5 @@
 <?
-	$query = DB_Query(sprintf("SELECT  * FROM `users` WHERE `ID`=%s", QS));
+	$query = DB_Query(sprintf("SELECT * FROM `Users` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$user = mysqli_fetch_assoc($query);
 ?>
