@@ -1,5 +1,5 @@
 var codesEl, jsonData;
-jQuery.get('/Assets/search.json', function(data) {
+$.get('/Assets/search.json', function(data) {
 	alert(data);
 	//process text file line by line
 	jsonData = data;
