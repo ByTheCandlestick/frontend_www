@@ -82,13 +82,13 @@
 								foreach($items as $item) {
 									($item['Page_url'] == QS_PAGE)? $active = ' active' : $active = '';
 									print(sprintf('
-										<a href="%s" class="app-sidebar-link">
+										<a href="%s" class="app-sidebar-link%s">
 											<i class="fa fa-%s"></i>
 										</a>
 										',
 										$item['URL'],
-										$item['Icon'],
-										$active
+										$active,
+										$item['Icon']
 									));
 								}
 							?>
