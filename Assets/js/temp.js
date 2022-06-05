@@ -1,7 +1,8 @@
-$( document ).on( "load", function() {
-	const codesEl = document.getElementById("codes");
-	$.get('/Assets/search.json', function(data) { var jsonData = data; });
-});
+var codesEl, jsonData;
+$.get('/Assets/search.json', function(data) {
+	jsonData = data;
+ });
+ 
 
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
@@ -17,4 +18,8 @@ function search(ev) {
 		var regex = new RegExp(key, "i");
 		return data.name.match(regex) || data.code.match(regex);
 	}));
+}
+
+window.onload = function() {
+	codesEl = document.getElementById("codes");
 }
