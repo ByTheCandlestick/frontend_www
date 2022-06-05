@@ -36,11 +36,9 @@
 	border-radius: 20px 20px 20px 20px;
 }
 .search-suggestions {
-	height: 100px; /* TEMPLATE SIZING */
     position: absolute;
     width: 100%;
-    top: 0;
-    left: 0px;
     border-radius: 20px;
     z-index: 2;
+	padding-top: 50px;
 }
