@@ -69,7 +69,7 @@
 					</div>
 					<!-- Search -->
 					<div class="search-wrapper">
-						<div class="search">
+						<div class="search-area">
 							<input type="text" onkeyup="search(event)" placeholder="Search">
 						</div>
 						<div class="search-suggestions"> </div>
