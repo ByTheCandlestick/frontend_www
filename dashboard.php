@@ -60,15 +60,15 @@
 					</svg>
 				</div>
 				<div class="app-header">
+					<!-- Brand Info -->
 					<div class="app-header-left">
-						<!-- Brand Info -->
 						<span class="app-icon">
 							<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 						</span>
 						<p class="app-name">The Candlestick</p>
 					</div>
 					<!-- Search -->
-					<div class="search-wrapper">
+					<div class="app-header-center search-wrapper">
 						<input class="search-input" type="text" placeholder="Search">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
 							<circle cx="11" cy="11" r="8"></circle>
@@ -86,6 +86,7 @@
 							<img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
 							<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
 						</button>
+					</div>
 					</div>
 				</div>
 				<div class="app-content">
