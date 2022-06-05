@@ -263,7 +263,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
-				<h1>Oxygen</h1>
+				<h1>Product not found.</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			</div>
@@ -271,7 +271,7 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-
+			<button class="btn btn-outline-primary" onclick="history.go(-1)">Go back</buton>
 		</div>
 	</section>
 <?
