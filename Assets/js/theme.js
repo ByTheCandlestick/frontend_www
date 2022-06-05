@@ -16,10 +16,10 @@ $( document ).ready(function() {
 	});
 	$(".search-area input").focus(
 		function(){
-			$(".search-suggestions").show();
+			$(".search-suggestions").hide();
 		},
 		function(){
-			$(".search-suggestions").hide();
+			$(".search-suggestions").show();
 		}
 	);
 });
