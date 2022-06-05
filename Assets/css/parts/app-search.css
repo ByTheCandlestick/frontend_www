@@ -24,6 +24,10 @@
 	background: transparent;
 	border: none;
 }
+.search input:focus,
+.search button:focus {
+	border: none;
+}
 .search ~ input:active {
 	border-radius: 20px 20px 20px;
 }
