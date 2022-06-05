@@ -17,7 +17,7 @@ $( document ).ready(function() {
 });
 function printData(Arr) {
 	for(var i=0; i<Arr.length; i++) {
-		searchSuggestions.html(searchSuggestions.html() + "<br>" + Arr[i].name + " code: " + Arr[i].code);
+		searchSuggestions.html(searchSuggestions.html() + Arr[i].name + " code: " + Arr[i].code + "<br>");
 	}
 }
 
