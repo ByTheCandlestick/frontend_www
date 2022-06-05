@@ -44,13 +44,13 @@
 				<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
 					<defs>
 						<linearGradient id="pl-grad1" x1="0" y1="0" x2="0" y2="1">
-							<stop offset="0%" stop-color="hsl(223,90%,55%)" />
-							<stop offset="100%" stop-color="hsl(253,90%,55%)" />
+							<stop offset="0%" stop-color="rgb(37 95 244)" />
+							<stop offset="100%" stop-color="rgb(82 37 244)" />
 						</linearGradient>
 						<linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
-							<stop offset="0%" stop-color="hsl(193,90%,55%)" />
-							<stop offset="50%" stop-color="hsl(223,90%,55%)" />
-							<stop offset="100%" stop-color="hsl(253,90%,55%)" />
+							<stop offset="0%" stop-color="rgb(37 199 244)" />
+							<stop offset="50%" stop-color="rgb(37 95 244)" />
+							<stop offset="100%" stop-color="rgb(82 37 244)" />
 						</linearGradient>
 					</defs>
 					<circle class="pl_ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16" stroke-linecap="round" />
