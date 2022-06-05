@@ -43,6 +43,7 @@
     z-index: 2;
 	padding-top: 45px;
 	overflow: hidden;
+	display: none;
 }
 .search-suggestions > li {
     margin: 5px;
