@@ -1,6 +1,5 @@
 
 .search-wrapper {
-	border-radius: 20px;
 	background-color: var(--search-area-bg);
 	height: 40px;
 	justify-content: space-between;
@@ -27,6 +26,12 @@
 .search-input:placeholder {
 	color: var(--main-color);
 	opacity: 0.6;
+}
+.search + .search-suggestions {
+	border-radius: 20px 20px 20px 20px;
+}
+.search + .search-suggestions.hidden {
+	border-radius: 20px;
 }
 .search,
 .search-suggestions {
