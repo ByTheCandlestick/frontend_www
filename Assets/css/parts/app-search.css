@@ -2,7 +2,6 @@
 .search-wrapper {
 	border-radius: 20px;
 	background-color: var(--search-area-bg);
-	padding-right: 12px;
 	height: 40px;
 	justify-content: space-between;
 	align-items: center;
@@ -31,6 +30,7 @@
 }
 .search,
 .search-suggestions {
+	padding-right: 12px;
 	width: 100%;
     height: 100%;
     background: blue;
