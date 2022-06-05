@@ -29,11 +29,12 @@
 						print('
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
+								<td>'.$row['First_name'].' '.$row['Last_name'].'</td>
 								<td>'.$row['Email'].'</td>
 								<td>'.$row['Username'].'</td>
-								<td>'.$row['First_name'].' '.$row['Last_name'].'</td>
-								<td>'.$row[''].'</td>
+								<td>'.$row['Phone'].'</td>
 								<td>'.$row['Active'].'</td>
+								<td>'.$row['Created'].'</td>
 								<td>
 									<a href="/User/View/'.$row['SKU'].'">
 										<i class="fa fa-ellipsis"></i>
