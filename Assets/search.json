@@ -1,12 +1,11 @@
 [
 	{
 		"name": "Products",
-		"code": "/Products"
+		"desc": "Lists all products",
+		"url": "/Products"
 	}, {
 		"name": "Users",
-		"code": "/Users"
-	}, {
-		"name": "",
-		"code": ""
+		"desc": "Lists all user accounts",
+		"url": "/Users"
 	}
 ]
