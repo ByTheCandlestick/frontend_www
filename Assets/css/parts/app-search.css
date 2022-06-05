@@ -53,3 +53,7 @@
 .search-suggestions > li:hover {
 	background-color: rgb(0 0 0 / 5%);
 }
+.search-suggestions > li a {
+	text-decoration: none;
+	columns: var(--main-color);
+}
