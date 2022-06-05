@@ -27,10 +27,10 @@
 	color: var(--main-color);
 	opacity: 0.6;
 }
-.search + .search-suggestions {
+.search-suggestions + .search {
 	border-radius: 20px 20px 20px 20px;
 }
-.search + .search-suggestions.hidden {
+.search-suggestions.hidden + .search {
 	border-radius: 20px;
 }
 .search,
