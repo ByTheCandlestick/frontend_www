@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<script src="./Assets/js/theme.js"></script>
+<form>
+<div class="row">
+<div class="medium-6 columns">
+<label>Search
+<input id="searchText" type="text" placeholder="search">
+</label>
+<label>Search by:
+<select id="searchField">
+<option value="name">Name</option>
+<option value="city">City</option>
+</select>
+</label>
+<div class="button-group">
+<label>Sort by:</label>
+<a class="button sort" data-filter="name">Name</a>
+<a class="button sort" data-filter="city">City</a>
+</div>
+</div>
+</div>
+<!-- 	<div class="row">
+<div class="medium-6 columns">
+<button id="search" type="button" class="button expanded">Search</button>
+</div>
+</div> -->
+</form>
+<script id="results" type="text/x-handlebars-template">
+{{#each this}}
+<div class="row sort-item" data-name="{{name}}" data-city="{{city}}">
+<div class="small-12 columns">
+<h1>{{name}}</h1>
+<h2>City: {{city}}</h2>
+<hr />
+</div>
+</div>
+{{/each}}
+</script>
+<div class="row">
+<div id="output"></div>
+</div>
+</body>
