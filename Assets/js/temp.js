@@ -19,3 +19,7 @@ function search(ev) {
 		return data.name.match(regex) || data.code.match(regex);
 	}));
 }
+
+window.onload = function() {
+	codesEl = document.getElementById("codes");
+}
