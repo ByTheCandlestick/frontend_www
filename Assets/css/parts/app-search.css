@@ -19,13 +19,14 @@
 	height: 40px;
 	border-radius: 20px;
 }
-.search input,
-.search button {
+.search-area {
+	height: 100%;
+}
+.search input, .search button {
 	background: transparent;
 	border: none;
 }
-.search input:focus,
-.search button:focus {
+.search input:focus, .search button:focus {
 	box-shadow: none;
 	background-color: transparent;
 }
