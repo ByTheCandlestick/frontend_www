@@ -13,14 +13,14 @@
 	<div class="row">
 		<table class="usersTable table table-striped table-hover">
 			<thead class="sticky-top" style="background: var(--section);">
-					<th scope="col">ID</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Username</th>
-					<th scope="col">Phone</th>
-					<th scope="col">Enabled</th>
-					<th scope="col">Created</th>
-					<th scope="col"></th>
+				<th scope="col">ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Email</th>
+				<th scope="col">Username</th>
+				<th scope="col">Phone</th>
+				<th scope="col">Enabled</th>
+				<th scope="col">Created</th>
+				<th scope="col"></th>
 			</thead>
 			<tbody>
 				<?
