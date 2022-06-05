@@ -258,8 +258,7 @@
 </section>
 <?
 	} else {
-		print('here');
-		header("Location: /Products/");	
+		header("Location: /");	
 		exit;	
 	}
 ?>
