@@ -11,6 +11,7 @@
 			<h1>Products</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			Search bar TODO
 		</div>
 	</div>
 	<hr>
@@ -53,3 +54,13 @@
 		</table>
 	</div>
 </section>
+<script>
+	$(document).ready(function(){
+		$("#myInput").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
