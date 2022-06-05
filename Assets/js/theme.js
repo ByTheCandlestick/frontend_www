@@ -14,6 +14,14 @@ $( document ).ready(function() {
 	$.get('/Assets/search.json', function(data) {
 		jsonData = data;
 	});
+	$(".search-area input").focus(
+		function(){
+			$(".search-suggestions").show();
+		},
+		function(){
+			$(".search-suggestions").hide();
+		}
+	);
 });
 
 function search(ev) {
