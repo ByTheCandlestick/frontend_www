@@ -45,12 +45,11 @@
 	overflow: hidden;
 }
 .search-suggestions > li {
-	margin: 5px;
-	list-style: none;
-	padding: 5px 7px;
-	width: calc(100% - 24px);
-	cursor: default;
-	border-radius: 3px;
+    margin: 5px;
+    list-style: none;
+    padding: 5px 7px;
+    cursor: default;
+    border-radius: 15px;
 }
 .search-suggestions > li:hover {
 	background-color: rgb(0 0 0 / 5%);
