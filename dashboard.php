@@ -66,26 +66,26 @@
 							<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 						</span>
 						<p class="app-name">The Candlestick</p>
-						<!-- Search -->
-						<div class="search-wrapper">
-							<input class="search-input" type="text" placeholder="Search">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
-								<circle cx="11" cy="11" r="8"></circle>
-								<path d="M21 21l-4.35-4.35"></path>
+					</div>
+					<!-- Search -->
+					<div class="search-wrapper">
+						<input class="search-input" type="text" placeholder="Search">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
+							<circle cx="11" cy="11" r="8"></circle>
+							<path d="M21 21l-4.35-4.35"></path>
+						</svg>
+					</div>
+					<!-- Profile, Notifications and Dark mode -->
+					<div class="app-header-right">
+						<button class="mode-switch" title="Switch Theme">
+							<svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
 							</svg>
-						</div>
-						<!-- Profile, Notifications and Dark mode -->
-						<div class="app-header-right">
-							<button class="mode-switch" title="Switch Theme">
-								<svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
-									<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-								</svg>
-							</button>
-							<button class="profile-btn">
-								<img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-								<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
-							</button>
-						</div>
+						</button>
+						<button class="profile-btn">
+							<img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
+							<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
+						</button>
 					</div>
 				</div>
 				<div class="app-content">
