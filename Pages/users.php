@@ -37,7 +37,7 @@
 								<td>'.$row['Active'].'</td>
 								<td>'.$row['Created'].'</td>
 								<td>
-									<a href="/User/View/'.$row['SKU'].'">
+									<a href="/User/View/'.$row['ID'].'">
 										<i class="fa fa-ellipsis"></i>
 									</a>
 								</td>
