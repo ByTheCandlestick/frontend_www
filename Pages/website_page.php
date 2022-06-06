@@ -42,6 +42,9 @@
 							<label for="floatingInput">Subpage URL</label>
 						</div>
 					</div>
+					<div class="col-12 col-md-4 col-lg-1 offset-md-4 offset-lg-5">
+
+					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
@@ -89,7 +92,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
-				<h1>Website not found.</h1>
+				<h1>Website page not found.</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			</div>
