@@ -43,5 +43,5 @@ $( document ).ready(function() {
 	}
 	console.log(search.jsonData)
 	console.log(search.jsonData[0])
-	console.log(search.jsonData.responseJSON)
+	console.log(search.jsonData.done(function(data){return data.getJSON;}))
 });
