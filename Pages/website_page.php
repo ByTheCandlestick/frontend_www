@@ -17,8 +17,8 @@
 		</div>
 		<div class="col-12 col-lg-3">
 			<?
-				$query = DB_Query("SELECT * FROM `page_styles` WHERE `Active`=1");
-				
+				$query = DB_Query("SELECT * FROM `page_styles`");
+
 				while($row = mysqli_fetch_array($query)) {
 					print('
 						<div class="form-check">
