@@ -23,14 +23,22 @@ $( document ).ready(function() {
 	// -----========== Nestled functions ==========----- //
 	website = {
 		save: function() {
+			var Style = Script = Name = Title = Page_url = Subpage_url = "";
 			var styles = scripts = [];
-			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(index, element) {
-				styles.push($(element).val());
-			});
-			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(index, element) {
-				scripts.push($(element).val());
-			});
-			console.log(styles)
+			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(index, element) { styles.push($(element).val()); });
+			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
+			Style = styles.join(",");
+			Script = scripts.join(",");
+			Name = $("name").find("input").val();
+			Title = $("title").find("input").val();
+			Page_url = $("page_url").find("input").val();
+			Subpage_url = $("subpage_url").find("input").val();
+			console.log("style" + Style);
+			console.log("script" + Script);
+			console.log("name" + Name);
+			console.log("title" + Title);
+			console.log("page_url" + Page_url);
+			console.log("subpage_url" + Subpage_url);
 		}
 	};
 	search = {
