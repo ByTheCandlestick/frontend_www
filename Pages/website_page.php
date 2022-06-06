@@ -42,7 +42,7 @@
 							<label for="floatingInput">Subpage URL</label>
 						</div>
 					</div>
-					<div class="col-12 col-md-4 col-lg-2 offset-md-4 offset-lg-5">
+					<div class="col-12 col-md-6 col-lg-4 offset-md-3 offset-lg-4">
 						<a href="/Oxygen/<?print(QS)?>" class="btn btn-outline-primary w-100 h-100">Open in oxygen</a>
 					</div>
 				</div>
