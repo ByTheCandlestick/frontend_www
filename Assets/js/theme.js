@@ -31,8 +31,7 @@ $( document ).ready(function() {
 		jsonData: null,
 		process: function(ev) {
 			if(ev.key == 'Enter'){
-				$(":first-child");
-				console.log(ev.target);
+				console.log(search.suggestions.filter(":first-child"));
 			} else {
 				var key = ev.target.value;
 				search.suggestions.html("");
