@@ -48,14 +48,10 @@
 				<?
 					$query = DB_Query("SELECT * FROM `page_scripts`");
 					while($row = mysqli_fetch_array($query)) {
-						print('Searching for ');
-						print($row['id']);
-						print(' in: ');
-						print_r($scripts);
 						(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'"'.$schecked.'>
+								<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'"'.$checked.'>
 								<label class="form-check-label" for="ScriptCheckboxes-'.$row['id'].'">
 									' . $row['name'] . '
 								</label>
