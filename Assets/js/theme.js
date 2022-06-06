@@ -17,7 +17,10 @@ $( document ).ready(function() {
 	$(".search-area input").focusin( function(){
 		search.suggestions.show();
 	});
-	console.log($.get('/Assets/search.json')[0])
+	console.log(search.suggestions)
+	console.log(search.suggestions[0])
+	console.log(search.suggestions.responseJSON())
+	console.log(search.suggestions.responseJSON)
 	// -----========== Nestled functions ==========----- //
 	website = {
 		save: function() {
@@ -26,7 +29,7 @@ $( document ).ready(function() {
 	};
 	search = {
 		suggestions: $(".search-suggestions"),
-		jsonData: "",
+		jsonData: $.get('/Assets/search.json'),
 		process: function(ev) {
 			var key = ev.target.value;
 			search.suggestions.html("");
