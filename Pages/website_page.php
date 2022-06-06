@@ -35,8 +35,8 @@
 					(in_array($row['id'], $styles))?$checked=" checked":$checked="";
 					print('
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes"'.$checked.'>
-							<label class="form-check-label" for="StyleCheckboxes">
+							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes-'.$row['id'].'"'.$checked.'>
+							<label class="form-check-label" for="StyleCheckboxes-'.$row['id'].'">
 								' . $row['name'] . '
 							</label>
 						</div>
@@ -51,8 +51,8 @@
 					(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
 					print('
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="ScriptCheckboxes"'.$schecked.'>
-							<label class="form-check-label" for="ScriptCheckboxes">
+							<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'"'.$schecked.'>
+							<label class="form-check-label" for="ScriptCheckboxes-'.$row['id'].'">
 								' . $row['name'] . '
 							</label>
 						</div>
