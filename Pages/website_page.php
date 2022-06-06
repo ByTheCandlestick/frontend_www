@@ -35,8 +35,8 @@
 					(in_array($row['id'], $styles))?$checked=" checked":$checked="";
 					print('
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="flexCheckDefault"'.$checked.'>
-							<label class="form-check-label" for="flexCheckDefault">
+							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes"'.$checked.'>
+							<label class="form-check-label" for="StyleCheckboxes">
 								' . $row['name'] . '
 							</label>
 						</div>
@@ -48,11 +48,12 @@
 			<?
 				$query = DB_Query("SELECT * FROM `page_scripts`");
 				while($row = mysqli_fetch_array($query)) {
+					print_r();
 					(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
 					print('
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="flexCheckDefault"'.$schecked.'>
-							<label class="form-check-label" for="flexCheckDefault">
+							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="ScriptCheckboxes"'.$schecked.'>
+							<label class="form-check-label" for="ScriptCheckboxes">
 								' . $row['name'] . '
 							</label>
 						</div>
