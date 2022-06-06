@@ -22,12 +22,12 @@ $( document ).ready(function() {
 	$(".search-area input").focusin( function(){
 		$(".search-suggestions").show();
 	});
-});
-website = {
-	save: function() {
-		alert("TODO: Save");
+	website = {
+		save: function() {
+			alert("TODO: Save");
+		}
 	}
-}
+});
 
 function search(ev) {
 	var key = ev.target.value;
