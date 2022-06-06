@@ -41,5 +41,5 @@ $( document ).ready(function() {
 			}
 		}
 	}
-	console.log(search.jsonData.done(function(data){return data.responseJSON;}))
+	console.log(search.jsonData.done(function(data){return "Done";}))
 });
