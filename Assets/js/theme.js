@@ -29,8 +29,8 @@ $( document ).ready(function() {
 		save: function() {
 			var Style = Script = Name = Title = Page_url = Subpage_url = "";
 			var styles = scripts = [];
-			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(index, element) { styles.push($(element).val()); });
-			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
+			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(index, element) { styles.push(element.value); });
+			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(index, element) { scripts.push(element.value); });
 			data = {
 				'api_key': api_key,
 				'style': styles.join(","),
