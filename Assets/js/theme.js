@@ -25,7 +25,7 @@ $( document ).ready(function() {
 		save: function() {
 			var styles, scripts = [];
 			$("div[name=styles]").find("input[type=checkbox]").each(function(elem) {
-				console.log(elem.val());
+				console.log(elem);
 				styles.push(elem.val());
 			});
 			$("div[name=scripts]").find("input[type=checkbox]").each(function(elem) {
