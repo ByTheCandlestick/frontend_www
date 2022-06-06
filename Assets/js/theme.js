@@ -24,11 +24,11 @@ $( document ).ready(function() {
 	website = {
 		save: function() {
 			var styles, scripts = [];
-			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(element) {
+			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(index, element) {
 				console.log(element);
 			});
-			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(elem) {
-				console.log(elem);
+			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(index, element) {
+				console.log(element);
 			});
 			console.log(styles)
 		}
