@@ -24,7 +24,7 @@
 							<label for="floatingInput">Name</label>
 						</div>
 					</div>
-					<div class="col-12">
+					<div class="col-12">	
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['page_title'])?>">
 							<label for="floatingInput">Title</label>
