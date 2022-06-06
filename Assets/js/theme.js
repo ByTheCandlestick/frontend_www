@@ -17,7 +17,7 @@ $( document ).ready(function() {
 	$(".search-area input").focusin( function(){
 		search.suggestions.show();
 	});
-	console.log($.get('/Assets/search.json'))
+	console.log($.get('/Assets/search.json').responseJSON)
 	// -----========== Nestled functions ==========----- //
 	website = {
 		save: function() {
