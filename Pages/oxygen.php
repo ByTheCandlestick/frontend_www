@@ -1,3 +1,6 @@
+<?
+	if(QS_SUBPAGE != "") {
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
@@ -13,3 +16,6 @@
 
 	</div>
 </section>
+<?
+	}
+?>
