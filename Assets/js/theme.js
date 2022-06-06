@@ -10,7 +10,7 @@ $( document ).ready(function() {
 	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
 	$(".search-area input").focusout( function(){
-		if(search.suggestions.children()) {
+		if(search.suggestions.is(':focus')) {
 			search.suggestions.hide();
 		}
 	});
