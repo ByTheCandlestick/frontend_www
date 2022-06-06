@@ -8,6 +8,9 @@
 			<h1>Oxygen</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			<a href="/Oxygen/<?print(QS)?>" class="btn btn-outline-primary">
+				<i class="fa fa-pencil"></i>
+			</a>
 		</div>
 	</div>
 	<hr>
