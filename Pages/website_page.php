@@ -20,7 +20,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['name'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_name']=='')?'No name was set':'')?>" value="<? print(($site['page_name']=='')?'':$site['page_name'])?>">
 							<label for="floatingInput">Name</label>
 						</div>
 					</div>
@@ -32,13 +32,13 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['page_url'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_url']=='')?'No base URL was set':'')?>" value="<? print(($site['page_url']=='')?'':$site['page_url'])?>">
 							<label for="floatingInput">Page URL</label>
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['subpage_url'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['subpage_url']=='')?'No sub URL was set':'')?>" value="<? print(($site['subpage_url']=='')?'':$site['subpage_url'])?>">
 							<label for="floatingInput">Subpage URL</label>
 						</div>
 					</div>
