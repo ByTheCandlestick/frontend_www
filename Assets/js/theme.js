@@ -29,16 +29,16 @@ $( document ).ready(function() {
 			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
 			Style = styles.join(",");
 			Script = scripts.join(",");
-			Name = $("name").find("input").val();
-			Title = $("title").find("input").val();
-			Page_url = $("page_url").find("input").val();
-			Subpage_url = $("subpage_url").find("input").val();
-			console.log("style" + Style);
-			console.log("script" + Script);
-			console.log("name" + Name);
-			console.log("title" + Title);
-			console.log("page_url" + Page_url);
-			console.log("subpage_url" + Subpage_url);
+			Name = $("div[name=name]").find("input").val();
+			Title = $("div[name=title]").find("input").val();
+			Page_url = $("div[name=page_url]").find("input").val();
+			Subpage_url = $("div[name=subpage_url]").find("input").val();
+			console.log("style: " + Style);
+			console.log("script: " + Script);
+			console.log("name: " + Name);
+			console.log("title: " + Title);
+			console.log("page_url: " + Page_url);
+			console.log("subpage_url: " + Subpage_url);
 		}
 	};
 	search = {
