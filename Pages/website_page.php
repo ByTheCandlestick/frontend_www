@@ -16,7 +16,19 @@
 			Subpage URL
 		</div>
 		<div class="col-12 col-lg-3">
-			Styles
+			<?
+				$query = DB_Query("SELECT * FROM `misc_styles` WHERE `Active`=1");
+				while($row = mysqli_fetch_array($query)) {
+					print('
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="flexCheckDefault">
+							<label class="form-check-label" for="flexCheckDefault">
+								' . $row['name'] . '
+							</label>
+						</div>
+					');
+				}
+			?>
 		</div>
 		<div class="col-12 col-lg-3">
 			Scripts
