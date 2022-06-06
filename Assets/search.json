@@ -1,16 +1,20 @@
 [
 	{
-		"name": "Products",
-		"desc": "Lists all products",
-		"url": "/Products"
+		"name": "Dashboard",
+		"desc": "A breif overview",
+		"url": "/"
 	}, {
 		"name": "Users",
 		"desc": "Lists all user accounts",
 		"url": "/Users"
 	}, {
-		"name": "Dashboard",
-		"desc": "A breif overview",
-		"url": "/"
+		"name": "Products",
+		"desc": "Lists all products",
+		"url": "/Products"
+	}, {
+		"name": "Tags",
+		"desc": "Lists all tags, categories and collections",
+		"url": "/Tags"
 	}, {
 		"name": "Websites",
 		"desc": "A list of all websites",
