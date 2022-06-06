@@ -17,5 +17,11 @@
 	</div>
 </section>
 <?
+	} else {
+?>
+	<script>
+		window.location = "/";
+	</script>
+<?
 	}
 ?>
