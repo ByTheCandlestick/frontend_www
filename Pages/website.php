@@ -22,7 +22,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `misc_websites`");
+					$query = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `domain_id`=%s", QS));
 					while ($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
