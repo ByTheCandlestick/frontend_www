@@ -4,6 +4,7 @@
 		$site = mysqli_fetch_assoc($query);
 		$styles = explode(',', $site['style_ids']);
 		$scripts = explode(',', $site['script_ids']);
+		print_r($scripts);
 ?>
 <section>
 	<!-- Section Header -->
