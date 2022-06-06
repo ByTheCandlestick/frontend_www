@@ -16,7 +16,12 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
+		<div class="col-lg-3 h-100">
 
+		</div>
+		<div class="col-lg-9 h-100">
+
+		</div>
 	</div>
 </section>
 <?
