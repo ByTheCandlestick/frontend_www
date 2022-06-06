@@ -1,6 +1,7 @@
 <?
 	if(QS_SUBPAGE != "") {
-		$page = mysqli_fetch_row(DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `ID`=%s", QS)));
+		print($sql = sprintf("SELECT * FROM `page_layouts` WHERE `ID`=%s", QS));
+		$page = mysqli_fetch_row(DB_Query($sql));
 ?>
 	<section>
 		<!-- Section Header -->
