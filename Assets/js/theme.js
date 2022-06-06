@@ -11,11 +11,11 @@ $( document ).ready(function() {
 	// -----========== Search ==========----- //
 	$(".search-area input").focusout( function(){
 		if($(".search-suggestions *").not(":hover")) {
-			$(".search-suggestions").hide();
+			search.suggestions.hide();
 		}
 	});
 	$(".search-area input").focusin( function(){
-		$(".search-suggestions").show();
+		search.suggestions.show();
 	});
 	$.get('/Assets/search.json', function(data) {
 		search.jsonData = data;
