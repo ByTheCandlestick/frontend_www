@@ -7,5 +7,17 @@
 		"name": "Users",
 		"desc": "Lists all user accounts",
 		"url": "/Users"
+	}, {
+		"name": "Dashboard",
+		"desc": "A breif overview",
+		"url": "/"
+	}, {
+		"name": "Websites",
+		"desc": "A list of all websites",
+		"url": "/Websites"
+	}, {
+		"name": "Analytics",
+		"desc": "Analytics of all websites and apps",
+		"url": "/Analytics"
 	}
 ]
