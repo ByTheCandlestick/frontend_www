@@ -9,16 +9,16 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<div clas="col-3">
+		<div clas="col-12 col-lg-3">
 			Page URL
 		</div>
-		<div clas="col-3">
+		<div clas="col-12 col-lg-3">
 			Subpage URL
 		</div>
-		<div clas="col-3">
+		<div clas="col-12 col-lg-3">
 			Styles
 		</div>
-		<div clas="col-3">
+		<div clas="col-12 col-lg-3">
 			Scripts
 		</div>
 	</div>
