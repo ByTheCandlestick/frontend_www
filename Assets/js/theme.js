@@ -41,8 +41,8 @@ $( document ).ready(function() {
 			}
 		}
 	}
-	console.log(search.suggestions)
-	console.log(search.suggestions[0])
-	console.log(search.suggestions.responseJSON())
-	console.log(search.suggestions.responseJSON)
+	console.log(search.jsonData)
+	console.log(search.jsonData[0])
+	console.log(search.jsonData.responseJSON())
+	console.log(search.jsonData.responseJSON)
 });
