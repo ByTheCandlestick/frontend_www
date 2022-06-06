@@ -24,11 +24,12 @@ $( document ).ready(function() {
 	website = {
 		save: function() {
 			var styles, scripts = [];
-			var stylesArr = $("div[name=styles]").find("input[type=checkbox]");
-			var scriptsArr = $("div[name=scripts]").find("input[type=checkbox]");
-			stylesArr.forEach(function(style) {
-				styles.push(style.val())
-			})
+			$("div[name=styles]").find("input[type=checkbox]").each(function(elem) {
+				styles.push(elem.val())
+			});
+			$("div[name=scripts]").find("input[type=checkbox]").each(function(elem) {
+				scripts.push(elem.val())
+			});
 			console.log(styles)
 		}
 	};
