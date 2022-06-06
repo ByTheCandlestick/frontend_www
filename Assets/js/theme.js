@@ -25,7 +25,7 @@ $( document ).ready(function() {
 	};
 	search = {
 		suggestions: $(".search-suggestions"),
-		jsonData: $.get('/Assets/search.json', function(data){ alert( "Data Loaded: " + data )}),
+		jsonData: $.get('/Assets/search.json', function(data){ alert( "Data Loaded: " + data.responseJSON )}),
 		process: function(ev) {
 			var key = ev.target.value;
 			search.suggestions.html("");
