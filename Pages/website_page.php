@@ -40,7 +40,7 @@
 			</div>
 			<div class="col-12 col-md-6">
 				<div class="row">
-					<div class="col-12 col-md-6 col-lg-3">
+					<div class="col-12 col-md-6">
 						<?
 							$query = DB_Query("SELECT * FROM `page_styles`");
 							while($row = mysqli_fetch_array($query)) {
@@ -57,7 +57,7 @@
 						?>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3">
+					<div class="col-12 col-md-6">
 						<?
 							$query = DB_Query("SELECT * FROM `page_scripts`");
 							while($row = mysqli_fetch_array($query)) {
