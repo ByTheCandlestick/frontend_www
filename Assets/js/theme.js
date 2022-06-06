@@ -23,7 +23,7 @@ $( document ).ready(function() {
 	// -----========== Nestled functions ==========----- //
 	website = {
 		save: function() {
-			var stylesArr = $("div[name=styles]").children("input[type=checkbox]");
+			var stylesArr = $("div[name=styles]").find("input[type=checkbox]");
 			console.log(stylesArr)
 		}
 	};
