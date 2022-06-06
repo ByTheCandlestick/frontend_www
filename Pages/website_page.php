@@ -9,13 +9,13 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<div class="col-12 col-lg-3">
+		<div class="col-12 col-md-6 col-lg-3">
 			Page URL
 		</div>
-		<div class="col-12 col-lg-3">
+		<div class="col-12 col-md-6 col-lg-3">
 			Subpage URL
 		</div>
-		<div class="col-12 col-lg-3">
+		<div class="col-12 col-md-6 col-lg-3">
 			<?
 				$query = DB_Query("SELECT * FROM `page_styles`");
 				while($row = mysqli_fetch_array($query)) {
@@ -30,7 +30,7 @@
 				}
 			?>
 		</div>
-		<div class="col-12 col-lg-3">
+		<div class="col-12 col-md-6 col-lg-3">
 			<?
 				$query = DB_Query("SELECT * FROM `page_scripts`");
 				while($row = mysqli_fetch_array($query)) {
