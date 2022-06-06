@@ -17,6 +17,9 @@ $( document ).ready(function() {
 	$(".search-area input").focusin( function(){
 		$(".search-suggestions").show();
 	});
+	$.get('/Assets/search.json', function(data) {
+		search.jsonData = data;
+	})
 	// -----========== Nestled functions ==========----- //
 	website = {
 		save: function() {
@@ -25,7 +28,7 @@ $( document ).ready(function() {
 	};
 	search = {
 		suggestions: $(".search-suggestions"),
-		jsonData: $.get('/Assets/search.json', function(data) { return data; }),
+		jsonData: "",
 		process: function(ev) {
 			var key = ev.target.value;
 			search.suggestions.html("");
