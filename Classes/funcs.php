@@ -24,7 +24,7 @@
 		array_shift($columns);
 		foreach($columns as $column) {
 			[$width, $section_string] = explode(';', $column);
-			print("<div style=\"backgroung: blue;\" class=\"col-md-$width\">");
+			print("<div style=\"background: blue;\" class=\"col-md-$width\">");
 				$sections = explode(',', $section_string);
 				foreach($sections as $section) {
 					[$seccode, $secext] = explode(':', $section);
