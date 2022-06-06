@@ -12,6 +12,9 @@
 				<h1>Website Edit</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+				<a href="javascript:alert('TODO: Save website');" class="btn btn-outline-primary">
+					<i class="fa fa-save"></i>
+				</a>
 				<a href="/Oxygen/<?print(QS)?>" class="btn btn-outline-primary">
 					<i class="fa fa-pencil"></i>
 				</a>
