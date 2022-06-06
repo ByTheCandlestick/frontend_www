@@ -31,6 +31,7 @@ $( document ).ready(function() {
 			var styles = scripts = [];
 			$("div[name=styles]").children("input[type=checkbox]:checked").each(function(index, element) { styles.push($(element).val()); });
 			$("div[name=scripts]").children("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
+			console.log($("div[name=styles]").children("input[type=checkbox]:checked"));
 			data = {
 				'api_key': api_key,
 				'style': styles.join(","),
