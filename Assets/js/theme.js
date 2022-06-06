@@ -25,7 +25,7 @@ $( document ).ready(function() {
 	};
 	search = {
 		suggestions: $(".search-suggestions"),
-		jsonData: $.get('/Assets/search.json'),
+		jsonData: $.get('/Assets/search.json', function(data){return "Done";}),
 		process: function(ev) {
 			var key = ev.target.value;
 			search.suggestions.html("");
@@ -41,5 +41,5 @@ $( document ).ready(function() {
 			}
 		}
 	}
-	console.log(search.jsonData.done(function(data){return "Done";}))
+	console.log(search.jsonData)
 });
