@@ -30,13 +30,17 @@ $( document ).ready(function() {
 		suggestions: $(".search-suggestions"),
 		jsonData: null,
 		process: function(ev) {
-			var key = ev.target.value;
-			search.suggestions.html("");
-			
-			search.print(search.jsonData.filter((data)=>{
-				var regex = new RegExp(key, "i");
-				return data.name.match(regex) || data.desc.match(regex) || data.url.match(regex);
-			}));
+			if(ev.key == 'Enter'){
+				alert('Search');
+			} else {
+				var key = ev.target.value;
+				search.suggestions.html("");
+				
+				search.print(search.jsonData.filter((data)=>{
+					var regex = new RegExp(key, "i");
+					return data.name.match(regex) || data.desc.match(regex) || data.url.match(regex);
+				}));
+			}
 		},
 		print: function(Arr) {
 			for(var i=0; i<Arr.length; i++) {
