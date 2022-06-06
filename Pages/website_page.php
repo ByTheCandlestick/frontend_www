@@ -43,7 +43,7 @@
 						</div>
 					</div>
 					<div class="col-12 col-md-4 col-lg-1 offset-md-4 offset-lg-5">
-
+						<a href="/Oxygen/<?print(QS)?>">Open in oxygen</a>
 					</div>
 				</div>
 			</div>
