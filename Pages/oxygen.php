@@ -22,7 +22,7 @@
 			</div>
 			<div class="col-lg-9 h-100">
 				<?
-					print_r($page['section_ids']);
+					printSectionTemplates($page['section_ids']);
 				?>
 			</div>
 		</div>
