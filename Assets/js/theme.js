@@ -24,20 +24,20 @@ $( document ).ready(function() {
 		}
 	};
 	search = {
-		searchSuggestions: $(".search-suggestions"),
+		suggestions: $(".search-suggestions"),
 		jsonData: $.get('/Assets/search.json', function(data) { return data; }),
 		process: function(ev) {
 			var key = ev.target.value;
-			searchSuggestions.html("");
+			search.suggestions.html("");
 			
-			search.print(jsonData.filter((data)=>{
+			search.print(search.jsonData.filter((data)=>{
 				var regex = new RegExp(key, "i");
 				return data.name.match(regex) || data.desc.match(regex) || data.url.match(regex);
 			}));
 		},
 		print: function(Arr) {
 			for(var i=0; i<Arr.length; i++) {
-				searchSuggestions.html(searchSuggestions.html() + "<li><a href='" + Arr[i].url + "'>" + Arr[i].name + " - " + Arr[i].desc + "</a></li>");
+				search.suggestions.html(search.suggestions.html() + "<li><a href='" + Arr[i].url + "'>" + Arr[i].name + " - " + Arr[i].desc + "</a></li>");
 			}
 		}
 	}
