@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<table class="table table-striped table-hover">
-				<thead class="sticky-top" style="background: var(--section);">
+				<thead class="sticky-top" style="background: var(--section); z-index: unset;">
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Name</th>
@@ -43,7 +43,7 @@
 		</div>
 		<div class="col-12 col-md-6">
 			<table class="table table-striped table-hover">
-				<thead class="sticky-top" style="background: var(--section);">
+				<thead class="sticky-top" style="background: var(--section); z-index: unset;">
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Name</th>
@@ -74,7 +74,7 @@
 		</div>
 		<div class="col-12 col-md-6">
 			<table class="table table-striped table-hover">
-				<thead class="sticky-top" style="background: var(--section);">
+				<thead class="sticky-top" style="background: var(--section); z-index: unset;">
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Name</th>
