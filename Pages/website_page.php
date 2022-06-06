@@ -48,9 +48,10 @@
 			<?
 				$query = DB_Query("SELECT * FROM `page_scripts`");
 				while($row = mysqli_fetch_array($query)) {
+					(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
 					print('
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="flexCheckDefault">
+							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="flexCheckDefault"'.$schecked.'>
 							<label class="form-check-label" for="flexCheckDefault">
 								' . $row['name'] . '
 							</label>
