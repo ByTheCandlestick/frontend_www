@@ -48,7 +48,6 @@
 			<?
 				$query = DB_Query("SELECT * FROM `page_scripts`");
 				while($row = mysqli_fetch_array($query)) {
-					print_r();
 					(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
 					print('
 						<div class="form-check">
