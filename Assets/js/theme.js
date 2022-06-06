@@ -24,10 +24,10 @@ $( document ).ready(function() {
 	website = {
 		save: function() {
 			var styles, scripts = [];
-			$("div[name=styles]").find("input[type=checkbox]").each(function(elem) {
+			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(elem) {
 				console.log(elem);
 			});
-			$("div[name=scripts]").find("input[type=checkbox]").each(function(elem) {
+			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(elem) {
 				console.log(elem);
 			});
 			console.log(styles)
