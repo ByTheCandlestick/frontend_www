@@ -12,7 +12,7 @@
 				<h1>Website Edit</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
-				<a href="javascript:website.save();" class="btn btn-outline-primary">
+				<a href="javascript:website.save(<?print(QS)?>);" class="btn btn-outline-primary">
 					<i class="fa fa-save"></i>
 				</a>
 				<a href="/Oxygen/<?print(QS)?>" class="btn btn-outline-primary">

@@ -26,13 +26,14 @@ $( document ).ready(function() {
 	})
 	// -----========== Nestled functions ==========----- //
 	website = {
-		save: function() {
+		save: function(id) {
 			var styles = [];
 			var scripts = [];
 			$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
 			$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
 			data = {
 				'api_key': api_key,
+				'page_id': id,
 				'style': styles.join(","),
 				'script': scripts.join(","),
 				'name': $("div[name=name]").find("input").val(),
