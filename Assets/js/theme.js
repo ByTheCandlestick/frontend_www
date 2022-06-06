@@ -31,7 +31,6 @@ $( document ).ready(function() {
 			var styles = scripts = [];
 			$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, element) { styles.push($(element).val()); });
 			$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
-			console.log($("div[name=styles]").children());
 			data = {
 				'api_key': api_key,
 				'style': styles.join(","),
@@ -48,12 +47,8 @@ $( document ).ready(function() {
 				xhrFields: {
 					withCredentials: true,
 				},
-				success: function(body) {
-					console.log(body)
-				},
-				error: function(body) {
-					console.log(body)
-				}
+				success: function(body) { },
+				error: function(body) { }
 			});
 		}
 	};
