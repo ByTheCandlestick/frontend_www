@@ -32,7 +32,7 @@ $( document ).ready(function() {
 			
 			search.print(search.jsonData.filter((data)=>{
 				var regex = new RegExp(key, "i");
-				console.log(jsonData);
+				console.log(search.jsonData);
 				return data.name.match(regex) || data.desc.match(regex) || data.url.match(regex);
 			}));
 		},
