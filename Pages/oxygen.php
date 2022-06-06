@@ -1,6 +1,6 @@
 <?
 	if(QS_SUBPAGE != "") {
-		$page = mysqli_fetch_row(DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `ID`=%s", QS_SUBPAGE)));
+		$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `ID`=%s", QS_SUBPAGE)));
 ?>
 	<section>
 		<!-- Section Header -->
@@ -22,7 +22,7 @@
 			</div>
 			<div class="col-lg-9 h-100">
 				<?
-					print_r($page);
+					print_r($page['section_ids']);
 				?>
 			</div>
 		</div>
