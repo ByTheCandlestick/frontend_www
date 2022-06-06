@@ -23,7 +23,8 @@ $( document ).ready(function() {
 	// -----========== Nestled functions ==========----- //
 	website = {
 		save: function() {
-			alert("TODO: Save");
+			var stylesArr = $("div[name=styles]").children("input[type=checkbox]");
+			console.log(stylesArr)
 		}
 	};
 	search = {
@@ -39,13 +40,13 @@ $( document ).ready(function() {
 				var key = ev.target.value;
 				search.suggestions.html("");
 				
-				search.print(search.jsonData.filter((data)=>{
+				search.dispaySuggestions(search.jsonData.filter((data)=>{
 					var regex = new RegExp(key, "i");
 					return data.name.match(regex) || data.desc.match(regex) || data.url.match(regex);
 				}));
 			}
 		},
-		print: function(Arr) {
+		dispaySuggestions: function(Arr) {
 			for(var i=0; i<Arr.length; i++) {
 				search.suggestions.html(search.suggestions.html() + "<li><a href='" + Arr[i].url + "'>" + Arr[i].name + " - " + Arr[i].desc + "</a></li>");
 			}
