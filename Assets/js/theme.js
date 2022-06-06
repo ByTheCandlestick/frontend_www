@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+	// -----========== VARIABLES ==========----- //
+	const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(4) + '/v1';
+	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
+	const api_key_data = 'api_key=' + api_key;
 	// -----========== Dark mode toggle ==========----- //
 		var modeSwitch	= $('.mode-switch');
 		var root		= $('html');
@@ -27,18 +31,29 @@ $( document ).ready(function() {
 			var styles = scripts = [];
 			$("div[name=styles]").find("input[type=checkbox]:checked").each(function(index, element) { styles.push($(element).val()); });
 			$("div[name=scripts]").find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
-			Style = styles.join(",");
-			Script = scripts.join(",");
-			Name = $("div[name=name]").find("input").val();
-			Title = $("div[name=title]").find("input").val();
-			Page_url = $("div[name=page_url]").find("input").val();
-			Subpage_url = $("div[name=subpage_url]").find("input").val();
-			console.log("style: " + Style);
-			console.log("script: " + Script);
-			console.log("name: " + Name);
-			console.log("title: " + Title);
-			console.log("page_url: " + Page_url);
-			console.log("subpage_url: " + Subpage_url);
+			data = {
+				'api_key': api_key,
+				'style': styles.join(","),
+				'script': scripts.join(","),
+				'name': $("div[name=name]").find("input").val(),
+				'title': $("div[name=title]").find("input").val(),
+				'page_url': $("div[name=page_url]").find("input").val(),
+				'subpage_url': $("div[name=subpage_url]").find("input").val(),
+			}
+			$.ajax({
+				url: api_url + '/Website/',
+				data: data,
+				type: 'POST',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success: function(body) {
+					console.log(body)
+				},
+				error: function(body) {
+					console.log(body)
+				}
+			});
 		}
 	};
 	search = {
