@@ -6,63 +6,67 @@
 		$scripts = explode(',', $site['script_ids']);
 		print_r($scripts);
 ?>
-<section>
-	<!-- Section Header -->
-	<div class="row">
-		<div class="col-12 col-md-6 col-lg-8">
-			<h1>Website Edit</h1>
+	<section>
+		<!-- Section Header -->
+		<div class="row">
+			<div class="col-12 col-md-6 col-lg-8">
+				<h1>Website Edit</h1>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 text-md-end"></div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-4 text-md-end"></div>
-	</div>
-	<hr>
-	<!-- Section Body -->
-	<div class="row">
-		<div class="col-12 col-md-6 col-lg-3">
-			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['page_url'])?>">
-				<label for="floatingInput">Page URL</label>
+		<hr>
+		<!-- Section Body -->
+		<div class="row">
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['page_url'])?>">
+					<label for="floatingInput">Page URL</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['subpage_url'])?>">
+					<label for="floatingInput">Subpage URL</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<?
+					$query = DB_Query("SELECT * FROM `page_styles`");
+					while($row = mysqli_fetch_array($query)) {
+						print('Unable to find ');
+						print($row['id']);
+						print(' in: ');
+						print_r($scripts);
+						(in_array($row['id'], $styles))?$checked=" checked":$checked="";
+						print('
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes-'.$row['id'].'"'.$checked.'>
+								<label class="form-check-label" for="StyleCheckboxes-'.$row['id'].'">
+									' . $row['name'] . '
+								</label>
+							</div>
+						');
+					}
+				?>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<?
+					$query = DB_Query("SELECT * FROM `page_scripts`");
+					while($row = mysqli_fetch_array($query)) {
+						(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
+						print('
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'"'.$schecked.'>
+								<label class="form-check-label" for="ScriptCheckboxes-'.$row['id'].'">
+									' . $row['name'] . '
+								</label>
+							</div>
+						');
+					}
+				?>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3">
-			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($site['subpage_url'])?>">
-				<label for="floatingInput">Subpage URL</label>
-			</div>
-		</div>
-		<div class="col-12 col-md-6 col-lg-3">
-			<?
-				$query = DB_Query("SELECT * FROM `page_styles`");
-				while($row = mysqli_fetch_array($query)) {
-					(in_array($row['id'], $styles))?$checked=" checked":$checked="";
-					print('
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes-'.$row['id'].'"'.$checked.'>
-							<label class="form-check-label" for="StyleCheckboxes-'.$row['id'].'">
-								' . $row['name'] . '
-							</label>
-						</div>
-					');
-				}
-			?>
-		</div>
-		<div class="col-12 col-md-6 col-lg-3">
-			<?
-				$query = DB_Query("SELECT * FROM `page_scripts`");
-				while($row = mysqli_fetch_array($query)) {
-					(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
-					print('
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'"'.$schecked.'>
-							<label class="form-check-label" for="ScriptCheckboxes-'.$row['id'].'">
-								' . $row['name'] . '
-							</label>
-						</div>
-					');
-				}
-			?>
-		</div>
-	</div>
-</section>
+	</section>
 <?
 	} else {
 ?>
