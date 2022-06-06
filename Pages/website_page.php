@@ -11,7 +11,9 @@
 			<div class="col-12 col-md-6 col-lg-8">
 				<h1>Website Edit</h1>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4 text-md-end"></div>
+			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+				<a href="/Oxygen/<?print(QS)?>" class="btn btn-outline-primary w-100 h-100">Open in oxygen</a>
+			</div>
 		</div>
 		<hr>
 		<!-- Section Body -->
@@ -41,9 +43,6 @@
 							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['subpage_url']=='')?'No sub URL was set':'')?>" value="<? print(($site['subpage_url']=='')?'':$site['subpage_url'])?>">
 							<label for="floatingInput">Subpage URL</label>
 						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 offset-md-3 offset-lg-4">
-						<a href="/Oxygen/<?print(QS)?>" class="btn btn-outline-primary w-100 h-100">Open in oxygen</a>
 					</div>
 				</div>
 			</div>
