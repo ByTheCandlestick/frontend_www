@@ -31,7 +31,10 @@ $( document ).ready(function() {
 		jsonData: null,
 		process: function(ev) {
 			if(ev.key == 'Enter'){
-				window.location = $(search.suggestions.children()[0]).find("a").attr("href");
+				var location = $(search.suggestions.children()[0]).find("a").attr("href");
+				if(location !== undefined) {
+					window.location = location;
+				}
 			} else {
 				var key = ev.target.value;
 				search.suggestions.html("");
