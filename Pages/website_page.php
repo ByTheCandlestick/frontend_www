@@ -4,7 +4,6 @@
 		$site = mysqli_fetch_assoc($query);
 		$styles = explode(',', $site['style_ids']);
 		$scripts = explode(',', $site['script_ids']);
-		print_r($scripts);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -33,10 +32,6 @@
 				<?
 					$query = DB_Query("SELECT * FROM `page_styles`");
 					while($row = mysqli_fetch_array($query)) {
-						print('Unable to find ');
-						print($row['id']);
-						print(' in: ');
-						print_r($scripts);
 						(in_array($row['id'], $styles))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
@@ -53,6 +48,10 @@
 				<?
 					$query = DB_Query("SELECT * FROM `page_scripts`");
 					while($row = mysqli_fetch_array($query)) {
+						print('Searching for ');
+						print($row['id']);
+						print(' in: ');
+						print_r($scripts);
 						(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
