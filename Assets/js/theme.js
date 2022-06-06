@@ -23,6 +23,11 @@ $( document ).ready(function() {
 		$(".search-suggestions").show();
 	});
 });
+website = {
+	save: function() {
+		alert("TODO: Save");
+	}
+}
 
 function search(ev) {
 	var key = ev.target.value;
