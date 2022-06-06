@@ -26,10 +26,9 @@ $( document ).ready(function() {
 			var styles, scripts = [];
 			$("div[name=styles]").find("input[type=checkbox]").each(function(elem) {
 				console.log(elem);
-				styles.push(elem.val());
 			});
 			$("div[name=scripts]").find("input[type=checkbox]").each(function(elem) {
-				scripts.push(elem.val())
+				console.log(elem);
 			});
 			console.log(styles)
 		}
