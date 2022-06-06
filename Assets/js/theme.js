@@ -27,9 +27,8 @@ $( document ).ready(function() {
 	// -----========== Nestled functions ==========----- //
 	website = {
 		save: function() {
-			var Style = Script = Name = Title = Page_url = Subpage_url = "";
-			var styles = scripts = [];
-			$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, element) { styles.push($(element).val()); });
+			var styles,scripts;
+			$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
 			$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
 			console.log($("div[name=styles]").children().find("input[type=checkbox]:checked"));
 			data = {
