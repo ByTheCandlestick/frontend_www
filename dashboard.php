@@ -90,6 +90,9 @@
 				<div class="app-content">
 					<!-- Sidebar -->
 					<div class="app-sidebar">
+						<a href="javascript:history.go(-1)" class="app-sidebar-link">
+							<i class="fa fa-arrow-left"></i>
+						</a>
 						<?
 							$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
 							foreach($items as $item) {
