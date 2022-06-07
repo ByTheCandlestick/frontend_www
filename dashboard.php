@@ -68,10 +68,10 @@
 						<p class="app-name">The Candlestick</p>
 					</div>
 					<!-- Search -->
+					<a href="javascript:history.back()" class="app-sidebar-link app-back-btn">
+						<i class="fa fa-arrow-left"></i>
+					</a>
 					<div class="search-wrapper">
-						<a href="javascript:history.back()" class="app-sidebar-link app-back-btn">
-							<i class="fa fa-arrow-left"></i>
-						</a>
 						<div class="search-area">
 							<input type="text" onkeyup="search.process(event)" placeholder="Search">
 						</div>
