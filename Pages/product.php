@@ -274,15 +274,9 @@
 				</div>
 			</div>
 			<div class="col-12 col-md-3 col-lg-4" name="description_long">
-				<script>
-					var simplemde = new SimpleMDE({ element: $("input")[0] });
-				</script>
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 			</div>
 			<div class="col-12 col-md-3 col-lg-3" name="description_short">
-				<script>
-					var simplemde = new SimpleMDE({ element: $("div[name=description_short] input")[0] });
-				</script>
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 			</div>
 			<div class="col-12 col-md-3 col-lg-2" name="slug">
@@ -293,6 +287,10 @@
 			</div>
 		</div>
 	</section>
+	<script>
+		var simplemde = new SimpleMDE({ element: $("div[name=description_long] input")[0] });
+		var simplemde = new SimpleMDE({ element: $("div[name=description_short] input")[0] });
+	</script>
 <?
 	} else {
 ?>
