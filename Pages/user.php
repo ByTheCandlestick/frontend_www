@@ -2,7 +2,6 @@
 	$query = DB_Query(sprintf("SELECT * FROM `Users` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$user = mysqli_fetch_assoc($query);
-		print_r($user);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -24,31 +23,31 @@
 		<div class="row" sku="<?print($user['ID'])?>">
 			<div class="col-12 col-md-6 col-lg-2">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Username'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Username'])?>">
 					<label for="floatingInput">Username</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['First_name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['First_name'])?>">
 					<label for="floatingInput">First name</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Last_name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Last_name'])?>">
 					<label for="floatingInput">Last name</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Email'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Email'])?>">
 					<label for="floatingInput">Email</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Phone'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Phone'])?>">
 					<label for="floatingInput">Phone no.</label>
 				</div>
 			</div>
