@@ -115,10 +115,10 @@ $( document ).ready(async function() {
 					withCredentials: true,
 				},
 				success: function(body) {
-					alert.simple("tick", "Successfully saved the website", "success");
+					alert.simple("circle-check", "Successfully saved the website", "success");
 				},
 				error: function(body) {
-					alert.simple("cross", "An error has occurred. Please try again later", "error");
+					alert.simple("circle-x", "An error has occurred. Please try again later", "error");
 				}
 			});
 		},
@@ -148,8 +148,12 @@ $( document ).ready(async function() {
 				xhrFields: {
 					withCredentials: true,
 				},
-				success: function(body) { },
-				error: function(body) { }
+				success: function(body) {
+					alert.simple("circle-check", "Successfully saved the user", "success");
+				},
+				error: function(body) {
+					alert.simple("circle-x", "An error has occurred. Please try again later", "error");
+				}
 			});
 		},
 	}
@@ -197,8 +201,12 @@ $( document ).ready(async function() {
 				xhrFields: {
 					withCredentials: true,
 				},
-				success: function(body) { },
-				error: function(body) { }
+				success: function(body) {
+					alert.simple("circle-check", "Successfully saved the product", "success");
+				},
+				error: function(body) {
+					alert.simple("circle-x", "An error has occurred. Please try again later", "error");
+				}
 			});
 		},
 	}
