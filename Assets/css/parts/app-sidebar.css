@@ -21,8 +21,8 @@
 	text-decoration: none;
 }
 .app-back-btn.disabled {
-    background: var(--link-color-hover);
-    color: var(--link-color-active);
+    background: var(--link-color-disabled-bg);
+    color: var(--link-color-disabled);
 }
 .app-sidebar-link:hover {
 	background-color: var(--link-color-hover);
