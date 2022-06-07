@@ -177,7 +177,7 @@
 						<?
 							$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Wickstand_ID'])? $selected=' selected' : $selected='';
+								($row['ID'] == $prod['WickStand_ID'])? $selected=' selected' : $selected='';
 								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
 							}
 						?>
@@ -252,8 +252,8 @@
 						<?
 							$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Shipping_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+								($row['id'] == $prod['Shipping_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['id'].'"'.$selected.'>'.$row['Name'].'</option>');
 							}
 						?>
 					</select>
