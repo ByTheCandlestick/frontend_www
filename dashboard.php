@@ -96,13 +96,19 @@
 						<?
 							$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
 							foreach($items as $item) {
-								($item['Page_url'] == QS_PAGE)? $active = ' active' : $active = '';
+								if($item['Page_url'] == QS_PAGE) {
+									$link = '#'
+									$active = ' active';
+								} else {
+									$link = $item['URL'];
+									$active = '';
+								}
 								print(sprintf('
 									<a href="%s" class="app-sidebar-link%s">
 										<i class="fa fa-%s"></i>
 									</a>
 									',
-									$item['URL'],
+									$link,
 									$active,
 									$item['Icon']
 								));
