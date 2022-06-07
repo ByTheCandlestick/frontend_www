@@ -112,7 +112,7 @@ $( document ).ready(function() {
 	}
 	// -----========== Dark mode toggle ==========----- //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
-		modeSwitch.click(function () { mode.toggle() });
+		mode.modeSwitch.click(function () { mode.toggle() });
 	// -----========== PRELOADER ==========----- //
 	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
