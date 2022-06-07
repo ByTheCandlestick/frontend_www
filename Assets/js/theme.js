@@ -113,18 +113,21 @@ $( document ).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
 		mode.modeSwitch.click(function () { mode.toggle() });
-	// -----========== PRELOADER ==========----- //
-	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
-	$(".search-area input").focusout( function(){
-		if(search.suggestions.filter(":hover").length === 0) {
-			search.suggestions.hide();
-		}
-	});
-	$(".search-area input").focusin( function(){
-		search.suggestions.show();
-	});
-	$.get('/Assets/search.json', function(data){
-		search.jsonData = data
-	})
+		$(".search-area input").focusout( function(){
+			if(search.suggestions.filter(":hover").length === 0) {
+				search.suggestions.hide();
+			}
+		});
+		$(".search-area input").focusin( function(){
+			search.suggestions.show();
+		});
+		$.get('/Assets/search.json', function(data){
+			search.jsonData = data
+		})
+
+
+
+	// -----========== PRELOADER ==========----- //
+		$('.app-preloader').fadeOut()
 });
