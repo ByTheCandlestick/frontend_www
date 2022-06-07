@@ -13,6 +13,7 @@
     bottom: 30px;
     font-size: 17px;
     white-space: nowrap;
+	overflow: hidden;
 }
 .toast #img{
 	width: 50px;
