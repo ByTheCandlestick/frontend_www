@@ -67,12 +67,12 @@
 				<div class="form-floating mb-3">
 					<?($prod['Discontinued']==1)?$checked=" checked":$checked=""?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexChecd"$checked>
+						<input class="form-check-input" type="checkbox" value="" id="flexChecd"<?print($checked)?>>
 						<label class="form-check-label" for="flexCheck"> Discontinued? </label>
 					</div>
 					<?($prod['Active']==1)?$checked=" checked":$checked=""?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheck"$checked>
+						<input class="form-check-input" type="checkbox" value="" id="flexCheck"<?print($checked)?>>
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
 				</div>
