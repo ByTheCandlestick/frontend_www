@@ -32,7 +32,7 @@
 									<td>'.$row['Active'].'</td>
 									<td>
 										<a href="/Product/Category/'.$row['ID'].'">
-											<i class="fa fa-ellipsis"></i>
+											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
 								</tr>
@@ -64,7 +64,7 @@
 									<td>'.$row['Active'].'</td>
 									<td>
 										<a href="/Product/Collection/'.$row['ID'].'">
-											<i class="fa fa-ellipsis"></i>
+											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
 								</tr>
@@ -97,7 +97,7 @@
 									<td>'.$row['Active'].'</td>
 									<td>
 										<a href="/User/View/'.$row['ID'].'">
-											<i class="fa fa-ellipsis"></i>
+											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
 								</tr>

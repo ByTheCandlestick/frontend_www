@@ -43,7 +43,7 @@
 								<td>'.$row['Slug'].'</td>
 								<td>
 									<a href="/Product/View/'.$row['SKU'].'">
-										<i class="fa fa-ellipsis"></i>
+										<i class="fa fa-pencil"></i>
 									</a>
 								</td>
 							</tr>

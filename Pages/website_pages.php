@@ -33,7 +33,7 @@
 								<td>'.$row['page_title'].'</td>
 								<td>
 									<a href="/Website/Page/'.$row['ID'].'">
-										<i class="fa fa-ellipsis"></i>
+										<i class="fa fa-pencil"></i>
 									</a>
 								</td>
 							</tr>
