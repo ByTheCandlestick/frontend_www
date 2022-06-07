@@ -111,9 +111,7 @@ $( document ).ready(async function() {
 		}
 	}
 	funcs = {
-		sleep: function(ms) {
-			return new Promise(resolve => setTimeout(resolve, ms));
-		}
+		
 	}
 	// -----========== Dark mode toggle ==========----- //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
@@ -134,6 +132,5 @@ $( document ).ready(async function() {
 
 
 	// -----========== PRELOADER ==========----- //
-		await funcs.sleep(100)
 		$('.app-preloader').fadeOut()
 });
