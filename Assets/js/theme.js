@@ -114,20 +114,18 @@ $( document ).ready(async function() {
 		save: function(uid) {
 			data = {
 				'api_key': api_key,
-				'UID': uid,
 				'uname': $("div[name=username]").find("input").val(),
 				'fname': $("div[name=firstname]").find("input").val(),
 				'lname': $("div[name=lastname]").find("input").val(),
 				'email': $("div[name=email]").find("input").val(),
 				'phone': $("div[name=phone]").find("input").val(),
-				
-				'fname': $("div[name=misc]").find("input[name=reset_pass]:checked").val(),
-				'lname': $("div[name=misc]").find("input[name=disable_analytics]:checked").val(),
-				'email': $("div[name=misc]").find("input[name=email_active]:checked").val(),
-				'phone': $("div[name=misc]").find("input[name=user_active]:checked").val(),
+				'r_pass': $("div[name=misc]").find("input[name=reset_pass]:checked").val(),
+				'd_analytics': $("div[name=misc]").find("input[name=disable_analytics]:checked").val(),
+				'e_active': $("div[name=misc]").find("input[name=email_active]:checked").val(),
+				'u_active': $("div[name=misc]").find("input[name=user_active]:checked").val(),
 			}
 			$.ajax({
-				url: api_url + '/Website/',
+				url: api_url + '/Users/' + uid + '/',
 				data: data,
 				type: 'POST',
 				xhrFields: {
