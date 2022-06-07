@@ -81,10 +81,7 @@
 								<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
 							</svg>
 						</button>
-						<button class="profile-btn">
-							<img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-							<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
-						</button>
+						<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
 					</div>
 				</div>
 				<div class="app-content">
