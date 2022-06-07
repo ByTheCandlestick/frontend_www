@@ -273,30 +273,6 @@
 					<label for="floatingInput">Made by</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="qty_on_hand">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyOnHand'])?>">
-					<label for="floatingInput">QTY On Hand</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="qty_available">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyAvailable'])?>">
-					<label for="floatingInput">QTY Available</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="qty_to_be_shipped">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyToBeShipped'])?>">
-					<label for="floatingInput">QTY To Be Shipped</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="qty_shipped">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyShipped'])?>">
-					<label for="floatingInput">QTY Shipped</label>
-				</div>
-			</div>
 			<div class="col-12 col-md-3 col-lg-4" name="description_long">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
