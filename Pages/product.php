@@ -279,7 +279,7 @@
 					<label for="floatingInput">Slug</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-4" name="description_long">
+			<div class="col-12 col-md-3 col-lg-4 offset-lg-1" name="description_long">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 			</div>
 			<div class="col-12 col-md-3 col-lg-3" name="description_short">
