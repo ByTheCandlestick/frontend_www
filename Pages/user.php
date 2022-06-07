@@ -68,7 +68,7 @@
 						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" <?print($checked)?>>
 						<label class="form-check-label" for="flexCheckDisabled"> Email activated? </label>
 					</div>
-					<? ($user['active']==1)?$checked="checked":$checked=""; ?>
+					<? ($user['Active']==1)?$checked="checked":$checked=""; ?>
 					<div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" <?print($checked)?>>
 						<label class="form-check-label" for="flexCheckDisabled"> User active? </label>
