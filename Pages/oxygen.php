@@ -31,6 +31,7 @@
 						background: green;
 						border-radius: 15px;
 						margin: 10px;
+						padding: 10px;
 					}
 				</style>
 				<?
