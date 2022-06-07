@@ -45,6 +45,9 @@ $( document ).ready(async function() {
 			setTimeout(function(){
 				$(".alerts").find("#toast-"+alerts.count).removeClass("show");
 			}, 5000);
+			setTimeout(function(){
+				$(".alerts").find("#toast-"+alerts.count).remove();
+			}, 5000);
 		},
 
 	}
