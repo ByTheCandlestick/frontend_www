@@ -1,13 +1,13 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `Users` WHERE `ID`=%s", QS));
-	if(mysqli_num_rows($query) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Users` WHERE `ID`=%s", QS))) > 0) {
 		$user = mysqli_fetch_assoc($query);
+		$permissions = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s", QS)));
 ?>
 	<section>
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
-				<h1>User info</h1>
+				<h1>User permissions</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 				<a href="/User/Permissions/<?print(QS)?>" class="btn btn-outline-primary">
