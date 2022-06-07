@@ -13,8 +13,9 @@
 		}
 		return mysqli_query($conn, $sql);
 	}
-	/**
+	/** printSectionTemplates
 	 * 
+	 * @param string $string
 	 */
 	function printSectionTemplates(string $string) {
 		global $userdata, $info, $user_ok, $conn;
