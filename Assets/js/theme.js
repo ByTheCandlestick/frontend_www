@@ -47,13 +47,13 @@ $( document ).ready(async function() {
 				}, stay);
 			});
 		},
-		additional: function() {
+		additional: function(title, content, additional, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
 			$('\
-				<div class="alert alert-success" role="alert"> \
-					<h4 class="alert-heading">Well done!</h4>\
-					<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>\
+				<div class="alert alert-'+colour+'" role="alert"> \
+					<h4 class="alert-heading">'+title+'</h4>\
+					<p>'+content+'</p>\
 					<hr>\
-					<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>\
+					<p class="mb-0">'+additional+'</p>\
 				</div>\
 			').hide().appendTo(".alerts").fadeIn(fadeIn, function() {
 				setTimeout(function(){
