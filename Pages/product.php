@@ -65,14 +65,12 @@
 			</div>
 			<div class="col-12 col-md-3 col-lg-2">
 				<div class="form-floating mb-3">
-					<?($prod['Discontinued']==1)?$checked=" checked":$checked=""?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexChecd"<?print($checked)?>>
+						<input class="form-check-input" type="checkbox" value="" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Discontinued? </label>
 					</div>
-					<?($prod['Active']==1)?$checked=" checked":$checked=""?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheck"<?print($checked)?>>
+						<input class="form-check-input" type="checkbox" value="" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
 				</div>
@@ -117,11 +115,11 @@
 			<div class="col-12 col-md-2 col-lg-2">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheck">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Discounted? </label>
 					</div>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheck">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
 					</div>
 				</div>
