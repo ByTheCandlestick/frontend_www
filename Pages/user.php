@@ -20,8 +20,58 @@
 		</div>
 		<hr>
 		<!-- Section Body -->
-		<div class="row">
+		<div class="row" sku="<?print($user['ID'])?>">
+			<div class="col-12 col-md-6 col-lg-2">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Username'])?>">
+					<label for="floatingInput">Username</label>
+				</div>
+			</div>
 			
+			<div class="col-12 col-md-6 col-lg-2">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Username'])?>">
+					<label for="floatingInput">Email</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Username'])?>">
+					<label for="floatingInput">First name</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Username'])?>">
+					<label for="floatingInput">Last name</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Username'])?>">
+					<label for="floatingInput">Phone no.</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-3 col-lg-2">
+				<div class="form-floating mb-3">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+						<label class="form-check-label" for="flexCheckDisabled"> Reset password? </label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled checked >
+						<label class="form-check-label" for="flexCheckDisabled"> Disable analytics? </label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+						<label class="form-check-label" for="flexCheckDisabled"> User active? </label>
+					</div>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled checked >
+						<label class="form-check-label" for="flexCheckDisabled"> Email activated? </label>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 <?
