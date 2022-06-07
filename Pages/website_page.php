@@ -25,7 +25,7 @@
 		<div class="row">
 			<div class="col-12 col-lg-6">
 				<div class="row">
-					<h5>Info</h5>
+					<h5>Site info</h5>
 					<div class="col-12" name="name">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_name']=='')?'No name was set':'')?>" value="<? print(($site['page_name']=='')?'':$site['page_name'])?>">
