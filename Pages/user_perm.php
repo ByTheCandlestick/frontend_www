@@ -18,24 +18,22 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			<div class="">
-				<?
-					$query = DB_Query("DESCRIBE `Users_permissions`");
-					while($col = mysqli_fetch_array($query)[0]) {
-						if($col != "UID") {
-							($permissions[$col] == 1)? $checked = " checked" : $checked = "";
-							print('
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="'.$col.'" id="flexCheckDefault"'.$checked.'>
-									<label class="form-check-label" for="flexCheckDefault">
-										'.$col.'
-									</label>
-								</div>
-							');
-						}
+			<?
+				$query = DB_Query("DESCRIBE `Users_permissions`");
+				while($col = mysqli_fetch_array($query)[0]) {
+					if($col != "UID") {
+						($permissions[$col] == 1)? $checked = " checked" : $checked = "";
+						print('
+							<div class="form-check col-12 col-md-4 col-lg-2">
+								<input class="form-check-input" type="checkbox" value="'.$col.'" id="flexCheckDefault"'.$checked.'>
+								<label class="form-check-label" for="flexCheckDefault">
+									'.$col.'
+								</label>
+							</div>
+						');
 					}
-				?>
-			</div>
+				}
+			?>
 		</div>
 	</section>
 <?
