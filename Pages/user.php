@@ -2,6 +2,7 @@
 	$query = DB_Query(sprintf("SELECT * FROM `Users` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$user = mysqli_fetch_assoc($query);
+		print_r($user);
 ?>
 	<section>
 		<!-- Section Header -->
