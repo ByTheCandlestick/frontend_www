@@ -55,7 +55,7 @@
 				<div class="row">
 					<div class="col-12 col-md-6" name="styles">
 						<?
-							$query = DB_Query("SELECT * FROM `page_styles`");
+							$query = DB_Query("SELECT * FROM `page_styles` ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								(in_array($row['id'], $styles))?$checked=" checked":$checked="";
 								print('
