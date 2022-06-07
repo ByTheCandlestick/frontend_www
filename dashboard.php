@@ -66,9 +66,9 @@
 							<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 						</span>
 						<p class="app-name">The Candlestick</p>
-					<a href="javascript:history.back()" class="app-sidebar-link app-back-btn">
-						<i class="fa fa-arrow-left"></i> Back
-					</a>
+						<a href="javascript:history.back()" class="app-sidebar-link app-back-btn">
+							<i class="fa fa-arrow-left"></i>
+						</a>
 					</div>
 					<!-- Search -->
 					<div class="search-wrapper">
