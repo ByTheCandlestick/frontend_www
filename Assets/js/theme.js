@@ -118,7 +118,7 @@ $( document ).ready(async function() {
 					alert.simple("Successfully saved the website", "success");
 				},
 				error: function(body) {
-					alert.simple("An error has occurred. Please try again later", "error");
+					alert.simple("An error has occurred. Please try again later", "danger");
 				}
 			});
 		},
@@ -152,7 +152,7 @@ $( document ).ready(async function() {
 					alert.simple("Successfully saved the user", "success");
 				},
 				error: function(body) {
-					alert.simple("An error has occurred. Please try again later", "error");
+					alert.simple("An error has occurred. Please try again later", "danger");
 				}
 			});
 		},
@@ -205,7 +205,7 @@ $( document ).ready(async function() {
 					alert.simple("Successfully saved the product", "success");
 				},
 				error: function(body) {
-					alert.simple("An error has occurred. Please try again later", "error");
+					alert.simple("An error has occurred. Please try again later", "danger");
 				}
 			});
 		},
