@@ -54,6 +54,7 @@
 			<div class="col-12 col-md-6">
 				<div class="row">
 					<div class="col-12 col-md-6" name="styles">
+						<h5>Styles</h5>
 						<?
 							$query = DB_Query("SELECT * FROM `page_styles` ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
@@ -70,6 +71,7 @@
 						?>
 					</div>
 					<div class="col-12 col-md-6" name="scripts">
+						<h5>Scripts</h5>
 						<?
 							$query = DB_Query("SELECT * FROM `page_scripts` ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
