@@ -134,9 +134,7 @@ $( document ).ready(async function() {
 		}
 		$(".app-back-btn").click( function(){
 			if(!$(this).hasClass('disabled')) {
-				alert('null')
-			} else {
-				alert('go back')
+				history.back();
 			}
 		});
 	// -----========== PRELOADER ==========----- //
