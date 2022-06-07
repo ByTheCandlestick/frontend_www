@@ -88,7 +88,7 @@ $( document ).ready(function() {
 	}
 	// -----========== Dark mode toggle ==========----- //
 		if(cookie.exists('cs_adm')) {
-			root.addClass(cookie.read('cs_adm'));
+			$(root).addClass(cookie.read('cs_adm'));
 		}
 		var modeSwitch	= $('.mode-switch');
 		var root		= $('html');
