@@ -134,6 +134,6 @@ $( document ).ready(function() {
 
 
 	// -----========== PRELOADER ==========----- //
-		await funcs.sleep(100)
+		await funcs.sleep(10)
 		$('.app-preloader').fadeOut()
 });
