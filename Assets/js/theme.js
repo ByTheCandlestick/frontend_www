@@ -130,7 +130,7 @@ $( document ).ready(async function() {
 		})
 	// -----========== BACK BTN ==========----- //
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0) {
-			$('.sidebar-back-btn').hide()
+			$('.app-back-btn').hide()
 		}
 		console.log(window.history);
 	// -----========== PRELOADER ==========----- //

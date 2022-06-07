@@ -69,6 +69,9 @@
 					</div>
 					<!-- Search -->
 					<div class="search-wrapper">
+						<a href="javascript:history.back()" class="app-sidebar-link app-back-btn">
+							<i class="fa fa-arrow-left"></i>
+						</a>
 						<div class="search-area">
 							<input type="text" onkeyup="search.process(event)" placeholder="Search">
 						</div>
@@ -90,9 +93,6 @@
 				<div class="app-content">
 					<!-- Sidebar -->
 					<div class="app-sidebar">
-						<a href="javascript:history.back()" class="app-sidebar-link sidebar-back-btn">
-							<i class="fa fa-arrow-left"></i>
-						</a>
 						<?
 							$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
 							foreach($items as $item) {
