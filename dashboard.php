@@ -97,7 +97,7 @@
 							$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
 							foreach($items as $item) {
 								if($item['Page_url'] == QS_PAGE) {
-									$link = '#'
+									$link = '#';
 									$active = ' active';
 								} else {
 									$link = $item['URL'];
