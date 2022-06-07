@@ -130,7 +130,7 @@ $( document ).ready(async function() {
 		})
 	// -----========== BACK BTN ==========----- //
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0) {
-			$('.app-back-btn').addCalss('disabled')
+			$('.app-back-btn').addClass('disabled')
 		}
 		$(".app-back-btn").click( function(){
 			if($(this).hasClass('disabled')) {
