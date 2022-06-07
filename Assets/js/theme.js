@@ -3,35 +3,6 @@ $( document ).ready(function() {
 	const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	const api_key_data = 'api_key=' + api_key;
-	// -----========== Dark mode toggle ==========----- //
-		if(cookie.exists('cs_adm')) {
-			root.addClass(cookie.read('cs_adm'));
-		}
-		var modeSwitch	= $('.mode-switch');
-		var root		= $('html');
-		modeSwitch.click(function () {
-			if(cookie.read('cs_adm') == 'dark') {
-				cookie.update('cs_adm', 'light')
-			} else {
-				cookie.update('cs_adm', 'dark')
-			}
-			root.toggleClass('dark');
-			modeSwitch.toggleClass('active');
-		});
-	// -----========== PRELOADER ==========----- //
-	$('.app-preloader').fadeOut()
-	// -----========== Search ==========----- //
-	$(".search-area input").focusout( function(){
-		if(search.suggestions.filter(":hover").length === 0) {
-			search.suggestions.hide();
-		}
-	});
-	$(".search-area input").focusin( function(){
-		search.suggestions.show();
-	});
-	$.get('/Assets/search.json', function(data){
-		search.jsonData = data
-	})
 	// -----========== Nestled functions ==========----- //
 	cookie = {
 		create: function(name, value, expDays, path = '/') {
@@ -115,4 +86,33 @@ $( document ).ready(function() {
 			}
 		}
 	}
+	// -----========== Dark mode toggle ==========----- //
+		if(cookie.exists('cs_adm')) {
+			root.addClass(cookie.read('cs_adm'));
+		}
+		var modeSwitch	= $('.mode-switch');
+		var root		= $('html');
+		modeSwitch.click(function () {
+			if(cookie.read('cs_adm') == 'dark') {
+				cookie.update('cs_adm', 'light')
+			} else {
+				cookie.update('cs_adm', 'dark')
+			}
+			root.toggleClass('dark');
+			modeSwitch.toggleClass('active');
+		});
+	// -----========== PRELOADER ==========----- //
+	$('.app-preloader').fadeOut()
+	// -----========== Search ==========----- //
+	$(".search-area input").focusout( function(){
+		if(search.suggestions.filter(":hover").length === 0) {
+			search.suggestions.hide();
+		}
+	});
+	$(".search-area input").focusin( function(){
+		search.suggestions.show();
+	});
+	$.get('/Assets/search.json', function(data){
+		search.jsonData = data
+	})
 });
