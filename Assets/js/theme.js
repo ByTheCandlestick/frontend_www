@@ -133,7 +133,7 @@ $( document ).ready(async function() {
 			$('.app-back-btn').addClass('disabled')
 		}
 		$(".app-back-btn").click( function(){
-			if($(this).hasClass('disabled')) {
+			if(!$(this).hasClass('disabled')) {
 				alert('null')
 			} else {
 				alert('go back')
