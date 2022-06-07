@@ -44,6 +44,7 @@ $( document ).ready(async function() {
 			setTimeout(function(){
 				$(".alerts").find("#toast-"+alerts.count).removeClass("show");
 				$(".alerts").find("#toast-"+alerts.count).remove();
+				alerts.count--;
 			}, 5000);
 		},
 
