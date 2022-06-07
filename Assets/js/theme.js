@@ -115,10 +115,10 @@ $( document ).ready(async function() {
 					withCredentials: true,
 				},
 				success: function(body) {
-					alert.simple("circle-check", "Successfully saved the website", "success");
+					alert.simple("Successfully saved the website", "success");
 				},
 				error: function(body) {
-					alert.simple("circle-x", "An error has occurred. Please try again later", "error");
+					alert.simple("An error has occurred. Please try again later", "error");
 				}
 			});
 		},
@@ -149,10 +149,10 @@ $( document ).ready(async function() {
 					withCredentials: true,
 				},
 				success: function(body) {
-					alert.simple("circle-check", "Successfully saved the user", "success");
+					alert.simple("Successfully saved the user", "success");
 				},
 				error: function(body) {
-					alert.simple("circle-x", "An error has occurred. Please try again later", "error");
+					alert.simple("An error has occurred. Please try again later", "error");
 				}
 			});
 		},
@@ -202,10 +202,10 @@ $( document ).ready(async function() {
 					withCredentials: true,
 				},
 				success: function(body) {
-					alert.simple("circle-check", "Successfully saved the product", "success");
+					alert.simple("Successfully saved the product", "success");
 				},
 				error: function(body) {
-					alert.simple("circle-x", "An error has occurred. Please try again later", "error");
+					alert.simple("An error has occurred. Please try again later", "error");
 				}
 			});
 		},
