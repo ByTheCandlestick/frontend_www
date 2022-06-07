@@ -20,6 +20,10 @@
 	align-items: center;
 	text-decoration: none;
 }
+.app-back-btn.disabled {
+    background: var(--link-color-hover);
+    color: var(--link-color-active);
+}
 .app-sidebar-link:hover {
 	background-color: var(--link-color-hover);
 	color: var(--link-color-active);
