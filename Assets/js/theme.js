@@ -186,7 +186,7 @@ $( document ).ready(async function() {
 			data = {
 				'api_key': api_key,
 				'title': $("div[name=title]").find("input").val(),
-				'range': $("div[name=range]").find("option:selected").val(),
+				'collection': $("div[name=range]").find("option:selected").val(),
 				'images': $("div[name=images]").find("input").val(),
 				'category': $("div[name=category]").find("option:selected").val(),
 				'discontinued': discontinued,
