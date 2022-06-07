@@ -25,6 +25,7 @@
 					.container {
 						background: blue;
 						border-radius: 15px;
+						padding: unset;
 					}
 					.element {
 						background: green;
