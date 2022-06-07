@@ -111,7 +111,7 @@ $( document ).ready(async function() {
 		}
 	}
 	funcs = {
-		sleep: async function(ms) {
+		sleep: function(ms) {
 			return new Promise(resolve => setTimeout(resolve, ms));
 		}
 	}
