@@ -10,11 +10,14 @@
 				<h1>Product info</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+				<a href="javascript:product.save(<?print($prod['SKU'])?>);" class="btn btn-outline-primary">
+					<i class="fa fa-save"></i>
+				</a>
 			</div>
 		</div>
 		<hr>
 		<!-- Section Body -->
-		<div class="row ProductInfo" sku="<?print($prod['SKU'])?>" slug="<?print($prod['Slug'])?>">
+		<div class="row ProductInfo">
 			<div class="col-12 col-md-6 col-lg-2">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control disabled" id="floatingInput" placeholder="" value="<? print($prod['SKU'])?>" disabled>
