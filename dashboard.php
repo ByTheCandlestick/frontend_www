@@ -90,7 +90,7 @@
 				<div class="app-content">
 					<!-- Sidebar -->
 					<div class="app-sidebar">
-						<a href="javascript:history.back()" class="app-sidebar-link app-back-btn disabled">
+						<a class="app-sidebar-link app-back-btn disabled">
 							<i class="fa fa-arrow-left"></i>
 						</a>
 						<?

@@ -132,7 +132,13 @@ $( document ).ready(async function() {
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0) {
 			$('.app-back-btn').addCalss('disabled')
 		}
-		console.log(window.history);
+		$(".app-back-btn").click( function(){
+			if($(this).hasClass('disabled')) {
+				alert('null')
+			} else {
+				alert('go back')
+			}
+		});
 	// -----========== PRELOADER ==========----- //
 		$('.app-preloader').fadeOut()
 });
