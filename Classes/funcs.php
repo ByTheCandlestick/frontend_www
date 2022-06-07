@@ -31,7 +31,7 @@
 					if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
 						if(mysqli_num_rows($result) == 1) {
 							$row = mysqli_fetch_array($result);
-							print('<div class="element">'.$seccode.'<br>'.$secext.'</div>');
+							print('<div class="element">$seccode - '.$seccode.'<br>$secext  - '.$secext.'</div>');
 							unset($secext);
 						}
 					}
