@@ -19,7 +19,7 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row ProductInfo">
-			<div class="col-12 col-md-6 col-lg-8" name="title">
+			<div class="col-12 col-md-6 col-lg-5" name="title">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Title'])?>">
 					<label for="floatingInput">Title</label>
@@ -40,7 +40,7 @@
 					<label for="floatingInput">Range</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-8" name="images">
+			<div class="col-12 col-md-6 col-lg-5" name="images">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Images'])?>">
 					<label for="floatingInput">IMAGES</label>
