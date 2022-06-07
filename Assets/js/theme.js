@@ -129,10 +129,8 @@ $( document ).ready(async function() {
 			search.jsonData = data
 		})
 	// -----========== BACK BTN ==========----- //
-		if(document.referrer.indexOf(location.protocol + "//" + location.host) === 0) {
-			alert(' here')
-		} else {
-			alert(' not here')
+		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0) {
+			$('.sidebar-back-btn').hide()
 		}
 	// -----========== PRELOADER ==========----- //
 		$('.app-preloader').fadeOut()
