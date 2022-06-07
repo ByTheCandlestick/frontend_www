@@ -13,6 +13,9 @@
 				<a href="/User/Permissions/<?print(QS)?>" class="btn btn-outline-primary">
 					<i class="fa fa-key"></i>
 				</a>
+				<a href="javascript:user.save(<?print(QS)?>);" class="btn btn-outline-primary">
+					<i class="fa fa-save"></i>
+				</a>
 			</div>
 		</div>
 		<hr>
