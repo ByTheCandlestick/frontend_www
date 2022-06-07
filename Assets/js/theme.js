@@ -128,9 +128,12 @@ $( document ).ready(async function() {
 		$.get('/Assets/search.json', function(data){
 			search.jsonData = data
 		})
-
-
-
+	// -----========== BACK BTN ==========----- //
+		if(document.referrer.indexOf(location.protocol + "//" + location.host) === 0) {
+			alert(' here')
+		} else {
+			alert(' not here')
+		}
 	// -----========== PRELOADER ==========----- //
 		$('.app-preloader').fadeOut()
 });
