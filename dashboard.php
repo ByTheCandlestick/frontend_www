@@ -117,9 +117,9 @@
 					<!-- Page Content -->
 					<? include('./Pages/'.$layout_row['Name'].'.php'); ?>
 					<!-- Alerts -->
-					<div class="alerts position-fixed"> </div>
+					<div class="alerts"> </div>
 					<!-- Modals -->
-					<div class="modals position-fixed"> </div>
+					<div class="modals"> </div>
 				</div>
 			</div>
 		</body>
