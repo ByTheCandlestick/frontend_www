@@ -20,13 +20,12 @@
 			<div class="col-lg-3 h-100">
 
 			</div>
-			<div class="col-lg-9 h-100">
+			<div class="col-lg-9 h-100" style="border: 2px solid var(--main-color);">
 				<style>
 					.container {
 						background: var(--app-container);
 						border-radius: 15px;
 						padding: unset;
-						border: 2px solid var(--main-color);
 					}
 					.element {
 						background: var(--section);
