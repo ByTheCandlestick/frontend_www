@@ -25,8 +25,8 @@
 						($permissions[$col] == 1)? $checked = " checked" : $checked = "";
 						print('
 							<div class="form-check col-12 col-md-4 col-lg-2">
-								<input class="form-check-input" type="checkbox" value="'.$col.'" id="flexCheckDefault"'.$checked.'>
-								<label class="form-check-label" for="flexCheckDefault">
+								<input class="form-check-input" type="checkbox" value="'.$col.'" id="permission_'.$col.'"'.$checked.'>
+								<label class="form-check-label" for="permission_'.$col.'">
 									'.$col.'
 								</label>
 							</div>
