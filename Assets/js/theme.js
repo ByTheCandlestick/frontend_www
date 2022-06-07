@@ -99,14 +99,14 @@ $( document ).ready(function() {
 				mode.root.removeClass('light');
 				mode.root.addClass('dark');
 			}
-			modeSwitch.toggleClass('active');
+			mode.modeSwitch.toggleClass('active');
 		},
 		set: function(mode) {
 			//mode.root.addClass(mode);
 			if(mode == "dark") {
-				modeSwitch.addClass('active');
+				mode.modeSwitch.addClass('active');
 			} else {
-				modeSwitch.removeClass('active');
+				mode.modeSwitch.removeClass('active');
 			}
 		}
 	}
