@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
 				<h1>Product info</h1>
-				<p><? print($prod['SKU'])?></p>
+				<p><? print($prod['SKU'])?> - <? print($prod['Title	'])?></p>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 				<a href="javascript:product.save(<?print($prod['SKU'])?>);" class="btn btn-outline-primary">
