@@ -103,6 +103,11 @@ $( document ).ready(function() {
 		},
 		set: function(mode) {
 			root.addClass(mode);
+			if(mode == "dark") {
+				modeSwitch.addClass('active');
+			} else {
+				modeSwitch.removeClass('active');
+			}
 		}
 	}
 	// -----========== Dark mode toggle ==========----- //
