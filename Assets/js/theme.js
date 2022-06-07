@@ -110,6 +110,11 @@ $( document ).ready(function() {
 			}
 		}
 	}
+	funcs = {
+		sleep: function(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+	}
 	// -----========== Dark mode toggle ==========----- //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
 		mode.modeSwitch.click(function () { mode.toggle() });
@@ -129,5 +134,6 @@ $( document ).ready(function() {
 
 
 	// -----========== PRELOADER ==========----- //
+		funcs.sleep(10)
 		$('.app-preloader').fadeOut()
 });
