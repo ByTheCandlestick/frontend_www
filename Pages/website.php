@@ -2,7 +2,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6 col-lg-8">
-			<h1>Website</h1>
+			<h1>Pages</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			<input type="text" class="tableFilter"> </input>
