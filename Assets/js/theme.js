@@ -31,7 +31,22 @@ $( document ).ready(async function() {
 				return false
 			}
 			return true;
-		}
+		},
+	}
+	alert = {
+		count: 0,
+		close: function() {
+
+		},
+		simple: function(icon, text, colour) {
+			alerts.count++;
+			$(".alerts").innerHTML('<div id="toast-'+alerts.count+'" class="toast toast-'+colour+'}"> <div id="img"><i class="fa fa-'+icon+'"></i></div><div id="desc">'+text+'</div></div>');
+			$(".alerts").find("#toast-"+alerts.count).addClass("show");
+			setTimeout(function(){
+				$(".alerts").find("#toast-"+alerts.count).removeClass("show");
+			}, 5000);
+		},
+
 	}
 	search = {
 		suggestions: $(".search-suggestions"),
@@ -56,7 +71,7 @@ $( document ).ready(async function() {
 			for(var i=0; i<Arr.length; i++) {
 				search.suggestions.html(search.suggestions.html() + "<li><a href='" + Arr[i].url + "'>" + Arr[i].name + " - " + Arr[i].desc + "</a></li>");
 			}
-		}
+		},
 	}
 	mode = {
 		modeSwitch: $('.mode-switch'),
@@ -80,7 +95,7 @@ $( document ).ready(async function() {
 			} else {
 				mode.modeSwitch.removeClass('active');
 			}
-		}
+		},
 	}
 	website = {
 		save: function(sid) {
@@ -107,7 +122,7 @@ $( document ).ready(async function() {
 				success: function(body) { },
 				error: function(body) { }
 			});
-		}
+		},
 	};
 	user = {
 		save: function(uid) {
@@ -137,7 +152,7 @@ $( document ).ready(async function() {
 				success: function(body) { },
 				error: function(body) { }
 			});
-		}
+		},
 	}
 	product = {
 		save: function(pid) {
@@ -186,7 +201,7 @@ $( document ).ready(async function() {
 				success: function(body) { },
 				error: function(body) { }
 			});
-		}
+		},
 	}
 	// -----========== Dark mode toggle ==========----- //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }

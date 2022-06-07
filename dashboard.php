@@ -116,6 +116,12 @@
 					</div>
 					<!-- Page Content -->
 					<? include('./Pages/'.$layout_row['Name'].'.php'); ?>
+					<!-- Alerts -->
+					<div class="alerts">
+					</div>
+					<!-- Modals -->
+					<div class="modals">
+					</div>
 				</div>
 			</div>
 		</body>
