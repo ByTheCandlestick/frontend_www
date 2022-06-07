@@ -64,11 +64,11 @@
 			<div class="col-12 col-md-3 col-lg-2" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="discontinued" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Discontinued? </label>
 					</div>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="available" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
 				</div>
@@ -113,11 +113,11 @@
 			<div class="col-12 col-md-2 col-lg-2" name="pricing">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="discounted" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Discounted? </label>
 					</div>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
 					</div>
 				</div>
@@ -132,7 +132,7 @@
 					<label for="floatingInput">Discount type</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="discount_ammount">
+			<div class="col-12 col-md-3 col-lg-2" name="discount_amount">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>">
 					<label for="floatingInput">Discount</label>
