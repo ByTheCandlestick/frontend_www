@@ -210,8 +210,8 @@ $( document ).ready(async function() {
 				'packaging': $("div[name=packaging]").find("option:selected").val(),
 				'shipping': $("div[name=shipping]").find("option:selected").val(),
 				'made_by': $("div[name=made_by]").find("option:selected").val(),
-				'description_long': smde_desc_l.value(),
-				'description_short': smde_desc_s.value(),
+				'description_long': encodeURI(smde_desc_l.value()),
+				'description_short': encodeURI(smde_desc_s.value()),
 				'slug': $("div[name=slug]").find("input").val(),
 			}
 			$.ajax({
