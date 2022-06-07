@@ -20,7 +20,7 @@
 		<div class="row">
 			<?
 				$query = DB_Query("DESCRIBE `Users_permissions`");
-				while($column = mysqli_fetch_array($query)) {
+				while($column = mysqli_fetch_array($query)[0]) {
 					print($column);
 				}
 			?>
