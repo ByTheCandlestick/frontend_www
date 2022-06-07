@@ -90,7 +90,7 @@
 				<div class="app-content">
 					<!-- Sidebar -->
 					<div class="app-sidebar">
-						<a class="app-sidebar-link app-back-btn disabled">
+						<a class="app-sidebar-link app-back-btn">
 							<i class="fa fa-arrow-left"></i>
 						</a>
 						<?
