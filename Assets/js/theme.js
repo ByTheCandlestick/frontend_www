@@ -36,10 +36,13 @@ $( document ).ready(async function() {
 	alert = {
 		simple: function(text, colour) {
 			$(".alerts").html($(".alerts").html() + '<div class="alert alert-'+colour+'" role="alert"> '+text+' </div>');
-			setTimeout(function(){
-				$($(".alerts").children()[0]).removeClass("show");
-				$($(".alerts").children()[0]).remove();
-			}, 5000);
+			$($(".alerts").children()[0]).hide().appendTo("#mycontent").fadeIn(1000, function() {
+				setTimeout(function(){
+					$($(".alerts").children()[0]).fadeOut(1000, function() {
+						$($(".alerts").children()[0]).removeClass("show");
+					});
+				}, 5000);
+			});
 		},
 
 	}
