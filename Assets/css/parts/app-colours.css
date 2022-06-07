@@ -6,8 +6,8 @@
 	--link-color: #1f1c2e;
 	--link-color-hover: #c3cff4;
 	--link-color-active: #fff;
-	--link-color-disabled: #fff;
-	--link-color-disabled-bg: #c3cff4;
+	--link-color-disabled: #e3e3e3;
+	--link-color-disabled-bg: #b5b5b7;
 	--link-color-active-bg: #1f1c2e;
 	--section: #fff;
 	--message-box-hover: #fafcff;
