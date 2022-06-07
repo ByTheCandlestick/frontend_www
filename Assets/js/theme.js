@@ -33,34 +33,6 @@ $( document ).ready(async function() {
 			return true;
 		}
 	}
-	website = {
-		save: function(id) {
-			var styles = [];
-			var scripts = [];
-			$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
-			$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
-			data = {
-				'api_key': api_key,
-				'page_id': id,
-				'style': styles.join(","),
-				'script': scripts.join(","),
-				'name': $("div[name=name]").find("input").val(),
-				'title': $("div[name=title]").find("input").val(),
-				'page_url': $("div[name=page_url]").find("input").val(),
-				'subpage_url': $("div[name=subpage_url]").find("input").val(),
-			}
-			$.ajax({
-				url: api_url + '/Website/',
-				data: data,
-				type: 'POST',
-				xhrFields: {
-					withCredentials: true,
-				},
-				success: function(body) { },
-				error: function(body) { }
-			});
-		}
-	};
 	search = {
 		suggestions: $(".search-suggestions"),
 		jsonData: null,
@@ -110,8 +82,61 @@ $( document ).ready(async function() {
 			}
 		}
 	}
-	funcs = {
-		
+	website = {
+		save: function(id) {
+			var styles = [];
+			var scripts = [];
+			$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
+			$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
+			data = {
+				'api_key': api_key,
+				'page_id': id,
+				'style': styles.join(","),
+				'script': scripts.join(","),
+				'name': $("div[name=name]").find("input").val(),
+				'title': $("div[name=title]").find("input").val(),
+				'page_url': $("div[name=page_url]").find("input").val(),
+				'subpage_url': $("div[name=subpage_url]").find("input").val(),
+			}
+			$.ajax({
+				url: api_url + '/Website/',
+				data: data,
+				type: 'POST',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success: function(body) { },
+				error: function(body) { }
+			});
+		}
+	};
+	user = {
+		save: function(uid) {
+			data = {
+				'api_key': api_key,
+				'UID': uid,
+				'uname': $("div[name=username]").find("input").val(),
+				'fname': $("div[name=firstname]").find("input").val(),
+				'lname': $("div[name=lastname]").find("input").val(),
+				'email': $("div[name=email]").find("input").val(),
+				'phone': $("div[name=phone]").find("input").val(),
+				
+				'fname': $("div[name=misc]").find("input[name=reset_pass]:checked").val(),
+				'lname': $("div[name=misc]").find("input[name=disable_analytics]:checked").val(),
+				'email': $("div[name=misc]").find("input[name=email_active]:checked").val(),
+				'phone': $("div[name=misc]").find("input[name=user_active]:checked").val(),
+			}
+			$.ajax({
+				url: api_url + '/Website/',
+				data: data,
+				type: 'POST',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success: function(body) { },
+				error: function(body) { }
+			});
+		}
 	}
 	// -----========== Dark mode toggle ==========----- //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
