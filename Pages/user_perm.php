@@ -18,7 +18,11 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			List all user permissions
+			<?
+				while($column = mysqli_fetch_array(DB_Query("DESCRIBE `Users_permissions`"))[0]) {
+					print($column);
+				}
+			?>
 		</div>
 	</section>
 <?
