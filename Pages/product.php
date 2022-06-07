@@ -17,7 +17,7 @@
 		<div class="row ProductInfo" sku="<?print($prod['SKU'])?>" slug="<?print($prod['Slug'])?>">
 			<div class="col-12 col-md-6 col-lg-2">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['SKU'])?>">
+					<input type="text" class="form-control disabled" id="floatingInput" placeholder="" value="<? print($prod['SKU'])?>" disabled>
 					<label for="floatingInput">SKU</label>
 				</div>
 			</div>
