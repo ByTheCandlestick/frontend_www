@@ -26,7 +26,7 @@
 						background: var(--app-container);
 						border-radius: 15px;
 						padding: unset;
-						border: 2px solid var(--main);
+						border: 2px solid var(--main-color);
 					}
 					.element {
 						background: var(--section);
