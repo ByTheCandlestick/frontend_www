@@ -23,12 +23,13 @@
 			<div class="col-lg-9 h-100">
 				<style>
 					.container {
-						background: blue;
+						background: var(--app-container);
 						border-radius: 15px;
 						padding: unset;
+						border: 2px solid var(--main);
 					}
 					.element {
-						background: green;
+						background: var(--section);
 						border-radius: 15px;
 						margin: 10px;
 						padding: 10px;
