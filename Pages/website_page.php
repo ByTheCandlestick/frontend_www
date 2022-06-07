@@ -71,7 +71,7 @@
 					</div>
 					<div class="col-12 col-md-6" name="scripts">
 						<?
-							$query = DB_Query("SELECT * FROM `page_scripts`");
+							$query = DB_Query("SELECT * FROM `page_scripts` ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
 								print('
