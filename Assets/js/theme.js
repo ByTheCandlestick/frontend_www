@@ -132,6 +132,7 @@ $( document ).ready(async function() {
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0) {
 			$('.sidebar-back-btn').hide()
 		}
+		console.log(window.history);
 	// -----========== PRELOADER ==========----- //
 		$('.app-preloader').fadeOut()
 });
