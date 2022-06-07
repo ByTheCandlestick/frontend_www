@@ -86,21 +86,28 @@ $( document ).ready(function() {
 			}
 		}
 	}
-	// -----========== Dark mode toggle ==========----- //
-		if(cookie.exists('cs_adm')) {
-			root.addClass(cookie.read('cs_adm'));
-		}
-		var modeSwitch	= $('.mode-switch');
-		var root		= $('html');
-		modeSwitch.click(function () {
+	mode = {
+		modeSwitch: $('.mode-switch'),
+		root: $('html'),
+		toggle: function() {
 			if(cookie.read('cs_adm') == 'dark') {
 				cookie.update('cs_adm', 'light')
+				root.removeClass('dark');
+				root.addClass('light');
 			} else {
 				cookie.update('cs_adm', 'dark')
+				root.removeClass('light');
+				root.addClass('dark');
 			}
-			root.toggleClass('dark');
 			modeSwitch.toggleClass('active');
-		});
+		},
+		set: function(mode) {
+			root.addClass(mode);
+		}
+	}
+	// -----========== Dark mode toggle ==========----- //
+		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
+		modeSwitch.click(function () { mode.toggle() });
 	// -----========== PRELOADER ==========----- //
 	$('.app-preloader').fadeOut()
 	// -----========== Search ==========----- //
