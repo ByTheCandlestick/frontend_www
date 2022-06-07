@@ -33,18 +33,12 @@ $( document ).ready(async function() {
 			return true;
 		},
 	}
-	alerts = {
-		count: 0,
-		close: function() {
-
-		},
+	alert = {
 		simple: function(icon, text, colour) {
-			alerts.count++;
-			$(".alerts").html($(".alerts").html() + '<div id="toast-'+alerts.count+'" class="toast toast-'+colour+' show"> <div id="img"><i class="fa fa-'+icon+'"></i></div><div id="desc">'+text+'</div></div>');
+			$(".alerts").html($(".alerts").html() + '<div class="toast toast-'+colour+' show"> <div id="img"><i class="fa fa-'+icon+'"></i></div><div id="desc">'+text+'</div></div>');
 			setTimeout(function(){
-				$(".alerts").find("#toast-"+alerts.count).removeClass("show");
-				$(".alerts").find("#toast-"+alerts.count).remove();
-				alerts.count--;
+				$($(".alerts").children()[0]).removeClass("show");
+				$($(".alerts").children()[0]).remove();
 			}, 5000);
 		},
 
@@ -121,10 +115,10 @@ $( document ).ready(async function() {
 					withCredentials: true,
 				},
 				success: function(body) {
-					alerts.simple("tick", "Successfully saved the website", "success");
+					alert.simple("tick", "Successfully saved the website", "success");
 				},
 				error: function(body) {
-					alerts.simple("cross", "An error has occurred. Please try again later", "error");
+					alert.simple("cross", "An error has occurred. Please try again later", "error");
 				}
 			});
 		},
