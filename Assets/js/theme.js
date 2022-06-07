@@ -34,8 +34,12 @@ $( document ).ready(async function() {
 		},
 	}
 	alert = {
-		simple: function(text, colour, fadeIn=500, stay=5000, fadeOut=500) {
-			$('<div class="alert alert-'+colour+'" role="alert"> '+text+' </div>').hide().appendTo(".alerts").fadeIn(fadeIn, function() {
+		simple: function(text, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
+			$('\
+				<div class="alert alert-'+colour+'" role="alert">\
+					'+text+'\
+				</div>\
+			').hide().appendTo(".alerts").fadeIn(fadeIn, function() {
 				setTimeout(function(){
 					$($(".alerts").children()[0]).fadeOut(fadeOut, function() {
 						$($(".alerts").children()[0]).remove();
@@ -43,7 +47,22 @@ $( document ).ready(async function() {
 				}, stay);
 			});
 		},
-
+		additional: function() {
+			$('\
+				<div class="alert alert-success" role="alert"> \
+					<h4 class="alert-heading">Well done!</h4>\
+					<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>\
+					<hr>\
+					<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>\
+				</div>\
+			').hide().appendTo(".alerts").fadeIn(fadeIn, function() {
+				setTimeout(function(){
+					$($(".alerts").children()[0]).fadeOut(fadeOut, function() {
+						$($(".alerts").children()[0]).remove();
+					});
+				}, stay);
+			});
+		}
 	}
 	search = {
 		suggestions: $(".search-suggestions"),
