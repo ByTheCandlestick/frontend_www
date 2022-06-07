@@ -21,7 +21,7 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			List all user info
+			
 		</div>
 	</section>
 <?
