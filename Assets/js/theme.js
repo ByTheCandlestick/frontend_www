@@ -120,8 +120,12 @@ $( document ).ready(async function() {
 				xhrFields: {
 					withCredentials: true,
 				},
-				success: function(body) { },
-				error: function(body) { }
+				success: function(body) {
+					alerts("tick", "Successfully saved the website", "success");
+				},
+				error: function(body) {
+					alerts("cross", "An error has occurred. Please try again later", "error");
+				}
 			});
 		},
 	};
