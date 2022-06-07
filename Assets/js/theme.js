@@ -3,10 +3,18 @@ $( document ).ready(function() {
 	const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	const api_key_data = 'api_key=' + api_key;
+	if(cookie.exists('cs_adm')) {
+		cookie.create('cs_adm', '', '');
+	}
 	// -----========== Dark mode toggle ==========----- //
 		var modeSwitch	= $('.mode-switch');
 		var root		= $('html');
 		modeSwitch.click(function () {
+			if(cookie.read('cs_adm') == 'dark') {
+				cookie.update('cs_adm', 'light')
+			} else {
+				cookie.update('cs_adm', 'dark')
+			}
 			root.toggleClass('dark');
 			modeSwitch.toggleClass('active');
 		});
@@ -25,6 +33,35 @@ $( document ).ready(function() {
 		search.jsonData = data
 	})
 	// -----========== Nestled functions ==========----- //
+	cookie = {
+		create: function(name, value, expDays, path = '/') {
+			let date = new Date();
+			date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
+		},
+		read: function(name) {
+			var name = name + "=";
+			var decoded = decodeURIComponent(document.cookie);
+			var arr = decoded .split('; ');
+			var res;
+			arr.forEach(val => {
+				if (val.indexOf(name) === 0) res = val.substring(name.length);
+			})
+			return res;
+		},
+		update: function(name, value) {
+			cookie.create(name, value, 30);
+		},
+		delete: function(name) {
+			document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+		},
+		exists: function(name) {
+			if(cookie.read(name) === null) {
+				return false
+			}
+			return true;
+		}
+	}
 	website = {
 		save: function(id) {
 			var styles = [];
