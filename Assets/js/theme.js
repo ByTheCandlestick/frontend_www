@@ -112,6 +112,10 @@ $( document ).ready(async function() {
 	};
 	user = {
 		save: function(uid) {
+			r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0)?0:1);
+			d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0)?0:1);
+			e_active = (($("div[name=misc]").find("input[name=email_active]:checked").length === 0)?0:1);
+			u_active = (($("div[name=misc]").find("input[name=user_active]:checked").length === 0)?0:1);
 			data = {
 				'api_key': api_key,
 				'uname': $("div[name=username]").find("input").val(),
@@ -119,10 +123,10 @@ $( document ).ready(async function() {
 				'lname': $("div[name=lastname]").find("input").val(),
 				'email': $("div[name=email]").find("input").val(),
 				'phone': $("div[name=phone]").find("input").val(),
-				'r_pass': $("div[name=misc]").find("input[name=reset_pass]:checked").val(),
-				'd_analytics': $("div[name=misc]").find("input[name=disable_analytics]:checked").val(),
-				'e_active': $("div[name=misc]").find("input[name=email_active]:checked").val(),
-				'u_active': $("div[name=misc]").find("input[name=user_active]:checked").val(),
+				'r_pass': r_pass,
+				'd_analytics': d_analytics,
+				'e_active': e_active,
+				'u_active': u_active,
 			}
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
