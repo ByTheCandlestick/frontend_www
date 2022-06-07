@@ -144,6 +144,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Container_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Container</label>
 				</div>
@@ -152,6 +159,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_wicks` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Wick_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Wick</label>
 				</div>
@@ -160,6 +174,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Wickstand_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Wick Stand</label>
 				</div>
@@ -168,6 +189,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_Material` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Material_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Material</label>
 				</div>
@@ -176,6 +204,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_fragrances` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Fragrance_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Fragrance</label>
 				</div>
@@ -184,6 +219,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_colour` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Colour_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Colour</label>
 				</div>
@@ -192,6 +234,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_packagings` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Packaging_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Packaging</label>
 				</div>
@@ -200,6 +249,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Shipping_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Shipping</label>
 				</div>
@@ -208,6 +264,13 @@
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $prod['Made_by_ID'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
 					</select>
 					<label for="floatingInput">Made by</label>
 				</div>
