@@ -1,6 +1,6 @@
 .alerts {
 	position: fixed;
-	top: 100px;
+	bottom: 10px;
 	width: 100%;
 }
 .alerts .alert {
