@@ -102,7 +102,7 @@ $( document ).ready(function() {
 			mode.modeSwitch.toggleClass('active');
 		},
 		set: function(val) {
-			mode.root.addClass(mode);
+			mode.root.addClass(val);
 			if(val == "dark") {
 				mode.modeSwitch.addClass('active');
 			} else {
