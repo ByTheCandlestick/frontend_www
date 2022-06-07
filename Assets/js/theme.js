@@ -92,17 +92,17 @@ $( document ).ready(function() {
 		toggle: function() {
 			if(cookie.read('cs_adm') == 'dark') {
 				cookie.update('cs_adm', 'light')
-				root.removeClass('dark');
-				root.addClass('light');
+				mode.root.removeClass('dark');
+				mode.root.addClass('light');
 			} else {
 				cookie.update('cs_adm', 'dark')
-				root.removeClass('light');
-				root.addClass('dark');
+				mode.root.removeClass('light');
+				mode.root.addClass('dark');
 			}
 			modeSwitch.toggleClass('active');
 		},
 		set: function(mode) {
-			root.addClass(mode);
+			mode.root.addClass(mode);
 			if(mode == "dark") {
 				modeSwitch.addClass('active');
 			} else {
