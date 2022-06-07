@@ -21,6 +21,17 @@
 
 			</div>
 			<div class="col-lg-9 h-100">
+				<style>
+					.container {
+						background: blue;
+						border-radius: 15px;
+					}
+					.element {
+						background: green;
+						border-radius: 15px;
+						margin: 10px;
+					}
+				</style>
 				<?
 					printSectionTemplates($page['section_ids']);
 				?>

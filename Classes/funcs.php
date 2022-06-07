@@ -24,14 +24,14 @@
 		array_shift($columns);
 		foreach($columns as $column) {
 			[$width, $section_string] = explode(';', $column);
-			print("<div style=\"background: blue;\" class=\"col-md-$width\">");
+			print("<div class=\"col-md-$width container\">");
 				$sections = explode(',', $section_string);
 				foreach($sections as $section) {
 					[$seccode, $secext] = explode(':', $section);
 					if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
 						if(mysqli_num_rows($result) == 1) {
 							$row = mysqli_fetch_array($result);
-							print('<div style="background: green;">'.$seccode.'<br>'.$secext.'</div>');
+							print('<div class="element">'.$seccode.'<br>'.$secext.'</div>');
 							unset($secext);
 						}
 					}
