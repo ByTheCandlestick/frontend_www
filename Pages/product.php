@@ -258,12 +258,6 @@
 					<label for="floatingInput">Shipping</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-4" name="description_long">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
-			</div>
-			<div class="col-12 col-md-3 col-lg-3" name="description_short">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
-			</div>
 			<div class="col-12 col-md-3 col-lg-2" name="made_by">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
@@ -284,6 +278,12 @@
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
 					<label for="floatingInput">Slug</label>
 				</div>
+			</div>
+			<div class="col-12 col-md-3 col-lg-4" name="description_long">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
+			</div>
+			<div class="col-12 col-md-3 col-lg-3" name="description_short">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 			</div>
 		</div>
 	</section>
