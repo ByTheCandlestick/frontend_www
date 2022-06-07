@@ -20,8 +20,18 @@
 		<div class="row">
 			<?
 				$query = DB_Query("DESCRIBE `Users_permissions`");
-				while($column = mysqli_fetch_array($query)[0]) {
-					print($column);
+				while($col = mysqli_fetch_array($query)[0]) {
+					if($col != "UID") {
+						if($permissions[$col] == 1)? $checked = " checked" : $checked = "";
+						print('
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="'.$col.'" id="flexCheckDefault"'.$checked.'>
+								<label class="form-check-label" for="flexCheckDefault">
+									'.$col.'
+								</label>
+							</div>
+						')
+					}
 				}
 			?>
 		</div>
