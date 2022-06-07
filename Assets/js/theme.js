@@ -34,8 +34,8 @@ $( document ).ready(async function() {
 		},
 	}
 	alert = {
-		simple: function(icon, text, colour) {
-			$(".alerts").html($(".alerts").html() + '<div class="toast toast-'+colour+' show"> <div id="img"><i class="fa fa-'+icon+'"></i></div><div id="desc">'+text+'</div></div>');
+		simple: function(text, colour) {
+			$(".alerts").html($(".alerts").html() + '<div class="alert alert-'+colour+'" role="alert"> '+text+' </div>');
 			setTimeout(function(){
 				$($(".alerts").children()[0]).removeClass("show");
 				$($(".alerts").children()[0]).remove();

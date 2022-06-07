@@ -118,9 +118,6 @@
 					<? include('./Pages/'.$layout_row['Name'].'.php'); ?>
 					<!-- Alerts -->
 					<div class="alerts">
-						<div class="alert alert-primary" role="alert">
-							This is a primary alert—check it out!
-						</div>
 					</div>
 					<!-- Modals -->
 					<div class="modals">
