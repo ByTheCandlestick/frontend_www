@@ -8,6 +8,7 @@
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
 				<h1>Product info</h1>
+				<p><? print($prod['SKU'])?></p>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 				<a href="javascript:product.save(<?print($prod['SKU'])?>);" class="btn btn-outline-primary">
@@ -18,19 +19,13 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row ProductInfo">
-			<div class="col-12 col-md-6 col-lg-2">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control disabled" id="floatingInput" placeholder="" value="<? print($prod['SKU'])?>" disabled>
-					<label for="floatingInput">SKU</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-8">
+			<div class="col-12 col-md-6 col-lg-8" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Title'])?>">
 					<label for="floatingInput">Title</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-2">
+			<div class="col-12 col-md-6 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -45,13 +40,13 @@
 					<label for="floatingInput">Range</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-8">
+			<div class="col-12 col-md-6 col-lg-8" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['images'])?>">
 					<label for="floatingInput">IMAGES</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-4 col-lg-2">
+			<div class="col-12 col-md-4 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -66,7 +61,7 @@
 					<label for="floatingInput">Category</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" value="" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
@@ -78,44 +73,44 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-6 col-md-3 col-lg-1">
+			<div class="col-6 col-md-3 col-lg-1" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Currency'])?>">
 					<label for="floatingInput">Currency</label>
 				</div>
 			</div>
-			<div class="col-6 col-md-3 col-lg-1">
+			<div class="col-6 col-md-3 col-lg-1" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>">
 					<label for="floatingInput">Profit</label>
 				</div>
 			</div>
-			<div class="col-6 col-md-3 col-lg-1">
+			<div class="col-6 col-md-3 col-lg-1" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['RetailPrice'])?>">
 					<label for="floatingInput">Retail</label>
 				</div>
 			</div>
-			<div class="col-6 col-md-3 col-lg-1">
+			<div class="col-6 col-md-3 col-lg-1" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
 					<label for="floatingInput">Net</label>
 				</div>
 			</div>
-			<div class="col-6 col-md-3 col-lg-1">
+			<div class="col-6 col-md-3 col-lg-1" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossPrice'])?>">
 					<label for="floatingInput">Gross</label>
 				</div>
 			</div>
-			<div class="col-6 col-md-3 col-lg-1">
+			<div class="col-6 col-md-3 col-lg-1" name="">
 				<div class="form-floating mb-3 input-group">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
 					<label for="floatingInput">Markup</label>
 					<span class="input-group-text" id="percentage">%</span>
 				</div>
 			</div>
-			<div class="col-12 col-md-2 col-lg-2">
+			<div class="col-12 col-md-2 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" value="" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
@@ -127,7 +122,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -137,13 +132,13 @@
 					<label for="floatingInput">Discount type</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>">
 					<label for="floatingInput">Discount</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -158,7 +153,7 @@
 					<label for="floatingInput">Container</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -173,7 +168,7 @@
 					<label for="floatingInput">Wick</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -188,7 +183,7 @@
 					<label for="floatingInput">Wick Stand</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -203,7 +198,7 @@
 					<label for="floatingInput">Material</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -218,7 +213,7 @@
 					<label for="floatingInput">Fragrance</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -233,7 +228,7 @@
 					<label for="floatingInput">Colour</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -248,7 +243,7 @@
 					<label for="floatingInput">Packaging</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -263,7 +258,7 @@
 					<label for="floatingInput">Shipping</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
 						<option selected>Please select</option>
@@ -278,43 +273,43 @@
 					<label for="floatingInput">Made by</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyOnHand'])?>">
 					<label for="floatingInput">QTY On Hand</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyAvailable'])?>">
 					<label for="floatingInput">QTY Available</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyToBeShipped'])?>">
 					<label for="floatingInput">QTY To Be Shipped</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['QtyShipped'])?>">
 					<label for="floatingInput">QTY Shipped</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-4">
+			<div class="col-12 col-md-3 col-lg-4" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 					<label for="floatingInput">Description Long</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-3">
+			<div class="col-12 col-md-3 col-lg-3" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 					<label for="floatingInput">Description Short</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-3 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2" name="">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
 					<label for="floatingInput">Slug</label>

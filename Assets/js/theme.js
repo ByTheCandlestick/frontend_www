@@ -141,7 +141,20 @@ $( document ).ready(async function() {
 	}
 	product = {
 		save: function(pid) {
-
+			data = {
+				'api_key': api_key,
+				'': $("div[name=subpage_url]").find("input").val(),
+			}
+			$.ajax({
+				url: api_url + '/Product/' + pid + '/',
+				data: data,
+				type: 'POST',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success: function(body) { },
+				error: function(body) { }
+			});
 		}
 	}
 	// -----========== Dark mode toggle ==========----- //
