@@ -121,10 +121,10 @@ $( document ).ready(async function() {
 					withCredentials: true,
 				},
 				success: function(body) {
-					alerts("tick", "Successfully saved the website", "success");
+					alerts.simple("tick", "Successfully saved the website", "success");
 				},
 				error: function(body) {
-					alerts("cross", "An error has occurred. Please try again later", "error");
+					alerts.simple("cross", "An error has occurred. Please try again later", "error");
 				}
 			});
 		},
