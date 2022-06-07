@@ -6,7 +6,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
-				<h1>Oxygen - <?print($page['page_name'])?></h1>
+				<h1>Oxygen - '<?print($page['page_name'])?>'</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 				<a href="javascript:website.saveLayout(<?print(QS)?>);" class="btn btn-outline-primary">
