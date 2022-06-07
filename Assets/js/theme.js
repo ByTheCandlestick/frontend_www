@@ -41,8 +41,10 @@ $( document ).ready(async function() {
 		simple: function(icon, text, colour) {
 			alerts.count++;
 			$(".alerts").html($(".alerts").html() + '<div id="toast-'+alerts.count+'" class="toast toast-'+colour+' show"> <div id="img"><i class="fa fa-'+icon+'"></i></div><div id="desc">'+text+'</div></div>');
-			setTimeout(function(){ $(".alerts").find("#toast-"+alerts.count).removeClass("show"); }, 5000);
-			setTimeout(function(){ $(".alerts").find("#toast-"+alerts.count).remove(); }, 5500);
+			setTimeout(function(){
+				$(".alerts").find("#toast-"+alerts.count).removeClass("show");
+				$(".alerts").find("#toast-"+alerts.count).remove();
+			}, 5000);
 		},
 
 	}
