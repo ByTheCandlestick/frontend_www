@@ -39,7 +39,7 @@ $( document ).ready(async function() {
 			setTimeout(function(){
 				$($(".alerts").children()[0]).removeClass("show");
 				$($(".alerts").children()[0]).remove();
-			}, 5000);
+			}, 500000);
 		},
 
 	}
