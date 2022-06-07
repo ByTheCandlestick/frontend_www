@@ -15,8 +15,8 @@
 			<thead class="sticky-top" style="background: var(--section); z-index: unset;">
 				<th scope="col">ID</th>
 				<th scope="col">Name</th>
-				<th scope="col">Email</th>
 				<th scope="col">Username</th>
+				<th scope="col">Email</th>
 				<th scope="col">Phone</th>
 				<th scope="col">Enabled</th>
 				<th scope="col">Created</th>
@@ -30,8 +30,8 @@
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
 								<td>'.$row['First_name'].' '.$row['Last_name'].'</td>
-								<td>'.$row['Email'].'</td>
 								<td>'.$row['Username'].'</td>
+								<td>'.$row['Email'].'</td>
 								<td>'.$row['Phone'].'</td>
 								<td>'.$row['Active'].'</td>
 								<td>'.$row['Created'].'</td>
