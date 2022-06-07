@@ -35,10 +35,7 @@ $( document ).ready(async function() {
 	}
 	alert = {
 		simple: function(text, colour, fadeIn=500, stay=5000, fadeOut=500) {
-			// create element
-			$(".alerts").html($(".alerts").html() + '<div class="alert alert-'+colour+'" role="alert"> '+text+' </div>');
-			// Fade in/out element and control removal of element after specified time.
-			$($(".alerts").children()[0]).hide().appendTo("#mycontent").fadeIn(fadeIn, function() {
+			$('<div class="alert alert-'+colour+'" role="alert"> '+text+' </div>').hide().appendTo(".alerts").fadeIn(fadeIn, function() {
 				setTimeout(function(){
 					$($(".alerts").children()[0]).fadeOut(fadeOut, function() {
 						$($(".alerts").children()[0]).remove();
