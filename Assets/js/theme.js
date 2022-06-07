@@ -101,9 +101,9 @@ $( document ).ready(function() {
 			}
 			mode.modeSwitch.toggleClass('active');
 		},
-		set: function(mode) {
+		set: function(val) {
 			//mode.root.addClass(mode);
-			if(mode == "dark") {
+			if(val == "dark") {
 				mode.modeSwitch.addClass('active');
 			} else {
 				mode.modeSwitch.removeClass('active');
