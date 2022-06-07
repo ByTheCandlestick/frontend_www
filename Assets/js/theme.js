@@ -2,7 +2,6 @@ $( document ).ready(async function() {
 	// -----========== VARIABLES ==========----- //
 	const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
-	const api_key_data = 'api_key=' + api_key;
 	// -----========== Nestled functions ==========----- //
 	cookie = {
 		create: function(name, value, expDays, path = '/') {
@@ -211,8 +210,8 @@ $( document ).ready(async function() {
 				'packaging': $("div[name=packaging]").find("option:selected").val(),
 				'shipping': $("div[name=shipping]").find("option:selected").val(),
 				'made_by': $("div[name=made_by]").find("option:selected").val(),
-				'description_long': $("div[name=description_long]").find("input").val(),
-				'description_short': $("div[name=description_short]").find("input").val(),
+				'description_long': smde_desc_l.value(),
+				'description_short': smde_desc_s.value(),
 				'slug': $("div[name=slug]").find("input").val(),
 			}
 			$.ajax({

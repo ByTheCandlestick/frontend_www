@@ -288,8 +288,8 @@
 		</div>
 	</section>
 	<script>
-		var simplemde = new SimpleMDE({ element: $("div[name=description_long] input")[0] });
-		var simplemde = new SimpleMDE({ element: $("div[name=description_short] input")[0] });
+		var smde_desc_l = new SimpleMDE({ element: $("div[name=description_long] input")[0] });
+		var smde_desc_s = new SimpleMDE({ element: $("div[name=description_short] input")[0] });
 	</script>
 <?
 	} else {
