@@ -55,22 +55,22 @@
 				<div class="form-floating mb-3">
 					<? ($user['Change_password']==1)?$checked="checked":$checked=""; ?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" <?print($checked)?> name="reset_pass">
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="reset_pass">
 						<label class="form-check-label" for="flexCheckDisabled"> Reset password? </label>
 					</div>
 					<? ($user['Disable_analytics']==1)?$checked="checked":$checked=""; ?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" <?print($checked)?> name="disable_analytics">
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="disable_analytics">
 						<label class="form-check-label" for="flexCheckDisabled"> Disable analytics? </label>
 					</div>
 					<? ($user['Email_active']==1)?$checked="checked":$checked=""; ?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" <?print($checked)?> name="email_active">
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="email_active">
 						<label class="form-check-label" for="flexCheckDisabled"> Email activated? </label>
 					</div>
 					<? ($user['Active']==1)?$checked="checked":$checked=""; ?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" <?print($checked)?> name="user_active">
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="user_active">
 						<label class="form-check-label" for="flexCheckDisabled"> User active? </label>
 					</div>
 				</div>
