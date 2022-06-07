@@ -1,10 +1,9 @@
 .alerts {
 	position: fixed;
-	bottom: 0px;
+	bottom: 10px;
 	width: 100%;
 }
 .alerts .alert {
 	margin: 0 auto;
 	width: fit-content;
-	bottom: 10px;
 }
