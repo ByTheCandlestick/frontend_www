@@ -161,7 +161,7 @@ $( document ).ready(async function() {
 				'markup': $("div[name=markup]").find("input").val(),
 				'discounted': discounted,
 				'auto_calculate': auto_calculate,
-				'discount_type': $("div[name=discount_type]").find("input").val(),
+				'discount_type': $("div[name=discount_type]").find("option:selected").val(),
 				'discount_amount': $("div[name=discount_amount]").find("input").val(),
 				'container': $("div[name=container]").find("option:selected").val(),
 				'wick': $("div[name=wick]").find("option:selected").val(),
