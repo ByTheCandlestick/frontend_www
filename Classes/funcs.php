@@ -34,11 +34,9 @@
 							print('
 								<div class="element">
 									<h4>$width - '.$width.'</h4>
-									<p>
-										$seccode - '.$seccode.'
-										<br>
-										$secext  - '.$secext.'
-									</p>
+									$seccode - '.$seccode.'
+									<br>
+									$secext  - '.$secext.'
 								</div>
 							');
 							unset($secext);
