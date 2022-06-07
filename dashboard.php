@@ -66,9 +66,6 @@
 							<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 						</span>
 						<p class="app-name">The Candlestick</p>
-						<a href="javascript:history.back()" class="app-sidebar-link app-back-btn">
-							<i class="fa fa-arrow-left"></i>
-						</a>
 					</div>
 					<!-- Search -->
 					<div class="search-wrapper">
@@ -93,6 +90,9 @@
 				<div class="app-content">
 					<!-- Sidebar -->
 					<div class="app-sidebar">
+						<button href="javascript:history.back()" class="app-sidebar-link app-back-btn">
+							<i class="fa fa-arrow-left"></i>
+						</button>
 						<?
 							$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
 							foreach($items as $item) {
