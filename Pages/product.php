@@ -279,12 +279,18 @@
 					<label for="floatingInput">Description Long</label>
 				</div>
 			</div>
+			<script>
+				var simplemde = new SimpleMDE({ element: $("div[name=description_long] input")[0] });
+			</script>
 			<div class="col-12 col-md-3 col-lg-3" name="description_short">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 					<label for="floatingInput">Description Short</label>
 				</div>
 			</div>
+			<script>
+				var simplemde = new SimpleMDE({ element: $("div[name=description_short] input")[0] });
+			</script>
 			<div class="col-12 col-md-3 col-lg-2" name="slug">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
