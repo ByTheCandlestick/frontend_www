@@ -10,6 +10,9 @@
 				<h1>User info</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+				<a href="/User/Permissions/<?print(QS)?>" class="btn btn-outline-primary">
+					<i class="fa fa-key"></i>
+				</a>
 			</div>
 		</div>
 		<hr>
