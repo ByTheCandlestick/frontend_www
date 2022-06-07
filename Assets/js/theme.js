@@ -40,7 +40,7 @@ $( document ).ready(async function() {
 		},
 		simple: function(icon, text, colour) {
 			alerts.count++;
-			$(".alerts").innerHTML('<div id="toast-'+alerts.count+'" class="toast toast-'+colour+'}"> <div id="img"><i class="fa fa-'+icon+'"></i></div><div id="desc">'+text+'</div></div>');
+			$(".alerts").html($(this).html + '<div id="toast-'+alerts.count+'" class="toast toast-'+colour+'}"> <div id="img"><i class="fa fa-'+icon+'"></i></div><div id="desc">'+text+'</div></div>');
 			$(".alerts").find("#toast-"+alerts.count).addClass("show");
 			setTimeout(function(){
 				$(".alerts").find("#toast-"+alerts.count).removeClass("show");
