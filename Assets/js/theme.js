@@ -33,7 +33,7 @@ $( document ).ready(async function() {
 			return true;
 		},
 	}
-	alert = {
+	alerts = {
 		count: 0,
 		close: function() {
 
