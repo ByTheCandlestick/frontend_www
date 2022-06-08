@@ -2,9 +2,9 @@
 	position: fixed;
 	bottom: 10px;
 	width: 100%;
+	z-index: 10;
 }
 .alerts .alert {
 	margin: 0 auto;
 	width: fit-content;
-	z-index: 10;
 }
