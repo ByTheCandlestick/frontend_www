@@ -312,7 +312,7 @@
                 },
                 onUpdate: function(el) {
                     el.innerHTML = smde_desc_l.value().length + " / "+512;
-                    limit_characters()
+                    misc.limit_characters()
                 }
             }]
 		});
@@ -325,7 +325,7 @@
                 },
                 onUpdate: function(el) {
                     el.innerHTML = smde_desc_s.value().length + " / "+256;
-                    limit_characters()
+                    misc.limit_characters()
                 }
             }]
 		});

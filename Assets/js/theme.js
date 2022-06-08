@@ -6,7 +6,6 @@ $( document ).ready(async function() {
 	misc = {
         limit_characters: function(simplemde) {
             character_count = simplemde.value().length
-
             if (character_count > char_limit) {
                 $('#submitBtn').attr("disabled", true);
             } else {
