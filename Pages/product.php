@@ -308,10 +308,10 @@
             status: [ {
                 className: "chars",
                 defaultValue: function(el) {
-                    el.innerHTML = "0 / "+char_limit;
+                    el.innerHTML = "0 / "+512;
                 },
                 onUpdate: function(el) {
-                    el.innerHTML = simplemde.value().length + " / "+char_limit;
+                    el.innerHTML = smde_desc_l.value().length + " / "+512;
                     limit_characters()
                 }
             }]
@@ -321,10 +321,10 @@
             status: [ {
                 className: "chars",
                 defaultValue: function(el) {
-                    el.innerHTML = "0 / "+char_limit;
+                    el.innerHTML = "0 / "+256;
                 },
                 onUpdate: function(el) {
-                    el.innerHTML = simplemde.value().length + " / "+char_limit;
+                    el.innerHTML = smde_desc_s.value().length + " / "+256;
                     limit_characters()
                 }
             }]
