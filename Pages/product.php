@@ -305,23 +305,29 @@
 	<script>
 		var smde_desc_l = new SimpleMDE({
 			element: $("div[name=description_long] input")[0],
-			defaultValue: function(el) {
-				el.innerHTML = "0 / "+512;
-			},
-			onUpdate: function(el) {
-				el.innerHTML = simplemde.value().length + " / "+512;
-				limit_characters()
-			}
+            status: [ {
+                className: "chars",
+                defaultValue: function(el) {
+                    el.innerHTML = "0 / "+char_limit;
+                },
+                onUpdate: function(el) {
+                    el.innerHTML = simplemde.value().length + " / "+char_limit;
+                    limit_characters()
+                }
+            }]
 		});
 		var smde_desc_s = new SimpleMDE({
 			element: $("div[name=description_short] input")[0],
+            status: [ {
+                className: "chars",
                 defaultValue: function(el) {
-                    el.innerHTML = "0 / "+256;
+                    el.innerHTML = "0 / "+char_limit;
                 },
                 onUpdate: function(el) {
-                    el.innerHTML = simplemde.value().length + " / "+256;
+                    el.innerHTML = simplemde.value().length + " / "+char_limit;
                     limit_characters()
                 }
+            }]
 		});
 	</script>
 <?
