@@ -63,7 +63,7 @@
 							<label for="floatingInput">Range</label>
 						</div>
 					</div>
-					<div class="col-12 col-md-3 col-lg-2" name="status">
+					<div class="col-12 col-lg-4" name="status">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
 								<input class="form-check-input" type="checkbox" name="discontinued" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
@@ -75,7 +75,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-6 col-md-3 col-lg-1" name="currency">
+					<div class="col-6 col-lg-3" name="currency">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Currency'])?>">
 							<label for="floatingInput">Currency</label>
