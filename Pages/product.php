@@ -280,7 +280,7 @@
 				</div>
 			</div>
 			<div class="col-12 col-lg-6" name="description_long">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print(urldecode($prod['DescriptionLong']))?>">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 			</div>
 			<div class="col-12 col-lg-6" name="description_short">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
