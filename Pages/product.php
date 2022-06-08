@@ -76,19 +76,22 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="currency">
-						<div class="form-floating mb-3">
+						<div class="form-floating mb-3 input-group">
+							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Currency'])?>">
 							<label for="floatingInput">Currency</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="profit">
-						<div class="form-floating mb-3">
+						<div class="form-floating mb-3 input-group">
+							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>">
 							<label for="floatingInput">Profit</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="retail">
-						<div class="form-floating mb-3">
+						<div class="form-floating mb-3 input-group">
+							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['RetailPrice'])?>">
 							<label for="floatingInput">Retail</label>
 						</div>
