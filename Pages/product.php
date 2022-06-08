@@ -285,13 +285,13 @@
 			</div>
 			<div class="col-12 col-md-6">
 				<div class="row">
-					<div class="col-12 col-lg-6" name="description_long">
-						<h5>Long description</h5>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
-					</div>
-					<div class="col-12 col-lg-6" name="description_short">
+					<div class="col-12" name="description_short">
 						<h5>Short description</h5>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
+						<textarea type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>"></textarea>
+					</div>
+					<div class="col-12" name="description_long">
+						<h5>Long description</h5>
+						<textarea type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>"></textarea>
 					</div>
 				</div>
 			</div>
