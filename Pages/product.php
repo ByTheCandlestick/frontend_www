@@ -125,7 +125,7 @@
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
-							<label for="floatingInput" class="ps-5"``>Markup</label>
+							<label for="floatingInput" class="ps-5">Markup</label>
 							<span class="input-group-text" id="percentage">%</span>
 						</div>
 					</div>
