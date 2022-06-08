@@ -85,14 +85,14 @@
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>">
-							<label for="floatingInput">Profit</label>
+							<label for="floatingInput" class="ps-5">Profit</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="retail">
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['RetailPrice'])?>">
-							<label for="floatingInput">Retail</label>
+							<label for="floatingInput" class="ps-5">Retail</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="pricing">
@@ -111,7 +111,7 @@
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
-							<label for="floatingInput">Net</label>
+							<label for="floatingInput" class="ps-5">Net</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="gross">
@@ -125,7 +125,7 @@
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
-							<label for="floatingInput">Markup</label>
+							<label for="floatingInput" class="ps-5"``>Markup</label>
 							<span class="input-group-text" id="percentage">%</span>
 						</div>
 					</div>
@@ -303,8 +303,27 @@
 		</div>
 	</section>
 	<script>
-		var smde_desc_l = new SimpleMDE({ element: $("div[name=description_long] input")[0] });
-		var smde_desc_s = new SimpleMDE({ element: $("div[name=description_short] input")[0] });
+		char_limit = 
+		var smde_desc_l = new SimpleMDE({
+			element: $("div[name=description_long] input")[0],
+			defaultValue: function(el) {
+				el.innerHTML = "0 / "+char_limit;
+			},
+			onUpdate: function(el) {
+				el.innerHTML = simplemde.value().length + " / "+char_limit;
+				limit_characters()
+			}
+		});
+		var smde_desc_s = new SimpleMDE({
+			element: $("div[name=description_short] input")[0],
+                defaultValue: function(el) {
+                    el.innerHTML = "0 / "+char_limit;
+                },
+                onUpdate: function(el) {
+                    el.innerHTML = simplemde.value().length + " / "+char_limit;
+                    limit_characters()
+                }
+		});
 	</script>
 <?
 	} else {
