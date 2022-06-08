@@ -6,4 +6,5 @@
 .alerts .alert {
 	margin: 0 auto;
 	width: fit-content;
+	z-index: 10;
 }
