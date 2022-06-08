@@ -93,26 +93,7 @@
 							<label for="floatingInput">Retail</label>
 						</div>
 					</div>
-					<div class="col-12 col-md-3 col-lg-1" name="net">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
-							<label for="floatingInput">Net</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-3 col-lg-1" name="gross">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossPrice'])?>">
-							<label for="floatingInput">Gross</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-3 col-lg-1" name="markup">
-						<div class="form-floating mb-3 input-group">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
-							<label for="floatingInput">Markup</label>
-							<span class="input-group-text" id="percentage">%</span>
-						</div>
-					</div>
-					<div class="col-12 col-md-2 col-lg-2" name="pricing">
+					<div class="col-12 col-lg-3" name="pricing">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
 								<input class="form-check-input" type="checkbox" name="discounted" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
@@ -122,6 +103,25 @@
 								<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
 								<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
 							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3" name="net">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
+							<label for="floatingInput">Net</label>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3" name="gross">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossPrice'])?>">
+							<label for="floatingInput">Gross</label>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3" name="markup">
+						<div class="form-floating mb-3 input-group">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
+							<label for="floatingInput">Markup</label>
+							<span class="input-group-text" id="percentage">%</span>
 						</div>
 					</div>
 					<div class="col-12 col-md-3 col-lg-2" name="discount_type">
