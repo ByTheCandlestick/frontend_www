@@ -183,8 +183,8 @@ $( document ).ready(async function() {
 			available = (($("div[name=status]").find("input[name=available]:checked").length === 0)?0:1);
 			discounted = (($("div[name=pricing]").find("input[name=discounted]:checked").length === 0)?0:1);
 			auto_calculate = (($("div[name=pricing]").find("input[name=auto_calculate]:checked").length === 0)?0:1);
-			deesc_l = smde_desc_l.value();
-			deesc_s = smde_desc_s.value();
+			desc_l = smde_desc_l.value();
+			desc_s = smde_desc_s.value();
 
 			data = {
 				'api_key': api_key,
