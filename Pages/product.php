@@ -118,7 +118,7 @@
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="<?print($prod['GrossPrice'])?>">
-							<label for="floatingInput">Gross</label>
+							<label for="floatingInput" class="ps-5">Gross</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="markup">
