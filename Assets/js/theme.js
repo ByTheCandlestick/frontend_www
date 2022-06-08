@@ -190,7 +190,7 @@ $( document ).ready(async function() {
 				'images': $("div[name=images]").find("input").val(),
 				'category': $("div[name=category]").find("option:selected").val(),
 				'discontinued': discontinued,
-				'available': available,
+				'active': available,
 				'currency': $("div[name=currency]").find("input").val(),
 				'profit': $("div[name=profit]").find("input").val(),
 				'retail': $("div[name=retail]").find("input").val(),
