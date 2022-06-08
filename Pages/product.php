@@ -106,14 +106,16 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="net">
-						<div class="form-floating mb-3">
+						<div class="form-floating mb-3 input-group">
+							<span class="input-group-text" id="GBP"><??>£</span>
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
 							<label for="floatingInput">Net</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="gross">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossPrice'])?>">
+						<div class="form-floating mb-3 input-group">
+							<span class="input-group-text" id="GBP"><??>£</span>
+							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="<?print($prod['GrossPrice'])?>">
 							<label for="floatingInput">Gross</label>
 						</div>
 					</div>
