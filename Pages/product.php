@@ -27,6 +27,27 @@
 							<label for="floatingInput">Title</label>
 						</div>
 					</div>
+					<div class="col-12 col-lg-6" name="images">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Images'])?>">
+							<label for="floatingInput">IMAGES</label>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6" name="category">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Category_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Category</label>
+						</div>
+					</div>
 					<div class="col-12 col-lg-6" name="range">
 						<div class="form-floating mb-3">
 							<select class="form-select" id="floatingSelect">
@@ -40,27 +61,6 @@
 								?>
 							</select>
 							<label for="floatingInput">Range</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-5" name="images">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Images'])?>">
-							<label for="floatingInput">IMAGES</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-4 col-lg-2" name="category">
-						<div class="form-floating mb-3">
-							<select class="form-select" id="floatingSelect">
-								<option value="-1" selected>Please select</option>
-								<?
-									$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
-									while ($row = mysqli_fetch_array($query)) {
-										($row['ID'] == $prod['Category_ID'])? $selected=' selected' : $selected='';
-										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-									}
-								?>
-							</select>
-							<label for="floatingInput">Category</label>
 						</div>
 					</div>
 					<div class="col-12 col-md-3 col-lg-2" name="status">
