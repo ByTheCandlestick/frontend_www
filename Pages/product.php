@@ -76,8 +76,7 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="currency">
-						<div class="form-floating mb-3 input-group">
-							<span class="input-group-text" id="GBP"><??>£</span>
+						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Currency'])?>">
 							<label for="floatingInput">Currency</label>
 						</div>
