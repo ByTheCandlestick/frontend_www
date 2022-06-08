@@ -183,6 +183,9 @@ $( document ).ready(async function() {
 			available = (($("div[name=status]").find("input[name=available]:checked").length === 0)?0:1);
 			discounted = (($("div[name=pricing]").find("input[name=discounted]:checked").length === 0)?0:1);
 			auto_calculate = (($("div[name=pricing]").find("input[name=auto_calculate]:checked").length === 0)?0:1);
+			deesc_l = smde_desc_l.value();
+			deesc_s = smde_desc_s.value();
+
 			data = {
 				'api_key': api_key,
 				'title': $("div[name=title]").find("input").val(),
@@ -210,8 +213,8 @@ $( document ).ready(async function() {
 				'packaging': $("div[name=packaging]").find("option:selected").val(),
 				'shipping': $("div[name=shipping]").find("option:selected").val(),
 				'made_by': $("div[name=made_by]").find("option:selected").val(),
-				'description_long': encodeURI(smde_desc_l.value()),
-				'description_short': encodeURI(smde_desc_s.value()),
+				'description_long': desc_l,
+				'description_short': desc_s,
 				'slug': $("div[name=slug]").find("input").val(),
 			}
 			$.ajax({
