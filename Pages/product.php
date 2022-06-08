@@ -28,7 +28,7 @@
 			<div class="col-12 col-md-6 col-lg-2" name="range">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -49,7 +49,7 @@
 			<div class="col-12 col-md-4 col-lg-2" name="category">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -125,7 +125,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="discount_type">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<option>Percentage</option>
 						<option>Value</option>
 					</select>
@@ -141,7 +141,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="container">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -156,7 +156,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="wick">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_wicks` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -171,7 +171,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="wick_stand">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -186,7 +186,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="material">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_materials` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -201,7 +201,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="fragrance">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_fragrances` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -216,7 +216,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="colour">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_colours` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -231,7 +231,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="packaging">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_packagings` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -246,7 +246,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="shipping">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
@@ -261,7 +261,7 @@
 			<div class="col-12 col-md-3 col-lg-2" name="made_by">
 				<div class="form-floating mb-3">
 					<select class="form-select" id="floatingSelect">
-						<option selected>Please select</option>
+						<option value="-1" selected>Please select</option>
 						<?
 							$query = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
