@@ -19,273 +19,281 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row ProductInfo">
-			<div class="col-12 col-md-6 col-lg-5" name="title">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Title'])?>">
-					<label for="floatingInput">Title</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="range">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Collection_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Range</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-5" name="images">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Images'])?>">
-					<label for="floatingInput">IMAGES</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-4 col-lg-2" name="category">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Category_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Category</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="status">
-				<div class="form-floating mb-3">
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="discontinued" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
-						<label class="form-check-label" for="flexCheck"> Discontinued? </label>
+			<div class="col-12 col-md-6">
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-5" name="title">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Title'])?>">
+							<label for="floatingInput">Title</label>
+						</div>
 					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="available" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
-						<label class="form-check-label" for="flexCheck"> Active? </label>
+					<div class="col-12 col-md-6 col-lg-2" name="range">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Collection_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Range</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-5" name="images">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['Images'])?>">
+							<label for="floatingInput">IMAGES</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-4 col-lg-2" name="category">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Category_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Category</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="status">
+						<div class="form-floating mb-3">
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" name="discontinued" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="flexCheck"> Discontinued? </label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" name="available" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="flexCheck"> Active? </label>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-1" name="currency">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Currency'])?>">
+							<label for="floatingInput">Currency</label>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-1" name="profit">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>">
+							<label for="floatingInput">Profit</label>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-1" name="retail">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['RetailPrice'])?>">
+							<label for="floatingInput">Retail</label>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-1" name="net">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
+							<label for="floatingInput">Net</label>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-1" name="gross">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossPrice'])?>">
+							<label for="floatingInput">Gross</label>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 col-lg-1" name="markup">
+						<div class="form-floating mb-3 input-group">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
+							<label for="floatingInput">Markup</label>
+							<span class="input-group-text" id="percentage">%</span>
+						</div>
+					</div>
+					<div class="col-12 col-md-2 col-lg-2" name="pricing">
+						<div class="form-floating mb-3">
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" name="discounted" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="flexCheck"> Discounted? </label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="discount_type">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<option>Percentage</option>
+								<option>Value</option>
+							</select>
+							<label for="floatingInput">Discount type</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="discount_amount">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>">
+							<label for="floatingInput">Discount</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="container">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Container_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Container</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="wick">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_wicks` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Wick_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Wick</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="wick_stand">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['WickStand_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Wick Stand</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="material">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_materials` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Material_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Material</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="fragrance">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_fragrances` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Fragrance_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Fragrance</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="colour">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_colours` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Colour_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Colour</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="packaging">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_packagings` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['Packaging_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Packaging</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="shipping">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['id'] == $prod['Shipping_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['id'].'"'.$selected.'>'.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Shipping</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="made_by">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
+									while ($row = mysqli_fetch_array($query)) {
+										($row['ID'] == $prod['made_by_ID'])? $selected=' selected' : $selected='';
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Made by</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 col-lg-2" name="slug">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
+							<label for="floatingInput">Slug</label>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-6 col-md-3 col-lg-1" name="currency">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Currency'])?>">
-					<label for="floatingInput">Currency</label>
-				</div>
-			</div>
-			<div class="col-6 col-md-3 col-lg-1" name="profit">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>">
-					<label for="floatingInput">Profit</label>
-				</div>
-			</div>
-			<div class="col-6 col-md-3 col-lg-1" name="retail">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['RetailPrice'])?>">
-					<label for="floatingInput">Retail</label>
-				</div>
-			</div>
-			<div class="col-6 col-md-3 col-lg-1" name="net">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
-					<label for="floatingInput">Net</label>
-				</div>
-			</div>
-			<div class="col-6 col-md-3 col-lg-1" name="gross">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossPrice'])?>">
-					<label for="floatingInput">Gross</label>
-				</div>
-			</div>
-			<div class="col-6 col-md-3 col-lg-1" name="markup">
-				<div class="form-floating mb-3 input-group">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
-					<label for="floatingInput">Markup</label>
-					<span class="input-group-text" id="percentage">%</span>
-				</div>
-			</div>
-			<div class="col-12 col-md-2 col-lg-2" name="pricing">
-				<div class="form-floating mb-3">
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="discounted" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
-						<label class="form-check-label" for="flexCheck"> Discounted? </label>
+			<div class="col-12 col-md-6">
+				<div class="row">
+					<div class="col-12 col-lg-6" name="description_long">
+						<h5>Long description</h5>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
 					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
-						<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
+					<div class="col-12 col-lg-6" name="description_short">
+						<h5>Short description</h5>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 					</div>
 				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="discount_type">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<option>Percentage</option>
-						<option>Value</option>
-					</select>
-					<label for="floatingInput">Discount type</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="discount_amount">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>">
-					<label for="floatingInput">Discount</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="container">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Container_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Container</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="wick">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_wicks` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Wick_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Wick</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="wick_stand">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['WickStand_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Wick Stand</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="material">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_materials` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Material_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Material</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="fragrance">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_fragrances` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Fragrance_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Fragrance</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="colour">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_colours` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Colour_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Colour</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="packaging">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_packagings` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['Packaging_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Packaging</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="shipping">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['id'] == $prod['Shipping_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['id'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Shipping</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="made_by">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $prod['made_by_ID'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Made by</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-3 col-lg-2" name="slug">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['Slug'])?>">
-					<label for="floatingInput">Slug</label>
-				</div>
-			</div>
-			<div class="col-12 col-lg-6" name="description_long">
-				<h5>Long description</h5>
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionLong'])?>">
-			</div>
-			<div class="col-12 col-lg-6" name="description_short">
-				<h5>Short description</h5>
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['DescriptionShort'])?>">
 			</div>
 		</div>
 	</section>
