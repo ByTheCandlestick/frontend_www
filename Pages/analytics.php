@@ -34,7 +34,7 @@
 				<h5>Users created / day</h5>
 			</div>
 			<div class="col-12 col-md-6">
-				<h5>Product popularity</h5>
+				<h5></h5>
 			</div>
 		</div>
 	</div>
