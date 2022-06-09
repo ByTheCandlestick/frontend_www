@@ -4,16 +4,16 @@
 
 	// Determine the required row from the page requested
 	if(QS_SUBPAGE != NULL) {
-		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' AND `Sub-page_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
+		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `Page_url`='%s' AND `Sub-page_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
 		try {
 			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
 				throw new Exception();
 			}
 		} catch (Exception $er) {
-			$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' LIMIT 1", QS_PAGE);
+			$query = sprintf("SELECT * FROM `page_layouts`  WHERE `Page_url`='%s' LIMIT 1", QS_PAGE);
 		}
 	} else {
-		$query = sprintf("SELECT * FROM `admin_pages`  WHERE `Page_url`='%s' LIMIT 1", QS_PAGE);
+		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `Page_url`='%s' LIMIT 1", QS_PAGE);
 	}
 	// get the page information
 	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
@@ -95,7 +95,7 @@
 							<i class="fa fa-arrow-left"></i>
 						</a>
 						<?
-							$items = DB_Query("SELECT * FROM `admin_pages` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
+							$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
 							foreach($items as $item) {
 								if($item['Page_url'] == QS_PAGE) {
 									$link = '#';
@@ -117,7 +117,15 @@
 						?>
 					</div>
 					<!-- Page Content -->
-					<? include('./Pages/'.$layout_row['Name'].'.php'); ?>
+					<? 
+						if($layout_row['display_type']) {
+							if($layout_row['section_ids'] != NULL) {
+								printSections($layout_row['section_ids']);
+							}
+						} else {
+							include('./Pages/'.$layout_row['Name'].'.php');
+						}
+					?>
 					<!-- Alerts -->
 					<div class="alerts"> </div>
 					<!-- Modals -->
