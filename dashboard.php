@@ -5,6 +5,7 @@
 	// Determine the required row from the page requested
 	if(QS_SUBPAGE != NULL) {
 		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
+		print($query);
 		try {
 			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
 				throw new Exception();
