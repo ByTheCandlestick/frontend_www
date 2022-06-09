@@ -1,3 +1,13 @@
+<?
+	$days = $days_b = array();
+	for ($i = 0; $i < 7; $i++){
+		array_push($days_b, date('l', $day));
+		$day = strtotime('yesterday', $day);
+	}
+	for ($i=count($days_b)-1; $i>=0; $i--) {
+		array_push($days, $days_b[$i]);
+	}
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
@@ -17,9 +27,11 @@
 				<chart class="ct-page-referrers" />
 				<script>
 					new Chartist.Line('.ct-page-referrers', {
-						labels: ['L0', 'L1', 'L2', 'L3'],
+						labels: ['<?print(implode('\', \'', $days))?>'],
 						series: [
 							[0,1,2,3]
+							[1,2,3,4]
+							[2,3,4,5]
 						]
 					}, {
 						fullWidth: true,
