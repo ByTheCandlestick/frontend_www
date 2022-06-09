@@ -77,7 +77,7 @@
 				<chart class="ct-prod-popularity" />
 				<script>
 					new Chartist.Line('.ct-prod-popularity', {
-						labels: ['l0,l1,l2,l3'],
+						labels: ['l0', 'l1', 'l2', 'l3'],
 						series: [
 							[0,1,2,3]
 						]
