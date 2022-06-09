@@ -95,13 +95,13 @@
 							<i class="fa fa-arrow-left"></i>
 						</a>
 						<?
-							$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `Menu_item`=1 ORDER BY `menu_order` ASC");
+							$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 ORDER BY `menu_order` ASC");
 							foreach($items as $item) {
-								if($item['Page_url'] == QS_PAGE) {
+								if($item['page_url'] == QS_PAGE) {
 									$link = '#';
 									$active = ' active';
 								} else {
-									$link = $item['URL'];
+									$link = $item['menu_url'];
 									$active = '';
 								}
 								print(sprintf('
@@ -111,7 +111,7 @@
 									',
 									$link,
 									$active,
-									$item['Icon']
+									$item['menu_icon']
 								));
 							}
 						?>
