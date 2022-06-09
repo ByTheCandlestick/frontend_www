@@ -10,8 +10,8 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<h3>Page views</h3>
 		<div class="row col-12 col-md-6">
+			<h3>Pages</h3>
 			<div class="col-12 col-md-6">
 				<h5>Page referrers</h5>
 			</div>
@@ -20,6 +20,7 @@
 			</div>
 		</div>
 		<div class="row col-12 col-md-6">
+			<h3>Products</h3>
 			<div class="col-12 col-md-6">
 				<h5>Product sales</h5>
 			</div>
