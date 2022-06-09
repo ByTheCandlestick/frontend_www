@@ -123,7 +123,7 @@
 								printSections($layout_row['section_ids']);
 							}
 						} else {
-							include('./Pages/'.$layout_row['Name'].'.php');
+							include('./Pages/'.$layout_row['page_file'].'.php');
 						}
 					?>
 					<!-- Alerts -->
