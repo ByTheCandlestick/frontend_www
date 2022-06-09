@@ -117,9 +117,8 @@
 						?>
 					</div>
 					<!-- Page Content -->
-					<? 
-						print_r($layout_row['display_type']);
-						if($layout_row['display_type']) {
+					<?
+						if($layout_row['display_type'] == 1) {
 							if($layout_row['section_ids'] != NULL) {
 								printSections($layout_row['section_ids']);
 							}
