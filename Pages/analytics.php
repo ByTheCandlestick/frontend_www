@@ -17,9 +17,9 @@
 				<chart class="ct-page-referrers" />
 				<script>
 					new Chartist.Line('.ct-page-referrers', {
-						labels: ['<?print(implode('\', \'', $days))?>'],
+						labels: ['l0,l1,l2,l3'],
 						series: [
-							[12, 9, 7, 8, 5, 11, 0]
+							[0,1,2,3]
 						]
 					}, {
 						fullWidth: true,
@@ -36,9 +36,9 @@
 				<chart class="ct-interactions" />
 				<script>
 					new Chartist.Line('.ct-interactions', {
-						labels: ['<?print(implode('\', \'', $days))?>'],
+						labels: ['l0,l1,l2,l3'],
 						series: [
-							[12, 9, 7, 8, 5, 11, 0]
+							[0,1,2,3]
 						]
 					}, {
 						fullWidth: true,
@@ -58,9 +58,9 @@
 				<chart class="ct-prod-sales-day" />
 				<script>
 					new Chartist.Line('.ct-prod-sales-day', {
-						labels: ['<?print(implode('\', \'', $days))?>'],
+						labels: ['l0,l1,l2,l3'],
 						series: [
-							[12, 9, 7, 8, 5, 11, 0]
+							[0,1,2,3]
 						]
 					}, {
 						fullWidth: true,
@@ -77,9 +77,9 @@
 				<chart class="ct-prod-popularity" />
 				<script>
 					new Chartist.Line('.ct-prod-popularity', {
-						labels: ['<?print(implode('\', \'', $days))?>'],
+						labels: ['l0,l1,l2,l3'],
 						series: [
-							[12, 9, 7, 8, 5, 11, 0]
+							[0,1,2,3]
 						]
 					}, {
 						fullWidth: true,
@@ -99,9 +99,9 @@
 				<chart class="ct-users-created-day" />
 				<script>
 					new Chartist.Line('.ct-users-created-day', {
-						labels: ['<?print(implode('\', \'', $days))?>'],
+						labels: ['l0,l1,l2,l3'],
 						series: [
-							[12, 9, 7, 8, 5, 11, 0]
+							[0,1,2,3]
 						]
 					}, {
 						fullWidth: true,
