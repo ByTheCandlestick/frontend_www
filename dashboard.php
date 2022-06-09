@@ -14,6 +14,7 @@
 	} else {
 		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domain_ID);
 	}
+	print($query);
 	// get the page information
 	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
 		while($layout_row = mysqli_fetch_array($layout_results)) {
