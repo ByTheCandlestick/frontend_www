@@ -29,9 +29,9 @@
 					new Chartist.Line('.ct-page-referrers', {
 						labels: ['<?print(implode('\', \'', $days))?>'],
 						series: [
-							[0,1,2,3]
-							[1,2,3,4]
-							[2,3,4,5]
+							[0,1,2,3],
+							[1,2,3,4],
+							[2,3,4,5],
 						]
 					}, {
 						fullWidth: true,
