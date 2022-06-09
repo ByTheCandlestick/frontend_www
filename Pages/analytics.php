@@ -17,7 +17,7 @@
 				<chart class="ct-page-referrers" />
 				<script>
 					new Chartist.Line('.ct-page-referrers', {
-						labels: ['l0', 'l1', 'l2', 'l3'],
+						labels: ['L0', 'L1', 'L2', 'L3'],
 						series: [
 							[0,1,2,3]
 						]
@@ -36,7 +36,7 @@
 				<chart class="ct-interactions" />
 				<script>
 					new Chartist.Line('.ct-interactions', {
-						labels: ['l0', 'l1', 'l2', 'l3'],
+						labels: ['L0', 'L1', 'L2', 'L3'],
 						series: [
 							[0,1,2,3]
 						]
@@ -58,7 +58,7 @@
 				<chart class="ct-prod-sales-day" />
 				<script>
 					new Chartist.Line('.ct-prod-sales-day', {
-						labels: ['l0', 'l1', 'l2', 'l3'],
+						labels: ['L0', 'L1', 'L2', 'L3'],
 						series: [
 							[0,1,2,3]
 						]
@@ -77,7 +77,7 @@
 				<chart class="ct-prod-popularity" />
 				<script>
 					new Chartist.Line('.ct-prod-popularity', {
-						labels: ['l0', 'l1', 'l2', 'l3'],
+						labels: ['L0', 'L1', 'L2', 'L3'],
 						series: [
 							[0,1,2,3]
 						]
@@ -99,7 +99,7 @@
 				<chart class="ct-users-created-day" />
 				<script>
 					new Chartist.Line('.ct-users-created-day', {
-						labels: ['l0', 'l1', 'l2', 'l3'],
+						labels: ['L0', 'L1', 'L2', 'L3'],
 						series: [
 							[0,1,2,3]
 						]
