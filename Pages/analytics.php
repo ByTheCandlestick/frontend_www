@@ -20,8 +20,12 @@
 			</div>
 		</div>
 		<div class="row col-12 col-md-6">
-			
+			<div class="col-12 col-md-6">
+				<h5>Product sales</h5>
+			</div>
+			<div class="col-12 col-md-6">
+				<h5>Product popularity</h5>
+			</div>
 		</div>
-		<h3>Product sales</h3>
 	</div>
 </section>
