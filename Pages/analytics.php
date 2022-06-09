@@ -16,13 +16,22 @@
 				<h5>Page referrers</h5>
 			</div>
 			<div class="col-12 col-md-6">
-				<h5>Page referrers</h5>
+				<h5>Interactions</h5>
 			</div>
 		</div>
 		<div class="row col-12 col-md-6">
 			<h3>Products</h3>
 			<div class="col-12 col-md-6">
-				<h5>Product sales</h5>
+				<h5>Product sales / day</h5>
+			</div>
+			<div class="col-12 col-md-6">
+				<h5>Product popularity</h5>
+			</div>
+		</div>
+		<div class="row col-12 col-md-6">
+			<h3>Users</h3>
+			<div class="col-12 col-md-6">
+				<h5>Users created / day</h5>
 			</div>
 			<div class="col-12 col-md-6">
 				<h5>Product popularity</h5>
