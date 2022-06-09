@@ -6,8 +6,7 @@
 	 *
 	 */
 	function domainID() {
-		print_r($query = sprintf("SELECT `ID` FROM `misc_websites` WHERE `Domain`=%s", $_SERVER['HTTP_HOST']));
-		return mysqli_fetch_array(DB_Query($query))[0];
+		return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 	}
 	/**
 	 * DB_QUERY
