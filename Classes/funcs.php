@@ -1,5 +1,15 @@
 <?
 	/**
+	 * domainID
+	 *
+	 * @return int
+	 *
+	 */
+	function domainID() {
+		print_r($_SERVER);
+		return '1'; // (DB_Query())
+	}
+	/**
 	 * DB_QUERY
 	 *
 	 * @param array $DBinfo A predefined list including all DB info for the required DB
