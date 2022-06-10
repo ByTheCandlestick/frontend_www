@@ -202,6 +202,6 @@
 <?
 		}
 	} else {
-		print('here')
+		print('here');
 	}
 ?>
