@@ -89,10 +89,12 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<!-- -->
-				<link rel="stylesheet" href="/Themes/<?print($theme)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+				<?
+					print_r($theme);
+				?>
+				<link rel="stylesheet" href="/Themes/frontend/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 				<noscript>
-					<link rel="stylesheet" href="/Themes/<?print($theme)?>/Assets/css/style.css">
+					<link rel="stylesheet" href="/Themes/frontend/Assets/css/style.css">
 				</noscript>
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
