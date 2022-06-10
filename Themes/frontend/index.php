@@ -261,19 +261,19 @@
 										}
 								?>
 										<li>
-											<i class="fad fa-user pe-1"></i>
+											<i class="fad fa-cart pe-1"></i>
 											<a href="/Cart/">My Cart</a>
 										</li>
 										<li>
-											<i class="fad fa-cart pe-1"></i>
+											<i class="fad fa-house pe-1"></i>
 											<a href="/my/Addresses/">My Addresses</a>
 										</li>
 										<li>
-											<i class="fad fa-house pe-1"></i>
+											<i class="fad fa-id-card pe-1"></i>
 											<a href="/my/Cards/">My Cards</a>
 										</li>
 										<li>
-											<i class="fad fa-card pe-1"></i>
+											<i class="fad fa-sign-out pe-1"></i>
 											<a href="/Logout/">Logout</a>
 										</li>
 								<?
