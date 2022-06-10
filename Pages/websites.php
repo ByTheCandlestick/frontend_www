@@ -24,6 +24,7 @@
 				<?
 					$query = DB_Query("SELECT * FROM `misc_websites`");
 					while ($row = mysqli_fetch_array($query)) {
+						print_r($row);
 						print('
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
