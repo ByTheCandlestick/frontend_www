@@ -111,10 +111,14 @@ $( document ).ready(async function() {
 				cookie.update('cs_adm', 'light')
 				mode.root.removeClass('dark');
 				mode.root.addClass('light');
+				mode.modeSwitch.find('i').removeClass('fa');
+				mode.modeSwitch.find('i').addClass('fal');
 			} else {
 				cookie.update('cs_adm', 'dark')
 				mode.root.removeClass('light');
 				mode.root.addClass('dark');
+				mode.modeSwitch.find('i').addClass('fa');
+				mode.modeSwitch.find('i').removeClass('fal');
 			}
 			mode.modeSwitch.toggleClass('active');
 		},
@@ -122,8 +126,12 @@ $( document ).ready(async function() {
 			mode.root.addClass(val);
 			if(val == "dark") {
 				mode.modeSwitch.addClass('active');
+				mode.modeSwitch.find('i').addClass('fa');
+				mode.modeSwitch.find('i').removeClass('fal');
 			} else {
 				mode.modeSwitch.removeClass('active');
+				mode.modeSwitch.find('i').removeClass('fa');
+				mode.modeSwitch.find('i').addClass('fal');
 			}
 		},
 	}
