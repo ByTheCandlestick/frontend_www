@@ -10,8 +10,8 @@
 		define('ADMIN', 		['db5007320590.hosting-data.io',	'dbu1278426',	'CandleStick2603',	'dbs6031251']);
 		define('ANALYTICS',		['db5007301242.hosting-data.io',	'dbu235049',	'CandleStick2603',	'dbs6015868']);
 	}
-	define('ROOT',			$_SERVER["DOCUMENT_ROOT"]);
-	define('THEME',			getThemepage(false));
+	define('__ROOT__',		$_SERVER["DOCUMENT_ROOT"]);
+	define('__THEME__',		getThemepage(false));
 	define('QS_PAGE',		(isset($_GET['page'])) ? strtolower($_GET['page']) : 'index');
 	define('QS_SUBPAGE',	(isset($_GET['subpage'])) ? strtolower($_GET['subpage']) : null);
 	define('QS',			(isset($_GET['q'])) ? strtolower($_GET['q']) : null);
