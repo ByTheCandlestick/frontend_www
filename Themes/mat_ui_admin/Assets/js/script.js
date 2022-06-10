@@ -12,9 +12,9 @@ $( document ).ready(async function() {
                 $('#submitBtn').attr("disabled", false);
             }
         },
-		getQueryParams: function( params, url ) {
+		getQueryParams: function(params) {
 			let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
-			let qString = regexp.exec(url);
+			let qString = regexp.exec(window.location.href);
 			return qString ? qString[1] : null;
 		  }
 	}
@@ -264,7 +264,7 @@ $( document ).ready(async function() {
 			search.jsonData = data
 		})
 	// -----========== BACK BTN ==========----- //
-		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0) {
+		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back')) {
 			$('.app-back-btn').addClass('disabled')
 		}
 		$(".app-back-btn").click( function(){
