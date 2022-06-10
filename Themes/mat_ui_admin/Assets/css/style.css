@@ -1,5 +1,3 @@
-@import url("./parts/responsive.css");
-
 @import url("./parts/app-colours.css");
 
 @import url("./parts/app-alerts.css");
@@ -19,3 +17,5 @@
 @import url("./parts/");
 @import url("./parts/");
 @import url("./parts/");
+
+@import url("./parts/responsive.css");
