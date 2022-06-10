@@ -18,7 +18,7 @@
 		</div>
 		<div class="row">
 				<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 m-1" onclick="history.go(-1)">Go back</a>
-				<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 m-1" onclick="/">Go home</a>
+				<a class="btn btn-outline-primary col-12 col-md-3 col-lg-1 m-1" href="/">Go home</a>
 			</div>
 		</div>
 	</section>
