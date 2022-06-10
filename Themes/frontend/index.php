@@ -87,9 +87,6 @@
 					}
 				?>
 				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-					<noscript>
-						<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
-					</noscript>
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
 			<!-- ======= Javascript ======= -->
