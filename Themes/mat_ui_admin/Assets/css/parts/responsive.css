@@ -18,6 +18,17 @@
   }
 }
 @media screen and (max-width: 520px) {
+  .app-sidebar.sidebar-show {
+	animation: example 1s linear;
+  }
+  @keyframes example {
+	from {
+		width: 0px;
+	}
+	to {
+		width: auto;
+	}
+  }
   section {
     overflow: auto;
 	margin-left: 24px;
