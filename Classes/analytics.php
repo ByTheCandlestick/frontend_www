@@ -24,8 +24,7 @@
 				echo "<script>console.log('Unable to submit analytics -0')</script>";
 			}
 			if($q = DB_Query("SELECT * FROM `page_views` WHERE `timestamp`='$timestamp' LIMIT 1", ANALYTICS)) {
-				$analytics_ID = mysqli_fetch_row($q);
-				print_r($analytics_ID);
+				$analytics_ID = mysqli_fetch_row($q)[0];
 			}
 
 			if(isset($referrer)) {
