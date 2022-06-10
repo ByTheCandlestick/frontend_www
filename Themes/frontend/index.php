@@ -222,7 +222,7 @@
 											<div class="text-center footer-col-4 footer-links">
 								<?
 									if($user_ok) {
-										if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] != 1) {
+										if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
 								?>
 												<h4>Quick links</h4>
 												<ul class="d-inline-block">
