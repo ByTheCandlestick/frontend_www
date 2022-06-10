@@ -240,12 +240,11 @@
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
 											</li>
 										<?
-											print_r($product);
 											if(isset($product)) {
 										?>
 											<li>
 												<i class="fad fa-pencil pe-1"></i>
-												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this product</a>
+												<a href="<?print($admin_url.'/Product/Edit/'.$product['SKU'].'/')?>">Edit this product</a>
 											</li>
 										<?
 											}
@@ -253,7 +252,7 @@
 										?>
 											<li>
 												<i class="fad fa-pencil pe-1"></i>
-												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this partner</a>
+												<a href="<?print($admin_url.'/Partner/Edit/'.$partner['ID'].'/')?>">Edit this partner</a>
 											</li>
 										<?
 											}
