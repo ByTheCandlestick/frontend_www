@@ -260,7 +260,7 @@ $( document ).ready(async function() {
 		$(".search-area input").focusin( function(){
 			search.suggestions.show();
 		});
-		$.get('/Assets/search.json', function(data){
+		$.get($('.search-wrapper').attr('rel'), function(data){
 			search.jsonData = data
 		})
 	// -----========== MENU BTN ==========----- //
