@@ -101,6 +101,7 @@
 					if($layout_row['script_ids'] != NULL) {
 						printScripts($layout_row['script_ids']);
 					}
+					print_r("<script>alert('".__THEME__."');</script>");
 				?>
 				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
 			<!-- ======= Preloader ======= -->
