@@ -31,11 +31,38 @@
 			}
 ?>
 <!DOCTYPE html>
-	<html>
-		<head>
+	<html lang="en">
+		<head runat="server">
 			<meta charset="utf-8">
 			<meta content="ie=edge" http-eqiv="X-UA-Compatible">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="title" content="<?print($info['meta_title'])?>">
+			<meta name="description" content="<?print($info['meta_description'])?>">
+			<meta name="keywords" content="<?print($info['meta_keywords'])?>">
+			<meta name="theme-color" content="<?print($info['meta_colour'])?>">
+			<title><?
+				print(
+					(if($layout_row['page_title']!="")$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
+				)
+			?></title>
+			<link rel="shortcut icon" href="/assets/images/logos/logo - transparent.svg" type="image/x-icon" />
+			<!-- Progresive Web App -->
+				<link rel="manifest" href="/manifest.json" />
+		  		<script>
+					if ('serviceWorker' in navigator) {
+						navigator.serviceWorker
+							.register('/sw.js')
+							.then(function(registration) {
+								console.log('Registration successful, scope:', registration.scope);
+							})
+							.catch(function(error) {
+								console.log('Service worker registration failed, error:', error);
+							});
+					} else {
+						console.log('Service Workers are not supported');
+					}
+				</script>
+			<!-- APPLE-->
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css" integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css" integrity="sha512-V0+DPzYyLzIiMiWCg3nNdY+NyIiK9bED/T1xNBj08CaIUyK3sXRpB26OUCIzujMevxY9TRJFHQIxTwgzb0jVLg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
