@@ -20,10 +20,12 @@
 @media screen and (max-width: 520px) {
   section {
     overflow: auto;
+	margin-left: 24px;
   }
 
-  .app-sidebar, .app-icon {
-    display: none;
+  .app-sidebar,
+  .app-icon {
+    display: none!important;
   }
 
   .app-content {
