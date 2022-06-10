@@ -30,8 +30,7 @@
 		// CHECK IF THE COOKIES EXIST, SESSION EXISTS AND ARE VALID.
 			if(isset($_COOKIE["session_code"])) {
 				$log_session	= $_COOKIE['session_code'];
-				$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' AND `Active`='1' LIMIT 1");
-				$log_id = mysqli_fetch_assoc($query)['UID'];
+				$log_id = mysqli_fetch_assoc($query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' AND `Active`='1' LIMIT 1"))['UID'];
 				$numrows = mysqli_num_rows($query);
 				if($numrows > 0){
 					$user_ok = true;
@@ -42,17 +41,10 @@
 		// GET USERS DATA AND NOTIFICATIONS
 			if($user_ok) {
 				// USERDATA
-					$query = DB_Query("SELECT * FROM `Users_sessions` WHERE `Session_code`='$log_session' AND `Active`='1' LIMIT 1");
-					$log_id = mysqli_fetch_assoc($query)['UID'];
-					$query = DB_Query("SELECT * FROM `Users` WHERE `ID`='$log_id' LIMIT 1");
-					$userdata = mysqli_fetch_assoc($query);
+					$userdata = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Users` WHERE `ID`='$log_id' LIMIT 1"));
 				// NOTIFICATIONS
-					$query = DB_Query("SELECT * FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1");
-					$notifications = mysqli_fetch_array($query);
-				// NOTIFICATION COUNT
-					$query = DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1");
-					$row = mysqli_fetch_array($query);
-					$notifications['count'] = $row[0];
+					$notifications = mysqli_fetch_array(DB_Query("SELECT * FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1"));
+					$notifications['count'] = mysqli_fetch_array(DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1"))[0];
 			//
 		//
 	}
