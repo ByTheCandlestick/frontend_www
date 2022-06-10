@@ -66,7 +66,7 @@ AddType image/webp .webp
 </IfModule>
 
 #
-# REDIRECT ALL REQUESTS TO DASHBOARD
+# REDIRECT ALL REQUESTS TO INDEX
 #
 <IfModule mod_rewrite.c>
 	RewriteCond %{REQUEST_FILENAME} !-d
@@ -77,10 +77,10 @@ AddType image/webp .webp
 	RewriteCond %{REQUEST_URI} !.*\.gif$ [NC]
 	RewriteCond %{REQUEST_URI} !.*\.js$ [NC]
 	RewriteCond %{REQUEST_URI} !.*Error/([0-9]+)$ [NC]
-	RewriteRule ^(.+)/(.+)/(.+)/$ /dashboard.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
-	RewriteRule ^(.+)/(.+)/$ /dashboard.php?page=$1&subpage=$2 [END,L,QSA]
-	RewriteRule ^(.*)/$ /dashboard.php?page=$1 [END,L,QSA]
-	RewriteRule ^$ /dashboard.php [END,L,QSA]
+	RewriteRule ^(.+)/(.+)/(.+)/$ /index.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
+	RewriteRule ^(.+)/(.+)/$ /index.php?page=$1&subpage=$2 [END,L,QSA]
+	RewriteRule ^(.*)/$ /index.php?page=$1 [END,L,QSA]
+	RewriteRule ^$ /index.php [END,L,QSA]
 </IfModule>
 
 #
