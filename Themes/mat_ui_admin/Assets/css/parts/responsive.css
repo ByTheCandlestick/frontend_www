@@ -23,8 +23,7 @@
 	margin-left: 24px;
   }
 
-  .app-sidebar,
-  .app-icon {
+  .app-sidebar {
     display: none!important;
   }
 
