@@ -376,7 +376,7 @@
 		}
 		if(isset($analytics_startTime)) {
 			$analytics_endTime = microtime(true);
-			loadTime(round(($analytics_endTime - $analytics_startTime) * 1000, 5));
+			loadTime($analytics_ID, $timestamp, $uri_full, round(($analytics_endTime - $analytics_startTime) * 1000, 5));
 		}
 	} else {
 		 header('location: /Error/404');

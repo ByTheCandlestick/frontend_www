@@ -1,5 +1,4 @@
 <?
-	global $analytics_ID, $timestamp, $uri_full;
 //	if($user_ok && !$userdata['Disable_analytics'] || !$user_ok) {
 	if($user_ok || !$user_ok) {
 		$analytics_startTime = microtime(true);
@@ -36,8 +35,8 @@
 				}
 			}
 		// submit load time
-			function loadTime($loadTime) {
-				if(!DB_Query($q = "INSERT INTO `load_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$loadTime')", ANALYTICS)) {
+			function loadTime($ID, $ts, $uri, $loadTime) {
+				if(!DB_Query($q = "INSERT INTO `load_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($ID, '$ts', '$uri', '$loadTime')", ANALYTICS)) {
 					echo "<script>console.log('Unable to submit analytics -2')</script>";
 				}
 				print_r($q);
