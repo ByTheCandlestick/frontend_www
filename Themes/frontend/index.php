@@ -1,21 +1,24 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 	if($user_ok) {
-		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1) header('Location: /Error/401/');
+		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1) {
+			header('Location: /Error/401/');
+		}
 	}
 	require_once('./Classes/analytics.php');
 	// Determine the required row from the page requested
+	$domainID = domainID();
 	if(QS_SUBPAGE != NULL) {
-		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
+		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE, $domainID);
 		try {
 			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
 				throw new Exception();
 			}
 		} catch (Exception $er) {
-			$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' LIMIT 1", QS_PAGE);
+			$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
 		}
 	} else {
-		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' LIMIT 1", QS_PAGE);
+		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
 	}
 	// get the page information
 	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {

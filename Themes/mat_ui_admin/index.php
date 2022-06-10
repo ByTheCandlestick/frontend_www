@@ -1,10 +1,11 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 	if($user_ok) {
-		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin']!=1) $user_ok = false;
+		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] != 1){
+			$user_ok = false;
+		}
 	}
 	require_user_ok();
-
 	// Determine the required row from the page requested
 	$domainID = domainID();
 	if(QS_SUBPAGE != NULL) {
