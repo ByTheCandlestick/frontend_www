@@ -1,4 +1,8 @@
 <?
+	function strip_out_subdomain($domain) {
+		return $only_my_domain = preg_replace("/^(.*?)\.(.*)$/","$2",$domain);
+	}
+
 	function startsWith($string, $startString) {
 		$len = strlen($startString);
 		return (substr($string, 0, $len) === $startString);
@@ -208,7 +212,6 @@
 				ignore_user_abort(true); // optional
 				ob_start();
 		
-				Header('Location: '.(($_SERVER['HTTPS'])? 'https://' : 'http://')."www.".substr($_SERVER['HTTP_HOST'], 6));
 				
 				$size = ob_get_length();
 				header("Content-Length: $size");
