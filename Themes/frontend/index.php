@@ -93,6 +93,8 @@
 			<?
 				if($user_ok) {
 					print('here');
+				} else {
+					print('not here');
 				}
 			?>
 			<!-- ======= Javascript ======= -->
