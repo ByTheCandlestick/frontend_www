@@ -38,24 +38,34 @@
 			<meta name="description" content="<?print($info['meta_description'])?>">
 			<meta name="keywords" content="<?print($info['meta_keywords'])?>">
 			<meta name="theme-color" content="<?print($info['meta_colour'])?>">
-			<title></title>
+			<title> 
+				<?
+					print(
+						(($layout_row['page_title']=="")?"":$layout_row['page_title']." | ").
+						$info['name']." - ".$info['slogan']
+					)
+				?>
+			</title>
 			<link rel="shortcut icon" href="/assets/images/logos/logo - transparent.svg" type="image/x-icon" />
-			<link rel="manifest" href="/manifest.json" />
-			<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
-			<script>
-				if ('serviceWorker' in navigator) {
-					navigator.serviceWorker
-						.register('/sw.js')
-						.then(function(registration) {
-							console.log('Registration successful, scope:', registration.scope);
-						})
-						.catch(function(error) {
-							console.log('Service worker registration failed, error:', error);
-						});
-				} else {
-					console.log('Service Workers are not supported');
-				}
-			</script>
+			<!-- Progresive Web App -->
+				<link rel="manifest" href="/manifest.json" />
+				<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
+
+				<pwa-update swpath="/sw.js" updateevent="skipWaiting" offlineToastDuration="2000"></pwa-update>
+		  		<script>
+					if ('serviceWorker' in navigator) {
+						navigator.serviceWorker
+							.register('/sw.js')
+							.then(function(registration) {
+								console.log('Registration successful, scope:', registration.scope);
+							})
+							.catch(function(error) {
+								console.log('Service worker registration failed, error:', error);
+							});
+					} else {
+						console.log('Service Workers are not supported');
+					}
+				</script>
 			<!-- APPLE-->
 				<link rel="apple-touch-icon" sizes="57x57" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/57x57.png">
 				<link rel="apple-touch-icon" sizes="60x60" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/60x60.png">
