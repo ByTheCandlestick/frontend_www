@@ -783,10 +783,8 @@ $(document).ready(function() {
 	/**
 	 * Preloader
 	 */
-		setTimeout(function () { 
-			$('.preloader-container').fadeOut();
-		}, 2000);
 		$(window).bind('beforeunload', function() {
 			$('.preloader-container').fadeIn();
 		});
+		$('.preloader-container').fadeOut();
 });

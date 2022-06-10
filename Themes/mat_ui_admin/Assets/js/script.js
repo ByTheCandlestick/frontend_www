@@ -268,10 +268,8 @@ $( document ).ready(async function() {
 			}
 		});
 	// -----========== PRELOADER ==========----- //
-		setTimeout(function () { 
-			$('.app-preloader').fadeOut();
-		}, 2000);
 		$(window).bind('beforeunload', function() {
 			$('.app-preloader').fadeIn();
 		});
+		$('.app-preloader').fadeOut();
 });
