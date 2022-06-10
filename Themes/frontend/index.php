@@ -251,7 +251,7 @@
 												<a href="/my/">My account</a>
 											</li>
 											<li>
-												<i class="fad fa-user pe-1"></i>
+												<i class="fad fa-exit pe-1"></i>
 												<a href="/Logout/">Logout</a>
 											</li>
 								<?
