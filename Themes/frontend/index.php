@@ -171,8 +171,10 @@
 			<!-- ======= Content ======= -->
 				<?
 					if($layout_row['display_type'] == 1) {
-						if($layout_row['section_ids'] != NULL) {
+						if($layout_row['section_ids'] != null) {
 							printSections($layout_row['section_ids']);
+						} else {
+							Redirect('/Error/404/');
 						}
 					} else {
 						include('./Pages/'.$layout_row['page_file'].'.php');
