@@ -3,6 +3,7 @@
 		$analytics_startTime = microtime(true);
 		$user_ip = getenv('REMOTE_ADDR');
 		$timestamp = time();
+		print_r($timestamp);
 		// Get the users location
 			$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
 			$country = $geo["geoplugin_countryName"];
@@ -46,4 +47,5 @@
 			}
 		//
 	}
+	print_r($timestamp);
 ?>
