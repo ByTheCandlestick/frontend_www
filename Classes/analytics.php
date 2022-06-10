@@ -1,7 +1,6 @@
 <?
 //	if($user_ok && !$userdata['Disable_analytics'] || !$user_ok) {
 	if($user_ok || !$user_ok) {
-		global $analytics_ID, $timestamp, $uri_full;
 		$analytics_startTime = microtime(true);
 		$user_ip = getenv('REMOTE_ADDR');
 		$timestamp = date('Y-m-d H:i:s');
@@ -36,7 +35,8 @@
 			}
 		// submit load time
 			function loadTime($loadTime) {
-				if(!DB_Query($q = "INSERT INTO `load_time`(`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$loadTime')", ANALYTICS)) {
+				global $analytics_ID, $timestamp, $uri_full;
+				if(!DB_Query($q = "INSERT INTO `load_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$loadTime')", ANALYTICS)) {
 					echo "<script>console.log('Unable to submit analytics -2')</script>";
 				}
 				print_r($q);
@@ -44,7 +44,7 @@
 		// submit session time
 			function sessionTime($sessionTime) {
 				global $analytics_ID, $timestamp, $uri_full;
-				if(!DB_Query("INSERT INTO `session_time`(ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$sessionTime')", ANALYTICS)) {
+				if(!DB_Query("INSERT INTO `session_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$sessionTime')", ANALYTICS)) {
 					echo "<script>console.log('Unable to submit analytics -3')</script>";
 				}
 			}
