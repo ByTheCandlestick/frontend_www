@@ -22,10 +22,10 @@
 	animation: example 1s linear;
   }
   @keyframes example {
-	from {
+	000% {
 		width: 0px;
 	}
-	to {
+	100% {
 		width: auto;
 	}
   }
