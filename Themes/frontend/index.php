@@ -306,3 +306,10 @@
 		 header('location: /Error/404');
 	}
 ?>
+<?
+	if($user_ok) {
+		print('here');
+	} else {
+		print('not here');
+	}
+?>
