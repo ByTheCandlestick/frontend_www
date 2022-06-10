@@ -1,8 +1,7 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 	if($user_ok) {
-		$query = DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID']));
-		if(mysqli_fetch_assoc($query)['Access_www'] != 1)
+		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1)
             header('Location: /Error/401/');
 	}
 	require_once('./Classes/analytics.php');
