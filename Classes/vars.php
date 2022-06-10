@@ -21,6 +21,8 @@
 		} else {
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
+	// GET PAGE INFORMATION
+		$website_info = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `misc_websites` WHERE `Domain`='%s' LIMIT 1", $_SERVER['HTTP_HOST'])));
 	// CHECK IF THE USER IS LOGGED IN
 		// SET THE VARIABLES
 			$user_ok = false;
