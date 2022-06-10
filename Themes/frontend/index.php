@@ -224,13 +224,15 @@
 									<ul class="d-inline-block">
 								<?
 									if($user_ok) {
+								?>
+										<li>
+											<i class="fad fa-user pe-1"></i>
+											<a href="/My/">My Account</a>
+										</li>
+								<?
 										if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
 											$admin_url = (($_SERVER['HTTPS'])?'https://':'http://').'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
 								?>
-											<li>
-												<i class="fad fa-user pe-1"></i>
-												<a href="/my/">My account</a>
-											</li>
 											<li>
 												<i class="fad fa-cogs pe-1"></i>
 												<a href="<?print($admin_url)?>">Open admin dashboard</a>
@@ -257,36 +259,26 @@
 										<?
 											}
 										?>
-											<li>
-												<i class="fad fa-sign-out pe-1"></i>
-												<a href="/logout/">Logout</a>
-											</li>
-								<?
-										} else {
-								?>
-											<li>
-												<i class="fad fa-user pe-1"></i>
-												<a href="/My/">My Account</a>
-											</li>
-											<li>
-												<i class="fad fa-user pe-1"></i>
-												<a href="/Cart/">My Cart</a>
-											</li>
-
-											<li>
-												<i class="fad fa-user pe-1"></i>
-												<a href="/my/Addresses/">My Addresses</a>
-											</li>
-											<li>
-												<i class="fad fa-user pe-1"></i>
-												<a href="/my/Cards/">My Cards</a>
-											</li>
-											<li>
-												<i class="fad fa-sign-out pe-1"></i>
-												<a href="/Logout/">Logout</a>
-											</li>
 								<?
 										}
+								?>
+										<li>
+											<i class="fad fa-user pe-1"></i>
+											<a href="/Cart/">My Cart</a>
+										</li>
+										<li>
+											<i class="fad fa-user pe-1"></i>
+											<a href="/my/Addresses/">My Addresses</a>
+										</li>
+										<li>
+											<i class="fad fa-user pe-1"></i>
+											<a href="/my/Cards/">My Cards</a>
+										</li>
+										<li>
+											<i class="fad fa-sign-out pe-1"></i>
+											<a href="/Logout/">Logout</a>
+										</li>
+								<?
 									} else {
 								?>
 									<li>
