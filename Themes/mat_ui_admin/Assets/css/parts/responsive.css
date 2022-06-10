@@ -28,13 +28,12 @@
 
   .app-sidebar {
     display: none;
-	animation: example 0.25s linear;
-	animation-direction:backwards;
+	animation: example 0.25s linear backwards;
   }
   .app-sidebar.sidebar-show {
-	animation: example 0.25s linear;
+	animation: sidebar-show 0.25s linear forwards;
   }
-  @keyframes example {
+  @keyframes sidebar-show {
 	000% {
 		width: 0px;
 		padding: 0px;
