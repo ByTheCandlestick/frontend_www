@@ -49,8 +49,6 @@
 			<link rel="shortcut icon" href="/assets/images/logos/logo - transparent.svg" type="image/x-icon" />
 			<!-- Progresive Web App -->
 				<link rel="manifest" href="/manifest.json" />
-				<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
-					<!--<pwa-update swpath="/sw.js" updateevent="skipWaiting" offlineToastDuration="2000"></pwa-update>-->
 		  		<script>
 					if ('serviceWorker' in navigator) {
 						navigator.serviceWorker
