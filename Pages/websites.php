@@ -24,7 +24,6 @@
 				<?
 					$query = DB_Query("SELECT * FROM `misc_websites`");
 					while ($row = mysqli_fetch_array($query)) {
-						print_r($row);
 						print('
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
@@ -33,7 +32,7 @@
 								<td>'.$row['Maintenance'].'</td>
 								<td>
 									<a href="/Website/View/'.$row['ID'].'">
-										<i class="fa fa-ellipsis"></i>
+										<i class="fa fa-ellipsis-h"></i>
 									</a>
 								</td>
 							</tr>
