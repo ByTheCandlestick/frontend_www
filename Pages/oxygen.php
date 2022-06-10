@@ -38,7 +38,7 @@
 					if($page['display_type']) {
 						printSectionTemplates($page['section_ids']);
 					} else {
-						print("The website is set up to display a page rather than sections - Unable to edit the page.")
+						print("The website is set up to display a page rather than sections - Unable to edit the page.");
 					}
 				?>
 			</div>
