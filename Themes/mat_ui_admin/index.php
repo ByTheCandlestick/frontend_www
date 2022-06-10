@@ -45,10 +45,7 @@
 					print(printStyles($layout_row['style_ids']));
 				}
 			?>
-			<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-				<noscript>
-					<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
-				</noscript>
+			<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
 		</head>
 		<body>
 			<!-- ======= Javascript ======= -->
