@@ -170,8 +170,12 @@
 				</header>
 			<!-- ======= Content ======= -->
 				<?
-		  			if($layout_row['section_ids'] != null) {
-						printSections($layout_row['section_ids']);
+					if($layout_row['display_type'] == 1) {
+						if($layout_row['section_ids'] != NULL) {
+							printSections($layout_row['section_ids']);
+						}
+					} else {
+						include('./Pages/'.$layout_row['page_file'].'.php');
 					}
 				?>
 			<!-- ======= Additional ======= -->
