@@ -10,12 +10,17 @@
 		}
 	/**
 	 * getThemepage
+	 * Returns the name of the theme and optionally requires the theme index page.
+	 *
+	 * @param bool $require
+	 * @return string
 	 *
 	 */
-		function getThemepage() {
+		function getThemepage($require = true) {
 			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
-			require_once('./themes/'.$theme_location.'/index.php');
+			if($require)? require_once('./themes/'.$theme_location.'/index.php');
+			return $theme_location;
 		}
 	/**
 	 * DB_QUERY
