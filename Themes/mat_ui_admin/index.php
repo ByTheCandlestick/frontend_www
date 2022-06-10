@@ -40,7 +40,11 @@
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css" integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css" integrity="sha512-V0+DPzYyLzIiMiWCg3nNdY+NyIiK9bED/T1xNBj08CaIUyK3sXRpB26OUCIzujMevxY9TRJFHQIxTwgzb0jVLg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.css" integrity="sha512-lB03MbtC3LxImQ+BKnZIyvVHTQ8SSmQ15AhVh5U/+CCp4wKtZMvgLGXbZIjIBBbnKsmk3/6n2vcF8a9CtVVSfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-			<link href="/Assets/css/style.css" rel="stylesheet" >
+
+			<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+			<noscript>
+				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
+			</noscript>
 
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js" integrity="sha512-9rxMbTkN9JcgG5euudGbdIbhFZ7KGyAuVomdQDI9qXfPply9BJh0iqA7E/moLCatH2JD4xBGHwV6ezBkCpnjRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -48,96 +52,105 @@
 			<script src="/Assets/js/theme.js"></script>
 		</head>
 		<body>
-			<div class="app-container">
-				<div class="app-preloader">
-					<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
-						<defs>
-							<linearGradient id="pl-grad1" x1="0" y1="0" x2="0" y2="1">
-								<stop offset="0%" stop-color="rgb(37 95 244)" />
-								<stop offset="100%" stop-color="rgb(82 37 244)" />
-							</linearGradient>
-							<linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
-								<stop offset="0%" stop-color="rgb(37 199 244)" />
-								<stop offset="50%" stop-color="rgb(37 95 244)" />
-								<stop offset="100%" stop-color="rgb(82 37 244)" />
-							</linearGradient>
-						</defs>
-						<circle class="pl_ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16" stroke-linecap="round" />
-						<circle class="pl_worm1" r="56" cx="64" cy="192" fill="none" stroke="url(#pl-grad1)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 263.89" />
-						<path class="pl_worm2" d="M120,192A56,56,0,0,1,8,192C8,161.07,16,8,64,8S120,161.07,120,192Z" fill="none" stroke="url(#pl-grad2)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 494" />
-					</svg>
-				</div>
-				<div class="app-header">
-					<!-- Brand Info -->
-					<div class="app-header-left">
-						<span class="app-icon">
-							<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
-						</span>
-						<p class="app-name">The Candlestick</p>
+			<!-- ======= Javascript ======= -->
+				<?
+					if($layout_row['script_ids'] != NULL) {
+						printScripts($layout_row['script_ids']);
+					}
+				?>
+				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
+			<!-- ======= App ======= -->
+				<div class="app-container">
+					<div class="app-preloader">
+						<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="pl-grad1" x1="0" y1="0" x2="0" y2="1">
+									<stop offset="0%" stop-color="rgb(37 95 244)" />
+									<stop offset="100%" stop-color="rgb(82 37 244)" />
+								</linearGradient>
+								<linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+									<stop offset="0%" stop-color="rgb(37 199 244)" />
+									<stop offset="50%" stop-color="rgb(37 95 244)" />
+									<stop offset="100%" stop-color="rgb(82 37 244)" />
+								</linearGradient>
+							</defs>
+							<circle class="pl_ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16" stroke-linecap="round" />
+							<circle class="pl_worm1" r="56" cx="64" cy="192" fill="none" stroke="url(#pl-grad1)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 263.89" />
+							<path class="pl_worm2" d="M120,192A56,56,0,0,1,8,192C8,161.07,16,8,64,8S120,161.07,120,192Z" fill="none" stroke="url(#pl-grad2)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 494" />
+						</svg>
 					</div>
-					<!-- Search -->
-					<div class="search-wrapper">
-						<div class="search-area">
-							<input type="text" onkeyup="search.process(event)" placeholder="Search">
+					<div class="app-header">
+						<!-- Brand Info -->
+						<div class="app-header-left">
+							<span class="app-icon">
+								<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
+							</span>
+							<p class="app-name">The Candlestick</p>
 						</div>
-						<div class="search-suggestions"> </div>
+						<!-- Search -->
+						<div class="search-wrapper">
+							<div class="search-area">
+								<input type="text" onkeyup="search.process(event)" placeholder="Search">
+							</div>
+							<div class="search-suggestions"> </div>
+						</div>
+						<!-- Profile, Notifications and Dark mode -->
+						<div class="app-header-right">
+							<button class="mode-switch" title="Switch Theme">
+								<svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+									<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+								</svg>
+							</button>
+							<button class="profile-btn">
+								<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
+							</button>
+						</div>
 					</div>
-					<!-- Profile, Notifications and Dark mode -->
-					<div class="app-header-right">
-						<button class="mode-switch" title="Switch Theme">
-							<svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
-								<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-							</svg>
-						</button>
-						<button class="profile-btn">
-							<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
-						</button>
-					</div>
-				</div>
-				<div class="app-content">
-					<!-- Sidebar -->
-					<div class="app-sidebar">
-						<a class="app-sidebar-link app-back-btn">
-							<i class="fa fa-arrow-left"></i>
-						</a>
-						<?
-							$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 ORDER BY `menu_order` ASC");
-							foreach($items as $item) {
-								if($item['page_url'] == QS_PAGE) {
-									$link = '#';
-									$active = ' active';
-								} else {
-									$link = $item['menu_url'];
-									$active = '';
+					<div class="app-content">
+						<!-- Sidebar -->
+						<div class="app-sidebar">
+							<a class="app-sidebar-link app-back-btn">
+								<i class="fa fa-arrow-left"></i>
+							</a>
+							<?
+								$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 ORDER BY `menu_order` ASC");
+								foreach($items as $item) {
+									if($item['page_url'] == QS_PAGE) {
+										$link = '#';
+										$active = ' active';
+									} else {
+										$link = $item['menu_url'];
+										$active = '';
+									}
+									print(sprintf('
+										<a href="%s" class="app-sidebar-link%s">
+											<i class="fa fa-%s"></i>
+										</a>
+										',
+										$link,
+										$active,
+										$item['menu_icon']
+									));
 								}
-								print(sprintf('
-									<a href="%s" class="app-sidebar-link%s">
-										<i class="fa fa-%s"></i>
-									</a>
-									',
-									$link,
-									$active,
-									$item['menu_icon']
-								));
+							?>
+						</div>
+						<!-- Page Content -->
+						<?
+							if($layout_row['display_type'] == 1) {
+								if($layout_row['section_ids'] != NULL) {
+									printSections($layout_row['section_ids']);
+								}
+							} else {
+								include('./Pages/'.$layout_row['page_file'].'.php');
 							}
 						?>
+						<!-- Alerts -->
+						<div class="alerts"> </div>
+						<!-- Modals -->
+						<div class="modals"> </div>
 					</div>
-					<!-- Page Content -->
-					<?
-						if($layout_row['display_type'] == 1) {
-							if($layout_row['section_ids'] != NULL) {
-								printSections($layout_row['section_ids']);
-							}
-						} else {
-							include('./Pages/'.$layout_row['page_file'].'.php');
-						}
-					?>
-					<!-- Alerts -->
-					<div class="alerts"> </div>
-					<!-- Modals -->
-					<div class="modals"> </div>
 				</div>
-			</div>
+			<!-- ======= EOF ======= -->
 		</body>
 	</html>
 <?
