@@ -34,21 +34,21 @@
 					}
 				}
 			}
+		// submit load time
+			function loadTime($loadTime) {
+				global $analytics_ID, $timestamp, $uri_full;
+				if(!DB_Query($q = "INSERT INTO `load_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$loadTime')", ANALYTICS)) {
+					echo "<script>console.log('Unable to submit analytics -2')</script>";
+				}
+				print_r($q);
+			}
+		// submit session time
+			function sessionTime($sessionTime) {
+				global $analytics_ID, $timestamp, $uri_full;
+				if(!DB_Query("INSERT INTO `session_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$sessionTime')", ANALYTICS)) {
+					echo "<script>console.log('Unable to submit analytics -3')</script>";
+				}
+			}
 		//
 	}
-	// submit load time
-		function loadTime($loadTime) {
-			global $analytics_ID, $timestamp, $uri_full;
-			if(!DB_Query($q = "INSERT INTO `load_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$loadTime')", ANALYTICS)) {
-				echo "<script>console.log('Unable to submit analytics -2')</script>";
-			}
-			print_r($q);
-		}
-	// submit session time
-		function sessionTime($sessionTime) {
-			global $analytics_ID, $timestamp, $uri_full;
-			if(!DB_Query("INSERT INTO `session_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$sessionTime')", ANALYTICS)) {
-				echo "<script>console.log('Unable to submit analytics -3')</script>";
-			}
-		}
 ?>
