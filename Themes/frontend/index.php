@@ -88,7 +88,7 @@
 					if($layout_row['style_ids'] != NULL) {
 						print(printStyles($layout_row['style_ids']));
 					}
-					print_r(__THEME__);
+					print_r("<script>alert('".__THEME__."');</script>");
 				?>
 				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 				<noscript>
