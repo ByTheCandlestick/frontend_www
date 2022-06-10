@@ -30,7 +30,7 @@
 	animation: 0.25s linear 1 reverse forwards sidebar-show;
   }
   .app-sidebar.sidebar-show {
-	animation: sidebar-show 0.25s linear 1 forwards backwards sidebar-show;
+	animation: sidebar-show 0.25s linear 1 forwards sidebar-show;
   }
   @keyframes sidebar-show {
 	000% {
