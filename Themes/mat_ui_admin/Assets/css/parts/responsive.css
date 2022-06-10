@@ -28,9 +28,21 @@
 
   .app-sidebar {
 	animation: sidebar-show 0.25s linear 1 reverse;
+	-webkit-animation-fill-mode: backwards; /* Chrome 16+, Safari 4+ */
+	-moz-animation-fill-mode: backwards;    /* FF 5+ */
+	-ms-animation-fill-mode: backwards;     /* IE 10+ */
+	-ms-animation-fill-mode: backwards;     /* IE 10+ */
+	-o-animation-fill-mode: backwards;      /* Not implemented yet */
+	animation-fill-mode: backwards;
   }
   .app-sidebar.sidebar-show {
 	animation: sidebar-show 0.25s linear 1 forwards;
+	-webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+	-moz-animation-fill-mode: forwards;    /* FF 5+ */
+	-ms-animation-fill-mode: forwards;     /* IE 10+ */
+	-ms-animation-fill-mode: forwards;     /* IE 10+ */
+	-o-animation-fill-mode: forwards;      /* Not implemented yet */
+	animation-fill-mode: forwards;
   }
   @keyframes sidebar-show {
 	000% {
