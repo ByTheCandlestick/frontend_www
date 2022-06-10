@@ -23,7 +23,7 @@
 			if(!DB_Query("INSERT INTO `page_views`(`timestamp`, `uri`, `uri_full`, `country`, `city`, `ip`) VALUES('$timestamp', '$uri', '$uri_full', '$country', '$city', '$user_ip')", ANALYTICS)) {
 				echo "<script>console.log('Unable to submit analytics -0')</script>";
 			}
-			$q = "SELECT * FROM `page_views` WHERE `timestamp`=$timestamp LIMIT 1"
+			$q = "SELECT * FROM `page_views` WHERE `timestamp`=$timestamp LIMIT 1";
 			print_r($q);
 			if(DB_Query($q, ANALYTICS)) {
 				$analytics_ID = mysqli_fetch_assoc($q)[0];
