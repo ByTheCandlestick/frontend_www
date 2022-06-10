@@ -89,9 +89,9 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/Themes/<??>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+				<link rel="stylesheet" href="/Themes/<?print($theme)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 				<noscript>
-					<link rel="stylesheet" href="/vendor/animate.css/4.1.1/animate.min.css">
+					<link rel="stylesheet" href="/Themes/<?print($theme)?>/Assets/css/style.css">
 				</noscript>
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
@@ -101,6 +101,7 @@
 						printScripts($layout_row['script_ids']);
 					}
 				?>
+				<script src="/Themes/<?print($theme)?>/Assets/js/script.js" type="text/javascript"></script>
 			<!-- ======= Preloader ======= -->
 				<div class="preloader-container">
 					<div class="preloader">
