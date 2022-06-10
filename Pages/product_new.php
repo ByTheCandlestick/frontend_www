@@ -265,7 +265,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `partners` WHERE `public`=1 `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['made_by_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['name'].'</option>');
