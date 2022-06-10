@@ -28,19 +28,19 @@
 			}
 
 			if(isset($referrer)) {
-				if(!DB_Query("INSERT INTO `referrers`(`timestamp`, `referrer`, `uri`) VALUES($timestamp, '$referrer', '$uri_full')", ANALYTICS)) {
+				if(!DB_Query("INSERT INTO `referrers`(`ID`, `timestamp`, `referrer`, `uri`) VALUES($analytics_ID,  $timestamp, '$referrer', '$uri_full')", ANALYTICS)) {
 					echo "<script>console.log('Unable to submit analytics -1')</script>";
 				}
 			}
 		// submit load time
 			function loadTime($loadTime) {
-				if(!DB_Query("INSERT INTO `load_time`(`timestamp`, `uri`, `uri_full`, `load_time`) VALUES($timestamp, '$uri', '$uri_full', '$loadTime')", ANALYTICS)) {
+				if(!DB_Query("INSERT INTO `load_time`(`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, $timestamp, '$uri_full', '$loadTime')", ANALYTICS)) {
 					echo "<script>console.log('Unable to submit analytics -2')</script>";
 				}
 			}
 		// submit session time
-			function sessionTime($loadTime) {
-				if(!DB_Query("INSERT INTO `load_time`(`timestamp`, `uri`, `uri_full`, `load_time`) VALUES($timestamp, '$uri', '$uri_full', '$loadTime')", ANALYTICS)) {
+			function sessionTime($sessionTime) {
+				if(!DB_Query("INSERT INTO `session_time`(ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, $timestamp, '$uri_full', '$sessionTime')", ANALYTICS)) {
 					echo "<script>console.log('Unable to submit analytics -3')</script>";
 				}
 			}

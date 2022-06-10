@@ -1,4 +1,9 @@
 <?
+	ob_end_clean();
+	header("Connection: close\r\n");
+	header("Content-Encoding: none\r\n");
+	ignore_user_abort(true); // optional
+	ob_start();
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 	if($user_ok) {
 		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1) {
@@ -374,6 +379,13 @@
 			loadTime(round(($analytics_endTime - $analytics_startTime) * 1000, 5));
 
 		}
+		
+		
+		$size = ob_get_length();
+		header("Content-Length: $size");
+		ob_end_flush();     // Strange behaviour, will not work
+		flush();            // Unless both are called !
+		ob_end_clean();
 	} else {
 		 header('location: /Error/404');
 	}
