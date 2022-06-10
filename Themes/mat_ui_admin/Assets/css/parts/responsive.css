@@ -18,14 +18,9 @@
   }
 }
 @media screen and (max-width: 520px) {
-  section {
-    overflow: auto;
-	margin-left: 24px;
-  }
   .app-icon {
 	margin: 0 1rem;
   }
-
   .app-sidebar {
 	animation: 0.1s linear 1 forwards sidebar-hide;
   }
