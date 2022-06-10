@@ -164,7 +164,7 @@
 				');
 			}
 		} else if(isset($secext) && $secext == 'partner'){
-			$part_ID = mysqli_fetch_assoc(DB_Query(sprintf("SELECT `ID` FROM `partners` WHERE `name`=%x AND `active`=1", QS)))
+			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `partners` WHERE `name`=%s AND `active`=1", QS)))[0];
 			$query = DB_Query("SELECT * FROM `products` WHERE `made_by_ID`='$part_ID' AND `active`=1");
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
