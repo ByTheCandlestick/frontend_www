@@ -219,35 +219,31 @@
 										<a href="https://www.instagram.com/bythecandlestick/" class="instagram"><i class="fab fa-instagram"></i></a>
 									</div>
 								</div>
-											<div class="text-center footer-col-4 footer-links">
+								<div class="text-center footer-col-4 footer-links">
+									<h4>Account</h4>
+									<ul class="d-inline-block">
 								<?
 									if($user_ok) {
 										if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
 											$admin_url = (($_SERVER['HTTPS'])?'https://':'http://').'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
 								?>
-												<h4>Administration</h4>
-												<ul class="d-inline-block">
-													<li>
-														<i class="fad fa-cogs pe-1"></i>
-														<a href="<?print($admin_url)?>">Open admin dashboard</a>
-													</li>
-													<li>
-														<i class="fad fa-pencil pe-1"></i>
-														<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
-													</li>
-												</ul>
+											<li>
+												<i class="fad fa-cogs pe-1"></i>
+												<a href="<?print($admin_url)?>">Open admin dashboard</a>
+											</li>
+											<li>
+												<i class="fad fa-pencil pe-1"></i>
+												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
+											</li>
 								<?
 										} else {
 								?>
-								
-												<h4>Blog</h4>
-												<ul class="d-inline-block">
-													<li><i class="fad fa- pe-1"></i> <a href="#"></a></li>
-												</ul>
+											<li><i class="fad fa- pe-1"></i> <a href="#"></a></li>
 								<?
 										}
 									}
 								?>
+									</ul>
 								</div>
 								<div class="text-center footer-col-5 footer-links">
 									<h4></h4>
