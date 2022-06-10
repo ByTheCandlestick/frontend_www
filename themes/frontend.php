@@ -5,7 +5,7 @@
 		if(mysqli_fetch_assoc($query)['Access_www'] != 1)
             header('Location: /Error/401/');
 	}
-	require_once('./classes/analytics.php');
+	require_once('./Classes/analytics.php');
 	// Determine the required row from the page requested
 	if(QS_SUBPAGE != NULL) {
 		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE);
