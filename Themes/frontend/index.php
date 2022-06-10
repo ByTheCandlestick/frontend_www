@@ -88,7 +88,6 @@
 					if($layout_row['style_ids'] != NULL) {
 						print(printStyles($layout_row['style_ids']));
 					}
-					print_r("<script>alert('".$theme."');</script>");
 				?>
 				<link rel="stylesheet" href="/Themes/<?print($theme)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 				<noscript>
@@ -101,7 +100,6 @@
 					if($layout_row['script_ids'] != NULL) {
 						printScripts($layout_row['script_ids']);
 					}
-					print_r("<script>alert('".$theme."');</script>");
 				?>
 				<script src="/Themes/<?print($theme)?>/Assets/js/script.js" type="text/javascript"></script>
 			<!-- ======= Preloader ======= -->
