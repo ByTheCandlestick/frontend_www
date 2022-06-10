@@ -38,13 +38,6 @@
 					setcookie("session_code", '', strtotime('-5 days'), '/');
 				}
 			}
-		//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
-			if($user_ok) {
-				$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
-				if(mysqli_fetch_assoc($query)['Access_admin'] != 1) {
-					$user_ok = false;
-				}
-			}
 		// GET USERS DATA AND NOTIFICATIONS
 			if($user_ok) {
 				// USERDATA
@@ -59,21 +52,7 @@
 					$query = DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1");
 					$row = mysqli_fetch_array($query);
 					$notifications['count'] = $row[0];
-			}
-	// redirect the user away if the user is not allowed to visit
-	if(!$user_ok) {
-		ob_end_clean();
-		header("Connection: close\r\n");
-		header("Content-Encoding: none\r\n");
-		ignore_user_abort(true); // optional
-		ob_start();
-
-		Header('Location: '.(($_SERVER['HTTPS'])? 'https://' : 'http://').substr($_SERVER['HTTP_HOST'], 6));
-		
-		$size = ob_get_length();
-		header("Content-Length: $size");
-		ob_end_flush();     // Strange behaviour, will not work
-		flush();            // Unless both are called !
-		ob_end_clean();
+			//
+		//
 	}
 ?>
