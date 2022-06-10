@@ -261,7 +261,7 @@
 										}
 								?>
 										<li>
-											<i class="fad fa-cart pe-1"></i>
+											<i class="fad fa-shopping-bag pe-1"></i>
 											<a href="/Cart/">My Cart</a>
 										</li>
 										<li>
