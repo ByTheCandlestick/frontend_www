@@ -264,6 +264,7 @@ $( document ).ready(async function() {
 			search.jsonData = data
 		})
 	// -----========== BACK BTN ==========----- //
+		console.log(misc.getQueryParams('force_back'));
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back')) {
 			$('.app-back-btn').addClass('disabled')
 		}
