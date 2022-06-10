@@ -89,6 +89,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
+				<!-- -->
 				<link rel="stylesheet" href="/Themes/<?print($theme)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 				<noscript>
 					<link rel="stylesheet" href="/Themes/<?print($theme)?>/Assets/css/style.css">
