@@ -55,8 +55,8 @@
 		width: 74px;
 		padding: 0px 16px 40px 16px;
 	}
-	001% {
-		display: none;
+	099% {
+		display: block;
 		width: 0px;
 		padding: 0px;
 	}
