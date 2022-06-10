@@ -228,6 +228,10 @@
 											$admin_url = (($_SERVER['HTTPS'])?'https://':'http://').'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
 								?>
 											<li>
+												<i class="fad fa-user pe-1"></i>
+												<a href="/my/">My account</a>
+											</li>
+											<li>
 												<i class="fad fa-cogs pe-1"></i>
 												<a href="<?print($admin_url)?>">Open admin dashboard</a>
 											</li>
@@ -235,10 +239,21 @@
 												<i class="fad fa-pencil pe-1"></i>
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
 											</li>
+											<li>
+												<i class="fad fa-user pe-1"></i>
+												<a href="/logout/">Logout</a>
+											</li>
 								<?
 										} else {
 								?>
-											<li><i class="fad fa- pe-1"></i> <a href="#"></a></li>
+											<li>
+												<i class="fad fa-user pe-1"></i>
+												<a href="/my/">My account</a>
+											</li>
+											<li>
+												<i class="fad fa-user pe-1"></i>
+												<a href="/Logout/">Logout</a>
+											</li>
 								<?
 										}
 									}
