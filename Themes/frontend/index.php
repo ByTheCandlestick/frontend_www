@@ -377,15 +377,7 @@
 		if(isset($analytics_startTime)) {
 			$analytics_endTime = microtime(true);
 			loadTime(round(($analytics_endTime - $analytics_startTime) * 1000, 5));
-
 		}
-		
-		
-		$size = ob_get_length();
-		header("Content-Length: $size");
-		ob_end_flush();     // Strange behaviour, will not work
-		flush();            // Unless both are called !
-		ob_end_clean();
 	} else {
 		 header('location: /Error/404');
 	}
