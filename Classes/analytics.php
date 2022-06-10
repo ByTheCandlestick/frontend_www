@@ -42,7 +42,7 @@
 				print_r($q);
 			}
 		// submit session time
-			function sessionTime($id = $analytics_ID, $ts = $timestamp, $uri =$uri_full, $sessionTime) {
+			function sessionTime($sessionTime, $id=$analytics_ID, $ts=$timestamp, $uri=$uri_full) {
 				if(!DB_Query("INSERT INTO `session_time` (`ID`, `timestamp`, `uri`, `time`) VALUES($id, '$ts', '$uri', '$sessionTime')", ANALYTICS)) {
 					echo "<script>console.log('Unable to submit analytics -3')</script>";
 				}
