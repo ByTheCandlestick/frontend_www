@@ -251,11 +251,22 @@
 												<a href="/my/">My account</a>
 											</li>
 											<li>
-												<i class="fad fa-exit pe-1"></i>
+												<i class="fad fa-sign-out pe-1"></i>
 												<a href="/Logout/">Logout</a>
 											</li>
 								<?
 										}
+									} else {
+								?>
+									<li>
+										<i class="fad fa-sign-in pe-1"></i>
+										<a href="/Login/">Login</a>
+									</li>
+									<li>
+										<i class="fad fa-user-plus pe-1"></i>
+										<a href="/Register/">Register</a>
+									</li>
+								<?
 									}
 								?>
 									</ul>
