@@ -28,17 +28,21 @@
 
   .app-sidebar {
     display: none;
-	width: 0px;
-	padding: 0px;
-	-webkit-transition: width 0.4s ease-in-out;
-			transition: width 0.4s ease-in-out;
-	-webkit-transition: padding 0.4s ease-in-out;
-			transition: padding 0.4s ease-in-out;
+	animation: example 0.25s linear;
+	animation-direction:backwards;
   }
   .app-sidebar.sidebar-show {
-	display: block;
-	width: 74px;
-	padding: 0px 16px 40px 16px;
+	animation: example 0.25s linear;
+  }
+  @keyframes example {
+	000% {
+		width: 0px;
+		padding: 0px;
+	}
+	100% {
+		width: 74px;
+		padding: 0px 16px 40px 16px;
+	}
   }
 
   .app-content {
