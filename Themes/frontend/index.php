@@ -90,13 +90,6 @@
 			<!-- -->
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
-			<?
-				if($user_ok) {
-					print('here');
-				} else {
-					print('not here');
-				}
-			?>
 			<!-- ======= Javascript ======= -->
 				<?
 					if($layout_row['script_ids'] != NULL) {
@@ -311,5 +304,12 @@
 		}
 	} else {
 		 header('location: /Error/404');
+	}
+?>
+<?
+	if($user_ok) {
+		print('here');
+	} else {
+		print('not here');
 	}
 ?>
