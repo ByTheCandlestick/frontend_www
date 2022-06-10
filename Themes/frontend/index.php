@@ -180,13 +180,6 @@
 						include('./Pages/'.$layout_row['page_file'].'.php');
 					}
 				?>
-				<?
-					if($user_ok) {
-						print('here');
-					} else {
-						print('not here');
-					}
-				?>
 			<!-- ======= Additional ======= -->
 				<modals></modals>
 				<alerts class="position-fixed bottom-0 mb-5 start-0 ms-3 mw-100"></alerts>
