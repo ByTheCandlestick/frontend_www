@@ -6,13 +6,6 @@ $(document).ready(function() {
 	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	const api_key_data = 'api_key=' + api_key;
 	/**
-	 * Preloader
-	 */
-	$('.preloader-container').hide();
-	$(window).bind('beforeunload', function() {
-		$('.preloader').show();
-	});
-	/**
 	 * Topbar Ticker
 	 */
 	$('#topbar').slick({
@@ -787,4 +780,13 @@ $(document).ready(function() {
 
 		}
 	}
+	/**
+	 * Preloader
+	 */
+		setTimeout(function () { 
+			$('.preloader-container').fadeOut();
+		}, 2000);
+		$(window).bind('beforeunload', function() {
+			$('.preloader-container').fadeIn();
+		});
 });
