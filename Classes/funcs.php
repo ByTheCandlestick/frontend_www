@@ -1,4 +1,13 @@
 <?
+	function startsWith($string, $startString) {
+		$len = strlen($startString);
+		return (substr($string, 0, $len) === $startString);
+	}
+
+	function Redirect($url, $code = 301) {
+		print("<script> window.location.assign(\"$url\"); </script>'");
+		exit();
+	}
 	/**
 	 * domainID
 	 *
