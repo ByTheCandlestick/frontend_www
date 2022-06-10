@@ -2,7 +2,7 @@
 	if($user_ok && !$userdata['Disable_analytics'] || !$user_ok) {
 		$analytics_startTime = microtime(true);
 		$user_ip = getenv('REMOTE_ADDR');
-		$timestamp = now();
+		$timestamp = time();
 		// Get the users location
 			$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
 			$country = $geo["geoplugin_countryName"];
