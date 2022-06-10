@@ -35,9 +35,9 @@
 		// submit load time
 			function loadTime($loadTime) {
 				if(!DB_Query($q = "INSERT INTO `load_time`(`ID`, `timestamp`, `uri`, `time`) VALUES($analytics_ID, '$timestamp', '$uri_full', '$loadTime')", ANALYTICS)) {
-					print_r($q);
 					echo "<script>console.log('Unable to submit analytics -2')</script>";
 				}
+				print_r($q);
 			}
 		// submit session time
 			function sessionTime($sessionTime) {
