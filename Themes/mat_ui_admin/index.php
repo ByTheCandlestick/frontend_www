@@ -23,6 +23,7 @@
 	// get the page information
 	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
 		while($layout_row = mysqli_fetch_assoc($layout_results)) {
+			print_r($layout_row);
 			$info = array();
 			$info_results = DB_Query("SELECT * FROM `shop_info`");
 			while($info_row = mysqli_fetch_row($info_results)) {
@@ -39,11 +40,13 @@
 			<meta name="description" content="<?print($info['meta_description'])?>">
 			<meta name="keywords" content="<?print($info['meta_keywords'])?>">
 			<meta name="theme-color" content="<?print($info['meta_colour'])?>">
-			<title><?
-				print(
-					(($layout_row['page_title']!="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
-				)
-			?></title>
+			<title>
+				<?
+					print(
+						(($layout_row['page_title']!="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
+					)
+				?>
+			</title>
 			<link rel="shortcut icon" href="/assets/images/logos/logo - transparent.svg" type="image/x-icon" />
 			<!-- Progresive Web App -->
 				<link rel="manifest" href="/manifest.json" />
