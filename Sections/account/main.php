@@ -145,6 +145,6 @@
 		</div>
 		<hr>
 		<p> <a href="/My/Cards"> Manage card details </a> </p>
-		<p> <a href="/My/address"> Manage address's </a> </p>
+		<p> <a href="/My/Addresses"> Manage address's </a> </p>
 	</div>
 </section>

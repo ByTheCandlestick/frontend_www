@@ -240,11 +240,11 @@
 										</li>
 										<li>
 											<i class="fad fa-house pe-1"></i>
-											<a href="/my/Addresses/">My Addresses</a>
+											<a href="/My/Addresses/">My Addresses</a>
 										</li>
 										<li>
 											<i class="fad fa-id-card pe-1"></i>
-											<a href="/my/Cards/">My Cards</a>
+											<a href="/My/Cards/">My Cards</a>
 										</li>
 										<li>
 											<i class="fad fa-sign-out pe-1"></i>
