@@ -1,6 +1,4 @@
 <?
-	require_once('./Classes/funcs.php');
-	require_once('./Classes/vars.php');
 	// Determine the required row from the page requested
 	$domainID = domainID();
 	if(QS_SUBPAGE != NULL) {
