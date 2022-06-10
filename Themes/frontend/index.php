@@ -40,7 +40,6 @@
 			<meta name="theme-color" content="<?print($info['meta_colour'])?>">
 			<title><?print((($layout_row['page_title']=="")?"":$layout_row['page_title']." | ").$info['name']." - ".$info['slogan'] )?></title>
 			<link rel="shortcut icon" href="/assets/images/logos/logo - transparent.svg" type="image/x-icon" />
-			<!-- Progresive Web App -->
 			<link rel="manifest" href="/manifest.json" />
 			<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
 			<script>
