@@ -1,5 +1,4 @@
 <?
-	require_user_ok();
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 	if($user_ok) {
 		$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
@@ -7,6 +6,7 @@
 			$user_ok = false;
 		}
 	}
+	require_user_ok();
 	// Determine the required row from the page requested
 	$domainID = domainID();
 	if(QS_SUBPAGE != NULL) {
