@@ -263,12 +263,16 @@ $( document ).ready(async function() {
 		$.get('/Assets/search.json', function(data){
 			search.jsonData = data
 		})
+	// -----========== MENU BTN ==========----- //
+		$('.app-icon').click(function() {
+			$('.app-sidebar').show()
+		})
 	// -----========== BACK BTN ==========----- //
 		console.log(misc.getQueryParams('force_back'));
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
 			$('.app-back-btn').addClass('disabled')
 		}
-		$(".app-back-btn").click( function(){
+		$(".app-back-btn").click(function(){
 			if(!$(this).hasClass('disabled')) {
 				history.back();
 			}
