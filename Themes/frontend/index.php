@@ -1,5 +1,6 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
+	print_r($user_ok);
 	if($user_ok) {
 		$query = DB_Query("SELECT * FROM `Users_permissions` WHERE `UID`=$log_id LIMIT 1");
 		if(mysqli_fetch_assoc($query)['Access_www'] != 1)
