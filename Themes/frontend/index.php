@@ -188,51 +188,20 @@
 					<div class="pt-3 footer-top">
 						<div class="container">
 							<div class="footer-cols">
-								<div class="text-center footer-col-1 footer-links">
-									<h4>Useful Links</h4>
-									<ul class="d-inline-block">
-										<li><i class="fad fa-link pe-1"></i> <a href="/About">About</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="https://blog.thecandlestick.co.uk/">Blog</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="/Team">The team</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="/Contact">Contact us</a></li>
-									</ul>
-								</div>
-								<div class="text-center footer-col-2 footer-links">
-									<h4>Policies</h4>
-									<ul class="d-inline-block">
-										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/privacy-policy">Privacy policy</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/returns-and-refunds">Returns and refunds</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/terms-and-conditions">Terms and conditions</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/terms-of-service">Terms of service</a></li>
-									</ul>
-								</div>
-								<div class="text-center footer-col-3 footer-info">
-									<img src="<?print(__API__.'/Images/Fetch/'.$info['Logo'].'/')?>" alt="logo" width="145px" height="145px" class="img-fluid mw-40">
-									<h3 class="text-center"><?print($info['name'])?></h3>
-									<p class="text-center">
-										<strong>Phone:</strong> <a href="tel:<?print($info['phone'])?>"><?print($info['phone'])?></a><br>
-										<strong>Email:</strong> <a href="mailto:<?print($info['email'])?>"><?print($info['email'])?></a><br>
-									</p>
-									<div class="social-links mt-3 text-center">
-										<a href="https://www.pinterest.co.uk/bythecandlestick/" class="pintrest"><i class="fab fa-pinterest"></i></a>
-										<a href="https://www.facebook.com/bythecandlestick/#" class="facebook"><i class="fab fa-facebook"></i></a>
-										<a href="https://www.instagram.com/bythecandlestick/" class="instagram"><i class="fab fa-instagram"></i></a>
-									</div>
-								</div>
 								<div class="text-center footer-col-4 footer-links">
 									<h4>Account</h4>
 									<ul class="d-inline-block">
-								<?
-									if($user_ok) {
-								?>
+									<?
+										if($user_ok) {
+									?>
 										<li>
 											<i class="fad fa-user pe-1"></i>
 											<a href="/My/">My Account</a>
 										</li>
-								<?
-										if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
-											$admin_url = (($_SERVER['HTTPS'])?'https://':'http://').'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
-								?>
+										<?
+											if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
+												$admin_url = (($_SERVER['HTTPS'])?'https://':'http://').'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
+										?>
 											<li>
 												<i class="fad fa-cogs pe-1"></i>
 												<a href="<?print($admin_url)?>">Open admin dashboard</a>
@@ -241,25 +210,25 @@
 												<i class="fad fa-pencil pe-1"></i>
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
 											</li>
-										<?
-											if(isset($product)) {
-										?>
-											<li>
-												<i class="fad fa-pencil pe-1"></i>
-												<a href="<?print($admin_url.'/Product/Edit/'.$product['SKU'].'/')?>">Edit this product</a>
-											</li>
-										<?
+											<?
+												if(isset($product)) {
+											?>
+												<li>
+													<i class="fad fa-pencil pe-1"></i>
+													<a href="<?print($admin_url.'/Product/Edit/'.$product['SKU'].'/')?>">Edit this product</a>
+												</li>
+											<?
+												}
+												if(isset($partner)) {
+											?>
+												<li>
+													<i class="fad fa-pencil pe-1"></i>
+													<a href="<?print($admin_url.'/Partner/Edit/'.$partner['ID'].'/')?>">Edit this partner</a>
+												</li>
+											<?
+												}
 											}
-											if(isset($partner)) {
 										?>
-											<li>
-												<i class="fad fa-pencil pe-1"></i>
-												<a href="<?print($admin_url.'/Partner/Edit/'.$partner['ID'].'/')?>">Edit this partner</a>
-											</li>
-										<?
-											}
-										}
-								?>
 										<li>
 											<i class="fad fa-shopping-bag pe-1"></i>
 											<a href="/Cart/">My Cart</a>
@@ -290,6 +259,37 @@
 								<?
 									}
 								?>
+									</ul>
+								</div>
+								<div class="text-center footer-col-2 footer-links">
+									<h4>Policies</h4>
+									<ul class="d-inline-block">
+										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/privacy-policy">Privacy policy</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/returns-and-refunds">Returns and refunds</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/terms-and-conditions">Terms and conditions</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="/Pages/terms-of-service">Terms of service</a></li>
+									</ul>
+								</div>
+								<div class="text-center footer-col-3 footer-info">
+									<img src="<?print(__API__.'/Images/Fetch/'.$info['Logo'].'/')?>" alt="logo" width="145px" height="145px" class="img-fluid mw-40">
+									<h3 class="text-center"><?print($info['name'])?></h3>
+									<p class="text-center">
+										<strong>Phone:</strong> <a href="tel:<?print($info['phone'])?>"><?print($info['phone'])?></a><br>
+										<strong>Email:</strong> <a href="mailto:<?print($info['email'])?>"><?print($info['email'])?></a><br>
+									</p>
+									<div class="social-links mt-3 text-center">
+										<a href="https://www.pinterest.co.uk/bythecandlestick/" class="pintrest"><i class="fab fa-pinterest"></i></a>
+										<a href="https://www.facebook.com/bythecandlestick/#" class="facebook"><i class="fab fa-facebook"></i></a>
+										<a href="https://www.instagram.com/bythecandlestick/" class="instagram"><i class="fab fa-instagram"></i></a>
+									</div>
+								</div>
+								<div class="text-center footer-col-1 footer-links">
+									<h4>Useful Links</h4>
+									<ul class="d-inline-block">
+										<li><i class="fad fa-link pe-1"></i> <a href="/About">About</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="https://blog.thecandlestick.co.uk/">Blog</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="/Team">The team</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="/Contact">Contact us</a></li>
 									</ul>
 								</div>
 								<div class="text-center footer-col-5 footer-links">
