@@ -1,5 +1,5 @@
 <?
-	global $product, $partner;
+	$product=$partner = array();
 	if(str_contains($_SERVER["SERVER_NAME"], "indev")) {	#	THE WESBITE IN IN DEVELOPMENT MODE
 		define('__API__',		'http://api.candlestick-indev.co.uk/v1');
 		define('STRIPE_API',	['pk_test_51JKqfVFDFLz8LpozviM6GdhHOMvQJh75VMcH0CVomCXtA9gbTRR7tKRvfjLnWQuXEedTNvoD2O6Gj6hmhDRktH2I00hk6jMnBJ', 'sk_test_51JKqfVFDFLz8LpozmlliBbv92XkspmRyy2O7G6IMk2IccfP9ZnimCZ8rJHHCVfIGupLx5FJZafa92igVC2HFWPkz00umY4pOUm']);
