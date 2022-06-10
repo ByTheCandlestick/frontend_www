@@ -240,7 +240,7 @@
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
 											</li>
 											<li>
-												<i class="fad fa-user pe-1"></i>
+												<i class="fad fa-sign-out pe-1"></i>
 												<a href="/logout/">Logout</a>
 											</li>
 								<?
