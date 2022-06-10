@@ -5,18 +5,18 @@
 	 * @return int
 	 *
 	 */
-	function domainID() {
-		return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
-	}
+		function domainID() {
+			return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
+		}
 	/**
 	 * getThemepage
 	 *
 	 */
-	function getThemepage() {
-		$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
-		$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
-		require_once('./themes/'.$theme_location.'.php');
-	}
+		function getThemepage() {
+			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
+			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
+			require_once('./themes/'.$theme_location.'.php');
+		}
 	/**
 	 * DB_QUERY
 	 *
@@ -25,12 +25,12 @@
 	 * @return mysqli_query
 	 *
 	 */
-	function DB_Query($sql, $DBinfo = ADMIN) {
-		if(!$conn = mysqli_connect($DBinfo[0], $DBinfo[1], $DBinfo[2], $DBinfo[3])) {
-			die('Unable to connect to the DB, Please try again later');
+		function DB_Query($sql, $DBinfo = ADMIN) {
+			if(!$conn = mysqli_connect($DBinfo[0], $DBinfo[1], $DBinfo[2], $DBinfo[3])) {
+				die('Unable to connect to the DB, Please try again later');
+			}
+			return mysqli_query($conn, $sql);
 		}
-		return mysqli_query($conn, $sql);
-	}
 
 	/**
 	 * Prints the link for all stylesheets
@@ -38,36 +38,36 @@
 	 * @param string $stylesheets
 	 * 
 	 */
-	function printStyles(string $stylesheets) {
-		$stylesheets = explode(",", $stylesheets);
-		foreach($stylesheets as $style) {
-			if($result = DB_Query("SELECT * FROM `page_styles` WHERE `id`='$style'")) {
-				$res = mysqli_fetch_array($result);
-				$styleLocation = $res['location'];
-				$preload = $res['preload'];
+		function printStyles(string $stylesheets) {
+			$stylesheets = explode(",", $stylesheets);
+			foreach($stylesheets as $style) {
+				if($result = DB_Query("SELECT * FROM `page_styles` WHERE `id`='$style'")) {
+					$res = mysqli_fetch_array($result);
+					$styleLocation = $res['location'];
+					$preload = $res['preload'];
 
-				if($preload == 1) {
-					echo sprintf(
-						'
-						<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">
-						<noscript>
-							<link rel="stylesheet" href="%s">
-						</noscript>',
-						$styleLocation,
-						$styleLocation
-					);
-				} else {
-					echo sprintf(
-						'<link	rel="stylesheet"
-								href="%s"
-								type="text/css"
-								media="all" />',
-						$styleLocation
-					);
+					if($preload == 1) {
+						echo sprintf(
+							'
+							<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">
+							<noscript>
+								<link rel="stylesheet" href="%s">
+							</noscript>',
+							$styleLocation,
+							$styleLocation
+						);
+					} else {
+						echo sprintf(
+							'<link	rel="stylesheet"
+									href="%s"
+									type="text/css"
+									media="all" />',
+							$styleLocation
+						);
+					}
 				}
 			}
 		}
-	}
 
 	/**
 	 * Prints the link for all scripts
@@ -75,28 +75,28 @@
 	 * @param string $scripts
 	 * 
 	 */
-	function printScripts(string $scriptsheets) {
-		$scriptsheets = explode(",", $scriptsheets);
-		foreach($scriptsheets as $script) {
-			if($result = DB_Query("SELECT `location` FROM `page_scripts` WHERE `id`='$script'")) {
-				$res = mysqli_fetch_array($result);
-				$scriptLocation = $res['location'];
-				$preload = $res['preload'];
+		function printScripts(string $scriptsheets) {
+			$scriptsheets = explode(",", $scriptsheets);
+			foreach($scriptsheets as $script) {
+				if($result = DB_Query("SELECT `location` FROM `page_scripts` WHERE `id`='$script'")) {
+					$res = mysqli_fetch_array($result);
+					$scriptLocation = $res['location'];
+					$preload = $res['preload'];
 
-				if($preload == 1) {
-					echo sprintf(
-						'<script	src="%s" type="text/javascript"></script>',
-						$scriptLocation
-					);
-				} else {
-					echo sprintf(
-						'<script	src="%s" type="text/javascript"></script>',
-						$scriptLocation
-					);
+					if($preload == 1) {
+						echo sprintf(
+							'<script	src="%s" type="text/javascript"></script>',
+							$scriptLocation
+						);
+					} else {
+						echo sprintf(
+							'<script	src="%s" type="text/javascript"></script>',
+							$scriptLocation
+						);
+					}
 				}
 			}
 		}
-	}
 
 	/**
 	 * Prints all sections specified within a section string
@@ -124,31 +124,31 @@
 	 * customizable approach. E.g. `#9;0000,#3;0000:Example,0000,#12;0000:!My Awesome Example Text`
 	 * 
 	**/
-	function printSections(string $string) {
-		global $userdata, $info, $user_ok, $conn;
-		$columns = explode("#", $string);
-		$seccode = $secext = NULL;
-		print('<main><div class="row">');
-		array_shift($columns);
-		foreach($columns as $column) {
-			[$width, $section_string] = explode(';', $column);
-			print("<div class=\"col-md-$width\">");
-				$sections = explode(',', $section_string);
-				foreach($sections as $section) {
-					[$seccode, $secext] = explode(':', $section);
-					if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
-						if(mysqli_num_rows($result) == 1) {
-							$row = mysqli_fetch_array($result);
-							include('./sections/'.$row['section_type'].'/'.$row['section_url'].'.php');
-							unset($secext);
+		function printSections(string $string) {
+			global $userdata, $info, $user_ok, $conn;
+			$columns = explode("#", $string);
+			$seccode = $secext = NULL;
+			print('<main><div class="row">');
+			array_shift($columns);
+			foreach($columns as $column) {
+				[$width, $section_string] = explode(';', $column);
+				print("<div class=\"col-md-$width\">");
+					$sections = explode(',', $section_string);
+					foreach($sections as $section) {
+						[$seccode, $secext] = explode(':', $section);
+						if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
+							if(mysqli_num_rows($result) == 1) {
+								$row = mysqli_fetch_array($result);
+								include('./sections/'.$row['section_type'].'/'.$row['section_url'].'.php');
+								unset($secext);
+							}
 						}
 					}
-				}
-			print("</div>");
+				print("</div>");
+			}
+			print('</div></main>');
 		}
-		print('</div></main>');
-	}
-		/** printSectionTemplates */
+	/** printSectionTemplates */
 		function printSectionTemplates(string $string) {
 			global $userdata, $info, $user_ok, $conn;
 			$columns = explode("#", $string);
@@ -180,7 +180,9 @@
 			}
 			print('</div>');
 		}
-	/** */
+	/** require_user_ok
+	 * 
+	 */
 		function require_user_ok() {
 			if(!$user_ok) {
 				ob_end_clean();
