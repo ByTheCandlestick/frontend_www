@@ -27,7 +27,7 @@
   }
 
   .app-sidebar {
-	animation: sidebar-show 0.25s linear 1 reverse;
+	animation: 0.25s linear 1 reverse sidebar-show;
 	-webkit-animation-fill-mode: backwards; /* Chrome 16+, Safari 4+ */
 	-moz-animation-fill-mode: backwards;    /* FF 5+ */
 	-ms-animation-fill-mode: backwards;     /* IE 10+ */
@@ -36,7 +36,7 @@
 	animation-fill-mode: backwards;
   }
   .app-sidebar.sidebar-show {
-	animation: sidebar-show 0.25s linear 1 forwards;
+	animation: sidebar-show 0.25s linear 1 forwards sidebar-show;
 	-webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
 	-moz-animation-fill-mode: forwards;    /* FF 5+ */
 	-ms-animation-fill-mode: forwards;     /* IE 10+ */
