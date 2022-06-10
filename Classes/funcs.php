@@ -48,7 +48,7 @@
 			foreach($stylesheets as $style) {
 				if($result = DB_Query("SELECT * FROM `page_styles` WHERE `id`='$style'")) {
 					$res = mysqli_fetch_array($result);
-					$styleLocation = $res['location'];
+					$styleLocation = THEME_ROOT . $res['location'];
 					$preload = $res['preload'];
 
 					if($preload == 1) {
