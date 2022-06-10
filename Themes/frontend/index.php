@@ -233,7 +233,7 @@
 													</li>
 													<li>
 														<i class="fad fa-pencil pe-1"></i>
-														<a href="<?print($admin_url.'/Website/View/'.domainID())?>">Edit this page</a>
+														<a href="<?print($admin_url.'/Website/View/'.domainID().'/')?>">Edit this page</a>
 													</li>
 												</ul>
 								<?
