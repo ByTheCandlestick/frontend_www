@@ -90,7 +90,7 @@
 					}
 				?>
 				<?
-					print_r($theme);
+					print_r(THEME);
 				?>
 				<link rel="stylesheet" href="/Themes/<?print(THEME)?>/Assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 				<noscript>
