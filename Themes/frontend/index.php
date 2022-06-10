@@ -224,8 +224,16 @@
 									if($user_ok) {
 										if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
 								?>
-												<h4>Quick links</h4>
+												<h4>Administration</h4>
 												<ul class="d-inline-block">
+													<li>
+														<i class="fad fa-cogs pe-1"></i> 
+														<a href="">Open admin dashboard</a>
+													</li>
+													<li>
+														<i class="fad fa-pencil pe-1"></i> 
+														<a href="">Edit this page</a>
+													</li>
 												</ul>
 								<?
 										} else {
