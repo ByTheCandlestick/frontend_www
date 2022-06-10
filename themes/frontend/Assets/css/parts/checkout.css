@@ -1,0 +1,224 @@
+/************************************************************
+ ********************      CHECKOUT      ********************
+ ************************************************************/
+.subContainer .ccv:after,
+.subContainer .expiry:after,
+.subContainer .number:after,
+.subContainer .postcode:after {
+	position: absolute;
+	top: -25px;
+	font-family: "Roboto", sans-serif;
+	left: 0;
+	color: var(--scenic-water-90);
+	font-size: 13px;
+}
+.card-container {
+	position: relative;
+	background: var(--white);
+	left: 50%;
+	transform: translateX(-50%);
+	justify-content: space-between;
+	border-radius: 9px;
+	z-index: 7;
+	display: grid;
+	width: 90vw;
+	box-shadow: 0px -40px 50px 0px var(--silver);
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-areas: "mGrid""card";
+	height: 70vh;
+}
+.mGrid {
+	grid-area: mGrid;
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	overflow: hidden;
+	justify-content: center;
+	margin-top: 15px;
+	margin-left: -10px;
+}
+.total {
+	padding-top: 50px;
+	align-self: end;
+}
+.total p {
+	text-align: center;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: var(--stratus);
+	letter-spacing: 0.15rem;
+}
+.total p:last-child {
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--deep-sky-blue);
+	padding-top: 10px;
+	font-family: "Roboto", sans-serif;
+}
+.detail {
+	font-family: "Roboto", sans-serif;
+	align-self: start;
+	display: grid;
+	margin-top: 32px;
+	grid-template-rows: repeat(3, 1fr);
+}
+.detail p {
+	text-align: center;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: var(--stratus);
+	letter-spacing: 0.15rem;
+	margin-bottom: 10px;
+}
+.detail ul {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	font-family: "Roboto", sans-serif;
+	justify-content: center;
+	align-content: start;
+}
+.detail ul li {
+	display: inline-block;
+	color: var(--ball gown);
+	text-align: left;
+	font-size: 15px;
+}
+.detail ul li:last-child {
+	text-align: right;
+	color: var(--deep-sky-blue);
+	font-family: "Roboto", sans-serif;
+}
+.subContainer {
+	position: absolute;
+	border-radius: 9px;
+	font-family: monospace;
+	bottom: 0;
+	color: var(--white);
+	background: var(--clear-chill);
+	box-shadow: -10px 10px 60px 10px var(--bluebeard);
+	grid-area: card;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	top: 0;
+	height: 56.754673vw;
+	width: 95vw;
+	left: 50%;
+	transform: translateX(-50%);
+	grid-template-areas:	"postcode	postcode	postcode	.			.			visa		visa	"
+							"number		number		number		number		number		number		.		"
+							"expiry		expiry		expiry			.			ccv			ccv			.		";
+}
+
+.subContainer input {
+	border: unset;
+	outline: unset;
+	width: 100%;
+	font-family: 'Share Tech Mono', monospace;
+}
+.subContainer .postcode,
+.subContainer .visaCont,
+.subContainer .number,
+.subContainer .expiry,
+.subContainer .ccv {
+	margin-left: 35px;
+}
+.subContainer .visaCont {
+	display: grid;
+	grid-area: visa;
+	overflow: hidden;
+	margin: 0;
+	justify-self: center;
+	align-self: center;
+}
+.subContainer .visaCont svg {
+	height: 50px;
+	width: 100px;
+}
+.subContainer .postcode {
+	position: relative;
+	grid-area: postcode;
+	background: var(--azure);
+	align-self: center;
+	padding: 7px 5px;
+	font-size: 19px;
+}
+.subContainer .postcode:after {
+	content: "Cardholder postcode";
+}
+.subContainer .number {
+	position: relative;
+	grid-area: number;
+	background: var(--azure);
+	align-self: center;
+	padding: 7px 5px;
+	font-size: 19px;
+}
+.subContainer .number:after {
+	content: "Credit  Card  Number";
+}
+.subContainer .expiry {
+	position: relative;
+	grid-area: expiry;
+	background: var(--azure);
+	align-self: center;
+	padding: 5px 5px;
+	font-size: 19px;
+}
+.subContainer .expiry:after {
+	content: "Expiration";
+}
+.subContainer .ccv {
+	position: relative;
+	grid-area: ccv;
+	background: var(--azure);
+	align-self: center;
+	padding: 5px 5px;
+	font-size: 19px;
+}
+.subContainer .ccv:after {
+	content: "CCV";
+}
+@media (min-width: 768px) {
+	.card-container {
+		left: 35%;
+		width: 50vw;
+		box-shadow: -40px 0px 50px 0px var(--silver);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		grid-template-areas: "mGrid card";
+		height: unset;
+	}
+	.subContainer {
+		top: 50%;
+		height: 31.18vw;
+		width: 50vw;
+		left: unset;
+		transform: translateY(-50%);
+		grid-template-areas:	"postcode	postcode	postcode	postcode	.			visa		visa	"
+								"number		number		number		number		number		.			.		"
+								"expiry		expiry		.			.			ccv			ccv			.		";
+	}
+}
+@media (min-width: 992px) {
+	.card-container {
+		width: 40vw;
+		box-shadow: -40px 0px 50px 0px var(--silver);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		grid-template-areas: "mGrid card";
+	}
+	.subContainer {
+		top: 50%;
+		height: 16.21vw;
+		width: 26vw;
+		left: unset;
+		transform: translateY(-50%);
+		grid-template-areas:	"postcode	postcode	postcode	postcode	.			visa		visa	"
+								"number		number		number		number		number		.			.		"
+								"expiry		expiry		.			.			ccv			ccv			.		";
+	}
+}
