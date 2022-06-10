@@ -1,9 +1,7 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 	if($user_ok) {
-		print($q=mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin']);
-		if($q != 1)
-			$user_ok = false;
+		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin']!=1) $user_ok = false;
 	}
 	require_user_ok();
 
