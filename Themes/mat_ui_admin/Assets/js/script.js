@@ -265,7 +265,8 @@ $( document ).ready(async function() {
 		})
 	// -----========== MENU BTN ==========----- //
 		$('.app-icon').click(function() {
-			$('.app-sidebar').toggle()
+			$('.app-sidebar').toggle();
+			$('.app-sidebar').toggleClass('sidebar-show');
 		})
 	// -----========== BACK BTN ==========----- //
 		console.log(misc.getQueryParams('force_back'));
