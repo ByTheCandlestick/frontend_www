@@ -13,7 +13,7 @@
 	 *
 	 */
 	function getThemepage() {
-		$id = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
+		echo $id = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 		$theme = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $id)))[0];
 		require_once('./themes/'.$theme.'.php');
 	}
