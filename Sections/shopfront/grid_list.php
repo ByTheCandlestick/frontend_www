@@ -109,7 +109,7 @@
 				';
 			}
 		} else if(isset($secext) && $secext == 'partners') {
-			$result = DB_Query("SELECT * FROM `partners` WHERE `public`=1 `active`=1");
+			$result = DB_Query("SELECT * FROM `partners` WHERE `public`=1 AND `active`=1");
 			while($row = mysqli_fetch_array($result)){
 				$part_image = $row['logo_url'];
 				$part_slug = $row['slug'];
