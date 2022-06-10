@@ -219,11 +219,26 @@
 										<a href="https://www.instagram.com/bythecandlestick/" class="instagram"><i class="fab fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="text-center footer-col-4 footer-links">
-									<h4>Blog</h4>
-									<ul class="d-inline-block">
-										<li><i class="fad fa- pe-1"></i> <a href="#"></a></li>
-									</ul>
+											<div class="text-center footer-col-4 footer-links">
+								<?
+									if($user_ok) {
+										if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] != 1) {
+								?>
+												<h4>Quick links</h4>
+												<ul class="d-inline-block">
+												</ul>
+								<?
+										} else {
+								?>
+								
+												<h4>Blog</h4>
+												<ul class="d-inline-block">
+													<li><i class="fad fa- pe-1"></i> <a href="#"></a></li>
+												</ul>
+								<?
+										}
+									}
+								?>
 								</div>
 								<div class="text-center footer-col-5 footer-links">
 									<h4></h4>
