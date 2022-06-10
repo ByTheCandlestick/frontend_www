@@ -202,6 +202,6 @@
 <?
 		}
 	} else {
-		print('here');
-	}
+		header('location: /Error/404');
+   }
 ?>

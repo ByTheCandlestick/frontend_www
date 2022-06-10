@@ -212,6 +212,7 @@
 				ignore_user_abort(true); // optional
 				ob_start();
 		
+				print('ERROR');
 				
 				$size = ob_get_length();
 				header("Content-Length: $size");
