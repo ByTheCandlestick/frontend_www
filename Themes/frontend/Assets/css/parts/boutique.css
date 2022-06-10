@@ -41,6 +41,7 @@
 	filter: drop-shadow(0 5px 15px var(--periwinkle-40));
 	width: 100%;
 	height: auto;
+	aspect-ratio: 1;
 }
 .boutique .partner-list-item .partner .partner-content,
 .boutique .product-list-item .product .product-content {
