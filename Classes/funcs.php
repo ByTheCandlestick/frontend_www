@@ -20,7 +20,7 @@
 			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
 			if($require){
-				return require_once('./themes/'.$theme_location.'/index.php');
+				return require_once('./Themes/'.$theme_location.'/index.php');
 			} else {
 				return $theme_location;
 			}
