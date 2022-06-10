@@ -1,5 +1,6 @@
 <?
-	if($user_ok && !$userdata['Disable_analytics'] || !$user_ok) {
+//	if($user_ok && !$userdata['Disable_analytics'] || !$user_ok) {
+	if($user_ok || !$user_ok) {
 		$analytics_startTime = microtime(true);
 		$user_ip = getenv('REMOTE_ADDR');
 		$timestamp = date('Y-m-d H:i:s');
