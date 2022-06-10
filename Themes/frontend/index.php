@@ -188,7 +188,7 @@
 					<div class="pt-3 footer-top">
 						<div class="container">
 							<div class="footer-cols">
-								<div class="text-center footer-col-4 footer-links">
+								<div class="text-center footer-col-1 footer-links">
 									<h4>Account</h4>
 									<ul class="d-inline-block">
 									<?
@@ -245,20 +245,20 @@
 											<i class="fad fa-sign-out pe-1"></i>
 											<a href="/Logout/">Logout</a>
 										</li>
-								<?
-									} else {
-								?>
-									<li>
-										<i class="fad fa-sign-in pe-1"></i>
-										<a href="/Login/">Login</a>
-									</li>
-									<li>
-										<i class="fad fa-user-plus pe-1"></i>
-										<a href="/Register/">Register</a>
-									</li>
-								<?
-									}
-								?>
+									<?
+										} else {
+									?>
+										<li>
+											<i class="fad fa-sign-in pe-1"></i>
+											<a href="/Login/">Login</a>
+										</li>
+										<li>
+											<i class="fad fa-user-plus pe-1"></i>
+											<a href="/Register/">Register</a>
+										</li>
+									<?
+										}
+									?>
 									</ul>
 								</div>
 								<div class="text-center footer-col-2 footer-links">
@@ -283,7 +283,7 @@
 										<a href="https://www.instagram.com/bythecandlestick/" class="instagram"><i class="fab fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="text-center footer-col-1 footer-links">
+								<div class="text-center footer-col-4 footer-links">
 									<h4>Useful Links</h4>
 									<ul class="d-inline-block">
 										<li><i class="fad fa-link pe-1"></i> <a href="/About">About</a></li>
