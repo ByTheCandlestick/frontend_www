@@ -239,26 +239,24 @@
 												<i class="fad fa-pencil pe-1"></i>
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
 											</li>
-									<?
-										if(isset($product)) {
-									?>
+										<?
+											if(isset($product)) {
+										?>
 											<li>
 												<i class="fad fa-pencil pe-1"></i>
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this product</a>
 											</li>
-									<?
-										}
-									?>
-									<?
-										if(isset($partner)) {
-									?>
+										<?
+											}
+											if(isset($partner)) {
+										?>
 											<li>
 												<i class="fad fa-pencil pe-1"></i>
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this partner</a>
 											</li>
-									<?
-										}
-									?>
+										<?
+											}
+										?>
 											<li>
 												<i class="fad fa-sign-out pe-1"></i>
 												<a href="/logout/">Logout</a>
