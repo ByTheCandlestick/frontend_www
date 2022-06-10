@@ -15,9 +15,8 @@ $( document ).ready(async function() {
 		getQueryParams: function(params) {
 			let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
 			let qString = regexp.exec(window.location.href);
-			console.log(qString);
 			return qString ? qString[1] : null;
-		  }
+		}
 	}
 	cookie = {
 		create: function(name, value, expDays, path = '/') {
