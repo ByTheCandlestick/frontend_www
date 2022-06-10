@@ -156,7 +156,7 @@
 						if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
 							if(mysqli_num_rows($result) == 1) {
 								$row = mysqli_fetch_array($result);
-								include('./sections/'.$row['section_type'].'/'.$row['section_url'].'.php');
+								include('./Sections/'.$row['section_type'].'/'.$row['section_url'].'.php');
 								unset($secext);
 							}
 						}
