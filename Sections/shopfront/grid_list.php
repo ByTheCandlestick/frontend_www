@@ -164,8 +164,8 @@
 				');
 			}
 		} else if(isset($secext) && $secext == 'partner'){
-			$part_title = $partner['name'];
-			$query = DB_Query("SELECT * FROM `products` WHERE `made_by`='$part_title' AND `active`=1");
+			$part_ID = mysqli_fetch_assoc(DB_Query(sprintf("SELECT `ID` FROM `partners` WHERE `name`=%x AND `active`=1", QS)))
+			$query = DB_Query("SELECT * FROM `products` WHERE `made_by_ID`='$part_ID' AND `active`=1");
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
 					$prod_price = $row['RetailPrice'];
