@@ -266,7 +266,20 @@
 								?>
 											<li>
 												<i class="fad fa-user pe-1"></i>
-												<a href="/my/">My account</a>
+												<a href="/My/">My Account</a>
+											</li>
+											<li>
+												<i class="fad fa-user pe-1"></i>
+												<a href="/Cart/">My Cart</a>
+											</li>
+
+											<li>
+												<i class="fad fa-user pe-1"></i>
+												<a href="/my/Addresses/">My Addresses</a>
+											</li>
+											<li>
+												<i class="fad fa-user pe-1"></i>
+												<a href="/my/Cards/">My Cards</a>
 											</li>
 											<li>
 												<i class="fad fa-sign-out pe-1"></i>
