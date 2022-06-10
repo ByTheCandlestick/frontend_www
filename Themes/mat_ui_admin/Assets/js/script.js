@@ -265,7 +265,7 @@ $( document ).ready(async function() {
 		})
 	// -----========== BACK BTN ==========----- //
 		console.log(misc.getQueryParams('force_back'));
-		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === undefined) {
+		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
 			$('.app-back-btn').addClass('disabled')
 		}
 		$(".app-back-btn").click( function(){
