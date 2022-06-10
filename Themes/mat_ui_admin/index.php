@@ -43,7 +43,7 @@
 			<title>
 				<?
 					print(
-						(($layout_row['page_title']!="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
+						(($layout_row['page_title']=="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
 					)
 				?>
 			</title>
