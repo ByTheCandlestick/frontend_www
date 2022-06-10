@@ -19,7 +19,7 @@
 }
 @media screen and (max-width: 520px) {
   .app-sidebar.sidebar-show {
-	animation: example 1s linear;
+	animation: example 0.5s linear;
   }
   @keyframes example {
 	000% {
