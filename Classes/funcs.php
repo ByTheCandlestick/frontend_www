@@ -1,5 +1,5 @@
 <?
-	function strip_out_subdomain($domain) {
+	function removeSubdomain($domain) {
 		return $only_my_domain = preg_replace("/^(.*?)\.(.*)$/","$2",$domain);
 	}
 

@@ -227,11 +227,11 @@
 												<h4>Administration</h4>
 												<ul class="d-inline-block">
 													<li>
-														<i class="fad fa-cogs pe-1"></i> 
-														<a href="">Open admin dashboard</a>
+														<i class="fad fa-cogs pe-1"></i>
+														<a href="<?print('admin.'.removeSubdomain($_SERVER['HTTP_HOST']))?>">Open admin dashboard</a>
 													</li>
 													<li>
-														<i class="fad fa-pencil pe-1"></i> 
+														<i class="fad fa-pencil pe-1"></i>
 														<a href="">Edit this page</a>
 													</li>
 												</ul>
