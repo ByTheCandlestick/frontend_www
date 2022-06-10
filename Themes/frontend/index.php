@@ -240,6 +240,7 @@
 												<a href="<?print($admin_url.'/Website/Page/'.$layout_row['ID'].'/')?>">Edit this page</a>
 											</li>
 										<?
+											print_r($product);
 											if(isset($product)) {
 										?>
 											<li>
