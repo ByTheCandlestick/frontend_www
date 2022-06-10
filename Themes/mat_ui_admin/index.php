@@ -5,7 +5,7 @@
 		if(mysqli_fetch_assoc($query)['Access_admin'] != 1)
 			$user_ok = false;
 	}
-	// require_user_ok();
+	require_user_ok();
 
 	// Determine the required row from the page requested
 	$domainID = domainID();
