@@ -27,10 +27,10 @@
   }
 
   .app-sidebar {
-	animation: 0.25s linear 1 reverse both sidebar-show;
+	animation: 0.25s linear 1 forwards sidebar-hide;
   }
   .app-sidebar.sidebar-show {
-	animation: 0.25s linear 1 forwards both sidebar-show;
+	animation: 0.25s linear 1 forwards sidebar-show;
   }
   @keyframes sidebar-show {
 	000% {
@@ -47,6 +47,23 @@
 		display: block;
 		width: 74px;
 		padding: 0px 16px 40px 16px;
+	}
+  }
+  @keyframes sidebar-show {
+	000% {
+		display: block;
+		width: 74px;
+		padding: 0px 16px 40px 16px;
+	}
+	001% {
+		display: none;
+		width: 0px;
+		padding: 0px;
+	}
+	100% {
+		display: none;
+		width: 0px;
+		padding: 0px;
 	}
   }
 
