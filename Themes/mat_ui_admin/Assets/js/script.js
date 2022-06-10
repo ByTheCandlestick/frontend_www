@@ -11,7 +11,12 @@ $( document ).ready(async function() {
             } else {
                 $('#submitBtn').attr("disabled", false);
             }
-        }
+        },
+		getQueryParams: function( params, url ) {
+			let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
+			let qString = regexp.exec(url);
+			return qString ? qString[1] : null;
+		  }
 	}
 	cookie = {
 		create: function(name, value, expDays, path = '/') {
