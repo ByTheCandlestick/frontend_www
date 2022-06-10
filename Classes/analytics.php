@@ -25,7 +25,7 @@
 			}
 			if($q = DB_Query("SELECT * FROM `page_views` WHERE `timestamp`='$timestamp' LIMIT 1", ANALYTICS)) {
 				$analytics_ID = mysqli_fetch_assoc($q);
-				print_r(mysqli_fetch_row($q));
+				print_r($analytics_ID);
 			}
 
 			if(isset($referrer)) {
