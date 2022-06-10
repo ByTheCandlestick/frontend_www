@@ -3,7 +3,7 @@
 		if(isset($_POST['rdir'])) {
 			Redirect($_POST['rdir']);
 		} else {
-			Redirect('/');
+			print("Redirect('/')");
 		}
 	}
 ?>
