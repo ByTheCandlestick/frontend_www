@@ -24,9 +24,11 @@
   @keyframes example {
 	000% {
 		width: 0px;
+		padding: 0px;
 	}
 	100% {
-		width: 74px;
+		width: unset;
+		padding: 0px 16px 40px 16px;
 	}
   }
   section {
