@@ -23,8 +23,8 @@
 			if(!DB_Query("INSERT INTO `page_views`(`timestamp`, `uri`, `uri_full`, `country`, `city`, `ip`) VALUES($timestamp, '$uri', '$uri_full', '$country', '$city', '$user_ip')", ANALYTICS)) {
 				echo "<script>console.log('Unable to submit analytics -0')</script>";
 			}
-			if(DB_Query($q = "SELECT * FROM `page_views` WHERE `timestamp`=$timestamp", ANALYTICS)) {
-				$analytics_ID = mysqli_fetch_assoc($q);
+			if(DB_Query($q = "SELECT * FROM `page_views` WHERE `timestamp`='$timestamp'", ANALYTICS)) {
+				$analytics_ID = mysqli_fetch_assoc($q)[0];
 			}
 
 			if(isset($referrer)) {
