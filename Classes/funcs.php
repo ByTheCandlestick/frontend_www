@@ -205,6 +205,7 @@
 	 * 
 	 */
 		function require_user_ok() {
+			global $user_ok;
 			if(!$user_ok) {
 				ob_end_clean();
 				header("Connection: close\r\n");
