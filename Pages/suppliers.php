@@ -6,8 +6,8 @@
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			<div class="row">
-				<div class="col-4">
-					<a href="/Suppliers/New/" class="btn btn-outline-primary d-flex justify-content-end align-items-center">
+				<div class="col-4 d-flex justify-content-end align-items-center">
+					<a href="/Suppliers/New/" class="btn btn-outline-primary">
 						<i class="fa fa-plus"></i>
 					</a>
 				</div>
