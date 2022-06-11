@@ -5,7 +5,7 @@
 
 	print_r($_SERVER);
 
-	if(isset($_GET['file']) && isset($_GET['ext'])) {
+	if(isset($_SERVER['SCRIPT_URL']))) {
 		if(file_exists($path = 'Themes/'.__THEME__.'/Assets/'.$_GET['ext'].'/'.$_GET['file'].'.'.$_GET['ext'])) {
 			print(file_get_contents($path));
 		}
