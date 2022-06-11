@@ -47,6 +47,7 @@
 				// NOTIFICATIONS
 					$notifications = mysqli_fetch_array(DB_Query("SELECT * FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1"));
 					$notifications['count'] = mysqli_fetch_array(DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1"))[0];
+				//
 			//
 		//
 	}
