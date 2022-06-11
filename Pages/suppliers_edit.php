@@ -2,7 +2,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6 col-lg-8">
-			<h1>All suppliers</h1>
+			<h1>Edit suppliers</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 		</div>
