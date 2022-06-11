@@ -1,5 +1,6 @@
 <?
 	date_default_timezone_set('Europe/London');
+	print_r($_SERVER['SCRIPT_NAME']);
 	if($_SERVER['SCRIPT_NAME'] == "/manifest.json") {
 
 	} else {
