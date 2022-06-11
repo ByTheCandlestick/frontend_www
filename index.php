@@ -7,7 +7,7 @@
 		if(file_exists($path = sprintf("/Themes/%s/App/manifest.json", __THEME__))) {
 			print(file_get_contents($path));
 		} else {
-			print(json_encode(array("error"=>"File not found")))
+			print(json_encode(array("error"=>"File not found")));
 		}
 	} else {
 		if($website_info['Maintenance']) {
