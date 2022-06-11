@@ -25,21 +25,36 @@
 			<tbody>
 				<?
 					$query = DB_Query("SELECT * FROM `Suppliers`");
-					while ($row = mysqli_fetch_array($query)) {
+					if(mysqli_num_rows($query) > 0) {
+						while ($row = mysqli_fetch_array($query)) {
+							print('
+								<tr>
+									<th scope="row">'.$row['ID'].'</th>
+									<td>'.$row['Name'].'</td>
+									<td>'.$row['Reference'].'</td>
+									<td>'.$row['Email'].'</td>
+									<td>'.$row['Phone'].'</td>
+									<td>'.$row['Active'].'</td>
+									<td>'.$row['Created'].'</td>
+									<td>
+										<a href="/Supplier/Edit/'.$row['ID'].'">
+											<i class="fa fa-pencil"></i>
+										</a>
+									</td>
+								</tr>
+							');
+						}
+					} else {
 						print('
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
-								<td>'.$row['Name'].'</td>
-								<td>'.$row['Reference'].'</td>
-								<td>'.$row['Email'].'</td>
-								<td>'.$row['Phone'].'</td>
-								<td>'.$row['Active'].'</td>
-								<td>'.$row['Created'].'</td>
-								<td>
-									<a href="/Supplier/Edit/'.$row['ID'].'">
-										<i class="fa fa-pencil"></i>
-									</a>
-								</td>
+								<td>No data found</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 						');
 					}
