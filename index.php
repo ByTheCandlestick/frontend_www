@@ -3,10 +3,8 @@
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
 
-	print_r($_SERVER);
-
-	if(isset($_SERVER['SCRIPT_URL']))) {
-		if(file_exists($path = 'Themes/'.__THEME__.'/Assets/'.$_GET['ext'].'/'.$_GET['file'].'.'.$_GET['ext'])) {
+	if(isset($_SERVER['SCRIPT_URL'])) {
+		if(file_exists($path = sprintf("/Themes/%s/Assets/", __THEME__, ))) {
 			print(file_get_contents($path));
 		}
 	} else {
