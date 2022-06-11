@@ -159,12 +159,13 @@
 										$active = '';
 									}
 									print(sprintf('
-										<a href="%s" class="app-sidebar-link%s data-toggle="tooltip" data-placement="right" title="Tooltip on right"">
+										<a href="%s" class="app-sidebar-link%s data-toggle="tooltip" data-placement="right" title="%s"">
 											<i class="fa fa-%s"></i>
 										</a>
 										',
 										$link,
 										$active,
+										$item['page_name'],
 										$item['menu_icon']
 									));
 								}
