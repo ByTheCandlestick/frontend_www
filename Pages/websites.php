@@ -8,7 +8,7 @@
 			<div class="row">
 				<div class="col d-flex justify-content-end align-items-center">
 					<a href="/Websites/styles/" class="btn btn-outline-primary">
-						<i class="fab fa-css3-alt"></i>
+						<i class="fa fa-book-spells"></i>
 					</a>
 					<a href="/Websites/scripts/" class="btn btn-outline-primary">
 						<i class="fa fa-scroll"></i>
