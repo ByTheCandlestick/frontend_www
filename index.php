@@ -3,7 +3,7 @@
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
 
-	if($_SERVER['REQUEST_URI']!="/manifest.json") {
+	if($_SERVER['REQUEST_URI'] == "/manifest.json") {
 		if(file_exists($path = sprintf(__ROOT__."/Themes/%s/App/manifest.json", __THEME__))) {
 			print(file_get_contents($path));
 		} else {
