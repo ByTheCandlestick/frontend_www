@@ -126,7 +126,7 @@
 							<p class="app-name">The Candlestick</p>
 						</div>
 						<!-- Search -->
-						<div class="search-wrapper" rel="/Themes/<?print(__THEME__)?>/Assets/search.json">
+						<div class="search-wrapper" rel="/search.json">
 							<div class="search-area">
 								<input type="text" onkeyup="search.process(event)" placeholder="Search">
 							</div>
