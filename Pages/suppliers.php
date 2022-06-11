@@ -5,8 +5,9 @@
 			<h1>All suppliers</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
-			<div class="form-floating mb-3 input-group">
-				<input type="text" class="form-control tableFilter" id="floatingInput" placeholder="Search">
+			<div class="form-floating">
+				<input type="text" class="form-control tableFilter" id="tableSearch">
+				<label for="tableSearch" class="ps-5">Search</label>
 			</div>
 		</div>
 	</div>
