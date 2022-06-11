@@ -10,12 +10,18 @@
 				<h1>User info</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
-				<a href="/Users/Permissions/<?print(QS)?>" class="btn btn-outline-primary">
-					<i class="fa fa-key"></i>
-				</a>
-				<a href="javascript:user.save(<?print(QS)?>);" class="btn btn-outline-primary">
-					<i class="fa fa-save"></i>
-				</a>
+			<div class="row">
+				<div class="col d-flex justify-content-end align-items-center">
+					<a href="/Users/Permissions/<?print(QS)?>" class="btn btn-outline-primary">
+						<i class="fa fa-key"></i>
+					</a>
+					<a href="javascript:user.save(<?print(QS)?>);" class="btn btn-outline-primary">
+						<i class="fa fa-save"></i>
+					</a>
+				</div>
+				<div class="col-8">
+				</div>
+			</div>
 			</div>
 		</div>
 		<hr>

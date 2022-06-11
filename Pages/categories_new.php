@@ -5,6 +5,15 @@
 			<h1>Product Categories, Collections and Tags</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			<div class="row">
+				<div class="col d-flex justify-content-end align-items-center">
+					<a href="javascript:categories.create();" class="btn btn-outline-primary">
+						<i class="fa fa-plus"></i>
+					</a>
+				</div>
+				<div class="col-8">
+				</div>
+			</div>
 		</div>
 	</div>
 	<hr>
