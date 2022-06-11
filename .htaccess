@@ -45,7 +45,7 @@ ErrorDocument 404 /Error/404/
 #	REDIRECT ALL REQUESTS TO INDEX
 #*/
 	<IfModule mod_rewrite.c>
-		RewriteCond %{REQUEST_FILENAME} ^.*.(json|js)$
+		RewriteCond %{REQUEST_FILENAME} ^.*.(json|js|txt|xml)$
 		RewriteRule ^(.*).(json|js)$ /index.php?file=$1&ext=$2 [END,L,QSA]
 
 		RewriteCond %{REQUEST_FILENAME} !-d
