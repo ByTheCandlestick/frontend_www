@@ -45,7 +45,7 @@
 								<td>'.$row['RetailPrice'].'</td>
 								<td>'.$row['Slug'].'</td>
 								<td>
-									<a href="/Product/View/'.$row['SKU'].'">
+									<a href="/Product/Edit/'.$row['SKU'].'">
 										<i class="fa fa-pencil"></i>
 									</a>
 								</td>

@@ -1,5 +1,5 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `products_categories` WHERE `ID`=%s", QS));
+	$query = DB_Query(sprintf("SELECT * FROM `products_collections` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$user = mysqli_fetch_assoc($query);
 ?>
@@ -7,7 +7,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
-				<h1>Product Category</h1>
+				<h1>Product Collection</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			</div>
@@ -25,7 +25,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-8">
-				<h1>Category not found.</h1>
+				<h1>Collection not found.</h1>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			</div>
