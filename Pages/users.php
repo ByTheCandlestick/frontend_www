@@ -25,21 +25,36 @@
 			<tbody>
 				<?
 					$query = DB_Query("SELECT * FROM `Users`");
-					while ($row = mysqli_fetch_array($query)) {
+					if(mysqli_num_rows($query) > 0) {
+						while ($row = mysqli_fetch_array($query)) {
+							print('
+								<tr>
+									<th scope="row">'.$row['ID'].'</th>
+									<td>'.$row['First_name'].' '.$row['Last_name'].'</td>
+									<td>'.$row['Username'].'</td>
+									<td>'.$row['Email'].'</td>
+									<td>'.$row['Phone'].'</td>
+									<td>'.$row['Active'].'</td>
+									<td>'.$row['Created'].'</td>
+									<td>
+										<a href="/User/View/'.$row['ID'].'">
+											<i class="fa fa-pencil"></i>
+										</a>
+									</td>
+								</tr>
+							');
+						}
+					} else {
 						print('
 							<tr>
-								<th scope="row">'.$row['ID'].'</th>
-								<td>'.$row['First_name'].' '.$row['Last_name'].'</td>
-								<td>'.$row['Username'].'</td>
-								<td>'.$row['Email'].'</td>
-								<td>'.$row['Phone'].'</td>
-								<td>'.$row['Active'].'</td>
-								<td>'.$row['Created'].'</td>
-								<td>
-									<a href="/User/View/'.$row['ID'].'">
-										<i class="fa fa-pencil"></i>
-									</a>
-								</td>
+								<th scope="row"></th>
+								<td>No data found</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 						');
 					}
