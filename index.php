@@ -4,7 +4,10 @@
 	require_once('./Classes/vars.php');
 
 	if($_SERVER['REQUEST_URI'] == "/manifest.json") {
-		print(file_get_contents('Themes/'.__THEME__.'/Assets/json/manifest.json'));
+		if(file_exists($path = 'Themes/'.__THEME__.'/Assets/json/manifest.json')) {
+			header('HTTP/1.1 200 OK');
+			print(file_get_contents($path));
+		}
 	} else {
 		if($website_info['Maintenance']) {
 
