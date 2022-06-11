@@ -16,6 +16,12 @@
 					<a href="/Products/New/" class="btn btn-outline-primary">
 						<i class="fa fa-plus"></i>
 					</a>
+					<a href="/Products/New/" class="btn btn-outline-primary">
+						Categories
+					</a>
+					<a href="/Products/New/" class="btn btn-outline-primary">
+						Collections
+					</a>
 				</div>
 				<div class="col-8">
 					<div class="form-floating">
