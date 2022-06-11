@@ -6,10 +6,10 @@
 	<section>
 		<!-- Section Header -->
 		<div class="row">
-			<div class="col-12 col-md-6 col-lg-8">
+			<div class="col-12 col-md-6">
 				<h1>User info</h1>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col d-flex justify-content-end align-items-center">
 					<a href="/Users/Permissions/<?print(QS)?>" class="btn btn-outline-primary me-1">
@@ -19,7 +19,7 @@
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
-				<div class="col-8">
+				<div class="col-6">
 				</div>
 			</div>
 			</div>
@@ -89,10 +89,10 @@
 	<section>
 		<!-- Section Header -->
 		<div class="row">
-			<div class="col-12 col-md-6 col-lg-8">
+			<div class="col-12 col-md-6">
 				<h1>User not found.</h1>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			<div class="col-12 col-md-6 text-md-end">
 			</div>
 		</div>
 		<hr>

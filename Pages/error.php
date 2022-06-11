@@ -4,10 +4,10 @@
 	<section>
 		<!-- Section Header -->
 		<div class="row">
-			<div class="col-12 col-md-6 col-lg-8">
+			<div class="col-12 col-md-6">
 				<h1>Error <?print(QS_SUBPAGE)?>.</h1>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			<div class="col-12 col-md-6 text-md-end">
 			</div>
 		</div>
 		<hr>
@@ -28,10 +28,10 @@
 	<section>
 		<!-- Section Header -->
 		<div class="row">
-			<div class="col-12 col-md-6 col-lg-8">
+			<div class="col-12 col-md-6">
 				<h1>An error occured, no error code was given.</h1>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4 text-md-end">
+			<div class="col-12 col-md-6 text-md-end">
 			</div>
 		</div>
 		<hr>
