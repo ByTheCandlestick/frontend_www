@@ -12,10 +12,10 @@
 			<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			<div class="row">
 				<div class="col d-flex justify-content-end align-items-center">
-					<a href="/Users/Permissions/<?print(QS)?>" class="btn btn-outline-primary">
+					<a href="/Users/Permissions/<?print(QS)?>" class="btn btn-outline-primary me-1">
 						<i class="fa fa-key"></i>
 					</a>
-					<a href="javascript:user.save(<?print(QS)?>);" class="btn btn-outline-primary">
+					<a href="javascript:user.save(<?print(QS)?>);" class="btn btn-outline-primary me-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>

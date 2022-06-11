@@ -13,13 +13,13 @@
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			<div class="row">
 				<div class="col d-flex justify-content-end align-items-center">
-					<a href="/Products/New/" class="btn btn-outline-primary">
+					<a href="/Products/New/" class="btn btn-outline-primary me-1">
 						<i class="fa fa-plus"></i>
 					</a>
-					<a href="/Products/New/" class="btn btn-outline-primary">
+					<a href="/Categories/" class="btn btn-outline-primary me-1">
 						Categories
 					</a>
-					<a href="/Products/New/" class="btn btn-outline-primary">
+					<a href="/Collections/" class="btn btn-outline-primary me-1">
 						Collections
 					</a>
 				</div>
