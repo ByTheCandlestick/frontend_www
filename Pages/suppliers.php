@@ -5,10 +5,10 @@
 			<h1>All suppliers</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end d-flex">
-			<a href="/Suppliers/New/" class="btn btn-outline-primary col-2">
+			<a href="/Suppliers/New/" class="btn btn-outline-primary col-1 m-2">
 				<i class="fa fa-plus"></i>
 			</a>
-			<div class="form-floating col-10">
+			<div class="form-floating col-11 m-2">
 				<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
 				<label for="tableSearch" class="ps-5">Search</label>
 			</div>
