@@ -1,6 +1,6 @@
 {
 	"scope": "/",
-	"start_url": "/index.php",
+	"start_url": "/app/app.php",
 	"iarc_rating_id": "",
 	"related_applications": [],
 	"prefer_related_applications": false,
