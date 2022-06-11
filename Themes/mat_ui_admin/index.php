@@ -153,13 +153,13 @@
 								foreach($items as $item) {
 									if($item['page_url'] == QS_PAGE) {
 										$link = '#';
-										$active = ' active';
+										$active = 'active';
 									} else {
 										$link = $item['menu_url'];
 										$active = '';
 									}
 									print(sprintf('
-										<a href="%s" class="app-sidebar-link%s" data-toggle="tooltip" data-placement="right" title="%s">
+										<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
 											<i class="fa fa-%s"></i>
 										</a>
 										',
