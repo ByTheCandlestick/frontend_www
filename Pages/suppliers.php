@@ -29,7 +29,7 @@
 						print('
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
-								<td>'.$row['Name']'.</td>
+								<td>'.$row['Name'].'</td>
 								<td>'.$row['Reference'].'</td>
 								<td>'.$row['Email'].'</td>
 								<td>'.$row['Phone'].'</td>
