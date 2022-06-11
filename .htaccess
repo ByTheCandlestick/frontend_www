@@ -9,7 +9,7 @@ ErrorDocument 404 /Error/404/
 # SET ENVIRONMENT VARIABLES
 #
 SetEnv Maintenance off
-SetEnv DefaultImageOnError on
+SetEnv DefaultImageOnError off
 
 #
 # ALLOW IFRAME FOR ADMIN PAGE
@@ -30,6 +30,7 @@ SetEnv DefaultImageOnError on
 #
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} .(gif|jpe?g|png|webp|jxr|svg)$ [NC]
+RewriteCond %{env:DefaultImageOnError} ^on$
 RewriteRule .* %{REQUEST_SCHEME}://api.%{HTTP_HOST}/v1/Images/Fetch/not_found/ [L]
 
 #
