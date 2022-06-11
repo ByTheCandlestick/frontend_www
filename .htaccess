@@ -78,6 +78,7 @@ AddType image/webp .webp
 	RewriteCond %{REQUEST_URI} !.*\.css$ [NC]
 	RewriteCond %{REQUEST_URI} !.*\.gif$ [NC]
 	RewriteCond %{REQUEST_URI} !.*\.js$ [NC]
+	RewriteCond %{REQUEST_URI} !.*\.json$ [NC]
 	RewriteCond %{REQUEST_URI} !.*Error/([0-9]+)$ [NC]
 	RewriteRule ^(.+)/(.+)/(.+)/$ /index.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
 	RewriteRule ^(.+)/(.+)/$ /index.php?page=$1&subpage=$2 [END,L,QSA]
