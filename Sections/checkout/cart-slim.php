@@ -84,7 +84,7 @@
 											<label for="floatingTextarea">Price</label>
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-12 col-lg-6">
 										<div class="form-floating">
 											<input class="text-center form-control border-0 bg-transparent" placeholder="Leave a comment here" id="floatingTextarea" value="'.$cart_item_quantity.'" disabled>
 											<label for="floatingTextarea">Quantity</label>
