@@ -47,7 +47,7 @@
 					} else {
 						print('
 							<tr>
-								<th scope="row">'.$row['ID'].'</th>
+								<th scope="row"></th>
 								<td>No data found</td>
 								<td></td>
 								<td></td>
