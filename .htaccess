@@ -73,6 +73,7 @@ AddType image/webp .webp
 <IfModule mod_rewrite.c>
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.*\.json)$ /index.php?file=%1 [R=200]
 	RewriteRule ^(.+)/(.+)/(.+)/$ /index.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
 	RewriteRule ^(.+)/(.+)/$ /index.php?page=$1&subpage=$2 [END,L,QSA]
 	RewriteRule ^(.*)/$ /index.php?page=$1 [END,L,QSA]
@@ -81,8 +82,6 @@ AddType image/webp .webp
 <IfModule mod_rewrite.c>
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_URI} ^([.*].json)$ [NC]
-	RewriteRule ^$ /index.php?file=%1 [R=200]
 </IfModule>
 
 #
