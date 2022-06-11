@@ -70,7 +70,7 @@
 	$(document).ready(function(){
 		$(".tableFilter").on("keyup", function() {
 			var value = $(this).val().toLowerCase();
-			$(".usersTable tr").filter(function() {
+			$(".usersTable tbody tr").filter(function() {
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 		});

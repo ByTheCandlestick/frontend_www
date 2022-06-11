@@ -51,7 +51,7 @@
 	$(document).ready(function(){
 		$(".tableFilter").on("keyup", function() {
 			var value = $(this).val().toLowerCase();
-			$(".productsTable tr").filter(function() {
+			$(".productsTable tbody tr").filter(function() {
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 		});
