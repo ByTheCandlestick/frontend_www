@@ -4,7 +4,7 @@
 	require_once('./Classes/vars.php');
 	print($_GET);
 	if(isset($_GET['file']) && isset($_GET['ext'])) {
-		if(file_exists($path = 'Themes/'.__THEME__.'/Assets/json/manifest.json')) {
+		if(file_exists($path = 'Themes/'.__THEME__.'/Assets/'.$_GET['ext'].'/'.$_GET['file'].'.'.$_GET['ext'])) {
 			print(file_get_contents($path));
 		}
 	} else {
