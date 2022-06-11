@@ -4,7 +4,7 @@
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
 
-	if($_SERVER['REQUEST_URI'] == "/manifest.json") {
+	if($_GET['file'] == "/manifest.json") {
 		if(file_exists($path = 'Themes/'.__THEME__.'/Assets/json/manifest.json')) {
 			print(file_get_contents($path));
 		}
