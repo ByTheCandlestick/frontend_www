@@ -8,7 +8,7 @@
 			<a href="/Suppliers/New/" class="btn btn-outline-primary">
 				<i class="fa fa-plus"></i>
 			</a>
-			<div class="form-floating col-11 m-2">
+			<div class="form-floating">
 				<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
 				<label for="tableSearch" class="ps-5">Search</label>
 			</div>
