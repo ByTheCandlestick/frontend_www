@@ -1,142 +1,104 @@
-
 @media screen and (max-width: 720px) {
-  .app-name, .profile-btn span {
-    display: none;
-  }
-
-  .add-btn, .notification-btn, .mode-switch {
-    width: 20px;
-    height: 20px;
-  }
-  .add-btn svg, .notification-btn svg, .mode-switch svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .app-header-right button {
-    margin-left: 1rem;
-  }
+	.app-name,
+	.profile-btn span {
+		display: none;
+	}
+	.mode-switch {
+		width: 20px;
+		height: 20px;
+	}
+	.mode-switch svg {
+		width: 16px;
+		height: 16px;
+	}
+	.app-header-right button {
+		margin-left: 1rem;
+	}
 }
+
 @media screen and (max-width: 520px) {
-  .app-icon {
-	margin: 0 1rem;
-  }
-  .app-sidebar {
-	animation: 0.1s linear 1 forwards sidebar-hide;
-  }
-  .app-sidebar.sidebar-show {
-	animation: 0.1s linear 1 forwards sidebar-show;
-  }
-  @keyframes sidebar-show {
-	000% {
-		display: none;
-		width: 0px;
-		padding: 0px;
+	.app-icon {
+		margin: 0 1rem;
 	}
-	001% {
-		display: block;
-		width: 0px;
-		padding: 0px;
+	.app-sidebar {
+		animation: 0.1s linear 1 forwards sidebar-hide;
 	}
-	100% {
-		display: block;
-		width: 74px;
-		padding: 0px 16px 40px 16px;
+	.app-sidebar.sidebar-show {
+		animation: 0.1s linear 1 forwards sidebar-show;
 	}
-  }
-  @keyframes sidebar-hide {
-	000% {
-		display: block;
-		width: 74px;
-		padding: 0px 16px 40px 16px;
+	@keyframes sidebar-show {
+		000% {
+			display: none;
+			width: 0px;
+			padding: 0px;
+		}
+
+		001% {
+			display: block;
+			width: 0px;
+			padding: 0px;
+		}
+
+		100% {
+			display: block;
+			width: 74px;
+			padding: 0px 16px 40px 16px;
+		}
 	}
-	099% {
-		display: block;
-		width: 0px;
-		padding: 0px;
+	@keyframes sidebar-hide {
+		000% {
+			display: block;
+			width: 74px;
+			padding: 0px 16px 40px 16px;
+		}
+
+		099% {
+			display: block;
+			width: 0px;
+			padding: 0px;
+		}
+
+		100% {
+			display: none;
+			width: 0px;
+			padding: 0px;
+		}
 	}
-	100% {
-		display: none;
-		width: 0px;
-		padding: 0px;
+	.app-content {
+		padding: 16px 12px 24px 12px;
 	}
-  }
-
-  .app-content {
-    padding: 16px 12px 24px 12px;
-  }
-
-  .status-number, .status-type {
-    font-size: 10px;
-  }
-
-  .view-btn {
-    width: 24px;
-    height: 24px;
-  }
-
-  .app-header {
-    padding: 16px 10px;
-  }
-
-  .search-input {
-    max-width: 120px;
-  }
-
-  section {
-    padding: 24px 16px 0 16px;
-  }
-
-  .profile-btn img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .app-header {
-    padding: 10px;
-  }
-
+	.status-number,
+	.status-type {
+		font-size: 10px;
+	}
+	.view-btn {
+		width: 24px;
+		height: 24px;
+	}
+	.app-header {
+		padding: 16px 10px;
+	}
+	.search-input {
+		max-width: 120px;
+	}
+	.profile-btn img {
+		width: 24px;
+		height: 24px;
+	}
+	.app-header {
+		padding: 10px;
+	}
 	section .header p,
 	section .header .time {
-    font-size: 18px;
-  }
-
-  .status-type {
-    padding-right: 4px;
-  }
-  .status-type:after {
-    display: none;
-  }
-
-  .search-input {
-    font-size: 14px;
-  }
-
-  .messages-btn {
-    top: 48px;
-  }
-
-  .box-content-header {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  .box-content-subheader {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  .box-progress-header {
-    font-size: 12px;
-  }
-
-  .box-progress-percentage {
-    font-size: 10px;
-  }
-
-  .days-left {
-    font-size: 8px;
-    padding: 6px 6px;
-    text-align: center;
-  }
+		font-size: 18px;
+	}
+	.status-type {
+		padding-right: 4px;
+	}
+	.status-type:after {
+		display: none;
+	}
+	.search-input {
+		font-size: 14px;
+	}
 }
