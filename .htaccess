@@ -79,10 +79,6 @@ AddType image/webp .webp
 	RewriteRule ^(.*)/$ /index.php?page=$1 [END,L,QSA]
 	RewriteRule ^$ /index.php [END,L,QSA]
 </IfModule>
-<IfModule mod_rewrite.c>
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !-f
-</IfModule>
 
 #
 # ERROR HANDLING
