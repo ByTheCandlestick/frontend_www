@@ -3,7 +3,7 @@ RewriteEngine on
 Options -Indexes
 Options +FollowSymLinks
 ErrorDocument 404 /Error/404/
-Protocols h2 http/1.1
+#Protocols h2 http/1.1
 
 #
 # SET ENVIRONMENT VARIABLES
