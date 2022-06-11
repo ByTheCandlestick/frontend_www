@@ -14,7 +14,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<table class="table table-striped table-hover">
+		<table class="categoriesTable table table-striped table-hover">
 			<thead class="sticky-top" style="background: var(--section); z-index: unset;">
 				<tr>
 					<th scope="col">ID</th>
@@ -49,7 +49,7 @@
 	$(document).ready(function(){
 		$(".tableFilter").on("keyup", function() {
 			var value = $(this).val().toLowerCase();
-			$(".usersTable tr").filter(function() {
+			$(".categoriesTable tr").filter(function() {
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 		});
