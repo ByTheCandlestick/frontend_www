@@ -1,7 +1,6 @@
 <?
 	date_default_timezone_set('Europe/London');
-	$fileRequested = $_SERVER['SCRIPT_NAME'];
-	if($fileRequested == "/manifest.json") {
+	if($_SERVER['SCRIPT_NAME'] == "/manifest.json") {
 
 	} else {
 		require_once('./Classes/funcs.php');
