@@ -145,7 +145,7 @@
 					<div class="app-content">
 						<!-- Sidebar -->
 						<div class="app-sidebar">
-							<a class="app-sidebar-link app-back-btn">
+							<a class="app-sidebar-link app-back-btn" data-toggle="tooltip" data-placement="right" title="Back">
 								<i class="fa fa-arrow-left"></i>
 							</a>
 							<?
