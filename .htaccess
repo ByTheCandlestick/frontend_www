@@ -73,6 +73,11 @@ AddType image/webp .webp
 <IfModule mod_rewrite.c>
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.+)\.(.+)$ /index.php?file=$1&ext=$2 [R=200]
+</IfModule>
+<IfModule mod_rewrite.c>
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^(.+)\.(.+)$ /index.php?file=$1&ext=$2 [END,L,QSA,R=200]
 	RewriteRule ^(.+)/(.+)/(.+)/$ /index.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
 	RewriteRule ^(.+)/(.+)/$ /index.php?page=$1&subpage=$2 [END,L,QSA]
