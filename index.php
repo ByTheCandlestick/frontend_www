@@ -4,8 +4,8 @@
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
 	//
-	print_r(QS);
-	if(QS == "/manifest.json") {
+	print_r(QS_Page);
+	if(QS_Page == "/manifest.json") {
 
 	} else {
 		if($website_info['Maintenance']) {
