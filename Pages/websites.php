@@ -11,7 +11,7 @@
 						<i class="fab fa-css3-alt"></i>
 					</a>
 					<a href="/Websites/scripts/" class="btn btn-outline-primary">
-						<i class="fab fa-scroll"></i>
+						<i class="fa fa-scroll"></i>
 					</a>
 					<a href="/Websites/New/" class="btn btn-outline-primary">
 						<i class="fa fa-plus"></i>
