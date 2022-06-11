@@ -4,7 +4,7 @@
 	require_once('./Classes/vars.php');
 	print_r('/'.QS_PAGE.'/'.QS_SUBPAGE.'/'.QS.'/');
 	print_r($_SERVER);
-	if(QS_PAGE == "/manifest.json") {
+	if($_SERVER['REQUEST_URI'] == "/manifest.json") {
 
 	} else {
 		if($website_info['Maintenance']) {
