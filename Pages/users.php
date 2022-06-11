@@ -40,7 +40,7 @@
 									<td>'.$row['Active'].'</td>
 									<td>'.$row['Created'].'</td>
 									<td>
-										<a href="/User/Edit/'.$row['ID'].'">
+										<a href="/Users/Edit/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
