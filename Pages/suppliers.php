@@ -4,10 +4,14 @@
 		<div class="col-12 col-md-6 col-lg-8">
 			<h1>All suppliers</h1>
 		</div>
-		<div class="col-12 col-md-6 col-lg-4 text-md-end d-flex">
+		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			<a href="/Suppliers/New/" class="btn btn-outline-primary">
 				<i class="fa fa-plus"></i>
 			</a>
+			<div class="form-floating col-11 m-2">
+				<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
+				<label for="tableSearch" class="ps-5">Search</label>
+			</div>
 		</div>
 	</div>
 	<hr>
