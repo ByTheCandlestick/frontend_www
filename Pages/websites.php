@@ -7,13 +7,13 @@
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 col-lg-6 d-flex justify-content-end align-items-center">
-					<a href="/Websites/styles/" class="btn btn-outline-primary me-1">
+					<a href="/Websites/styles/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-book-spells"></i>
 					</a>
-					<a href="/Websites/scripts/" class="btn btn-outline-primary me-1">
+					<a href="/Websites/scripts/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-scroll"></i>
 					</a>
-					<a href="/Websites/New/" class="btn btn-outline-primary me-1">
+					<a href="/Websites/New/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-plus"></i>
 					</a>
 				</div>
