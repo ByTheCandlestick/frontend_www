@@ -82,7 +82,7 @@ AddType image/webp .webp
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_URI} !.*\.json$ [NC]
-	RewriteRule ^ - [R=200]
+	RewriteRule ^ - [END,L,QSA,R=200]
 </IfModule>
 
 #
