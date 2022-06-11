@@ -6,7 +6,7 @@
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			<div class="form-floating">
-				<input type="text" class="form-control tableFilter" id="tableSearch">
+				<input type="text" class="form-control tableFilter" id="tableSearch" placeholder="" value="">
 				<label for="tableSearch" class="ps-5">Search</label>
 			</div>
 		</div>
