@@ -276,7 +276,6 @@ $( document ).ready(async function() {
 			$('.app-sidebar').toggleClass('sidebar-show');
 		})
 	// -----========== BACK BTN ==========----- //
-		console.log(misc.getQueryParams('force_back'));
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
 			$('.app-back-btn').addClass('disabled')
 		}
