@@ -5,7 +5,10 @@
 			<h1>Users</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
-			<input type="text" class="tableFilter"> </input>
+			<div class="form-floating">
+				<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
+				<label for="tableSearch" class="ps-5">Search</label>
+			</div>
 		</div>
 	</div>
 	<hr>
