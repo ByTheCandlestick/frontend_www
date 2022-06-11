@@ -46,7 +46,7 @@ ErrorDocument 404 /Error/404/
 #*/
 	<IfModule mod_rewrite.c>
 		RewriteCond %{REQUEST_FILENAME} !-d
-		RewriteCond %{REQUEST_FILENAME} ^(.*\.json)$
+		RewriteCond %{REQUEST_FILENAME} ^.*.(json|js)$
 		RewriteRule ^(.+)/(.+)/(.+)/$ /index.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
 		RewriteRule ^(.+)/(.+)/$ /index.php?page=$1&subpage=$2 [END,L,QSA]
 		RewriteRule ^(.+)/$ /index.php?page=$1 [END,L,QSA]
