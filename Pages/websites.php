@@ -50,7 +50,7 @@
 								<td>'.$row['Domain'].'</td>
 								<td>'.$row['Maintenance'].'</td>
 								<td>
-									<a href="/Website/View/'.$row['ID'].'">
+									<a href="/Websites/Pages/'.$row['ID'].'">
 										<i class="fa fa-ellipsis-h"></i>
 									</a>
 								</td>
