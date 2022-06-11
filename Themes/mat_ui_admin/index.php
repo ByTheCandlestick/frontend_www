@@ -159,7 +159,7 @@
 										$active = '';
 									}
 									print(sprintf('
-										<a href="%s" class="app-sidebar-link%s">
+										<a href="%s" class="app-sidebar-link%s data-toggle="tooltip" data-placement="right" title="Tooltip on right"">
 											<i class="fa fa-%s"></i>
 										</a>
 										',
