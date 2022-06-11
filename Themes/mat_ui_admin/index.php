@@ -46,7 +46,7 @@
 					)
 				?>
 			</title>
-			<link rel="shortcut icon" href="/assets/images/logos/logo - transparent.svg" type="image/x-icon" />
+			<link rel="shortcut icon" href="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>" type="image/x-icon" />
 			<!-- Progresive Web App -->
 				<link rel="manifest" href="/manifest.json" />
 		  		<script>
