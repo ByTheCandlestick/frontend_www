@@ -290,4 +290,6 @@ $( document ).ready(async function() {
 			$('.app-preloader').fadeIn();
 		});
 		$('.app-preloader').fadeOut();
+	// -----========== TOOL TIPS ==========----- //
+	$('[data-toggle="tooltip"]').tooltip()
 });
