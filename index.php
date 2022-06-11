@@ -3,11 +3,13 @@
 	//
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
-	if(true) {
-	}
-	if($website_info['Maintenance']) {
+	if($fileRequested = $_SERVER['SCRIPT_NAME'] == "/manifest.json") {
 
 	} else {
-		getThemepage(true);
+		if($website_info['Maintenance']) {
+
+		} else {
+			getThemepage(true);
+		}
 	}
 ?>
