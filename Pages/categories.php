@@ -2,7 +2,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6 col-lg-8">
-			<h1>Product Categories, Collections and Tags</h1>
+			<h1>Product Categories</h1>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 text-md-end">
 			<div class="form-floating">
@@ -14,7 +14,6 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<h5>Categories</h5>
 		<table class="table table-striped table-hover">
 			<thead class="sticky-top" style="background: var(--section); z-index: unset;">
 				<tr>
