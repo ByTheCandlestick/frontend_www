@@ -732,22 +732,22 @@ may heaven to</h4>
 <section class="instagram">
 <div class="row no-gutters">
 <div class="col-2">
-<a href=""><img src="img/instagram/x1.jpg.pagespeed.ic.3_eOt8F4XH.webp" alt="" data-pagespeed-url-hash="270620287" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+<a href=""><img src="" alt="" data-pagespeed-url-hash="270620287" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
 </div>
 <div class="col-2">
-<a href=""><img src="img/instagram/x2.jpg.pagespeed.ic.gPg6abEm-g.webp" alt="" data-pagespeed-url-hash="565120208" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+<a href=""><img src="" alt="" data-pagespeed-url-hash="565120208" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
 </div>
 <div class="col-2">
-<a href=""><img src="img/instagram/x3.jpg.pagespeed.ic.5WsMxMN_0v.webp" alt="" data-pagespeed-url-hash="859620129" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+<a href=""><img src="" alt="" data-pagespeed-url-hash="859620129" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
 </div>
 <div class="col-2">
-<a href=""><img src="img/instagram/x4.jpg.pagespeed.ic.GkjdfAYrlv.webp" alt="" data-pagespeed-url-hash="1154120050" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+<a href=""><img src="" alt="" data-pagespeed-url-hash="1154120050" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
 </div>
 <div class="col-2">
-<a href=""><img src="img/instagram/x5.jpg.pagespeed.ic.fwnMPKrUbk.webp" alt="" data-pagespeed-url-hash="1448619971" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+<a href=""><img src="" alt="" data-pagespeed-url-hash="1448619971" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
 </div>
 <div class="col-2">
-<a href=""><img src="img/instagram/x6.jpg.pagespeed.ic.vu8416XHC0.webp" alt="" data-pagespeed-url-hash="1743119892" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+<a href=""><img src="" alt="" data-pagespeed-url-hash="1743119892" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
 </div>
 </div>
 </section>
