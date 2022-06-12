@@ -551,3 +551,38 @@
     });
   };
 })(jQuery);
+
+
+
+$( document ).ready(function() {
+	// -----========== VARIABLES ==========----- //
+	const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
+	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
+	// -----========== Nestled functions ==========----- //
+	// -----========== Dark mode toggle ==========----- //
+		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
+		mode.modeSwitch.click(function () { mode.toggle() });
+	// -----========== Search ==========----- //
+		$(".search-area input").focusout( function(){
+			if(search.suggestions.filter(":hover").length === 0) {
+				search.suggestions.hide();
+			}
+		});
+		$(".search-area input").focusin( function(){
+			search.suggestions.show();
+		});
+		$.get($('.search-wrapper').attr('rel'), function(data){
+			search.jsonData = data
+		})
+	// -----========== MENU BTN ==========----- //
+		$('.app-icon').click(function() {
+			$('.app-sidebar').toggleClass('sidebar-show');
+		})
+	// -----========== PRELOADER ==========----- //
+		$(window).bind('beforeunload', function() {
+			$('.app-preloader').fadeIn();
+		});
+		$('.app-preloader').fadeOut();
+	// -----========== TOOL TIPS ==========----- //
+		$('[data-toggle="tooltip"]').tooltip()
+})
