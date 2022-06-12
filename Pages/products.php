@@ -50,20 +50,34 @@
 			<tbody>
 				<?
 					$query = DB_Query("SELECT * FROM `products`");
-					while ($row = mysqli_fetch_array($query)) {
+					if(mysqli_num_rows($query) > 0) {
+						while ($row = mysqli_fetch_array($query)) {
+							print('
+								<tr>
+									<th scope="row">'.$row['SKU'].'</th>
+									<td>'.$row['Title'].'</td>
+									<td>'.$categories[$row['Category_ID']].'</td>
+									<td>'.$collections[$row['Collection_ID']].'</td>
+									<td>'.$row['RetailPrice'].'</td>
+									<td>'.$row['Slug'].'</td>
+									<td>
+										<a href="/Products/Edit/'.$row['SKU'].'">
+											<i class="fa fa-pencil"></i>
+										</a>
+									</td>
+								</tr>
+							');
+						}
+					} else {
 						print('
 							<tr>
-								<th scope="row">'.$row['SKU'].'</th>
-								<td>'.$row['Title'].'</td>
-								<td>'.$categories[$row['Category_ID']].'</td>
-								<td>'.$collections[$row['Collection_ID']].'</td>
-								<td>'.$row['RetailPrice'].'</td>
-								<td>'.$row['Slug'].'</td>
-								<td>
-									<a href="/Products/Edit/'.$row['SKU'].'">
-										<i class="fa fa-pencil"></i>
-									</a>
-								</td>
+								<th scope="row"></th>
+								<td>No data found</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 						');
 					}
