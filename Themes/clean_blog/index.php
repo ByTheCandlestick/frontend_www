@@ -28,7 +28,6 @@
 			while($info_row = mysqli_fetch_row($info_results)) {
 				$info[$info_row[1]] = $info_row[2]; 
 			}
-            print_r($layout_row);
 ?>
 <!DOCTYPE html>
     <html lang="en">
