@@ -644,10 +644,9 @@ $(document).ready(function() {
 			},
 			create: function(Name, Value, Expires, Path, Domain) {
 				try {
-					date = new Date();
 					CookieString =
 						Name + "=" + Value + "; "+
-						"expires="+ (date.getTime() + Expires) + "; "+
+						"expires="+ Expires + "; "+
 						"path=" + Path + "; "+
 						"domain=" + Domain + "; "
 					console.log(CookieString);
