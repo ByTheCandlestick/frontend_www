@@ -5,6 +5,8 @@ $(document).ready(function() {
 		const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(4) + '/v1';
 		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 		const api_key_data = 'api_key=' + api_key;
+		const dt = new Date();
+		const fdt = new Date(dt.setDate(dt.getDate() + 365));
 
 	/**
 	 * Topbar Ticker
@@ -629,10 +631,7 @@ $(document).ready(function() {
 				});
 			}
 		}
-		var dt = new Date();
-		console.log(dt);
-		var fdt = new Date(dt.setDate(dt.getDate() + 365));
-		console.log(fdt);
+		
 	// Cookies
 		cookie = {
 			acceptanceCheck: function() {
@@ -643,7 +642,7 @@ $(document).ready(function() {
 				}
 			},
 			accept: function() {
-				cookie.create('tc_gdpr_acceptance', 'accepted', 31536000, '/', '.' + $(location).attr('host').replace(/http:\/\/.+?\./, '').replace(/www./, ''))
+				cookie.create('tc_gdpr_acceptance', 'accepted', fdt, '/', '.' + $(location).attr('host').replace(/http:\/\/.+?\./, '').replace(/www./, ''))
 			},
 			create: function(Name, Value, Expires, Path, Domain) {
 				try {
