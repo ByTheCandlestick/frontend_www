@@ -22,21 +22,16 @@
   // Nav.
 
   // Height hack.
-  /*
-			var $sc = $('#sidebar, #content'), tid;
+	var $sc = $('#sidebar, #content'), tid;
 
-			$window
-				.on('resize', function() {
-					window.clearTimeout(tid);
-					tid = window.setTimeout(function() {
-						$sc.css('min-height', $document.height());
-					}, 100);
-				})
-				.on('load', function() {
-					$window.trigger('resize');
-				})
-				.trigger('resize');
-		*/
+	$window.on('resize', function() {
+		window.clearTimeout(tid);
+		tid = window.setTimeout(function() {
+			$sc.css('min-height', $document.height());
+		}, 100);
+	}).on('load', function() {
+		$window.trigger('resize');
+	}).trigger('resize');
 
   // Title Bar.
   $(
@@ -59,6 +54,7 @@
     target: $body,
     visibleClass: "sidebar-visible",
   });
+
 })(jQuery);
 
 (function ($) {
