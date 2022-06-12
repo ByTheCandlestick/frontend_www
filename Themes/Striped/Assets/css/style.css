@@ -2233,7 +2233,7 @@ ol li {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10001;
+    z-index: 99;
     background: #364050 url("/Themes/Striped/Assets/images/bg01.png");
 }
 
