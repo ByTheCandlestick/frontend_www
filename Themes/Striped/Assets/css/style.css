@@ -1806,7 +1806,7 @@ button,
 .button {
     cursor: pointer;
     background-color: #c94663;
-    background-image: url("/Themes/Striped/Assets//Themes/Striped/Assets/images/bg01.png");
+    background-image: url("/Themes/Striped/Assets/images/bg01.png");
     border-radius: 0.4em;
     text-align: center;
     box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15);
