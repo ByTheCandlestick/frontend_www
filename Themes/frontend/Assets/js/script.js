@@ -629,7 +629,8 @@ $(document).ready(function() {
 				});
 			}
 		}
-
+		var dt = new Date();
+		console.log(dt);
 	// Cookies
 		cookie = {
 			acceptanceCheck: function() {
