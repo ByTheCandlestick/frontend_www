@@ -24,20 +24,10 @@
 	"orientation": "portrait",
 	"icons": [
 		{
-			"src": "/app/images/logos/912.png",
-			"type": "image/png",
-			"sizes": "912x912",
-			"purpose": "any"
-		}, {
-			"src": "/app/images/logos/512.png",
+			"src": "http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/",
 			"type": "image/png",
 			"sizes": "512x512",
 			"purpose": "any"
-		}, {
-			"src": "/app/images/logos/512_maskable.png",
-			"type": "image/png",
-			"sizes": "512x512",
-			"purpose": "maskable"
 		}
 	],
 	"screenshots": [
