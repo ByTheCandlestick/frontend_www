@@ -12,7 +12,11 @@
 		if($website_info['Maintenance']) {
 
 		} else {
-			getThemepage(true);
+			if(getThemepage(false)) {
+				getThemepage(true);
+			} else {
+				print('The website you are looking for does not exist')
+			}
 		}
 	}
 ?>

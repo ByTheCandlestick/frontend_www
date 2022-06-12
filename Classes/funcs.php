@@ -40,7 +40,7 @@
 					return $theme_location;
 				}
 			} else {
-				return 'The website you are looking for does not exist';
+				return false;
 			}
 		}
 	/**
