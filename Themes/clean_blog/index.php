@@ -1,7 +1,7 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 	if($user_ok) {
-		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1) {
+		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_blog'] != 1) {
 			header('Location: /Error/401/');
 		}
 	}
@@ -28,6 +28,7 @@
 			while($info_row = mysqli_fetch_row($info_results)) {
 				$info[$info_row[1]] = $info_row[2]; 
 			}
+            print_r($layout_row);
 ?>
 <!DOCTYPE html>
     <html lang="en">
