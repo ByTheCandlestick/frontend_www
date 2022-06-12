@@ -201,7 +201,7 @@ pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://preview.colorlib.c
 <div class="col-md-6 col-lg-6 col-xl-5">
 <div class="single-blog">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x1.jpg.pagespeed.ic.kI3tjlgQ4u.webp" alt="" data-pagespeed-url-hash="4056137993" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4056137993" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -221,7 +221,7 @@ Earth firmament meat</h4>
 <div class="col-md-6 col-lg-6 col-xl-4">
 <div class="single-blog style_two">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x2.jpg.pagespeed.ic.ZtLfecZbHD.webp" alt="" data-pagespeed-url-hash="55670618" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="55670618" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details text-center ">
 <div class="meta-top d-flex justify-content-center">
@@ -243,7 +243,7 @@ Earth firmament meat</h4>
 <div class="col-12 col-md-6 col-lg-6 col-xl-12">
 <div class="single-blog style-three m_b_30">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x3.jpg.pagespeed.ic.OnOuKbnkfm.webp" alt="" data-pagespeed-url-hash="350170539" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="350170539" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex justify-content-center">
@@ -258,7 +258,7 @@ Earth firmament meat</h4>
 <div class="col-12 col-md-6 col-lg-6 col-xl-12">
 <div class="single-blog style-three">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x4.jpg.pagespeed.ic.F7K5DqzTqo.webp" alt="" data-pagespeed-url-hash="644670460" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="644670460" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex justify-content-center">
@@ -284,7 +284,7 @@ Earth firmament meat</h4>
 <div class="single-blog row no-gutters style-four border_one">
 <div class="col-12 col-sm-5">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x5.jpg.pagespeed.ic.qaPElY7E5w.webp" alt="" data-pagespeed-url-hash="939170381" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="939170381" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 </div>
 <div class="col-12 col-sm-7">
@@ -309,7 +309,7 @@ firmament over face</h4>
 <div class="col-lg-4 col-xl-3">
 <div class="single-blog style_five">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x6.jpg.pagespeed.ic.CT49rK76fu.webp" alt="" data-pagespeed-url-hash="1233670302" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1233670302" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details ">
 <div class="meta-top d-flex">
@@ -325,7 +325,7 @@ appear fourth us.</h4>
 <div class="col-lg-4 col-xl-3">
 <div class="single-blog style_five">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x7.jpg.pagespeed.ic.xmbRcn6rqj.webp" alt="" data-pagespeed-url-hash="1528170223" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1528170223" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details ">
 <div class="meta-top d-flex">
@@ -355,7 +355,7 @@ appear fourth us.</h4>
 <div class="col-lg-5 col-xl-6">
 <div class="single-blog">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x8.jpg.pagespeed.ic.R3ITIvvjei.webp" alt="" data-pagespeed-url-hash="1822670144" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1822670144" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details pad_25 ">
 <div class="meta-top d-flex">
@@ -389,14 +389,14 @@ the hath dowe </h4>
 </div>
 <div class="col-12 col-sm-5">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x9.jpg.pagespeed.ic.biirPkeP-T.webp" alt="" data-pagespeed-url-hash="2117170065" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="2117170065" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 </div>
 </div>
 <div class="single-blog row no-gutters style-four">
 <div class="col-12 col-sm-5">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x10.jpg.pagespeed.ic.PB8s2Zys3I.webp" alt="" data-pagespeed-url-hash="3527112373" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3527112373" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 </div>
 <div class="col-12 col-sm-7">
@@ -418,7 +418,7 @@ the hath dowe </h4>
 <div class="row">
 <div class="col-12">
 <div class="addvertise">
-<a href=""><img src="img/banner/xadd.jpg.pagespeed.ic.98ufQ7G3mM.webp" alt="" data-pagespeed-url-hash="2179791821" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+<a href=""><img src="" alt="" data-pagespeed-url-hash="2179791821" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
 </div>
 </div>
 </div>
@@ -438,7 +438,7 @@ the hath dowe </h4>
 <div class="col-lg-7">
 <div class="single-blog video-style">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x11.jpg.pagespeed.ic.rbfdJ2UfT6.webp" alt="" data-pagespeed-url-hash="3821612294" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3821612294" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 <div class="play_btn">
 <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
 </div>
@@ -463,7 +463,7 @@ Earth firmament meat</h4>
 <div class="col-lg-5">
 <div class="single-blog video-style small row m_b_30">
 <div class="thumb col-12 col-sm-5">
-<img class="img-fluid" src="img/magazine/x12.jpg.pagespeed.ic.6vb7KguuNN.webp" alt="" data-pagespeed-url-hash="4116112215" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4116112215" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 <div class="play_btn">
 <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
 </div>
@@ -485,7 +485,7 @@ them you great</h4>
 </div>
 <div class="single-blog video-style small row m_b_30 ">
 <div class="thumb col-12 col-sm-5">
-<img class="img-fluid" src="img/magazine/x13.jpg.pagespeed.ic.GaHcCjsV7t.webp" alt="" data-pagespeed-url-hash="115644840" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="115644840" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 <div class="play_btn">
 <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
 </div>
@@ -507,7 +507,7 @@ them you great</h4>
 </div>
 <div class="single-blog video-style small row">
 <div class="thumb col-12 col-sm-5">
-<img class="img-fluid" src="img/magazine/x14.jpg.pagespeed.ic.CMngrqarqo.webp" alt="" data-pagespeed-url-hash="410144761" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="410144761" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 <div class="play_btn">
 <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
 </div>
@@ -545,7 +545,7 @@ them you great</h4>
 <div class="col-lg-4">
 <div class="single-blog style-five">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x15.jpg.pagespeed.ic.zCBKjKaw3I.webp" alt="" data-pagespeed-url-hash="704644682" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="704644682" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -566,7 +566,7 @@ may heaven to dat</h4>
 <div class="col-lg-4">
 <div class="single-blog style-five">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x16.jpg.pagespeed.ic.u_Qi5kjgWv.webp" alt="" data-pagespeed-url-hash="999144603" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="999144603" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -587,7 +587,7 @@ may heaven to dat</h4>
 <div class="col-lg-4">
 <div class="single-blog style-five">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x17.jpg.pagespeed.ic.2u_YFVeGcb.webp" alt="" data-pagespeed-url-hash="1293644524" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1293644524" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -622,7 +622,7 @@ may heaven to dat</h4>
 <div class="col-lg-6">
 <div class="single-blog style-five">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x18.jpg.pagespeed.ic.qa2Fr5AB3t.webp" alt="" data-pagespeed-url-hash="1588144445" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1588144445" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -645,7 +645,7 @@ from whose signs over</h4>
 <div class="col-lg-6">
 <div class="single-blog style-five small">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x19.jpg.pagespeed.ic.KqmgX_vd7R.webp" alt="" data-pagespeed-url-hash="1882644366" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1882644366" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -665,7 +665,7 @@ may heaven to</h4>
 <div class="col-lg-6">
 <div class="single-blog style-five small">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x20.jpg.pagespeed.ic.J9mYg8WMqQ.webp" alt="" data-pagespeed-url-hash="3451896360" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3451896360" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -685,7 +685,7 @@ may heaven to</h4>
 <div class="col-lg-6">
 <div class="single-blog style-five small">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x21.jpg.pagespeed.ic.WyVqQeP8d-.webp" alt="" data-pagespeed-url-hash="3746396281" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3746396281" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
@@ -705,7 +705,7 @@ may heaven to</h4>
 <div class="col-lg-6">
 <div class="single-blog style-five small">
 <div class="thumb">
-<img class="img-fluid" src="img/magazine/x22.jpg.pagespeed.ic.Pl_jvmNF5_.webp" alt="" data-pagespeed-url-hash="4040896202" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4040896202" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 </div>
 <div class="short_details">
 <div class="meta-top d-flex">
