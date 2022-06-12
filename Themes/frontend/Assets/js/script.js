@@ -631,6 +631,8 @@ $(document).ready(function() {
 		}
 		var dt = new Date();
 		console.log(dt);
+		var fdt = new Date(dt.setDate(dt.getDate() + 365));
+		console.log(fdt);
 	// Cookies
 		cookie = {
 			acceptanceCheck: function() {
