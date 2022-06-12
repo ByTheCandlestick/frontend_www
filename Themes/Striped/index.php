@@ -89,7 +89,7 @@
 				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
 			<!-- -->
         </head>
-		<body class="online" onLoad="cookie.acceptanceCheck();">
+		<body class="online">
 			<!-- ======= Javascript ======= -->
 				<?
 					if($layout_row['script_ids'] != NULL) {
