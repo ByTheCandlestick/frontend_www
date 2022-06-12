@@ -15,7 +15,7 @@
 			if(getThemepage(false)) {
 				getThemepage(true);
 			} else {
-				print('The website you are looking for does not exist')
+				print('The website you are looking for does not exist');
 			}
 		}
 	}
