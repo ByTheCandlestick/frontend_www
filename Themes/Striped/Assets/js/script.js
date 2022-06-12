@@ -609,5 +609,5 @@ $(document).ready(function () {
 	});
 	$(".app-preloader").fadeOut();
 	// -----========== TOOL TIPS ==========----- //
-	$('[data-toggle="tooltip"]').tooltip();
+//	$('[data-toggle="tooltip"]').tooltip();
 });
