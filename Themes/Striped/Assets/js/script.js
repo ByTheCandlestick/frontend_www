@@ -606,10 +606,10 @@ $(document).ready(function () {
 		$(".app-sidebar").toggleClass("sidebar-show");
 	});
 	// -----========== PRELOADER ==========----- //
-	$(window).bind("beforeunload", function () {
-		$(".app-preloader").fadeIn();
-	});
-	$(".app-preloader").fadeOut();
+		$(window).bind('beforeunload', function() {
+			$('.preloader-container').fadeIn();
+		});
+		$('.preloader-container').fadeOut();
 	// -----========== TOOL TIPS ==========----- //
 //	$('[data-toggle="tooltip"]').tooltip();
 });

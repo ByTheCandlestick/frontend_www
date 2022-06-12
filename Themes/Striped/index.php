@@ -98,6 +98,7 @@
 				?>
 				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
 			<!-- ======= Preloader ======= -->
+			
 				<div class="preloader-container">
 					<div class="preloader">
 						<span></span>
