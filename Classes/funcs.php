@@ -38,7 +38,7 @@
 					if(file_exists('./Themes/'.$theme_location.'/index.php')) {
 						return require_once('./Themes/'.$theme_location.'/index.php');
 					} else {
-						return print('the page you are looking for does not exist');;
+						return print('The page you are looking for does not exist');;
 					}
 				} else {
 					return $theme_location;
