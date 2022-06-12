@@ -35,7 +35,11 @@
 			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
 			if($theme_location != "") {
 				if($require){
-					return require_once('./Themes/'.$theme_location.'/index.php');
+					if(file_exists('./Themes/'.$theme_location.'/index.php')) {
+						return require_once('./Themes/'.$theme_location.'/index.php');
+					} else {
+						return false;
+					}
 				} else {
 					return $theme_location;
 				}
