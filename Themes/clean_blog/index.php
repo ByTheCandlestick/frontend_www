@@ -107,651 +107,650 @@
 					</div>
 				</div>
 			<!-- ======= Header ======= -->
-            <body>
-
-<section class="header-top">
-<div class="container">
-<div class="row align-items-center justify-content-between">
-<div class="col-6 col-lg-4">
-<div class="float-left">
-<ul class="header_social">
-<li><a href="#"><i class="ti-facebook"></i></a></li>
-<li><a href="#"><i class="ti-twitter"></i></a></li>
-<li><a href="#"><i class="ti-instagram"></i></a></li>
-<li><a href="#"><i class="ti-skype"></i></a></li>
-<li><a href="#"><i class="ti-vimeo"></i></a></li>
-</ul>
-</div>
-</div>
-<div class="col-6 col-lg-4 col-md-6 col-sm-6 logo-wrapper">
-<a href="index.html" class="logo">
-<script data-pagespeed-no-defer="">//<![CDATA[
-(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}
-var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;
-function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}
-function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),
-b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});
-function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=
-new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}
-function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});
-u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();
-
-pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://preview.colorlib.com/theme/eden/','-ilGEe-FWC',true,false,'38dm8nPWLo8');
-//]]></script><img src="data:image/webp;base64,UklGRsQBAABXRUJQVlA4TLcBAAAvcEAJEPdAkG1TntPcX2gKAoEknv1V9hEIpDiefRYIEBb8R0qQYDWKPzAgS7KttoEuwZKtBIpOiP3vU+89wuT5iuj/BKByT+IX+o6k/91q7C2v+3k5lft/pXFKxc/Pocp/On5eltlnc9M0uWzTNLl8XS93En+ESIYDr7TOKtJ0AjdeHTBYddVdrtROcETpGVLuSjxQTpE9rOKNq6Hn3jErY1TiXXY3SmpqOmIJo5I7UWpfzxxLNCqjy9fU8+G+27p/EwbFPsbOMLcUbTlTQUf4yO64LjJDWVxbSjlZBzhL6Sxt4kiszA56lUyKBjkwnagHgKGEQ86dCuBPQU89AEytVmwjsbi62t7UK0tL9VOrlVRL+h9qy9JQibfeSdwP9a6jGUAyGj/GQYUsD5luR/A/2EbFJ7NGQS/Q7QhxGe9FOtkA8Ew8iDVKHNcDgGuHGpYzxuAF6RoAAhPPYztCFMEy6tZ1N6VUBT5ez1Irl3oZObYt9yLiVgjfAmhT1FTsXYkvAZtiir2otRT8KQoJaBK0K+WJE8WAgwsbQgKmRmAH0AUwhxg/HlUux+v13GbkHbt7e38MDhUDAA==" alt="" data-pagespeed-url-hash="2634304158" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</a>
-</div>
-<div class="col-lg-4 col-md-6 col-sm-6 search-trigger">
-<div class="right-button">
-<ul>
-<li><a id="search" href="javascript:void(0)"><i class="fas fa-search"></i></a></li>
-<li><a href="">About</a></li>
-<li><a href="">Subscribe</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="search_input" id="search_input_box" style="display: none;">
-<div class="container ">
-<form class="d-flex justify-content-between search-inner">
-<input type="text" class="form-control" id="search_input" placeholder="Search Here">
-<button type="submit" class="btn"></button>
-<span class="ti-close" id="close_search" title="Close Search"></span>
-</form>
-</div>
-</div>
-</section>
-
-
-<header id="header" class="header_area">
-<div class="main_menu">
-<nav class="navbar navbar-expand-lg navbar-light">
-<div class="container">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-
-<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
-<li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li>
-<li class="nav-item submenu dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-<ul class="dropdown-menu">
-<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-</ul>
-</li>
-<li class="nav-item"><a class="nav-link" href="blog.html">Latest news</a></li>
-<li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
-</ul>
-</div>
-</div>
-</nav>
-</div>
-</header>
-
-
-<section class="fullwidth-block area-padding-bottom">
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-6 col-lg-6 col-xl-5">
-<div class="single-blog">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4056137993" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Created face stars sixth forth fow
-Earth firmament meat</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#">March 12 , 2019 . </a>
-<a class="dark_font" href="#">By Alen Mark</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-6 col-xl-4">
-<div class="single-blog style_two">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="55670618" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details text-center ">
-<div class="meta-top d-flex justify-content-center">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Created face stars sixth forth fow
-Earth firmament meat</h4>
-</a>
-<div class="meta-bottom d-flex justify-content-center">
-<a href="#">March 12 , 2019 . </a>
-<a href="#">By Alen Mark</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-12 col-xl-3">
-<div class="row">
-<div class="col-12 col-md-6 col-lg-6 col-xl-12">
-<div class="single-blog style-three m_b_30">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="350170539" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex justify-content-center">
-<a href="#">Lifestyle</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>The abundantly brought after day fish there image</h4>
-</a>
-</div>
-</div>
-</div>
-<div class="col-12 col-md-6 col-lg-6 col-xl-12">
-<div class="single-blog style-three">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="644670460" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex justify-content-center">
-<a href="#">Lifestyle</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>The abundantly brought after day fish there image</h4>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-<section class="first_block">
-<div class="container">
-<div class="row">
-<div class="col-lg-8 col-xl-6">
-<div class="single-blog row no-gutters style-four border_one">
-<div class="col-12 col-sm-5">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="939170381" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-</div>
-<div class="col-12 col-sm-7">
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Brought all day domi
-nion appear from
-subdue dominion
-firmament over face</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#">March 12 , 2019 . </a>
-<a class="dark_font" href="#">By Alen Mark</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-xl-3">
-<div class="single-blog style_five">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1233670302" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details ">
-<div class="meta-top d-flex">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Abundantly forth late
-appear fourth us.</h4>
-</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-xl-3">
-<div class="single-blog style_five">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1528170223" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details ">
-<div class="meta-top d-flex">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Abundantly forth late
-appear fourth us.</h4>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-<section class="editors_pick area-padding">
-<div class="container">
-<div class="row">
-<div class="area-heading">
-<h3>Editor Picks</h3>
-<p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-5 col-xl-6">
-<div class="single-blog">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1822670144" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details pad_25 ">
-<div class="meta-top d-flex">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Created face stars sixth forth
-Earth firmament</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#">March 12 , 2019 . </a>
-<a class="dark_font" href="#">By Alen Mark</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-7 col-xl-6">
-<div class="single-blog row no-gutters style-four m_b_30">
-<div class="col-12 col-sm-7">
-<div class="short_details padd_left_0">
-<div class="meta-top d-flex">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4 class="font-20">Light that hath itself god
-grass herb dark sea on
-the hath dowe </h4>
-</a>
-<p>Said spirit evening above good twes at god midst deep a wherein very made he seas male very broug sad forth saying right.</p>
-</div>
-</div>
-<div class="col-12 col-sm-5">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="2117170065" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-</div>
-</div>
-<div class="single-blog row no-gutters style-four">
-<div class="col-12 col-sm-5">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3527112373" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-</div>
-<div class="col-12 col-sm-7">
-<div class="short_details padd_right_0">
-<div class="meta-top d-flex">
-<a href="#">Tours &amp; Travel</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4 class="font-20">Light that hath itself god
-grass herb dark sea on
-the hath dowe </h4>
-</a>
-<p>Said spirit evening above good twes at god midst deep a wherein very made he seas male very broug sad forth saying right.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-12">
-<div class="addvertise">
-<a href=""><img src="" alt="" data-pagespeed-url-hash="2179791821" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-<div class="video-area background_one area-padding">
-<div class="container">
-<div class="row">
-<div class="area-heading">
-<h3>Travel News</h3>
-<p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-7">
-<div class="single-blog video-style">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3821612294" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-<div class="play_btn">
-<a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-</div>
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Created face stars sixth forth fow
-Earth firmament meat</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-comment"></i>05 comment</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-<a href="#"><i class="ti-eye"></i> 1k view</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-5">
-<div class="single-blog video-style small row m_b_30">
-<div class="thumb col-12 col-sm-5">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4116112215" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-<div class="play_btn">
-<a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-</div>
-</div>
-<div class="short_details col-12 col-sm-7">
-<div class="meta-top d-flex">
-<a href="#">Beauty</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Blessed night morning on
-them you great</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-time"></i>mar 12</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-<a href="#"><i class="ti-eye"></i> 1k view</a>
-</div>
-</div>
-</div>
-<div class="single-blog video-style small row m_b_30 ">
-<div class="thumb col-12 col-sm-5">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="115644840" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-<div class="play_btn">
-<a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-</div>
-</div>
-<div class="short_details col-12 col-sm-7">
-<div class="meta-top d-flex">
-<a href="#">Beauty</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Blessed night morning on
-them you great</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-time"></i>mar 12</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-<a href="#"><i class="ti-eye"></i> 1k view</a>
-</div>
-</div>
-</div>
-<div class="single-blog video-style small row">
-<div class="thumb col-12 col-sm-5">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="410144761" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-<div class="play_btn">
-<a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
-</div>
-</div>
-<div class="short_details col-12 col-sm-7">
-<div class="meta-top d-flex">
-<a href="#">Beauty</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Blessed night morning on
-them you great</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-time"></i>mar 12</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-<a href="#"><i class="ti-eye"></i> 1k view</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="three-block  area-padding">
-<div class="container">
-<div class="row">
-<div class="area-heading">
-<h3>Fashion News</h3>
-<p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-4">
-<div class="single-blog style-five">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="704644682" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Shall for rule whose toge one
-may heaven to dat</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-comment"></i>05 comment</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-4">
-<div class="single-blog style-five">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="999144603" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Shall for rule whose toge one
-may heaven to dat</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-comment"></i>05 comment</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-4">
-<div class="single-blog style-five">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1293644524" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Shall for rule whose toge one
-may heaven to dat</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-comment"></i>05 comment</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="latest-news  area-padding-bottom">
-<div class="container">
-<div class="row">
-<div class="area-heading">
-<h3>Fashion News</h3>
-<p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-6">
-<div class="single-blog style-five">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1588144445" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Brought dreepeth youll blessed
-from whose signs over</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#"><i class="ti-comment"></i>05 comment</a>
-<a href="#"><i class="ti-heart"></i> 0 like</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="row">
-<div class="col-lg-6">
-<div class="single-blog style-five small">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1882644366" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Shall for rule whoses
-may heaven to</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#">March 15, 2019</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="single-blog style-five small">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3451896360" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Shall for rule whoses
-may heaven to</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#">March 15, 2019</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="single-blog style-five small">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3746396281" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Shall for rule whoses
-may heaven to</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#">March 15, 2019</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="single-blog style-five small">
-<div class="thumb">
-<img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4040896202" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-</div>
-<div class="short_details">
-<div class="meta-top d-flex">
-<a href="#">shoes</a>/
-<a href="#">March 15, 2019</a>
-</div>
-<a class="d-block" href="single-blog.html">
-<h4>Shall for rule whoses
-may heaven to</h4>
-</a>
-<div class="meta-bottom d-flex">
-<a href="#">March 15, 2019</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<section class="instagram">
-<div class="row no-gutters">
-<div class="col-2">
-<a href=""><img src="" alt="" data-pagespeed-url-hash="270620287" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-</div>
-<div class="col-2">
-<a href=""><img src="" alt="" data-pagespeed-url-hash="565120208" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-</div>
-<div class="col-2">
-<a href=""><img src="" alt="" data-pagespeed-url-hash="859620129" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-</div>
-<div class="col-2">
-<a href=""><img src="" alt="" data-pagespeed-url-hash="1154120050" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-</div>
-<div class="col-2">
-<a href=""><img src="" alt="" data-pagespeed-url-hash="1448619971" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-</div>
-<div class="col-2">
-<a href=""><img src="" alt="" data-pagespeed-url-hash="1743119892" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-</div>
-</div>
-</section>
-
+                <section class="header-top">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-6 col-lg-4">
+                                <div class="float-left">
+                                    <ul class="header_social">
+                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="#"><i class="ti-twitter"></i></a></li>
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                        <li><a href="#"><i class="ti-skype"></i></a></li>
+                                        <li><a href="#"><i class="ti-vimeo"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4 col-md-6 col-sm-6 logo-wrapper">
+                                <a href="index.html" class="logo">
+                                    <script data-pagespeed-no-defer="">//<![CDATA[
+                                        (function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}
+                                        var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;
+                                        function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}
+                                        function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),
+                                        b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});
+                                        function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=
+                                        new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}
+                                        function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});
+                                        u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();
+                                        //]]>
+                                    </script><img src="data:image/webp;base64,UklGRsQBAABXRUJQVlA4TLcBAAAvcEAJEPdAkG1TntPcX2gKAoEknv1V9hEIpDiefRYIEBb8R0qQYDWKPzAgS7KttoEuwZKtBIpOiP3vU+89wuT5iuj/BKByT+IX+o6k/91q7C2v+3k5lft/pXFKxc/Pocp/On5eltlnc9M0uWzTNLl8XS93En+ESIYDr7TOKtJ0AjdeHTBYddVdrtROcETpGVLuSjxQTpE9rOKNq6Hn3jErY1TiXXY3SmpqOmIJo5I7UWpfzxxLNCqjy9fU8+G+27p/EwbFPsbOMLcUbTlTQUf4yO64LjJDWVxbSjlZBzhL6Sxt4kiszA56lUyKBjkwnagHgKGEQ86dCuBPQU89AEytVmwjsbi62t7UK0tL9VOrlVRL+h9qy9JQibfeSdwP9a6jGUAyGj/GQYUsD5luR/A/2EbFJ7NGQS/Q7QhxGe9FOtkA8Ew8iDVKHNcDgGuHGpYzxuAF6RoAAhPPYztCFMEy6tZ1N6VUBT5ez1Irl3oZObYt9yLiVgjfAmhT1FTsXYkvAZtiir2otRT8KQoJaBK0K+WJE8WAgwsbQgKmRmAH0AUwhxg/HlUux+v13GbkHbt7e38MDhUDAA==" alt="" data-pagespeed-url-hash="2634304158" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 search-trigger">
+                                <div class="right-button">
+                                    <ul>
+                                        <li><a id="search" href="javascript:void(0)"><i class="fas fa-search"></i></a></li>
+                                        <li><a href="">About</a></li>
+                                        <li><a href="">Subscribe</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search_input" id="search_input_box" style="display: none;">
+                        <div class="container ">
+                            <form class="d-flex justify-content-between search-inner">
+                                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                                <button type="submit" class="btn"></button>
+                                <span class="ti-close" id="close_search" title="Close Search"></span>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <header id="header" class="header_area">
+                    <div class="main_menu">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                </button>
+                                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li>
+                                        <li class="nav-item submenu dropdown">
+                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" href="blog.html">Latest news</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <section class="fullwidth-block area-padding-bottom">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-xl-5">
+                                <div class="single-blog">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4056137993" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">Tours &amp; Travel</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Created face stars sixth forth fow
+                                                Earth firmament meat
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#">March 12 , 2019 . </a>
+                                            <a class="dark_font" href="#">By Alen Mark</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="single-blog style_two">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="55670618" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details text-center ">
+                                        <div class="meta-top d-flex justify-content-center">
+                                            <a href="#">Tours &amp; Travel</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Created face stars sixth forth fow
+                                                Earth firmament meat
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex justify-content-center">
+                                            <a href="#">March 12 , 2019 . </a>
+                                            <a href="#">By Alen Mark</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-xl-3">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-6 col-xl-12">
+                                        <div class="single-blog style-three m_b_30">
+                                            <div class="thumb">
+                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="350170539" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            </div>
+                                            <div class="short_details">
+                                                <div class="meta-top d-flex justify-content-center">
+                                                    <a href="#">Lifestyle</a>
+                                                </div>
+                                                <a class="d-block" href="single-blog.html">
+                                                    <h4>The abundantly brought after day fish there image</h4>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-6 col-xl-12">
+                                        <div class="single-blog style-three">
+                                            <div class="thumb">
+                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="644670460" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            </div>
+                                            <div class="short_details">
+                                                <div class="meta-top d-flex justify-content-center">
+                                                    <a href="#">Lifestyle</a>
+                                                </div>
+                                                <a class="d-block" href="single-blog.html">
+                                                    <h4>The abundantly brought after day fish there image</h4>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="first_block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="single-blog row no-gutters style-four border_one">
+                                    <div class="col-12 col-sm-5">
+                                        <div class="thumb">
+                                            <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="939170381" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-7">
+                                        <div class="short_details">
+                                            <div class="meta-top d-flex">
+                                                <a href="#">Tours &amp; Travel</a>
+                                            </div>
+                                            <a class="d-block" href="single-blog.html">
+                                                <h4>Brought all day domi
+                                                    nion appear from
+                                                    subdue dominion
+                                                    firmament over face
+                                                </h4>
+                                            </a>
+                                            <div class="meta-bottom d-flex">
+                                                <a href="#">March 12 , 2019 . </a>
+                                                <a class="dark_font" href="#">By Alen Mark</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-xl-3">
+                                <div class="single-blog style_five">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1233670302" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details ">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">Tours &amp; Travel</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Abundantly forth late
+                                                appear fourth us.
+                                            </h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-xl-3">
+                                <div class="single-blog style_five">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1528170223" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details ">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">Tours &amp; Travel</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Abundantly forth late
+                                                appear fourth us.
+                                            </h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="editors_pick area-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="area-heading">
+                                <h3>Editor Picks</h3>
+                                <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 col-xl-6">
+                                <div class="single-blog">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1822670144" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details pad_25 ">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">Tours &amp; Travel</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Created face stars sixth forth
+                                                Earth firmament
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#">March 12 , 2019 . </a>
+                                            <a class="dark_font" href="#">By Alen Mark</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-xl-6">
+                                <div class="single-blog row no-gutters style-four m_b_30">
+                                    <div class="col-12 col-sm-7">
+                                        <div class="short_details padd_left_0">
+                                            <div class="meta-top d-flex">
+                                                <a href="#">Tours &amp; Travel</a>
+                                            </div>
+                                            <a class="d-block" href="single-blog.html">
+                                                <h4 class="font-20">Light that hath itself god
+                                                    grass herb dark sea on
+                                                    the hath dowe 
+                                                </h4>
+                                            </a>
+                                            <p>Said spirit evening above good twes at god midst deep a wherein very made he seas male very broug sad forth saying right.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-5">
+                                        <div class="thumb">
+                                            <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="2117170065" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-blog row no-gutters style-four">
+                                    <div class="col-12 col-sm-5">
+                                        <div class="thumb">
+                                            <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3527112373" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-7">
+                                        <div class="short_details padd_right_0">
+                                            <div class="meta-top d-flex">
+                                                <a href="#">Tours &amp; Travel</a>
+                                            </div>
+                                            <a class="d-block" href="single-blog.html">
+                                                <h4 class="font-20">Light that hath itself god
+                                                    grass herb dark sea on
+                                                    the hath dowe 
+                                                </h4>
+                                            </a>
+                                            <p>Said spirit evening above good twes at god midst deep a wherein very made he seas male very broug sad forth saying right.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="addvertise">
+                                    <a href=""><img src="" alt="" data-pagespeed-url-hash="2179791821" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="video-area background_one area-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="area-heading">
+                                <h3>Travel News</h3>
+                                <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="single-blog video-style">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3821612294" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <div class="play_btn">
+                                            <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">shoes</a>/
+                                            <a href="#">March 15, 2019</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Created face stars sixth forth fow
+                                                Earth firmament meat
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-comment"></i>05 comment</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                            <a href="#"><i class="ti-eye"></i> 1k view</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="single-blog video-style small row m_b_30">
+                                    <div class="thumb col-12 col-sm-5">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4116112215" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <div class="play_btn">
+                                            <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="short_details col-12 col-sm-7">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">Beauty</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Blessed night morning on
+                                                them you great
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-time"></i>mar 12</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                            <a href="#"><i class="ti-eye"></i> 1k view</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-blog video-style small row m_b_30 ">
+                                    <div class="thumb col-12 col-sm-5">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="115644840" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <div class="play_btn">
+                                            <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="short_details col-12 col-sm-7">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">Beauty</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Blessed night morning on
+                                                them you great
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-time"></i>mar 12</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                            <a href="#"><i class="ti-eye"></i> 1k view</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-blog video-style small row">
+                                    <div class="thumb col-12 col-sm-5">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="410144761" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <div class="play_btn">
+                                            <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="short_details col-12 col-sm-7">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">Beauty</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Blessed night morning on
+                                                them you great
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-time"></i>mar 12</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                            <a href="#"><i class="ti-eye"></i> 1k view</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="three-block  area-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="area-heading">
+                                <h3>Fashion News</h3>
+                                <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="single-blog style-five">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="704644682" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">shoes</a>/
+                                            <a href="#">March 15, 2019</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Shall for rule whose toge one
+                                                may heaven to dat
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-comment"></i>05 comment</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="single-blog style-five">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="999144603" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">shoes</a>/
+                                            <a href="#">March 15, 2019</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Shall for rule whose toge one
+                                                may heaven to dat
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-comment"></i>05 comment</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="single-blog style-five">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1293644524" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">shoes</a>/
+                                            <a href="#">March 15, 2019</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Shall for rule whose toge one
+                                                may heaven to dat
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-comment"></i>05 comment</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-news  area-padding-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="area-heading">
+                                <h3>Fashion News</h3>
+                                <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="single-blog style-five">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1588144445" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    </div>
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            <a href="#">shoes</a>/
+                                            <a href="#">March 15, 2019</a>
+                                        </div>
+                                        <a class="d-block" href="single-blog.html">
+                                            <h4>Brought dreepeth youll blessed
+                                                from whose signs over
+                                            </h4>
+                                        </a>
+                                        <div class="meta-bottom d-flex">
+                                            <a href="#"><i class="ti-comment"></i>05 comment</a>
+                                            <a href="#"><i class="ti-heart"></i> 0 like</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="single-blog style-five small">
+                                            <div class="thumb">
+                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1882644366" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            </div>
+                                            <div class="short_details">
+                                                <div class="meta-top d-flex">
+                                                    <a href="#">shoes</a>/
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                                <a class="d-block" href="single-blog.html">
+                                                    <h4>Shall for rule whoses
+                                                        may heaven to
+                                                    </h4>
+                                                </a>
+                                                <div class="meta-bottom d-flex">
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="single-blog style-five small">
+                                            <div class="thumb">
+                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3451896360" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            </div>
+                                            <div class="short_details">
+                                                <div class="meta-top d-flex">
+                                                    <a href="#">shoes</a>/
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                                <a class="d-block" href="single-blog.html">
+                                                    <h4>Shall for rule whoses
+                                                        may heaven to
+                                                    </h4>
+                                                </a>
+                                                <div class="meta-bottom d-flex">
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="single-blog style-five small">
+                                            <div class="thumb">
+                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3746396281" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            </div>
+                                            <div class="short_details">
+                                                <div class="meta-top d-flex">
+                                                    <a href="#">shoes</a>/
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                                <a class="d-block" href="single-blog.html">
+                                                    <h4>Shall for rule whoses
+                                                        may heaven to
+                                                    </h4>
+                                                </a>
+                                                <div class="meta-bottom d-flex">
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="single-blog style-five small">
+                                            <div class="thumb">
+                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4040896202" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            </div>
+                                            <div class="short_details">
+                                                <div class="meta-top d-flex">
+                                                    <a href="#">shoes</a>/
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                                <a class="d-block" href="single-blog.html">
+                                                    <h4>Shall for rule whoses
+                                                        may heaven to
+                                                    </h4>
+                                                </a>
+                                                <div class="meta-bottom d-flex">
+                                                    <a href="#">March 15, 2019</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="instagram">
+                    <div class="row no-gutters">
+                        <div class="col-2">
+                            <a href=""><img src="" alt="" data-pagespeed-url-hash="270620287" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                        </div>
+                        <div class="col-2">
+                            <a href=""><img src="" alt="" data-pagespeed-url-hash="565120208" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                        </div>
+                        <div class="col-2">
+                            <a href=""><img src="" alt="" data-pagespeed-url-hash="859620129" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                        </div>
+                        <div class="col-2">
+                            <a href=""><img src="" alt="" data-pagespeed-url-hash="1154120050" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                        </div>
+                        <div class="col-2">
+                            <a href=""><img src="" alt="" data-pagespeed-url-hash="1448619971" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                        </div>
+                        <div class="col-2">
+                            <a href=""><img src="" alt="" data-pagespeed-url-hash="1743119892" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                        </div>
+                    </div>
+                </section>
 
                 <footer class="footer-area">
                     <div class="container">
