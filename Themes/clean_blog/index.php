@@ -193,7 +193,7 @@
                             <div class="col-md-6 col-lg-6 col-xl-5">
                                 <div class="single-blog">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4056137993" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/img/magazine/x1.jpg.pagespeed.ic.kI3tjlgQ4u.webp" alt="" data-pagespeed-url-hash="4056137993" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details">
                                         <div class="meta-top d-flex">
@@ -214,7 +214,7 @@
                             <div class="col-md-6 col-lg-6 col-xl-4">
                                 <div class="single-blog style_two">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="55670618" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/img/magazine/x2.jpg.pagespeed.ic.ZtLfecZbHD.webp" alt="" data-pagespeed-url-hash="55670618" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details text-center ">
                                         <div class="meta-top d-flex justify-content-center">
@@ -237,7 +237,7 @@
                                     <div class="col-12 col-md-6 col-lg-6 col-xl-12">
                                         <div class="single-blog style-three m_b_30">
                                             <div class="thumb">
-                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="350170539" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                                <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/img/magazine/x2.jpg.pagespeed.ic.ZtLfecZbHD.webp" alt="" data-pagespeed-url-hash="350170539" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                             </div>
                                             <div class="short_details">
                                                 <div class="meta-top d-flex justify-content-center">
@@ -252,7 +252,7 @@
                                     <div class="col-12 col-md-6 col-lg-6 col-xl-12">
                                         <div class="single-blog style-three">
                                             <div class="thumb">
-                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="644670460" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                                <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/img/magazine/x4.jpg.pagespeed.ic.F7K5DqzTqo.webp" alt="" data-pagespeed-url-hash="644670460" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                             </div>
                                             <div class="short_details">
                                                 <div class="meta-top d-flex justify-content-center">
@@ -276,7 +276,7 @@
                                 <div class="single-blog row no-gutters style-four border_one">
                                     <div class="col-12 col-sm-5">
                                         <div class="thumb">
-                                            <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="939170381" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="939170381" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-7">
@@ -302,7 +302,7 @@
                             <div class="col-lg-4 col-xl-3">
                                 <div class="single-blog style_five">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1233670302" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1233670302" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details ">
                                         <div class="meta-top d-flex">
@@ -319,7 +319,7 @@
                             <div class="col-lg-4 col-xl-3">
                                 <div class="single-blog style_five">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1528170223" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1528170223" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details ">
                                         <div class="meta-top d-flex">
@@ -348,7 +348,7 @@
                             <div class="col-lg-5 col-xl-6">
                                 <div class="single-blog">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1822670144" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1822670144" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details pad_25 ">
                                         <div class="meta-top d-flex">
@@ -384,14 +384,14 @@
                                     </div>
                                     <div class="col-12 col-sm-5">
                                         <div class="thumb">
-                                            <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="2117170065" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="2117170065" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="single-blog row no-gutters style-four">
                                     <div class="col-12 col-sm-5">
                                         <div class="thumb">
-                                            <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3527112373" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                            <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="3527112373" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-7">
@@ -414,7 +414,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="addvertise">
-                                    <a href=""><img src="" alt="" data-pagespeed-url-hash="2179791821" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                                    <a href=""><img src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="2179791821" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                                 </div>
                             </div>
                         </div>
@@ -432,7 +432,7 @@
                             <div class="col-lg-7">
                                 <div class="single-blog video-style">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3821612294" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="3821612294" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                         <div class="play_btn">
                                             <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
                                         </div>
@@ -458,7 +458,7 @@
                             <div class="col-lg-5">
                                 <div class="single-blog video-style small row m_b_30">
                                     <div class="thumb col-12 col-sm-5">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4116112215" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="4116112215" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                         <div class="play_btn">
                                             <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
                                         </div>
@@ -481,7 +481,7 @@
                                 </div>
                                 <div class="single-blog video-style small row m_b_30 ">
                                     <div class="thumb col-12 col-sm-5">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="115644840" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="115644840" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                         <div class="play_btn">
                                             <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
                                         </div>
@@ -504,7 +504,7 @@
                                 </div>
                                 <div class="single-blog video-style small row">
                                     <div class="thumb col-12 col-sm-5">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="410144761" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="410144761" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                         <div class="play_btn">
                                             <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
                                         </div>
@@ -541,7 +541,7 @@
                             <div class="col-lg-4">
                                 <div class="single-blog style-five">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="704644682" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="704644682" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details">
                                         <div class="meta-top d-flex">
@@ -563,7 +563,7 @@
                             <div class="col-lg-4">
                                 <div class="single-blog style-five">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="999144603" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="999144603" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details">
                                         <div class="meta-top d-flex">
@@ -585,7 +585,7 @@
                             <div class="col-lg-4">
                                 <div class="single-blog style-five">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1293644524" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1293644524" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details">
                                         <div class="meta-top d-flex">
@@ -619,7 +619,7 @@
                             <div class="col-lg-6">
                                 <div class="single-blog style-five">
                                     <div class="thumb">
-                                        <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1588144445" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1588144445" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                     </div>
                                     <div class="short_details">
                                         <div class="meta-top d-flex">
@@ -643,7 +643,7 @@
                                     <div class="col-lg-6">
                                         <div class="single-blog style-five small">
                                             <div class="thumb">
-                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="1882644366" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                                <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1882644366" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                             </div>
                                             <div class="short_details">
                                                 <div class="meta-top d-flex">
@@ -664,7 +664,7 @@
                                     <div class="col-lg-6">
                                         <div class="single-blog style-five small">
                                             <div class="thumb">
-                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3451896360" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                                <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="3451896360" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                             </div>
                                             <div class="short_details">
                                                 <div class="meta-top d-flex">
@@ -685,7 +685,7 @@
                                     <div class="col-lg-6">
                                         <div class="single-blog style-five small">
                                             <div class="thumb">
-                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="3746396281" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                                <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="3746396281" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                             </div>
                                             <div class="short_details">
                                                 <div class="meta-top d-flex">
@@ -706,7 +706,7 @@
                                     <div class="col-lg-6">
                                         <div class="single-blog style-five small">
                                             <div class="thumb">
-                                                <img class="img-fluid" src="" alt="" data-pagespeed-url-hash="4040896202" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                                <img class="img-fluid" src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="4040896202" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                             </div>
                                             <div class="short_details">
                                                 <div class="meta-top d-flex">
@@ -732,22 +732,22 @@
                 <section class="instagram">
                     <div class="row no-gutters">
                         <div class="col-2">
-                            <a href=""><img src="" alt="" data-pagespeed-url-hash="270620287" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                            <a href=""><img src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="270620287" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                         </div>
                         <div class="col-2">
-                            <a href=""><img src="" alt="" data-pagespeed-url-hash="565120208" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                            <a href=""><img src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="565120208" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                         </div>
                         <div class="col-2">
-                            <a href=""><img src="" alt="" data-pagespeed-url-hash="859620129" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                            <a href=""><img src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="859620129" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                         </div>
                         <div class="col-2">
-                            <a href=""><img src="" alt="" data-pagespeed-url-hash="1154120050" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                            <a href=""><img src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1154120050" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                         </div>
                         <div class="col-2">
-                            <a href=""><img src="" alt="" data-pagespeed-url-hash="1448619971" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                            <a href=""><img src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1448619971" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                         </div>
                         <div class="col-2">
-                            <a href=""><img src="" alt="" data-pagespeed-url-hash="1743119892" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                            <a href=""><img src="/Themes/<?print(__THEME__)?>/Assets/" alt="" data-pagespeed-url-hash="1743119892" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                         </div>
                     </div>
                 </section>
