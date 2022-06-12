@@ -189,6 +189,13 @@
 						<div class="modals"> </div>
 					</div>
 				</div>
+			<!-- ====== PWA ====== -->
+				<script type="module">
+					import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+					const el = document.createElement('pwa-update');
+					document.body.appendChild(el);
+				</script>
 			<!-- ======= EOF ======= -->
 		</body>
 	</html>
