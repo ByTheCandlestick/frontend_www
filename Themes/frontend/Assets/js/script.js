@@ -366,7 +366,7 @@ $(document).ready(function() {
 									body.options.secure,
 									body.options.httponly
 								);
-								location.reload();
+								//location.reload();
 							} else {
 								console.log(body.status);
 							}
