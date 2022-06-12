@@ -48,7 +48,6 @@
 	).appendTo($body);
 
 	// Sidebar
-/*
 	$("#sidebar").panel({
 		delay: 500,
 		hideOnClick: true,
@@ -59,7 +58,7 @@
 		target: $body,
 		visibleClass: "sidebar-visible",
 	});
-*/
+
 })(jQuery);
 
 (function ($) {
