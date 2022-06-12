@@ -369,6 +369,13 @@
 						<button id="gdpr-cookie-accept" type="button">Accept</button>
 					</p>
 				</div>
+			<!-- ====== PWA ====== -->
+				<script type="module">
+					import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+					const el = document.createElement('pwa-update');
+					document.body.appendChild(el);
+				</script>
 			<!-- ======= EOF ======= -->
 		</body>
 	</html>
