@@ -25,7 +25,7 @@ $(document).ready(function () {
 	// Title Bar.
 	$(
 		'<div id="titleBar">' +
-			'<a class="sidebar"></a>' +
+			'<a href="#sidebar" class="toggle"></a>' +
 			'<span class="title">' +
 			$("#logo").html() +
 			"</span>" +
