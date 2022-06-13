@@ -25,7 +25,7 @@ $(document).ready(function () {
 	// Title Bar.
 	$(
 		'<div id="titleBar">' +
-			'<a href="#sidebar" class="toggle"></a>' +
+			'<a class="sidebar"></a>' +
 			'<span class="title">' +
 			$("#logo").html() +
 			"</span>" +
@@ -62,7 +62,7 @@ $(document).ready(function () {
 			},
 		}
 	// -----========== Side bar ==========----- //
-		$('.sidebarToggle').click(function() {
+		$('.sidebar').click(function() {
 			$('#sidebar').toggleClass('open');
 		});
 	// -----========== Search ==========----- //
