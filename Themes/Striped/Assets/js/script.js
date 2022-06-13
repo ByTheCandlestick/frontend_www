@@ -27,7 +27,7 @@ $(document).ready(function () {
 		'<div id="titleBar">' +
 			'<a href="#sidebar" class="sidebarToggle"></a>' +
 			'<span class="title">' +
-				'<i class="fa fa-bars"></i>' +
+				$("#logo").html() +
 			'</span>' +
 		'</div>'
 	).appendTo($body);
