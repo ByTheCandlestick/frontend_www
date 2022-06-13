@@ -25,11 +25,11 @@ $(document).ready(function () {
 	// Title Bar.
 	$(
 		'<div id="titleBar">' +
-			'<a href="#sidebar" class="sidebarToggle"></a>' +
+			'<a href="#sidebar" class="toggle"></a>' +
 			'<span class="title">' +
-				$("#logo").html() +
-			'</span>' +
-		'</div>'
+			$("#logo").html() +
+			"</span>" +
+			"</div>"
 	).appendTo($body);
 
 	// -----========== VARIABLES ==========----- //
