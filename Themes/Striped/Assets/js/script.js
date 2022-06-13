@@ -25,7 +25,7 @@ $(document).ready(function () {
 	// Title Bar.
 	$(
 		'<div id="titleBar">' +
-			'<a href="#sidebar" class="toggle"></a>' +
+			'<a href="#sidebar" class="sidebarToggle"></a>' +
 			'<span class="title">' +
 				'<i class="fa fa-bars"></i>' +
 			'</span>' +
@@ -62,8 +62,9 @@ $(document).ready(function () {
 			},
 		}
 	// -----========== Side bar ==========----- //
-		$('.sidebarToggle')
-		.css({'transform' : 'translate(' + left +', ' + top + ')'});
+		$('.sidebarToggle').click(function() {
+			$('#sidebar').css({'transform' : 'translate(' + left +', ' + top + ')'});
+		});
 	// -----========== Search ==========----- //
 		$(".search-area input").focusout( function(){
 			if(search.suggestions.filter(":hover").length === 0) {
