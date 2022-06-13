@@ -23,7 +23,10 @@ $(document).ready(function () {
 		.trigger("resize");
 
 	// Title Bar.
-	$( '<div id="titleBar"> <a class="toggle"></a> <span class="title">' + $("#logo").html() + "</span> </div>" ).appendTo($body);
+	$( '<div id="titleBar"> <a href="javascript:$(\'this\').toggleClass(\'open\');" class="toggle"></a> <span class="title">' + $("#logo").html() + "</span> </div>" ).appendTo($body);
+	$('.sidebar').click(function() {
+		$('#sidebar').toggleClass('open');
+	});
 
 	// -----========== VARIABLES ==========----- //
 		const api_url = window.location.protocol + "//api." + window.location.hostname.slice(6) + "/v1";
@@ -54,10 +57,6 @@ $(document).ready(function () {
 				}
 			},
 		}
-	// -----========== Side bar ==========----- //
-		$('.sidebar').click(function() {
-			$('#sidebar').toggleClass('open');
-		});
 	// -----========== Search ==========----- //
 		$(".search-area input").focusout( function(){
 			if(search.suggestions.filter(":hover").length === 0) {
