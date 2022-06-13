@@ -3,22 +3,6 @@
 		$body = $("body"),
 		$document = $(document);
 
-	// Breakpoints.
-	breakpoints({
-		desktop: ["737px", null],
-		wide: ["1201px", null],
-		narrow: ["737px", "1200px"],
-		narrower: ["737px", "1000px"],
-		mobile: [null, "736px"],
-	});
-
-	// Play initial animations on page load.
-	$window.on("load", function () {
-		window.setTimeout(function () {
-			$body.removeClass("is-preload");
-		}, 100);
-	});
-
 	// Nav.
 
 	// Height hack.
