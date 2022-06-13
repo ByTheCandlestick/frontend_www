@@ -63,7 +63,7 @@ $(document).ready(function () {
 		}
 	// -----========== Side bar ==========----- //
 		$('.sidebarToggle').click(function() {
-			$('#sidebar').css({'transform' : 'translate(' + left +', ' + top + ')'});
+			$('#sidebar').toggleClass('open');
 		});
 	// -----========== Search ==========----- //
 		$(".search-area input").focusout( function(){
