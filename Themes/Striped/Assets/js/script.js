@@ -32,8 +32,6 @@ $(document).ready(function () {
 			"</div>"
 	).appendTo($body);
 
-	// Sidebar
-
 	// -----========== VARIABLES ==========----- //
 	const api_url =
 		window.location.protocol +
@@ -45,23 +43,22 @@ $(document).ready(function () {
 	// -----========== Nestled functions ==========----- //
 	// -----========== Dark mode toggle ==========----- //
 	// -----========== Search ==========----- //
-/*
-	$(".search-area input").focusout(function () {
-		if (search.suggestions.filter(":hover").length === 0) {
-			search.suggestions.hide();
-		}
-	});
-	$(".search-area input").focusin(function () {
-		search.suggestions.show();
-	});
-	$.get($(".search-wrapper").attr("rel"), function (data) {
-		search.jsonData = data;
-	});
- */
+/*		$(".search-area input").focusout(function () {
+			if (search.suggestions.filter(":hover").length === 0) {
+				search.suggestions.hide();
+			}
+		});
+		$(".search-area input").focusin(function () {
+			search.suggestions.show();
+		});
+		$.get($(".search-wrapper").attr("rel"), function (data) {
+			search.jsonData = data;
+		});
+*/
 	// -----========== MENU BTN ==========----- //
-	$(".app-icon").click(function () {
-		$(".app-sidebar").toggleClass("sidebar-show");
-	});
+		$(".app-icon").click(function () {
+			$(".app-sidebar").toggleClass("sidebar-show");
+		});
 	// -----========== PRELOADER ==========----- //
 		$(window).bind('beforeunload', function() {
 			$('.preloader-container').fadeIn();
