@@ -1,4 +1,5 @@
-(function ($) {
+
+$(document).ready(function () {
 	var $window = $(window),
 		$body = $("body"),
 		$document = $(document);
@@ -33,7 +34,7 @@
 
 	// Sidebar
 
-})(jQuery);
+});
 
 (function ($) {
 	/**
