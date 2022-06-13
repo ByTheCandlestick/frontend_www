@@ -27,9 +27,9 @@ $(document).ready(function () {
 		'<div id="titleBar">' +
 			'<a href="#sidebar" class="toggle"></a>' +
 			'<span class="title">' +
-			$("#logo").html() +
-			"</span>" +
-			"</div>"
+				'<i class="fa fa-bars"></i>' +
+			'</span>' +
+		'</div>'
 	).appendTo($body);
 
 	// -----========== VARIABLES ==========----- //
@@ -61,7 +61,9 @@ $(document).ready(function () {
 				}
 			},
 		}
-	// -----========== Dark mode toggle ==========----- //
+	// -----========== Side bar ==========----- //
+		$('.sidebarToggle')
+		.css({'transform' : 'translate(' + left +', ' + top + ')'});
 	// -----========== Search ==========----- //
 		$(".search-area input").focusout( function(){
 			if(search.suggestions.filter(":hover").length === 0) {
