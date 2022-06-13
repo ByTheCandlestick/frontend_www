@@ -23,14 +23,7 @@ $(document).ready(function () {
 		.trigger("resize");
 
 	// Title Bar.
-	$(
-		'<div id="titleBar">' +
-			'<a href="#sidebar" class="toggle"></a>' +
-			'<span class="title">' +
-			$("#logo").html() +
-			"</span>" +
-			"</div>"
-	).appendTo($body);
+	$( '<div id="titleBar"> <a href="#sidebar" class="toggle"></a> <span class="title">' + $("#logo").html() + "</span> </div>" ).appendTo($body);
 
 	// -----========== VARIABLES ==========----- //
 		const api_url = window.location.protocol + "//api." + window.location.hostname.slice(6) + "/v1";
