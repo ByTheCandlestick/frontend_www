@@ -23,7 +23,7 @@ $(document).ready(function () {
 		.trigger("resize");
 
 	// Title Bar.
-	$( '<div id="titleBar"> <a href="javascript:$(\'this\').toggleClass(\'open\');" class="toggle"></a> <span class="title">' + $("#logo").html() + "</span> </div>" ).appendTo($body);
+	$( '<div id="titleBar"> <a href="javascript:$(\'#sidebar\').toggleClass(\'open\');" class="toggle"></a> <span class="title">' + $("#logo").html() + "</span> </div>" ).appendTo($body);
 	$('.sidebar').click(function() {
 		$('#sidebar').toggleClass('open');
 	});
