@@ -63,17 +63,17 @@ $(document).ready(function () {
 		}
 	// -----========== Dark mode toggle ==========----- //
 	// -----========== Search ==========----- //
-		$(".search-area input").focusout(function () {
-			if (search.suggestions.filter(":hover").length === 0) {
+		$(".search-area input").focusout( function(){
+			if(search.suggestions.filter(":hover").length === 0) {
 				search.suggestions.hide();
 			}
 		});
-		$(".search-area input").focusin(function () {
+		$(".search-area input").focusin( function(){
 			search.suggestions.show();
 		});
-		$.get($(".search-wrapper").attr("rel"), function (data) {
-			search.jsonData = data;
-		});
+		$.get($('.search-wrapper').attr('rel'), function(data){
+			search.jsonData = data
+		})
 	// -----========== MENU BTN ==========----- //
 		$(".app-icon").click(function () {
 			$(".app-sidebar").toggleClass("sidebar-show");
