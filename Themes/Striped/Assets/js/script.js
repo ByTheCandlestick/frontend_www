@@ -43,7 +43,7 @@ $(document).ready(function () {
 	// -----========== Nestled functions ==========----- //
 	// -----========== Dark mode toggle ==========----- //
 	// -----========== Search ==========----- //
-/*		$(".search-area input").focusout(function () {
+		$(".search-area input").focusout(function () {
 			if (search.suggestions.filter(":hover").length === 0) {
 				search.suggestions.hide();
 			}
@@ -54,7 +54,6 @@ $(document).ready(function () {
 		$.get($(".search-wrapper").attr("rel"), function (data) {
 			search.jsonData = data;
 		});
-*/
 	// -----========== MENU BTN ==========----- //
 		$(".app-icon").click(function () {
 			$(".app-sidebar").toggleClass("sidebar-show");
