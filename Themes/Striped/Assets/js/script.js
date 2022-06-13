@@ -65,5 +65,5 @@ $(document).ready(function () {
 		});
 		$('.preloader-container').fadeOut();
 	// -----========== TOOL TIPS ==========----- //
-//	$('[data-toggle="tooltip"]').tooltip();
+		//$('[data-toggle="tooltip"]').tooltip();
 });

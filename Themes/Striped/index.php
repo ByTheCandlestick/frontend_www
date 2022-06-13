@@ -98,7 +98,6 @@
 				?>
 				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
 			<!-- ======= Preloader ======= -->
-			
 				<div class="preloader-container">
 					<div class="preloader">
 						<span></span>
@@ -110,7 +109,6 @@
 			<!-- =======  ======= -->
 			<div id="content">
 				<div class="inner">
-
 					<!-- Post -->
 						<article class="box post post-excerpt">
 							<header>
@@ -154,7 +152,6 @@
 								<a href="http://html5up.net">HTML5 UP</a> for more cool designs or follow me on <a href="http://twitter.com/ajlkn">Twitter</a> for new releases and updates.
 							</p>
 						</article>
-
 					<!-- Post -->
 						<article class="box post post-excerpt">
 							<header>
@@ -178,10 +175,9 @@
 								Nunc nulla velit, fermentum quis interdum quis, convallis eu sapien. Integer sed ipsum ante.
 							</p>
 						</article>
-
 					<!-- Pagination -->
 						<div class="pagination">
-							<!--<a href="#" class="button previous">Previous Page</a>-->
+							<a href="#" class="button previous">Previous Page</a>
 							<div class="pages">
 								<a href="#" class="active">1</a>
 								<a href="#">2</a>
@@ -192,7 +188,7 @@
 							</div>
 							<a href="#" class="button next">Next Page</a>
 						</div>
-
+					<!--  -->
 				</div>
 			</div>
 
