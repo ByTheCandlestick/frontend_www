@@ -7,7 +7,7 @@
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 col-lg-6 d-flex justify-content-end align-items-center p-0">
-					<a href="/Scripts/New/" class="btn btn-outline-primary m-1">
+					<a href="/Websites/Script/New/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-plus"></i>
 					</a>
 				</div>
@@ -45,7 +45,7 @@
 									<td>'.$row['Importance'].'</td>
 									<td>'.$row['Active'].'</td>
 									<td>
-										<a href="/Website/Script/'.$row['ID'].'">
+										<a href="/Websites/Script/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
