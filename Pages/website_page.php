@@ -5,7 +5,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h1>Website Edit</h1>
+			<h1>New Page</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 		<div class="row">
@@ -23,13 +23,13 @@
 		<div class="col-12 col-lg-6">
 			<div class="row">
 				<h5>Site info</h5>
-				<div class="col-12" name="name">
+				<div class="col-12 col-md-6" name="name">
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Name</label>
 					</div>
 				</div>
-				<div class="col-12" name="title">
+				<div class="col-12 col-md-6" name="title">
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Title</label>
@@ -45,6 +45,19 @@
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Subpage URL</label>
+					</div>
+				</div>
+				<div class="col-12 col-md-6" name="page_type">
+					<div class="form-floating mb-3">
+						<select class="form-select" id="floatingSelect">
+							<option value="-1" selected>Please select</option>
+							<?
+								while ($row = mysqli_fetch_array(DB_Query("SELECT * FROM `misc_websites` WHERE `Active`=1"))) {
+									print_r('<option value="'.$row['ID'].'">'.$row['Name'].' - '.$row['Domain'].'</option>');
+								}
+							?>
+						</select>
+						<label for="floatingInput">Domain</label>
 					</div>
 				</div>
 			</div>
