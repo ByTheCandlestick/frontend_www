@@ -22,19 +22,19 @@
 		<div class="col-12 col-lg-6">
 			<div class="row">
 				<h5>Site info</h5>
-				<div class="col-12" name="name">
+				<div class="col-12 col-md-6 col-lg-4" name="name">
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_name']=='')?'No name was set':'')?>" value="<? print(($site['page_name']=='')?'':$site['page_name'])?>">
 						<label for="floatingInput">Name</label>
 					</div>
 				</div>
-				<div class="col-12" name="title">
+				<div class="col-12 col-md-6 col-lg-4" name="title">
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_title']=='')?'No title was set':'')?>" value="<? print(($site['page_title']=='')?'':$site['page_title'])?>">
 						<label for="floatingInput">Domain</label>
 					</div>
 				</div>
-				<div class="col-12 col-lg-6" name="type">
+				<div class="col-12 col-md-6 col-lg-4" name="type">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
@@ -48,8 +48,7 @@
 						<label for="floatingInput">Range</label>
 					</div>
 				</div>
-
-				<div class="col-12 col-lg-3" name="status">
+				<div class="col-12 col-md-6 col-lg-4" name="status">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
 								<input class="form-check-input" type="checkbox" name="maintenance" id="flexCheck">
