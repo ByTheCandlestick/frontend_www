@@ -176,7 +176,7 @@ $( document ).ready(function() {
 						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
-						url: api_url + '/Website/style/' + id + '/',
+						url: api_url + '/Website/style/',
 						data: data,
 						type: 'PUT',
 						xhrFields: {
@@ -225,7 +225,7 @@ $( document ).ready(function() {
 						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
-						url: api_url + '/Website/script/' + id + '/',
+						url: api_url + '/Website/script/',
 						data: data,
 						type: 'PUT',
 						xhrFields: {
