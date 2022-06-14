@@ -800,8 +800,6 @@ ol li {
             opacity: 1.0;
         }
 
-    /* Logo */
-
     /* Content */
 
     #content {
@@ -1051,12 +1049,6 @@ ol li {
         font-size: 14pt;
     }
 
-    /* Logo */
-
-    #logo {
-        display: none;
-    }
-
     /* Nav */
 
     #nav {
@@ -1181,12 +1173,6 @@ ol li {
         opacity: 1.0;
     }
 
-    /* Logo */
-
-    #logo {
-        display: none;
-    }
-
     /* Nav */
 
     #nav {
@@ -1253,12 +1239,6 @@ ol li {
         margin-left: 0;
         margin-right: 0;
         min-height: 0 !important;
-    }
-
-    /* Titlebar */
-
-    #titleBar {
-        display: block;
     }
 
 }
