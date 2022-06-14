@@ -72,7 +72,7 @@
 					<div class="col-12 col-lg-3" name="status">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
-								<input class="form-check-input" type="checkbox" name="discontinued" id="flexChecd" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
+								<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
 								<label class="form-check-label" for="flexCheck"> Discontinued? </label>
 							</div>
 							<div class="form-check form-switch">
