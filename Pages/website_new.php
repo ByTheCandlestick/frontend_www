@@ -24,13 +24,13 @@
 				<h5>Site info</h5>
 				<div class="col-12 col-md-6 col-lg-4" name="name">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_name']=='')?'No name was set':'')?>" value="<? print(($site['page_name']=='')?'':$site['page_name'])?>">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Name</label>
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4" name="title">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_title']=='')?'No title was set':'')?>" value="<? print(($site['page_title']=='')?'':$site['page_title'])?>">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Domain</label>
 					</div>
 				</div>
@@ -45,7 +45,7 @@
 								}
 							?>
 						</select>
-						<label for="floatingInput">Range</label>
+						<label for="floatingInput">Page type</label>
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4" name="status">
