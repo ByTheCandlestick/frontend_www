@@ -39,7 +39,7 @@
 							<label for="floatingInput">Domain</label>
 						</div>
 					</div>
-					<?print($domain)?>
+					<?print_r($domain)?>
 					<div class="col-12 col-md-6 col-lg-3" name="page_type">
 						<div class="form-floating mb-3">
 							<select class="form-select" id="floatingSelect">
