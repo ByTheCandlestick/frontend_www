@@ -29,13 +29,6 @@ $(document).ready(function () {
 				}
 			},
 		}
-	// -----========== Sidebar ==========----- //
-		$('.titleBar .toggle').click(function() {
-			$('.sidebar').addClass('open');
-		});
-		$('.sidebar .close').click(function(){
-			$('.sidebar').removeClass('open');
-		});
 	// -----========== Search ==========----- //
 		$(".search-area input").focusout( function(){
 			if(search.suggestions.filter(":hover").length === 0) {
@@ -48,10 +41,6 @@ $(document).ready(function () {
 		$.get($('.search-wrapper').attr('rel'), function(data){
 			search.jsonData = data
 		})
-	// -----========== MENU BTN ==========----- //
-		$(".app-icon").click(function () {
-			$(".app-sidebar").toggleClass("sidebar-show");
-		});
 	// -----========== PRELOADER ==========----- //
 		$(window).bind('beforeunload', function() {
 			$('.preloader-container').fadeIn();
