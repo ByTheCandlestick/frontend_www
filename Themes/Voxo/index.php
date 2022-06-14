@@ -200,7 +200,6 @@
 										</li>
 										<?
 											if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
-												$admin_url = (($_SERVER['HTTPS'])?'https://':'http://').'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
 										?>
 											<li>
 												<i class="fad fa-cogs pe-1"></i>

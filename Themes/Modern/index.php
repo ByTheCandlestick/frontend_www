@@ -200,7 +200,6 @@
 										</li>
 										<?
 											if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
-												$admin_url = (($_SERVER['HTTPS'])?'https://':'http://').'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
 										?>
 											<li>
 												<i class="fad fa-cogs pe-1"></i>
@@ -237,18 +236,6 @@
 												}
 											}
 										?>
-										<li>
-											<i class="fad fa-shopping-bag pe-1"></i>
-											<a href="/Cart/">My Cart</a>
-										</li>
-										<li>
-											<i class="fad fa-house pe-1"></i>
-											<a href="/My/Addresses/">My Addresses</a>
-										</li>
-										<li>
-											<i class="fad fa-id-card pe-1"></i>
-											<a href="/My/Cards/">My Cards</a>
-										</li>
 										<li>
 											<i class="fad fa-sign-out pe-1"></i>
 											<a href="/Logout/">Logout</a>
