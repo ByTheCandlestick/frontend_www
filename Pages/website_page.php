@@ -52,7 +52,8 @@
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
 							<?
-								while ($row = mysqli_fetch_array(DB_Query("SELECT * FROM `misc_websites`"))) {
+								$query = DB_Query("SELECT * FROM `misc_websites`");
+								while ($row = mysqli_fetch_array($query)) {
 									print_r('<option value="'.$row['ID'].'">'.$row['Name'].' - '.$row['Domain'].'</option>');
 								}
 							?>
