@@ -1,4 +1,4 @@
-<div class="row boutique">
+<div class="row">
 	<?
 		if(isset($secext) && $secext == 'all') {
 			//
@@ -7,10 +7,6 @@
 				} else {
 					$page = 1;
 				}
-				$start = ($page - 1) * 4;
-				$prd_viewed = $page * 4;
-				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `blog_posts` WHERE `Scheduled_for`<=now() AND `Active`=1"))[0];
-                $total_pages = ceil($count / 4);
 			//
 			$query = DB_Query("SELECT * FROM `blog_posts` WHERE `Scheduled_for`<=now() AND `Active`=1 LIMIT $start, 4");
 			if(mysqli_num_rows($query) > 0){
@@ -35,17 +31,11 @@
 						</div>
 					';
 				}
-				($page > 1)? $prev_status = '': $prev_status = ' disabled';
-				($prev_status == '')? $prev_page = "/Boutique/?p=".($page - 1) : $prev_page = "";
-				($prd_viewed < $count)? $next_status = '': $next_status = ' disabled';
-				($next_status == '')? $next_page = "/Boutique/?p=".($page + 1) : $next_page = "";
 				// Previous/Next page button
 				print('
                     <nav aria-label="Pagination">
                         <hr class="my-0" />
                         <ul class="pagination justify-content-center my-4">
-                            <li class="page-item disabled"><a class="page-link" href="?p='.($page - 1).'" tabindex="-1" aria-disabled="true">Newer</a></li>
-                            <li class="page-item"><a class="page-link" href="?p='. ($page + 1) .'">Older</a></li>
                         </ul>
                     </nav>
 				');
