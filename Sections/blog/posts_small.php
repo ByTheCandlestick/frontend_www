@@ -8,7 +8,7 @@
 					$page = 1;
 				}
 			//
-			$query = DB_Query("SELECT * FROM `blog_posts` WHERE `Scheduled_for`<=now() AND `Active`=1 LIMIT $start, 4");
+			$query = DB_Query("SELECT * FROM `blog_posts` WHERE `Scheduled_for`<=now() AND `Active`=1 LIMIT 4");
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
 					
