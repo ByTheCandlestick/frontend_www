@@ -6,7 +6,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Create a new website</h1>
+				<h1>Edit a website</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
@@ -39,6 +39,7 @@
 							<label for="floatingInput">Domain</label>
 						</div>
 					</div>
+					<?print($domain)?>
 					<div class="col-12 col-md-6 col-lg-3" name="page_type">
 						<div class="form-floating mb-3">
 							<select class="form-select" id="floatingSelect">
