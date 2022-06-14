@@ -1,0 +1,63 @@
+/************************************************************
+ ********************       GENERAL      ********************
+ ************************************************************/
+ body {
+	position: inherit;
+	font-family: "Open Sans", sans-serif;
+	color: var(--midnight-grey);
+}
+a {
+	color: var(--secondary);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--drift-on-the-sea);
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, .font-primary {
+	font-family: "Raleway", sans-serif;
+}
+h1 {
+	text-align: center;
+	color: var(--uniform);
+	text-shadow: 1px 1px 0 var(--white);
+}
+
+.scrolled-offset {
+	margin-top: 70px;
+}
+.half {
+	float: left;
+	width: 48%;
+	margin-bottom: 1em;
+}
+@media (max-width: 480px) {
+	.half {
+		width: 100%;
+		float: none;
+		margin-bottom: 0;
+	}
+}
+.right {
+	width: 50%;
+}
+.left {
+	margin-right: 2%;
+}
+.row {
+	margin: unset;
+}
+.row>* {
+	padding: unset;
+}
+
+.tab-content>.active {
+	border: 1px solid var(--bright-star);
+	border-top: unset;
+}
+/* Disable AOS animation on mobile devices */
+@media screen and (max-width: 768px) {
+	[data-aos-delay] {
+		transition-delay: 0 !important;
+	}
+}
