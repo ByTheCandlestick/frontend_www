@@ -192,7 +192,7 @@
 					</div>
 				</div>
 			<!-- ======= Sidebar ======= -->
-				<div id="sidebar">
+				<div class="sidebar">
 					<!-- Logo -->
 						<h1 id="logo"><a href="#">STRIPED</a></h1>
 					<!-- Nav -->
@@ -315,7 +315,7 @@
 				</div>
 			<!-- ======= Titlebar ======= -->
 				<div class="titleBar d-block d-lg-none">
-					<a href="javascript:$('#sidebar').toggleClass('open');" class="toggle"></a>
+					<a href="javascript:$('.sidebar').toggleClass('open');" class="toggle"></a>
 					<span class="title"></span>
 				</div>
 			<!-- ======= EOF ======= -->
