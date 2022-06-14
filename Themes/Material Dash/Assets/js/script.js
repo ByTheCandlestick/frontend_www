@@ -222,7 +222,7 @@ $( document ).ready(function() {
 						'domain_id': $("div[name=domain]").find("option:selected").val(),
 					}
 					$.ajax({
-						url: api_url + '/Website/',
+						url: api_url + '/Page/',
 						data: data,
 						type: 'PUT',
 						xhrFields: {
@@ -252,7 +252,7 @@ $( document ).ready(function() {
 						'domain_id': $("div[name=domain]").find("option:selected").val(),
 					}
 					$.ajax({
-						url: api_url + '/Website/' + sid + '/',
+						url: api_url + '/Page/' + sid + '/',
 						data: data,
 						type: 'POST',
 						xhrFields: {
