@@ -139,7 +139,7 @@
 										<a href="http://html5up.net">HTML5 UP</a> for more cool designs or follow me on <a href="http://twitter.com/ajlkn">Twitter</a> for new releases and updates.
 									</p>
 								</article>
-							'');
+							');
 						?>
 						<!-- Pagination -->
 							<div class="pagination">
