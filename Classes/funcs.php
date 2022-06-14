@@ -71,10 +71,10 @@
 		function printStyles(string $stylesheets) {
 			$stylesheets = explode(",", $stylesheets);
 			foreach($stylesheets as $style) {
-				if($result = DB_Query("SELECT * FROM `page_styles` WHERE `id`='$style'")) {
+				if($result = DB_Query("SELECT * FROM `page_styles` WHERE `ID`='$style'")) {
 					$res = mysqli_fetch_array($result);
-					$styleLocation = $res['location'];
-					$preload = $res['preload'];
+					$styleLocation = $res['Location'];
+					$preload = $res['Preload'];
 
 					if($preload == 1) {
 						echo sprintf(
@@ -108,19 +108,19 @@
 		function printScripts(string $scriptsheets) {
 			$scriptsheets = explode(",", $scriptsheets);
 			foreach($scriptsheets as $script) {
-				if($result = DB_Query("SELECT `location` FROM `page_scripts` WHERE `id`='$script'")) {
+				if($result = DB_Query("SELECT `location` FROM `page_scripts` WHERE `ID`='$script'")) {
 					$res = mysqli_fetch_array($result);
-					$scriptLocation = $res['location'];
-					$preload = $res['preload'];
+					$scriptLocation = $res['Location'];
+					$preload = $res['Preload'];
 
 					if($preload == 1) {
 						echo sprintf(
-							'<script	src="%s" type="text/javascript"></script>',
+							'<script src="%s" type="text/javascript"></script>',
 							$scriptLocation
 						);
 					} else {
 						echo sprintf(
-							'<script	src="%s" type="text/javascript"></script>',
+							'<script src="%s" type="text/javascript"></script>',
 							$scriptLocation
 						);
 					}
