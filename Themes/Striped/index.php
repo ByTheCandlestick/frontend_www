@@ -315,7 +315,7 @@
 				</div>
 			<!-- ======= Titlebar ======= -->
 				<div class="titleBar d-block d-lg-none">
-					<a class="toggle" href="javascript:$('.sidebar').focus();"></a>
+					<a class="toggle"></a>
 					<span class="title"></span>
 				</div>
 			<!-- ======= EOF ======= -->
