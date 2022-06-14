@@ -26,13 +26,13 @@
 					<h5>Site info</h5>
 					<div class="col-12 col-md-6 col-lg-3" name="name">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['Name']=='')?'No name was set':'')?>" value="<? print(($site['Name']=='')?'':$site['Name'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Name']=='')?'No name was set':'')?>" value="<? print(($domain['Name']=='')?'':$domain['Name'])?>">
 							<label for="floatingInput">Name</label>
 						</div>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3" name="domain">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['Domain']=='')?'No domain was set':'')?>" value="<? print(($site['Domain']=='')?'':$site['Domain'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Domain']=='')?'No domain was set':'')?>" value="<? print(($domain['Domain']=='')?'':$domain['Domain'])?>">
 							<label for="floatingInput">Domain</label>
 						</div>
 					</div>
