@@ -176,7 +176,7 @@ $( document ).ready(function() {
 						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
-						url: api_url + '/Website/style/',
+						url: api_url + '/Website/Style/',
 						data: data,
 						type: 'PUT',
 						xhrFields: {
@@ -200,9 +200,28 @@ $( document ).ready(function() {
 						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
-						url: api_url + '/Website/style/' + id + '/',
+						url: api_url + '/Website/Style/' + id + '/',
 						data: data,
 						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully saved the website", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				},
+				delete: function(id) {
+					data = {
+						'api_key': api_key,
+					}
+					$.ajax({
+						url: api_url + '/Website/Style/' + id + '/',
+						data: data,
+						type: 'DELETE',
 						xhrFields: {
 							withCredentials: true,
 						},
@@ -225,7 +244,7 @@ $( document ).ready(function() {
 						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
-						url: api_url + '/Website/script/',
+						url: api_url + '/Website/Script/',
 						data: data,
 						type: 'PUT',
 						xhrFields: {
@@ -248,7 +267,7 @@ $( document ).ready(function() {
 						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
-						url: api_url + '/Website/script/' + id + '/',
+						url: api_url + '/Website/Script/' + id + '/',
 						data: data,
 						type: 'POST',
 						xhrFields: {
@@ -262,6 +281,25 @@ $( document ).ready(function() {
 						}
 					});
 					
+				},
+				delete: function(id) {
+					data = {
+						'api_key': api_key,
+					}
+					$.ajax({
+						url: api_url + '/Website/Script/' + id + '/',
+						data: data,
+						type: 'DELETE',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully saved the website", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
 				}
 			}
 		};
