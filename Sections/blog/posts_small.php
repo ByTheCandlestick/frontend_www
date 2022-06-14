@@ -44,7 +44,7 @@
                             <li class="page-item"><a class="page-link" href="#!">3</a></li>
                             <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
                             <li class="page-item"><a class="page-link" href="#!">15</a></li>
-                            <li class="page-item"><a class="page-link" href="'. ($page + 1) .''">Older</a></li>
+                            <li class="page-item"><a class="page-link" href="'. ($page + 1) .'s">Older</a></li>
                         </ul>
                     </nav>
 				');
