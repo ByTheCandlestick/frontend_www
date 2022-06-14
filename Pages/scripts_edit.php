@@ -35,7 +35,7 @@
 					</div>
 					<div class="col-12" name="title">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($script['page_title']=='')?'No title was set':'')?>" value="<? print(($script['Location']=='')?'':$script['Location'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($script['Location']=='')?'No title was set':'')?>" value="<? print(($script['Location']=='')?'':$script['Location'])?>">
 							<label for="floatingInput">Location</label>
 						</div>
 					</div>
@@ -81,4 +81,4 @@
 	</section>
 <?
 	}
-??
+?>

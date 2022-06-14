@@ -1,24 +1,19 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `ID`=%s", QS));
+	$query = DB_Query(sprintf("SELECT * FROM `page_styles` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
-		$site = mysqli_fetch_assoc($query);
-		$styles = explode(',', $site['style_ids']);
-		$scripts = explode(',', $site['script_ids']);
+		$style = mysqli_fetch_assoc($query);
 ?>
 	<section>
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Website Edit</h1>
+				<h1>Style Edit</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 col-lg-6 d-flex justify-content-end align-items-center p-0">
-					<a href="javascript:website.save(<?print(QS)?>);history.go(-1);" class="btn btn-outline-primary m-1">
+					<a href="javascript:website.style.save(<?print(QS)?>);history.go(-1);" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
-					</a>
-					<a href="/Oxygen/<?print(QS)?>/" class="btn btn-outline-primary m-1">
-						<i class="fa fa-pencil"></i>
 					</a>
 				</div>
 				<div class="col-12 col-lg-6">
@@ -31,68 +26,32 @@
 		<div class="row">
 			<div class="col-12 col-lg-6">
 				<div class="row">
-					<h5>Site info</h5>
+					<h5>Style info</h5>
 					<div class="col-12" name="name">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_name']=='')?'No name was set':'')?>" value="<? print(($site['page_name']=='')?'':$site['page_name'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($style['Name']=='')?'No name was set':'')?>" value="<? print(($style['Name']=='')?'':$style['Name'])?>">
 							<label for="floatingInput">Name</label>
 						</div>
 					</div>
 					<div class="col-12" name="title">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_title']=='')?'No title was set':'')?>" value="<? print(($site['page_title']=='')?'':$site['page_title'])?>">
-							<label for="floatingInput">Title</label>
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($style['Location']=='')?'No title was set':'')?>" value="<? print(($style['Location']=='')?'':$style['Location'])?>">
+							<label for="floatingInput">Location</label>
 						</div>
 					</div>
 					<div class="col-12 col-md-6" name="page_url">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['page_url']=='')?'No base URL was set':'')?>" value="<? print(($site['page_url']=='')?'':$site['page_url'])?>">
-							<label for="floatingInput">Page URL</label>
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($style['Importance']=='')?'No base URL was set':'')?>" value="<? print(($style['Importance']=='')?'':$style['Importance'])?>">
+							<label for="floatingInput">Importance</label>
 						</div>
 					</div>
-					<div class="col-12 col-md-6" name="subpage_url">
+					<div class="col-12 col-lg-3" name="status">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($site['subpage_url']=='')?'No sub URL was set':'')?>" value="<? print(($site['subpage_url']=='')?'':$site['subpage_url'])?>">
-							<label for="floatingInput">Subpage URL</label>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" name="available" id="flexCheck" <?($style['Active']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="flexCheck"> Active? </label>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-6">
-				<div class="row">
-					<div class="col-12 col-md-6" name="styles">
-						<h5>Styles</h5>
-						<?
-							$query = DB_Query("SELECT * FROM `page_styles` ORDER BY `importance` ASC");
-							while($row = mysqli_fetch_array($query)) {
-								(in_array($row['id'], $styles))?$checked=" checked":$checked="";
-								print('
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes-'.$row['id'].'"'.$checked.'>
-										<label class="form-check-label" for="StyleCheckboxes-'.$row['id'].'">
-											' . $row['name'] . '
-										</label>
-									</div>
-								');
-							}
-						?>
-					</div>
-					<div class="col-12 col-md-6" name="scripts">
-						<h5>Scripts</h5>
-						<?
-							$query = DB_Query("SELECT * FROM `page_scripts` ORDER BY `importance` ASC");
-							while($row = mysqli_fetch_array($query)) {
-								(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
-								print('
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'"'.$checked.'>
-										<label class="form-check-label" for="ScriptCheckboxes-'.$row['id'].'">
-											' . $row['name'] . '
-										</label>
-									</div>
-								');
-							}
-						?>
 					</div>
 				</div>
 			</div>
