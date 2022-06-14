@@ -115,7 +115,7 @@
 						}
 					?>
 				</section>
-			<!-- ======= Navbar ======= -->
+			<!-- ======= Header ======= -->
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 					<div class="container">
 						<a class="navbar-brand" href="#!">Start Bootstrap</a>
@@ -130,7 +130,7 @@
 						</div>
 					</div>
 				</nav>
-			<!-- ======= Header ======= -->
+			<!-- ======= Content ======= -->
 				<header class="py-5 bg-light border-bottom mb-4">
 					<div class="container">
 						<div class="text-center my-5">
@@ -139,7 +139,6 @@
 						</div>
 					</div>
 				</header>
-			<!-- ======= Content ======= -->
 				<div class="container">
 					<div class="row">
 						<!-- Blog entries-->

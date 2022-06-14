@@ -15,7 +15,7 @@ $(document).ready(function () {
 			autoplaySpeed: 3000,
 		});
 	// -----========== Header fixed to top on scroll ==========----- //
-		if (selectHeader = $('header')) {
+		if (selectHeader = $('.navbar')) {
 			let headerOffset = selectHeader.offset().top
 			let nextElement = selectHeader.next()
 			const headerFixed = () => {
