@@ -165,6 +165,23 @@ $( document ).ready(function() {
 					}
 				});
 			},
+			style: {
+				create: function() {
+					console.log('style.create');
+				},
+				save: function(id) {
+					console.log('style.save: '+id);
+				}
+			},
+			script: {
+				create: function() {
+					console.log('script.create');
+				},
+				save: function(id) {
+					console.log('script.save: '+id);
+					
+				}
+			}
 		};
 		user = {
 			save: function(uid) {
