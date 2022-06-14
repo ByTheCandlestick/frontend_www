@@ -132,13 +132,12 @@
 							<ul>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='index')?print(' active'):null; ?>" href="/">Home</a></li>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/Posts">All posts</a></li>
-								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="<?print($www_url)?>">Shop</a></li>
-								<?	print_r(URL_WWW); ?>
+								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="<?print(URL_WWW)?>">Shop</a></li>
 								<?
 									if(!$user_ok) { ?>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="<?print($www_url)?>/Login?web_ID=<?print($domainID)?>">Login</a></li>
+										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="<?print(URL_WWW)?>/Login?web_ID=<?print($domainID)?>">Login</a></li>
 								<?} else { ?>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='my')?print(' active'):null; ?>" href="<?print($www_url)?>/My">My Account</a></li>
+										<li><a class="nav-link<?(strtolower(QS_PAGE)=='my')?print(' active'):null; ?>" href="<?print(URL_WWW)?>/My">My Account</a></li>
 								<?} ?>
 							</ul>
 							<i class="fad fa-bars mobile-nav-toggle"></i>
