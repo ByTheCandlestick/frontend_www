@@ -18,7 +18,7 @@
 					
 					echo '
 						<!-- Blog post-->
-						<div class="card mb-4">
+						<div class="card mb-4 col-12 col-md-6">
 							<picture>
 								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/jpeg/" type="image/jpeg"/>
 								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/jpg/" type="image/jpg"/>
