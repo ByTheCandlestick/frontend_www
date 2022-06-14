@@ -38,6 +38,7 @@
                     <nav aria-label="Pagination">
                         <hr class="my-0" />
                         <ul class="pagination justify-content-center my-4">
+                            <li class="page-item"><a class="page-link" href="/Posts/">More...</a></li>
                         </ul>
                     </nav>
 				');
