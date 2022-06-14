@@ -30,7 +30,7 @@ $(document).ready(function () {
 			},
 		}
 	// -----========== Sidebar ==========----- //
-		$('.titlebar .toggle').click(function() {
+		$('.titlebar>.toggle').click(function() {
 			console.log('here');
 		});
 		$('.sidebar').focusout( function(){
