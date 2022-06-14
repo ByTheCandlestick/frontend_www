@@ -47,7 +47,7 @@
 						<label for="floatingInput">Subpage URL</label>
 					</div>
 				</div>
-				<div class="col-12 col-md-6" name="page_type">
+				<div class="col-12" name="page_type">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
