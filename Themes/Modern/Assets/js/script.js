@@ -14,6 +14,22 @@ $(document).ready(function () {
 			autoplay: true,
 			autoplaySpeed: 3000,
 		});
+	// -----========== Header fixed to top on scroll ==========----- //
+		if (selectHeader = $('#header')) {
+			let headerOffset = selectHeader.offset().top
+			let nextElement = selectHeader.next()
+			const headerFixed = () => {
+				if ((headerOffset - window.scrollY) <= 0) {
+					selectHeader.addClass('fixed-top')
+					nextElement.addClass('scrolled-offset')
+				} else {
+					selectHeader.removeClass('fixed-top')
+					nextElement.removeClass('scrolled-offset')
+				}
+			}
+			window.addEventListener('load', headerFixed)
+			$(document).scroll(headerFixed)
+		}
 	// -----========== Nestled functions ==========----- //
 		search = {
 			suggestions: $(".search-suggestions"),

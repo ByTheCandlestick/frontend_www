@@ -22,7 +22,7 @@ $(document).ready(function() {
 	/**
 	 * Slick Carousel
 	 */
-		if ($('.partners-slider-slim').length) {
+		if($('.partners-slider-slim').length) {
 			$('.partners-slider-slim').slick({
 				infinite: true,
 				lazyLoad: 'ondemand',
@@ -54,7 +54,7 @@ $(document).ready(function() {
 				}]
 			});
 		}
-		if ($('.products-slider-slim').length) {
+		if($('.products-slider-slim').length) {
 			$('.products-slider-slim').slick({
 				infinite: true,
 				lazyLoad: 'ondemand',
@@ -86,7 +86,7 @@ $(document).ready(function() {
 				}]
 			});
 		}
-		if ($('.product-carousel').length) {
+		if($('.product-carousel').length) {
 			$('.product-carousel').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
@@ -96,7 +96,7 @@ $(document).ready(function() {
 				asNavFor: '.product-carousel-small'
 			});
 		}
-		if ($('.product-carousel-small').length) {
+		if($('.product-carousel-small').length) {
 			$('.product-carousel-small').slick({
 				infinite: false,
 				speed: 300,
