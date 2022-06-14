@@ -140,7 +140,7 @@ $( document ).ready(function() {
 				data = {
 					'api_key': api_key,
 					'name': $("div[name=name]").find("input").val(),
-					'domain': $("div[name=fomain]").find("input").val(),
+					'domain': $("div[name=domain]").find("input").val(),
 					'page_type': $("div[name=page_type]").find("option:selected").val(),
 					'active': (($("div[name=status]").find("input[name=maintenance]:checked").length === 0)?0:1),
 				}
