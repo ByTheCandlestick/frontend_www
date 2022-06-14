@@ -116,34 +116,69 @@
 					?>
 				</section>
 			<!-- ======= Header ======= -->
-				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-					<div class="container">
-						<a class="navbar-brand" href="#!">Start Bootstrap</a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-								<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-								<li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-								<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+				<header id="header" class="d-flex align-items-center">
+					<div class="container d-flex align-items-center">
+						<div class="logo me-auto d-flex">
+							<a class="me-3" href="/">
+								<img src="<?print(__API__.'/Images/Fetch/'.$info['Logo'].'/')?>" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
+							</a>
+						  <h1 class="d-none d-md-block"><a href="/"><?print($info['name'])?></a></h1>
+					  </div>
+						<nav id="navbar" class="navbar">
+							<ul>
+								<li><a class="nav-link<?(strtolower(QS_PAGE)=='index')?print(' active'):null; ?>" href="/">Home</a></li>
+								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/About">About us</a></li>
+								<li><a class="nav-link<?(strtolower(QS_PAGE)=='boutique' && strtolower(QS_SUBPAGE)=='partners')?print(' active'):null; ?>" href="/Boutique/Partners">Our partners</a></li>
+								<li class="dropdown">
+									<a class="nav-link<?(strtolower(QS_PAGE)=='boutique' && strtolower(QS_SUBPAGE)!='partners')?print(' active'):null; ?>"><span>Boutique</span> <i class="fad fa-chevron-down"></i></a>
+									<ul>
+										<li><a href="/Boutique">All</a></li>
+										<?
+											if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `products` WHERE `Active`=1 GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
+												if(mysqli_num_rows($query) > 0) {
+													while($row = mysqli_fetch_assoc($query)) {
+														$category_id = $row['Category_ID'];
+														if($range_query = DB_Query("SELECT `Name` FROM `products_categories` WHERE `ID`=$category_id")) {
+															$title = mysqli_fetch_array($range_query);
+															print("
+																<li>
+																	<a href=\"/Boutique/#$title[0]\">$title[0]</a>
+																</li>
+															");
+														}
+													}
+												}
+											}
+										?>
+									</ul>
+								</li>
+								<?
+									if(!$user_ok) { ?>
+										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="/Login">Login</a></li>
+								<?} else { ?>
+										<li><a class="nav-link<?(strtolower(QS_PAGE)=='my')?print(' active'):null; ?>" href="/My">My Account</a></li>
+										<li><a class="nav-link<?(strtolower(QS_PAGE)=='cart')?print(' active'):null; ?>" href="/Cart">
+											<i class="d-none d-md-block fad fa-2x fa-shopping-bag"></i>
+											<p class="d-block d-md-none">My Cart</p>
+										</a></li>
+								<?} ?>
 							</ul>
-						</div>
+							<i class="fad fa-bars mobile-nav-toggle"></i>
+						</nav>
 					</div>
-				</nav>
+				</header>
 			<!-- ======= Content ======= -->
-				<div class="container">
-					<?
-						if($layout_row['display_type'] == 1) {
-							if($layout_row['section_ids'] != null) {
-								printSections($layout_row['section_ids']);
-							} else {
-								Redirect('/Error/404/');
-							}
+				<?
+					if($layout_row['display_type'] == 1) {
+						if($layout_row['section_ids'] != null) {
+							printSections($layout_row['section_ids']);
 						} else {
-							include('./Pages/'.$layout_row['page_file'].'.php');
+							Redirect('/Error/404/');
 						}
-					?>
-				</div>
+					} else {
+						include('./Pages/'.$layout_row['page_file'].'.php');
+					}
+				?>
 			<!-- ======= Footer ======= -->
 				<footer class="py-5 bg-dark">
 					<div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
