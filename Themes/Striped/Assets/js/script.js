@@ -16,7 +16,7 @@ $(document).ready(function () {
 				} else {
 					var key = ev.target.value;
 					search.suggestions.html("");
-					
+					console.log(search.jsonData);
 					search.dispaySuggestions(search.jsonData.filter((data)=>{
 						var regex = new RegExp(key, "i");
 						return data.name.match(regex) || data.desc.match(regex) || data.url.match(regex);
