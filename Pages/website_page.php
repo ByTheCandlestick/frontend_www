@@ -1,6 +1,8 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `ID`=%s", QS));
-	if(mysqli_num_rows($query) > 0) {
+	if(strToLower(QS) == "new"){
+?>
+<?
+	} else if($query = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `ID`=%s", QS)) && mysqli_num_rows($query) > 0) {
 		$site = mysqli_fetch_assoc($query);
 		$styles = explode(',', $site['style_ids']);
 		$scripts = explode(',', $site['script_ids']);
