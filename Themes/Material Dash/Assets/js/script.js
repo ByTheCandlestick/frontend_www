@@ -136,6 +136,7 @@ $( document ).ready(function() {
 			},
 		}
 		website = {
+			/** @completed */
 			domain: {
 				create: function() {
 					data = {
@@ -203,6 +204,7 @@ $( document ).ready(function() {
 					});
 				},
 			},
+			/** @wip */
 			page: {
 				create: function() {
 					
@@ -220,6 +222,7 @@ $( document ).ready(function() {
 						'title': $("div[name=title]").find("input").val(),
 						'page_url': $("div[name=page_url]").find("input").val(),
 						'subpage_url': $("div[name=subpage_url]").find("input").val(),
+						'domain_id': $("div[name=domain]").find("option:selected").val(),
 					}
 					$.ajax({
 						url: api_url + '/Website/' + sid + '/',
@@ -237,9 +240,26 @@ $( document ).ready(function() {
 					});
 				},
 				delete: function(sid) {
-					
+					data = {
+						'api_key': api_key,
+					}
+					$.ajax({
+						url: api_url + '/Page/' + sid + '/',
+						data: data,
+						type: 'DELETE',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully saved the website", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
 				},
 			},
+			/** @completed */
 			style: {
 				create: function() {
 					data = {
@@ -309,6 +329,7 @@ $( document ).ready(function() {
 					});
 				}
 			},
+			/** @completed */
 			script: {
 				create: function() {
 					data = {
