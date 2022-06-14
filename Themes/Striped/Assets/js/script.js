@@ -31,7 +31,7 @@ $(document).ready(function () {
 		}
 	// -----========== Sidebar ==========----- //
 		$('.titleBar .toggle').click(function() {
-			console.log('here');
+			$('.sidebar').focus();
 		});
 		$('.sidebar').focusout( function(){
 		});
