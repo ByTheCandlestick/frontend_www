@@ -133,7 +133,7 @@
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='index')?print(' active'):null; ?>" href="/">Home</a></li>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/Posts">All posts</a></li>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="<?print($www_url)?>">Shop</a></li>
-								<?	print_r(( $_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'www.' . removeSubdomain($_SERVER['HTTP_HOST'])); ?>
+								<?	print_r(URL_WWW); ?>
 								<?
 									if(!$user_ok) { ?>
 										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="<?print($www_url)?>/Login?web_ID=<?print($domainID)?>">Login</a></li>

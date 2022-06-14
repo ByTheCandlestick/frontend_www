@@ -12,9 +12,12 @@
 	}
 	define('__ROOT__',		$_SERVER["DOCUMENT_ROOT"]);
 	define('__THEME__',		getThemepage(false));
-	define('QS_PAGE',		(isset($_GET['page'])) ? strtolower($_GET['page']) : 'index');
-	define('QS_SUBPAGE',	(isset($_GET['subpage'])) ? strtolower($_GET['subpage']) : null);
-	define('QS',			(isset($_GET['q'])) ? strtolower($_GET['q']) : null);
+	define('QS_PAGE',		isset($_GET['page']) ? strtolower($_GET['page']) : 'index');
+	define('QS_SUBPAGE',	isset($_GET['subpage']) ? strtolower($_GET['subpage']) : null);
+	define('QS',			isset($_GET['q']) ? strtolower($_GET['q']) : null);
+	define('URL_WWW',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'www.' . removeSubdomain($_SERVER['HTTP_HOST']));
+	define('URL_BLOG',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'blog.' . removeSubdomain($_SERVER['HTTP_HOST']));
+	define('URL_ADMIN',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'admin.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	// SET USERS IP
 		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -49,7 +52,4 @@
 					$notifications['count'] = mysqli_fetch_array(DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1"))[0];
 				//
 			}
-	$www_url = ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'www.' . removeSubdomain($_SERVER['HTTP_HOST']);
-	$blog_url =  ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'blog.' . removeSubdomain($_SERVER['HTTP_HOST']);
-	$admin_url =  ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'admin.' . removeSubdomain($_SERVER['HTTP_HOST']);
 ?>
