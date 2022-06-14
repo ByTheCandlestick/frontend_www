@@ -194,7 +194,9 @@
 			<!-- ======= Sidebar ======= -->
 				<div class="sidebar">
 					<!-- Logo -->
-						<i class="fa fa-times"></i>
+						<div clas="close d-block d-lg-none">
+							<i class="fa fa-times"></i>
+						</div>
 					<!-- Logo -->
 						<h1 id="logo"><a href="#">STRIPED</a></h1>
 					<!-- Nav -->
