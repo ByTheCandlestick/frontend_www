@@ -19,7 +19,13 @@
 					echo '
 						<!-- Blog post-->
 						<div class="card mb-4">
-							<img class="card-img-top" src="'.$row['Image'].'" alt="..." />
+							<picture>
+								<source srcset="'.__API__.'/Images/fetch/'. $image .'/jpeg/" type="image/jpeg"/>
+								<source srcset="'.__API__.'/Images/fetch/'. $image .'/jpg/" type="image/jpg"/>
+								<source srcset="'.__API__.'/Images/fetch/'. $image .'/png/" type="image/png"/>
+								<source srcset="'.__API__.'/Images/fetch/'. $image .'/jpx/" type="image/jpx"/>
+								<img src="'.__API__.'/Images/fetch/'. $image .'/webp/" type="image/webp" width="100%" height="auto">
+							</picture>
 							<div class="card-body">
 								<div class="small text-muted">'.$row['Timestamp'].'</div>
 								<h2 class="card-title h4">'.$row['Title'].'</h2>
