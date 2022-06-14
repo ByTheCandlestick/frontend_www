@@ -194,7 +194,7 @@
 			<!-- ======= Sidebar ======= -->
 				<div class="sidebar">
 					<!-- Logo -->
-						<div clas="close d-block d-lg-none">
+						<div class="close d-block d-lg-none">
 							<i class="fa fa-times"></i>
 						</div>
 					<!-- Logo -->
