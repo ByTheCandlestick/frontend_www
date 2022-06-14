@@ -170,7 +170,28 @@ $( document ).ready(function() {
 					console.log('style.create');
 				},
 				save: function(id) {
-					console.log('style.save: '+id);
+					data = {
+						'api_key': api_key,
+						'name': $("div[name=name]").find("input").val(),
+						'location': $("div[name=location]").find("input").val(),
+						'importance': $("div[name=importance]").find("input").val(),
+						'preload': (($("div[name=status]").find("input[name=preload]:checked").length === 0)?0:1),
+						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
+					}
+					$.ajax({
+						url: api_url + '/Website/style/' + id + '/',
+						data: data,
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully saved the website", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
 				}
 			},
 			script: {
