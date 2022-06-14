@@ -1,5 +1,5 @@
 <?
-	if(QS == "new") {
+	if(QS=="new") {
 ?>
     <section>
         <!-- Section Header -->
