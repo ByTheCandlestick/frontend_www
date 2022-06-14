@@ -314,7 +314,7 @@
 					<!---->
 				</div>
 			<!-- ======= Titlebar ======= -->
-				<div id="titleBar">
+				<div class="titleBar">
 					<a href="javascript:$('#sidebar').toggleClass('open');" class="toggle"></a>
 					<span class="title"></span>
 				</div>
