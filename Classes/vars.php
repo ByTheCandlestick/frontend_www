@@ -49,7 +49,7 @@
 					$notifications['count'] = mysqli_fetch_array(DB_Query("SELECT count(*) FROM `Users_notifications` WHERE `UID`='$log_id' LIMIT 1"))[0];
 				//
 			}
-	$www_url = ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ).'www.'.removeSubdomain($_SERVER['HTTP_HOST']);
-	$blog_url =  ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ).'blog.'.removeSubdomain($_SERVER['HTTP_HOST']);
-	$admin_url =  ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ).'admin.'.removeSubdomain($_SERVER['HTTP_HOST']);
+	$www_url = ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'www.' . removeSubdomain($_SERVER['HTTP_HOST']);
+	$blog_url =  ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'blog.' . removeSubdomain($_SERVER['HTTP_HOST']);
+	$admin_url =  ( $_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'admin.' . removeSubdomain($_SERVER['HTTP_HOST']);
 ?>
