@@ -29,6 +29,7 @@
 				<th scope="col">Name</th>
 				<th scope="col">Location</th>
 				<th scope="col">Importance</th>
+				<th scope="col">Active</th>
 				<th scope="col"></th>
 			</thead>
 			<tbody>
@@ -42,6 +43,7 @@
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Location'].'</td>
 									<td>'.$row['Importance'].'</td>
+									<td>'.$row['Active'].'</td>
 									<td>
 										<a href="/Website/Script/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
