@@ -182,12 +182,12 @@
 						<?
 							$query = DB_Query("SELECT * FROM `page_styles` ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
-								(in_array($row['id'], $styles))?$checked=" checked":$checked="";
+								(in_array($row['ID'], $styles))?$checked=" checked":$checked="";
 								print('
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes-'.$row['id'].'"'.$checked.'>
-										<label class="form-check-label" for="StyleCheckboxes-'.$row['id'].'">
-											' . $row['name'] . '
+										<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'"'.$checked.'>
+										<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+											' . $row['Name'] . '
 										</label>
 									</div>
 								');
@@ -199,12 +199,12 @@
 						<?
 							$query = DB_Query("SELECT * FROM `page_scripts` ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
-								(in_array($row['id'], $scripts))?$checked=" checked":$checked="";
+								(in_array($row['ID'], $scripts))?$checked=" checked":$checked="";
 								print('
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'"'.$checked.'>
-										<label class="form-check-label" for="ScriptCheckboxes-'.$row['id'].'">
-											' . $row['name'] . '
+										<input class="form-check-input" type="checkbox" value="'.$row['ID'].'" id="ScriptCheckboxes-'.$row['ID'].'"'.$checked.'>
+										<label class="form-check-label" for="ScriptCheckboxes-'.$row['ID'].'">
+											' . $row['Name'] . '
 										</label>
 									</div>
 								');
