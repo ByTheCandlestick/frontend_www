@@ -1,6 +1,6 @@
 <?
 	function removeSubdomain($domain) {
-		return preg_replace("/^(.*?)\.(.*)$/", "", $domain);
+		return $only_my_domain = preg_replace("/^(.*?)\.(.*)$/", "$2", $domain);
 	}
 
 	function startsWith($string, $startString) {
