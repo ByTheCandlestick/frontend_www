@@ -282,7 +282,7 @@
 									<h4>Useful Links</h4>
 									<ul class="d-inline-block">
 										<li><i class="fad fa-link pe-1"></i> <a href="/About">About</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="https://blog.thecandlestick.co.uk/">Blog</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="<?print($blog_url)?>">Blog</a></li>
 										<li><i class="fad fa-link pe-1"></i> <a href="/Team">The team</a></li>
 										<li><i class="fad fa-link pe-1"></i> <a href="/Contact">Contact us</a></li>
 									</ul>
