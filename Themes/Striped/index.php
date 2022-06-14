@@ -168,7 +168,7 @@
 							<i class="fa fa-times"></i>
 						</div>
 					<!-- Logo -->
-						<h1 id="logo">
+						<h1 class="logo">
 							<a href="#">
 								<img class="w-50" src="<?print(__API__.'/Images/Fetch/candlestickLogo_20220530162542/')?>"></img>
 							</a>
