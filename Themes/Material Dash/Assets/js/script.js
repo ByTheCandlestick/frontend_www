@@ -136,8 +136,20 @@ $( document ).ready(function() {
 			},
 		}
 		website = {
+			create: function() {
+				
+			},
+			update: function(sid) {
+				
+			},
+			delete: function(sid) {
+				
+			},
 			page: {
-				save: function(sid) {
+				create: function() {
+					
+				},
+				update: function(sid) {
 					var styles = [];
 					var scripts = [];
 					$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
@@ -166,6 +178,9 @@ $( document ).ready(function() {
 						}
 					});
 				},
+				delete: function(sid) {
+					
+				},
 			},
 			style: {
 				create: function() {
@@ -192,7 +207,7 @@ $( document ).ready(function() {
 						}
 					});
 				},
-				save: function(id) {
+				update: function(id) {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -260,7 +275,7 @@ $( document ).ready(function() {
 						}
 					});
 				},
-				save: function(id) {
+				update: function(id) {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -306,7 +321,7 @@ $( document ).ready(function() {
 			}
 		};
 		user = {
-			save: function(uid) {
+			update: function(uid) {
 				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0)?0:1);
 				d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0)?0:1);
 				e_active = (($("div[name=misc]").find("input[name=email_active]:checked").length === 0)?0:1);
@@ -340,7 +355,7 @@ $( document ).ready(function() {
 			},
 		}
 		product = {
-			save: function(pid) {
+			update: function(pid) {
 				discontinued = (($("div[name=status]").find("input[name=discontinued]:checked").length === 0)?0:1);
 				available = (($("div[name=status]").find("input[name=available]:checked").length === 0)?0:1);
 				discounted = (($("div[name=pricing]").find("input[name=discounted]:checked").length === 0)?0:1);

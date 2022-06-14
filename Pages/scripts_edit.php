@@ -65,7 +65,7 @@
                         <a href="javascript:website.script.delete(<?print(QS)?>);History.Go(-1);" class="btn btn-outline-danger m-1">
                             <i class="fa fa-trash-alt"></i>
                         </a>
-                        <a href="javascript:website.script.save(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+                        <a href="javascript:website.script.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
                             <i class="fa fa-save"></i>
                         </a>
                     </div>
