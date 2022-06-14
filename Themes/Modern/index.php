@@ -281,10 +281,7 @@
 								<div class="text-center footer-col-4 footer-links">
 									<h4>Useful Links</h4>
 									<ul class="d-inline-block">
-										<li><i class="fad fa-link pe-1"></i> <a href="/About">About</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="<?print($blog_url)?>">Blog</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="/Team">The team</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="/Contact">Contact us</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="<?print($www_url)?>">Shop</a></li>
 									</ul>
 								</div>
 								<div class="text-center footer-col-5 footer-links">
