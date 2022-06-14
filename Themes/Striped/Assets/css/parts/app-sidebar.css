@@ -53,8 +53,7 @@
 .sidebar header {
     margin: 0 0 1.25em 0;
 }
-.sidebar:focus
-.sidebar:focus-within {
+.sidebar.open {
 	transform: translate(0);
 }
 

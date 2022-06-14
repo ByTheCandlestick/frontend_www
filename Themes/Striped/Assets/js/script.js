@@ -31,9 +31,10 @@ $(document).ready(function () {
 		}
 	// -----========== Sidebar ==========----- //
 		$('.titleBar .toggle').click(function() {
-			$('.sidebar').focus();
+			$('.sidebar').addClass('open');
 		});
 		$('.sidebar').focusout( function(){
+			$('.sidebar').removeClass('open');
 		});
 	// -----========== Search ==========----- //
 		$(".search-area input").focusout( function(){
