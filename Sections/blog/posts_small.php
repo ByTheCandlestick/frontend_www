@@ -9,8 +9,8 @@
 				}
 				$start = ($page - 1) * 4;
 				$prd_viewed = $page * 4;
-                $total_pages
 				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `blog_posts` WHERE `Scheduled_for`<=now() AND `Active`=1"))[0];
+                $total_pages = ceil($count / 4);
 			//
 			$query = DB_Query("SELECT * FROM `blog_posts` WHERE `Scheduled_for`<=now() AND `Active`=1 LIMIT $start, 4");
 			if(mysqli_num_rows($query) > 0){
