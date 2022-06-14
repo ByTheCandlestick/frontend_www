@@ -43,7 +43,7 @@
 									<td>'.$row['Location'].'</td>
 									<td>'.$row['Importance'].'</td>
 									<td>
-										<a href="/Scripts/Edit/'.$row['ID'].'">
+										<a href="/Website/Script/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 									</td>

@@ -45,7 +45,7 @@
 									<td>'.$row['Preload'].'</td>
 									<td>'.$row['Importance'].'</td>
 									<td>
-										<a href="/Styles/Edit/'.$row['ID'].'">
+										<a href="/Websites/Style/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
