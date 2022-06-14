@@ -29,6 +29,12 @@ $(document).ready(function () {
 				}
 			},
 		}
+	// -----========== Sidebar ==========----- //
+		$('.titlebar .toggle').click(function() {
+			$('.sidebar').focus();
+		});
+		$('.sidebar').focusout( function(){
+		});
 	// -----========== Search ==========----- //
 		$(".search-area input").focusout( function(){
 			if(search.suggestions.filter(":hover").length === 0) {
