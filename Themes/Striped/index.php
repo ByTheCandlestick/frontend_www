@@ -170,7 +170,7 @@
 					<!-- Logo -->
 						<h1 id="logo">
 							<a href="#">
-								<img class="w-25" src="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>"></img>
+								<img class="w-25" src="<?print(__API__.'/Images/Fetch/candlestickLogo_20220530162542/')?>"></img>
 							</a>
 						</h1>
 					<!-- Nav -->
