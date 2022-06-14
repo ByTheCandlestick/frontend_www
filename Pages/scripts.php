@@ -28,7 +28,6 @@
 				<th scope="col">ID</th>
 				<th scope="col">Name</th>
 				<th scope="col">Location</th>
-				<th scope="col">Preload?</th>
 				<th scope="col">Importance</th>
 				<th scope="col"></th>
 			</thead>
@@ -42,7 +41,6 @@
 									<th scope="row">'.$row['ID'].'</th>
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Location'].'</td>
-									<td>'.$row['Preload'].'</td>
 									<td>'.$row['Importance'].'</td>
 									<td>
 										<a href="/Scripts/Edit/'.$row['ID'].'">
