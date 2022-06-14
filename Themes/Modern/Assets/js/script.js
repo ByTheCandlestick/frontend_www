@@ -48,7 +48,7 @@ $(document).ready(function () {
 			}
 		});
 	// -----========== Header fixed to top on scroll ==========----- //
-		if (selectHeader = $('.navbar')) {
+		if (selectHeader = $('#header')) {
 			let headerOffset = selectHeader.offset().top
 			let nextElement = selectHeader.next()
 			const headerFixed = () => {
