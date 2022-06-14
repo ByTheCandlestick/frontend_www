@@ -1,19 +1,19 @@
 [
 	{
 		"name": "Homepage",
-		"desc": "",
+		"desc": "1",
 		"url": "/"
 	}, {
 		"name": "Latest posts",
-		"desc": "Lists all user accounts",
+		"desc": "2",
 		"url": "/Users"
 	}, {
 		"name": "Archives",
-		"desc": "Lists all products",
+		"desc": "3",
 		"url": "/Products"
 	}, {
 		"name": "Categories",
-		"desc": "Lists all tags, categories and collections",
+		"desc": "4",
 		"url": "/Tags"
 	}
 ]
