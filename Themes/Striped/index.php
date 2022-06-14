@@ -142,7 +142,7 @@
 						?>
 						<!-- Pagination -->
 						<?
-							// TODO: Display pagination if nessisary
+							// TODO: Display pagination if necessary
 							print('
 								<div class="pagination">
 									<a href="#" class="button previous">Previous Page</a>
@@ -168,7 +168,11 @@
 							<i class="fa fa-times"></i>
 						</div>
 					<!-- Logo -->
-						<h1 id="logo"><a href="#">STRIPED</a></h1>
+						<h1 id="logo">
+							<a href="#">
+								<img src="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>"></img>
+							</a>
+						</h1>
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
