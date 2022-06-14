@@ -1,0 +1,81 @@
+{
+	"scope": "/",
+	"start_url": "/index.php",
+	"iarc_rating_id": "",
+	"related_applications": [],
+	"prefer_related_applications": false,
+	"name": "By The Candlestick",
+	"short_name": "The Candlestick",
+	"description": "Liven your soul with remarkable candles",
+	"features": [
+		"Cross Platform"
+	],
+	"categories": [
+		"shopping",
+		"lifestyle",
+		"health",
+		"health & fitness",
+		"personalization",
+		"beauty"
+	],
+	"background_color": "#000000",
+	"theme_color": "#4dbaa8",
+	"display": "standalone",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any"
+		}, {
+			"src": "http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "/app/images/screenshots/mobile/1.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Homepage",
+			"short_name": "Home",
+			"description": "Go to our Homepage",
+			"url": "/",
+			"icons": [
+				{
+					"src": "/app/images/logos/192.png",
+					"sizes": "192x192"
+				}
+			]
+		}, {
+			"name": "Boutique",
+			"short_name": "Shop",
+			"description": "Open our boutique",
+			"url": "/Boutique/",
+			"icons": [
+				{
+					"src": "/app/images/logos/192.png",
+					"sizes": "192x192"
+				}
+			]
+		}, {
+			"name": "About Us",
+			"short_name": "About",
+			"description": "Find out more about us",
+			"url": "/Pages/About",
+			"icons": [
+				{
+					"src": "/app/images/logos/192.png",
+					"sizes": "192x192"
+				}
+			]
+		}
+	]
+}
