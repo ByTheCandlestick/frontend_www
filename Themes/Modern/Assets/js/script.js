@@ -3,6 +3,17 @@ $(document).ready(function () {
 	// -----========== VARIABLES ==========----- //
 		const api_url = window.location.protocol + "//api." + window.location.hostname.slice(6) + "/v1";
 		const api_key = "iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3";
+	// -----========== Slick ==========----- //
+		/**
+		 * Topbar Ticker
+		 */
+		$('#topbar').slick({
+			dots: false,
+			arrows: false,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 3000,
+		});
 	// -----========== Nestled functions ==========----- //
 		search = {
 			suggestions: $(".search-suggestions"),
