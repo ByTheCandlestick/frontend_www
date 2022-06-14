@@ -26,7 +26,7 @@
 						<label for="floatingInput">Name</label>
 					</div>
 				</div>
-				<div class="col-12 col-md-6 col-lg-3" name="title">
+				<div class="col-12 col-md-6 col-lg-3" name="domain">
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Domain</label>
