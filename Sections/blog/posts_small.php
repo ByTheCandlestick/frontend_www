@@ -30,7 +30,7 @@
 								<div class="small text-muted">'.$row['Timestamp'].'</div>
 								<h2 class="card-title h4">'.$row['Title'].'</h2>
 								<p class="card-text">'.$row['Content'].'</p>
-								<a class="btn btn-primary" href="#!">Read more →</a>
+								<a class="btn btn-primary" href="/Post/'.$row['slug'].'">Read more →</a>
 							</div>
 						</div>
 					';
