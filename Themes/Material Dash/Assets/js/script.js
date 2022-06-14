@@ -137,7 +137,27 @@ $( document ).ready(function() {
 		}
 		website = {
 			create: function() {
-				
+				data = {
+					'api_key': api_key,
+					'name': $("div[name=name]").find("input").val(),
+					'domain': $("div[name=fomain]").find("input").val(),
+					'page_type': $("div[name=page_type]").find("option:selected").val(),
+					'active': (($("div[name=status]").find("input[name=maintenance]:checked").length === 0)?0:1),
+				}
+				$.ajax({
+					url: api_url + '/Website/',
+					data: data,
+					type: 'PUT',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success: function(body) {
+						alert.simple("Successfully saved the website", "success");
+					},
+					error: function(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 			update: function(sid) {
 				

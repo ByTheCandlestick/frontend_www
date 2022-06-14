@@ -34,7 +34,7 @@
 						<label for="floatingInput">Domain</label>
 					</div>
 				</div>
-				<div class="col-12 col-md-6 col-lg-3" name="type">
+				<div class="col-12 col-md-6 col-lg-3" name="page_type">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
