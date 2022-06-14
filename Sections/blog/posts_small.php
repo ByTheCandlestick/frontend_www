@@ -20,17 +20,17 @@
 						<!-- Blog post-->
 						<div class="card mb-4">
 							<picture>
-								<source srcset="'.__API__.'/Images/fetch/'. $image .'/jpeg/" type="image/jpeg"/>
-								<source srcset="'.__API__.'/Images/fetch/'. $image .'/jpg/" type="image/jpg"/>
-								<source srcset="'.__API__.'/Images/fetch/'. $image .'/png/" type="image/png"/>
-								<source srcset="'.__API__.'/Images/fetch/'. $image .'/jpx/" type="image/jpx"/>
-								<img src="'.__API__.'/Images/fetch/'. $image .'/webp/" type="image/webp" width="100%" height="auto">
+								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/jpeg/" type="image/jpeg"/>
+								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/jpg/" type="image/jpg"/>
+								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/png/" type="image/png"/>
+								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/jpx/" type="image/jpx"/>
+								<img src="'.__API__.'/Images/fetch/'. $row['Image'] .'/webp/" type="image/webp" width="100%" height="auto">
 							</picture>
 							<div class="card-body">
 								<div class="small text-muted">'.$row['Timestamp'].'</div>
 								<h2 class="card-title h4">'.$row['Title'].'</h2>
 								<p class="card-text">'.$row['Content'].'</p>
-								<a class="btn btn-primary" href="/Post/'.$row['slug'].'">Read more →</a>
+								<a class="btn btn-primary" href="/Post/'.$row['Slug'].'">Read more →</a>
 							</div>
 						</div>
 					';
