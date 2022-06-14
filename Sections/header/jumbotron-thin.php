@@ -5,7 +5,7 @@
 			$btn_1 = ($jumbotron['button_1_enabled'])?'<a href="'.$jumbotron['button_1_link'].'" class="btn-get-started animate__animated animate__fadeInUp">'.$jumbotron['button_1_text'].'</a>':'';
 			$btn_2 = ($jumbotron['button_1_enabled'])?'<a href="'.$jumbotron['button_2_link'].'" class="btn btn-secondary animate__animated animate__fadeInUp">'.$jumbotron['button_2_text'].'</a>':'';
 			$image = $jumbotron['image'];
-			$title = $jumbotron['title'];
+			$title = $jumbotron['Header'];
 			$description = $jumbotron['subtitle'];
 ?>
 	<section id="heroJumbotron-thin">
