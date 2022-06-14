@@ -58,7 +58,7 @@
 		</div>
 	</section>
 <?
-	} elseif() {
+	} elseif(QS == "new") {
 ?>
     <section>
         <!-- Section Header -->
