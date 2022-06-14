@@ -131,40 +131,13 @@
 						<nav id="navbar" class="navbar">
 							<ul>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='index')?print(' active'):null; ?>" href="/">Home</a></li>
-								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/About">About us</a></li>
-								<li><a class="nav-link<?(strtolower(QS_PAGE)=='boutique' && strtolower(QS_SUBPAGE)=='partners')?print(' active'):null; ?>" href="/Boutique/Partners">Our partners</a></li>
-								<li class="dropdown">
-									<a class="nav-link<?(strtolower(QS_PAGE)=='boutique' && strtolower(QS_SUBPAGE)!='partners')?print(' active'):null; ?>"><span>Boutique</span> <i class="fad fa-chevron-down"></i></a>
-									<ul>
-										<li><a href="/Boutique">All</a></li>
-										<?
-											if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `products` WHERE `Active`=1 GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
-												if(mysqli_num_rows($query) > 0) {
-													while($row = mysqli_fetch_assoc($query)) {
-														$category_id = $row['Category_ID'];
-														if($range_query = DB_Query("SELECT `Name` FROM `products_categories` WHERE `ID`=$category_id")) {
-															$title = mysqli_fetch_array($range_query);
-															print("
-																<li>
-																	<a href=\"/Boutique/#$title[0]\">$title[0]</a>
-																</li>
-															");
-														}
-													}
-												}
-											}
-										?>
-									</ul>
-								</li>
+								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/Posts">All posts</a></li>
+								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="<?print($www_url);?>">Shop</a></li>
 								<?
 									if(!$user_ok) { ?>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="/Login">Login</a></li>
+										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="<?print($www_url)?>/Login?web_ID=<?print($domainID)?>">Login</a></li>
 								<?} else { ?>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='my')?print(' active'):null; ?>" href="/My">My Account</a></li>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='cart')?print(' active'):null; ?>" href="/Cart">
-											<i class="d-none d-md-block fad fa-2x fa-shopping-bag"></i>
-											<p class="d-block d-md-none">My Cart</p>
-										</a></li>
+										<li><a class="nav-link<?(strtolower(QS_PAGE)=='my')?print(' active'):null; ?>" href="<?print($www_url)?>/My">My Account</a></li>
 								<?} ?>
 							</ul>
 							<i class="fad fa-bars mobile-nav-toggle"></i>
