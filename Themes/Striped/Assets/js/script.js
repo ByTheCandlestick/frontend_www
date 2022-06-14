@@ -33,7 +33,7 @@ $(document).ready(function () {
 		$('.titleBar .toggle').click(function() {
 			$('.sidebar').addClass('open');
 		});
-		$('.sidebar').focusout( function(){
+		$('.sidebar *').focusout(function(){
 			$('.sidebar').removeClass('open');
 		});
 	// -----========== Search ==========----- //
