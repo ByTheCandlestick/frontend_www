@@ -1,3 +1,19 @@
-{
-	
-}
+[
+	{
+		"name": "Homepage",
+		"desc": "",
+		"url": "/"
+	}, {
+		"name": "Latest posts",
+		"desc": "Lists all user accounts",
+		"url": "/Users"
+	}, {
+		"name": "Archives",
+		"desc": "Lists all products",
+		"url": "/Products"
+	}, {
+		"name": "Categories",
+		"desc": "Lists all tags, categories and collections",
+		"url": "/Tags"
+	}
+]
