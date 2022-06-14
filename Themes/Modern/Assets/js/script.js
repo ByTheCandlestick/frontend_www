@@ -38,6 +38,15 @@ $(document).ready(function () {
 				scrollto(this.hash)
 			}
 		})
+		$(window).on('load', function() {
+			if(window.location.hash) {
+				if($(window.location.hash)) {
+					$([document.documentElement, document.body]).animate({
+						scrollTop: $(window.location.hash).offset().top - 70
+					}, 2000);
+				}
+			}
+		});
 	// -----========== Header fixed to top on scroll ==========----- //
 		if (selectHeader = $('.navbar')) {
 			let headerOffset = selectHeader.offset().top
