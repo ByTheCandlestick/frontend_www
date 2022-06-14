@@ -19,7 +19,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<div class="col-12 col-lg-6">
+		<div class="col-12">
 			<div class="row">
 				<h5>Site info</h5>
 				<div class="col-12 col-md-6 col-lg-4" name="name">
