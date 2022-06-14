@@ -180,9 +180,6 @@
 						include('./Pages/'.$layout_row['page_file'].'.php');
 					}
 				?>
-			<!-- ======= Additional ======= -->
-				<modals></modals>
-				<alerts class="position-fixed bottom-0 mb-5 start-0 ms-3 mw-100"></alerts>
 			<!-- ======= Footer ======= -->
 				<footer id="footer">
 					<div class="pt-3 footer-top">
@@ -348,11 +345,15 @@
 						-->
 					</div>
 				</footer>
+			<!-- ======= Modals ======= -->
+				<modals></modals>
+			<!-- ======= Alerts ======= -->
+				<alerts class="position-fixed bottom-0 mb-5 start-0 ms-3 mw-100"></alerts>
 			<!-- ======= FAB ======= -->
 				<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
 					<i class="fad fa-chevron-up"></i>
 				</a>
-			<!-- ======= COOKIES ======= -->
+			<!-- ======= Cookies ======= -->
 				<div id="gdpr-cookie-message">
 					<h4>Cookies &amp; Privacy</h4>
 					<p>
@@ -364,7 +365,7 @@
 						<button id="gdpr-cookie-accept" type="button">Accept</button>
 					</p>
 				</div>
-			<!-- ====== PWA ====== -->
+			<!-- ======= PWA ======= -->
 				<script type="module">
 					import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
