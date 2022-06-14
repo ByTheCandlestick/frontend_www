@@ -42,7 +42,7 @@
             <div class="col-12 col-md-6 col-lg-4" name="status">
                 <div class="form-floating mb-3">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" name="available" id="flexCheck">
+                        <input class="form-check-input" type="checkbox" name="active" id="flexCheck">
                         <label class="form-check-label" for="flexCheck"> Active? </label>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
             <div class="col-12 col-md-6 col-lg-4" name="status">
                 <div class="form-floating mb-3">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" name="available" id="flexCheck" <?($script['Active']==1)?print("checked"):print("")?>>
+                        <input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($script['Active']==1)?print("checked"):print("")?>>
                         <label class="form-check-label" for="flexCheck"> Active? </label>
                     </div>
                 </div>
