@@ -136,34 +136,36 @@ $( document ).ready(function() {
 			},
 		}
 		website = {
-			save: function(sid) {
-				var styles = [];
-				var scripts = [];
-				$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
-				$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
-				data = {
-					'api_key': api_key,
-					'style': styles.join(","),
-					'script': scripts.join(","),
-					'name': $("div[name=name]").find("input").val(),
-					'title': $("div[name=title]").find("input").val(),
-					'page_url': $("div[name=page_url]").find("input").val(),
-					'subpage_url': $("div[name=subpage_url]").find("input").val(),
-				}
-				$.ajax({
-					url: api_url + '/Website/' + sid + '/',
-					data: data,
-					type: 'POST',
-					xhrFields: {
-						withCredentials: true,
-					},
-					success: function(body) {
-						alert.simple("Successfully saved the website", "success");
-					},
-					error: function(body) {
-						alert.simple("An error has occurred. Please try again later", "danger");
+			page: {
+				save: function(sid) {
+					var styles = [];
+					var scripts = [];
+					$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
+					$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
+					data = {
+						'api_key': api_key,
+						'style': styles.join(","),
+						'script': scripts.join(","),
+						'name': $("div[name=name]").find("input").val(),
+						'title': $("div[name=title]").find("input").val(),
+						'page_url': $("div[name=page_url]").find("input").val(),
+						'subpage_url': $("div[name=subpage_url]").find("input").val(),
 					}
-				});
+					$.ajax({
+						url: api_url + '/Website/' + sid + '/',
+						data: data,
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully saved the website", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				},
 			},
 			style: {
 				create: function() {

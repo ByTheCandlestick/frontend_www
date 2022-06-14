@@ -13,7 +13,7 @@
 					<a href="/Websites/scripts/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-scroll"></i>
 					</a>
-					<a href="/Websites/New/" class="btn btn-outline-primary m-1">
+					<a href="/Website/New/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-plus"></i>
 					</a>
 				</div>
@@ -51,6 +51,9 @@
 									<td>'.$row['Domain'].'</td>
 									<td>'.$row['Maintenance'].'</td>
 									<td>
+										<a href="/Website/Edit/'.$row['ID'].'">
+											<i class="fa fa-pencil"></i>
+										</a>
 										<a href="/Website/Pages/'.$row['ID'].'">
 											<i class="fa fa-ellipsis-h"></i>
 										</a>
