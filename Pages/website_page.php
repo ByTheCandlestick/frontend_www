@@ -167,7 +167,8 @@
 							<?
 								$query = DB_Query("SELECT * FROM `misc_websites`");
 								while ($row = mysqli_fetch_array($query)) {
-									print_r('<option value="'.$row['ID'].'">'.$row['Domain'].' - '.$row['Name'].'</option>');
+									$row['ID'] == $page['doamin_id']?$selected="selected":$selected="";
+									print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
 								}
 							?>
 						</select>
