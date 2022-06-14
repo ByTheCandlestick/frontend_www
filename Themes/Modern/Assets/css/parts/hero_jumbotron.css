@@ -1,0 +1,124 @@
+/************************************************************
+ ********************     JUMBOTRON      ********************
+ ************************************************************/
+#heroJumbotron,
+#heroJumbotron-thin {
+	width: 100%;
+	height: calc(100vh - 110px);
+	padding: 0;
+	overflow: hidden;
+	background: var(--black);
+}
+#heroJumbotron-thin {
+	height: calc((100vh - 110px) / 2);
+}
+#heroJumbotron .jumbotron-item,
+#heroJumbotron-thin .jumbotron-item {
+	width: 100%;
+	height: calc(100vh - 110px);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+#heroJumbotron .jumbotron-item::before,
+#heroJumbotron-thin .jumbotron-item::before {
+    content: '';
+    background-color: var(--black-25);
+    height: inherit;
+    width: inherit;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: block;
+}
+#heroJumbotron .jumbotron-container,
+#heroJumbotron-thin .jumbotron-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    position: sticky;
+}
+#heroJumbotron .jumbotron-content,
+#heroJumbotron-thin .jumbotron-content {
+	text-align: left;
+}
+@media (max-width: 992px) {
+	#heroJumbotron,
+	#heroJumbotron .jumbotron-item {
+		height: calc(100vh - 70px);
+	}
+	#heroJumbotron-thin,
+	#heroJumbotron-thin .jumbotron-item {
+		height: calc((100vh - 70px) / 3);
+	}
+	#heroJumbotron .jumbotron-content.container
+	#heroJumbotron-thin .jumbotron-content.container {
+		padding: 0 50px;
+	}
+}
+#heroJumbotron h2,
+#heroJumbotron-thin h2 {
+	color: var(--text-light);
+	margin-bottom: 30px;
+	font-size: 48px;
+	font-weight: 900;
+}
+#heroJumbotron p
+#heroJumbotron-thin p {
+	width: 80%;
+	-webkit-animation-delay: 0.4s;
+	animation-delay: 0.4s;
+	color: var(--text-light);
+}
+#heroJumbotron .jumbotron-inner .jumbotron-item,
+#heroJumbotron-thin .jumbotron-inner .jumbotron-item {
+	transition-property: opacity;
+	background-position: center top;
+}
+#heroJumbotron .jumbotron-inner .jumbotron-item,
+#heroJumbotron .jumbotron-inner .jumbotron-item-start,
+#heroJumbotron .jumbotron-inner .jumbotron-item-end,
+#heroJumbotron-thin .jumbotron-inner .jumbotron-item,
+#heroJumbotron-thin .jumbotron-inner .jumbotron-item-start,
+#heroJumbotron-thin .jumbotron-inner .jumbotron-item-end {
+	opacity: 0;
+}
+#heroJumbotron .jumbotron-inner .jumbotron-item-next,
+#heroJumbotron .jumbotron-inner .jumbotron-item-prev,
+#heroJumbotron .jumbotron-inner .jumbotron-item-start,
+#heroJumbotron .jumbotron-inner .jumbotron-item-end,
+#heroJumbotron .jumbotron-inner .jumbotron-item-next,
+#heroJumbotron .jumbotron-inner .jumbotron-item-prev,
+#heroJumbotron .jumbotron-inner .jumbotron-item-start,
+#heroJumbotron .jumbotron-inner .jumbotron-item-end {
+	left: 0;
+	transform: translate3d(0, 0, 0);
+}
+@media (max-width: 768px) {
+	#heroJumbotron h2 {
+		font-size: 28px;
+	}
+}
+@media (max-height: 500px) {
+	#heroJumbotron,
+	#heroJumbotron-thin,
+	#heroJumbotron .jumbotron-item,
+	#heroJumbotron-thin .jumbotron-item {
+		height: 120vh;
+	}
+}
+@media (min-width: 1024px) {
+	#heroJumbotron p,
+	#heroJumbotron-thin p {
+		width: 60%;
+	}
+}
