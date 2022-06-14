@@ -58,9 +58,9 @@
 						while($row = mysqli_fetch_array($query)) {
 							print('
 								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="' . $row['id'] . '" id="StyleCheckboxes-'.$row['id'].'">
-									<label class="form-check-label" for="StyleCheckboxes-'.$row['id'].'">
-										' . $row['name'] . '
+									<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+									<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+										' . $row['Name'] . '
 									</label>
 								</div>
 							');
@@ -74,9 +74,9 @@
 						while($row = mysqli_fetch_array($query)) {
 							print('
 								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="'.$row['id'].'" id="ScriptCheckboxes-'.$row['id'].'">
-									<label class="form-check-label" for="ScriptCheckboxes-'.$row['id'].'">
-										' . $row['name'] . '
+									<input class="form-check-input" type="checkbox" value="'.$row['ID'].'" id="ScriptCheckboxes-'.$row['ID'].'">
+									<label class="form-check-label" for="ScriptCheckboxes-'.$row['ID'].'">
+										' . $row['Name'] . '
 									</label>
 								</div>
 							');
