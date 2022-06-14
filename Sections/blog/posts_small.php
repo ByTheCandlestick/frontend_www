@@ -24,7 +24,7 @@
 								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/jpg/" type="image/jpg"/>
 								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/png/" type="image/png"/>
 								<source srcset="'.__API__.'/Images/fetch/'. $row['Image'] .'/jpx/" type="image/jpx"/>
-								<img src="'.__API__.'/Images/fetch/'. $row['Image'] .'/webp/" type="image/webp" width="100%" height="auto">
+								<img src="'.__API__.'/Images/fetch/'. $row['Image'] .'/webp/" type="image/webp" width="700px" height="350px">
 							</picture>
 							<div class="card-body">
 								<div class="small text-muted">'.$row['Timestamp'].'</div>
