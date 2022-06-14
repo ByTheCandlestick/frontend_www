@@ -156,16 +156,16 @@
 										?>
 									</ul>
 								</li>
-								<?
-									if(!$user_ok) { ?>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="/Login">Login</a></li>
-								<?} else { ?>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='my')?print(' active'):null; ?>" href="/My">My Account</a></li>
-										<li><a class="nav-link<?(strtolower(QS_PAGE)=='cart')?print(' active'):null; ?>" href="/Cart">
-											<i class="d-none d-md-block fad fa-2x fa-shopping-bag"></i>
-											<p class="d-block d-md-none">My Cart</p>
-										</a></li>
-								<?} ?>
+								<li><a class="nav-link" href="<?print(URL_BLOG)?>">Blog</a></li>
+								<? if(!$user_ok) { ?>
+									<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="/Login">Login</a></li>
+								<? } else { ?>
+									<li><a class="nav-link<?(strtolower(QS_PAGE)=='my')?print(' active'):null; ?>" href="/My">My Account</a></li>
+									<li><a class="nav-link<?(strtolower(QS_PAGE)=='cart')?print(' active'):null; ?>" href="/Cart">
+										<i class="d-none d-md-block fad fa-2x fa-shopping-bag"></i>
+										<p class="d-block d-md-none">My Cart</p>
+									</a></li>
+								<? } ?>
 							</ul>
 							<i class="fad fa-bars mobile-nav-toggle"></i>
 						</nav>
@@ -282,7 +282,7 @@
 									<h4>Useful Links</h4>
 									<ul class="d-inline-block">
 										<li><i class="fad fa-link pe-1"></i> <a href="/About">About</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="<?print($blog_url)?>">Blog</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="<?print(URL_BLOG)?>">Blog</a></li>
 										<li><i class="fad fa-link pe-1"></i> <a href="/Team">The team</a></li>
 										<li><i class="fad fa-link pe-1"></i> <a href="/Contact">Contact us</a></li>
 									</ul>
