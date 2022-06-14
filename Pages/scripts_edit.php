@@ -7,14 +7,12 @@
             <div class="col-12 col-md-6">
                 <h1>Script Edit</h1>
             </div>
-            <div class="col-12 col-md-6 text-md-end">
+            <div class="col-12 text-md-end">
             <div class="row">
                 <div class="col-12 col-lg-6 d-flex justify-content-end align-items-center p-0">
                     <a href="javascript:website.script.create();history.go(-1);" class="btn btn-outline-primary m-1">
                         <i class="fa fa-save"></i>
                     </a>
-                </div>
-                <div class="col-12 col-lg-6">
                 </div>
             </div>
             </div>
@@ -65,16 +63,14 @@
 			<div class="col-12 col-md-6">
 				<h1>Script Edit</h1>
 			</div>
-			<div class="col-12 col-md-6 text-md-end">
-			<div class="row">
-				<div class="col-12 col-lg-6 d-flex justify-content-end align-items-center p-0">
-					<a href="javascript:website.script.save(<?print(QS)?>);history.go(-1);" class="btn btn-outline-primary m-1">
-						<i class="fa fa-save"></i>
-					</a>
-				</div>
-				<div class="col-12 col-lg-6">
-				</div>
-			</div>
+			<div class="col-12 text-md-end">
+                <div class="row">
+                    <div class="col-12 col-lg-6 d-flex justify-content-end align-items-center p-0">
+                        <a href="javascript:website.script.save(<?print(QS)?>);history.go(-1);" class="btn btn-outline-primary m-1">
+                            <i class="fa fa-save"></i>
+                        </a>
+                    </div>
+                </div>
 			</div>
 		</div>
 		<hr>
@@ -119,10 +115,8 @@
 	<section>
 		<!-- Section Header -->
 		<div class="row">
-			<div class="col-12 col-md-6">
+			<div class="col-12">
 				<h1>Website page not found.</h1>
-			</div>
-			<div class="col-12 col-md-6 text-md-end">
 			</div>
 		</div>
 		<hr>
