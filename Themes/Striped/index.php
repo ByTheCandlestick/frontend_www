@@ -206,9 +206,12 @@
 						</nav>
 					<!-- Search -->
 						<section class="box search">
-							<form method="post" action="#">
-								<input type="text" class="text" name="search" placeholder="Search" />
-							</form>
+							<div class="search-wrapper" rel="/search.json">
+								<div class="search-area">
+									<input type="text" onkeyup="search.process(event)" placeholder="Search">
+								</div>
+								<div class="search-suggestions"> </div>
+							</div>
 						</section>
 					<!-- Text -->
 						<section class="box text-style1">
