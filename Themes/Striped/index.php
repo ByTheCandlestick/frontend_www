@@ -168,11 +168,7 @@
 							<i class="fa fa-times"></i>
 						</div>
 					<!-- Logo -->
-						<h1 id="logo">
-							<a href="#">
-								<img src="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>"></img>
-							</a>
-						</h1>
+						<a class="" href="/"> <img src="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>"></img> </a>
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
