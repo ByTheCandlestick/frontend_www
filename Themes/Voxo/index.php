@@ -349,7 +349,7 @@
 				<modals></modals>
 			<!-- ======= Alerts ======= -->
 				<alerts class="position-fixed bottom-0 mb-5 start-0 ms-3 mw-100"></alerts>
-			<!-- ======= FAB ======= -->
+			<!-- ======= Back to top ======= -->
 				<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
 					<i class="fad fa-chevron-up"></i>
 				</a>
