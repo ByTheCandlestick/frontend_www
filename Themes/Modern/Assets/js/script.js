@@ -11,7 +11,6 @@ $(document).ready(function () {
 			autoplay: true,
 			autoplaySpeed: 3000,
 		});
-		
 	// -----========== Back to top button ==========----- //
 		let backtotop = $('.back-to-top')
 		if (backtotop) {
@@ -25,6 +24,20 @@ $(document).ready(function () {
 			window.addEventListener('load', toggleBacktotop)
 			$(document).scroll(toggleBacktotop);
 		}
+	// -----========== Scroll offset ==========----- //
+		$('.scrollto').on('click', function(e) {
+			if ($(this.hash)) {
+				e.preventDefault()
+				let navbar = $('.navbar')
+				if (navbar.hasClass('navbar-mobile')) {
+					navbar.removeClass('navbar-mobile')
+					let navbarToggle = $('.mobile-nav-toggle')
+					navbarToggle.toggleClass('fa-bars')
+					navbarToggle.toggleClass('fa-times')
+				}
+				scrollto(this.hash)
+			}
+		})
 	// -----========== Header fixed to top on scroll ==========----- //
 		if (selectHeader = $('.navbar')) {
 			let headerOffset = selectHeader.offset().top
