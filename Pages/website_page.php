@@ -164,8 +164,9 @@
 							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `misc_websites`");
+								print_r($page);
 								while ($row = mysqli_fetch_array($query)) {
-									$row['ID'] == $page['domain_id']?$selected="selected":$selected="";
+									$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="" ;
 									print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
 								}
 							?>
