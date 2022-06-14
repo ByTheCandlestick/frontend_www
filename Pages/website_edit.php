@@ -62,7 +62,7 @@
 								</div>
 							</div>
 						</div>
-						<?print_r($domain);?>
+					</div>
 				</div>
 			</div>
 		</div>
