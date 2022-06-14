@@ -20,22 +20,16 @@
     -ms-flex-shrink: 0;
     flex-shrink: 0;
 }
-
-.sidebar form input,
-.sidebar form select,
+.sidebar form input, .sidebar form select,
 .sidebar form textarea {
     border: 0;
 }
-
-.sidebar section,
-.sidebar nav {
+.sidebar section, .sidebar nav {
     position: relative;
     margin: 2em 0 0 0;
     font-size: 0.9em;
 }
-
-.sidebar section:before,
-.sidebar nav:before {
+.sidebar section:before, .sidebar nav:before {
     content: '';
     border-top: solid 1px;
     border-bottom: solid 1px;
@@ -45,27 +39,22 @@
     height: 0.5em;
     margin: 0 0 2em 0;
 }
-
-.sidebar strong,
-.sidebar b {
+.sidebar strong, .sidebar b {
     color: #fff;
 }
-
 .sidebar a {
     color: #d4dde0;
 }
-
 .sidebar h2, .sidebar h3,
 .sidebar h4, .sidebar h5,
 .sidebar h6 {
     color: #fff;
 }
-
 .sidebar header {
     margin: 0 0 1.25em 0;
 }
-
-.sidebar.open {
+.sidebar:focus
+.sidebar:focus-within {
 	transform: translate(0);
 }
 
