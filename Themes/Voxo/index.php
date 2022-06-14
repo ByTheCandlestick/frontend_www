@@ -237,6 +237,18 @@
 											}
 										?>
 										<li>
+											<i class="fad fa-shopping-bag pe-1"></i>
+											<a href="/Cart/">My Cart</a>
+										</li>
+										<li>
+											<i class="fad fa-house pe-1"></i>
+											<a href="/My/Addresses/">My Addresses</a>
+										</li>
+										<li>
+											<i class="fad fa-id-card pe-1"></i>
+											<a href="/My/Cards/">My Cards</a>
+										</li>
+										<li>
 											<i class="fad fa-sign-out pe-1"></i>
 											<a href="/Logout/">Logout</a>
 										</li>
