@@ -158,9 +158,6 @@
 						</div>
 					</div>
 				</div>
-				<?
-				print_r($page);
-				?>
 				<div class="col-12" name="domain">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
@@ -168,7 +165,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `misc_websites`");
 								while ($row = mysqli_fetch_array($query)) {
-									$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="" ;
+									$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="";
 									print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
 								}
 							?>
