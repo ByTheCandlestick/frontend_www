@@ -134,6 +134,9 @@
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/Posts">All posts</a></li>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="<?print($www_url);?>">Shop</a></li>
 								<?
+									print_r($www_url);
+								?>
+								<?
 									if(!$user_ok) { ?>
 										<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="<?print($www_url)?>/Login?web_ID=<?print($domainID)?>">Login</a></li>
 								<?} else { ?>
