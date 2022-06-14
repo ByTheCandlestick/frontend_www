@@ -224,6 +224,14 @@
 												</li>
 											<?
 												}
+												if(isset($blog)) {
+											?>
+												<li>
+													<i class="fad fa-pencil pe-1"></i>
+													<a href="<?print($admin_url.'/Blog/Edit/'.$blog['ID'].'/?force_back=1')?>">Edit this blog post</a>
+												</li>
+											<?
+												}
 											}
 										?>
 										<li>

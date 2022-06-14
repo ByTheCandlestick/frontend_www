@@ -45,7 +45,7 @@
                         <hr class="my-0" />
                         <ul class="pagination justify-content-center my-4">
                             <li class="page-item disabled"><a class="page-link" href="?p='.($page - 1).'" tabindex="-1" aria-disabled="true">Newer</a></li>
-                            <li class="page-item"><a class="page-link" href="?p='. ($page + 1) .'s">Older</a></li>
+                            <li class="page-item"><a class="page-link" href="?p='. ($page + 1) .'">Older</a></li>
                         </ul>
                     </nav>
 				');
