@@ -142,7 +142,7 @@ $( document ).ready(function() {
 					'name': $("div[name=name]").find("input").val(),
 					'domain': $("div[name=domain]").find("input").val(),
 					'page_type': $("div[name=page_type]").find("option:selected").val(),
-					'active': (($("div[name=status]").find("input[name=maintenance]:checked").length === 0)?0:1),
+					'maintenance': (($("div[name=status]").find("input[name=maintenance]:checked").length === 0)?0:1),
 				}
 				$.ajax({
 					url: api_url + '/Website/',
