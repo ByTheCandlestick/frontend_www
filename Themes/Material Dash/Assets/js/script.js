@@ -32,7 +32,7 @@ $( document ).ready(() => {
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
-						return false
+						return '?'
 					}
 				});
 			},
