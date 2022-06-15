@@ -1,8 +1,12 @@
+<?
+	$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `misc_websites` WHERE `ID`=%s", QS)));
+	$query = mysqli_fetch_array(DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `domain_id`=%s ORDER BY `id`", QS)));
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h1>Pages</h1>
+			<h1>Pages url: <?print($page['Domain'])?></h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -35,8 +39,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `domain_id`=%s ORDER BY `id`", QS));
-					while ($row = mysqli_fetch_array($query)) {
+					while ($row = $query) {
 						print('
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
