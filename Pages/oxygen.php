@@ -49,11 +49,13 @@
 						$type = null;
 						if(mysqli_num_rows($query) > 0) {
 							while ($row = mysqli_fetch_array($query)) {
-								if($type == null):
+								if($type == null) {
 									print('<div class="accordion-item">');
-								if($type != null && $type != $row['section_type']):
+								}
+								if($type != null && $type != $row['section_type']) {
 									print('</div><div class="accordion-item">');
-								if($type != $row['section_type']):
+								}
+								if($type != $row['section_type']) {
 									print('
 										<h2 class="accordion-header" id="headingOne">
 											<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
@@ -61,6 +63,7 @@
 											</button>
 										</h2>
 									');
+								}
 								print('
 									<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 										<div class="accordion-body">
