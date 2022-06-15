@@ -644,7 +644,7 @@ $( document ).ready(function() {
 				$('div[name=gross]').find('input').val(grossPrice);
 				$('div[name=profit]').find('input').val(netProfit);
 				$('div[name=retail]').find('input').val(retailPrice);
-				console.log(arr[0] + ' // ' + arr[1]);
+				console.log(grossPrice + ' = ' + arr[0] + ' // ' + arr[1]);
 			},
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
