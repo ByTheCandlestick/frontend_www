@@ -30,7 +30,12 @@
 	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;">
 		<div class="col-lg-3 h-100">
 			<?
-				
+				$query = DB_Query("SELECT * FROM `page_sections`");
+				if(mysqli_num_rows($query) > 0) {
+					while ($row = mysqli_fetch_array($query)) {
+						print_r($row);
+					}
+				}
 			?>
 		</div>
 		<div class="col-lg-9 h-100" style="border: 2px solid var(--main-color);border-radius: 15px;">
