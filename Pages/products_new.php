@@ -299,7 +299,7 @@
 			status: [ {
 				className: "chars",
 				defaultValue: function(el) {
-					el.innerHTML = "0 / " + smde_desc_l_lim;
+					el.innerHTML = "0 / " + desc_l.char_lim;
 				},
 				onUpdate: function(el) {
 					el.innerHTML = smde_desc_l.value().length + " / " + smde_desc_l_lim;
@@ -315,7 +315,7 @@
 			status: [ {
 				className: "chars",
 				defaultValue: function(el) {
-					el.innerHTML = "0 / " + smde_desc_s_lim;
+					el.innerHTML = "0 / " + desc_s.char_lim;
 				},
 				onUpdate: function(el) {
 					el.innerHTML = smde_desc_s.value().length + " / " + smde_desc_s_lim;
