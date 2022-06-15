@@ -4,7 +4,7 @@ $( document ).ready(function() {
 		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	// -----========== Nestled functions ==========----- //
 		misc = {
-			getQueryParams: function(params) {
+			getQueryParams(params) {
 				let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
 				let qString = regexp.exec(window.location.href);
 				return qString ? qString[1] : null;
@@ -12,12 +12,12 @@ $( document ).ready(function() {
 		}
 		/** @final */
 		cookie = {
-			create: function(name, value, expDays, path = '/') {
+			create(name, value, expDays, path = '/') {
 				let date = new Date();
 				date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
 				document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
 			},
-			read: function(name) {
+			read(name) {
 				var name = name + "=";
 				var decoded = decodeURIComponent(document.cookie);
 				var arr = decoded .split('; ');
@@ -27,13 +27,13 @@ $( document ).ready(function() {
 				})
 				return res;
 			},
-			update: function(name, value) {
+			update(name, value) {
 				cookie.create(name, value, 30);
 			},
-			delete: function(name) {
+			delete(name) {
 				document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 			},
-			exists: function(name) {
+			exists(name) {
 				if(cookie.read(name) === null) {
 					return false
 				}
@@ -42,7 +42,7 @@ $( document ).ready(function() {
 		}
 		/** @final */
 		alert = {
-			simple: function(text, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
+			simple(text, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
 				$('\
 					<div class="alert alert-'+colour+'" role="alert">\
 						'+text+'\
@@ -55,7 +55,7 @@ $( document ).ready(function() {
 					}, stay);
 				});
 			},
-			additional: function(title, content, additional, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
+			additional(title, content, additional, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
 				$('\
 					<div class="alert alert-'+colour+'" role="alert"> \
 						<h4 class="alert-heading">'+title+'</h4>\
@@ -76,7 +76,7 @@ $( document ).ready(function() {
 		search = {
 			suggestions: $(".search-suggestions"),
 			jsonData: null,
-			process: function(ev) {
+			process(ev) {
 				if(ev.key == 'Enter'){
 					var location = $(search.suggestions.children()[0]).find("a").attr("href");
 					if(location !== undefined) {
@@ -92,7 +92,7 @@ $( document ).ready(function() {
 					}));
 				}
 			},
-			dispaySuggestions: function(Arr) {
+			dispaySuggestions(Arr) {
 				for(var i=0; i<Arr.length; i++) {
 					search.suggestions.html(search.suggestions.html() + "<li><a href='" + Arr[i].url + "'>" + Arr[i].name + " - " + Arr[i].desc + "</a></li>");
 				}
@@ -102,7 +102,7 @@ $( document ).ready(function() {
 		mode = {
 			modeSwitch: $('.mode-switch'),
 			root: $('html'),
-			toggle: function() {
+			toggle() {
 				if(cookie.read('cs_adm') == 'dark') {
 					cookie.update('cs_adm', 'light')
 					mode.root.removeClass('dark');
@@ -118,7 +118,7 @@ $( document ).ready(function() {
 				}
 				mode.modeSwitch.toggleClass('active');
 			},
-			set: function(val) {
+			set(val) {
 				mode.root.addClass(val);
 				if(val == "dark") {
 					mode.modeSwitch.addClass('active');
@@ -134,7 +134,7 @@ $( document ).ready(function() {
 		website = {
 			/** @final */
 			domain: {
-				create: function() {
+				create() {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -149,15 +149,15 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully created the domain", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				update: function(sid) {
+				update(sid) {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -172,15 +172,15 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully updated the domain", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				delete: function(sid) {
+				delete(sid) {
 					data = {
 						'api_key': api_key,
 					}
@@ -191,10 +191,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully deleted the domain", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -202,7 +202,7 @@ $( document ).ready(function() {
 			},
 			/** @final */
 			page: {
-				create: function() {
+				create() {
 					var styles = [];
 					var scripts = [];
 					$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
@@ -224,15 +224,15 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully created the page", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				update: function(pid) {
+				update(pid) {
 					var styles = [];
 					var scripts = [];
 					$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
@@ -254,15 +254,15 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully updated the page", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				delete: function(pid) {
+				delete(pid) {
 					data = {
 						'api_key': api_key,
 					}
@@ -273,10 +273,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully deleted the page", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -284,7 +284,7 @@ $( document ).ready(function() {
 			},
 			/** @wip */
 			layout: {
-				update: function(pid) {
+				update(pid) {
 					data = {
 						'api_key': api_key,
 						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
@@ -298,10 +298,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully updated the layout", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -309,7 +309,7 @@ $( document ).ready(function() {
 			},
 			/** @final */
 			style: {
-				create: function() {
+				create() {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -325,15 +325,15 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully created the style", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				update: function(id) {
+				update(id) {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -349,15 +349,15 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully updated the style", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				delete: function(id) {
+				delete(id) {
 					data = {
 						'api_key': api_key,
 					}
@@ -368,10 +368,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully deleted the style", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -379,7 +379,7 @@ $( document ).ready(function() {
 			},
 			/** @final */
 			script: {
-				create: function() {
+				create() {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -394,15 +394,15 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully created the script", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				update: function(id) {
+				update(id) {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
@@ -417,19 +417,19 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success(body) {
 							alert.simple("Successfully updated the script", "success");
 						},
-						error: function(body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 					
 				},
-				delete: function(id) {
+				delete: (id) => {
 					data = {
 						'api_key': api_key,
-					}
+					};
 					$.ajax({
 						url: api_url + '/Website/Script/' + id + '/',
 						data: data,
@@ -437,10 +437,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success: function (body) {
 							alert.simple("Successfully deleted the script", "success");
 						},
-						error: function(body) {
+						error: function (body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -448,14 +448,14 @@ $( document ).ready(function() {
 			},
 			/** @final */
 			theme: {
-				create: function() {
+				create() {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
 						'description': $("div[name=description]").find("input").val(),
 						'location': $("div[name=location]").find("input").val(),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
-					}
+						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+					};
 					$.ajax({
 						url: api_url + '/Website/Theme/',
 						data: data,
@@ -463,22 +463,22 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success: function (body) {
 							alert.simple("Successfully created the theme", "success");
 						},
-						error: function(body) {
+						error: function (body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				update: function(id) {
+				update(id) {
 					data = {
 						'api_key': api_key,
 						'name': $("div[name=name]").find("input").val(),
 						'description': $("div[name=description]").find("input").val(),
 						'location': $("div[name=location]").find("input").val(),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
-					}
+						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+					};
 					$.ajax({
 						url: api_url + '/Website/Theme/' + id + '/',
 						data: data,
@@ -486,18 +486,18 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success: function (body) {
 							alert.simple("Successfully updated the theme", "success");
 						},
-						error: function(body) {
+						error: function (body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				},
-				delete: function(id) {
+				delete(id) {
 					data = {
 						'api_key': api_key,
-					}
+					};
 					$.ajax({
 						url: api_url + '/Website/Theme/' + id + '/',
 						data: data,
@@ -505,10 +505,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function(body) {
+						success: function (body) {
 							alert.simple("Successfully deleted the theme", "success");
 						},
-						error: function(body) {
+						error: function (body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -517,14 +517,13 @@ $( document ).ready(function() {
 		};
 		/** @wip */
 		user = {
-			create: function() {
-
+			create() {
 			},
-			update: function(uid) {
-				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0)?0:1);
-				d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0)?0:1);
-				e_active = (($("div[name=misc]").find("input[name=email_active]:checked").length === 0)?0:1);
-				u_active = (($("div[name=misc]").find("input[name=user_active]:checked").length === 0)?0:1);
+			update(uid) {
+				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1);
+				d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1);
+				e_active = (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1);
+				u_active = (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1);
 				data = {
 					'api_key': api_key,
 					'uname': $("div[name=username]").find("input").val(),
@@ -536,7 +535,7 @@ $( document ).ready(function() {
 					'd_analytics': d_analytics,
 					'e_active': e_active,
 					'u_active': u_active,
-				}
+				};
 				$.ajax({
 					url: api_url + '/Users/' + uid + '/',
 					data: data,
@@ -544,28 +543,26 @@ $( document ).ready(function() {
 					xhrFields: {
 						withCredentials: true,
 					},
-					success: function(body) {
+					success: function (body) {
 						alert.simple("Successfully updated the user", "success");
 					},
-					error: function(body) {
+					error: function (body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
 				});
 			},
-			delete: function() {
-
+			delete(uid) {
 			},
 		}
 		/** @wip */
 		product = {
-			create: function() {
-
+			create() {
 			},
-			update: function(pid) {
-				discontinued = (($("div[name=status]").find("input[name=discontinued]:checked").length === 0)?0:1);
-				available = (($("div[name=status]").find("input[name=available]:checked").length === 0)?0:1);
-				discounted = (($("div[name=pricing]").find("input[name=discounted]:checked").length === 0)?0:1);
-				auto_calculate = (($("div[name=pricing]").find("input[name=auto_calculate]:checked").length === 0)?0:1);
+			update(pid) {
+				discontinued = (($("div[name=status]").find("input[name=discontinued]:checked").length === 0) ? 0 : 1);
+				available = (($("div[name=status]").find("input[name=available]:checked").length === 0) ? 0 : 1);
+				discounted = (($("div[name=pricing]").find("input[name=discounted]:checked").length === 0) ? 0 : 1);
+				auto_calculate = (($("div[name=pricing]").find("input[name=auto_calculate]:checked").length === 0) ? 0 : 1);
 				desc_l = smde_desc_l.value().replace('\n', '\\r\\n');
 				desc_s = smde_desc_s.value().replace('\n', '\\r\\n');
 
@@ -599,7 +596,7 @@ $( document ).ready(function() {
 					'description_long': encodeURIComponent(desc_l),
 					'description_short': encodeURIComponent(desc_s),
 					'slug': $("div[name=slug]").find("input").val(),
-				}
+				};
 				$.ajax({
 					url: api_url + '/Product/' + pid + '/',
 					data: data,
@@ -607,18 +604,17 @@ $( document ).ready(function() {
 					xhrFields: {
 						withCredentials: true,
 					},
-					success: function(body) {
+					success: function (body) {
 						alert.simple("Successfully updated the product", "success");
 					},
-					error: function(body) {
+					error: function (body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
 				});
 			},
-			delete: function() {
-
+			delete(pid) {
 			},
-			calculate: function() {
+			calculate() {
 				container_size = Number($("div[name=container]").find("option:selected").attr('size'));
 				container_price = Number($("div[name=container]").find("option:selected").attr('price'));
 				wick_price = Number($("div[name=wick]").find("option:selected").attr('price'));
@@ -632,16 +628,16 @@ $( document ).ready(function() {
 
 				// Calculate the final prices
 				netPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
-				grossPrice = netPrice * ( margin / 100);
+				grossPrice = netPrice * (margin / 100);
 				netProfit = grossPrice - netPrice;
 
 				// Round to nearest 5 0r 9
 				arr = [
 					Math.ceil(grossPrice / 0.5) * 0.1,
 					Math.ceil(grossPrice / 0.9) * 0.1,
-				]
+				];
 				retailPrice = arr.reduce((prev, curr) => {
-				  return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
+					return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
 				});
 
 				$('div[name=net]').find('input').val(netPrice);
