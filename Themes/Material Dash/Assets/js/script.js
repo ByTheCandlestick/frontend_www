@@ -630,9 +630,10 @@ $( document ).ready(function() {
 				shipping_price = parseInt($("div[name=shipping]").find("option:selected").attr('price'));
 				margin = parseInt($("div[name=markup]").find("input").val());
 
-				netPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price);
+				netPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
 				grossPrice = netPrice + (netPrice * (margin / 100))
 				netProfit = grossPrice - netPrice;
+
 				console.log(netPrice);
 				console.log(grossPrice);
 				console.log(netProfit);
