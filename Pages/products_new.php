@@ -24,13 +24,13 @@
 			<div class="row">
 				<div class="col-12 col-lg-6" name="title">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput">Title</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-6" name="images">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput">IMAGES</label>
 					</div>
 				</div>
@@ -76,21 +76,21 @@
 				</div>
 				<div class="col-12 col-lg-3" name="currency">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput">Currency</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="profit">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP">£</span>
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput" class="ps-5">Profit</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="retail">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP">£</span>
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput" class="ps-5">Retail</label>
 					</div>
 				</div>
@@ -109,21 +109,21 @@
 				<div class="col-12 col-lg-3" name="net">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP">£</span>
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput" class="ps-5">Net</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="gross">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP">£</span>
-						<input type="text" class="form-control" id="floatingInput" aria-describedby="GBP">
+						<input type="text" class="form-control" id="floatingInput" value="0.00" aria-describedby="GBP">
 						<label for="floatingInput" class="ps-5">Gross</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="markup">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP">£</span>
-						<input type="text" class="form-control" id="floatingInput" aria-describedby="percentage">
+						<input type="text" class="form-control" id="floatingInput" value="0.00" aria-describedby="percentage">
 						<label for="floatingInput" class="ps-5">Markup</label>
 						<span class="input-group-text" id="percentage">%</span>
 					</div>
@@ -140,7 +140,7 @@
 				</div>
 				<div class="col-12 col-lg-4" name="discount_amount">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput">Discount</label>
 					</div>
 				</div>
@@ -272,7 +272,7 @@
 				</div>
 				<div class="col-12 col-lg-4" name="slug">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" value="0.00">
 						<label for="floatingInput">Slug</label>
 					</div>
 				</div>
@@ -282,11 +282,11 @@
 			<div class="row">
 				<div class="col-12" name="description_short">
 					<h5>Short description</h5>
-					<input type="text" class="form-control" id="floatingInput">
+					<input type="text" class="form-control" id="floatingInput" value="0.00">
 				</div>
 				<div class="col-12" name="description_long">
 					<h5>Long description</h5>
-					<input type="text" class="form-control" id="floatingInput">
+					<input type="text" class="form-control" id="floatingInput" value="0.00">
 				</div>
 			</div>
 		</div>
