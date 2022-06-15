@@ -639,8 +639,8 @@ $( document ).ready(function() {
 				$('div[name=profit]').find('input').val(netProfit);
 
 				// Round to nearest 5 0r 9
-				nearest5 = Math.round(num / 5) * 5;
-				nearest9 = Math.round(num / 9) * 9;
+				nearest5 = Math.round(grossPrice / 5) * 5;
+				nearest9 = Math.round(grossPrice / 9) * 9;
 
 				console.log(nearest5);
 				console.log(nearest9);
