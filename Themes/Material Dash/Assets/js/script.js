@@ -619,16 +619,16 @@ $( document ).ready(function() {
 
 			},
 			calculate: function() {
-				container_size = $("div[name=container]").find("option:selected").attr('size');
-				container_price = $("div[name=container]").find("option:selected").attr('price');
-				wick_price = $("div[name=wick]").find("option:selected").attr('price');
-				wickStand_price = $("div[name=wick_stand]").find("option:selected").attr('price');
-				material_price = $("div[name=material]").find("option:selected").attr('price');
-				fragrance_price = $("div[name=fragrance]").find("option:selected").attr('price');
-				colour_price = $("div[name=colour]").find("option:selected").attr('price');
-				packaging_price = $("div[name=packaging]").find("option:selected").attr('price');
-				shipping_price = $("div[name=shipping]").find("option:selected").attr('price');
-				margin = $("div[name=markup]").find("input").val();
+				container_size = parseInt($("div[name=container]").find("option:selected").attr('size'));
+				container_price = parseInt($("div[name=container]").find("option:selected").attr('price'));
+				wick_price = parseInt($("div[name=wick]").find("option:selected").attr('price'));
+				wickStand_price = parseInt($("div[name=wick_stand]").find("option:selected").attr('price'));
+				material_price = parseInt($("div[name=material]").find("option:selected").attr('price'));
+				fragrance_price = parseInt($("div[name=fragrance]").find("option:selected").attr('price'));
+				colour_price = parseInt($("div[name=colour]").find("option:selected").attr('price'));
+				packaging_price = parseInt($("div[name=packaging]").find("option:selected").attr('price'));
+				shipping_price = parseInt($("div[name=shipping]").find("option:selected").attr('price'));
+				margin = parseInt($("div[name=markup]").find("input").val());
 
 				netPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price);
 				grossPrice = netPrice + (netPrice * (margin / 100))
