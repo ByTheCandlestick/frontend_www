@@ -24,7 +24,9 @@ $( document ).ready(() => {
 					url: '/currencies.json',
 					type: 'GET',
 					success(body) {
-						console.log(body);
+						Object.entries(body).forEach(([key, value]) => {
+							console.log(`${key} ${value}`);
+						});				
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
