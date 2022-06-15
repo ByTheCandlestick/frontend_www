@@ -48,7 +48,7 @@
 					$type = "";
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
-							$type == $row['section_type'] ? print('<h4> '.$row['section_type'].' </h4>') : print(null) ;
+							$type != $row['section_type'] ? print('<h4> '.$row['section_type'].' </h4>') : print(null) ;
 							print('<div class="col-12 col-md-5 element">'.$row['short_description'].'</div>');
 							$type = $row['section_type'];
 						}
