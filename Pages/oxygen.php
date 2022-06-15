@@ -48,11 +48,11 @@
 					$type = null;
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
-							if($type == null):
+							if($type == null) {
 								print('<div class="accordion-item">');
-							elseif($type != null && $type != $row['section_type']):
+							} elseif($type != null && $type != $row['section_type']) {
 								print('</div><div class="accordion-item">');
-							endif;
+							}
 							if($type != $row['section_type']) {
 								print('
 									<h2 class="accordion-header" id="headingOne">
