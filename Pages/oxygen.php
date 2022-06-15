@@ -25,6 +25,7 @@
 		</div>
 	</div>
 	<hr>
+	<br>
 	<!-- Section Type -->
 	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;">
 		<div class="col-lg-3 h-100">
