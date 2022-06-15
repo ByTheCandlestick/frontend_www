@@ -79,7 +79,7 @@
 			<h5>Theme info</h5>
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($theme['name']=='')?'No name was set':'')?>" value="<? print(($theme['name']=='')?'':$theme['name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($theme['Name']=='')?'No name was set':'')?>" value="<? print(($theme['Name']=='')?'':$theme['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -98,7 +98,7 @@
 			<div class="col-12 col-md-6 col-lg-3" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck" <?($theme['Active']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Active </label>
 					</div>
 				</div>
