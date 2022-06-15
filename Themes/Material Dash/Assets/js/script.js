@@ -20,6 +20,7 @@ $( document ).ready(() => {
 				});
 			},
 			currSymbol(str) {
+				res;
 				$.ajax({
 					url: '/currencies.json',
 					type: 'GET',
