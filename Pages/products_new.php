@@ -150,7 +150,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" size="'.$row['Size (cl)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -164,7 +164,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_wicks` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -178,7 +178,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -192,7 +192,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_materials` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -206,7 +206,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_fragrances` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -220,7 +220,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_colours` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -234,7 +234,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_packagings` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -248,7 +248,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['id'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['id'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
