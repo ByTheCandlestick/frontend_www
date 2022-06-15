@@ -684,6 +684,8 @@ $( document ).ready(function() {
 			if($('input[name=discounted]:checked').length === 0) {
 				$('div[name=discount_type]').find('select').prop('disabled', true);
 				$('div[name=discount_amount]').find('input').prop('disabled', true);
+				$('div[name=discount_type]').find('select').val(0);
+				$('div[name=discount_amount]').find('input').val('0.00');
 			} else {
 				$('div[name=discount_type]').find('select').prop('disabled', false);
 				$('div[name=discount_amount]').find('input').prop('disabled', false);
