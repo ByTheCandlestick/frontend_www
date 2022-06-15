@@ -75,7 +75,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="currency">
-					<div class="form-floating mb-3">
+					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP">£</span>
 						<input type="text" class="form-control" id="floatingInput" value="GBP">
 						<label for="floatingInput">Currency</label>
