@@ -13,7 +13,7 @@
 				<div class="col-12 d-flex justify-content-end align-items-center p-0">
 					<div class="form-floating mb-3">
 						<div class="form-check form-switch">
-							<label class="form-check-label" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
+							<label class="form-check-label" style="text-align: left;" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 							<input class="form-check-input" type="checkbox" name="display_type" id="display_type" <?($page['display_type']==1)?print("checked"):print("")?>>
 						</div>
 					</div>
