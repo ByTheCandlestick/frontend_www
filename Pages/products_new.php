@@ -294,6 +294,15 @@
 	</div>
 </section>
 <script>
+	
+	function limit_characters(simplemde) {
+		character_count = simplemde.value().length
+		if (character_count > char_limit) {
+			$('#submitBtn').attr("disabled", true);
+		} else {
+			$('#submitBtn').attr("disabled", false);
+		}
+	};
 	var smde_desc_l = new SimpleMDE({
 		element: $("div[name=description_long] input")[0],
 		status: [ {
@@ -303,7 +312,7 @@
 			},
 			onUpdate: function(el) {
 				el.innerHTML = smde_desc_l.value().length + " / "+512;
-				misc.limit_characters()
+				limit_characters()
 			}
 		}]
 	});
@@ -316,7 +325,7 @@
 			},
 			onUpdate: function(el) {
 				el.innerHTML = smde_desc_s.value().length + " / "+256;
-				misc.limit_characters()
+				limit_characters()
 			}
 		}]
 	})
