@@ -635,7 +635,7 @@ $( document ).ready(function() {
 				totalColourCost = colour_price * container_size
 
 				netPrice = container_price + wick_price + wickStand_price + totalMaterialCost + totalFragranceCost + totalColourCost + packaging_price + shipping_price;
-				fianalMargin = netPrice * margin;
+				finalMargin = netPrice * margin;
 				grossPrice = netPrice + finalMargin
 				netProfit = grossPrice - netPrice;
 
