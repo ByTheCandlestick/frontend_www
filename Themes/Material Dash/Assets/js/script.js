@@ -634,9 +634,9 @@ $( document ).ready(function() {
 				grossPrice = netPrice + (netPrice * ( margin / 100));
 				netProfit = grossPrice - netPrice;
 
-				$('dif[name=net]').find('input').val(netPrice);
-				$('dif[name=gross]').find('input').val(grossPrice);
-				$('dif[name=profit]').find('input').val(netProfit);
+				$('div[name=net]').find('input').val(netPrice);
+				$('div[name=gross]').find('input').val(grossPrice);
+				$('div[name=profit]').find('input').val(netProfit);
 			},
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
