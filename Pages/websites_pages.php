@@ -48,7 +48,7 @@
 								<td>'.$row['subpage_url'].'</td>
 								<td>'.$row['page_title'].'</td>
 								<td>
-									<a href="/Website/Page/'.$row['ID'].'">
+									<a href="/Websites/Page/'.$row['ID'].'">
 										<i class="fa fa-pencil"></i>
 									</a>
 								</td>
