@@ -4,6 +4,7 @@ $( document ).ready(() => {
 		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	// -----========== Nestled functions ==========----- //
 		misc = {
+			currencies: null,
 			getQueryParams(params) {
 				let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
 				let qString = regexp.exec(window.location.href);
@@ -20,22 +21,12 @@ $( document ).ready(() => {
 				});
 			},
 			currSymbol(str) {
-				res = '?';
-				res = $.ajax({
-					url: '/currencies.json',
-					type: 'GET',
-					success(body) {
-						Object.entries(body).forEach(([key, value]) => {
-							if(value.code == str) {
-								return value.symbol;
-							}
-						});
-					},
-					error(body) {
-						alert.simple("An error has occurred. Please try again later", "danger");
+				Object.entries(currencies).forEach(([key, value]) => {
+					if(value.code == str) {
+						return value.symbol;
 					}
-				})['responseJSON'];
-				return res
+				});
+				return '?';
 			},
 		}
 		/** @final */
@@ -753,6 +744,9 @@ $( document ).ready(() => {
 				product.calculate();
 			}
 		});
+		$.get('/currencies.json', (data) =>{
+			misc.currencies = data
+		})
 		$('div[name=currency]').find('input').change(() => {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
 			console.log(symbol);
