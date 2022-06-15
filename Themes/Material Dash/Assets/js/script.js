@@ -26,15 +26,16 @@ $( document ).ready(() => {
 					success(body) {
 						Object.entries(body).forEach(([key, value]) => {
 							if(value.code == str) {
-								return value.symbol;
+								res = value.symbol;
 							}
 						});
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
-						return '?'
+						res = '?'
 					}
 				});
+				return res
 			},
 		}
 		/** @final */
@@ -755,7 +756,7 @@ $( document ).ready(() => {
 		$('div[name=currency]').find('input').change(() => {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
 			console.log(symbol);
-			$('span.input-group-text#currSymbol').html('?');
+			$('span.input-group-text#currSymbol').html(symbol);
 		})
 	// -----========== EOF ==========----- //
 });
