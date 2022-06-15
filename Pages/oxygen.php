@@ -12,10 +12,9 @@
 			<div class="row">
 				<div class="col-12 d-flex justify-content-end align-items-center p-0">
 					<div class="form-floating mb-3">
-						<?print_r($page)?>
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="type" id="flexCheck" <?($page['Discontinued']==1)?print("checked"):print("")?>>
-							<label class="form-check-label" for="flexCheck"> ? </label>
+							<input class="form-check-input" type="checkbox" name="type" id="flexCheck" <?($page['display_type']==1)?print("checked"):print("")?>>
+							<label class="form-check-label" for="flexCheck"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 						</div>
 					</div>
 					<a href="javascript:website.saveLayout(<?print(QS)?>);" class="btn btn-outline-primary m-1">
