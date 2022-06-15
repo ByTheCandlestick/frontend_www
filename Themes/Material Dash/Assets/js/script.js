@@ -619,10 +619,10 @@ $( document ).ready(function() {
 
 			},
 		}
-	// -----========== Dark mode toggle ==========----- //
+	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
 		mode.modeSwitch.click(function () { mode.toggle() });
-	// -----========== Search ==========----- //
+	// -----========== Search ==========----- // @final //
 		$(".search-area input").focusout( function(){
 			if(search.suggestions.filter(":hover").length === 0) {
 				search.suggestions.hide();
@@ -634,11 +634,11 @@ $( document ).ready(function() {
 		$.get($('.search-wrapper').attr('rel'), function(data){
 			search.jsonData = data
 		})
-	// -----========== MENU BTN ==========----- //
+	// -----========== MENU BTN ==========----- // @final //
 		$('.app-icon').click(function() {
 			$('.app-sidebar').toggleClass('sidebar-show');
 		})
-	// -----========== BACK BTN ==========----- //
+	// -----========== BACK BTN ==========----- // @final //
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
 			$('.app-back-btn').addClass('disabled')
 		}
@@ -647,14 +647,14 @@ $( document ).ready(function() {
 				history.back();
 			}
 		});
-	// -----========== PRELOADER ==========----- //
+	// -----========== PRELOADER ==========----- // @final //
 		$(window).bind('beforeunload', function() {
 			$('.app-preloader').fadeIn();
 		});
 		$('.app-preloader').fadeOut();
-	// -----========== TOOL TIPS ==========----- //
+	// -----========== TOOL TIPS ==========----- // @final //
 		$('[data-toggle="tooltip"]').tooltip();
-	// -----========== OXYGEN BUILDER ==========----- //
+	// -----========== OXYGEN BUILDER ==========----- // @wip //
 		$('input[name=display_type]').change(function() {
 			if($('input[name=display_type]:checked').length === 0) {
 				$('label[for=display_type]').html('Pages');
@@ -666,7 +666,7 @@ $( document ).ready(function() {
 				$('div[type=page]').hide();
 			}
 		});
-	// -----========== Auto-calculate product ==========----- //
+	// -----========== Auto-calculate product ==========----- // @wip //
 		$('input[name=auto_calculate]').change(function() {
 			if($('input[name=auto_calculate]:checked').length === 0) {
 				$('div[name=net]').find('input').prop('disabled', false);
