@@ -319,5 +319,5 @@
 				misc.limit_characters()
 			}
 		}]
-	});
-</script>
+	})
+	</script>
