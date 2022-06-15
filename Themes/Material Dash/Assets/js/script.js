@@ -8,7 +8,18 @@ $( document ).ready(function() {
 				let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
 				let qString = regexp.exec(window.location.href);
 				return qString ? qString[1] : null;
-			}
+			},
+			round(value, step) {
+				step || (step = 1.0);
+				var inv = 1.0 / step;
+				return Math.round(value * inv) / inv;
+			},
+			roundToNearest(nearest, num) {
+
+			},
+			roundUpToNearest(nearest, num) {
+
+			},
 		}
 		/** @final */
 		cookie = {
@@ -633,8 +644,11 @@ $( document ).ready(function() {
 
 				// Round to nearest 5 0r 9
 				arr = [
-					(Math.ceil(grossPrice) + 0.05).toFixed(2),
-					(Math.ceil(grossPrice) + 0.09).toFixed(2),
+					misc.round(grossProfit, 1) - 0.01,	// 0.99
+					misc.round(grossProfit, 0.5) - 0.01,// 0.49
+					misc.round(grossProfit, 0.01) - 0.1,// 0.09
+					misc.round(grossProfit, 0.05),		// 0.05
+					
 				];
 				retailPrice = arr.reduce((prev, curr) => {
 					return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
