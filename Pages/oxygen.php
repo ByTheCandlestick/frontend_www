@@ -28,30 +28,32 @@
 	<br>
 	<!-- Section Type -->
 	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;">
+		<style>
+			.container {
+				background: var(--app-container);
+				border-radius: 15px;
+				padding: unset;
+			}
+			.element {
+				background: var(--section);
+				border-radius: 15px;
+				margin: 10px;
+				padding: 10px;
+			}
+		</style>
 		<div class="col-lg-3 h-100">
-			<?
-				$query = DB_Query("SELECT * FROM `page_sections`");
-				if(mysqli_num_rows($query) > 0) {
-					while ($row = mysqli_fetch_array($query)) {
-						print_r($row);
+			<div class="row container">
+				<?
+					$query = DB_Query("SELECT * FROM `page_sections`");
+					if(mysqli_num_rows($query) > 0) {
+						while ($row = mysqli_fetch_array($query)) {
+							print_r('<div class="col-12 col-md-6 element">'.$row['short_description'].'</div>');
+						}
 					}
-				}
-			?>
+				?>
+			</div>
 		</div>
 		<div class="col-lg-9 h-100" style="border: 2px solid var(--main-color);border-radius: 15px;">
-			<style>
-				.container {
-					background: var(--app-container);
-					border-radius: 15px;
-					padding: unset;
-				}
-				.element {
-					background: var(--section);
-					border-radius: 15px;
-					margin: 10px;
-					padding: 10px;
-				}
-			</style>
 			<?
 				if($page['display_type']) {
 					printSectionTemplates($page['section_ids']);
