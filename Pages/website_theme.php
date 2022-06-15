@@ -42,7 +42,7 @@
 			<div class="col-12 col-md-6 col-lg-3" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck">
+						<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck" checked>
 						<label class="form-check-label" for="flexCheck"> Active </label>
 					</div>
 				</div>
