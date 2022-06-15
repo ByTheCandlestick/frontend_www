@@ -644,6 +644,8 @@ $( document ).ready(function() {
 
 				console.log(nearest5);
 				console.log(nearest9);
+				
+				console.log('---');
 
 			},
 		}
