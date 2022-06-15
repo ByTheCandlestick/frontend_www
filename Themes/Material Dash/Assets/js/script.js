@@ -628,8 +628,14 @@ $( document ).ready(function() {
 				colour_price = $("div[name=colour]").find("option:selected").attr('price');
 				packaging_price = $("div[name=packaging]").find("option:selected").attr('price');
 				shipping_price = $("div[name=shipping]").find("option:selected").attr('price');
-				totalPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
-				console.log(totalPrice);
+				profitPercentage = $("div[name=markup]").find("input").val();
+
+				netPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
+				grossPrice = netPrice + (netPrice * (profitPercentage / 100))
+				netProfit = grossPrice - netPrice;
+				console.log(netPrice);
+				console.log(grossPrice);
+				console.log(netProfit);
 			},
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
@@ -703,6 +709,9 @@ $( document ).ready(function() {
 				$('div[name=discount_type]').find('select').prop('disabled', false);
 				$('div[name=discount_amount]').find('input').prop('disabled', false);
 			}
+		});
+		$('div.ProductInfo').find('input, select').change( function() {
+			product.calculate();
 		});
 	// -----========== EOF ==========----- //
 });
