@@ -306,8 +306,8 @@
 					
 				}
 			}]
-		});
-	}
+		})
+	};
 	desc_s ={
 		char_lim: 256,
 		smde: new SimpleMDE({
@@ -323,5 +323,5 @@
 				}
 			}]
 		})
-	}
+	};
 </script>
