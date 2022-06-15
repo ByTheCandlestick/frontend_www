@@ -307,11 +307,11 @@
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
-				el.innerHTML = "0 / " + smde_desc_l.char_limit;
+				el.innerHTML = "0 / " + this.char_limit;
 			},
 			onUpdate: function(el) {
-				el.innerHTML = smde_desc_l.value().length + " / " + smde_desc_l.char_limit;
-				limit_characters(smde_desc_l, smde_desc_l.char_limit)
+				el.innerHTML = smde_desc_l.value().length + " / " + this.char_limit;
+				limit_characters(smde_desc_l, this.char_limit)
 			}
 		}]
 	});
