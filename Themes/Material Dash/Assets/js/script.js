@@ -26,6 +26,7 @@ $( document ).ready(() => {
 					success(body) {
 						Object.entries(body).forEach(([key, value]) => {
 							if(value.code == str) {
+								console.log(value.symbol);
 								return value.symbol;
 							}
 						});
