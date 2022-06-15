@@ -1063,7 +1063,7 @@
 				"tags": [ "website" ],
 				"summary": "New website function",
 				"description": "Creates a new website and domain on the DB",
-				"operationId": "createwebsite",
+				"operationId": "createWebsite",
 				"produces": [ "application/json" ],
 				"parameters": [{
 					"name": "Name",
@@ -1113,6 +1113,65 @@
 			}
 		},
 		"/Website/{id}": {
+			"put": {
+				"tags": [ "website" ],
+				"summary": "Update website function",
+				"description": "Updates a website and domain on the DB specified by ID",
+				"operationId": "updateWebsite",
+				"produces": [ "application/json" ],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"description": "ID of the website to be updated",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}, {
+					"name": "Name",
+					"in": "query",
+					"description": "Name of the new website",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Domain",
+					"in": "query",
+					"description": "Domain of the new website",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}, {
+					"name": "page_type",
+					"in": "query",
+					"description": "The theme type for the new website",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}, {
+					"name": "maintenance",
+					"in": "query",
+					"description": "boolean - if the website should be down for maintenance",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					},
+					"422": {
+						"description": "Unprocessable Entity",
+						"schema": {
+							"$ref": "#/definitions/422"
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"schema": {
+							"$ref": "#/definitions/500"
+						}
+					}
+				}
+			}
 		}
 
 		,
