@@ -669,9 +669,9 @@ $( document ).ready(function() {
 	// -----========== Auto-calculate product ==========----- //
 		$('input[name=auto_calculate]').change(function() {
 			if($('input[name=auto_calculate]:checked').length === 0) {
-				$('div[name-net]').find('input').prop('disabled', false);
+				$('div[name=net]').find('input').prop('disabled', false);
 			} else {
-				$('div[name-net]').find('input').prop('disabled', true);
+				$('div[name=net]').find('input').prop('disabled', true);
 			}
 		});
 	// -----========== EOF ==========----- //
