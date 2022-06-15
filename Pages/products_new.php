@@ -299,7 +299,7 @@
 			status: [ {
 				className: "chars",
 				defaultValue: function(el) {
-					el.innerHTML = "0 / " + desc_l.char_lim;
+					el.innerHTML = "0 / " + this.char_lim;
 				},
 				onUpdate: function(el) {
 					el.innerHTML = smde_desc_l.value().length + " / " + smde_desc_l_lim;
