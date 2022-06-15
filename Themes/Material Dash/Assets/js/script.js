@@ -20,8 +20,16 @@ $( document ).ready(() => {
 				});
 			},
 			currSymbol(str) {
-				curr = Currency.getInstance(str);
-				return symbol = cur1.getSymbol();
+				$.ajax({
+					url: '/currencies.json',
+					type: 'GET',
+					success(body) {
+						console.log(body);
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 		}
 		/** @final */
