@@ -83,13 +83,13 @@
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="Description">
+			<div class="col-12 col-md-6 col-lg-3" name="description">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($theme['Description']=='')?'No name was set':'')?>" value="<? print(($theme['Description']=='')?'':$theme['Description'])?>">
 					<label for="floatingInput">Description</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="Location">
+			<div class="col-12 col-md-6 col-lg-3" name="location">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($theme['Location']=='')?'No name was set':'')?>" value="<? print(($theme['Location']=='')?'':$theme['Location'])?>">
 					<label for="floatingInput">Location</label>
