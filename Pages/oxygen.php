@@ -42,7 +42,7 @@
 			}
 		</style>
 		<div class="col-lg-3">
-			<div class="accordion" id="accordionExample">
+			<div class="accordion accordion-flush" id="accordionExample">
 				<div class="accordion-item">
 					<?
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
