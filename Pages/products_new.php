@@ -69,7 +69,7 @@
 							<label class="form-check-label" for="flexCheck"> Discontinued? </label>
 						</div>
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="available" id="flexCheck">
+							<input class="form-check-input" type="checkbox" name="available" id="flexCheck" checked>
 							<label class="form-check-label" for="flexCheck"> Active? </label>
 						</div>
 					</div>
@@ -101,7 +101,7 @@
 							<label class="form-check-label" for="flexCheck"> Discounted? </label>
 						</div>
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck">
+							<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck" checked>
 							<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
 						</div>
 					</div>
