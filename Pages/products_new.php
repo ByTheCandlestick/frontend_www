@@ -122,7 +122,7 @@
 				<div class="col-12 col-lg-3" name="markup">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP">£</span>
-						<input type="text" class="form-control" id="floatingInput" value="0.00" aria-describedby="percentage">
+						<input type="text" class="form-control" id="floatingInput" value="100" aria-describedby="percentage">
 						<label for="floatingInput" class="ps-5">Markup</label>
 						<span class="input-group-text" id="percentage">%</span>
 					</div>
