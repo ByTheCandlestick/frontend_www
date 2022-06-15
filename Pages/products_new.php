@@ -301,32 +301,32 @@
 			$('#submitBtn').attr("disabled", false);
 		}
 	};
+	smde_desc_l_lim = 512;
 	var smde_desc_l = new SimpleMDE({
 		element: $("div[name=description_long] input")[0],
-		char_limit: 512,
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
-				el.innerHTML = "0 / " + this.char_limit;
+				el.innerHTML = "0 / " + smde_desc_l_lim;
 			},
 			onUpdate: function(el) {
-				el.innerHTML = smde_desc_l.value().length + " / " + this.char_limit;
-				limit_characters(smde_desc_l, this.char_limit)
+				el.innerHTML = smde_desc_l.value().length + " / " + smde_desc_l_lim;
+				limit_characters(smde_desc_l, smde_desc_l_lim)
 			}
 		}]
 	});
+	smde_desc_s_lim = 256;
 	var smde_desc_s = new SimpleMDE({
 		element: $("div[name=description_short] input")[0],
-		char_limit: 256,
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
-				el.innerHTML = "0 / " + this.char_limit;
+				el.innerHTML = "0 / " + smde_desc_s_lim;
 			},
 			onUpdate: function(el) {
-				el.innerHTML = smde_desc_s.value().length + " / " + this.char_limit;
-				limit_characters(smde_desc_s, this.char_limit)
+				el.innerHTML = smde_desc_s.value().length + " / " + smde_desc_s_lim;
+				limit_characters(smde_desc_s, smde_desc_s_lim)
 			}
 		}]
 	})
-	</script>
+</script>
