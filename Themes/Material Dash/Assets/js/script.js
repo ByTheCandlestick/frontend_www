@@ -639,7 +639,7 @@ $( document ).ready(function() {
 				$('div[name=profit]').find('input').val(netProfit);
 
 				// Round to nearest 5 0r 9
-				nearest5 = Math.ceil(grossPrice / 5) * 5;
+				nearest5 = (Math.ceil((grossPrice - 5) / 5) * 5) + 5;
 				nearest9 = Math.ceil(grossPrice / 9) * 9;
 
 				console.log(nearest5);
