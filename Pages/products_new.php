@@ -317,7 +317,7 @@
 	});
 	var smde_desc_s = new SimpleMDE({
 		element: $("div[name=description_short] input")[0],
-		char_limit: 256;
+		char_limit: 256,
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
