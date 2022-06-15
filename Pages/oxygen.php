@@ -53,7 +53,7 @@
 									print('
 										</div>
 										<div class="accordion-item container row">
-											<h2 class="accordion-header" id="headingOne">
+											<h2 class="accordion-header p-unset" id="headingOne">
 												<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
 													'.$row['section_type'].'
 												</button>
