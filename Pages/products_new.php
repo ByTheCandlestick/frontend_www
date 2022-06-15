@@ -150,7 +150,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['price (ea)'].'" size="'.$row['Size (cl)'].'">'.$row['Name'].'</option>');
+									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'" size="'.$row['Size (cl)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
