@@ -44,10 +44,13 @@
 		<div class="col-lg-3 h-100">
 			<div class="row container">
 				<?
-					$query = DB_Query("SELECT * FROM `page_sections`");
+					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY ``");
+					$type = "";
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
-							print_r('<div class="col-12 col-md-5 element">'.$row['short_description'].'</div>');
+							$type == $row['section_type'] ? print('<h4> '.$row['section_type'].' </h4>') : print(null) ;
+							print('<div class="col-12 col-md-5 element">'.$row['short_description'].'</div>');
+							$type = $row['section_type'];
 						}
 					}
 				?>
