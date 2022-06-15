@@ -20,7 +20,7 @@ $( document ).ready(() => {
 				});
 			},
 			currSymbol(str) {
-				res;
+				res = '?';
 				$.ajax({
 					url: '/currencies.json',
 					type: 'GET',
@@ -33,7 +33,6 @@ $( document ).ready(() => {
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
-						res = '?'
 					}
 				});
 				return res
