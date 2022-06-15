@@ -194,9 +194,9 @@
 								$row = mysqli_fetch_array($result);
 								print('
 									<div class="element">
-										<h4>
+										<h5>
 											'.$all[$seccode]['short_description'].'
-										</h4>
+										</h5>
 										'.$secext.'
 									</div>
 								');
