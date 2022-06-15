@@ -311,7 +311,7 @@
 			},
 			onUpdate: function(el) {
 				el.innerHTML = smde_desc_l.value().length + " / " + smde_desc_l_lim;
-				limit_characters(smde_desc_l, smde_desc_l_lim)
+				limit_characters(this, smde_desc_l_lim)
 			}
 		}]
 	});
