@@ -14,6 +14,11 @@ $( document ).ready(function() {
 				var inv = 1.0 / step;
 				return Math.ceil(value * inv) / inv;
 			},
+			closestNum(arr) {
+				arr.reduce((prev, curr) => {
+					return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
+				});
+			},
 		}
 		/** @final */
 		cookie = {
@@ -637,21 +642,16 @@ $( document ).ready(function() {
 				netProfit = (grossPrice - netPrice).toFixed(2);
 
 				// Round to nearest 5 0r 9
-				arr = [
+				retailPrice = closestNum([
 					(misc.round(grossPrice, 1.00) - 0.00).toFixed(2),	// 00
 					(misc.round(grossPrice, 0.10) - 0.01).toFixed(2),	// 09, 19, 29, 39, 49, 59, 69, 79, 89, 99
 					(misc.round(grossPrice, 0.10) - 0.05).toFixed(2),	// 05, 15, 25, 35, 45, 55, 65, 75, 85, 95
-					
-				];
-				retailPrice = arr.reduce((prev, curr) => {
-					return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
-				});
+				]);
 
 				$('div[name=net]').find('input').val(netPrice);
 				$('div[name=gross]').find('input').val(grossPrice);
 				$('div[name=profit]').find('input').val(netProfit);
 				$('div[name=retail]').find('input').val(retailPrice);
-				console.log(grossPrice + ' = ' + arr[0] + ' // ' + arr[1] + ' // ' + arr[2]);
 			},
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
