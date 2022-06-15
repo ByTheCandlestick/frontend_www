@@ -29,7 +29,9 @@
 	<!-- Section Type -->
 	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;">
 		<div class="col-lg-3 h-100">
-
+			<?
+				
+			?>
 		</div>
 		<div class="col-lg-9 h-100" style="border: 2px solid var(--main-color);border-radius: 15px;">
 			<style>
@@ -56,7 +58,12 @@
 	</div>
 	<!-- Page Type -->
 	<div class="row" type="page" style="display: <?($page['display_type']==1)?print("none"):print("flex")?>;">
-		<div class="">
+		<h5>Site info</h5>
+		<div class="col-12 col-md-6 col-lg-3" name="name">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Name']=='')?'No name was set':'')?>" value="<? print(($domain['Name']=='')?'':$domain['Name'])?>">
+				<label for="floatingInput">Page name</label>
+			</div>
 		</div>
 	</div>
 </section>
