@@ -740,7 +740,7 @@ $( document ).ready(() => {
 			}
 		});
 		$('div[name=currency]').find('input').change(() => {
-			console.log($('div[name=currency] input').val() + ': ' + misc.currSymbol());
+			console.log($('div[name=currency] input').val() + ': ' + misc.currSymbol($('div[name=currency] input').val()));
 		})
 	// -----========== EOF ==========----- //
 });
