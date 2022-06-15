@@ -26,7 +26,7 @@
 	</div>
 	<hr>
 	<!-- Section Type -->
-	<div class="row" type="sections">
+	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("block"):print("none")?>;">
 		<div class="col-lg-3 h-100">
 
 		</div>
@@ -54,31 +54,8 @@
 		</div>
 	</div>
 	<!-- Page Type -->
-	<div class="row" type="page">
-		<div class="col-lg-3 h-100">
-
-		</div>
-		<div class="col-lg-9 h-100" style="border: 2px solid var(--main-color);border-radius: 15px;">
-			<style>
-				.container {
-					background: var(--app-container);
-					border-radius: 15px;
-					padding: unset;
-				}
-				.element {
-					background: var(--section);
-					border-radius: 15px;
-					margin: 10px;
-					padding: 10px;
-				}
-			</style>
-			<?
-				if($page['display_type']) {
-					printSectionTemplates($page['section_ids']);
-				} else {
-					print("The website is set up to display a page rather than sections - Unable to edit the page.");
-				}
-			?>
+	<div class="row" type="page" style="display: <?($page['display_type']==1)?print("none"):print("block")?>;">
+		<div class="">
 		</div>
 	</div>
 </section>
