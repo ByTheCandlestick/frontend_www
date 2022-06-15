@@ -44,7 +44,7 @@
 		<div class="col-lg-3 h-100">
 			<div class="row container">
 				<?
-					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY ``");
+					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 					$type = "";
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
