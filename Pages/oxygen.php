@@ -28,6 +28,7 @@
 	<br>
 	<!-- Section Type -->
 	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;">
+		<h2 class="text-danger"> WORK IN PROGRESS, PLEASE DO NOT USE </h2>
 		<style>
 			.container {
 				background: var(--app-container);
