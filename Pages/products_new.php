@@ -22,13 +22,13 @@
 			<div class="row">
 				<div class="col-12 col-lg-6" name="title">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="0.00">
+						<input type="text" class="form-control" id="floatingInput">
 						<label for="floatingInput">Title</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-6" name="images">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="0.00">
+						<input type="text" class="form-control" id="floatingInput">
 						<label for="floatingInput">IMAGES</label>
 					</div>
 				</div>
