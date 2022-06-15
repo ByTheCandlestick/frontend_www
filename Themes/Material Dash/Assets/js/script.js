@@ -21,7 +21,7 @@ $( document ).ready(() => {
 				});
 			},
 			currSymbol(str) {
-				Object.entries(misc.currencies).forEach(([key, value]) => {
+				this.currencies.forEach(([key, value]) => {
 					if(value.code == str) {
 						return value.symbol;
 					}
