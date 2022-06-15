@@ -293,7 +293,7 @@
 </section>
 <script>
 	
-	function limit_characters(simplemde) {
+	function limit_characters(simplemde, char_limit) {
 		character_count = simplemde.value().length
 		if (character_count > char_limit) {
 			$('#submitBtn').attr("disabled", true);
@@ -303,27 +303,29 @@
 	};
 	var smde_desc_l = new SimpleMDE({
 		element: $("div[name=description_long] input")[0],
+		char_limit: 512,
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
-				el.innerHTML = "0 / "+512;
+				el.innerHTML = "0 / "+char_limit;
 			},
 			onUpdate: function(el) {
-				el.innerHTML = smde_desc_l.value().length + " / "+512;
-				limit_characters(smde_desc_l)
+				el.innerHTML = smde_desc_l.value().length + " / "+char_limit;
+				limit_characters(smde_desc_l, char_limit)
 			}
 		}]
 	});
 	var smde_desc_s = new SimpleMDE({
 		element: $("div[name=description_short] input")[0],
+		char_limit: 256;
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
-				el.innerHTML = "0 / "+256;
+				el.innerHTML = "0 / "+char_limit;
 			},
 			onUpdate: function(el) {
-				el.innerHTML = smde_desc_s.value().length + " / "+256;
-				limit_characters(smde_desc_s)
+				el.innerHTML = smde_desc_s.value().length + " / "+char_limit;
+				limit_characters(smde_desc_s, char_limit)
 			}
 		}]
 	})
