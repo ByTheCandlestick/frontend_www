@@ -619,24 +619,19 @@ $( document ).ready(function() {
 
 			},
 			calculate: function() {
-				container_size = $("div[name=container]").find("option:selected").attr('size');
-				container_price = $("div[name=container]").find("option:selected").attr('price');
-				wick_price = $("div[name=wick]").find("option:selected").attr('price');
-				wickStand_price = $("div[name=wick_stand]").find("option:selected").attr('price');
-				material_price = $("div[name=material]").find("option:selected").attr('price');
-				fragrance_price = $("div[name=fragrance]").find("option:selected").attr('price');
-				colour_price = $("div[name=colour]").find("option:selected").attr('price');
-				packaging_price = $("div[name=packaging]").find("option:selected").attr('price');
-				shipping_price = $("div[name=shipping]").find("option:selected").attr('price');
-				margin = $("div[name=markup]").find("input").val() / 100;
+				container_size = Number($("div[name=container]").find("option:selected").attr('size'));
+				container_price = Number($("div[name=container]").find("option:selected").attr('price'));
+				wick_price = Number($("div[name=wick]").find("option:selected").attr('price'));
+				wickStand_price = Number($("div[name=wick_stand]").find("option:selected").attr('price'));
+				material_price = Number($("div[name=material]").find("option:selected").attr('price'));
+				fragrance_price = Number($("div[name=fragrance]").find("option:selected").attr('price'));
+				colour_price = Number($("div[name=colour]").find("option:selected").attr('price'));
+				packaging_price = Number($("div[name=packaging]").find("option:selected").attr('price'));
+				shipping_price = Number($("div[name=shipping]").find("option:selected").attr('price'));
+				margin = Number($("div[name=markup]").find("input").val());
 
-				totalMaterialCost = material_price * container_size;
-				totalFragranceCost = fragrance_price * container_size;
-				totalColourCost = colour_price * container_size
-
-				netPrice = container_price + wick_price + wickStand_price + totalMaterialCost + totalFragranceCost + totalColourCost + packaging_price + shipping_price;
-				finalMargin = netPrice * margin;
-				grossPrice = netPrice + finalMargin
+				netPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
+				grossPrice = netPrice + (netPrice * ( margin / 100));
 				netProfit = grossPrice - netPrice;
 
 				console.log(netPrice);
