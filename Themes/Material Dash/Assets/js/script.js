@@ -691,12 +691,12 @@ $( document ).ready(function() {
 				$('div[name=net]').find('input').prop('disabled', false);
 				$('div[name=gross]').find('input').prop('disabled', false);
 				$('div[name=profit]').find('input').prop('disabled', false);
-				$('div[name=markup]').find('input').prop('disabled', false);
+				$('div[name=markup]').find('input').prop('disabled', true);
 			} else {
 				$('div[name=net]').find('input').prop('disabled', true);
 				$('div[name=gross]').find('input').prop('disabled', true);
 				$('div[name=profit]').find('input').prop('disabled', true);
-				$('div[name=markup]').find('input').prop('disabled', true);
+				$('div[name=markup]').find('input').prop('disabled', false);
 			}
 		});
 		$('input[name=discounted]').change(function() {
