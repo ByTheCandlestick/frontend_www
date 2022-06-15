@@ -25,8 +25,12 @@ $( document ).ready(() => {
 					type: 'GET',
 					success(body) {
 						Object.entries(body).forEach(([key, value]) => {
-							console.log(value);
-						});				
+							if(value.code == str) {
+								return console.log(value.symbol);
+							} else {
+								alert.simple("An error has occurred. Please try again later", "danger");
+							}
+						});
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
