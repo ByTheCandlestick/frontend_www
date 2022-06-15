@@ -628,10 +628,16 @@ $( document ).ready(function() {
 				colour_price = $("div[name=colour]").find("option:selected").attr('price');
 				packaging_price = $("div[name=packaging]").find("option:selected").attr('price');
 				shipping_price = $("div[name=shipping]").find("option:selected").attr('price');
-				margin = $("div[name=markup]").find("input").val();
 
-				netPrice = container_price + wick_price// + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
-				grossPrice = netPrice + (netPrice * (margin / 100))
+				margin = $("div[name=markup]").find("input").val() / 100;
+				fianalMargin = netPrice * margin;
+
+				totalMaterialCost = material_price * container_size;
+				totalFragranceCost = fragrance_price * container_size;
+				totalColourCost = colour_price * container_size
+
+				netPrice = container_price + wick_price + wickStand_price + totalMaterialCost + totalFragranceCost + totalColourCost + packaging_price + shipping_price;
+				grossPrice = netPrice + finalMargin
 				netProfit = grossPrice - netPrice;
 
 				console.log(netPrice);
