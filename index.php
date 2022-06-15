@@ -12,7 +12,7 @@
 		}
 	} else {
 		if($website_info['Maintenance']) {
-
+			require_once('./Pages/maintenance.php');
 		} else {
 			if(getThemepage(false)) {
 				getThemepage(true);
