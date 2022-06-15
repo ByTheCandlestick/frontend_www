@@ -25,7 +25,7 @@ $( document ).ready(() => {
 					type: 'GET',
 					success(body) {
 						Object.entries(body).forEach(([key, value]) => {
-							console.log(`${key} ${value}`);
+							console.log(value);
 						});				
 					},
 					error(body) {
