@@ -638,10 +638,10 @@ $( document ).ready(function() {
 
 				// Round to nearest 5 0r 9
 				arr = [
-					misc.round(grossProfit, 1) - 0.01,	// 0.99
-					misc.round(grossProfit, 0.5) - 0.01,// 0.49
-					misc.round(grossProfit, 0.01) - 0.1,// 0.09
-					misc.round(grossProfit, 0.05),		// 0.05
+					misc.round(grossPrice, 1) - 0.01,	// 0.99
+					misc.round(grossPrice, 0.5) - 0.01,// 0.49
+					misc.round(grossPrice, 0.01) - 0.1,// 0.09
+					misc.round(grossPrice, 0.05),		// 0.05
 					
 				];
 				retailPrice = arr.reduce((prev, curr) => {
