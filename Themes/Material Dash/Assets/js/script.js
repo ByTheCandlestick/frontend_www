@@ -753,6 +753,7 @@ $( document ).ready(() => {
 		});
 		$('div[name=currency]').find('input').change(() => {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
+			console.log(symbol);
 			$('span.input-group-text#currSymbol').html(symbol);
 		})
 	// -----========== EOF ==========----- //
