@@ -5,12 +5,12 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>New Page</h1>
+				<h1>New Theme</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 d-flex justify-content-end align-items-center p-0">
-					<a href="javascript:website.page.create();" class="btn btn-outline-primary m-1">
+					<a href="javascript:website.theme.create();" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -20,82 +20,30 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			<div class="col-12 col-lg-6">
-				<div class="row">
-					<h5>Site info</h5>
-					<div class="col-12 col-md-6" name="name">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-							<label for="floatingInput">Name</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-6" name="title">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-							<label for="floatingInput">Title</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-6" name="page_url">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-							<label for="floatingInput">Page URL</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-6" name="subpage_url">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-							<label for="floatingInput">Subpage URL</label>
-						</div>
-					</div>
-					<div class="col-12" name="page_type">
-						<div class="form-floating mb-3">
-							<select class="form-select" id="floatingSelect">
-								<option value="-1" selected>Please select</option>
-								<?
-									$query = DB_Query("SELECT * FROM `misc_websites`");
-									while ($row = mysqli_fetch_array($query)) {
-										print_r('<option value="'.$row['ID'].'">'.$row['Domain'].' - '.$row['Name'].'</option>');
-									}
-								?>
-							</select>
-							<label for="floatingInput">Domain</label>
-						</div>
-					</div>
+			<h5>Site info</h5>
+			<div class="col-12 col-md-6 col-lg-3" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Name</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6">
-				<div class="row">
-					<div class="col-12 col-md-6" name="styles">
-						<h5>Styles</h5>
-						<?
-							$query = DB_Query("SELECT * FROM `page_styles` ORDER BY `importance` ASC");
-							while($row = mysqli_fetch_array($query)) {
-								print('
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
-										<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
-											' . $row['Name'] . '
-										</label>
-									</div>
-								');
-							}
-						?>
-					</div>
-					<div class="col-12 col-md-6" name="scripts">
-						<h5>Scripts</h5>
-						<?
-							$query = DB_Query("SELECT * FROM `page_scripts` ORDER BY `importance` ASC");
-							while($row = mysqli_fetch_array($query)) {
-								print('
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="'.$row['ID'].'" id="ScriptCheckboxes-'.$row['ID'].'">
-										<label class="form-check-label" for="ScriptCheckboxes-'.$row['ID'].'">
-											' . $row['Name'] . '
-										</label>
-									</div>
-								');
-							}
-						?>
+			<div class="col-12 col-md-6 col-lg-3" name="Description">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Description</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="Location">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Location</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="status">
+				<div class="form-floating mb-3">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck">
+						<label class="form-check-label" for="flexCheck"> Active </label>
 					</div>
 				</div>
 			</div>
