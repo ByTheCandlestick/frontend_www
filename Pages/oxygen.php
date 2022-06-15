@@ -13,8 +13,8 @@
 				<div class="col-12 d-flex justify-content-end align-items-center p-0">
 					<div class="form-floating mb-3">
 						<div class="form-check form-switch">
-							<input type="checkbox" class="btn-check" id="display_type" autocomplete="off" <?($page['display_type']==1)?print("checked"):print("")?>>
-							<label class="btn btn-primary" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
+							<input type="checkbox" class="btn-check" id="display_type" name="display_type" autocomplete="off" <?($page['display_type']==1)?print("checked"):print("")?>>
+							<label class="btn btn-outline-primary m-1" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 						</div>
 					</div>
 					<a href="javascript:website.saveLayout(<?print(QS)?>);" class="btn btn-outline-primary m-1">
