@@ -302,7 +302,7 @@
 					el.innerHTML = "0 / " + this.char_lim;
 				},
 				onUpdate: function(el) {
-					el.innerHTML = this.smde.value().length + " / " + this.char_lim;
+					el.innerHTML = this.value().length + " / " + this.char_lim;
 					
 				}
 			}]
@@ -318,7 +318,7 @@
 					el.innerHTML = "0 / " + this.char_lim;
 				},
 				onUpdate: function(el) {
-					el.innerHTML = this.smde.value().length + " / " + this.char_lim;
+					el.innerHTML = this.value().length + " / " + this.char_lim;
 				}
 			}]
 		})
