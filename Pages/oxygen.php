@@ -48,12 +48,11 @@
 					$type = null;
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
-							if($type == null) {
+							if($type == null):
 								print('<div class="accordion-item">');
-							}
-							if($type != null && $type != $row['section_type']) {
+							elseif($type != null && $type != $row['section_type']):
 								print('</div><div class="accordion-item">');
-							}
+							endif;
 							if($type != $row['section_type']) {
 								print('
 									<h2 class="accordion-header" id="headingOne">
@@ -68,12 +67,12 @@
 									<div class="accordion-body">
 										'.$row['short_description'].'
 									</div>
-								</div>');
+								</div>
+							</div>');
 							$type = $row['section_type'];
 						}
 					}
 				?>
-				</div>
 			</div>
 		</div>
 		<div class="col-lg-9 h-100" style="border: 2px solid var(--main-color);border-radius: 15px;">
