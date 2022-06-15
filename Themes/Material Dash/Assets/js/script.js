@@ -26,9 +26,7 @@ $( document ).ready(() => {
 					success(body) {
 						Object.entries(body).forEach(([key, value]) => {
 							if(value.code == str) {
-								return console.log(value.symbol);
-							} else {
-								alert.simple("An error has occurred. Please try again later", "danger");
+								return value.symbol;
 							}
 						});
 					},
@@ -754,7 +752,7 @@ $( document ).ready(() => {
 			}
 		});
 		$('div[name=currency]').find('input').change(() => {
-			console.log($('div[name=currency] input').val() + ': ' + misc.currSymbol($('div[name=currency] input').val()));
+			$('span#currSymbol').html(misc.currSymbol($('div[name=currency] input').val()))
 		})
 	// -----========== EOF ==========----- //
 });
