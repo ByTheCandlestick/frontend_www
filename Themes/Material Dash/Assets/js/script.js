@@ -26,13 +26,13 @@ $( document ).ready(() => {
 					success(body) {
 						Object.entries(body).forEach(([key, value]) => {
 							if(value.code == str) {
-								console.log(value.symbol);
 								return value.symbol;
 							}
 						});
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
+						return false
 					}
 				});
 			},
