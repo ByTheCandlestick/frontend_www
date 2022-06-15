@@ -307,11 +307,11 @@
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
-				el.innerHTML = "0 / "+char_limit;
+				el.innerHTML = "0 / " + smde_desc_l.char_limit;
 			},
 			onUpdate: function(el) {
-				el.innerHTML = smde_desc_l.value().length + " / "+char_limit;
-				limit_characters(smde_desc_l, char_limit)
+				el.innerHTML = smde_desc_l.value().length + " / " + smde_desc_l.char_limit;
+				limit_characters(smde_desc_l, smde_desc_l.char_limit)
 			}
 		}]
 	});
@@ -321,11 +321,11 @@
 		status: [ {
 			className: "chars",
 			defaultValue: function(el) {
-				el.innerHTML = "0 / "+char_limit;
+				el.innerHTML = "0 / " + smde_desc_s.char_limit;
 			},
 			onUpdate: function(el) {
-				el.innerHTML = smde_desc_s.value().length + " / "+char_limit;
-				limit_characters(smde_desc_s, char_limit)
+				el.innerHTML = smde_desc_s.value().length + " / " + smde_desc_s.char_limit;
+				limit_characters(smde_desc_s, smde_desc_s.char_limit)
 			}
 		}]
 	})
