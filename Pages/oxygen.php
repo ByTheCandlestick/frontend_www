@@ -89,7 +89,7 @@
 		<h5>Site info</h5>
 		<div class="col-12 col-md-6 col-lg-3" name="name">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Name']=='')?'No name was set':'')?>" value="<? print(($domain['Name']=='')?'':$domain['Name'])?>">
+				<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['page_file']=='')?'No page was set':'')?>" value="<? print(($page['page_file']=='')?'':$page['page_file'])?>">
 				<label for="floatingInput">Page name</label>
 			</div>
 		</div>
