@@ -550,5 +550,14 @@ $( document ).ready(function() {
 		});
 		$('.app-preloader').fadeOut();
 	// -----========== TOOL TIPS ==========----- //
-		$('[data-toggle="tooltip"]').tooltip()
+		$('[data-toggle="tooltip"]').tooltip();
+	// -----========== OXYGEN BUILDER ==========----- //
+		$('input[name=display_type]').change(function() {
+			if($('input[name=display_type]:checked').length === 0) {
+				$('label[for=display_type]').html('Sections');
+			} else {
+				$('label[for=display_type]').html('Pages');
+			}
+		});
+	// -----========== EOF ==========----- //
 });
