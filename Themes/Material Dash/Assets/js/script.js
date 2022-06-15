@@ -686,7 +686,7 @@ $( document ).ready(function() {
 				$('div[name=discount_amount]').find('input').prop('disabled', true);
 			} else {
 				$('div[name=discount_type]').find('input').prop('disabled', false);
-				$('div[name=discount_amount]').find('input').prop('disabled', false);
+				$('div[name=discount_amount]').find('select').prop('disabled', false);
 			}
 		});
 	// -----========== EOF ==========----- //
