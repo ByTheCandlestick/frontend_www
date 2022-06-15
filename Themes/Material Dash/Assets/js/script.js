@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$( document ).ready(() => {
 	// -----========== VARIABLES ==========----- //
 		const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
@@ -18,6 +18,10 @@ $( document ).ready(function() {
 				arr.reduce((prev, curr) => {
 					return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
 				});
+			},
+			CurrSymbol(str) {
+				curr = Currency.getInstance(str);
+				return symbol = cur1.getSymbol();
 			},
 		}
 		/** @final */
@@ -57,9 +61,9 @@ $( document ).ready(function() {
 					<div class="alert alert-'+colour+'" role="alert">\
 						'+text+'\
 					</div>\
-				').hide().appendTo(".alerts").fadeIn(fadeIn, function() {
-					setTimeout(function(){
-						$($(".alerts").children()[0]).fadeOut(fadeOut, function() {
+				').hide().appendTo(".alerts").fadeIn(fadeIn, () => {
+					setTimeout(() => {
+						$($(".alerts").children()[0]).fadeOut(fadeOut, () => {
 							$($(".alerts").children()[0]).remove();
 						});
 					}, stay);
@@ -73,9 +77,9 @@ $( document ).ready(function() {
 						<hr>\
 						<p class="mb-0">'+additional+'</p>\
 					</div>\
-				').hide().appendTo(".alerts").fadeIn(fadeIn, function() {
-					setTimeout(function(){
-						$($(".alerts").children()[0]).fadeOut(fadeOut, function() {
+				').hide().appendTo(".alerts").fadeIn(fadeIn, () => {
+					setTimeout(() => {
+						$($(".alerts").children()[0]).fadeOut(fadeOut, () => {
 							$($(".alerts").children()[0]).remove();
 						});
 					}, stay);
@@ -215,8 +219,8 @@ $( document ).ready(function() {
 				create() {
 					var styles = [];
 					var scripts = [];
-					$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
-					$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
+					$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
+					$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
 					data = {
 						'api_key': api_key,
 						'style': styles.join(","),
@@ -245,8 +249,8 @@ $( document ).ready(function() {
 				update(pid) {
 					var styles = [];
 					var scripts = [];
-					$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
-					$("div[name=scripts]").children().find("input[type=checkbox]:checked").each(function(index, element) { scripts.push($(element).val()); });
+					$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
+					$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
 					data = {
 						'api_key': api_key,
 						'style': styles.join(","),
@@ -447,10 +451,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function (body) {
+						success(body) {
 							alert.simple("Successfully deleted the script", "success");
 						},
-						error: function (body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -473,10 +477,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function (body) {
+						success(body) {
 							alert.simple("Successfully created the theme", "success");
 						},
-						error: function (body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -496,10 +500,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function (body) {
+						success(body) {
 							alert.simple("Successfully updated the theme", "success");
 						},
-						error: function (body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -515,10 +519,10 @@ $( document ).ready(function() {
 						xhrFields: {
 							withCredentials: true,
 						},
-						success: function (body) {
+						success(body) {
 							alert.simple("Successfully deleted the theme", "success");
 						},
-						error: function (body) {
+						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
@@ -528,6 +532,7 @@ $( document ).ready(function() {
 		/** @wip */
 		user = {
 			create() {
+
 			},
 			update(uid) {
 				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1);
@@ -553,20 +558,22 @@ $( document ).ready(function() {
 					xhrFields: {
 						withCredentials: true,
 					},
-					success: function (body) {
+					success(body) {
 						alert.simple("Successfully updated the user", "success");
 					},
-					error: function (body) {
+					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
 				});
 			},
 			delete(uid) {
+
 			},
 		}
 		/** @wip */
 		product = {
 			create() {
+
 			},
 			update(pid) {
 				discontinued = (($("div[name=status]").find("input[name=discontinued]:checked").length === 0) ? 0 : 1);
@@ -614,15 +621,16 @@ $( document ).ready(function() {
 					xhrFields: {
 						withCredentials: true,
 					},
-					success: function (body) {
+					success(body) {
 						alert.simple("Successfully updated the product", "success");
 					},
-					error: function (body) {
+					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
 				});
 			},
 			delete(pid) {
+
 			},
 			calculate() {
 				container_size	= Number($("div[name=container]").find("option:selected").attr('size'));
@@ -656,41 +664,41 @@ $( document ).ready(function() {
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
-		mode.modeSwitch.click(function () { mode.toggle() });
+		mode.modeSwitch.click(() => { mode.toggle() });
 	// -----========== Search ==========----- // @final //
-		$(".search-area input").focusout( function(){
+		$(".search-area input").focusout(() => {
 			if(search.suggestions.filter(":hover").length === 0) {
 				search.suggestions.hide();
 			}
 		});
-		$(".search-area input").focusin( function(){
+		$(".search-area input").focusin(() => {
 			search.suggestions.show();
 		});
-		$.get($('.search-wrapper').attr('rel'), function(data){
+		$.get($('.search-wrapper').attr('rel'), (data) =>{
 			search.jsonData = data
 		})
 	// -----========== MENU BTN ==========----- // @final //
-		$('.app-icon').click(function() {
+		$('.app-icon').click(() => {
 			$('.app-sidebar').toggleClass('sidebar-show');
 		})
 	// -----========== BACK BTN ==========----- // @final //
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
 			$('.app-back-btn').addClass('disabled')
 		}
-		$(".app-back-btn").click(function(){
+		$(".app-back-btn").click(() => {
 			if(!$(this).hasClass('disabled')) {
 				history.back();
 			}
 		});
 	// -----========== PRELOADER ==========----- // @final //
-		$(window).bind('beforeunload', function() {
+		$(window).bind('beforeunload', () => {
 			$('.app-preloader').fadeIn();
 		});
 		$('.app-preloader').fadeOut();
 	// -----========== TOOL TIPS ==========----- // @final //
 		$('[data-toggle="tooltip"]').tooltip();
 	// -----========== OXYGEN BUILDER ==========----- // @wip //
-		$('input[name=display_type]').change(function() {
+		$('input[name=display_type]').change(() => {
 			if($('input[name=display_type]:checked').length === 0) {
 				$('label[for=display_type]').html('Pages');
 				$('div[type=sections]').hide();
@@ -702,7 +710,7 @@ $( document ).ready(function() {
 			}
 		});
 	// -----========== Auto-calculate product ==========----- // @wip //
-		$('input[name=auto_calculate]').change(function() {
+		$('input[name=auto_calculate]').change(() => {
 			if($('input[name=auto_calculate]:checked').length === 0) {
 				$('div[name=net]').find('input').prop('disabled', false);
 				$('div[name=gross]').find('input').prop('disabled', false);
@@ -715,7 +723,7 @@ $( document ).ready(function() {
 				$('div[name=markup]').find('input').prop('disabled', false);
 			}
 		});
-		$('input[name=discounted]').change(function() {
+		$('input[name=discounted]').change(() => {
 			if($('input[name=discounted]:checked').length === 0) {
 				$('div[name=discount_type]').find('select').prop('disabled', true);
 				$('div[name=discount_amount]').find('input').prop('disabled', true);
@@ -726,10 +734,13 @@ $( document ).ready(function() {
 				$('div[name=discount_amount]').find('input').prop('disabled', false);
 			}
 		});
-		$('div.ProductInfo').find('input, select').change( function() {
+		$('div.ProductInfo').find('input, select').change(() => {
 			if($('input[name=auto_calculate]:checked').length != 0) {
 				product.calculate();
 			}
 		});
+		$('.div[name=currency]').find('input').change(() => {
+			console.log(misc.currSymbol($(this).val()));
+		})
 	// -----========== EOF ==========----- //
 });
