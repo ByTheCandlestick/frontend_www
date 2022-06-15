@@ -656,10 +656,10 @@ $( document ).ready(() => {
 					(misc.round(grossPrice, 0.10) - 0.05).toFixed(2),	// 05, 15, 25, 35, 45, 55, 65, 75, 85, 95
 				]);
 
-				$('div[name=net]').find('input').val(netPrice);
-				$('div[name=gross]').find('input').val(grossPrice);
-				$('div[name=profit]').find('input').val(netProfit);
-				$('div[name=retail]').find('input').val(retailPrice);
+				$('div[name=net]').find('input').val((netPrice==NaN?0:netPrice));
+				$('div[name=gross]').find('input').val((grossPrice==NaN?0:grossPrice));
+				$('div[name=profit]').find('input').val((netProfit==NaN?0:netProfit));
+				$('div[name=retail]').find('input').val((retailPrice==NaN?0:retailPrice));
 			},
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
