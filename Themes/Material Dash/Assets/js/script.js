@@ -14,12 +14,6 @@ $( document ).ready(function() {
 				var inv = 1.0 / step;
 				return Math.round(value * inv) / inv;
 			},
-			roundToNearest(nearest, num) {
-
-			},
-			roundUpToNearest(nearest, num) {
-
-			},
 		}
 		/** @final */
 		cookie = {
