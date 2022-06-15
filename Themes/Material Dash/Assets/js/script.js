@@ -631,7 +631,7 @@ $( document ).ready(function() {
 				margin = Number($("div[name=markup]").find("input").val());
 
 				netPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
-				grossPrice = netPrice + (netPrice * ( margin / 100));
+				grossPrice = netPrice * ( margin / 100);
 				netProfit = grossPrice - netPrice;
 
 				$('div[name=net]').find('input').val(netPrice);
