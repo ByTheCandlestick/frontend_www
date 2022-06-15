@@ -32,7 +32,6 @@
 		function getThemepage($require) {
 			global $userdata, $info, $user_ok, $product, $partner;
 			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
-			print($page_type);
 			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
 			if($theme_location != "") {
 				if($require){
