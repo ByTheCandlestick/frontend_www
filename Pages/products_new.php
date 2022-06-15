@@ -302,7 +302,7 @@
 					el.innerHTML = "0 / " + this.char_lim;
 				},
 				onUpdate: function(el) {
-					el.innerHTML = smde_desc_l.value().length + " / " + this.char_lim;
+					el.innerHTML = this.smde.value().length + " / " + this.char_lim;
 					
 				}
 			}]
@@ -318,8 +318,7 @@
 					el.innerHTML = "0 / " + desc_s.char_lim;
 				},
 				onUpdate: function(el) {
-					el.innerHTML = smde_desc_s.value().length + " / " + this.char_lim;
-					limit_characters(smde_desc_s.value().length, this.char_lim)
+					el.innerHTML = this.smde.value().length + " / " + this.char_lim;
 				}
 			}]
 		})
