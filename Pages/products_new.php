@@ -283,11 +283,11 @@
 			<div class="row">
 				<div class="col-12" name="description_short">
 					<h5>Short description</h5>
-					<input type="text" class="form-control" id="floatingInput" value="0.00">
+					<input type="text" class="form-control" id="floatingInput" placeholder="">
 				</div>
 				<div class="col-12" name="description_long">
 					<h5>Long description</h5>
-					<input type="text" class="form-control" id="floatingInput" value="0.00">
+					<input type="text" class="form-control" id="floatingInput" placeholder="">
 				</div>
 			</div>
 		</div>
