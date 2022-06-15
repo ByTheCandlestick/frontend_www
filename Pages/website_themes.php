@@ -46,7 +46,7 @@
 								<td>'.$row['Location'].'</td>
 								<td>'.$row['Active'].'</td>
 								<td>
-									<a href="/Websites/Page/'.$row['ID'].'">
+									<a href="/Websites/Theme/'.$row['ID'].'">
 										<i class="fa fa-pencil"></i>
 									</a>
 								</td>
