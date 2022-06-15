@@ -19,7 +19,7 @@ $( document ).ready(() => {
 					return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
 				});
 			},
-			CurrSymbol(str) {
+			currSymbol(str) {
 				curr = Currency.getInstance(str);
 				return symbol = cur1.getSymbol();
 			},
@@ -650,7 +650,7 @@ $( document ).ready(() => {
 				netProfit = (grossPrice - netPrice).toFixed(2);
 
 				// Round to nearest 5 0r 9
-				retailPrice = closestNum([
+				retailPrice = misc.closestNum([
 					(misc.round(grossPrice, 1.00) - 0.00).toFixed(2),	// 00
 					(misc.round(grossPrice, 0.10) - 0.01).toFixed(2),	// 09, 19, 29, 39, 49, 59, 69, 79, 89, 99
 					(misc.round(grossPrice, 0.10) - 0.05).toFixed(2),	// 05, 15, 25, 35, 45, 55, 65, 75, 85, 95
