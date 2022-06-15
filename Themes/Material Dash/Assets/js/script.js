@@ -18,6 +18,7 @@ $( document ).ready(function() {
 				return qString ? qString[1] : null;
 			}
 		}
+		/** @final */
 		cookie = {
 			create: function(name, value, expDays, path = '/') {
 				let date = new Date();
@@ -47,6 +48,7 @@ $( document ).ready(function() {
 				return true;
 			},
 		}
+		/** @final */
 		alert = {
 			simple: function(text, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
 				$('\
@@ -78,6 +80,7 @@ $( document ).ready(function() {
 				});
 			}
 		}
+		/** @final */
 		search = {
 			suggestions: $(".search-suggestions"),
 			jsonData: null,
@@ -103,6 +106,7 @@ $( document ).ready(function() {
 				}
 			},
 		}
+		/** @final */
 		mode = {
 			modeSwitch: $('.mode-switch'),
 			root: $('html'),
@@ -136,7 +140,7 @@ $( document ).ready(function() {
 			},
 		}
 		website = {
-			/** @completed */
+			/** @final */
 			domain: {
 				create: function() {
 					data = {
@@ -154,7 +158,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully created the domain", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -177,7 +181,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully updated the domain", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -196,7 +200,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully deleted the domain", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -204,7 +208,7 @@ $( document ).ready(function() {
 					});
 				},
 			},
-			/** @completed */
+			/** @final */
 			page: {
 				create: function() {
 					var styles = [];
@@ -229,7 +233,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully created the page", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -259,7 +263,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully updated the page", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -278,7 +282,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully deleted the page", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -303,7 +307,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully updated the layout", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -311,7 +315,7 @@ $( document ).ready(function() {
 					});
 				}
 			},
-			/** @completed */
+			/** @final */
 			style: {
 				create: function() {
 					data = {
@@ -330,7 +334,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully created the style", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -354,7 +358,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully updated the style", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -373,7 +377,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully deleted the style", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -381,7 +385,7 @@ $( document ).ready(function() {
 					});
 				}
 			},
-			/** @completed */
+			/** @final */
 			script: {
 				create: function() {
 					data = {
@@ -399,7 +403,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully created the script", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -422,7 +426,7 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully updated the script", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -442,16 +446,88 @@ $( document ).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							alert.simple("Successfully saved the website", "success");
+							alert.simple("Successfully deleted the script", "success");
 						},
 						error: function(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
 				}
-			}
+			},
+			/** @final */
+			theme: {
+				create: function() {
+					data = {
+						'api_key': api_key,
+						'name': $("div[name=name]").find("input").val(),
+						'description': $("div[name=description]").find("input").val(),
+						'location': $("div[name=location]").find("input").val(),
+						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
+					}
+					$.ajax({
+						url: api_url + '/Website/Theme/',
+						data: data,
+						type: 'PUT',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully created the theme", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				},
+				update: function(id) {
+					data = {
+						'api_key': api_key,
+						'name': $("div[name=name]").find("input").val(),
+						'description': $("div[name=description]").find("input").val(),
+						'location': $("div[name=location]").find("input").val(),
+						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
+					}
+					$.ajax({
+						url: api_url + '/Website/Theme/' + id + '/',
+						data: data,
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully updated the theme", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				},
+				delete: function(id) {
+					data = {
+						'api_key': api_key,
+					}
+					$.ajax({
+						url: api_url + '/Website/Theme/' + id + '/',
+						data: data,
+						type: 'DELETE',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully deleted the theme", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				}
+			},
 		};
+		/** @wip */
 		user = {
+			create: function() {
+
+			},
 			update: function(uid) {
 				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0)?0:1);
 				d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0)?0:1);
@@ -477,15 +553,22 @@ $( document ).ready(function() {
 						withCredentials: true,
 					},
 					success: function(body) {
-						alert.simple("Successfully saved the user", "success");
+						alert.simple("Successfully updated the user", "success");
 					},
 					error: function(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
 				});
 			},
+			delete: function() {
+
+			},
 		}
+		/** @wip */
 		product = {
+			create: function() {
+
+			},
 			update: function(pid) {
 				discontinued = (($("div[name=status]").find("input[name=discontinued]:checked").length === 0)?0:1);
 				available = (($("div[name=status]").find("input[name=available]:checked").length === 0)?0:1);
@@ -533,12 +616,15 @@ $( document ).ready(function() {
 						withCredentials: true,
 					},
 					success: function(body) {
-						alert.simple("Successfully saved the product", "success");
+						alert.simple("Successfully updated the product", "success");
 					},
 					error: function(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
 				});
+			},
+			delete: function() {
+
 			},
 		}
 	// -----========== Dark mode toggle ==========----- //
