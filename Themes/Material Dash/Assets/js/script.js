@@ -204,7 +204,7 @@ $( document ).ready(function() {
 					});
 				},
 			},
-			/** @wip */
+			/** @completed */
 			page: {
 				create: function() {
 					var styles = [];
@@ -236,7 +236,7 @@ $( document ).ready(function() {
 						}
 					});
 				},
-				update: function(sid) {
+				update: function(pid) {
 					var styles = [];
 					var scripts = [];
 					$("div[name=styles]").children().find("input[type=checkbox]:checked").each(function(index, elem) { styles.push($(elem).val()); });
@@ -252,7 +252,7 @@ $( document ).ready(function() {
 						'domain_id': $("div[name=domain]").find("option:selected").val(),
 					}
 					$.ajax({
-						url: api_url + '/Page/' + sid + '/',
+						url: api_url + '/Page/' + pid + '/',
 						data: data,
 						type: 'POST',
 						xhrFields: {
@@ -266,12 +266,12 @@ $( document ).ready(function() {
 						}
 					});
 				},
-				delete: function(sid) {
+				delete: function(pid) {
 					data = {
 						'api_key': api_key,
 					}
 					$.ajax({
-						url: api_url + '/Page/' + sid + '/',
+						url: api_url + '/Page/' + pid + '/',
 						data: data,
 						type: 'DELETE',
 						xhrFields: {
@@ -285,6 +285,31 @@ $( document ).ready(function() {
 						}
 					});
 				},
+			},
+			/** @wip */
+			layout: {
+				update: function(pid) {
+					data = {
+						'api_key': api_key,
+						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
+						'sections': $("div[type=sections]").attr('data-original-sections'),
+						'page': $("div[name=name]").find("input").val(),
+					}
+					$.ajax({
+						url: api_url + '/Page/Layout/' + pid + '/',
+						data: data,
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							alert.simple("Successfully saved the website", "success");
+						},
+						error: function(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				}
 			},
 			/** @completed */
 			style: {
