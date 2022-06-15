@@ -178,7 +178,7 @@
 			print('</div></main>');
 		}
 	/** printSectionTemplates */
-		function printSectionTemplates(string $string) {
+		function printSectionTemplates(array $sections, string $string) {
 			$columns = explode("#", $string);
 			$seccode = $secext = NULL;
 			print('<div class="row">');
@@ -194,10 +194,10 @@
 								$row = mysqli_fetch_array($result);
 								print('
 									<div class="element">
-										<h4>$width - '.$width.'</h4>
-										$seccode - '.$seccode.'
-										<br>
-										$secext  - '.$secext.'
+										<h4>
+											'.$sections[$seccode]['short_description'].'
+										</h4>
+										'.$secext.'
 									</div>
 								');
 								unset($secext);
