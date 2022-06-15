@@ -178,7 +178,7 @@
 			print('</div></main>');
 		}
 	/** printSectionTemplates */
-		function printSectionTemplates(array $secs, string $string) {
+		function printSectionTemplates(array $all, string $string) {
 			$columns = explode("#", $string);
 			$seccode = $secext = NULL;
 			print('<div class="row">');
@@ -195,7 +195,7 @@
 								print('
 									<div class="element">
 										<h4>
-											'.$secs[$seccode]['short_description'].'
+											'.$all[$seccode]['short_description'].'
 										</h4>
 										'.$secext.'
 									</div>
