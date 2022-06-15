@@ -627,9 +627,9 @@ $( document ).ready(function() {
 				margin			= Number($("div[name=markup]").find("input").val());
 
 				// Calculate the final prices
-				netPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
-				grossPrice = netPrice * (margin / 100);
-				netProfit = grossPrice - netPrice;
+				netPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
+				grossPrice = (netPrice * (margin / 100)).toFixed(2);
+				netProfit = (grossPrice - netPrice).toFixed(2);
 
 				// Round to nearest 5 0r 9
 				arr = [
