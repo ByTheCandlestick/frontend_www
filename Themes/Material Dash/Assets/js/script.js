@@ -555,8 +555,12 @@ $( document ).ready(function() {
 		$('input[name=display_type]').change(function() {
 			if($('input[name=display_type]:checked').length === 0) {
 				$('label[for=display_type]').html('Pages');
+				$('div[type=sections]').hide();
+				$('div[type=page]').show();
 			} else {
 				$('label[for=display_type]').html('Sections');
+				$('div[type=sections]').show();
+				$('div[type=page]').hide();
 			}
 		});
 	// -----========== EOF ==========----- //
