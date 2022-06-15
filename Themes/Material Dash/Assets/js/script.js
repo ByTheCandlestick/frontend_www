@@ -637,8 +637,8 @@ $( document ).ready(function() {
 
 				// Round to nearest 5 0r 9
 				arr = [
-					Math.ceil(grossPrice / 0.05) * 0.1,
-					Math.ceil(grossPrice / 0.09) * 0.1,
+					Math.ceil(grossPrice / 0.5) * 0.1,
+					Math.ceil(grossPrice / 0.9) * 0.1,
 				]
 				retailPrice = arr.reduce((prev, curr) => {
 				  return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
