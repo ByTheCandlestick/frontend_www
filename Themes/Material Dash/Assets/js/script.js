@@ -25,11 +25,11 @@ $( document ).ready(() => {
 					url: '/currencies.json',
 					type: 'GET',
 					success(body) {
-						res = Object.entries(body).forEach(([key, value]) => {
+						console.log(res = Object.entries(body).forEach(([key, value]) => {
 							if(value.code == str) {
 								return value.symbol;
 							}
-						});
+						}));
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
