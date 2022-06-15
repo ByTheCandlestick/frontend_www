@@ -21,15 +21,15 @@ $( document ).ready(() => {
 			},
 			currSymbol(str) {
 				res = '?';
-				$.ajax({
+				res = $.ajax({
 					url: '/currencies.json',
 					type: 'GET',
 					success(body) {
-						console.log(res = Object.entries(body).forEach(([key, value]) => {
+						Object.entries(body).forEach(([key, value]) => {
 							if(value.code == str) {
 								return value.symbol;
 							}
-						}));
+						});
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
