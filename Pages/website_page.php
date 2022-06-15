@@ -47,7 +47,7 @@
 							<label for="floatingInput">Subpage URL</label>
 						</div>
 					</div>
-					<div class="col-12" name="page_type">
+					<div class="col-12" name="domain">
 						<div class="form-floating mb-3">
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
@@ -136,13 +136,13 @@
 			<div class="col-12 col-lg-6">
 				<div class="row">
 					<h5>Site info</h5>
-					<div class="col-12" name="name">
+					<div class="col-12 col-md-6" name="name">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['page_name']=='')?'No name was set':'')?>" value="<? print(($page['page_name']=='')?'':$page['page_name'])?>">
 							<label for="floatingInput">Name</label>
 						</div>
 					</div>
-					<div class="col-12" name="title">
+					<div class="col-12 col-md-6" name="title">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['page_title']=='')?'No title was set':'')?>" value="<? print(($page['page_title']=='')?'':$page['page_title'])?>">
 							<label for="floatingInput">Title</label>
@@ -160,20 +160,20 @@
 							<label for="floatingInput">Subpage URL</label>
 						</div>
 					</div>
-				</div>
-				<div class="col-12" name="domain">
-					<div class="form-floating mb-3">
-						<select class="form-select" id="floatingSelect">
-							<option value="-1" selected>Please select</option>
-							<?
-								$query = DB_Query("SELECT * FROM `misc_websites`");
-								while ($row = mysqli_fetch_array($query)) {
-									$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="";
-									print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
-								}
-							?>
-						</select>
-						<label for="floatingInput">Domain</label>
+					<div class="col-12" name="domain">
+						<div class="form-floating mb-3">
+							<select class="form-select" id="floatingSelect">
+								<option value="-1" selected>Please select</option>
+								<?
+									$query = DB_Query("SELECT * FROM `misc_websites`");
+									while ($row = mysqli_fetch_array($query)) {
+										$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="";
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
+									}
+								?>
+							</select>
+							<label for="floatingInput">Domain</label>
+						</div>
 					</div>
 				</div>
 			</div>
