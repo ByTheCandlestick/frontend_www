@@ -752,7 +752,8 @@ $( document ).ready(() => {
 			}
 		});
 		$('div[name=currency]').find('input').change(() => {
-			$('span.input-group-text#currSymbol').text(misc.currSymbol($('div[name=currency] input').val()))
+			symbol = misc.currSymbol($('div[name=currency] input').val());
+			$('span.input-group-text#currSymbol').html(symbol);
 		})
 	// -----========== EOF ==========----- //
 });
