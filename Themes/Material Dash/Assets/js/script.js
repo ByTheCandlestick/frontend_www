@@ -554,9 +554,9 @@ $( document ).ready(function() {
 	// -----========== OXYGEN BUILDER ==========----- //
 		$('input[name=display_type]').change(function() {
 			if($('input[name=display_type]:checked').length === 0) {
-				$('label[for=display_type]').html('Sections');
-			} else {
 				$('label[for=display_type]').html('Pages');
+			} else {
+				$('label[for=display_type]').html('Sections');
 			}
 		});
 	// -----========== EOF ==========----- //
