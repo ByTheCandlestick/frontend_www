@@ -21,12 +21,12 @@ $( document ).ready(() => {
 				});
 			},
 			currSymbol(str) {
-				this.currencies.forEach(([key, value]) => {
+				Object.entries(misc.currencies).forEach(([key, value]) => {
 					if(value.code == str) {
+						console.log('FOUND');
 						return value.symbol;
 					}
 				});
-				return '?';
 			},
 		}
 		/** @final */
