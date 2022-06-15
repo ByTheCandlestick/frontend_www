@@ -669,15 +669,15 @@ $( document ).ready(function() {
 	// -----========== Auto-calculate product ==========----- //
 		$('input[name=auto_calculate]').change(function() {
 			if($('input[name=auto_calculate]:checked').length === 0) {
-				$('div[name=net]').find('input').prop('disabled', false);
-				$('div[name=gross]').find('input').prop('disabled', false);
-				$('div[name=profit]').find('input').prop('disabled', false);
-				$('div[name=markup]').find('input').prop('disabled', false);
-			} else {
 				$('div[name=net]').find('input').prop('disabled', true);
 				$('div[name=gross]').find('input').prop('disabled', true);
 				$('div[name=profit]').find('input').prop('disabled', true);
 				$('div[name=markup]').find('input').prop('disabled', true);
+			} else {
+				$('div[name=net]').find('input').prop('disabled', false);
+				$('div[name=gross]').find('input').prop('disabled', false);
+				$('div[name=profit]').find('input').prop('disabled', false);
+				$('div[name=markup]').find('input').prop('disabled', false);
 			}
 		});
 		$('input[name=discounted]').change(function() {
