@@ -630,13 +630,10 @@ $( document ).ready(function() {
 				shipping_price = Number($("div[name=shipping]").find("option:selected").attr('price'));
 				margin = Number($("div[name=markup]").find("input").val());
 
+				// Calculate the final prices
 				netPrice = container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price;
 				grossPrice = netPrice * ( margin / 100);
 				netProfit = grossPrice - netPrice;
-
-				$('div[name=net]').find('input').val(netPrice);
-				$('div[name=gross]').find('input').val(grossPrice);
-				$('div[name=profit]').find('input').val(netProfit);
 
 				// Round to nearest 5 0r 9
 				arr = [
@@ -646,9 +643,11 @@ $( document ).ready(function() {
 				retailPrice = arr.reduce((prev, curr) => {
 				  return (Math.abs(curr - grossPrice) < Math.abs(prev - grossPrice) ? curr : prev);
 				});
-				console.log(retailPrice)
-				
-				console.log('---');
+
+				$('div[name=net]').find('input').val(netPrice);
+				$('div[name=gross]').find('input').val(grossPrice);
+				$('div[name=profit]').find('input').val(netProfit);
+				$('div[name=retail]').find('input').val(retailPrice);
 
 			},
 		}
