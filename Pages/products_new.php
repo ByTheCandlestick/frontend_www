@@ -295,32 +295,13 @@
 	desc_l = {
 		char_lim: 512,
 		smde: new SimpleMDE({
-			element: $("div[name=description_long] input")[0],
-			status: [ {
-				className: "chars",
-				defaultValue: function(el) {
-					el.innerHTML = "0 / " + this.char_lim;
-				},
-				onUpdate: function(el) {
-					el.innerHTML = this.value().length + " / " + this.char_lim;
-					
-				}
-			}]
+			element: $("div[name=description_long] input")[0]
 		})
 	};
 	desc_s ={
 		char_lim: 256,
 		smde: new SimpleMDE({
-			element: $("div[name=description_short] input")[0],
-			status: [ {
-				className: "chars",
-				defaultValue: function(el) {
-					el.innerHTML = "0 / " + this.char_lim;
-				},
-				onUpdate: function(el) {
-					el.innerHTML = this.value().length + " / " + this.char_lim;
-				}
-			}]
+			element: $("div[name=description_short] input")[0]
 		})
 	};
 </script>
