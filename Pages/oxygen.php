@@ -47,7 +47,7 @@
 					$query = DB_Query("SELECT * FROM `page_sections`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
-							print_r('<div class="col-12 col-md-6 element">'.$row['short_description'].'</div>');
+							print_r('<div class="col-12 col-md-5 element">'.$row['short_description'].'</div>');
 						}
 					}
 				?>
