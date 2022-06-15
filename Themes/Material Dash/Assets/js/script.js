@@ -28,6 +28,7 @@ $( document ).ready(() => {
 						Object.entries(body).forEach(([key, value]) => {
 							if(value.code == str) {
 								res = value.symbol;
+								console.log(str+' = '+value.code+' = '+value.symbol);
 							}
 						});
 					},
