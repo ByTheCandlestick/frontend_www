@@ -711,7 +711,7 @@ $( document ).ready(function() {
 			}
 		});
 		$('div.ProductInfo').find('input, select').change( function() {
-			if($('input[name=auto_calculate]:checked').length === 0) {
+			if($('input[name=auto_calculate]:checked').length != 0) {
 				product.calculate();
 			}
 		});
