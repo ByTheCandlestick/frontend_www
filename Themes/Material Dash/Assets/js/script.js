@@ -23,7 +23,8 @@ $( document ).ready(() => {
 			currSymbol(str) {
 				Object.entries(misc.currencies).forEach(([key, value]) => {
 					if(value.code == str) {
-						console.log('FOUND: '+value.symbol);
+						return value.symbol;
+						console.log('FOUND: ' + value.symbol);
 					}
 				});
 			},
