@@ -682,11 +682,11 @@ $( document ).ready(function() {
 		});
 		$('input[name=discounted]').change(function() {
 			if($('input[name=discounted]:checked').length === 0) {
-				$('div[name=discount_type]').find('input').prop('disabled', true);
-				$('div[name=discount_amount]').find('select').prop('disabled', true);
+				$('div[name=discount_type]').find('select').prop('disabled', true);
+				$('div[name=discount_amount]').find('input').prop('disabled', true);
 			} else {
-				$('div[name=discount_type]').find('input').prop('disabled', false);
-				$('div[name=discount_amount]').find('select').prop('disabled', false);
+				$('div[name=discount_type]').find('select').prop('disabled', false);
+				$('div[name=discount_amount]').find('input').prop('disabled', false);
 			}
 		});
 	// -----========== EOF ==========----- //
