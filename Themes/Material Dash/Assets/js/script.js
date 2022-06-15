@@ -672,10 +672,21 @@ $( document ).ready(function() {
 				$('div[name=net]').find('input').prop('disabled', false);
 				$('div[name=gross]').find('input').prop('disabled', false);
 				$('div[name=profit]').find('input').prop('disabled', false);
+				$('div[name=markup]').find('input').prop('disabled', false);
 			} else {
 				$('div[name=net]').find('input').prop('disabled', true);
 				$('div[name=gross]').find('input').prop('disabled', true);
 				$('div[name=profit]').find('input').prop('disabled', true);
+				$('div[name=markup]').find('input').prop('disabled', true);
+			}
+		});
+		$('input[name=discounted]').change(function() {
+			if($('input[name=discounted]:checked').length === 0) {
+				$('div[name=discount_type]').find('input').prop('disabled', false);
+				$('div[name=discount_amount]').find('input').prop('disabled', false);
+			} else {
+				$('div[name=discount_type]').find('input').prop('disabled', false);
+				$('div[name=discount_amount]').find('input').prop('disabled', true);
 			}
 		});
 	// -----========== EOF ==========----- //
