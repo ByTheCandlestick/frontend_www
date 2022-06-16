@@ -90,7 +90,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/style.css">
+				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
 			<!-- ===== EOS ===== -->
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
@@ -100,7 +100,7 @@
 						printScripts($layout_row['script_ids']);
 					}
 				?>
-				<script src="/script.js" type="text/javascript"></script>
+				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
 			<!-- ===== Preloader ===== -->
 				<div class="preloader-container">
 					<div class="preloader">
