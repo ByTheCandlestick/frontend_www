@@ -28,7 +28,7 @@
                     Containers
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body p-0">
                 <table class="productsTable table table-striped table-hover">
                     <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                         <tr>
