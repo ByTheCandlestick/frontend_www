@@ -31,13 +31,13 @@
 		</div>
 		<div class="col-12 col-md-6 col-lg-3" name="email">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="">
+				<input type="email" class="form-control" id="floatingInput" placeholder="">
 				<label for="floatingInput">Email</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="phone">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="">
+				<input type="tel" class="form-control" id="floatingInput" placeholder="">
 				<label for="floatingInput">Phone</label>
 			</div>
 		</div>
