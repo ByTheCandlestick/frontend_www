@@ -592,10 +592,6 @@ $( document ).ready(() => {
 				});
 			},
 			update(uid) {
-				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1);
-				d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1);
-				e_active = (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1);
-				u_active = (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1);
 				data = {
 					'api_key': api_key,
 					'uname': $("div[name=username]").find("input").val(),
@@ -603,10 +599,10 @@ $( document ).ready(() => {
 					'lname': $("div[name=lastname]").find("input").val(),
 					'email': $("div[name=email]").find("input").val(),
 					'phone': $("div[name=phone]").find("input").val(),
-					'r_pass': r_pass,
-					'd_analytics': d_analytics,
-					'e_active': e_active,
-					'u_active': u_active,
+					'r_pass': (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1),
+					'd_analytics': (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
+					'e_active': (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1),
+					'u_active': (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
 					url: api_url + '/Users/' + uid + '/',
@@ -752,10 +748,57 @@ $( document ).ready(() => {
 			},
 			container: {
 				create() {
-
+					$.ajax({
+						url: api_url + '/Product/Container/' + cid + '/',
+						data: {
+							'api_key': api_key,
+							'name': $("div[name=name]").find("input").val(),
+							'supplier': $("div[name=supplier]").find("option:selected").val(),
+							'supplier_ref': $("div[name=itemref]").find("input").val(),
+							'size': $("div[name=size]").find("input").val(),
+							'price_b': $("div[name=price_b]").find("input").val(),
+							'quantity': $("div[name=quantity]").find("input").val(),
+							'price_e': $("div[name=price_e]").find("input").val(),
+							'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+						},
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success(body) {
+							// $(location).attr('href', '/Products/Container/' + id + '/?al_ty=success&al_tx=Successfully created the container');
+							alert.simple("Successfully updated the container", "success");
+						},
+						error(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
 				},
-				update() {
-
+				update(cid) {
+					$.ajax({
+						url: api_url + '/Product/Container/' + cid + '/',
+						data: {
+							'api_key': api_key,
+							'name': $("div[name=name]").find("input").val(),
+							'supplier': $("div[name=supplier]").find("option:selected").val(),
+							'supplier_ref': $("div[name=itemref]").find("input").val(),
+							'size': $("div[name=size]").find("input").val(),
+							'price_b': $("div[name=price_b]").find("input").val(),
+							'quantity': $("div[name=quantity]").find("input").val(),
+							'price_e': $("div[name=price_e]").find("input").val(),
+							'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+						},
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success(body) {
+							alert.simple("Successfully updated the container", "success");
+						},
+						error(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
 				},
 				delete() {
 
