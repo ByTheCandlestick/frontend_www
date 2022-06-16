@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="containersTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="wicksTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
@@ -151,7 +151,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="wickstandsTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
@@ -210,7 +210,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="wickstandsTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
@@ -271,7 +271,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="wickstandsTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
@@ -332,7 +332,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="wickstandsTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
@@ -393,7 +393,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="wickstandsTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
@@ -452,7 +452,7 @@
                 </div>
                 <div class="card-body p-0 overflow-auto">
                     <table class="wickstandsTable table table-striped table-hover m-0">
-                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                        <thead class="sticky-top">
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>

@@ -33,7 +33,7 @@
 	<!-- Section Body -->
 	<div class="row">
 		<table class="productsTable table table-striped table-hover">
-			<thead class="sticky-top" style="background: var(--section); z-index: unset;">
+			<thead class="sticky-top">
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>

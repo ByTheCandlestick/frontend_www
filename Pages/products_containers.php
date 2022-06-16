@@ -13,17 +13,8 @@
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
-					<a href="/Products/New/" class="btn btn-outline-primary m-1">
+					<a href="/Products/Container/New/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-plus"></i>
-					</a>
-					<a href="/Products/Comodities/" class="btn btn-outline-primary m-1">
-						Comodities
-					</a>
-					<a href="/Categories/" class="btn btn-outline-primary m-1">
-						Categories
-					</a>
-					<a href="/Collections/" class="btn btn-outline-primary m-1">
-						Collections
 					</a>
 				</div>
 				<div class="col-12 col-lg-6">
@@ -39,7 +30,7 @@
 	<!-- Section Body -->
 	<div class="row">
 		<table class="productsTable table table-striped table-hover">
-			<thead class="sticky-top" style="background: var(--section); z-index: unset;">
+			<thead class="sticky-top">
 				<tr>
 					<th scope="col">SKU</th>
 					<th scope="col">Title</th>

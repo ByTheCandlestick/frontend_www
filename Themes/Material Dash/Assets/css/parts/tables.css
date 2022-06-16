@@ -4,6 +4,10 @@
 table {
 	color: var(--main-color)!important;
 }
+thead {
+    background: var(--section);
+    z-index: unset;
+}
 /**
  *	TABLE-STRIPED
  */

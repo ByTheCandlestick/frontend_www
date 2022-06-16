@@ -22,7 +22,7 @@
 		<div class="col-12 col-md-6">
 			<h5>Categories</h5>
 			<table class="table table-striped table-hover">
-				<thead class="sticky-top" style="background: var(--section); z-index: unset;">
+				<thead class="sticky-top">
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Name</th>
@@ -54,7 +54,7 @@
 		<div class="col-12 col-md-6">
 			<h5>Collections</h5>
 			<table class="table table-striped table-hover">
-				<thead class="sticky-top" style="background: var(--section); z-index: unset;">
+				<thead class="sticky-top">
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Name</th>
@@ -86,7 +86,7 @@
 		<div class="col-12 col-md-6">
 			<h5>Tags</h5>
 			<table class="table table-striped table-hover">
-				<thead class="sticky-top" style="background: var(--section); z-index: unset;">
+				<thead class="sticky-top">
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Name</th>
