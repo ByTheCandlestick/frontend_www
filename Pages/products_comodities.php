@@ -82,10 +82,10 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        Containers
+                        Wicks
                     </div>
                     <div class="col-4 text-align-right">
-                        <a href="/Products/Containers/New/" class="btn btn-outline-primary">
+                        <a href="/Products/Wick/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
                     </div>
@@ -111,7 +111,7 @@
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
-                                                    <a href="/Products/Como/'.$row['ID'].'">
+                                                    <a href="/Products/Wick/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </td>
@@ -133,7 +133,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/Products/Wicks">
+                    <a href="/Products/Wicks/">
                         See more
                     </a>
                 </div>
