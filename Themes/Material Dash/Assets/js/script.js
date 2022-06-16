@@ -780,7 +780,7 @@ $( document ).ready(() => {
 					'api_key': api_key,
 				};
 				$.ajax({
-					url: api_url + '/Supplier/' + id + '/',
+					url: api_url + '/Supplier/' + sid + '/',
 					data: data,
 					type: 'DELETE',
 					xhrFields: {
