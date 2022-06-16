@@ -84,8 +84,10 @@
                     <div class="col-8">
                         Containers
                     </div>
-                    <div class="col-4">
-                        Containers
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/Containers/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body p-0">
@@ -141,7 +143,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        Containers
+                        Wick stands
                     </div>
                     <div class="col-4">
                         Containers
@@ -159,7 +161,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wickStands` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 4");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
