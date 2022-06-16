@@ -17,7 +17,7 @@
 						<i class="fa fa-plus"></i>
 					</a>
 					<a href="/Products/Comodities/" class="btn btn-outline-primary m-1">
-						Materials
+						Comodities
 					</a>
 					<a href="/Categories/" class="btn btn-outline-primary m-1">
 						Categories
