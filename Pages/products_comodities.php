@@ -31,7 +31,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="containersTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -92,7 +92,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="wicksTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -153,7 +153,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -214,7 +214,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -277,7 +277,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -340,7 +340,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -403,7 +403,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -464,7 +464,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
+                <div class="card-body p-0 overflow-auto" style="max-height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
