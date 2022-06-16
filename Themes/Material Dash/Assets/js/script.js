@@ -850,7 +850,7 @@ $( document ).ready(() => {
 			$('.app-back-btn').addClass('disabled')
 		}
 		$(".app-back-btn").click(() => {
-			if(!$(this).hasClass('disabled')) {
+			if(!$(".app-back-btn").hasClass('disabled')) {
 				history.back();
 			}
 		});
