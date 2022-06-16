@@ -736,7 +736,7 @@ $( document ).ready(() => {
 					'active': (($("div[name=misc]").find("input[name=active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
-					url: api_url + '/Suppliers/',
+					url: api_url + '/Supplier/',
 					data: data,
 					type: 'PUT',
 					xhrFields: {
@@ -761,7 +761,7 @@ $( document ).ready(() => {
 					'active': (($("div[name=misc]").find("input[name=active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
-					url: api_url + '/Suppliers/' + sid + '/',
+					url: api_url + '/Supplier/' + sid + '/',
 					data: data,
 					type: 'POST',
 					xhrFields: {
@@ -780,7 +780,7 @@ $( document ).ready(() => {
 					'api_key': api_key,
 				};
 				$.ajax({
-					url: api_url + '/Suppliers/' + id + '/',
+					url: api_url + '/Supplier/' + id + '/',
 					data: data,
 					type: 'DELETE',
 					xhrFields: {
