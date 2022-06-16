@@ -31,7 +31,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="containersTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_containers` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_containers` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -92,7 +92,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="wicksTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -104,7 +104,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wicks` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_wicks` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -153,7 +153,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -165,7 +165,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -214,7 +214,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -227,7 +227,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -277,7 +277,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -290,7 +290,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -340,7 +340,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -353,7 +353,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -403,7 +403,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -415,7 +415,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -464,7 +464,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body p-0 overflow-auto" style="height: 18rem;">
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
@@ -476,7 +476,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 25");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
