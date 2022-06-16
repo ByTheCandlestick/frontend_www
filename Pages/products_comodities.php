@@ -25,7 +25,7 @@
                     <div class="col-8">
                         Containers
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/Container/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -86,7 +86,7 @@
                     <div class="col-8">
                         Wicks
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/Wick/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -147,7 +147,7 @@
                     <div class="col-8">
                         Wick stands
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/WickStand/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -208,7 +208,7 @@
                     <div class="col-8">
                         Materials
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/Material/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -271,7 +271,7 @@
                     <div class="col-8">
                         Fragrances
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/Fragrance/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -334,7 +334,7 @@
                     <div class="col-8">
                         Colours
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/Colour/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -397,7 +397,7 @@
                     <div class="col-8">
                         Packagings
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/Packaging/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
@@ -458,7 +458,7 @@
                     <div class="col-8">
                         Shippings
                     </div>
-                    <div class="col-4 text-align-right">
+                    <div class="col-4 text-end">
                         <a href="/Products/Shipping/New/" class="btn btn-outline-primary">
                             <i class="fa fa-plus"></i>
                         </a>
