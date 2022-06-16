@@ -16,7 +16,7 @@
 					<a href="/Products/New/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-plus"></i>
 					</a>
-					<a href="/Products/Elements/" class="btn btn-outline-primary m-1">
+					<a href="/Products/Comodities/" class="btn btn-outline-primary m-1">
 						Materials
 					</a>
 					<a href="/Categories/" class="btn btn-outline-primary m-1">
