@@ -537,7 +537,36 @@ $( document ).ready(() => {
 		/** @wip */
 		user = {
 			create() {
-
+				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1);
+				d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1);
+				e_active = (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1);
+				u_active = (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1);
+				data = {
+					'api_key': api_key,
+					'uname': $("div[name=username]").find("input").val(),
+					'fname': $("div[name=firstname]").find("input").val(),
+					'lname': $("div[name=lastname]").find("input").val(),
+					'email': $("div[name=email]").find("input").val(),
+					'phone': $("div[name=phone]").find("input").val(),
+					'r_pass': r_pass,
+					'd_analytics': d_analytics,
+					'e_active': e_active,
+					'u_active': u_active,
+				};
+				$.ajax({
+					url: api_url + '/Users/',
+					data: data,
+					type: 'PUT',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully created the user", "success");
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 			update(uid) {
 				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1);
@@ -572,7 +601,23 @@ $( document ).ready(() => {
 				});
 			},
 			delete(uid) {
-
+				data = {
+					'api_key': api_key,
+				};
+				$.ajax({
+					url: api_url + '/Users/' + id + '/',
+					data: data,
+					type: 'DELETE',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully deleted the user", "success");
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 		}
 		/** @wip */
@@ -635,7 +680,23 @@ $( document ).ready(() => {
 				});
 			},
 			delete(pid) {
-
+				data = {
+					'api_key': api_key,
+				};
+				$.ajax({
+					url: api_url + '/Product/' + id + '/',
+					data: data,
+					type: 'DELETE',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully deleted the product", "success");
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 			calculate() {
 				container_size	= Number($("div[name=container]").find("option:selected").attr('size'));
@@ -665,6 +726,33 @@ $( document ).ready(() => {
 				$('div[name=gross]').find('input').val(grossPrice);
 				$('div[name=profit]').find('input').val(netProfit);
 				$('div[name=retail]').find('input').val(retailPrice);
+			},
+		}
+		supplier = {
+			create() {
+
+			},
+			update(sid) {
+
+			},
+			delete(sid) {
+				data = {
+					'api_key': api_key,
+				};
+				$.ajax({
+					url: api_url + '/Supplier/' + id + '/',
+					data: data,
+					type: 'DELETE',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully deleted the supplier", "success");
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
