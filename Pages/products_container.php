@@ -95,16 +95,35 @@
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="email">
+
+			<div class="col-12 col-md-6 col-lg-3" name="itemref">
 				<div class="form-floating mb-3">
-					<input type="email" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Email'])?>">
-					<label for="floatingInput">Email</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['ItemRef'])?>">
+					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="phone">
+			<div class="col-12 col-md-6 col-lg-3" name="size">
 				<div class="form-floating mb-3">
-					<input type="tel" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Phone'])?>">
-					<label for="floatingInput">Phone</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Size (cl)'])?>">
+					<label for="floatingInput">size (cl)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_b">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Price (bulk)'])?>">
+					<label for="floatingInput">Price (bulk)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Quantity'])?>">
+					<label for="floatingInput">Quantity</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_e">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Price (ea)'])?>">
+					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
@@ -113,12 +132,6 @@
 						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($cont['Active']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="hours">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Opening Hours'])?>">
-					<label for="floatingInput">Opening hours</label>
 				</div>
 			</div>
 		</div>
