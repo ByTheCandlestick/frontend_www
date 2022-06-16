@@ -35,7 +35,6 @@
                     <table class="containersTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
                                 <th scope="col"></th>
@@ -48,7 +47,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
@@ -96,7 +94,6 @@
                     <table class="wicksTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
                                 <th scope="col"></th>
@@ -109,7 +106,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
@@ -157,7 +153,6 @@
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
                                 <th scope="col"></th>
@@ -170,7 +165,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
@@ -218,7 +212,6 @@
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
                                 <th scope="col">Price (cl)</th>
@@ -232,7 +225,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>'.$row['Price (cl)'].'</td>
@@ -281,7 +273,6 @@
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
                                 <th scope="col">Price (cl)</th>
@@ -295,7 +286,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>'.$row['Price (cl)'].'</td>
@@ -344,7 +334,6 @@
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
                                 <th scope="col">Price (cl)</th>
@@ -358,7 +347,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>'.$row['Price (cl)'].'</td>
@@ -407,7 +395,6 @@
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
                                 <th scope="col"></th>
@@ -420,7 +407,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
@@ -468,7 +454,6 @@
                     <table class="wickstandsTable table table-striped table-hover m-0">
                         <thead class="sticky-top" style="background: var(--section); z-index: unset;">
                             <tr>
-                                <th scope="col">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price (ea)</th>
                                 <th scope="col"></th>
@@ -481,7 +466,6 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
