@@ -52,7 +52,7 @@
 			<div class="col-12 col-md-6 col-lg-2" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($supp['Active']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
 				</div>
