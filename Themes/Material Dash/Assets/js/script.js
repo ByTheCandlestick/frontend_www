@@ -750,6 +750,17 @@ $( document ).ready(() => {
 				$('div[name=profit]').find('input').val(netProfit);
 				$('div[name=retail]').find('input').val(retailPrice);
 			},
+			container: {
+				create() {
+
+				},
+				update() {
+
+				},
+				delete() {
+
+				},
+			},
 		}
 		supplier = {
 			create() {
