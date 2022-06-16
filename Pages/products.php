@@ -16,14 +16,14 @@
 					<a href="/Products/New/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-plus"></i>
 					</a>
-					<a href="/Products/Comodities/" class="btn btn-outline-primary m-1">
-						Comodities
-					</a>
 					<a href="/Categories/" class="btn btn-outline-primary m-1">
 						Categories
 					</a>
 					<a href="/Collections/" class="btn btn-outline-primary m-1">
 						Collections
+					</a>
+					<a href="/Products/Comodities/" class="btn btn-outline-primary m-1">
+						Comodities
 					</a>
 				</div>
 				<div class="col-12 col-lg-6">
