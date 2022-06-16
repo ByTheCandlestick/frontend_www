@@ -23,9 +23,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Containers
-                        </h4>
+                        <h4>Containers</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/Container/New/" class="btn btn-outline-primary">
@@ -86,9 +84,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Wicks
-                        </h4>
+                        <h4>Wicks</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/Wick/New/" class="btn btn-outline-primary">
@@ -149,9 +145,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Wick stands
-                        </h4>
+                        <h4>Wick stands</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/WickStand/New/" class="btn btn-outline-primary">
@@ -212,9 +206,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Materials
-                        </h4>
+                        <h4>Materials</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/Material/New/" class="btn btn-outline-primary">
@@ -277,9 +269,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Fragrances
-                        </h4>
+                        <h4>Fragrances</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/Fragrance/New/" class="btn btn-outline-primary">
@@ -342,9 +332,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Colours
-                        </h4>
+                        <h4>Colours</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/Colour/New/" class="btn btn-outline-primary">
@@ -407,9 +395,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Packagings
-                        </h4>
+                        <h4>Packagings</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/Packaging/New/" class="btn btn-outline-primary">
@@ -470,9 +456,7 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>
-                            Shippings
-                        </h4>
+                        <h4>Shippings</h4>
                     </div>
                     <div class="col-4 text-end">
                         <a href="/Products/Shipping/New/" class="btn btn-outline-primary">
