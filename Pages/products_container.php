@@ -95,7 +95,22 @@
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
-
+			<!-- Type -->
+			<div class="col-12 col-lg-4" name="container">
+				<div class="form-floating mb-3">
+					<select class="form-select" id="floatingSelect">
+						<option value="-1" selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `suppliers` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['Reference'] == $cont['Supplier'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['Reference'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
+					</select>
+					<label for="floatingInput">Container</label>
+				</div>
+			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="itemref">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['ItemRef'])?>">
