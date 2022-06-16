@@ -25,8 +25,10 @@
                     <div class="col-8">
                         Containers
                     </div>
-                    <div class="col-4">
-                        Containers
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/Container/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body p-0">
@@ -50,7 +52,7 @@
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
-                                                    <a href="/Products/Como/'.$row['ID'].'">
+                                                    <a href="/Products/Container/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </td>
@@ -72,7 +74,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/Products/Containers">
+                    <a href="/Products/Containers/">
                         See more
                     </a>
                 </div>
@@ -145,8 +147,10 @@
                     <div class="col-8">
                         Wick stands
                     </div>
-                    <div class="col-4">
-                        Containers
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/WickStand/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body p-0">
@@ -170,7 +174,7 @@
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
-                                                    <a href="/Products/Como/'.$row['ID'].'">
+                                                    <a href="/Product/WickStand/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </td>
@@ -192,7 +196,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/Products/WickStands">
+                    <a href="/Products/WickStands/">
                         See more
                     </a>
                 </div>
@@ -202,10 +206,12 @@
             <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        Containers
+                        Materials
                     </div>
-                    <div class="col-4">
-                        Containers
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/Material/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body p-0">
@@ -214,13 +220,14 @@
                             <tr>
                                 <th scope="col">id</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Price</th>
+                                <th scope="col">Price (ea)</th>
+                                <th scope="col">Price (cl)</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 4");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -228,8 +235,9 @@
                                                 <th scope="row">'.$row['ID'].'</th>
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
+                                                <td>'.$row['Price (cl)'].'</td>
                                                 <td>
-                                                    <a href="/Products/Como/'.$row['ID'].'">
+                                                    <a href="/Products/Material/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </td>
@@ -251,7 +259,255 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/Products/WickStands">
+                    <a href="/Products/Materials/">
+                        See more
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 p-2">
+            <div class="card">
+                <div class="card-header row m-0">
+                    <div class="col-8">
+                        Fragrances
+                    </div>
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/Fragrance/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="wickstandsTable table table-striped table-hover m-0">
+                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price (ea)</th>
+                                <th scope="col">Price (cl)</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?
+                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 4");
+                                if(mysqli_num_rows($query) > 0) {
+                                    while ($row = mysqli_fetch_array($query)) {
+                                        print('
+                                            <tr>
+                                                <th scope="row">'.$row['ID'].'</th>
+                                                <td>'.$row['Name'].'</td>
+                                                <td>'.$row['Price (ea)'].'</td>
+                                                <td>'.$row['Price (cl)'].'</td>
+                                                <td>
+                                                    <a href="/Products/Material/'.$row['ID'].'">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        ');
+                                    }
+                                } else {
+                                    print('
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>No data found</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    ');
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="/Products/Fragrances/">
+                        See more
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 p-2">
+            <div class="card">
+                <div class="card-header row m-0">
+                    <div class="col-8">
+                        Colours
+                    </div>
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/Colour/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="wickstandsTable table table-striped table-hover m-0">
+                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price (ea)</th>
+                                <th scope="col">Price (cl)</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?
+                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 4");
+                                if(mysqli_num_rows($query) > 0) {
+                                    while ($row = mysqli_fetch_array($query)) {
+                                        print('
+                                            <tr>
+                                                <th scope="row">'.$row['ID'].'</th>
+                                                <td>'.$row['Name'].'</td>
+                                                <td>'.$row['Price (ea)'].'</td>
+                                                <td>'.$row['Price (cl)'].'</td>
+                                                <td>
+                                                    <a href="/Products/Material/'.$row['ID'].'">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        ');
+                                    }
+                                } else {
+                                    print('
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>No data found</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    ');
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="/Products/Colours/">
+                        See more
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 p-2">
+            <div class="card">
+                <div class="card-header row m-0">
+                    <div class="col-8">
+                        Packagings
+                    </div>
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/Packaging/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="wickstandsTable table table-striped table-hover m-0">
+                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price (ea)</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?
+                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 4");
+                                if(mysqli_num_rows($query) > 0) {
+                                    while ($row = mysqli_fetch_array($query)) {
+                                        print('
+                                            <tr>
+                                                <th scope="row">'.$row['ID'].'</th>
+                                                <td>'.$row['Name'].'</td>
+                                                <td>'.$row['Price (ea)'].'</td>
+                                                <td>
+                                                    <a href="/Products/Material/'.$row['ID'].'">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        ');
+                                    }
+                                } else {
+                                    print('
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>No data found</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    ');
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="/Products/Packagings/">
+                        See more
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 p-2">
+            <div class="card">
+                <div class="card-header row m-0">
+                    <div class="col-8">
+                        Shippings
+                    </div>
+                    <div class="col-4 text-align-right">
+                        <a href="/Products/Shipping/New/" class="btn btn-outline-primary">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="wickstandsTable table table-striped table-hover m-0">
+                        <thead class="sticky-top" style="background: var(--section); z-index: unset;">
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price (ea)</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 4");
+                                if(mysqli_num_rows($query) > 0) {
+                                    while ($row = mysqli_fetch_array($query)) {
+                                        print('
+                                            <tr>
+                                                <th scope="row">'.$row['ID'].'</th>
+                                                <td>'.$row['Name'].'</td>
+                                                <td>'.$row['Price (ea)'].'</td>
+                                                <td>
+                                                    <a href="/Products/Shipping/'.$row['ID'].'">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        ');
+                                    }
+                                } else {
+                                    print('
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>No data found</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    ');
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="/Products/Shippings/">
                         See more
                     </a>
                 </div>
