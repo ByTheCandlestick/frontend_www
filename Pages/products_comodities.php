@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_containers` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_containers` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -104,7 +104,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wicks` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_wicks` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -165,7 +165,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -227,7 +227,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -290,7 +290,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -353,7 +353,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -415,7 +415,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -476,7 +476,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 25");
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 10");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
