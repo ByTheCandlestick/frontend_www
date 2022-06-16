@@ -1,5 +1,5 @@
 <?
-	$q = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
+	$q = DB_Query("SELECT * FROM `suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['ID']] = $row['Name']; }
 ?>
 <section>
