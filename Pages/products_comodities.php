@@ -42,7 +42,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_containers` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_containers` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -101,7 +101,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wicks` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_wicks` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -160,7 +160,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -220,7 +220,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -281,7 +281,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -342,7 +342,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -402,7 +402,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -461,7 +461,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 10");
+                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
