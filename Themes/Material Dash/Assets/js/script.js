@@ -931,5 +931,9 @@ $( document ).ready(() => {
 			console.log(symbol);
 			$('span.input-group-text#currSymbol').html(symbol);
 		})
+	// -----========== Auto-calculate Container ==========----- // @wip //
+		$('div[name=quantity] input, div[name=price_b] input').change(() => {
+			product.container.calculate();
+		});
 	// -----========== EOF ==========----- //
 });
