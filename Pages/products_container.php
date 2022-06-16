@@ -3,7 +3,7 @@
 ?>
 
 <?
-    else {
+    } else {
         $query = DB_Query(sprintf("SELECT * FROM `suppliers` WHERE `ID`=%s", QS));
         if(mysqli_num_rows($query) > 0) {
             $supp = mysqli_fetch_assoc($query);
