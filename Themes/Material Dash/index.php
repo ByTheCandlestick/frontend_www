@@ -1,53 +1,56 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
-	if($user_ok) {
-		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] != 1) {
-			$user_ok = false;
-		}
-	}
-	require_user_ok();
-	// Determine the required row from the page requested
-	$domainID = domainID();
-	if(QS_SUBPAGE != NULL) {
-		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE, $domainID);
-		try {
-			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
-				throw new Exception();
+		if($user_ok) {
+			if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] != 1) {
+				$user_ok = false;
 			}
-		} catch (Exception $er) {
+		}
+		require_user_ok();
+	// Determine the required row from the page requested
+		$domainID = domainID();
+		if(QS_SUBPAGE != NULL) {
+			$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE, $domainID);
+			try {
+				if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
+					throw new Exception();
+				}
+			} catch (Exception $er) {
+				$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
+			}
+		} else {
 			$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
 		}
-	} else {
-		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
-	}
 	// get the page information
-	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
-		while($layout_row = mysqli_fetch_assoc($layout_results)) {
-			$info = array();
-			$info_results = DB_Query("SELECT * FROM `shop_info`");
-			while($info_row = mysqli_fetch_row($info_results)) {
-				$info[$info_row[1]] = $info_row[2]; 
-			}
+		if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
+			while($layout_row = mysqli_fetch_assoc($layout_results)) {
+				$info = array();
+				$info_results = DB_Query("SELECT * FROM `shop_info`");
+				while($info_row = mysqli_fetch_row($info_results)) {
+					$info[$info_row[1]] = $info_row[2]; 
+				}
 ?>
 <!DOCTYPE html>
 	<html lang="en">
 		<head runat="server">
-			<meta charset="utf-8">
-			<meta content="ie=edge" http-eqiv="X-UA-Compatible">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<meta name="title" content="<?print($info['meta_title'])?>">
-			<meta name="description" content="<?print($info['meta_description'])?>">
-			<meta name="keywords" content="<?print($info['meta_keywords'])?>">
-			<meta name="theme-color" content="<?print($info['meta_colour'])?>">
-			<title>
-				<?
-					print(
-						(($layout_row['page_title']=="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
-					)
-				?>
-			</title>
-			<link rel="shortcut icon" href="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>" type="image/x-icon" />
-			<!-- Progresive Web App -->
+			<!-- ===== Meta ===== -->
+				<meta charset="utf-8">
+				<meta content="ie=edge" http-eqiv="X-UA-Compatible">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<meta name="title" content="<?print($info['meta_title'])?>">
+				<meta name="description" content="<?print($info['meta_description'])?>">
+				<meta name="keywords" content="<?print($info['meta_keywords'])?>">
+				<meta name="theme-color" content="<?print($info['meta_colour'])?>">
+			<!-- ===== Title ===== -->
+				<title>
+					<?
+						print(
+							(($layout_row['page_title']=="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
+						)
+					?>
+				</title>
+			<!-- ===== Favicon ===== -->
+				<link rel="shortcut icon" href="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>" type="image/x-icon" />
+			<!-- ===== PWA ===== -->
 				<link rel="manifest" href="/manifest.json" />
 		  		<script>
 					if ('serviceWorker' in navigator) {
@@ -63,7 +66,7 @@
 						console.log('Service Workers are not supported');
 					}
 				</script>
-			<!-- APPLE-->
+			<!-- ===== Apple =====-->
 				<link rel="apple-touch-icon" sizes="57x57" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/57x57.png">
 				<link rel="apple-touch-icon" sizes="60x60" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/60x60.png">
 				<link rel="apple-touch-icon" sizes="72x72" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/72x72.png">
@@ -80,114 +83,117 @@
 				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-			<!-- CSS -->
+			<!-- ===== CSS ===== -->
 				<?
 					if($layout_row['style_ids'] != NULL) {
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
-			<!-- -->
+				<link rel="stylesheet" href="/style.css">
+			<!-- ===== EOS =====-->
 		</head>
-		<body>
-			<!-- ======= Javascript ======= -->
+		<body class="online" onLoad="">
+			<!-- ===== Javascript ===== -->
 				<?
 					if($layout_row['script_ids'] != NULL) {
 						printScripts($layout_row['script_ids']);
 					}
 				?>
-				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
-			<!-- ======= App ======= -->
+				<script src="/script.js" type="text/javascript"></script>
+			<!-- ===== App ===== -->
 				<div class="app-container">
-					<div class="app-preloader">
-						<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
-							<defs>
-								<linearGradient id="pl-grad1" x1="0" y1="0" x2="0" y2="1">
-									<stop offset="0%" stop-color="rgb(37 95 244)" />
-									<stop offset="100%" stop-color="rgb(82 37 244)" />
-								</linearGradient>
-								<linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
-									<stop offset="0%" stop-color="rgb(37 199 244)" />
-									<stop offset="50%" stop-color="rgb(37 95 244)" />
-									<stop offset="100%" stop-color="rgb(82 37 244)" />
-								</linearGradient>
-							</defs>
-							<circle class="pl_ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16" stroke-linecap="round" />
-							<circle class="pl_worm1" r="56" cx="64" cy="192" fill="none" stroke="url(#pl-grad1)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 263.89" />
-							<path class="pl_worm2" d="M120,192A56,56,0,0,1,8,192C8,161.07,16,8,64,8S120,161.07,120,192Z" fill="none" stroke="url(#pl-grad2)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 494" />
-						</svg>
-					</div>
-					<div class="app-header">
-						<!-- Brand Info -->
-						<div class="app-header-left">
-							<span class="app-icon">
-								<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
-							</span>
-							<p class="app-name">The Candlestick</p>
+					<!-- ===== Preloader ===== -->
+						<div class="app-preloader">
+							<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
+								<defs>
+									<linearGradient id="pl-grad1" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="0%" stop-color="rgb(37 95 244)" />
+										<stop offset="100%" stop-color="rgb(82 37 244)" />
+									</linearGradient>
+									<linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="0%" stop-color="rgb(37 199 244)" />
+										<stop offset="50%" stop-color="rgb(37 95 244)" />
+										<stop offset="100%" stop-color="rgb(82 37 244)" />
+									</linearGradient>
+								</defs>
+								<circle class="pl_ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16" stroke-linecap="round" />
+								<circle class="pl_worm1" r="56" cx="64" cy="192" fill="none" stroke="url(#pl-grad1)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 263.89" />
+								<path class="pl_worm2" d="M120,192A56,56,0,0,1,8,192C8,161.07,16,8,64,8S120,161.07,120,192Z" fill="none" stroke="url(#pl-grad2)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 494" />
+							</svg>
 						</div>
-						<!-- Search -->
-						<div class="search-wrapper" rel="/search.json">
-							<div class="search-area">
-								<input type="text" onkeyup="search.process(event)" placeholder="Search">
+					<!-- ===== Header ===== -->
+						<div class="app-header">
+							<!-- Brand Info -->
+							<div class="app-header-left">
+								<span class="app-icon">
+									<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
+								</span>
+								<p class="app-name">The Candlestick</p>
 							</div>
-							<div class="search-suggestions"> </div>
+							<!-- Search -->
+							<div class="search-wrapper" rel="/search.json">
+								<div class="search-area">
+									<input type="text" onkeyup="search.process(event)" placeholder="Search">
+								</div>
+								<div class="search-suggestions"> </div>
+							</div>
+							<!-- Profile, Notifications and Dark mode -->
+							<div class="app-header-right">
+								<button class="mode-switch" title="Switch Theme">
+									<i class="fa-moon fa-lg"></i>
+								</button>
+								<button class="profile-btn">
+									<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
+								</button>
+							</div>
 						</div>
-						<!-- Profile, Notifications and Dark mode -->
-						<div class="app-header-right">
-							<button class="mode-switch" title="Switch Theme">
-								<i class="fa-moon fa-lg"></i>
-							</button>
-							<button class="profile-btn">
-								<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
-							</button>
-						</div>
-					</div>
-					<div class="app-content">
-						<!-- Sidebar -->
-						<div class="app-sidebar">
-							<a class="app-sidebar-link app-back-btn" data-toggle="tooltip" data-placement="right" title="Back">
-								<i class="fa fa-arrow-left"></i>
-							</a>
-							<?
-								$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 ORDER BY `menu_order` ASC");
-								foreach($items as $item) {
-									if($item['page_url'] == QS_PAGE) {
-										$link = '#';
-										$active = 'active';
-									} else {
-										$link = $item['menu_url'];
-										$active = '';
+					<!-- ===== Content ===== -->
+						<div class="app-content">
+							<!-- Sidebar -->
+							<div class="app-sidebar">
+								<a class="app-sidebar-link app-back-btn" data-toggle="tooltip" data-placement="right" title="Back">
+									<i class="fa fa-arrow-left"></i>
+								</a>
+								<?
+									$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 ORDER BY `menu_order` ASC");
+									foreach($items as $item) {
+										if($item['page_url'] == QS_PAGE) {
+											$link = '#';
+											$active = 'active';
+										} else {
+											$link = $item['menu_url'];
+											$active = '';
+										}
+										print(sprintf('
+											<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
+												<i class="fa fa-%s"></i>
+											</a>
+											',
+											$link,
+											$active,
+											$item['page_name'],
+											$item['menu_icon']
+										));
 									}
-									print(sprintf('
-										<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
-											<i class="fa fa-%s"></i>
-										</a>
-										',
-										$link,
-										$active,
-										$item['page_name'],
-										$item['menu_icon']
-									));
+								?>
+							</div>
+							<!-- Page Content -->
+							<?
+								if($layout_row['display_type'] == 1) {
+									if($layout_row['section_ids'] != NULL) {
+										printSections($layout_row['section_ids']);
+									} else {
+										Redirect('/Error/404/');
+									}
+								} else {
+									include('./Pages/'.$layout_row['page_file'].'.php');
 								}
 							?>
+							<!-- Alerts -->
+							<div class="alerts"> </div>
+							<!-- Modals -->
+							<div class="modals"> </div>
 						</div>
-						<!-- Page Content -->
-						<?
-							if($layout_row['display_type'] == 1) {
-								if($layout_row['section_ids'] != NULL) {
-									printSections($layout_row['section_ids']);
-								} else {
-									Redirect('/Error/404/');
-								}
-							} else {
-								include('./Pages/'.$layout_row['page_file'].'.php');
-							}
-						?>
-						<!-- Alerts -->
-						<div class="alerts"> </div>
-						<!-- Modals -->
-						<div class="modals"> </div>
-					</div>
 				</div>
 			<!-- ====== PWA ====== -->
 				<script type="module">
@@ -196,7 +202,7 @@
 					const el = document.createElement('pwa-update');
 					document.body.appendChild(el);
 				</script>
-			<!-- ======= EOF ======= -->
+			<!-- ===== EOF ===== -->
 		</body>
 	</html>
 <?

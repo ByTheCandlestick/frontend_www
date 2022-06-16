@@ -33,7 +33,7 @@
 <!DOCTYPE html>
 	<html lang="en">
 		<head runat="server">
-			<!-- ===== META ===== -->
+			<!-- ===== Meta ===== -->
 				<meta charset="utf-8">
 				<meta content="ie=edge" http-eqiv="X-UA-Compatible">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
