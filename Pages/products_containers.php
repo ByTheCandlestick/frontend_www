@@ -1,6 +1,6 @@
 <?
 	$q = DB_Query("SELECT * FROM `suppliers` WHERE `Active`=1");
-	while($row = mysqli_fetch_array($q)) { $suppliers[$row['ID']] = $row['Name']; }
+	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row['Name']; }
 ?>
 <section>
 	<!-- Section Header -->
