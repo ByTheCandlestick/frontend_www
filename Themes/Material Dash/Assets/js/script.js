@@ -760,6 +760,11 @@ $( document ).ready(() => {
 				delete() {
 
 				},
+				calculate() {
+					price_b	= Number($("div[name=price_b input]").val());
+					quantity= Number($("div[name=quantity input]").val());
+					$('div[name=price_e] input').val(price_b / quantity);
+				},
 			},
 		}
 		supplier = {
