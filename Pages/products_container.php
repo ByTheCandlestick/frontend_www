@@ -1,17 +1,21 @@
-<? if(strtolower(QS) == "new") { ?>
+
+<?
+    $query = DB_Query(sprintf("SELECT * FROM `products_containers` WHERE `ID`=%s", QS));
+    if(strtolower(QS) == "new") {
+?>
     <section>
         <!-- Section Header -->
         <div class="row">
             <div class="col-12 col-md-6">
-                <h1>Edit supplier</h1>
+                <h1>New Container</h1>
             </div>
             <div class="col-12 col-md-6 text-md-end">
                 <div class="row">
                     <div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-                        <a href="javascript:supplier.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+                        <a href="javascript:product.container.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
                             <i class="fa fa-trash-alt"></i>
                         </a>
-                        <a href="javascript:supplier.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+                        <a href="javascript:product.container.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
                             <i class="fa fa-save"></i>
                         </a>
                     </div>
@@ -20,7 +24,7 @@
         </div>
         <hr>
         <!-- Section Body -->
-        <div class="row SupplierInfo">
+        <div class="row ContainerInfo">
             <div class="col-12 col-md-6 col-lg-2" name="reference">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="">
@@ -61,10 +65,8 @@
             </div>
         </div>
     </section>
-<?  } else {
-        $query = DB_Query(sprintf("SELECT * FROM `suppliers` WHERE `ID`=%s", QS));
-        if(mysqli_num_rows($query) > 0) {
-            $supp = mysqli_fetch_assoc($query);
+<?  } elseif(mysqli_num_rows($query) > 0) {
+        $cont = mysqli_fetch_assoc($query);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -135,7 +137,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Supplier not found.</h1>
+				<h1>Container not found.</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 			</div>
