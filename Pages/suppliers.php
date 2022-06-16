@@ -45,7 +45,7 @@
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Reference'].'</td>
 									<td><a href="mailto:'.$row['Email'].'">'.$row['Email'].'</a></td>
-									<td><a href="tel:'.$row['Phone'].'>'.$row['Phone'].'</a></td>
+									<td><a href="tel:'.$row['Phone'].'">'.$row['Phone'].'</a></td>
 									<td>'.$row['Active'].'</td>
 									<td>'.$row['Created'].'</td>
 									<td>
