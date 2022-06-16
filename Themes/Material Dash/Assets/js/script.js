@@ -28,6 +28,9 @@ $( document ).ready(() => {
 					}
 				});
 			},
+			redirect() {
+
+			},
 		}
 		/** @final */
 		cookie = {
@@ -169,6 +172,10 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
+							/**
+							 * @todo Redirect once created
+							 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+							 */
 							alert.simple("Successfully created the domain", "success");
 						},
 						error(body) {
@@ -211,7 +218,7 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
-							alert.simple("Successfully deleted the domain", "success");
+							$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -244,6 +251,10 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
+							/**
+							 * @todo Redirect once created
+							 * $(location).attr('href', '/Websites/Page/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+							 */
 							alert.simple("Successfully created the page", "success");
 						},
 						error(body) {
@@ -293,7 +304,7 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
-							alert.simple("Successfully deleted the page", "success");
+							$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -345,6 +356,10 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
+							/**
+							 * @todo Redirect once created
+							 * $(location).attr('href', '/Websites/Style/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+							 */
 							alert.simple("Successfully created the style", "success");
 						},
 						error(body) {
@@ -388,7 +403,7 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
-							alert.simple("Successfully deleted the style", "success");
+							$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -414,6 +429,10 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
+							/**
+							 * @todo Redirect once created
+							 * $(location).attr('href', '/Websites/Script/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+							 */
 							alert.simple("Successfully created the script", "success");
 						},
 						error(body) {
@@ -457,7 +476,7 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
-							alert.simple("Successfully deleted the script", "success");
+							$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -483,6 +502,10 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
+							/**
+							 * @todo Redirect once created
+							 * $(location).attr('href', '/Websites/Theme/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+							 */
 							alert.simple("Successfully created the theme", "success");
 						},
 						error(body) {
@@ -525,7 +548,7 @@ $( document ).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
-							alert.simple("Successfully deleted the theme", "success");
+							$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -557,6 +580,10 @@ $( document ).ready(() => {
 						withCredentials: true,
 					},
 					success(body) {
+						/**
+						 * @todo Redirect once created
+						 * $(location).attr('href', '/Users/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+						 */
 						alert.simple("Successfully created the user", "success");
 					},
 					error(body) {
@@ -608,7 +635,7 @@ $( document ).ready(() => {
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully deleted the user", "success");
+						$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully deleted the user');
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -687,7 +714,7 @@ $( document ).ready(() => {
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully deleted the product", "success");
+						$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully created the supplier');
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -743,7 +770,11 @@ $( document ).ready(() => {
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully created the user", "success");
+						/**
+						 * @todo Redirect once created
+						 * $(location).attr('href', '/Suppliers/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+						 */
+						alert.simple("Successfully created the supplier", "success");
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -787,7 +818,7 @@ $( document ).ready(() => {
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully deleted the supplier", "success");
+						$(location).attr('href', '/Suppliers/?al_ty=success&al_tx=Successfully created the supplier');
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -823,6 +854,10 @@ $( document ).ready(() => {
 				history.back();
 			}
 		});
+	// -----========== Alerts ==========----- // @todo //
+		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) {
+			alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
+		}
 	// -----========== PRELOADER ==========----- // @final //
 		$(window).bind('beforeunload', () => {
 			$('.app-preloader').fadeIn();
