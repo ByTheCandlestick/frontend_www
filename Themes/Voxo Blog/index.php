@@ -1,33 +1,34 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
-	if($user_ok) {
-		if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1) {
-			header('Location: /Error/401/');
-		}
-	}
-	require_once('./Classes/analytics.php');
-	// Determine the required row from the page requested
-	$domainID = domainID();
-	if(QS_SUBPAGE != NULL) {
-		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE, $domainID);
-		try {
-			if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
-				throw new Exception();
+		if($user_ok) {
+			if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1) {
+				header('Location: /Error/401/');
 			}
-		} catch (Exception $er) {
+		}
+	// ADD THE ANALYTICS FILE
+		require_once('./Classes/analytics.php');
+	// Determine the required row from the page requested
+		$domainID = domainID();
+		if(QS_SUBPAGE != NULL) {
+			$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `subpage_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, QS_SUBPAGE, $domainID);
+			try {
+				if(mysqli_num_rows($layout_results = DB_Query($query)) == 0) {
+					throw new Exception();
+				}
+			} catch (Exception $er) {
+				$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
+			}
+		} else {
 			$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
 		}
-	} else {
-		$query = sprintf("SELECT * FROM `page_layouts`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
-	}
 	// get the page information
-	if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
-		while($layout_row = mysqli_fetch_assoc($layout_results)) {
-			$info = array();
-			$info_results = DB_Query("SELECT * FROM `shop_info`");
-			while($info_row = mysqli_fetch_row($info_results)) {
-				$info[$info_row[1]] = $info_row[2]; 
-			}
+		if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
+			while($layout_row = mysqli_fetch_assoc($layout_results)) {
+				$info = array();
+				$info_results = DB_Query("SELECT * FROM `shop_info`");
+				while($info_row = mysqli_fetch_row($info_results)) {
+					$info[$info_row[1]] = $info_row[2]; 
+				}
 ?>
 <!DOCTYPE html>
 	<html lang="en">
@@ -89,7 +90,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
+				<link rel="stylesheet" href="/style.css">
 			<!-- ===== EOS ===== -->
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
@@ -99,7 +100,7 @@
 						printScripts($layout_row['script_ids']);
 					}
 				?>
-				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
+				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== Preloader ===== -->
 				<div class="preloader-container">
 					<div class="preloader">
@@ -344,12 +345,13 @@
 		</body>
 	</html>
 <?
+			}
+			if(isset($analytics_startTime)) {
+				$analytics_endTime = microtime(true);
+				loadTime($analytics_ID, $timestamp, $uri_full, round(($analytics_endTime - $analytics_startTime) * 1000, 5));
+			}
+		} else {
+			header('location: /Error/404');
 		}
-		if(isset($analytics_startTime)) {
-			$analytics_endTime = microtime(true);
-			loadTime($analytics_ID, $timestamp, $uri_full, round(($analytics_endTime - $analytics_startTime) * 1000, 5));
-		}
-	} else {
-		 header('location: /Error/404');
-	}
+	// EOF
 ?>
