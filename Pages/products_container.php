@@ -137,7 +137,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Price (ea)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Price (ea)'])?>" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
