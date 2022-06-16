@@ -32,28 +32,32 @@
 		<table class="productsTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
-					<th scope="col">SKU</th>
-					<th scope="col">Title</th>
-					<th scope="col">Category</th>
-					<th scope="col">Range</th>
-					<th scope="col">Price</th>
-					<th scope="col">Slug</th>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Type</th>
+					<th scope="col">Supplier</th>
+					<th scope="col">Suppplier Ref</th>
+					<th scope="col">Size (cl)</th>
+					<th scope="col">Price (ea)</th>
+					<th scope="col">Active</th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `products`");
+					$query = DB_Query("SELECT * FROM `products_containers`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<th scope="row">'.$row['SKU'].'</th>
-									<td>'.$row['Title'].'</td>
-									<td>'.$categories[$row['Category_ID']].'</td>
-									<td>'.$collections[$row['Collection_ID']].'</td>
-									<td>'.$row['RetailPrice'].'</td>
-									<td>'.$row['Slug'].'</td>
+									<th scope="row">'.$row['ID'].'</th>
+									<td>'.$row['Name'].'</td>
+									<td>'.$row['Type'].'</td>
+									<td><a href="/supplier/'.$row['Supplier'].'">'.$row['Supplier'].'<a></td>
+									<td>'.$row['ItemRef'].'</td>
+									<td>'.$row['Size (cl)'].'</td>
+									<td>'.$row['Price (ea)'].'</td>
+									<td>'.$row['Active'].'</td>
 									<td>
 										<a href="/Products/Edit/'.$row['SKU'].'">
 											<i class="fa fa-pencil"></i>
