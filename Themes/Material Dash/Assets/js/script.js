@@ -537,10 +537,6 @@ $( document ).ready(() => {
 		/** @wip */
 		user = {
 			create() {
-				r_pass = (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1);
-				d_analytics = (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1);
-				e_active = (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1);
-				u_active = (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1);
 				data = {
 					'api_key': api_key,
 					'uname': $("div[name=username]").find("input").val(),
@@ -548,10 +544,10 @@ $( document ).ready(() => {
 					'lname': $("div[name=lastname]").find("input").val(),
 					'email': $("div[name=email]").find("input").val(),
 					'phone': $("div[name=phone]").find("input").val(),
-					'r_pass': r_pass,
-					'd_analytics': d_analytics,
-					'e_active': e_active,
-					'u_active': u_active,
+					'r_pass': (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1),
+					'd_analytics': (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
+					'e_active': (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1),
+					'u_active': (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
 					url: api_url + '/Users/',
@@ -730,17 +726,61 @@ $( document ).ready(() => {
 		}
 		supplier = {
 			create() {
-
+				data = {
+					'api_key': api_key,
+					'reference': $("div[name=reference]").find("input").val(),
+					'name': $("div[name=name]").find("input").val(),
+					'email': $("div[name=email]").find("input").val(),
+					'phone': $("div[name=phone]").find("input").val(),
+					'hours': $("div[name=hours]").find("input").val(),
+					'active': (($("div[name=misc]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+				};
+				$.ajax({
+					url: api_url + '/Suppliers/',
+					data: data,
+					type: 'PUT',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully created the user", "success");
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 			update(sid) {
-
+				data = {
+					'api_key': api_key,
+					'reference': $("div[name=reference]").find("input").val(),
+					'name': $("div[name=name]").find("input").val(),
+					'email': $("div[name=email]").find("input").val(),
+					'phone': $("div[name=phone]").find("input").val(),
+					'hours': $("div[name=hours]").find("input").val(),
+					'active': (($("div[name=misc]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+				};
+				$.ajax({
+					url: api_url + '/Suppliers/' + sid + '/',
+					data: data,
+					type: 'POST',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully update the supplier", "success");
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 			delete(sid) {
 				data = {
 					'api_key': api_key,
 				};
 				$.ajax({
-					url: api_url + '/Supplier/' + id + '/',
+					url: api_url + '/Suppliers/' + id + '/',
 					data: data,
 					type: 'DELETE',
 					xhrFields: {

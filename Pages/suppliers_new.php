@@ -8,7 +8,7 @@
 			<div class="row">
 				<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
 					<a href="javascript:supplier.create();" class="btn btn-outline-primary m-1">
-						<i class="fa fa-plus"></i>
+						<i class="fa fa-save"></i>
 					</a>
 				</div>
 			</div>
