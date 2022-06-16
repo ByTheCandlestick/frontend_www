@@ -19,8 +19,8 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-        <div class="p-2">
-            <div class="col-12 col-md-6 card p-0">
+        <div class="col-12 col-md-6">
+            <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
                         Containers
@@ -78,8 +78,8 @@
                 </div>
             </div>
         </div>
-        <div class="p-2">
-            <div class="col-12 col-md-6 card p-0">
+        <div class="col-12 col-md-6">
+            <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
                         Containers
@@ -137,8 +137,8 @@
                 </div>
             </div>
         </div>
-        <div class="p-2">
-            <div class="col-12 col-md-6 card p-0">
+        <div class="col-12 col-md-6">
+            <div class="card">
                 <div class="card-header row m-0">
                     <div class="col-8">
                         Containers
