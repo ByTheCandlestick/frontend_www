@@ -37,6 +37,7 @@
 			<div class="col-12 col-md-6 col-lg-3" name="email">
 				<div class="form-floating mb-3">
 					<input type="email" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Email'])?>" disabled>
+					<a href="mailto:<?print($supp['Email'])?>;"><?print($supp['Email'])?></a>
 					<label for="floatingInput">Email</label>
 				</div>
 			</div>
