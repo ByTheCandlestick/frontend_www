@@ -42,7 +42,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="phone">
 				<div class="form-floating mb-3">
-					<a href="mailto:<?print($supp['Email'])?>;" class="form-control disabled" id="floatingInput"><?print($supp['Phone'])?></a>
+					<a href="tel:<?print($supp['Email'])?>;" class="form-control disabled" id="floatingInput"><?print($supp['Phone'])?></a>
 					<label for="floatingInput">Phone</label>
 				</div>
 			</div>
