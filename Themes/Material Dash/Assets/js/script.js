@@ -40,7 +40,7 @@ $( document ).ready(() => {
 			},
 			openInBackground(str) {
 				const a = document.createElement("a");
-				a.href = "http://www.example.com/";
+				a.href = str;
 				const evt = document.createEvent("MouseEvents");
 				evt.initMouseEvent(
 					"click",
