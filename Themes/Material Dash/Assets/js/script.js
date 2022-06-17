@@ -39,7 +39,11 @@ $( document ).ready(() => {
 				$temp.remove();
 			},
 			openInBackground(str) {
-				window.open(str, '_blank')
+				var a = document.createElement("a");
+				a.href = str;
+				var evt = document.createEvent("MouseEvents");
+				evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, true, false, false, false, 0, null);
+				a.dispatchEvent(evt);
 			},
 		}
 		/** @final */
