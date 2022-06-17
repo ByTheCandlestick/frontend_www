@@ -16,7 +16,7 @@
 	<div class="row">
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css" />
         <style>
-            .topbar {
+            .topbar, .information-container {
                 display: none!important;
             }
         </style>
