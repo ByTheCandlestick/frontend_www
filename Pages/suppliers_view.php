@@ -21,34 +21,34 @@
 		</div>
 		<hr>
 		<!-- Section Body -->
-		<div class="row SupplierInfo">
+		<div class="SupplierInfo">
 			<div class="col-12 col-md-6 col-lg-3" name="reference">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Reference'])?>">
+					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Reference'])?>" disabled>
 					<label for="floatingInput">Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Name'])?>">
+					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Name'])?>" disabled>
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="email">
 				<div class="form-floating mb-3">
-					<input type="email" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Email'])?>">
+					<input type="email" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Email'])?>" disabled>
 					<label for="floatingInput">Email</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="phone">
 				<div class="form-floating mb-3">
-					<input type="tel" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Phone'])?>">
+					<input type="tel" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Phone'])?>" disabled>
 					<label for="floatingInput">Phone</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="hours">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Opening Hours'])?>">
+					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Opening Hours'])?>" disabled>
 					<label for="floatingInput">Opening hours</label>
 				</div>
 			</div>
