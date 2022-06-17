@@ -52,10 +52,7 @@
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Type'].'</td>
 									<td><a href="javascript:modal.simple();">'.$suppliers[$row['Supplier']]['Name'].'<a></td>
-									<td><a href="javascript:
-													misc.copyToClipboard(\''.$row['ItemRef'].'\');
-													misc.openInBackground(\''.$suppliers[$row['Supplier']]['Website'].'\');
-													alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');">'.$row['ItemRef'].'</a></td>
+									<td><a href="javascript:misc.copyToClipboard(\''.$row['ItemRef'].'\');misc.openInBackground(\''.$suppliers[$row['Supplier']]['Website'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');">'.$row['ItemRef'].'</a></td>
 									<td>'.$row['Size (cl)'].'</td>
 									<td>'.$row['Price (ea)'].'</td>
 									<td>'.$row['Active'].'</td>

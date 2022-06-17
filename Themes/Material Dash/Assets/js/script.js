@@ -32,7 +32,11 @@ $( document ).ready(() => {
 
 			},
 			copyToClipboard(str) {
-				navigator.clipboard.writeText(str);
+				var $temp = $("<input>");
+				$("body").append($temp);
+				$temp.val(text).select();
+				document.execCommand("copy");
+				$temp.remove();
 			},
 			openInBackground(str) {
 				window.open(str, '_blank')
