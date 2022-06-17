@@ -37,6 +37,12 @@
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="website">
+				<div class="form-floating mb-3">
+					<input type="tel" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Website'])?>">
+					<label for="floatingInput">Website</label>
+				</div>
+			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="email">
 				<div class="form-floating mb-3">
 					<input type="email" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Email'])?>">
@@ -49,18 +55,18 @@
 					<label for="floatingInput">Phone</label>
 				</div>
 			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="hours">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Opening Hours'])?>">
+					<label for="floatingInput">Opening hours</label>
+				</div>
+			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($supp['Active']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="hours">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Opening Hours'])?>">
-					<label for="floatingInput">Opening hours</label>
 				</div>
 			</div>
 		</div>
