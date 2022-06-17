@@ -103,7 +103,7 @@ $( document ).ready(() => {
 			simple() {
 				this.count++;
 				$('.modals').append(''+
-					'<div class="modal" tabindex="-1" role="dialog">'+
+					'<div class="modal '+this.count+'" tabindex="-1" role="dialog">'+
 						'<div class="modal-dialog" role="document">'+
 							'<div class="modal-content">'+
 								'<div class="modal-header">'+
@@ -123,6 +123,9 @@ $( document ).ready(() => {
 						'</div>'+
 					'</div>'+
 				'');
+				$('.modal.'+this.count).on('shown.bs.modal', function () {
+					$('#myInput').trigger('focus')
+				})
 			},
 		}
 		/** @final */
