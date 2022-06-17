@@ -223,56 +223,6 @@
 							"$ref": "#/definitions/500"
 						}
 					}
-				},
-				"delete": {
-					"tags": [ "Users" ],
-					"summary": "Delete the user",
-					"description": "Use this API query to Delete a user",
-					"operationId": "DeleteUser",
-					"produces": [ "application/json" ],
-					"parameters": [{
-							"name": "id",
-							"in": "path",
-							"description": "User ID of the user to be deleted",
-							"required": true,
-							"type": "integer",
-							"format": "int32"
-						},
-						{
-							"name": "username",
-							"in": "query",
-							"description": "Username of User to Delete",
-							"required": true,
-							"type": "string"
-						},
-						{
-							"name": "password",
-							"in": "query",
-							"description": "Password of User to Delete",
-							"required": true,
-							"type": "string"
-						}
-					],
-					"responses": {
-						"200": {
-							"description": "OK",
-							"schema": {
-								"$ref": "#/definitions/200"
-							}
-						},
-						"422": {
-							"description": "Unprocessable Entity",
-							"schema": {
-								"$ref": "#/definitions/422"
-							}
-						},
-						"500": {
-							"description": "Internal Server Error",
-							"schema": {
-								"$ref": "#/definitions/500"
-							}
-						}
-					}
 				}
 			},
 			"delete": {
