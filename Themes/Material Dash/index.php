@@ -189,15 +189,11 @@
 									include('./Pages/'.$layout_row['page_file'].'.php');
 								}
 							?>
-							<!-- Alerts -->
-							<div class="alerts"> </div>
-							<!-- Modals -->
-							<div class="modals"> </div>
 						</div>
 				</div>
-			<!-- ===== Alerts ===== -- >
+			<!-- ===== Alerts ===== -->
 				<div class="alerts"> </div>
-			< !-- ===== Modals ===== -->
+			<!-- ===== Modals ===== -->
 				<div class="modals"> </div>
 			<!-- ===== PWA ===== -->
 				<script type="module">
