@@ -34,7 +34,7 @@ $( document ).ready(() => {
 			copyToClipboard(str) {
 				var $temp = $("<input>");
 				$("body").append($temp);
-				$temp.val(text).select();
+				$temp.val(str).select();
 				document.execCommand("copy");
 				$temp.remove();
 			},
