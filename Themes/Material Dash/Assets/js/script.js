@@ -38,28 +38,9 @@ $( document ).ready(() => {
 				document.execCommand("copy");
 				$temp.remove();
 			},
-			openInBackground(str) {
-				const a = document.createElement("a");
-				a.href = str;
-				const evt = document.createEvent("MouseEvents");
-				evt.initMouseEvent(
-					"click",
-					true,
-					true,
-					window,
-					0,
-					0,
-					0,
-					0,
-					0,
-					true,
-					false,
-					false,
-					false,
-					0,
-					null
-				);
-				a.dispatchEvent(evt);
+			openInNewTab(str) {
+				window.open(str, '_blank');
+				window.focus();
 			},
 		}
 		/** @final */
