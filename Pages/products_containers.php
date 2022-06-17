@@ -6,7 +6,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h1>Products</h1>
+			<h1>Containers</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -51,7 +51,7 @@
 									<th scope="row">'.$row['ID'].'</th>
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Type'].'</td>
-									<td><a href="/Suppliers/Edit/'.$row['Supplier'].'/">'.$suppliers[$row['Supplier']].'<a></td>
+									<td><a href="/Suppliers/View/'.$row['Supplier'].'/">'.$suppliers[$row['Supplier']].'<a></td>
 									<td>'.$row['ItemRef'].'</td>
 									<td>'.$row['Size (cl)'].'</td>
 									<td>'.$row['Price (ea)'].'</td>
