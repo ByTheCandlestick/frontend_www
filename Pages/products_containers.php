@@ -1,6 +1,6 @@
 <?
 	$q = DB_Query("SELECT * FROM `suppliers` WHERE `Active`=1");
-	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row['Name']; }
+	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
 ?>
 <section>
 	<!-- Section Header -->
@@ -51,7 +51,7 @@
 									<th scope="row">'.$row['ID'].'</th>
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Type'].'</td>
-									<td><a href="/Suppliers/View/'.$row['Supplier'].'/">'.$suppliers[$row['Supplier']].'<a></td>
+									<td><a href="javascript:modal;">'.$suppliers[$row['Supplier']]['Name'].'<a></td>
 									<td>'.$row['ItemRef'].'</td>
 									<td>'.$row['Size (cl)'].'</td>
 									<td>'.$row['Price (ea)'].'</td>

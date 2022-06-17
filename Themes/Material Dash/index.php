@@ -195,7 +195,11 @@
 							<div class="modals"> </div>
 						</div>
 				</div>
-			<!-- ====== PWA ====== -->
+			<!-- ===== Alerts ===== -->
+				<div class="alerts"> </div>
+			<!-- ===== Modals ===== -->
+				<div class="modals"> </div>
+			<!-- ===== PWA ===== -->
 				<script type="module">
 					import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
