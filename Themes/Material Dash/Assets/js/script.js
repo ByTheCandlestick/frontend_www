@@ -204,10 +204,10 @@ $( document ).ready(() => {
 				create() {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'domain': $("div[name=domain]").find("input").val(),
+						'name': $("div[name=name] input").val(),
+						'domain': $("div[name=domain] input").val(),
 						'page_type': $("div[name=page_type]").find("option:selected").val(),
-						'maintenance': (($("div[name=status]").find("input[name=maintenance]:checked").length === 0)?0:1),
+						'maintenance': (($("div[name=status] input[name=maintenance]:checked").length === 0)?0:1),
 					}
 					$.ajax({
 						url: api_url + '/Website/',
@@ -231,10 +231,10 @@ $( document ).ready(() => {
 				update(sid) {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'domain': $("div[name=domain]").find("input").val(),
+						'name': $("div[name=name] input").val(),
+						'domain': $("div[name=domain] input").val(),
 						'page_type': $("div[name=page_type]").find("option:selected").val(),
-						'maintenance': (($("div[name=status]").find("input[name=maintenance]:checked").length === 0)?0:1),
+						'maintenance': (($("div[name=status] input[name=maintenance]:checked").length === 0)?0:1),
 					}
 					$.ajax({
 						url: api_url + '/Website/' + sid + '/',
@@ -282,10 +282,10 @@ $( document ).ready(() => {
 						'api_key': api_key,
 						'style': styles.join(","),
 						'script': scripts.join(","),
-						'name': $("div[name=name]").find("input").val(),
-						'title': $("div[name=title]").find("input").val(),
-						'page_url': $("div[name=page_url]").find("input").val(),
-						'subpage_url': $("div[name=subpage_url]").find("input").val(),
+						'name': $("div[name=name] input").val(),
+						'title': $("div[name=title] input").val(),
+						'page_url': $("div[name=page_url] input").val(),
+						'subpage_url': $("div[name=subpage_url] input").val(),
 						'domain_id': $("div[name=domain]").find("option:selected").val(),
 					}
 					$.ajax({
@@ -316,10 +316,10 @@ $( document ).ready(() => {
 						'api_key': api_key,
 						'style': styles.join(","),
 						'script': scripts.join(","),
-						'name': $("div[name=name]").find("input").val(),
-						'title': $("div[name=title]").find("input").val(),
-						'page_url': $("div[name=page_url]").find("input").val(),
-						'subpage_url': $("div[name=subpage_url]").find("input").val(),
+						'name': $("div[name=name] input").val(),
+						'title': $("div[name=title] input").val(),
+						'page_url': $("div[name=page_url] input").val(),
+						'subpage_url': $("div[name=subpage_url] input").val(),
 						'domain_id': $("div[name=domain]").find("option:selected").val(),
 					}
 					$.ajax({
@@ -364,7 +364,7 @@ $( document ).ready(() => {
 						'api_key': api_key,
 						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
 						'sections': $("div[type=sections]").attr('data-original-sections'),
-						'page': $("div[name=name]").find("input").val(),
+						'page': $("div[name=name] input").val(),
 					}
 					$.ajax({
 						url: api_url + '/Page/Layout/' + pid + '/',
@@ -387,11 +387,11 @@ $( document ).ready(() => {
 				create() {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'location': $("div[name=location]").find("input").val(),
-						'importance': $("div[name=importance]").find("input").val(),
-						'preload': (($("div[name=status]").find("input[name=preload]:checked").length === 0)?0:1),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
+						'name': $("div[name=name] input").val(),
+						'location': $("div[name=location] input").val(),
+						'importance': $("div[name=importance] input").val(),
+						'preload': (($("div[name=status] input[name=preload]:checked").length === 0)?0:1),
+						'active': (($("div[name=status] input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
 						url: api_url + '/Website/Style/',
@@ -415,11 +415,11 @@ $( document ).ready(() => {
 				update(id) {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'location': $("div[name=location]").find("input").val(),
-						'importance': $("div[name=importance]").find("input").val(),
-						'preload': (($("div[name=status]").find("input[name=preload]:checked").length === 0)?0:1),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
+						'name': $("div[name=name] input").val(),
+						'location': $("div[name=location] input").val(),
+						'importance': $("div[name=importance] input").val(),
+						'preload': (($("div[name=status] input[name=preload]:checked").length === 0)?0:1),
+						'active': (($("div[name=status] input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
 						url: api_url + '/Website/Style/' + id + '/',
@@ -461,10 +461,10 @@ $( document ).ready(() => {
 				create() {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'location': $("div[name=location]").find("input").val(),
-						'importance': $("div[name=importance]").find("input").val(),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
+						'name': $("div[name=name] input").val(),
+						'location': $("div[name=location] input").val(),
+						'importance': $("div[name=importance] input").val(),
+						'active': (($("div[name=status] input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
 						url: api_url + '/Website/Script/',
@@ -488,10 +488,10 @@ $( document ).ready(() => {
 				update(id) {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'location': $("div[name=location]").find("input").val(),
-						'importance': $("div[name=importance]").find("input").val(),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0)?0:1),
+						'name': $("div[name=name] input").val(),
+						'location': $("div[name=location] input").val(),
+						'importance': $("div[name=importance] input").val(),
+						'active': (($("div[name=status] input[name=active]:checked").length === 0)?0:1),
 					}
 					$.ajax({
 						url: api_url + '/Website/Script/' + id + '/',
@@ -534,10 +534,10 @@ $( document ).ready(() => {
 				create() {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'description': $("div[name=description]").find("input").val(),
-						'location': $("div[name=location]").find("input").val(),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+						'name': $("div[name=name] input").val(),
+						'description': $("div[name=description] input").val(),
+						'location': $("div[name=location] input").val(),
+						'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
 					};
 					$.ajax({
 						url: api_url + '/Website/Theme/',
@@ -561,10 +561,10 @@ $( document ).ready(() => {
 				update(id) {
 					data = {
 						'api_key': api_key,
-						'name': $("div[name=name]").find("input").val(),
-						'description': $("div[name=description]").find("input").val(),
-						'location': $("div[name=location]").find("input").val(),
-						'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+						'name': $("div[name=name] input").val(),
+						'description': $("div[name=description] input").val(),
+						'location': $("div[name=location] input").val(),
+						'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
 					};
 					$.ajax({
 						url: api_url + '/Website/Theme/' + id + '/',
@@ -607,15 +607,15 @@ $( document ).ready(() => {
 			create() {
 				data = {
 					'api_key': api_key,
-					'uname': $("div[name=username]").find("input").val(),
-					'fname': $("div[name=firstname]").find("input").val(),
-					'lname': $("div[name=lastname]").find("input").val(),
-					'email': $("div[name=email]").find("input").val(),
-					'phone': $("div[name=phone]").find("input").val(),
-					'r_pass': (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1),
-					'd_analytics': (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
-					'e_active': (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1),
-					'u_active': (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1),
+					'uname': $("div[name=username] input").val(),
+					'fname': $("div[name=firstname] input").val(),
+					'lname': $("div[name=lastname] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'r_pass': (($("div[name=misc] input[name=reset_pass]:checked").length === 0) ? 0 : 1),
+					'd_analytics': (($("div[name=misc] input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
+					'e_active': (($("div[name=misc] input[name=email_active]:checked").length === 0) ? 0 : 1),
+					'u_active': (($("div[name=misc] input[name=user_active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
 					url: api_url + '/Users/',
@@ -639,15 +639,15 @@ $( document ).ready(() => {
 			update(uid) {
 				data = {
 					'api_key': api_key,
-					'uname': $("div[name=username]").find("input").val(),
-					'fname': $("div[name=firstname]").find("input").val(),
-					'lname': $("div[name=lastname]").find("input").val(),
-					'email': $("div[name=email]").find("input").val(),
-					'phone': $("div[name=phone]").find("input").val(),
-					'r_pass': (($("div[name=misc]").find("input[name=reset_pass]:checked").length === 0) ? 0 : 1),
-					'd_analytics': (($("div[name=misc]").find("input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
-					'e_active': (($("div[name=misc]").find("input[name=email_active]:checked").length === 0) ? 0 : 1),
-					'u_active': (($("div[name=misc]").find("input[name=user_active]:checked").length === 0) ? 0 : 1),
+					'uname': $("div[name=username] input").val(),
+					'fname': $("div[name=firstname] input").val(),
+					'lname': $("div[name=lastname] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'r_pass': (($("div[name=misc] input[name=reset_pass]:checked").length === 0) ? 0 : 1),
+					'd_analytics': (($("div[name=misc] input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
+					'e_active': (($("div[name=misc] input[name=email_active]:checked").length === 0) ? 0 : 1),
+					'u_active': (($("div[name=misc] input[name=user_active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
 					url: api_url + '/Users/' + uid + '/',
@@ -690,31 +690,31 @@ $( document ).ready(() => {
 
 			},
 			update(pid) {
-				discontinued = (($("div[name=status]").find("input[name=discontinued]:checked").length === 0) ? 0 : 1);
-				available = (($("div[name=status]").find("input[name=available]:checked").length === 0) ? 0 : 1);
-				discounted = (($("div[name=pricing]").find("input[name=discounted]:checked").length === 0) ? 0 : 1);
-				auto_calculate = (($("div[name=pricing]").find("input[name=auto_calculate]:checked").length === 0) ? 0 : 1);
+				discontinued = (($("div[name=status] input[name=discontinued]:checked").length === 0) ? 0 : 1);
+				available = (($("div[name=status] input[name=available]:checked").length === 0) ? 0 : 1);
+				discounted = (($("div[name=pricing] input[name=discounted]:checked").length === 0) ? 0 : 1);
+				auto_calculate = (($("div[name=pricing] input[name=auto_calculate]:checked").length === 0) ? 0 : 1);
 				desc_l = smde_desc_l.value().replace('\n', '\\r\\n');
 				desc_s = smde_desc_s.value().replace('\n', '\\r\\n');
 
 				data = {
 					'api_key': api_key,
-					'title': $("div[name=title]").find("input").val(),
+					'title': $("div[name=title] input").val(),
 					'collection': $("div[name=range]").find("option:selected").val(),
-					'images': $("div[name=images]").find("input").val(),
+					'images': $("div[name=images] input").val(),
 					'category': $("div[name=category]").find("option:selected").val(),
 					'discontinued': discontinued,
 					'active': available,
-					'currency': $("div[name=currency]").find("input").val(),
-					'profit': $("div[name=profit]").find("input").val(),
-					'retail': $("div[name=retail]").find("input").val(),
-					'net': $("div[name=net]").find("input").val(),
-					'gross': $("div[name=gross]").find("input").val(),
-					'markup': $("div[name=markup]").find("input").val(),
+					'currency': $("div[name=currency] input").val(),
+					'profit': $("div[name=profit] input").val(),
+					'retail': $("div[name=retail] input").val(),
+					'net': $("div[name=net] input").val(),
+					'gross': $("div[name=gross] input").val(),
+					'markup': $("div[name=markup] input").val(),
 					'discounted': discounted,
 					'auto_calculate': auto_calculate,
 					'discount_type': $("div[name=discount_type]").find("option:selected").val(),
-					'discount_amount': $("div[name=discount_amount]").find("input").val(),
+					'discount_amount': $("div[name=discount_amount] input").val(),
 					'container': $("div[name=container]").find("option:selected").val(),
 					'wick': $("div[name=wick]").find("option:selected").val(),
 					'wick_stand': $("div[name=wick_stand]").find("option:selected").val(),
@@ -726,7 +726,7 @@ $( document ).ready(() => {
 					'made_by': $("div[name=made_by]").find("option:selected").val(),
 					'description_long': encodeURIComponent(desc_l),
 					'description_short': encodeURIComponent(desc_s),
-					'slug': $("div[name=slug]").find("input").val(),
+					'slug': $("div[name=slug] input").val(),
 				};
 				$.ajax({
 					url: api_url + '/Product/' + pid + '/',
@@ -772,7 +772,7 @@ $( document ).ready(() => {
 				colour_price	= Number($("div[name=colour]").find("option:selected").attr('price'));
 				packaging_price	= Number($("div[name=packaging]").find("option:selected").attr('price'));
 				shipping_price	= Number($("div[name=shipping]").find("option:selected").attr('price'));
-				margin			= Number($("div[name=markup]").find("input").val());
+				margin			= Number($("div[name=markup] input").val());
 
 				// Calculate the final prices
 				netPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
@@ -797,14 +797,14 @@ $( document ).ready(() => {
 						url: api_url + '/Product/Container/' + cid + '/',
 						data: {
 							'api_key': api_key,
-							'name': $("div[name=name]").find("input").val(),
+							'name': $("div[name=name] input").val(),
 							'supplier': $("div[name=supplier]").find("option:selected").val(),
-							'supplier_ref': $("div[name=itemref]").find("input").val(),
-							'size': $("div[name=size]").find("input").val(),
-							'price_b': $("div[name=price_b]").find("input").val(),
-							'quantity': $("div[name=quantity]").find("input").val(),
-							'price_e': $("div[name=price_e]").find("input").val(),
-							'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+							'supplier_ref': $("div[name=itemref] input").val(),
+							'size': $("div[name=size] input").val(),
+							'price_b': $("div[name=price_b] input").val(),
+							'quantity': $("div[name=quantity] input").val(),
+							'price_e': $("div[name=price_e] input").val(),
+							'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
 						},
 						type: 'POST',
 						xhrFields: {
@@ -824,14 +824,14 @@ $( document ).ready(() => {
 						url: api_url + '/Product/Container/' + cid + '/',
 						data: {
 							'api_key': api_key,
-							'name': $("div[name=name]").find("input").val(),
+							'name': $("div[name=name] input").val(),
 							'supplier': $("div[name=supplier]").find("option:selected").val(),
-							'supplier_ref': $("div[name=itemref]").find("input").val(),
-							'size': $("div[name=size]").find("input").val(),
-							'price_b': $("div[name=price_b]").find("input").val(),
-							'quantity': $("div[name=quantity]").find("input").val(),
-							'price_e': $("div[name=price_e]").find("input").val(),
-							'active': (($("div[name=status]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+							'supplier_ref': $("div[name=itemref] input").val(),
+							'size': $("div[name=size] input").val(),
+							'price_b': $("div[name=price_b] input").val(),
+							'quantity': $("div[name=quantity] input").val(),
+							'price_e': $("div[name=price_e] input").val(),
+							'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
 						},
 						type: 'POST',
 						xhrFields: {
@@ -859,13 +859,13 @@ $( document ).ready(() => {
 			create() {
 				data = {
 					'api_key': api_key,
-					'reference': $("div[name=reference]").find("input").val(),
-					'name': $("div[name=name]").find("input").val(),
-					'website': $("div[name=website]").find("input").val(),
-					'email': $("div[name=email]").find("input").val(),
-					'phone': $("div[name=phone]").find("input").val(),
-					'hours': $("div[name=hours]").find("input").val(),
-					'active': (($("div[name=misc]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+					'reference': $("div[name=reference] input").val(),
+					'name': $("div[name=name] input").val(),
+					'website': $("div[name=website] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'hours': $("div[name=hours] input").val(),
+					'active': (($("div[name=misc] input[name=active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
 					url: api_url + '/Supplier/',
@@ -889,12 +889,12 @@ $( document ).ready(() => {
 			update(sid) {
 				data = {
 					'api_key': api_key,
-					'reference': $("div[name=reference]").find("input").val(),
-					'name': $("div[name=name]").find("input").val(),
-					'email': $("div[name=email]").find("input").val(),
-					'phone': $("div[name=phone]").find("input").val(),
-					'hours': $("div[name=hours]").find("input").val(),
-					'active': (($("div[name=misc]").find("input[name=active]:checked").length === 0) ? 0 : 1),
+					'reference': $("div[name=reference] input").val(),
+					'name': $("div[name=name] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'hours': $("div[name=hours] input").val(),
+					'active': (($("div[name=misc] input[name=active]:checked").length === 0) ? 0 : 1),
 				};
 				$.ajax({
 					url: api_url + '/Supplier/' + sid + '/',
@@ -959,7 +959,7 @@ $( document ).ready(() => {
 				history.back();
 			}
 		});
-	// -----========== Alerts ==========----- // @todo //
+	// -----========== Alerts ==========----- // @final //
 		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) {
 			alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
 		}
