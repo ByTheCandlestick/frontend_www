@@ -31,6 +31,12 @@ $( document ).ready(() => {
 			redirect() {
 
 			},
+			copyToClipboard(str) {
+				navigator.clipboard.writeText(str);
+			},
+			openInBackground(str) {
+				window.open(str, '_blank')
+			},
 		}
 		/** @final */
 		cookie = {
