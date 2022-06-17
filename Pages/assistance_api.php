@@ -1,14 +1,23 @@
 <?
-    isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'? $url = "https://" : $url = "http://";
-    $url.= $_SERVER['HTTP_HOST'];   
+    isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'? $url="https://".$_SERVER['HTTP_HOST'] : $url="http://".$_SERVER['HTTP_HOST'];
+    if(QS == "Edit") {
+
+    } else {
 ?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h2 class="title">Analytics</h1>
+			<h1>API assistance</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
+			<div class="row">
+				<div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
+					<a href="/Assistance/API/Edit/" class="btn btn-outline-primary m-1">
+						<i class="fa fa-pencil"></i>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 	<hr>
@@ -44,3 +53,6 @@
         </script>
     </div>
 </section>
+<?
+    }
+?>
