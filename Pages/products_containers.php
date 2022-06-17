@@ -51,7 +51,7 @@
 									<th scope="row">'.$row['ID'].'</th>
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Type'].'</td>
-									<td><a href="javascript:modal;">'.$suppliers[$row['Supplier']]['Name'].'<a></td>
+									<td><a href="javascript:modal.simple();">'.$suppliers[$row['Supplier']]['Name'].'<a></td>
 									<td>'.$row['ItemRef'].'</td>
 									<td>'.$row['Size (cl)'].'</td>
 									<td>'.$row['Price (ea)'].'</td>
