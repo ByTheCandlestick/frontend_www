@@ -365,9 +365,9 @@ $(document).ready(function() {
 								);
 								if($('rw').length) {
 									if($('rwp').length) {
-										window.location.replace = $('rw').attr('data') + $('rw').attr('data')
+										window.location = $('rw').attr('data') + $('rw').attr('data')
 									} else {
-										window.location.replace = $('rw').attr('data');
+										window.location = $('rw').attr('data');
 									}
 								}
 								//location.reload();
