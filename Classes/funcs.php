@@ -220,7 +220,8 @@
 				ignore_user_abort(true); // optional
 				ob_start();
 		
-				print('ERROR');
+				print('ERROR: User not authorised.');
+				header('Location: /Error/Unauthorised');
 				
 				$size = ob_get_length();
 				header("Content-Length: $size");
