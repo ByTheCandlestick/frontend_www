@@ -340,17 +340,13 @@ $(document).ready(function() {
 				});
 			},
 			login: function() {
-				username = $(".main-form__body--input[name=username]").val();
-				password = $(".main-form__body--input[name=password]").val();
-				;
-
 				if (validate.form()) {
 					$.ajax({
 						url: api_url + '/Users/Session/',
 						data: {
 							'api_key': api_key,
-							'username': username,
-							'password': password
+							'username': $(".main-form__body--input[name=username]").val(),
+							'password': $(".main-form__body--input[name=password]").val(),
 						},
 						type: 'PUT',
 						xhrFields: {
@@ -368,6 +364,13 @@ $(document).ready(function() {
 									body.options.secure,
 									body.options.httponly
 								);
+								if($('rw').length) {
+									if($('rwp').length) {
+										location.href = $('rw').attr('data');
+									} else {
+										location.href = $('rw').attr('data') + $('rwp').attr('data');
+									}
+								}
 								//location.reload();
 							} else {
 								console.log(body.status);

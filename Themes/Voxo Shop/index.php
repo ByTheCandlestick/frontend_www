@@ -96,13 +96,17 @@
 		<body class="online" onLoad="cookie.acceptanceCheck();">
 			<!---->
 					<?
-						if(isset($_GET['rwid']) && $_GET['rwid'] != "") {
+						if(isset($_GET['rw']) && $_GET['rw'] != "") {
 							print('
-								<rwid data="'.$_GET['rwid'].'"></rwid>
+								<rw data="'.$_GET['rw'].'"></rw>
+							');
+						}
+						if(isset($_GET['rwp']) && $_GET['rwp'] != "") {
+							print('
+								<rwp data="'.$_GET['rwp'].'"></rwp>
 							');
 						}
 					?>
-					<rdir></rdir>
 			<!-- ===== Javascript ===== -->
 				<?
 					if($layout_row['script_ids'] != NULL) {
