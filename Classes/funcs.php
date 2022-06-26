@@ -221,7 +221,7 @@
 				ob_start();
 		
 				print('ERROR: User not authorised.');
-				header('Location: '.URL_WWW.'/Login');
+				header('Location: '.URL_WWW.'/Login?ruid='.domainID());
 				
 				$size = ob_get_length();
 				header("Content-Length: $size");
