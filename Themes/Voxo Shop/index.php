@@ -94,6 +94,13 @@
 			<!-- ===== EOS ===== -->
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
+			<!---->
+					<?
+						if(isset($_GET['rwid']) && $_GET['rwid'] != "") {
+
+						}
+					?>
+					<rdir></rdir>
 			<!-- ===== Javascript ===== -->
 				<?
 					if($layout_row['script_ids'] != NULL) {
