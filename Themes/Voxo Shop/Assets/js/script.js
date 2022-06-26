@@ -653,7 +653,6 @@ $(document).ready(function() {
 						"expires="+ Expires + "; "+
 						"path=" + Path + "; "+
 						"domain=" + Domain + "; "
-					console.log(CookieString);
 					document.cookie = CookieString;
 				} catch(error) {
 					console.log(error);
