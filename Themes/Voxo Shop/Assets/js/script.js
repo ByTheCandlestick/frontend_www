@@ -355,7 +355,6 @@ $(document).ready(function() {
 						success: function(body) {
 							res = JSON.stringify(body);
 							if (body.status == "success") {
-								console.log(body);
 								cookie.createFromArray(
 									body.cookies,
 									body.options.expires,
@@ -366,9 +365,9 @@ $(document).ready(function() {
 								);
 								if($('rw').length) {
 									if($('rwp').length) {
-										location.replace = $('rw').attr('data') + $('rw').attr('data')
+										window.location.replace = $('rw').attr('data') + $('rw').attr('data')
 									} else {
-										location.replace = $('rw').attr('data');
+										window.location.replace = $('rw').attr('data');
 									}
 								}
 								//location.reload();
