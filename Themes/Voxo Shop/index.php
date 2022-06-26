@@ -97,7 +97,9 @@
 			<!---->
 					<?
 						if(isset($_GET['rwid']) && $_GET['rwid'] != "") {
-
+							print('
+								<rwid data="'.$_GET['rwid'].'"></rwid>
+							');
 						}
 					?>
 					<rdir></rdir>
