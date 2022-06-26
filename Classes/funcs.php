@@ -221,7 +221,7 @@
 				ob_start();
 		
 				print('ERROR: User not authorised.');
-				header('Location: /Error/Unauthorised');
+				header('Location: '.URL_WWW.'/Login');
 				
 				$size = ob_get_length();
 				header("Content-Length: $size");
