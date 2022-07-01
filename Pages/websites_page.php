@@ -182,13 +182,7 @@
 							<label class="form-check-label" for="MenuCheckboxe">Is menu item?</label>
 						</div>
 					</div>
-					<div class="col-12 col-lg-5" name="menu_icon">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_icon']=='')?'No title was set':'')?>" value="<? print(($page['menu_icon']=='')?'':$page['menu_icon'])?>">
-							<label for="floatingInput">Icon</label>
-						</div>
-					</div>
-					<div class="col-12 col-lg-4" name="menu_order">
+					<div class="col-12 col-lg-3" name="menu_order">
 						<div class="form-floating mb-3">
 							<input type="number" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_order']=='')?'No title was set':'')?>" value="<? print(($page['menu_order']=='')?'':$page['menu_order'])?>">
 							<label for="floatingInput">Menu Order</label>
@@ -198,6 +192,12 @@
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_url']=='')?'No title was set':'')?>" value="<? print(($page['menu_url']=='')?'':$page['menu_url'])?>">
 							<label for="floatingInput">URL</label>
+						</div>
+					</div>
+					<div class="col-12 col-lg-4" name="menu_icon">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_icon']=='')?'No title was set':'')?>" value="<? print(($page['menu_icon']=='')?'':$page['menu_icon'])?>">
+							<label for="floatingInput">Icon</label>
 						</div>
 					</div>
 				</div>
