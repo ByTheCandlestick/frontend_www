@@ -194,7 +194,7 @@
 							<label for="floatingInput">URL</label>
 						</div>
 					</div>
-					<div class="col-12 col-lg-4" name="menu_icon">
+					<div class="col-12 col-lg-3" name="menu_icon">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_icon']=='')?'No title was set':'')?>" value="<? print(($page['menu_icon']=='')?'':$page['menu_icon'])?>">
 							<label for="floatingInput">Icon</label>
