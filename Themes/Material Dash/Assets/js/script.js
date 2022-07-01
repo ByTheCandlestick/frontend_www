@@ -273,8 +273,8 @@ $( document ).ready(() => {
 			},
 			/** @final */
 			page: {
-				styles = [],
-				scripts = [],
+				styles: [],
+				scripts: [],
 				data = {
 					'api_key': api_key,
 					'style': website.page.styles.join(","),
