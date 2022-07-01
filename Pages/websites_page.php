@@ -177,22 +177,26 @@
 					</div>
 					<hr>
 					<div class="col-12" name="menu_item">
-						<div class="form-floating mb-3">
-							<label for="floatingInput">Is Menu item?</label>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="MenuCheckboxe">
+							<label class="form-check-label" for="MenuCheckboxe">Is menu item?</label>
 						</div>
 					</div>
 					<div class="col-12" name="menu_icon">
 						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_icon']=='')?'No title was set':'')?>" value="<? print(($page['page_title']=='')?'':$page['page_title'])?>">
 							<label for="floatingInput">Icon</label>
 						</div>
 					</div>
 					<div class="col-12" name="menu_order">
 						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_order']=='')?'No title was set':'')?>" value="<? print(($page['page_title']=='')?'':$page['page_title'])?>">
 							<label for="floatingInput">Menu Order</label>
 						</div>
 					</div>
 					<div class="col-12" name="menu_url">
 						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_url']=='')?'No title was set':'')?>" value="<? print(($page['page_title']=='')?'':$page['page_title'])?>">
 							<label for="floatingInput">URL</label>
 						</div>
 					</div>
