@@ -11,7 +11,7 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="row" style="height:100%;">
+	<div class="row" style="height: calc(100% - 140px);">
 		<div class="col-12 col-md-6 col-lg-4 col-xl-3" style="overflow-x: hidden; overflow-y: scroll; height: calc(100% - 140px); border-right: solid 1px rgba(0,0,0,0.4);">
 			gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br> gg <br>
 		</div>
