@@ -1,14 +1,7 @@
 <style>
 	.nav {
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 500px;
 		height: 80px;
-		margin-top: -40px;
-		margin-left: -250px;
-		background: #fff;
-		transform: translateZ(0);
 	}
 	.nav:hover .link {
 		width: 5%;
