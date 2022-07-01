@@ -61,6 +61,31 @@
 							<label for="floatingInput">Domain</label>
 						</div>
 					</div>
+					<h5>Menu info</h5>
+					<div class="col-12 col-lg-3" name="menu_item">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="MenuCheckboxe">
+							<label class="form-check-label" for="MenuCheckboxe">Is menu item?</label>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3" name="menu_order">
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+							<label for="floatingInput">Menu Order</label>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6" name="menu_url">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+							<label for="floatingInput">URL</label>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3" name="menu_icon">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+							<label for="floatingInput">Icon</label>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
