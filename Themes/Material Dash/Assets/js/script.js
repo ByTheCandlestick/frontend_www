@@ -287,6 +287,10 @@ $( document ).ready(() => {
 						'page_url': $("div[name=page_url] input").val(),
 						'subpage_url': $("div[name=subpage_url] input").val(),
 						'domain_id': $("div[name=domain]").find("option:selected").val(),
+						'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
+						'menu_order': $("div[name=menu_order] input").val(),
+						'menu_icon': $("div[name=menu_icon] input").val(),
+						'menu_url': $("div[name=menu_url] input").val(),
 					}
 					$.ajax({
 						url: api_url + '/Page/',
@@ -321,6 +325,10 @@ $( document ).ready(() => {
 						'page_url': $("div[name=page_url] input").val(),
 						'subpage_url': $("div[name=subpage_url] input").val(),
 						'domain_id': $("div[name=domain]").find("option:selected").val(),
+						'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
+						'menu_order': $("div[name=menu_order] input").val(),
+						'menu_icon': $("div[name=menu_icon] input").val(),
+						'menu_url': $("div[name=menu_url] input").val(),
 					}
 					$.ajax({
 						url: api_url + '/Page/' + pid + '/',
