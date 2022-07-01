@@ -11,7 +11,7 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="row" style="width:100%; height:100%; position:fixed;">
+	<div class="row" style="height:100%; position:fixed;">
 		<div class="col-12 col-md-6 col-lg-4 col-xl-3" style="background: #fff; border-right: solid 1px rgba(0,0,0,0.4);">
 			
 		</div>
