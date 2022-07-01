@@ -967,18 +967,18 @@ $( document ).ready(() => {
 				history.back();
 			}
 		});
-	// -----========== Alerts ==========----- // @final //
+	// -----========== Alerts on load ==========----- // @final //
 		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) {
 			alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
 		}
-	// -----========== PRELOADER ==========----- // @final //
+	// -----========== pRELOADER ==========----- // @final //
 		$(window).bind('beforeunload', () => {
 			$('.app-preloader').fadeIn();
 		});
 		$('.app-preloader').fadeOut();
-	// -----========== TOOL TIPS ==========----- // @final //
+	// -----========== Tool tips ==========----- // @final //
 		$('[data-toggle="tooltip"]').tooltip();
-	// -----========== OXYGEN BUILDER ==========----- // @wip //
+	// -----========== OXYGEN builder ==========----- // @wip //
 		$('input[name=display_type]').change(() => {
 			if($('input[name=display_type]:checked').length === 0) {
 				$('label[for=display_type]').html('Pages');
