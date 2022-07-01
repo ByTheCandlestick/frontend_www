@@ -277,8 +277,8 @@ $( document ).ready(() => {
 				scripts: $("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { var scripts = []; scripts.push($(element).val()); }),
 				data: {
 					'api_key': api_key,
-					'style': styles.join(","),
-					'script': scripts.join(","),
+					'style': page.styles.join(","),
+					'script': page.scripts.join(","),
 					'name': $("div[name=name] input").val(),
 					'title': $("div[name=title] input").val(),
 					'page_url': $("div[name=page_url] input").val(),
