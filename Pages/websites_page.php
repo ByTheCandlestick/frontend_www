@@ -175,6 +175,27 @@
 							<label for="floatingInput">Domain</label>
 						</div>
 					</div>
+					<hr>
+					<div class="col-12" name="menu_item">
+						<div class="form-floating mb-3">
+							<label for="floatingInput">Is Menu item?</label>
+						</div>
+					</div>
+					<div class="col-12" name="menu_icon">
+						<div class="form-floating mb-3">
+							<label for="floatingInput">Icon</label>
+						</div>
+					</div>
+					<div class="col-12" name="menu_order">
+						<div class="form-floating mb-3">
+							<label for="floatingInput">Menu Order</label>
+						</div>
+					</div>
+					<div class="col-12" name="menu_url">
+						<div class="form-floating mb-3">
+							<label for="floatingInput">URL</label>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
