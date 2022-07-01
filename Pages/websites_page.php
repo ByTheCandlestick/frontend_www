@@ -203,7 +203,7 @@
 					<h5>Menu info</h5>
 					<div class="col-12" name="menu_item">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="MenuCheckbox" <?($prod['menu_item']==1)?print("checked"):print("")?>>
+							<input class="form-check-input" type="checkbox" value="" id="MenuCheckbox" <?($page['menu_item']==1)?print("checked"):print("")?>>
 							<label class="form-check-label" for="MenuCheckbox">Is menu item?</label>
 						</div>
 					</div>
