@@ -273,8 +273,8 @@ $( document ).ready(() => {
 			},
 			/** @final */
 			page: {
-				styles: $("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { parent.push($(element).val()); }),
-				scripts: $("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); }),
+				styles: $("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { var styles; styles.push($(element).val()); }),
+				scripts: $("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { var scripts; scripts.push($(element).val()); }),
 				data: {
 					'api_key': api_key,
 					'style': styles.join(","),
