@@ -85,8 +85,8 @@
 	<div class="row">
 		<div class='nav'>
 			<div class='link'>
-				<div class='prev'>&#xf1cb;</div>
-				<div class='small'>&#xf1cb;</div>
+				<div class='prev'><i class="fad chart-network"></i></div>
+				<div class='small'><i class="fad chart-network"></i></div>
 				<div class='full'>
 					<div class='f1'>headline</div>
 					<div class='f2'>some additional info to this link</div>
