@@ -71,6 +71,7 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Assistance</h1>
+			<h4>What would you like help with?</h4>
 		</div>
 	</div>
 	<hr>
