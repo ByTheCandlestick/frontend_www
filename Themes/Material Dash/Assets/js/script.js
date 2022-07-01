@@ -277,8 +277,8 @@ $( document ).ready(() => {
 				scripts: [],
 				data: {
 					'api_key': api_key,
-					'style': page.styles.join(","),
-					'script': page.scripts.join(","),
+					'style': website.page.styles.join(","),
+					'script': website.page.scripts.join(","),
 					'name': $("div[name=name] input").val(),
 					'title': $("div[name=title] input").val(),
 					'page_url': $("div[name=page_url] input").val(),
