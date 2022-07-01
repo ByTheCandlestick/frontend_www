@@ -277,8 +277,8 @@ $( document ).ready(() => {
 				scripts: $("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { var scripts=[]; scripts.push($(element).val()); }),
 				data: {
 					'api_key': api_key,
-					'style': page.styles.join(","),
-					'script': page.scripts.join(","),
+					'style': website.page.styles.join(","),
+					'script': website.page.scripts.join(","),
 					'name': $("div[name=name] input").val(),
 					'title': $("div[name=title] input").val(),
 					'page_url': $("div[name=page_url] input").val(),
@@ -292,7 +292,7 @@ $( document ).ready(() => {
 				create() {
 					$.ajax({
 						url: api_url + '/Page/',
-						data: page.data,
+						data: website.page.data,
 						type: 'PUT',
 						xhrFields: {
 							withCredentials: true,
@@ -312,7 +312,7 @@ $( document ).ready(() => {
 				update(pid) {
 					$.ajax({
 						url: api_url + '/Page/' + pid + '/',
-						data: page.data,
+						data: website.page.data,
 						type: 'POST',
 						xhrFields: {
 							withCredentials: true,
