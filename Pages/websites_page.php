@@ -62,7 +62,7 @@
 						</div>
 					</div>
 					<h5>Menu info</h5>
-					<div class="col-12 col-lg-12" name="menu_item">
+					<div class="col-12" name="menu_item">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="MenuCheckboxe">
 							<label class="form-check-label" for="MenuCheckboxe">Is menu item?</label>
