@@ -101,22 +101,6 @@
 					<div class='f2'></div>
 				</div>
 			</div>
-			<div class='link'>
-				<div class='prev'>&#xf09b;</div>
-				<div class='small'>&#xf09b;</div>
-				<div class='full'>
-					<div class='f1'>headline</div>
-					<div class='f2'>some additional info to this link</div>
-				</div>
-			</div>
-			<div class='link'>
-				<div class='prev'>&#xf171;</div>
-				<div class='small'>&#xf171;</div>
-				<div class='full'>
-					<div class='f1'>headline</div>
-					<div class='f2'>some additional info to this link</div>
-				</div>
-			</div>
 		</div>
     </div>
 </section>
