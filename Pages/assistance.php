@@ -35,10 +35,9 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100px;
+		width: 100%;
 		line-height: 78px;
 		text-align: center;
-		font-family: fontawesome;
 		font-size: 24px;
 	}
 	.nav .link .full {
