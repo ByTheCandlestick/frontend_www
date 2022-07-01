@@ -13,8 +13,45 @@
 	<!-- Section Body -->
 	<div class="row" style="height:100%;">
 		<div class="col-12 col-md-6 col-lg-4 col-xl-3" style="overflow-x: hidden; overflow-y: scroll; border-right: solid 1px rgba(0,0,0,0.4);">
-			gg
-			gg
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
+			gg <br>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 col-xl-3" style="overflow-x: hidden; overflow-y: scroll; border-right: solid 1px rgba(0,0,0,0.4); box-shadow: inset 7px 0px 9px -12px rgb(0 0 0)">
 			
