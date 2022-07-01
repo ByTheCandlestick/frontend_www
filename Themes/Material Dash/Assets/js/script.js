@@ -300,9 +300,11 @@ $( document ).ready(() => {
 					})
 				},
 				create() {
+					website.page.loadScripts();
+					website.page.loadStyles();
 					$.ajax({
 						url: api_url + '/Page/',
-						data: data,
+						data: website.page.data,
 						type: 'PUT',
 						xhrFields: {
 							withCredentials: true,
@@ -320,27 +322,11 @@ $( document ).ready(() => {
 					});
 				},
 				update(pid) {
-					var styles = [];
-					var scripts = [];
-					$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
-					$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
-					data = {
-						'api_key': api_key,
-						'style': styles.join(","),
-						'script': scripts.join(","),
-						'name': $("div[name=name] input").val(),
-						'title': $("div[name=title] input").val(),
-						'page_url': $("div[name=page_url] input").val(),
-						'subpage_url': $("div[name=subpage_url] input").val(),
-						'domain_id': $("div[name=domain]").find("option:selected").val(),
-						'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
-						'menu_order': $("div[name=menu_order] input").val(),
-						'menu_icon': $("div[name=menu_icon] input").val(),
-						'menu_url': $("div[name=menu_url] input").val(),
-					}
+					website.page.loadScripts();
+					website.page.loadStyles();
 					$.ajax({
 						url: api_url + '/Page/' + pid + '/',
-						data: data,
+						data: website.page.data,
 						type: 'POST',
 						xhrFields: {
 							withCredentials: true,
