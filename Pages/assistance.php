@@ -1,7 +1,14 @@
 <style>
 	.nav {
 		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 500px;
 		height: 80px;
+		margin-top: -40px;
+		margin-left: -250px;
+		background: #fff;
+		transform: translateZ(0);
 	}
 	.nav:hover .link {
 		width: 5%;
@@ -28,7 +35,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 100px;
 		line-height: 78px;
 		text-align: center;
 		font-size: 24px;
@@ -93,8 +100,8 @@
 				</div>
 			</div>
 			<div class='link'>
-				<div class='prev'>&#xf26e;</div>
-				<div class='small'>&#xf26e;</div>
+				<div class='prev'><i class="fad fa-books"></i></div>
+				<div class='small'><i class="fad fa-books"></i></div>
 				<div class='full'>
 					<div class='f1'>Recipes</div>
 					<div class='f2'></div>
