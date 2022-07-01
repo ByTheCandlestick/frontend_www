@@ -273,7 +273,7 @@ $( document ).ready(() => {
 			},
 			/** @final */
 			page: {
-				styles: $("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { push($(element).val()); }),
+				styles: $("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { this.push($(element).val()); }),
 				scripts: $("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { this.push($(element).val()); }),
 				data: {
 					'api_key': api_key,
