@@ -23,6 +23,8 @@
 }
 .assistanceNav div li {
 	list-style-type: none;
+    min-height: 30px;
+    border-bottom: solid 1px rgba(0,0,0,0.4);
 }
 </style>
 <section>
