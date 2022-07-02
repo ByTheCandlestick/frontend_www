@@ -1,5 +1,6 @@
 $( document ).ready(() => {
 	// -----========== VARIABLES ==========----- //
+		if(Remarkable()) { const remarkable = new Remarkable() }
 		const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	// -----========== Nestled functions ==========----- //
@@ -945,7 +946,6 @@ $( document ).ready(() => {
 		/** @wip */
 		assistance = {
 			jsonData: {},
-			md: new Remarkable(),
 			loadLV2(id) {
 				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
 				assistance.jsonData[id]['lv2'].forEach((data) => {
@@ -977,7 +977,7 @@ $( document ).ready(() => {
 
 				$.get(assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
-						this.md.render(data)
+						remarkable.render(data)
 					);
 				})
 
