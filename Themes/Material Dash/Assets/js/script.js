@@ -945,6 +945,7 @@ $( document ).ready(() => {
 		/** @wip */
 		assistance = {
 			jsonData: null,
+			arrayData: JSON.parse(assistance.jsonData),
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
@@ -1045,12 +1046,9 @@ $( document ).ready(() => {
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
 				assistance.jsonData = data;
-
-				assistance.jsonData.forEach(obj => {
-					Object.entries(obj).forEach(([key, value]) => {
-						console.log(`${key} ${value}`);
-					});
-					console.log('-------------------');
+				
+				assistance.arrayData.forEach((data) => {
+					console.log(data['title'])
 				});
 			})
 		}
