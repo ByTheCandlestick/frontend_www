@@ -951,7 +951,7 @@ $( document ).ready(() => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
 						"<li>"+
-							"<a href=\"javascript:assistance.loadLV3("+data['id']+");\">"+
+							"<a href=\"javascript:assistance.loadLV3("+id+", "+data['id']+");\">"+
 								data['title']+
 							"</a>"+
 						"</li>"
@@ -959,7 +959,17 @@ $( document ).ready(() => {
 				});
 			},
 			loadLV3(id1, id2) {
-				
+				$("div[name=lv3]").html('');
+				assistance.jsonData[id1]['lv2'][id2]['lv3'].forEach((data) => {
+					$("div[name=lv2]").html(
+						$("div[name=lv2]").html()+
+						"<li>"+
+							"<a href=\"javascript:assistance.loadLV3("+id1+", "+id2+", "+data['id']+");\">"+
+								data['title']+
+							"</a>"+
+						"</li>"
+					);
+				});
 			},
 			loadLV4(id1, id2, id3) {
 				
