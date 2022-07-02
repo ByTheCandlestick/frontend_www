@@ -946,6 +946,7 @@ $( document ).ready(() => {
 		assistance = {
 			jsonData: {},
 			loadLV2(id) {
+				$("div[name=lv2]").html('');
 				assistance.jsonData[id]['lv2'].forEach((data) => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
@@ -1063,6 +1064,7 @@ $( document ).ready(() => {
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
 				assistance.jsonData = data;
+				$("div[name=lv1]").html('');
 				assistance.jsonData.forEach((data) => {
 					$("div[name=lv1]").html(
 						$("div[name=lv1]").html()+
