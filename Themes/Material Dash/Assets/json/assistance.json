@@ -10,7 +10,7 @@
 					{
 						"id": "0",
 						"title": "How to Create a new user",
-						"lv4": ""
+						"lv4": "/assistance/000-how-to-create-user.md"
 					}
 				]
 			}
@@ -20,13 +20,13 @@
 		"title": "Admin website",
 		"lv2": [
 			 {
+				"id": "0",
 				"title": "",
 				"lv3": [
 					{
+						"id": "0",
 						"title": "",
-						"lv4": {
-							"mdFile": ""
-						}
+						"lv4": "/assistance/100-how-to-***.md"
 					}
 				]
 			}
