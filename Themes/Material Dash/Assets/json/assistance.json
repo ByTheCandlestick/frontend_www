@@ -1,8 +1,9 @@
 [
-	{	"title": "API",
+	{
+		"title": "API",
 		"id": 0,
 		"lv2": [
-			 {
+			{
 				"id": 0,
 				"title": "General",
 				"lv3": [
@@ -11,21 +12,24 @@
 						"lv4": "/assistance/000-introduction-to-the-api.md"
 					}
 				]
-			}, {
-			   "id": 1,
-			   "title": "Testing",
-			   "lv3": [
-				   {	"title": "Testing the API",
-					   "id": 0,
-					   "lv4": "/assistance/010-introduction-to-the-api.md"
-				   }
-			   ]
-		   }
+			},
+			{
+				"id": 1,
+				"title": "Testing",
+				"lv3": [
+					{	"title": "Testing the API",
+						"id": 0,
+						"lv4": "/assistance/010-introduction-to-the-api.md"
+					}
+				]
+			}
 		]
-	}, {"title": "Admin website",
+	}, {
+		"title": "Administration",
 		"id": 1,
 		"lv2": [
-			{	"title": "General",
+			{
+				"title": "General",
 				"id": 0,
 				"lv3": [
 					{	"title": "Search",
@@ -36,7 +40,9 @@
 						"lv4": "/assistance/101-dark-mode.md"
 					}
 				]
-			}, {"title": "Dashboard",
+			},
+			{
+				"title": "Dashboard",
 				"id": 1,
 				"lv3": [
 					{	"title": "Introduction to the dashboard",
@@ -47,7 +53,9 @@
 						"lv4": "/assistance/111-how-to-customise-the-dashboard.md"
 					}
 				]
-			}, {"title": "Analytics",
+			},
+			{
+				"title": "Analytics",
 				"id": 2,
 				"lv3": [
 					{	"title": "A breif guide to analytics",
@@ -58,7 +66,9 @@
 						"lv4": "/assistance/121-understanding-analytics.md"
 					}
 				]
-			}, {"title": "Users",
+			},
+			{
+				"title": "Users",
 				"id": 3,
 				"lv3": [
 					{	"title": "A breif guide to the users page",
@@ -66,7 +76,9 @@
 						"lv4": "/assistance/130-a-breif-guide-to-users.md"
 					}
 				]
-			}, {"title": "Products",
+			},
+			{
+				"title": "Products",
 				"id": 4,
 				"lv3": [
 					{	"title": "A breif guide to products",
@@ -74,7 +86,9 @@
 						"lv4": "/assistance/140-a-breif-guide-to-products.md"
 					}
 				]
-			}, {"title": "Suppliers",
+			},
+			{
+				"title": "Suppliers",
 				"id": 6,
 				"lv3": [
 					{	"title": "A breif guide to suppliers",
@@ -82,7 +96,9 @@
 						"lv4": "/assistance/150-a-breif-guide-to-suppliers.md"
 					}
 				]
-			}, {"title": "Websites & Domains",
+			},
+			{
+				"title": "Websites & Domains",
 				"id": 5,
 				"lv3": [
 					{	"title": "A breif guide to websites & domains",
@@ -92,25 +108,11 @@
 				]
 			}
 		]
-	}, {"title": "",
-		"id": 2,
-		"lv2": [
-			 {
-				"title": "",
-				"lv3": [
-					{
-						"title": "",
-						"lv4": {
-							"mdFile": ""
-						}
-					}
-				]
-			}
-		]
-	}, {"title": "learning",
+	}, {
+		"title": "learning",
 		"id": 3,
 		"lv2": [
-			 {
+			{
 				"title": "",
 				"lv3": [
 					{
