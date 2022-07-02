@@ -1027,9 +1027,11 @@ $( document ).ready(() => {
 				product.calculate();
 			}
 		});
-		$.get('/currencies.json', (data) =>{
-			misc.currencies = data
-		})
+		if($("div[name=currency]").length != 0) {
+			$.get('/currencies.json', (data) =>{
+				misc.currencies = data
+			})
+		}
 		$('div[name=currency]').find('input').change(() => {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
 			console.log(symbol);
