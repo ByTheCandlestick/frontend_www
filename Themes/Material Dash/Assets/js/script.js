@@ -948,6 +948,10 @@ $( document ).ready(() => {
 			id1: null,
 			id2: null,
 			id3: null,
+			markActive(name, elem) {
+				$("div[name="+name+"]").find("div.active").removeClass('active');
+				$(elem).addClass('active');
+			},
 			loadLV1() {
 				$("div[name=lv1], div[name=lv2], div[name=lv3], div[name=lv4]").html('');
 				assistance.jsonData.forEach((data) => {
@@ -960,9 +964,9 @@ $( document ).ready(() => {
 				});
 			},
 			loadLV2(elem, id) {
+				this.markActive("lv1", elem)
 				this.id1 = id;
 				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
-				$("div[name=lv1]").find("li.active").removeClass('active'); $(elem).addClass('active');
 				assistance.jsonData[this.id1]['lv2'].forEach((data) => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
@@ -975,7 +979,7 @@ $( document ).ready(() => {
 			loadLV3(elem, id) {
 				this.id2 = id;
 				$("div[name=lv3], div[name=lv4]").html('');
-				$("div[name=lv2]").find("li.active").removeClass('active'); $(elem).addClass('active');
+				this.markActive("lv2", elem)
 				assistance.jsonData[this.id1]['lv2'][this.id2]['lv3'].forEach((data) => {
 					$("div[name=lv3]").html(
 						$("div[name=lv3]").html()+
@@ -987,7 +991,7 @@ $( document ).ready(() => {
 			},
 			loadLV4(elem, id) {
 				this.id3 = id
-				$("div[name=lv3]").find("li.active").removeClass('active'); $(elem).addClass('active');
+				this.markActive("lv3", elem)
 				$.get(assistance.jsonData[this.id1]['lv2'][this.id2]['lv3'][this.id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
 						markdown.toHTML(data)
