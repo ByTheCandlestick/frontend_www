@@ -1044,8 +1044,14 @@ $( document ).ready(() => {
 	// -----========== Assistance nav ==========----- //
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
-				assistance.jsonData = data
-				console.log(data[0]);
+				assistance.jsonData = data;
+
+				assistance.jsonData.forEach(obj => {
+					Object.entries(obj).forEach(([key, value]) => {
+						console.log(`${key} ${value}`);
+					});
+					console.log('-------------------');
+				});
 			})
 		}
 	// -----========== EOF ==========----- //

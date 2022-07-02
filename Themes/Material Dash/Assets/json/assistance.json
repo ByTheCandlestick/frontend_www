@@ -1,14 +1,11 @@
 [
 	{
-		"id": "0",
 		"title": "api",
 		"lv2": [
 			 {
-				"id": "0",
 				"title": "How to use the api",
 				"lv3": [
 					{
-						"id": "0",
 						"title": "How to Create a new user",
 						"lv4": {
 							"mdFile": ""
