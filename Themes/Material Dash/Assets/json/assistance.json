@@ -22,10 +22,10 @@
 				"lv3": [
 					{	"title": "Search",
 						"id": "0",
-						"lv4": "/assistance/100-***.md"
+						"lv4": "/assistance/100-search.md"
 					}, {"title": "Dark mode",
 						"id": "1",
-						"lv4": "/assistance/100-***.md"
+						"lv4": "/assistance/101-dark-mode.md"
 					}
 				]
 			}, {"title": "Dashboard",
@@ -33,18 +33,17 @@
 				"lv3": [
 					{	"title": "Introduction to the dashboard",
 						"id": "0",
-						"lv4": "/assistance/100-***.md"
+						"lv4": "/assistance/110-Introduction-to-the-dashboard.md"
 					}, {"title": "How to customise the dashboard",
 						"id": "1",
-						"lv4": "/assistance/100-***.md"
+						"lv4": "/assistance/111-how-to-customise-the-dashboard.md"
 					}
 				]
 			}, {"title": "Analytics",
 				"id": "2",
 				"lv3": [
-					{
+					{	"title": "",
 						"id": "0",
-						"title": "",
 						"lv4": "/assistance/100-***.md"
 					}
 				]
