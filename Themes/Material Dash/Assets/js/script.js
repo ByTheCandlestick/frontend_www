@@ -977,7 +977,7 @@ $( document ).ready(() => {
 
 				$.get(assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
-						md.render(data)
+						this.md.render(data)
 					);
 				})
 
