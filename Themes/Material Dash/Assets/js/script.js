@@ -1046,6 +1046,7 @@ $( document ).ready(() => {
 			$.get('/assistance.json', (data) =>{
 				assistance.jsonData = data;
 				assistance.jsonData.forEach((data) => {
+					$("div[name=lv1").html($("div[name=lv1").html() + data['title'] + "</br>");
 					console.log(data['title'])
 				});
 			})
