@@ -953,38 +953,41 @@ $( document ).ready(() => {
 				assistance.jsonData.forEach((data) => {
 					$("div[name=lv1]").html(
 						$("div[name=lv1]").html()+
-						"<li onClick=\"assistance.loadLV2("+data['id']+");\">"+
+						"<li onClick=\"assistance.loadLV2(this, "+data['id']+");\">"+
 							data['title']+
 						"</li>"
 					);
 				});
 			},
-			loadLV2(id) {
-				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
+			loadLV2(elem, id) {
 				this.id1 = id;
+				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
+				$("div[name=lv1]").find("div.active").removeClass('active'); elem.addClass('active');
 				assistance.jsonData[this.id1]['lv2'].forEach((data) => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
-						"<li onClick=\"assistance.loadLV3("+data['id']+");\">"+
+						"<li onClick=\"assistance.loadLV3(this, "+data['id']+");\">"+
 							data['title']+
 						"</li>"
 					);
 				});
 			},
-			loadLV3(id) {
-				$("div[name=lv3], div[name=lv4]").html('');
+			loadLV3(elem, id) {
 				this.id2 = id;
+				$("div[name=lv3], div[name=lv4]").html('');
+				$("div[name=lv2]").find("div.active").removeClass('active'); elem.addClass('active');
 				assistance.jsonData[this.id1]['lv2'][this.id2]['lv3'].forEach((data) => {
 					$("div[name=lv3]").html(
 						$("div[name=lv3]").html()+
-						"<li onClick=\"assistance.loadLV4("+data['id']+");\">"+
+						"<li onClick=\"assistance.loadLV4(this, "+data['id']+");\">"+
 							data['title']+
 						"</li>"
 					);
 				});
 			},
-			loadLV4(id) {
+			loadLV4(elem, id) {
 				this.id3 = id
+				$("div[name=lv3]").find("div.active").removeClass('active'); elem.addClass('active');
 				$.get(assistance.jsonData[this.id1]['lv2'][this.id2]['lv3'][this.id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
 						markdown.toHTML(data)
