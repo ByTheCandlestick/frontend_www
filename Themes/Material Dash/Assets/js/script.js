@@ -972,10 +972,9 @@ $( document ).ready(() => {
 				});
 			},
 			loadLV4(id1, id2, id3) {
-				var showdown = new showdown.Converter()
 				$.get(assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
-						showdown.makeHtml(data)
+						data
 					);
 				})
 
