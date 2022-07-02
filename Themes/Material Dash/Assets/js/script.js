@@ -945,9 +945,13 @@ $( document ).ready(() => {
 		/** @wip */
 		assistance = {
 			jsonData: {},
+			id1: null,
+			id2: null,
+			id3: null,
 			loadLV2(id) {
 				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
-				assistance.jsonData[id]['lv2'].forEach((data) => {
+				this.id1 = id;
+				assistance.jsonData[this.id]['lv2'].forEach((data) => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
 						"<li>"+
@@ -958,9 +962,10 @@ $( document ).ready(() => {
 					);
 				});
 			},
-			loadLV3(id1, id2) {
+			loadLV3(id) {
 				$("div[name=lv3], div[name=lv4]").html('');
-				assistance.jsonData[id1]['lv2'][id2]['lv3'].forEach((data) => {
+				this.id2 = id;
+				assistance.jsonData[this.id1]['lv2'][this.id2]['lv3'].forEach((data) => {
 					$("div[name=lv3]").html(
 						$("div[name=lv3]").html()+
 						"<li>"+
@@ -971,8 +976,9 @@ $( document ).ready(() => {
 					);
 				});
 			},
-			loadLV4(id1, id2, id3) {
-				$.get(assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'], (data) =>{
+			loadLV4(id) {
+				this.id3 = id
+				$.get(assistance.jsonData[this.id1]['lv2'][this.id2]['lv3'][this.id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
 						markdown.toHTML(data)
 					);
