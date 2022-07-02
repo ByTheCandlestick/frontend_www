@@ -948,16 +948,25 @@ $( document ).ready(() => {
 			id1: null,
 			id2: null,
 			id3: null,
+			loadLv1() {
+				$("div[name=lv1], div[name=lv2], div[name=lv3], div[name=lv4]").html('');
+				assistance.jsonData.forEach((data) => {
+					$("div[name=lv1]").html(
+						$("div[name=lv1]").html()+
+						"<li onClick=\"assistance.loadLV2("+data['id']+");\">"+
+							data['title']+
+						"</li>"
+					);
+				});
+			},
 			loadLV2(id) {
 				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
 				this.id1 = id;
 				assistance.jsonData[this.id1]['lv2'].forEach((data) => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
-						"<li>"+
-							"<a href=\"javascript:assistance.loadLV3("+data['id']+");\">"+
-								data['title']+
-							"</a>"+
+						"<li onClick=\"assistance.loadLV3("+data['id']+");\">"+
+							data['title']+
 						"</li>"
 					);
 				});
@@ -1083,17 +1092,7 @@ $( document ).ready(() => {
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
 				assistance.jsonData = data;
-				$("div[name=lv1]").html('');
-				assistance.jsonData.forEach((data) => {
-					$("div[name=lv1]").html(
-						$("div[name=lv1]").html()+
-						"<li>"+
-							"<a href=\"javascript:assistance.loadLV2("+data['id']+");\">"+
-								data['title']+
-							"</a>"+
-						"</li>"
-					);
-				});
+				assistance.loadLV1();
 			})
 		}
 	// -----========== EOF ==========----- //
