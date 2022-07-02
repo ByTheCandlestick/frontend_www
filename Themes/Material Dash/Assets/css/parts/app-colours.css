@@ -23,7 +23,6 @@
   
   .dark:root {
 	--app-container: #1f1d2b;
-	--app-container: #111827;
 	--main-color: #fff;
 	--secondary-color: rgba(255,255,255,.8);
 	--section: #1f2937;

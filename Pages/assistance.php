@@ -8,23 +8,26 @@
 	height: 100%;
 }
 .assistanceNav div:nth-child(1) {
-	border-right: solid 1px rgba(0,0,0,0.4);
+	border-right: solid 1px var(--more-list-shadow);
 }
 .assistanceNav div:nth-child(2) {
-	border-right: solid 1px rgba(0,0,0,0.4);
-	box-shadow: inset 7px 0px 9px -12px rgb(0 0 0);
+	border-right: solid 1px var(--more-list-shadow);
+	box-shadow: inset 7px 0px 9px -12px var(--main-color);
 }
 .assistanceNav div:nth-child(3) {
-	border-right: solid 1px rgba(0,0,0,0.4);
-	box-shadow: inset 7px 0px 9px -12px rgb(0 0 0);
+	border-right: solid 1px var(--more-list-shadow);
+	box-shadow: inset 7px 0px 9px -12px var(--main-color);
 }
 .assistanceNav div:nth-child(4) {
-	box-shadow: inset 7px 0px 9px -12px rgb(0 0 0);
+	box-shadow: inset 7px 0px 9px -12px var(--main-color);
 }
 .assistanceNav div li {
 	list-style-type: none;
     min-height: 30px;
-    border-bottom: solid 1px rgba(0,0,0,0.4);
+    border-bottom: solid 1px var(--more-list-shadow);
+}
+.assistanceNav div li:hover {
+
 }
 </style>
 <section>
