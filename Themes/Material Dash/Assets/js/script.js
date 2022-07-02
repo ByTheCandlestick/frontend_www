@@ -955,7 +955,7 @@ $( document ).ready(() => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
 						"<li>"+
-							"<a href=\"javascript:assistance.loadLV3("+id+", "+data['id']+");\">"+
+							"<a href=\"javascript:assistance.loadLV3("+data['id']+");\">"+
 								data['title']+
 							"</a>"+
 						"</li>"
@@ -969,7 +969,7 @@ $( document ).ready(() => {
 					$("div[name=lv3]").html(
 						$("div[name=lv3]").html()+
 						"<li>"+
-							"<a href=\"javascript:assistance.loadLV4("+id1+", "+id2+", "+data['id']+");\">"+
+							"<a href=\"javascript:assistance.loadLV4("+data['id']+");\">"+
 								data['title']+
 							"</a>"+
 						"</li>"
