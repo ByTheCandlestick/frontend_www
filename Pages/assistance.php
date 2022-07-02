@@ -35,7 +35,7 @@
 	<div class="row assistanceNav">
 		<div name="lv1" class="col-12 col-md-4 col-lg-4 col-xl-2"></div>
 		<div name="lv2" class="col-12 col-md-4 col-lg-4 col-xl-2"></div>
-		<div name="lv3" class="col-12 col-md-4 col-lg-4 col-xl-2"></div>
-		<div name="lv4" class="col-12 col-md-12 col-lg-12 col-xl-6"></div>
+		<div name="lv3" class="col-12 col-md-4 col-lg-4 col-xl-3"></div>
+		<div name="lv4" class="col-12 col-md-12 col-lg-12 col-xl-5"></div>
 	</div>
 </section>
