@@ -945,7 +945,7 @@ $( document ).ready(() => {
 		/** @wip */
 		assistance = {
 			jsonData: null,
-			arrayData: JSON.parse(assistance.jsonData),
+			arrayData: JSON.parse(this.jsonData),
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
