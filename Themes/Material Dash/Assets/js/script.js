@@ -972,17 +972,13 @@ $( document ).ready(() => {
 				});
 			},
 			loadLV4(id1, id2, id3) {
-				$("div[name=lv4]").html('');
-				assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'].forEach((data) => {
+				var showdown = new showdown.Converter()
+				$.get(assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
-						$("div[name=lv4]").html()+
-						"<li>"+
-							"<a>"+
-								data['title']+
-							"</a>"+
-						"</li>"
+						converter.makeHtml(data)
 					);
-				});
+				})
+
 			}
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
