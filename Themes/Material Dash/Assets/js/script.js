@@ -945,7 +945,7 @@ $( document ).ready(() => {
 		/** @wip */
 		assistance = {
 			jsonData: {},
-			md = new Remarkable(),
+			md: new Remarkable(),
 			loadLV2(id) {
 				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
 				assistance.jsonData[id]['lv2'].forEach((data) => {
