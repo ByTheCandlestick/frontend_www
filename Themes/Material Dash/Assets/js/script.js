@@ -1049,11 +1049,11 @@ $( document ).ready(() => {
 					$("div[name=lv1").html(
 						$("div[name=lv1").html()+
 						"<li>"+
-							"<a href=\"javascript:assistance.loadLV2();\">"+
+							"<a href=\"javascript:assistance.loadLV2("+data['id']+");\">"+
 								data['title']+
 							"</a>"+
-						"</li>");
-					console.log(data['title'])
+						"</li>"
+					);
 				});
 			})
 		}
