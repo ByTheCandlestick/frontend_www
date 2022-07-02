@@ -12,8 +12,9 @@
 	--section: #fff;
 	--message-box-hover: #fafcff;
 	--message-box-border: #e9ebf0;
-	--more-list-bg: #fff;
-	--more-list-bg-hover: #f6fbff;
+	--more-list-bg: rgb(255, 255, 255);
+	--more-list-bg-hover: rgb(246, 251, 255);
+	--more-list-bg-active: rgb(237, 247, 255);
 	--more-list-shadow: rgba(209, 209, 209, 0.4);
 	--button-bg: #1f1c24;
 	--search-area-bg: #fff;
