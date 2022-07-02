@@ -945,7 +945,6 @@ $( document ).ready(() => {
 		/** @wip */
 		assistance = {
 			jsonData: {},
-			arrayData: JSON.parse(this.jsonData),
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
@@ -1046,8 +1045,7 @@ $( document ).ready(() => {
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
 				assistance.jsonData = data;
-				
-				assistance.arrayData.forEach((data) => {
+				assistance.jsonData.forEach((data) => {
 					console.log(data['title'])
 				});
 			})
