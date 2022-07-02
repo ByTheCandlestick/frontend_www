@@ -17,17 +17,30 @@
 	}, {"title": "Admin website",
 		"id": "1",
 		"lv2": [
-			{	"title": "Dashboard",
+			{	"title": "General",
 				"id": "0",
 				"lv3": [
-					{
+					{	"title": "Search",
 						"id": "0",
-						"title": "",
+						"lv4": "/assistance/100-***.md"
+					}, {"title": "Dark mode",
+						"id": "1",
+						"lv4": "/assistance/100-***.md"
+					}
+				]
+			}, {"title": "Dashboard",
+				"id": "1",
+				"lv3": [
+					{	"title": "Introduction to the dashboard",
+						"id": "0",
+						"lv4": "/assistance/100-***.md"
+					}, {"title": "How to customise the dashboard",
+						"id": "1",
 						"lv4": "/assistance/100-***.md"
 					}
 				]
 			}, {"title": "Analytics",
-				"id": "0",
+				"id": "2",
 				"lv3": [
 					{
 						"id": "0",
@@ -36,7 +49,7 @@
 					}
 				]
 			}, {"title": "Users",
-				"id": "0",
+				"id": "3",
 				"lv3": [
 					{
 						"id": "0",
@@ -45,7 +58,7 @@
 					}
 				]
 			}, {"title": "Products",
-				"id": "0",
+				"id": "4",
 				"lv3": [
 					{
 						"id": "0",
@@ -54,7 +67,7 @@
 					}
 				]
 			}, {"title": "Websites & Domains",
-				"id": "0",
+				"id": "5",
 				"lv3": [
 					{
 						"id": "0",
@@ -63,7 +76,7 @@
 					}
 				]
 			}, {"title": "Suppliers",
-				"id": "0",
+				"id": "6",
 				"lv3": [
 					{
 						"id": "0",
