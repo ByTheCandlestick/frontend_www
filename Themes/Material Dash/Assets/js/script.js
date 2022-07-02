@@ -1049,7 +1049,9 @@ $( document ).ready(() => {
 					$("div[name=lv1").html(
 						$("div[name=lv1").html()+
 						"<li>"+
-							data['title']+
+							"<a href=\"javascript:assistance.loadLV2();\">"+
+								data['title']+
+							"</a>"+
 						"</li>");
 					console.log(data['title'])
 				});
