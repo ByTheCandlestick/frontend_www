@@ -947,8 +947,8 @@ $( document ).ready(() => {
 			jsonData: {},
 			loadLV2(id) {
 				assistance.jsonData[id]['lv2'].forEach((data) => {
-					$("div[name=lv1").html(
-						$("div[name=lv1").html()+
+					$("div[name=lv2]").html(
+						$("div[name=lv2]").html()+
 						"<li>"+
 							"<a href=\"javascript:assistance.loadLV3("+data['id']+");\">"+
 								data['title']+
@@ -1064,8 +1064,8 @@ $( document ).ready(() => {
 			$.get('/assistance.json', (data) =>{
 				assistance.jsonData = data;
 				assistance.jsonData.forEach((data) => {
-					$("div[name=lv1").html(
-						$("div[name=lv1").html()+
+					$("div[name=lv1]").html(
+						$("div[name=lv1]").html()+
 						"<li>"+
 							"<a href=\"javascript:assistance.loadLV2("+data['id']+");\">"+
 								data['title']+
