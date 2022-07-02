@@ -3,6 +3,7 @@ $( document ).ready(() => {
 		const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	// -----========== Nestled functions ==========----- //
+		/** @wip */
 		misc = {
 			currencies: null,
 			getQueryParams(params) {
@@ -198,6 +199,7 @@ $( document ).ready(() => {
 				}
 			},
 		}
+		/** @wip */
 		website = {
 			/** @final */
 			domain: {
@@ -863,6 +865,7 @@ $( document ).ready(() => {
 				},
 			},
 		}
+		/** @wip */
 		supplier = {
 			create() {
 				data = {
@@ -939,6 +942,10 @@ $( document ).ready(() => {
 				});
 			},
 		}
+		/** @wip */
+		assistance = {
+			jsonData: null,
+		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
 		mode.modeSwitch.click(() => { mode.toggle() });
@@ -971,7 +978,7 @@ $( document ).ready(() => {
 		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) {
 			alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
 		}
-	// -----========== pRELOADER ==========----- // @final //
+	// -----========== Preloader ==========----- // @final //
 		$(window).bind('beforeunload', () => {
 			$('.app-preloader').fadeIn();
 		});
@@ -1032,5 +1039,11 @@ $( document ).ready(() => {
 		$('div[name=quantity] input, div[name=price_b] input').change(() => {
 			product.container.calculate();
 		});
+	// -----========== Assistance nav ==========----- //
+		if($(".assistanceNav").length != 0) {
+			$.get('/assistance.json', (data) =>{
+				assistance.jsonData = data
+			})
+		}
 	// -----========== EOF ==========----- //
 });
