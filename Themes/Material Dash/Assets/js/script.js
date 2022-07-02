@@ -944,7 +944,7 @@ $( document ).ready(() => {
 		}
 		/** @wip */
 		assistance = {
-			jsonData: null,
+			jsonData: {},
 			arrayData: JSON.parse(this.jsonData),
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
