@@ -1045,6 +1045,7 @@ $( document ).ready(() => {
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
 				assistance.jsonData = data
+				console.log(data[0]);
 			})
 		}
 	// -----========== EOF ==========----- //
