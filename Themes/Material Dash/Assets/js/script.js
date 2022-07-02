@@ -1,6 +1,6 @@
 $( document ).ready(() => {
 	// -----========== VARIABLES ==========----- //
-		if(Remarkable()) { const remarkable = new Remarkable() }
+		if(window.Remarkable()) { const remarkable = new Remarkable() }
 		const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 	// -----========== Nestled functions ==========----- //
@@ -974,10 +974,9 @@ $( document ).ready(() => {
 			},
 			loadLV4(id1, id2, id3) {
 				$("div[name=lv4]").html('');
-
 				$.get(assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
-						remarkable.render(data)
+						// remarkable.render(data)
 					);
 				})
 
