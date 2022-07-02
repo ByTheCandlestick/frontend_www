@@ -949,7 +949,7 @@ $( document ).ready(() => {
 			id2: null,
 			id3: null,
 			markActive(name, elem) {
-				$("div[name="+name+"]").find("div.active").removeClass('active');
+				$("div[name="+name+"]").find("li.active").removeClass('active');
 				$(elem).addClass('active');
 			},
 			loadLV1() {
