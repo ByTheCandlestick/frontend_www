@@ -1048,9 +1048,9 @@ $( document ).ready(() => {
 				assistance.jsonData.forEach((data) => {
 					$("div[name=lv1").html(
 						$("div[name=lv1").html()+
-						"<p>"+
-						data['title']+
-						"</p>");
+						"<li>"+
+							data['title']+
+						"</li>");
 					console.log(data['title'])
 				});
 			})
