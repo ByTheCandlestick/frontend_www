@@ -24,10 +24,11 @@
 .assistanceNav div li {
 	list-style-type: none;
     min-height: 30px;
+	background: var(--more-list-bg);
     border-bottom: solid 1px var(--more-list-shadow);
 }
 .assistanceNav div li:hover {
-
+	background: var(--more-list-bg-hover);
 }
 </style>
 <section>
