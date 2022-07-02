@@ -21,6 +21,9 @@
 .assistanceNav div:nth-child(4) {
 	box-shadow: inset 7px 0px 9px -12px rgb(0 0 0);
 }
+.assistanceNav div li {
+	list-style-type: none;
+}
 </style>
 <section>
 	<!-- Section Header -->
