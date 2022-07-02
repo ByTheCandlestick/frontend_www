@@ -945,6 +945,24 @@ $( document ).ready(() => {
 		/** @wip */
 		assistance = {
 			jsonData: {},
+			loadLV2(id) {
+				assistance.jsonData[id]['lv2'].forEach((data) => {
+					$("div[name=lv1").html(
+						$("div[name=lv1").html()+
+						"<li>"+
+							"<a href=\"javascript:assistance.loadLV3("+data['id']+");\">"+
+								data['title']+
+							"</a>"+
+						"</li>"
+					);
+				});
+			},
+			loadLV3(id1, id2) {
+				
+			},
+			loadLV4(id1, id2, id3) {
+				
+			}
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
