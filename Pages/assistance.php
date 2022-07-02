@@ -30,6 +30,9 @@
 .assistanceNav div li:hover {
 	background: var(--more-list-bg-hover);
 }
+.assistanceNav div li.active {
+	background: var(--more-list-bg-active);
+}
 </style>
 <section>
 	<!-- Section Header -->
