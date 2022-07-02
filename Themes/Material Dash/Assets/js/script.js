@@ -964,7 +964,7 @@ $( document ).ready(() => {
 					$("div[name=lv3]").html(
 						$("div[name=lv3]").html()+
 						"<li>"+
-							"<a href=\"javascript:assistance.loadLV3("+id1+", "+id2+", "+data['id']+");\">"+
+							"<a href=\"javascript:assistance.loadLV4("+id1+", "+id2+", "+data['id']+");\">"+
 								data['title']+
 							"</a>"+
 						"</li>"
