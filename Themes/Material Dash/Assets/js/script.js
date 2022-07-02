@@ -946,7 +946,7 @@ $( document ).ready(() => {
 		assistance = {
 			jsonData: {},
 			loadLV2(id) {
-				$("div[name=lv2]").html('');
+				$("div[name=lv2], div[name=lv3], div[name=lv4]").html('');
 				assistance.jsonData[id]['lv2'].forEach((data) => {
 					$("div[name=lv2]").html(
 						$("div[name=lv2]").html()+
@@ -959,7 +959,7 @@ $( document ).ready(() => {
 				});
 			},
 			loadLV3(id1, id2) {
-				$("div[name=lv3]").html('');
+				$("div[name=lv3], div[name=lv4]").html('');
 				assistance.jsonData[id1]['lv2'][id2]['lv3'].forEach((data) => {
 					$("div[name=lv3]").html(
 						$("div[name=lv3]").html()+
@@ -972,6 +972,7 @@ $( document ).ready(() => {
 				});
 			},
 			loadLV4(id1, id2, id3) {
+				$("div[name=lv4]").html('');
 				$.get(assistance.jsonData[id1]['lv2'][id2]['lv3'][id3]['lv4'], (data) =>{
 					$("div[name=lv4]").html(
 						data
