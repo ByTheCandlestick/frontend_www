@@ -948,7 +948,7 @@ $( document ).ready(() => {
 			id1: null,
 			id2: null,
 			id3: null,
-			loadLv1() {
+			loadLV1() {
 				$("div[name=lv1], div[name=lv2], div[name=lv3], div[name=lv4]").html('');
 				assistance.jsonData.forEach((data) => {
 					$("div[name=lv1]").html(
