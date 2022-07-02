@@ -968,10 +968,8 @@ $( document ).ready(() => {
 				assistance.jsonData[this.id1]['lv2'][this.id2]['lv3'].forEach((data) => {
 					$("div[name=lv3]").html(
 						$("div[name=lv3]").html()+
-						"<li>"+
-							"<a href=\"javascript:assistance.loadLV4("+data['id']+");\">"+
-								data['title']+
-							"</a>"+
+						"<li onClick=\"assistance.loadLV4("+data['id']+");\">"+
+							data['title']+
 						"</li>"
 					);
 				});
