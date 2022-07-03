@@ -221,14 +221,14 @@
 											</li>
 											<li>
 												<i class="fad fa-pencil pe-1"></i>
-												<a href="<?print(URL_ADMIN.'/Website/Page/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
+												<a href="<?print(URL_ADMIN.'/Websites/Page/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
 											</li>
 											<?
 												if(isset($product)) {
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
-													<a href="<?print(URL_ADMIN.'/Product/Edit/'.$product['SKU'].'/?force_back=1')?>">Edit this product</a>
+													<a href="<?print(URL_ADMIN.'/Products/Edit/'.$product['SKU'].'/?force_back=1')?>">Edit this product</a>
 												</li>
 											<?
 												}
@@ -236,7 +236,7 @@
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
-													<a href="<?print(URL_ADMIN.'/Partner/Edit/'.$partner['ID'].'/?force_back=1')?>">Edit this partner</a>
+													<a href="<?print(URL_ADMIN.'/Partners/Edit/'.$partner['ID'].'/?force_back=1')?>">Edit this partner</a>
 												</li>
 											<?
 												}
