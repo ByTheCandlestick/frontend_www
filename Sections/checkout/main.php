@@ -97,7 +97,7 @@
 			</div>
 		</div>
 	</div>
-	<input type="hidden" name="STRIPE_PUBLISHABLE_KEY" value="<?print(STRIPE_API[0]); ?>">
+	<input type="hidden" name="stripeToken" value="<?print(STRIPE_API[0]); ?>">
 	<input type="hidden" name="currency" value="<?print($currency) ?>">
 	<input type="hidden" name="price" value="<?print($cart_total) ?>">
 	<input type="hidden" name="uid" value="<?print($userdata['ID']) ?>">
