@@ -787,7 +787,7 @@ $(document).ready(function() {
 			function paymentSubmit() {
 				var paymentFrm = $("#paymentFrm").find('input');
 				paymentFrm.each(function() {
-					data = api_key_data + "&";
+					data = api_key_data + "&stripeToken="+$('input[name=stripeToken]').val()+"&";
 					console.log(this);
 					if(this.getAttribute('name') != null) {
 						data = data + this.getAttribute('name') + '=' + this.value + '&'
