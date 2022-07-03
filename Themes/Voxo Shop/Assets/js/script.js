@@ -788,7 +788,8 @@ $(document).ready(function() {
 				var paymentFrm = $("#paymentFrm").find('input');
 				paymentFrm.each(function() {
 					data = api_key_data + "&stripeToken="+$('input[name=stripeToken]').val()+"&";
-					if(this.attr('name') != null) {
+					console.log(this);
+					if(this.getAttribute('name') != null) {
 						data = data + this.getAttribute('name') + '=' + this.value + '&'
 					}
 				});
