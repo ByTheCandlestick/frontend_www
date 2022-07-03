@@ -787,8 +787,9 @@ $(document).ready(function() {
 			function paymentSubmit() {
 				var paymentFrm = $("#paymentFrm").find(':input');
 				paymentFrm.each(function() {
+					uri = api_key_data + "&";
 					if (this.getAttribute('name') != null) {
-						uri = api_key_data + this.getAttribute('name') + '=' + this.value + '&'
+						uri = uri + this.getAttribute('name') + '=' + this.value + '&'
 					}
 				});
 				$.ajax({
