@@ -771,7 +771,6 @@ $(document).ready(function() {
 
 			function paymentSubmit() {
 				var paymentFrm = $("#paymentFrm").find(':input');
-				var uri = '';
 				paymentFrm.each(function() {
 					if (this.getAttribute('name') != null) {
 						uri = uri + this.getAttribute('name') + '=' + this.value + '&'
@@ -779,7 +778,7 @@ $(document).ready(function() {
 				});
 				$.ajax({
 					url: api_url + '/Stripe/',
-					data: uri,
+					data: api_key_data,
 					type: 'PUT',
 					xhrFields: {
 						withCredentials: true,
