@@ -785,16 +785,16 @@ $(document).ready(function() {
 			}
 			// handle the payments through the API
 			function paymentSubmit() {
-				var paymentFrm = $("#paymentFrm").find(':input');
+				var paymentFrm = $("#paymentFrm").find('input, :input');
 				paymentFrm.each(function() {
-					uri = api_key_data + "&stripeToken="+$('input[name=stripeToken]').val()+"&";
-					if (this.getAttribute('name') != null) {
-						uri = uri + this.getAttribute('name') + '=' + this.value + '&'
+					data = api_key_data + "&stripeToken="+$('input[name=stripeToken]').val()+"&";
+					if(this.getAttribute('name') != null) {
+						data = data + this.getAttribute('name') + '=' + this.value + '&'
 					}
 				});
 				$.ajax({
 					url: api_url + '/Stripe/',
-					data: uri,
+					data: data,
 					type: 'PUT',
 					xhrFields: {
 						withCredentials: true,
