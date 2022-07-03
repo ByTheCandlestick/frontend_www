@@ -753,14 +753,11 @@ $(document).ready(function() {
 			});
 			// Create single-use token to charge the user
 			function createToken() {
-				console.log('here');
 				stripe.createToken(card).then(function(result) {
-					console.log('here');
 					if (result.error) {
 						// Inform the user if there was an error
 						resultContainer.innerHTML = '<p>' + result.error.message + '</p>';
 					} else {
-						console.log('here');
 						// Send the token to your server
 						stripeTokenHandler(result.token);
 					}
@@ -768,14 +765,12 @@ $(document).ready(function() {
 			}
 			// Callback to handle the response from stripe
 			function stripeTokenHandler(token) {
-				console.log('here');
 				var hiddenInputStripeToken = document.createElement('input');
 				hiddenInputStripeToken.setAttribute('type', 'hidden');
 				hiddenInputStripeToken.setAttribute('name', 'stripeToken');
 				hiddenInputStripeToken.setAttribute('value', token.id);
 				form.appendChild(hiddenInputStripeToken);
 				items = '';
-				console.log('here');
 				$('cart-item').each(function() {
 					items = items + $(this).attr('raw') + ";";
 				});
@@ -784,22 +779,21 @@ $(document).ready(function() {
 				hiddenInputItems.setAttribute('name', 'items');
 				hiddenInputItems.setAttribute('value', items);
 				form.appendChild(hiddenInputItems);
-				console.log('here');
+
 				// Submit the form
 				paymentSubmit();
 			}
 			// handle the payments through the API
 			function paymentSubmit() {
-				console.log('here');
 				var paymentFrm = $("#paymentFrm").find(':input');
 				paymentFrm.each(function() {
 					if (this.getAttribute('name') != null) {
-						uri = uri + this.getAttribute('name') + '=' + this.value + '&'
+						uri = api_key_data + this.getAttribute('name') + '=' + this.value + '&'
 					}
 				});
 				$.ajax({
 					url: api_url + '/Stripe/',
-					data: api_key_data,
+					data: uri,
 					type: 'PUT',
 					xhrFields: {
 						withCredentials: true,
