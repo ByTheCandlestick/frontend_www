@@ -715,6 +715,7 @@ $(document).ready(function() {
 					color: '#E74C3C',
 				}
 			};
+
 			var card = elements.create('cardNumber', { 'style': style });
 			card.mount('#card_number');
 			card.addEventListener('change', function(event) {
@@ -724,13 +725,27 @@ $(document).ready(function() {
 					resultContainer.innerHTML = '';
 				}
 			});
-			
+
 			var exp = elements.create('cardExpiry', { 'style': style });
 			exp.mount('#card_expiry');
+			exp.addEventListener('change', function(event) {
+				if (event.error) {
+					resultContainer.innerHTML = '<p>' + event.error.message + '</p>';
+				} else {
+					resultContainer.innerHTML = '';
+				}
+			});
 
 			var cvc = elements.create('cardCvc', { 'style': style });
 			cvc.mount('#card_cvc');
-
+			cvc.addEventListener('change', function(event) {
+				if (event.error) {
+					resultContainer.innerHTML = '<p>' + event.error.message + '</p>';
+				} else {
+					resultContainer.innerHTML = '';
+				}
+			});
+			// On form submit
 			var form = document.getElementById('paymentFrm');
 			form.addEventListener('submit', function(e) {
 				e.preventDefault();
@@ -738,11 +753,14 @@ $(document).ready(function() {
 			});
 			// Create single-use token to charge the user
 			function createToken() {
+				console.log('here');
 				stripe.createToken(card).then(function(result) {
+					console.log('here');
 					if (result.error) {
 						// Inform the user if there was an error
 						resultContainer.innerHTML = '<p>' + result.error.message + '</p>';
 					} else {
+						console.log('here');
 						// Send the token to your server
 						stripeTokenHandler(result.token);
 					}
@@ -750,12 +768,14 @@ $(document).ready(function() {
 			}
 			// Callback to handle the response from stripe
 			function stripeTokenHandler(token) {
+				console.log('here');
 				var hiddenInputStripeToken = document.createElement('input');
 				hiddenInputStripeToken.setAttribute('type', 'hidden');
 				hiddenInputStripeToken.setAttribute('name', 'stripeToken');
 				hiddenInputStripeToken.setAttribute('value', token.id);
 				form.appendChild(hiddenInputStripeToken);
 				items = '';
+				console.log('here');
 				$('cart-item').each(function() {
 					items = items + $(this).attr('raw') + ";";
 				});
@@ -764,12 +784,13 @@ $(document).ready(function() {
 				hiddenInputItems.setAttribute('name', 'items');
 				hiddenInputItems.setAttribute('value', items);
 				form.appendChild(hiddenInputItems);
-
+				console.log('here');
 				// Submit the form
 				paymentSubmit();
 			}
-
+			// handle the payments through the API
 			function paymentSubmit() {
+				console.log('here');
 				var paymentFrm = $("#paymentFrm").find(':input');
 				paymentFrm.each(function() {
 					if (this.getAttribute('name') != null) {
