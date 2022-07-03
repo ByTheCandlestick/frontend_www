@@ -788,6 +788,7 @@ $(document).ready(function() {
 				var paymentFrm = $("#paymentFrm").find('input');
 				paymentFrm.each(function() {
 					data = api_key_data + "&";
+					console.log($(this))
 					if($(this).attr('name') != null) {
 						data = data + $(this).attr('name') + '=' + this.value + '&'
 					}
