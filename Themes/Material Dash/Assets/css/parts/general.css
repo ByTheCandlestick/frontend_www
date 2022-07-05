@@ -28,5 +28,8 @@ button, a {
 }
 .fa {
   font-family: "Font Awesome 5 Pro"!important;
+  font-style: normal!important;
+  font-variant: normal!important;
+  line-height: 1!important;
   font-weight: 900;
 }
