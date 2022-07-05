@@ -130,7 +130,7 @@
 								</span>
 								<p class="app-name">The Candlestick</p>
 								<? if(DOMAIN_TYPE == 'indev') {?>
-									<h3 class="text-info">Developer mode - this has no impact on the live website</h4>
+									<h5 class="text-warn">Developer mode - this has no impact on the live website</h5>
 								<? }?>
 							</div>
 							<!-- Search -->
