@@ -870,18 +870,19 @@ $(document).ready(function() {
 					xhrFields: {
 						withCredentials: true,
 					},
+					done: function() {
+						$('.paymentSubmit').find('i').hide()
+						$('.paymentSubmit').find('span').show()
+					},
 					success: function(body) {
-						if (body.status == 'success') {
+						if(body.status == 'success') {
 							location.href = '/my/order/' + body.invoice;
-							$('.paymentSubmit').find('i').hide()
-							$('.paymentSubmit').find('span').show()
-						} else {
-							$('.paymentSubmit').find('i').hide()
-							$('.paymentSubmit').find('span').show()
 						}
 					},
 					error: function(result) {
-						console.error("Error: " + result);
+						if(body.status == 'error') {
+							console.error("Error: " + result);
+						}
 					}
 				});
 
