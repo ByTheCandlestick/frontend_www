@@ -39,14 +39,14 @@
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<th scope="row">'.$row['invoice_number'].'</th>
+									<th scope="row"><a href="/Orders/View/'.$row['invoice_number'].'">'.$row['invoice_number'].'</a></th>
 									<td>'.$row['invoice_date'].'</td>
 									<td>'.$row['invoice_subtotal'].'</td>
 									<td>'.$row['invoice_tax'].'</td>
 									<td>'.$row['invoice_deposit'].'</td>
 									<td>'.$row['txn_id'].'</td>
 									<td>
-										<a href="/Websites/Edit/'.$row['ID'].'">
+										<a href="/Orders/Edit/'.$row['invoice_number'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
