@@ -842,7 +842,7 @@ $(document).ready(function() {
 				form.appendChild(hiddenInputStripeToken);
 				items = '';
 				$('cart-item').each(function() {
-					items = items + $(this).attr('raw') + ";";
+					items = items + $(this).attr('prod-id') + ";";
 				});
 				var hiddenInputItems = document.createElement('input');
 				hiddenInputItems.setAttribute('type', 'hidden');
