@@ -6,6 +6,7 @@
 		<hr>
 		<?
 			if($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `uid`=%i ORDER BY `invoice_number` DESC", $userdata['ID']))) {
+				print("hello");
 				$orderHistory = array();
 				while($row = mysqli_fetch_assoc($query)){
 					array_push($orderHistory, $row);
