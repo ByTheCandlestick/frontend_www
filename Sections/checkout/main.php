@@ -29,31 +29,31 @@
 							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="XX0 0XX" autocomplete="postal-code" required>
 							<label for="floatingInput-postcode">Postcode*</label>
 						</div>
+						<div class="mb-3 px-2 col-12 col-lg-4">
+							<input type="submit" name="lookup" class="form-control" onClick="address.lookup()">
+						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
 							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="00" autocomplete="" required>
 							<label for="floatingInput-postcode">Number*</label>
 						</div>
-						<div class="mb-3 px-2 col-12 col-lg-4">
-							<input type="submit" name="lookup" class="form-control" onClick="address.lookup()">
-						</div>
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" placeholder="1, Example street" autocomplete="address-level1" required>
+							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" placeholder="1, Example street" autocomplete="address-level1" disabled required>
 							<label for="floatingInput-Addr">Address Line 1*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="" autocomplete="address-level2">
+							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="" autocomplete="address-level2"disabled >
 							<label for="floatingInput-Addr2">Address Line 2</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-6">
-							<input type="text" name="town" class="form-control" id="floatingInput-town" placeholder="Town" autocomplete="" required>
+							<input type="text" name="town" class="form-control" id="floatingInput-town" placeholder="Town" autocomplete="" disabled required>
 							<label for="floatingInput-town">Town*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-6">
-							<input type="text" name="county" class="form-control" id="floatingInput-county" placeholder="State" autocomplete="" required>
+							<input type="text" name="county" class="form-control" id="floatingInput-county" placeholder="State" autocomplete="" disabled required>
 							<label for="floatingInput-county">County*</label>
 						</div>
 					</div>
