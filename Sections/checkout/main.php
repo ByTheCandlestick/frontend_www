@@ -33,8 +33,8 @@
 							<input type="submit" name="lookup" class="form-control" onClick="address.lookup()">
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
-							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="00" autocomplete="" required>
-							<label for="floatingInput-postcode">Number*</label>
+							<input type="text" name="number" class="form-control" id="floatingInput-number" placeholder="00" autocomplete="" required>
+							<label for="floatingInput-number">Number*</label>
 						</div>
 					</div>
 					<div class="row">
