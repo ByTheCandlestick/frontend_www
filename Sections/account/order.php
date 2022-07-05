@@ -214,7 +214,7 @@
 						}
 					}
 				?>
-				<a href="/My/Invoice/<?print(QS)?>" class="btn"> Get a printable invoice</a>
+				<a href="/My/Invoice/<?print(QS)?>" class="btn"> Get a printable copy</a>
 			</div>
 		</div>
 	</div>
