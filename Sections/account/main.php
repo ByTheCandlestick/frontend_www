@@ -27,7 +27,7 @@
 								<div class=\"col-9 col-md-8 align-items-center\">
 									<div class=\"top-50 position-relative\" style=\"transform:translatey(-50%);\">
 										<p>
-											<a class=\"link-dark\" href=\"/my/orders/$invoice_number\">
+											<a class=\"link-dark\" href=\"/my/order/$invoice_number\">
 												$invoice_number
 											</a>
 										</p>

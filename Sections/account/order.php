@@ -77,7 +77,7 @@
 			.order-progress-stepper .step.caution::after { background-color: #ff8200; }
 			.order-progress-stepper .step.error::before,
 			.order-progress-stepper .step.error::after { background-color: #d50032; }
-		/* --=== Forst and last ===-- */
+		/* --=== First and last ===-- */
 			.order-progress-stepper .step:first-child::after {
 				width: 50%;
 				left: 50%;
