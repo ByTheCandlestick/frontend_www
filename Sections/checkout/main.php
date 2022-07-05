@@ -80,7 +80,7 @@
 					</div>
 					<div class="detail">
 						<button type="submit" class="paymentSubmit btn btn-outline-dark">
-							<i class="fas fa-circle-notch fa-spin"></i>
+							<i class="fas fa-circle-notch fa-spin" style="display: none;"></i>
 							<span id="button-text">Pay now</span>
 						</button>
 					</div>
