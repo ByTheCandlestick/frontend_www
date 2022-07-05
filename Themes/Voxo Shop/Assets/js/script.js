@@ -870,7 +870,7 @@ $(document).ready(function() {
 					},
 					success: function(body) {
 						if (body.startsWith('success')) {
-							//location.href = '/my/orders/' + body.invoice;
+							location.href = '/my/orders/' + body.invoice;
 						} else {}
 					},
 					error: function(result) {
