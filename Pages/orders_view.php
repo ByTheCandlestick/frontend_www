@@ -155,7 +155,7 @@
                         print('
                             <div class="border-bottom row p-3">
                                 <div class="col-12 p-3 text-center">
-                                    <span> Your cart is empty </span>
+                                    <span> There were no products on this invoice </span>
                                 </div>
                             </div>
                         ');
