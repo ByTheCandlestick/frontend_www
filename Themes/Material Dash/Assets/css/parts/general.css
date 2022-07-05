@@ -23,3 +23,10 @@ button, a {
   cursor: pointer;
   text-decoration: none;
 }
+.editor-toolbar.fullscreen {
+  z-index: 10;
+}
+.fa, .fas {
+  font-family: "Font Awesome 5 Pro"!important;
+  font-weight: 900;
+}
