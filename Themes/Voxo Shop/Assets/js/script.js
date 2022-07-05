@@ -688,7 +688,7 @@ $(document).ready(function() {
 		address = {
 			searchTimer: null,
 			lookup() {
-				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + $("input[name=postcode]").val() + "&components=country:gb&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
+				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + $("input[name=postcode]").val() + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 					if (json["status"] === "OK") {
 						$(".addressSummary").text(json["results"][0]["formatted_address"]);// Append the google formatted complete address
 						
@@ -710,7 +710,7 @@ $(document).ready(function() {
 								case "administrative_area_level_2":
 									$("input.form-control[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
 									break;
-								case "":
+								case "country":
 									$("input.form-control[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
 									break;
 								default: 
