@@ -65,12 +65,6 @@
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12">
-							<input type="text" name="email"class="form-control" id="floatingInput-email" autocomplete="email" required>
-							<label for="floatingInput-email">Email address*</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12">
 							<input type="text" name="phone" class="form-control" id="floatingInput-phone" autocomplete="tel" required>
 							<label for="floatingInput-phone">Primary phone number*</label>
 						</div>
@@ -104,11 +98,8 @@
 							<path class="svgtipcolor" d="m51.916 111.98c-1.787-6.948-7.486-11.634-15.226-11.734h-36.316l-0.374 1.686c28.329 6.984 52.107 28.474 59.821 48.688l-7.905-38.64z" fill="#EFC75E"></path>
 						</svg>
 					</div>
-
 					<div type="text" id="card_number" class="number" autocomplete="cc-number" required ></div>
-
 					<div type="text" id="card_expiry" class="expiry" autocomplete="cc-exp" required ></div>
-
 					<div type="text" id="card_cvc" class="ccv" autocomplete="cc-csc" required ></div>
 				</div>
 			</div>
@@ -118,4 +109,5 @@
 	<input type="hidden" name="currency" value="<?print($currency) ?>">
 	<input type="hidden" name="price" value="<?print($cart_total) ?>">
 	<input type="hidden" name="uid" value="<?print($userdata['ID']) ?>">
+	<input type="hidden" name="uid" value="<?print($userdata['Email']) ?>">
 </form>
