@@ -44,6 +44,8 @@
 	padding-top: 40px;
 	overflow: hidden;
 	display: none;
+	max-height: 90vh;
+    overflow-y: scroll;
 }
 .search-suggestions > li {
     margin: 5px;
