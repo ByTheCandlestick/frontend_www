@@ -40,18 +40,18 @@
 	}, {
 		"name": "New product",
 		"desc": "Creates a new product",
-		"url": "/Products"
+		"url": "/Products/New"
 	}, {
 		"name": "New website",
 		"desc": "Creates a new website",
-		"url": "/Websites"
+		"url": "/Websites/New"
 	}, {
 		"name": "New website page",
 		"desc": "Creates a new website page",
-		"url": "/Websites"
+		"url": "/Websites/Page/New"
 	}, {
 		"name": "New supplier",
 		"desc": "Creates a new supplier",
-		"url": "/Suppliers"
+		"url": "/Suppliers/New"
 	}
 ]
