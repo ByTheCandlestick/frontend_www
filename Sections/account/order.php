@@ -136,7 +136,7 @@
 			foreach($order_items as $order_item) {
 				$item_info = explode(',', $order_item);
 				$order_item_id = $item_info[0];
-				if($q = mysqli_query($conn, "SELECT * FROM `products` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
+				if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
 						$order_item_image  = explode(',', $res['images'])[0];
 						$order_item_title = $res['title'];
