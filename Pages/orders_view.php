@@ -1,7 +1,9 @@
 <?
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
+        $records = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS)));
         $address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['billto_address'])));
+        $delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['invoice_shipped_by'])));
 ?>
     <section>
         <!-- Section Header -->
@@ -21,7 +23,7 @@
         <hr>
         <!-- Section Body -->
         <div class="row">
-            <div class="col-12 col-lg-3" name="title">
+            <div class="col-12 col-lg-3">
                 <div class="row">
                     <div class="col-12 form-floating mb-3">
                         <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['number_name'].' '.$address['line_1'].','.PHP_EOL.$address['line_2'].','.PHP_EOL.$address['town'].','.PHP_EOL.$address['county'].','.PHP_EOL.$address['country'].','.PHP_EOL.$address['postcode'])?></textarea>
@@ -29,15 +31,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3" name="title">
+            <div class="col-12 col-lg-9">
                 <div class="row">
-                    <div class="col-12 form-floating mb-3">
-                        <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['number_name'].' '.$address['line_1'].','.PHP_EOL.$address['line_2'].','.PHP_EOL.$address['town'].','.PHP_EOL.$address['county'].','.PHP_EOL.$address['country'].','.PHP_EOL.$address['postcode'])?></textarea>
-                        <label for="floatingInput">Delivery address</label>
+                    <div class="col-12 col-md-6 col-md-4 form-floating mb-3">
+                        <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['name'])?></textarea>
+                        <label for="floatingInput">Deliver to name</label>
                     </div>
-                    <div class="col-12 form-floating mb-3">
-                        <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['number_name'].' '.$address['line_1'].','.PHP_EOL.$address['line_2'].','.PHP_EOL.$address['town'].','.PHP_EOL.$address['county'].','.PHP_EOL.$address['country'].','.PHP_EOL.$address['postcode'])?></textarea>
-                        <label for="floatingInput">Delivery address</label>
+                    <div class="col-12 col-md-6 col-md-4 form-floating mb-3">
+                        <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($delivery['Name'])?></textarea>
+                        <label for="floatingInput">Delivery by</label>
                     </div>
                 </div>
             </div>
