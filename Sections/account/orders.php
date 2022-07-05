@@ -8,7 +8,9 @@
 			$uid=$userdata['ID'];
 			if($query = DB_Query("SELECT * FROM `sales_orders` WHERE `uid`=$uid ORDER BY `invoice_number` DESC")) {
 				$orderHistory = array();
-				while($row = mysqli_fetch_assoc($query)): array_push($orderHistory, $row); endwhile;
+				while($row = mysqli_fetch_assoc($query)){
+					array_push($orderHistory, $row);
+				}
 				foreach($orderHistory as $invoice) {
 					$invoice_date = $invoice['invoice_date'];
 					$id = $invoice['id'];
