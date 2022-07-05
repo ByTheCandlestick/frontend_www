@@ -886,7 +886,7 @@ $(document).ready(function() {
 	 * ADDRESS SEARCH
 	 */
 		
-		$(".form-control input[name=postcode]").on('keydown', function() {
+		$("input.form-control[name=postcode]").on('keydown', function() {
 			if (address.searchTimer) {
 				clearTimeout(address.searchTimer);
 			}
