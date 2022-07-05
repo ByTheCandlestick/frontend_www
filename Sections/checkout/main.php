@@ -29,9 +29,9 @@
 							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
 							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
-						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
+						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
 							<input type="text" name="number" class="form-control" id="floatingInput-number" autocomplete="" required>
-							<label for="floatingInput-number">Number *</label>
+							<label for="floatingInput-number">House number / name *</label>
 						</div>
 						<!--
 							<div class="mb-3 px-2 col-12 col-lg-4">
