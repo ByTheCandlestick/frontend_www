@@ -1,11 +1,12 @@
 <?
-	if($q = DB_Query("SELECT * FROM `sales_orders` WHERE `invoice_number`='${QS}'")) {
+	if($q = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS))) {
 		$order = mysqli_fetch_assoc($q);
 		$currency = $order['currency'];
 		$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );
 		$order_curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
 		$user_id = $order['uid'];
 		$order_items = explode(';', $order['items']);
+		print_r()
 ?>
 	<style>
 		/* --=== standard ===-- */
