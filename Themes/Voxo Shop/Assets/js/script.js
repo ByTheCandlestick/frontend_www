@@ -779,7 +779,7 @@ $(document).ready(function() {
 						"input.form-control[name=address2],"+
 						"input.form-control[name=town],"+
 						"input.form-control[name=county],"+
-						"input.form-control[name=country],").val("")
+						"input.form-control[name=country]").val("")
 					address.lookup();
 				}, 800);
 			});
