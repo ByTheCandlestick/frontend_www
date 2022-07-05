@@ -40,13 +40,6 @@
                         <input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Name'])?>" disabled>
                         <label for="floatingInput">Delivery by</label>
                     </div>
-
-                    
-                    <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['name'])?>" disabled>
-                        <label for="floatingInput">Deliver to name</label>
-                    </div>
-
                     <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_subtotal'])?>" disabled>
                         <label for="floatingInput">Goods price</label>
