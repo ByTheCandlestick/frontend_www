@@ -871,18 +871,20 @@ $(document).ready(function() {
 						withCredentials: true,
 					},
 					success: function(body) {
+						$('.paymentSubmit').find('i').hide()
+						$('.paymentSubmit').find('span').show()
 						if(body.status == 'success') {
 							location.href = '/my/order/' + body.invoice;
 						}
 					},
 					error: function(body) {
+						$('.paymentSubmit').find('i').hide()
+						$('.paymentSubmit').find('span').show()
 						if(body.status == 'error') {
 							console.error("Error: " + body.reason);
 						}
 					}
 				}).done(function() {
-					$('.paymentSubmit').find('i').hide()
-					$('.paymentSubmit').find('span').show()
 				});
 
 			}
