@@ -841,7 +841,7 @@ $(document).ready(function() {
 				form.appendChild(hiddenInputStripeToken);
 				items = '';
 				$('cart-item').each(function() {
-					items = items + $(this).attr('prod-id') + ";";
+					items = items + $(this).attr('raw') + ";";
 				});
 				var hiddenInputItems = document.createElement('input');
 				hiddenInputItems.setAttribute('type', 'hidden');
@@ -858,7 +858,7 @@ $(document).ready(function() {
 				data = api_key_data + "&";
 				paymentFrm.each(function() {
 					if($(this).attr('name') != null) {
-						data = data + $(this).attr('raw') + '=' + this.value + '&'
+						data = data + $(this).attr('name') + '=' + this.value + '&'
 					}
 				});
 				$.ajax({
