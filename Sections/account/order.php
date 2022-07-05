@@ -201,7 +201,7 @@
 				<?
 					$subtotal = $order['invoice_subtotal'];
 					$deposit = $order['invoice_deposit'];
-					$diff = $deposit - $subtotal;
+					$diff = $subtotal - $deposit;
 					if($deposit == $subtotal) {
 						print("<h4> Total: $subtotal</h4>");
 					} else {
