@@ -28,6 +28,7 @@
 					<th scope="col">Subtotal</th>
 					<th scope="col">Tax</th>
 					<th scope="col">Paid</th>
+					<th scope="col">Status</th>
 					<th scope="col">txn ID</th>
 					<th scope="col"></th>
 				</tr>
@@ -44,6 +45,7 @@
 									<td>'.$row['invoice_subtotal'].'</td>
 									<td>'.$row['invoice_tax'].'</td>
 									<td>'.$row['invoice_deposit'].'</td>
+									<td>'.$row['invoice_status'].'</td>
 									<td>'.$row['txn_id'].'</td>
 									<td>
 										<a href="/Orders/Edit/'.$row['invoice_number'].'">
