@@ -58,7 +58,11 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>Notes</h5>
+            </div>
             <div class="col-12">
+                <h5>Items</h5>
                 <?
                     $invoiced_items = explode(";", $invoice['items']);
                     if($invoiced_items != null) {
