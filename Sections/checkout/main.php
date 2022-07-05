@@ -25,37 +25,49 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" placeholder="1, Example street" autocomplete="address-line1" required>
-							<label for="floatingInput-Addr">Address Line 1</label>
-						</div>
-						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="Line 2" autocomplete="address-line2">
-							<label for="floatingInput-Addr2">Address Line 2 (optional)</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
-							<input type="text" name="town" class="form-control" id="floatingInput-town" placeholder="Bedfordshire" autocomplete="town">
-							<label for="floatingInput-town">Town</label>
-						</div>
-						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
-							<input type="text" name="county" class="form-control" id="floatingInput-county" placeholder="United Kingdom" autocomplete="state">
-							<label for="floatingInput-county">County</label>
+						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
+							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="XX0 0XX" autocomplete="postal-code" required>
+							<label for="floatingInput-postcode">Postcode*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
-							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="XX0 0XX" autocomplete="postal-code">
-							<label for="floatingInput-postcode">Postcode</label>
+							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="" autocomplete="" required>
+							<label for="floatingInput-postcode">Number*</label>
+						</div>
+						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
+							<input type="submit" name="lookup" class="form-control" id="floatingInput-lookup" onClick="address.lookup()">
+							<label for="floatingInput-lookup">Lookup</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="email"class="form-control" id="floatingInput-email" placeholder="email@address.com" autocomplete="email">
-							<label for="floatingInput-email">Email address</label>
+							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" placeholder="1, Example street" autocomplete="address-level1" required>
+							<label for="floatingInput-Addr">Address Line 1*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="phone" class="form-control" id="floatingInput-phone" placeholder="+00 0000 000 000" autocomplete="tel">
-							<label for="floatingInput-phone">Primary phone number</label>
+							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="" autocomplete="address-level2">
+							<label for="floatingInput-Addr2">Address Line 2</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
+							<input type="text" name="town" class="form-control" id="floatingInput-town" placeholder="Town" autocomplete="" required>
+							<label for="floatingInput-town">Town*</label>
+						</div>
+						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
+							<input type="text" name="county" class="form-control" id="floatingInput-county" placeholder="State" autocomplete="" required>
+							<label for="floatingInput-county">County*</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-12">
+							<input type="text" name="email"class="form-control" id="floatingInput-email" placeholder="email@address.com" autocomplete="email" required>
+							<label for="floatingInput-email">Email address*</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-12">
+							<input type="text" name="phone" class="form-control" id="floatingInput-phone" placeholder="+00 0000 000 000" autocomplete="tel" required>
+							<label for="floatingInput-phone">Primary phone number*</label>
 						</div>
 					</div>
 				</div>

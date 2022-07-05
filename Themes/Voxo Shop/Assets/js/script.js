@@ -253,7 +253,6 @@ $(document).ready(function() {
 				if (count == fieldCount) return true;
 				return false;
 			},
-
 			username: function() {
 				var username = $(".main-form__body--input[name=username]").val();
 				if (username.length < 6 || !username.match(/^[a-zA-Z0-9]+$/)) return false;
@@ -303,7 +302,6 @@ $(document).ready(function() {
 				console.log("address");
 			}
 		}
-
 	// Account
 		account = {
 			register: function() {
@@ -474,7 +472,6 @@ $(document).ready(function() {
 				});
 			}
 		}
-
 	// Cart
 		cart = {
 			add: function(uid, sku) {
@@ -541,7 +538,6 @@ $(document).ready(function() {
 				});
 			}
 		}
-
 	// Modals
 		modal = {
 			create: function(type, open) {
@@ -580,7 +576,6 @@ $(document).ready(function() {
 				$('.modal-' + type).fadeOut(100)
 			}
 		}
-
 	// Alerts
 		alerts = {
 			count: Number,
@@ -633,7 +628,6 @@ $(document).ready(function() {
 				});
 			}
 		}
-		
 	// Cookies
 		cookie = {
 			acceptanceCheck: function() {
@@ -690,11 +684,97 @@ $(document).ready(function() {
 				// TBD
 			}
 		}
-
+	// Address
+		address = {
+			searchTimer=null,
+			lookup() {
+				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + $("input[name=postcode]").val() + "&components=country:gb&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
+					if (json["status"] === "OK") {
+						$(".addressSummary").text(json["results"][0]["formatted_address"]);// Append the google formatted complete address
+						
+						json["results"][0]["address_components"].forEach(checkDataAvailable); // For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
+					
+						function checkDataAvailable(data){
+							switch(data["types"][0]) {
+							case "postal_code":
+								break;
+							case "route":
+								$("input.form-control[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
+								break;
+							case "postal_town":
+								$("input.form-control[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
+								break;
+							case "locality":
+								$("input.form-control.[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
+								break;
+							case "administrative_area_level_2":
+								$("input.form-control.[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
+								break;
+							default: 
+								// Check if town and district are duplicated and remove district if the case.
+								if($("input.form-control.townName").val() === $("input.form-control.districtName").val()){
+									$("input.form-control.districtName").val("");
+								}
+								return;
+							}
+						}
+						// Display the JSON structure of this data on the page purely for use here on codepen
+						var json = JSON.stringify(json, null, 2);
+						$(".jsonOutput").empty();
+						$(".jsonOutput").append(json);
+					} else {
+					console.log("There was an error with the Google API and no data was returned");
+					// Add gracefull degradation for following error codes in the APP
+					// https://developers.google.com/maps/documentation/geocoding/intro#StatusCodes
+					// ZERO_RESULTS
+					// OVER_QUERY_LIMIT
+					// REQUEST_DENIED
+					// INVALID_REQUEST
+					// UNKNOWN_ERROR
+					switch(json["status"]) {
+						case "ZERO_RESULTS":
+							console.log("No results found");
+							break;
+						case "OVER_QUERY_LIMIT":
+							console.log("Over alloted query limit");
+							break;
+						case "REQUEST_DENIED":
+							console.log("Access blocked");
+							break;
+						case "INVALID_REQUEST":
+							console.log("Query address missing");
+							break;
+						case "UNKNOWN_ERROR":
+							console.log("Google server error");
+							break;
+						default: 
+							return;
+						}
+					
+					}
+				}).fail(() => {
+					console.log("There was a network error and no data was returned");
+					// TODO gracefull degradation when there is a network error
+					$(".addressSummary").text("Network error.")
+				});
+			},
+		}
 	/**
 	 * STRIPE PAYEMENTS
 	 */
 		if($('#paymentFrm').length) {
+			$(".form-control").on('keydown', function() {
+				// Cancel any previously-set timer
+				if (address.searchTimer) {
+					clearTimeout(address.searchTimer);
+				}
+				address.searchTimer = setTimeout(function() {
+					$(".streetName, .townName, .districtName, .countyName").val("")// Empty text from these fields
+					var address = $(".form-control").val(); // Store the post code provided by the user
+					ajaxAddressSearch(address); // Fetch data with ajax
+				}, 800);
+			});
+
 			var stripe = Stripe($('input[name=STRIPE_PUBLISHABLE_KEY]').val());
 			var resultContainer = document.getElementById('paymentResponse');
 			var elements = stripe.elements({
