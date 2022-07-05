@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-12 col-lg-6" name="title">
                 <div class="form-floating mb-3">
-                    <textarea type="text" class="form-control" id="floatingInput" rows="6"><? print($address['number'].$address['line_1'].PHP_EOL.$address['line_2'].PHP_EOL.$address['town'].PHP_EOL.$address['county'].PHP_EOL.$address['postcode'].PHP_EOL.$address['country'])?></textarea>
+                    <textarea type="text" class="form-control" id="floatingInput" rows="6"><? print($address['number'].$address['line_1'].','.PHP_EOL.$address['line_2'].','.PHP_EOL.$address['town'].','.PHP_EOL.$address['county'].','.PHP_EOL.$address['country'].','.PHP_EOL.$address['postcode'])?></textarea>
                     <label for="floatingInput">Delivery address</label>
                 </div>
             </div>
