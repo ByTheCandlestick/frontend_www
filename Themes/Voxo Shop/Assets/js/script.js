@@ -761,6 +761,9 @@ $(document).ready(function() {
 					$(".addressSummary").text("Network error.")
 				});
 			},
+			enterManual() {
+
+			},
 		}
 	/**
 	 * STRIPE PAYEMENTS
@@ -774,7 +777,7 @@ $(document).ready(function() {
 				address.searchTimer = setTimeout(function() {
 					$(".streetName, .townName, .districtName, .countyName").val("")// Empty text from these fields
 					var address = $(".form-control").val(); // Store the post code provided by the user
-					ajaxAddressSearch(address); // Fetch data with ajax
+					address.lookup(address); // Fetch data with ajax
 				}, 800);
 			});
 
