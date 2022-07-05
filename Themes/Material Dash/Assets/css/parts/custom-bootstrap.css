@@ -2,7 +2,7 @@
 ********************      CUSTOM BS     ********************
 ************************************************************/
     /* Universal */
-        label {
+        .form-floating label {
             left: unset!important;
         }
     /* Max Width */
