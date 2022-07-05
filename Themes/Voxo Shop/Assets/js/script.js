@@ -351,7 +351,6 @@ $(document).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							res = JSON.stringify(body);
 							if (body.status == "success") {
 								cookie.createFromArray(
 									body.cookies,
@@ -871,8 +870,7 @@ $(document).ready(function() {
 					},
 					success: function(body) {
 						if (body.startsWith('success')) {
-							var txn_id = body.split(":")[1];
-							//location.href = '/my/orders/' + txn_id;
+							//location.href = '/my/orders/' + body.invoice;
 						} else {}
 					},
 					error: function(result) {
