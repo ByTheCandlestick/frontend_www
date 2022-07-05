@@ -137,13 +137,13 @@
 				$item_info = explode(',', $order_item);
 				$order_item_id = $item_info[0];
 				$order_item_qty = $item_info[1];
-				$order_item_opt = $item_info[1];
+				$order_item_opt = explode(',', $item_info[2]);
 				if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
 						$order_item_image  = explode(',', $res['Images'])[0];
 						$order_item_title = $res['Title'];
 						$titles=$options=array();
-						
+
 						$x = explode(';', $res['Variants']);
 						foreach($x as $y) {
 							$z = explode(':', $y);
@@ -176,7 +176,6 @@
 										<p class=\"font-monospace text-muted\">
 					");
 					for($n=0; $n<count($titles);$n++) {
-						$item_options = explode(':', $item_info[2]);
 						print(
 							$titles[$n].': '.
 							$options[$n][
