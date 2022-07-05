@@ -1,7 +1,6 @@
 <?
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
-        $records = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS)));
         $address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['billto_address'])));
         $delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['invoice_shipped_by'])));
 ?>
@@ -34,7 +33,7 @@
             <div class="col-12 col-lg-9">
                 <div class="row">
                     <div class="col-12 col-md-6 col-md-4 form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print($address['name'])?>" disabled>
+                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['name'])?>" disabled>
                         <label for="floatingInput">Deliver to name</label>
                     </div>
                     <div class="col-12 col-md-6 col-md-4 form-floating mb-3">
