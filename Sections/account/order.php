@@ -142,8 +142,6 @@
 					while($res = mysqli_fetch_array($q)) {
 						$order_item_image  = explode(',', $res['Images'])[0];
 						$order_item_title = $res['Title'];
-
-
 						$titles=$options=array();
 						$x = explode(';', $res['variants']);
 						foreach($x as $y) {
