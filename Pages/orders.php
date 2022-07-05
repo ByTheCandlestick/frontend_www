@@ -69,3 +69,13 @@
 		</table>
 	</div>
 </section>
+<script>
+	$(document).ready(function(){
+		$(".tableFilter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$(".ordersTable tbody tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>

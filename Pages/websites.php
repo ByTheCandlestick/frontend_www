@@ -32,7 +32,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<table class="productsTable table table-striped table-hover">
+		<table class="websiteTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
 					<th scope="col">ID</th>
@@ -77,3 +77,13 @@
 		</table>
 	</div>
 </section>
+<script>
+	$(document).ready(function(){
+		$(".tableFilter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$(".websiteTable tbody tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
