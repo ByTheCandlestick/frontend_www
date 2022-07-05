@@ -690,10 +690,8 @@ $(document).ready(function() {
 			lookup() {
 				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + $("input[name=postcode]").val() + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 					if (json["status"] === "OK") {
-						$(".addressSummary").text(json["results"][0]["formatted_address"]);// Append the google formatted complete address
-						
-						json["results"][0]["address_components"].forEach(checkDataAvailable); // For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
-					
+						// For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
+						json["results"][0]["address_components"].forEach(checkDataAvailable);
 						function checkDataAvailable(data){
 							switch(data["types"][0]) {
 								case "postal_code":
@@ -756,8 +754,7 @@ $(document).ready(function() {
 					}
 				}).fail(() => {
 					console.log("There was a network error and no data was returned");
-					// TODO gracefull degradation when there is a network error
-					$(".addressSummary").text("Network error.")
+					alerts.icon("exclamation", "An error occurred, Please try again", "error");
 				});
 			},
 			enterManual() {
