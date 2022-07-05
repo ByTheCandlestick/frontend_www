@@ -869,8 +869,6 @@ $(document).ready(function() {
 						withCredentials: true,
 					},
 					success: function(body) {
-						console.log(body);
-						console.log(body.status);
 						if (body.status == 'success') {
 							location.href = '/my/orders/' + body.invoice;
 						}
