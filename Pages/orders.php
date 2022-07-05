@@ -2,7 +2,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h1>Websites</h1>
+			<h1>Orders</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -20,7 +20,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<table class="productsTable table table-striped table-hover">
+		<table class="ordersTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
 					<th scope="col">#</th>
