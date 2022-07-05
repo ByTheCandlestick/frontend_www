@@ -46,7 +46,7 @@
 		"desc": "Creates a new website",
 		"url": "/Websites/New"
 	}, {
-		"name": "New website page",
+		"name": "New page",
 		"desc": "Creates a new website page",
 		"url": "/Websites/Page/New"
 	}, {
