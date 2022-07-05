@@ -714,7 +714,6 @@ $(document).ready(function() {
 									$("input.form-control[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
 									break;
 								default: 
-									// Check if town and district are duplicated and remove district if the case.
 									if($("input.form-control[name=town]").val() === $("input.form-control[name=address2]").val()){
 										$("input.form-control[name=address2]").val("");
 									}
