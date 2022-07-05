@@ -696,26 +696,29 @@ $(document).ready(function() {
 					
 						function checkDataAvailable(data){
 							switch(data["types"][0]) {
-							case "postal_code":
-								break;
-							case "route":
-								$("input.form-control[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
-								break;
-							case "postal_town":
-								$("input.form-control[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
-								break;
-							case "locality":
-								$("input.form-control[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
-								break;
-							case "administrative_area_level_2":
-								$("input.form-control[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
-								break;
-							default: 
-								// Check if town and district are duplicated and remove district if the case.
-								if($("input.form-control.townName").val() === $("input.form-control.districtName").val()){
-									$("input.form-control.districtName").val("");
-								}
-								return;
+								case "postal_code":
+									break;
+								case "route":
+									$("input.form-control[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
+									break;
+								case "postal_town":
+									$("input.form-control[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
+									break;
+								case "locality":
+									$("input.form-control[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
+									break;
+								case "administrative_area_level_2":
+									$("input.form-control[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
+									break;
+								case "":
+									$("input.form-control[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
+									break;
+								default: 
+									// Check if town and district are duplicated and remove district if the case.
+									if($("input.form-control[name=town]").val() === $("input.form-control[name=address2]").val()){
+										$("input.form-control[name=address2]").val("");
+									}
+									return;
 							}
 						}
 						// Display the JSON structure of this data on the page purely for use here on codepen
