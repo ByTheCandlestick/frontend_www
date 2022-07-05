@@ -65,10 +65,10 @@
                         $invoiced_items_count = count($invoiced_items);
                         for($i=0;$i<$invoiced_items_count;$i++) {
                             $invoiced_item = $invoiced_items[$i];
-                            $invoiced_item_sku = $invoiced_item[1];
-                            $invoiced_item_qty = $invoiced_item[2];
-                            $invoiced_item_opt = $invoiced_item[3];
-                            if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$invoiced_item_id AND `Active`=1 LIMIT 1")) {
+                            list($invoiced_item_sku,
+                                 $invoiced_item_qty,
+                                 $invoiced_item_opt) = explode(",", $invoiced_item)
+                            if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$invoiced_item_sku AND `Active`=1 LIMIT 1")) {
                                 while($res = mysqli_fetch_array($q)) {
                                     $currency = $res['Currency'];
                                     $fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );
