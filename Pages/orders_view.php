@@ -111,7 +111,7 @@
                                                 <div class="col-9 col-md-8 align-items-center">
                                                     <div class="top-50 position-relative" style="transform:translatey(-50%);">
                                                         <p>
-                                                            <a class="link-dark" href="'.URL_ADMIN.'/Product/'.$invoiced_item_sku.'">
+                                                            <a class="link-dark" href="'.URL_ADMIN.'/Product/Edit/'.$invoiced_item_sku.'">
                                                                 '.$invoiced_item_title.'
                                                             </a>
                                                         </p>
