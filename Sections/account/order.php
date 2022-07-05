@@ -134,6 +134,7 @@
 		<hr />
 		<?
 			foreach($order_items as $order_item) {
+				print_r($order_item);
 				$item_info = explode(',', $order_item);
 				$order_item_id = $item_info[0];
 				$order_item_qty = $item_info[1];
