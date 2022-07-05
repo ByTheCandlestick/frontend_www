@@ -109,5 +109,5 @@
 	<input type="hidden" name="currency" value="<?print($currency) ?>">
 	<input type="hidden" name="price" value="<?print($cart_total) ?>">
 	<input type="hidden" name="uid" value="<?print($userdata['ID']) ?>">
-	<input type="hidden" name="uid" value="<?print($userdata['Email']) ?>">
+	<input type="hidden" name="email" value="<?print($userdata['Email']) ?>">
 </form>
