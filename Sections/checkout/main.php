@@ -34,8 +34,7 @@
 							<label for="floatingInput-postcode">Number*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
-							<input type="submit" name="lookup" class="form-control" id="floatingInput-lookup" onClick="address.lookup()">
-							<label for="floatingInput-lookup">Lookup</label>
+							<input type="submit" name="lookup" class="form-control" onClick="address.lookup()">
 						</div>
 					</div>
 					<div class="row">
