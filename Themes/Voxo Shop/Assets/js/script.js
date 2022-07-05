@@ -870,10 +870,6 @@ $(document).ready(function() {
 					xhrFields: {
 						withCredentials: true,
 					},
-					done: function() {
-						$('.paymentSubmit').find('i').hide()
-						$('.paymentSubmit').find('span').show()
-					},
 					success: function(body) {
 						if(body.status == 'success') {
 							location.href = '/my/order/' + body.invoice;
@@ -884,6 +880,9 @@ $(document).ready(function() {
 							console.error("Error: " + body.reason);
 						}
 					}
+				}).done(function() {
+					$('.paymentSubmit').find('i').hide()
+					$('.paymentSubmit').find('span').show()
 				});
 
 			}
