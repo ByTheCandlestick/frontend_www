@@ -726,33 +726,33 @@ $(document).ready(function() {
 						$(".jsonOutput").empty();
 						$(".jsonOutput").append(json);
 					} else {
-					console.log("There was an error with the Google API and no data was returned");
-					// Add gracefull degradation for following error codes in the APP
-					// https://developers.google.com/maps/documentation/geocoding/intro#StatusCodes
-					// ZERO_RESULTS
-					// OVER_QUERY_LIMIT
-					// REQUEST_DENIED
-					// INVALID_REQUEST
-					// UNKNOWN_ERROR
-					switch(json["status"]) {
-						case "ZERO_RESULTS":
-							console.log("No results found");
-							break;
-						case "OVER_QUERY_LIMIT":
-							console.log("Over alloted query limit");
-							break;
-						case "REQUEST_DENIED":
-							console.log("Access blocked");
-							break;
-						case "INVALID_REQUEST":
-							console.log("Query address missing");
-							break;
-						case "UNKNOWN_ERROR":
-							console.log("Google server error");
-							break;
-						default: 
-							return;
-						}
+						console.log("There was an error with the Google API and no data was returned");
+						// Add gracefull degradation for following error codes in the APP
+						// https://developers.google.com/maps/documentation/geocoding/intro#StatusCodes
+						// ZERO_RESULTS
+						// OVER_QUERY_LIMIT
+						// REQUEST_DENIED
+						// INVALID_REQUEST
+						// UNKNOWN_ERROR
+						switch(json["status"]) {
+							case "ZERO_RESULTS":
+								console.log("No results found");
+								break;
+							case "OVER_QUERY_LIMIT":
+								console.log("Over alloted query limit");
+								break;
+							case "REQUEST_DENIED":
+								console.log("Access blocked");
+								break;
+							case "INVALID_REQUEST":
+								console.log("Query address missing");
+								break;
+							case "UNKNOWN_ERROR":
+								console.log("Google server error");
+								break;
+							default: 
+								return;
+							}
 					
 					}
 				}).fail(() => {
@@ -775,9 +775,12 @@ $(document).ready(function() {
 					clearTimeout(address.searchTimer);
 				}
 				address.searchTimer = setTimeout(function() {
-					$(".streetName, .townName, .districtName, .countyName").val("")// Empty text from these fields
-					var address = $(".form-control").val(); // Store the post code provided by the user
-					address.lookup(address); // Fetch data with ajax
+					$(	"input.form-control[name=address1],"+
+						"input.form-control[name=address2],"+
+						"input.form-control[name=town],"+
+						"input.form-control[name=county],"+
+						"input.form-control[name=country],").val("")
+					address.lookup();
 				}, 800);
 			});
 
