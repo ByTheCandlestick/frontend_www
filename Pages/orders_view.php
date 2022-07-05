@@ -60,7 +60,7 @@
             </div>
             <div class="col-12">
                 <?
-                    $invoiced_items = explode(";", $invoice['items'])
+                    $invoiced_items = explode(";", $invoice['items']);
                     if($invoiced_items != null) {
                         $invoiced_items_count = count($invoiced_items);
                         for($i=0;$i<$invoiced_items_count;$i++) {
