@@ -686,7 +686,7 @@ $(document).ready(function() {
 		}
 	// Address
 		address = {
-			searchTimer=null,
+			searchTimer: null,
 			lookup() {
 				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + $("input[name=postcode]").val() + "&components=country:gb&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 					if (json["status"] === "OK") {
