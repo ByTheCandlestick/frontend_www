@@ -36,6 +36,10 @@
                     <input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Name'])?>" disabled>
                     <label for="floatingInput">Delivery by</label>
                 </div>
+            </div>
+
+            <div class="col-12">
+                <h5>Taxonomy</h5>
                 <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_subtotal'])?>" disabled>
                     <label for="floatingInput">Goods price</label>
@@ -53,7 +57,6 @@
                     <label for="floatingInput">Difference</label>
                 </div>
             </div>
-
             <div class="col-12">
                 <h5>Notes</h5>
             </div>
