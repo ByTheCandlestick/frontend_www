@@ -38,7 +38,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12 col-lg-8">
+						<div class="form-floating mb-3 px-2 col-12">
 							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" disabled required>
 							<label for="floatingInput-Addr">Street name*</label>
 						</div>
