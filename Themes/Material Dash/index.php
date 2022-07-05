@@ -129,6 +129,9 @@
 									<img src="http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 								</span>
 								<p class="app-name">The Candlestick</p>
+								<? if(DOMAIN_TYPE = 'indev') {?>
+									<h3 class="text-info">Developer mode - this has no impact on the live website</h4>
+								<? }?>
 							</div>
 							<!-- Search -->
 							<div class="search-wrapper" rel="/search.json">
