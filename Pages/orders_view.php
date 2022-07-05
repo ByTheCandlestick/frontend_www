@@ -60,6 +60,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-lg-9">
+
+            </div>
         </div>
     </section>
 <?
