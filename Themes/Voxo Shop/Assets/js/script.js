@@ -869,9 +869,9 @@ $(document).ready(function() {
 						withCredentials: true,
 					},
 					success: function(body) {
-						if (body.startsWith('success')) {
+						if (body.status = 'success') {
 							location.href = '/my/orders/' + body.invoice;
-						} else {}
+						}
 					},
 					error: function(result) {
 						console.error("Error: " + result);
