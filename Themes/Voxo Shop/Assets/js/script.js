@@ -781,7 +781,7 @@ $(document).ready(function() {
 						"input.form-control[name=county],"+
 						"input.form-control[name=country]").val("")
 					address.lookup();
-				}, 800);
+				}, 400);
 			});
 
 			var stripe = Stripe($('input[name=STRIPE_PUBLISHABLE_KEY]').val());

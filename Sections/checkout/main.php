@@ -29,18 +29,15 @@
 							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="XX0 0XX" autocomplete="postal-code" required>
 							<label for="floatingInput-postcode">Postcode*</label>
 						</div>
-						<div class="mb-3 px-2 col-12 col-lg-4">
-							<input type="button" name="lookup" class="btn btn-secondary h-100 w-100" value="Lookup" onClick="address.lookup()">
+						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
+							<input type="text" name="number" class="form-control" id="floatingInput-number" placeholder="00" autocomplete="" required>
+							<label for="floatingInput-number">Number*</label>
 						</div>
 						<div class="mb-3 px-2 col-12 col-lg-4">
 							<input type="button" name="manual" class="btn btn-outline-secondary h-100 w-100" value="Enter manually" onClick="address.enterManual()">
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
-							<input type="text" name="number" class="form-control" id="floatingInput-number" placeholder="00" autocomplete="" required>
-							<label for="floatingInput-number">Number*</label>
-						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-8">
 							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" placeholder="Line 1" disabled required>
 							<label for="floatingInput-Addr">Address Line 1*</label>
