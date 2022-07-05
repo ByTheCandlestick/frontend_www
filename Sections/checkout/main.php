@@ -42,13 +42,13 @@
 							<label for="floatingInput-number">Number*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-8">
-							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" placeholder="1, Example street" disabled required>
+							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" placeholder="Line 1" disabled required>
 							<label for="floatingInput-Addr">Address Line 1*</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="town" disabled >
+							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="Line 2" disabled >
 							<label for="floatingInput-Addr2">Address Line 2</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-6">
@@ -62,8 +62,8 @@
 							<label for="floatingInput-county">County*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-6">
-							<input type="text" name="Country" class="form-control" id="floatingInput-Country" placeholder="State" disabled required>
-							<label for="floatingInput-Country">Country*</label>
+							<input type="text" name="country" class="form-control" id="floatingInput-country" placeholder="Country" disabled required>
+							<label for="floatingInput-country">Country*</label>
 						</div>
 					</div>
 					<div class="row">
