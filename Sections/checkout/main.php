@@ -13,7 +13,7 @@
 				<h2>Payment Info</h2>
 			<?} else { ?>
 				<h2>Shipping Address</h2>
-				<div class="row col s12">
+				<div class="row">
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
 							<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>

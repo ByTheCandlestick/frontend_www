@@ -765,21 +765,6 @@ $(document).ready(function() {
 	 * STRIPE PAYEMENTS
 	 */
 		if($('#paymentFrm').length) {
-			$(".form-control").on('keydown', function() {
-				// Cancel any previously-set timer
-				if (address.searchTimer) {
-					clearTimeout(address.searchTimer);
-				}
-				address.searchTimer = setTimeout(function() {
-					$(	"input.form-control[name=address1],"+
-						"input.form-control[name=address2],"+
-						"input.form-control[name=town],"+
-						"input.form-control[name=county],"+
-						"input.form-control[name=country]").val("")
-					address.lookup();
-				}, 400);
-			});
-
 			var stripe = Stripe($('input[name=STRIPE_PUBLISHABLE_KEY]').val());
 			var resultContainer = document.getElementById('paymentResponse');
 			var elements = stripe.elements({
@@ -897,6 +882,23 @@ $(document).ready(function() {
 
 			}
 		}
+	/**
+	 * ADDRESS SEARCH
+	 */
+		
+		$(".form-control input[name=postcode]").on('keydown', function() {
+			if (address.searchTimer) {
+				clearTimeout(address.searchTimer);
+			}
+			address.searchTimer = setTimeout(function() {
+				$(	"input.form-control[name=address1],"+
+					"input.form-control[name=address2],"+
+					"input.form-control[name=town],"+
+					"input.form-control[name=county],"+
+					"input.form-control[name=country]").val("")
+				address.lookup();
+			}, 400);
+		});
 
 	/**
 	 * Preloader
