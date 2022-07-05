@@ -36,12 +36,12 @@
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
-							<input type="text" name="county" class="form-control" id="floatingInput-county" placeholder="Bedfordshire" autocomplete="county">
-							<label for="floatingInput-county">County</label>
+							<input type="text" name="town" class="form-control" id="floatingInput-town" placeholder="Bedfordshire" autocomplete="town">
+							<label for="floatingInput-town">Town</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
-							<input type="text" name="country" class="form-control" id="floatingInput-country" placeholder="United Kingdom" autocomplete="country">
-							<label for="floatingInput-country">Country</label>
+							<input type="text" name="county" class="form-control" id="floatingInput-county" placeholder="United Kingdom" autocomplete="state">
+							<label for="floatingInput-county">County</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-4">
 							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" placeholder="XX0 0XX" autocomplete="postal-code">
