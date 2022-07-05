@@ -50,15 +50,12 @@
 							print('
 								<tr>
 									<th scope="row">'.$row['ID'].'</th>
-									<td>'.$row['Name'].'</td>
+									<td><a href="/Websites/Pages/'.$row['ID'].'">'.$row['Name'].'</a></td>
 									<td>'.$row['Domain'].'</td>
 									<td>'.$row['Maintenance'].'</td>
 									<td>
 										<a href="/Websites/Edit/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
-										</a>
-										<a href="/Websites/Pages/'.$row['ID'].'">
-											<i class="fa fa-ellipsis-h"></i>
 										</a>
 									</td>
 								</tr>
