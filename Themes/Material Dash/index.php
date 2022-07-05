@@ -128,7 +128,7 @@
 								<span class="app-icon">
 									<img src="<?print(__API__)?>/Images/Fetch/candlestickLogo_20220530162542/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 								</span>
-								<p class="app-name"><a href="/">The Candlestick<?if(DOMAIN_TYPE=='indev') print(' indev');?></a></p>
+								<p class="app-name"> The Candlestick<?if(DOMAIN_TYPE=='indev') print(' indev');?></p>
 							</div>
 							<!-- Search -->
 							<div class="search-wrapper" rel="/search.json">
