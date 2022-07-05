@@ -65,7 +65,9 @@
                         $invoiced_items_count = count($invoiced_items);
                         for($i=0;$i<$invoiced_items_count;$i++) {
                             $invoiced_item = $invoiced_items[$i];
-                            $invoiced_item_id = $invoiced_item[1];
+                            $invoiced_item_sku = $invoiced_item[1];
+                            $invoiced_item_qty = $invoiced_item[2];
+                            $invoiced_item_opt = $invoiced_item[3];
                             if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$invoiced_item_id AND `Active`=1 LIMIT 1")) {
                                 while($res = mysqli_fetch_array($q)) {
                                     $currency = $res['Currency'];
@@ -75,7 +77,6 @@
                                     $invoiced_item_title = $res['Title'];
                                     $invoiced_item_price = $res['RetailPrice'];
                                     $invoiced_item_slug = $res['Slug'];
-                                    $invoiced_item_quantity = $invoiced_item[3];
                                     $invoiced_item_total = $invoiced_item_price * $invoiced_item_quantity;
                                     $cart_total = $cart_total + $invoiced_item_total;
 
@@ -96,7 +97,7 @@
 
                                 }
                                 print('
-                                    <cart-item raw="'.$invoiced_item_id.','.$invoiced_item_quantity.','.$invoiced_items[$i][4].'" prod-id="'.$invoiced_item_id.'" prod-qty="'.$invoiced_item_quantity.'" prod-opt="'.$invoiced_item[2].'">
+                                    <cart-item raw="'.$invoiced_item_sku.','.$invoiced_item_qty.','.$invoiced_item_opt.'" prod-id="'.$invoiced_item_sku.'" prod-qty="'.$invoiced_item_qty.'" prod-opt="'.$invoiced_item_opt.'">
                                         <div class="row border-bottom m-3 p-3 / m-md-0 p-md-2 mx-md-5 px-md-5">
                                             <div class="row col-12 col-lg-8 pb-2 pb-lg-0">
                                                 <div class="mw-25 mw-md-10 col-3 pe-3 / col-md-3 pe-md-3">
