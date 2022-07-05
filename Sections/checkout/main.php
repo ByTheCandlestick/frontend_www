@@ -33,9 +33,11 @@
 							<input type="text" name="number" class="form-control" id="floatingInput-number" autocomplete="" required>
 							<label for="floatingInput-number">Number *</label>
 						</div>
-						<div class="mb-3 px-2 col-12 col-lg-4">
-							<input type="button" name="manual" class="btn btn-outline-secondary h-100 w-100" value="Enter manually" onClick="address.enterManual()">
-						</div>
+						<!--
+							<div class="mb-3 px-2 col-12 col-lg-4">
+								<input type="button" name="manual" class="btn btn-outline-secondary h-100 w-100" value="Enter manually" onClick="address.enterManual()">
+							</div>
+						-->
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12">
