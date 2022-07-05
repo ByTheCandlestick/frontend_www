@@ -31,5 +31,27 @@
 		"name": "Assistance",
 		"desc": "An overview of all candlestick softwares.",
 		"url": "/Assistance"
+	},
+
+	{
+		"name": "New user",
+		"desc": "Creates a new user",
+		"url": "/Users/New"
+	}, {
+		"name": "New product",
+		"desc": "Creates a new product",
+		"url": "/Products"
+	}, {
+		"name": "New website",
+		"desc": "Creates a new website",
+		"url": "/Websites"
+	}, {
+		"name": "New website page",
+		"desc": "Creates a new website page",
+		"url": "/Websites"
+	}, {
+		"name": "New supplier",
+		"desc": "Creates a new supplier",
+		"url": "/Suppliers"
 	}
 ]
