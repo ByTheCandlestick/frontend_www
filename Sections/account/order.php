@@ -6,7 +6,6 @@
 		$order_curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
 		$user_id = $order['uid'];
 		$order_items = explode(';', $order['items']);
-		print_r()
 ?>
 	<style>
 		/* --=== standard ===-- */
