@@ -76,8 +76,7 @@
                                     $invoiced_item_image = explode(',', $res['Images'])[0];
                                     $invoiced_item_title = $res['Title'];
                                     $invoiced_item_price = $res['RetailPrice'];
-                                    $invoiced_item_slug = $res['Slug'];
-                                    $invoiced_item_total = $invoiced_item_price * $invoiced_item_quantity;
+                                    $invoiced_item_total = $invoiced_item_price * $invoiced_item_qty;
                                     $cart_total = $cart_total + $invoiced_item_total;
 
 
@@ -112,7 +111,7 @@
                                                 <div class="col-9 col-md-8 align-items-center">
                                                     <div class="top-50 position-relative" style="transform:translatey(-50%);">
                                                         <p>
-                                                            <a class="link-dark" href="https://www.thecandlestick.co.uk/Boutique/product/'.$invoiced_item_slug.'">
+                                                            <a class="link-dark" href="'URL_ADMIN'/Product/'.$invoiced_item_sku.'">
                                                                 '.$invoiced_item_title.'
                                                             </a>
                                                         </p>
@@ -136,7 +135,7 @@
                                                 </div>
                                                 <div class="col-12 col-lg-6">
                                                     <div class="form-floating">
-                                                        <input class="text-center form-control border-0 bg-transparent" placeholder="Leave a comment here" id="floatingTextarea" value="'.$invoiced_item_quantity.'" disabled>
+                                                        <input class="text-center form-control border-0 bg-transparent" placeholder="Leave a comment here" id="floatingTextarea" value="'.$invoiced_item_qty.'" disabled>
                                                         <label for="floatingTextarea">Quantity</label>
                                                     </div>
                                                 </div>

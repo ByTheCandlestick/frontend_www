@@ -62,7 +62,7 @@
 									<div class="col-9 col-md-8 align-items-center">
 										<div class="top-50 position-relative" style="transform:translatey(-50%);">
 											<p>
-												<a class="link-dark" href="https://www.thecandlestick.co.uk/Boutique/product/'.$cart_item_slug.'">
+												<a class="link-dark" href="'.URL_WWW.'/Boutique/product/'.$cart_item_slug.'">
 													'.$cart_item_title.'
 												</a>
 											</p>
