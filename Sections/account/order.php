@@ -143,7 +143,8 @@
 						$order_item_image  = explode(',', $res['Images'])[0];
 						$order_item_title = $res['Title'];
 						$titles=$options=array();
-						$x = explode(';', $res['variants']);
+						
+						$x = explode(';', $res['Variants']);
 						foreach($x as $y) {
 							$z = explode(':', $y);
 							if(isset($z[0]) && isset($z[1])) {
