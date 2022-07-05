@@ -858,7 +858,7 @@ $(document).ready(function() {
 				data = api_key_data + "&";
 				paymentFrm.each(function() {
 					if($(this).attr('name') != null) {
-						data = data + $(this).attr('name') + '=' + this.value + '&'
+						data = data + $(this).attr('raw') + '=' + this.value + '&'
 					}
 				});
 				$.ajax({
