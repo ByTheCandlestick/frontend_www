@@ -46,6 +46,18 @@
 		"desc": "Creates a new website",
 		"url": "/Websites/New"
 	}, {
+		"name": "New website theme",
+		"desc": "Creates a new website theme",
+		"url": "/Websites/Theme/New"
+	}, {
+		"name": "New website style",
+		"desc": "Creates a new stylesheet",
+		"url": "/Websites/Styles/New"
+	}, {
+		"name": "New website script",
+		"desc": "Creates a new script",
+		"url": "/Websites/Scripts/New"
+	}, {
 		"name": "New page",
 		"desc": "Creates a new website page",
 		"url": "/Websites/Page/New"
