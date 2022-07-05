@@ -18,7 +18,7 @@
 	}, {
 		"name": "Orders",
 		"desc": "Lists all Orders",
-		"url": "/Tags"
+		"url": "/Orders"
 	}, {
 		"name": "Websites",
 		"desc": "A list of all websites",
