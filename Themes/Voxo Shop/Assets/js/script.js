@@ -705,10 +705,10 @@ $(document).ready(function() {
 								$("input.form-control[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
 								break;
 							case "locality":
-								$("input.form-control.[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
+								$("input.form-control[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
 								break;
 							case "administrative_area_level_2":
-								$("input.form-control.[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
+								$("input.form-control[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
 								break;
 							default: 
 								// Check if town and district are duplicated and remove district if the case.
