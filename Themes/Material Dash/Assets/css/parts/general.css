@@ -30,6 +30,6 @@ button, a {
   font-family: "Font Awesome 5 Pro"!important;
   font-weight: 900!important;
 }
-.sticky-top {
+thead.sticky-top {
   z-index: 2!important;
 }
