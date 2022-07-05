@@ -879,9 +879,9 @@ $(document).ready(function() {
 							location.href = '/my/order/' + body.invoice;
 						}
 					},
-					error: function(result) {
+					error: function(body) {
 						if(body.status == 'error') {
-							console.error("Error: " + result);
+							console.error("Error: " + body.reason);
 						}
 					}
 				});
