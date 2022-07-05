@@ -48,11 +48,11 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
+						<div class="form-floating mb-3 px-2 col-6">
 							<input type="text" name="town" class="form-control" id="floatingInput-town" placeholder="Town" autocomplete="" required>
 							<label for="floatingInput-town">Town*</label>
 						</div>
-						<div class="form-floating mb-3 px-2 col-6 col-lg-4">
+						<div class="form-floating mb-3 px-2 col-6">
 							<input type="text" name="county" class="form-control" id="floatingInput-county" placeholder="State" autocomplete="" required>
 							<label for="floatingInput-county">County*</label>
 						</div>
