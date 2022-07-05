@@ -872,7 +872,7 @@ $(document).ready(function() {
 					success: function(body) {
 						if (body.startsWith('success')) {
 							var txn_id = body.split(":")[1];
-							location.href = '/my/orders/' + txn_id;
+							//location.href = '/my/orders/' + txn_id;
 						} else {}
 					},
 					error: function(result) {
