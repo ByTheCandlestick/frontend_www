@@ -13,7 +13,6 @@
 				}
 				foreach($orderHistory as $invoice) {
 					$invoice_date = $invoice['invoice_date'];
-					$id = $invoice['id'];
 					$invoice_number = $invoice['invoice_number'];
 					print("
 						<div class=\"row border-bottom m-3 p-3 / m-md-0 p-md-2 mx-md-5 px-md-5\">
