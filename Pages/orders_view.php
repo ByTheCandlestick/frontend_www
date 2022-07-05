@@ -34,11 +34,11 @@
             <div class="col-12 col-lg-9">
                 <div class="row">
                     <div class="col-12 col-md-6 col-md-4 form-floating mb-3">
-                        <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['name'])?></textarea>
+                        <input type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['name'])?>
                         <label for="floatingInput">Deliver to name</label>
                     </div>
                     <div class="col-12 col-md-6 col-md-4 form-floating mb-3">
-                        <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($delivery['Name'])?></textarea>
+                        <input type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($delivery['Name'])?>
                         <label for="floatingInput">Delivery by</label>
                     </div>
                 </div>
