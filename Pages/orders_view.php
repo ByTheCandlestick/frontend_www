@@ -65,7 +65,7 @@
                         $invoiced_items_count = count($invoiced_items);
                         for($i=0;$i<$invoiced_items_count;$i++) {
                             $invoiced_item = $invoiced_items[$i];
-                            $invoiced_item_id = $invoiced_item[2];
+                            $invoiced_item_id = $invoiced_item[1];
                             if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$invoiced_item_id AND `Active`=1 LIMIT 1")) {
                                 while($res = mysqli_fetch_array($q)) {
                                     $currency = $res['Currency'];
