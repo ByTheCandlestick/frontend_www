@@ -1,5 +1,5 @@
 <?
-	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`=%s", QS))) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
         $address = DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['billto_address']))
 ?>
