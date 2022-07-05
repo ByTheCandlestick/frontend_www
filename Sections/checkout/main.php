@@ -43,7 +43,7 @@
 							<label for="floatingInput-Addr">Address Line 1*</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="" autocomplete="address-level2"disabled >
+							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" placeholder="town" autocomplete="address-level2"disabled >
 							<label for="floatingInput-Addr2">Address Line 2</label>
 						</div>
 					</div>
