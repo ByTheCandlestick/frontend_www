@@ -33,7 +33,7 @@
 							<input type="submit" name="lookup" class="btn btn-primary h-100 w-100" value="Lookup" onClick="address.lookup()">
 						</div>
 						<div class="mb-3 px-2 col-12 col-lg-4">
-							<input type="submit" name="manual" class="btn btn-outline-primary h-100 w-100" value="Enter manually" onClick="address.enterManual()">
+							<input type="submit" name="manual" class="btn btn-secondary h-100 w-100" value="Enter manually" onClick="address.enterManual()">
 						</div>
 					</div>
 					<div class="row">
