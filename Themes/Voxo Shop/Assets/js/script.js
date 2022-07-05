@@ -754,7 +754,7 @@ $(document).ready(function() {
 					}
 				}).fail(() => {
 					console.log("There was a network error and no data was returned");
-					alerts.icon("exclamation", "An error occurred, Please try again", "error");
+					alerts.icon("exclamation", "An error occurred, Please try again", "warning");
 				});
 			},
 			enterManual() {
