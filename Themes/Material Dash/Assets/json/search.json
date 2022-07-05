@@ -52,11 +52,11 @@
 	}, {
 		"name": "New website style",
 		"desc": "Creates a new stylesheet",
-		"url": "/Websites/Styles/New"
+		"url": "/Websites/Style/New"
 	}, {
 		"name": "New website script",
 		"desc": "Creates a new script",
-		"url": "/Websites/Scripts/New"
+		"url": "/Websites/Script/New"
 	}, {
 		"name": "New page",
 		"desc": "Creates a new website page",
