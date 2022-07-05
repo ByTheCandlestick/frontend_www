@@ -4,6 +4,10 @@
 		"desc": "A breif overview",
 		"url": "/"
 	}, {
+		"name": "Analytics",
+		"desc": "Analytics of all websites and apps",
+		"url": "/Analytics"
+	}, {
 		"name": "Users",
 		"desc": "Lists all user accounts",
 		"url": "/Users"
@@ -12,16 +16,20 @@
 		"desc": "Lists all products",
 		"url": "/Products"
 	}, {
-		"name": "Tags",
-		"desc": "Lists all tags, categories and collections",
+		"name": "Orders",
+		"desc": "Lists all Orders",
 		"url": "/Tags"
 	}, {
 		"name": "Websites",
 		"desc": "A list of all websites",
 		"url": "/Websites"
 	}, {
-		"name": "Analytics",
-		"desc": "Analytics of all websites and apps",
-		"url": "/Analytics"
+		"name": "Suppliers",
+		"desc": "A list of all suppliers",
+		"url": "/Suppliers"
+	}, {
+		"name": "Assistance",
+		"desc": "An overview of all candlestick softwares.",
+		"url": "/Assistance"
 	}
 ]
