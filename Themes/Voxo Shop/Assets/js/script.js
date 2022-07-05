@@ -884,7 +884,6 @@ $(document).ready(function() {
 							console.error("Error: " + body.reason);
 						}
 					}
-				}).done(function() {
 				});
 
 			}
