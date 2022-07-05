@@ -47,7 +47,7 @@
 
 					}
 					print('
-						<cart-item raw="'.$cart_item_id.$cart_items[$i][4].'" prod-id="'.$cart_item_id.'" prod-qty="'.$cart_item_quantity.'" prod-opt="'.$cart_item[2].'">
+						<cart-item raw="'.$cart_item_id.','.$cart_item_quantity.','.$cart_items[$i][4].'" prod-id="'.$cart_item_id.'" prod-qty="'.$cart_item_quantity.'" prod-opt="'.$cart_item[2].'">
 							<div class="row border-bottom m-3 p-3 / m-md-0 p-md-2 mx-md-5 px-md-5">
 								<div class="row col-12 col-lg-8 pb-2 pb-lg-0">
 									<div class="mw-25 mw-md-10 col-3 pe-3 / col-md-3 pe-md-3">
