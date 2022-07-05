@@ -33,11 +33,6 @@
 							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
 							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
-						<!--
-							<div class="mb-3 px-2 col-12 col-lg-4">
-								<input type="button" name="manual" class="btn btn-outline-secondary h-100 w-100" value="Enter manually" onClick="address.enterManual()">
-							</div>
-						-->
 					</div>
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12">
@@ -85,7 +80,7 @@
 					</div>
 					<div class="detail">
 						<button type="submit" class="paymentSubmit btn btn-outline-dark">
-							<div class="spinner hidden" id="spinner"></div>
+							<i class="fas fa-circle-notch fa-spin"></i>
 							<span id="button-text">Pay now</span>
 						</button>
 					</div>

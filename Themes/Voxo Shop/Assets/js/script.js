@@ -818,6 +818,8 @@ $(document).ready(function() {
 			var form = document.getElementById('paymentFrm');
 			form.addEventListener('submit', function(e) {
 				e.preventDefault();
+				$('.paymentSubmit').find('i').show()
+				$('.paymentSubmit').find('span').hide()
 				createToken();
 			});
 			// Create single-use token to charge the user
@@ -871,6 +873,11 @@ $(document).ready(function() {
 					success: function(body) {
 						if (body.status == 'success') {
 							location.href = '/my/order/' + body.invoice;
+							$('.paymentSubmit').find('i').hide()
+							$('.paymentSubmit').find('span').show()
+						} else {
+							$('.paymentSubmit').find('i').hide()
+							$('.paymentSubmit').find('span').show()
 						}
 					},
 					error: function(result) {
