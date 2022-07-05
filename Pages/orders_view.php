@@ -25,7 +25,7 @@
             <div class="col-12">
                 <h5>Delivery</h5>
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+                    <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
                         <textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['number_name'].' '.$address['line_1'].','.PHP_EOL.$address['line_2'].','.PHP_EOL.$address['town'].','.PHP_EOL.$address['county'].','.PHP_EOL.$address['country'].','.PHP_EOL.$address['postcode'])?></textarea>
                         <label for="floatingInput">Delivery address</label>
                     </div>
@@ -43,19 +43,19 @@
             <div class="col-12">
                 <h5>Taxonomy</h5>
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
+                    <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_subtotal'])?>" disabled>
                         <label for="floatingInput">Goods price</label>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
+                    <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_tax'])?>" disabled>
                         <label for="floatingInput">Tax</label>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
+                    <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_deposit'])?>" disabled>
                         <label for="floatingInput">Total paid</label>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
+                    <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_subtotal'] - $invoice['invoice_deposit'])?>" disabled>
                         <label for="floatingInput">Difference</label>
                     </div>
