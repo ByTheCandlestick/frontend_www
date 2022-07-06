@@ -12,9 +12,13 @@
             </div>
             <div class="col-12 col-md-6 text-md-end">
                 <div class="row">
-                    <div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
-                    </div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
+					<div class="form-floating m-1">
+						<div class="form-check form-switch">
+							<input type="checkbox" class="btn-check" id="display_type" name="display_type" autocomplete="off" <?($page['display_type']==1)?print("checked"):print("")?>>
+							<label class="btn btn-outline-primary" for="display_type"><i class="fa fa-fax"></i></label>
+						</div>
+					</div>
                     </div>
                 </div>
             </div>
