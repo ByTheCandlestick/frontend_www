@@ -1,16 +1,16 @@
 <?
-	require_once(ROOT.'/classes/parsesdown.php');
-	require_once(ROOT.'/classes/parsedownExtra.php');
+	require_once(__ROOT__.'/classes/parsesdown.php');
+	require_once(__ROOT__.'/classes/parsedownExtra.php');
 	$Parsedown = new ParsedownExtra();
 	if($secext != "") {
-		if(file_exists(ROOT.'/assets/markdown/'.$secext.'.md')) {
-			$file = file_get_contents(ROOT.'/assets/markdown/'.$secext.'.md');
+		if(file_exists(__ROOT__.'/assets/markdown/'.$secext.'.md')) {
+			$file = file_get_contents(__ROOT__.'/assets/markdown/'.$secext.'.md');
 		} else {
 			$file = '# No file specified';
 		}
 	} else if(QS_SUBPAGE !== NULL) {
-		if(file_exists(ROOT.'/assets/markdown/'.QS_SUBPAGE.'.md')) {
-			$file = file_get_contents(ROOT.'/assets/markdown/'.QS_SUBPAGE.'.md');
+		if(file_exists(__ROOT__.'/assets/markdown/'.QS_SUBPAGE.'.md')) {
+			$file = file_get_contents(__ROOT__.'/assets/markdown/'.QS_SUBPAGE.'.md');
 		} else {
 			$file = '# No file specified';
 		}
