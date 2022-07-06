@@ -67,6 +67,31 @@
 							</li>
 						');
 					}
+			?>
+				<li class="partner-list-item">
+					<article class="partner">
+						<div class="partner-image">
+							<picture>
+								<source srcset="<?print(__API__)?>/Images/fetch/not_found/jpeg/" type="image/jpeg"/>
+								<source srcset="<?print(__API__)?>/Images/fetch/not_found/jpg/" type="image/jpg"/>
+								<source srcset="<?print(__API__)?>/Images/fetch/not_found/png/" type="image/png"/>
+								<source srcset="<?print(__API__)?>/Images/fetch/not_found/jpx/" type="image/jpx"/>
+								<img src="<?print(__API__)?>/Images/fetch/not_found/webp/" type="image/webp" width="100%" height="auto">
+							</picture>
+						</div>
+						<div class="partner-content">
+							<h3 class="partner-title">View all</h3>
+							<div class="partner-info">
+								<div class="partner-btn-group">
+									<a href="/Boutique/Partners/" class="partner-btn" tabindex="-1">
+										<i class="fad fa-info-circle"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</article>
+				</li>
+			<?
 				} else {
 					echo 'ERROR: UNABLE TO COLLECT PARTNER DATA';
 				}
