@@ -1,6 +1,6 @@
 <?
-	require_once(__ROOT__.'/Vendor/parsesdown.php');
-	require_once(__ROOT__.'/Vendor/parsedownExtra.php');
+	require_once(__ROOT__.'/Vendor/parsedown/parsesdown.php');
+	require_once(__ROOT__.'/Vendor/parsedown/parsedownExtra.php');
 	$Parsedown = new ParsedownExtra();
 	if($secext != "") {
 		if(file_exists(__ROOT__.'/assets/markdown/'.$secext.'.md')) {
