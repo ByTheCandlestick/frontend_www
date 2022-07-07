@@ -130,7 +130,7 @@
                                     print('
                                         <cart-item raw="'.$invoiced_item_sku.','.$invoiced_item_qty.','.$invoiced_item_opt.'" prod-id="'.$invoiced_item_sku.'" prod-qty="'.$invoiced_item_qty.'" prod-opt="'.$invoiced_item_opt.'">
                                             <div class="row border-bottom m-3 p-3 / m-md-0 p-md-2 mx-md-5 px-md-5">
-                                                <div class="row col-12 col-lg-8 pb-2 pb-lg-0">
+                                                <div class="row col-12 col-lg-9 pb-2 pb-lg-0">
                                                     <div class="mw-25 mw-md-10 col-3 pe-3 / col-md-3 pe-md-3">
                                                         <picture>
                                                             <source srcset="'.__API__.'/Images/fetch/'. $invoiced_item_image .'/jpeg/" type="image/jpeg"/>
@@ -157,14 +157,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row align-items-center col-12 col-lg-4">
-                                                    <div class="col-12 col-lg-4">
+                                                <div class="row col-12 col-lg-3 align-items-center">
+                                                    <div class="col-12 col-lg-6">
                                                         <div class="form-floating">
                                                             <input class="text-center form-control border-0 bg-transparent" id="floatingTextarea" value="'.$invoiced_item_qty.'" disabled>
                                                             <label for="floatingTextarea">Quantity</label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-12 col-lg-6">
                                                         <div class="form-floating">
                                                             <input class="text-center form-control border-0 bg-transparent" id="floatingTextarea" value="'.$invoiced_item_curr.$invoiced_item_total.'" disabled>
                                                             <label for="floatingTextarea">Total</label>
