@@ -16,7 +16,7 @@
                         <a href="mailto:<?print($invoice['email'])?>;" class="btn btn-outline-primary m-1">
                             <i class="fa fa-envelope"></i>
                         </a>
-                        <a href="javascript:order.refund('<?print($invoice['invoice_number'])?>');" class="btn btn-outline-primary m-1">
+                        <a href="javascript:orders.refund('<?print($invoice['invoice_number'])?>');" class="btn btn-outline-primary m-1">
                             <i class="fa fa-fax"></i>
                         </a>
                     </div>
