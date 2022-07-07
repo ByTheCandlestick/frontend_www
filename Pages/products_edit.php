@@ -136,7 +136,7 @@
 					</div>
 					<div class="col-12 col-lg-4" name="discount_type">
 						<div class="form-floating mb-3">
-							<select class="form-select" id="floatingSelect">
+							<select class="form-select" id="floatingSelect" <?($prod['Discount']==0)?print("disabled"):print("")?>>
 								<option value="-1" selected>Please select</option>
 								<option>Percentage</option>
 								<option>Value</option>
@@ -146,7 +146,7 @@
 					</div>
 					<div class="col-12 col-lg-4" name="discount_amount">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>" <?($prod['Discount']==0)?print("disabled"):print("")?>>
 							<label for="floatingInput">Discount</label>
 						</div>
 					</div>
