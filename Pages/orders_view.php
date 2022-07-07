@@ -167,7 +167,7 @@
                                                     <div class="col-12 col-lg-6">
                                                         <div class="form-floating">
                                                             <input class="text-center form-control border-0 bg-transparent" id="floatingTextarea" value="'.$invoiced_item_curr.$invoiced_item_total.'" disabled>
-                                                            <label for="floatingTextarea">Total</label>
+                                                            <label for="floatingTextarea">Value</label>
                                                         </div>
                                                     </div>
                                                 </div>
