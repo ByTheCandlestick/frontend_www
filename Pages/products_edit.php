@@ -89,7 +89,7 @@
 					<div class="col-12 col-lg-3" name="profit">
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['GrossProfit'])?>" <?($prod['CalculatePricing']==1)?print("disabled"):print("")?>>
 							<label for="floatingInput" class="ps-5">Profit</label>
 						</div>
 					</div>
@@ -115,14 +115,14 @@
 					<div class="col-12 col-lg-3" name="net">
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>" <?($prod['CalculatePricing']==1)?print("disabled"):print("")?>>
 							<label for="floatingInput" class="ps-5">Net</label>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="gross">
 						<div class="form-floating mb-3 input-group">
 							<span class="input-group-text" id="GBP"><??>£</span>
-							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="<?print($prod['GrossPrice'])?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="<?print($prod['GrossPrice'])?>" <?($prod['CalculatePricing']==1)?print("disabled"):print("")?>>
 							<label for="floatingInput" class="ps-5">Gross</label>
 						</div>
 					</div>
