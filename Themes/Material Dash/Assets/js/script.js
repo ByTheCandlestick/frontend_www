@@ -1003,7 +1003,7 @@ $( document ).ready(() => {
 		/** @wip */
 		orders = {
 			refund() {
-				$('#refundModal').modal()
+				$('#refundModal').modal('show')
 			},
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
