@@ -1,4 +1,5 @@
 <?
+    $cart_total = 0;
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
         $address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['billto_address'])));
@@ -176,6 +177,18 @@
                                     ');
                                 }
                             }
+                            print("
+                                <div class=\"pb-3 offset-0 col-12 / offset-md-2 col-md-4\">
+                                    <div class=\"row\">
+                                        <div class=\"col-6 text-center\">
+                                            <h4>Subtotal</h4>
+                                        </div>
+                                        <div class=\"col-6 text-center\">
+                                            <p class=\"h4\">$cart_item_curr$cart_total</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ")
                         } else {
                             print('
                                 <div class="border-bottom row p-3">
