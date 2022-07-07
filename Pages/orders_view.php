@@ -146,14 +146,13 @@
                                                                 <a class="link-dark" href="'.URL_ADMIN.'/Products/Edit/'.$invoiced_item_sku.'">
                                                                     '.$invoiced_item_title.'
                                                                 </a>
-                                                            </p>
-                                                            <p class="font-monospace text-muted">
-                                    ');
-                                    for($n=0; $n<count($titles);$n++) {
-                                        $item_options = explode(':', $invoiced_item[2]);
-                                        print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
-                                    }
-                                    print('
+                                                                <span class="font-monospace text-muted">');
+                                                                    for($n=0; $n<count($titles);$n++) {
+                                                                        $item_options = explode(':', $invoiced_item[2]);
+                                                                        print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
+                                                                    }
+                                                                print('
+                                                                </span>
                                                             </p>
                                                         </div>
                                                     </div>
