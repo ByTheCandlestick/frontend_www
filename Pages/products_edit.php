@@ -308,31 +308,33 @@
 		</div>
 	</section>
 	<script>
-		var smde_desc_l = new SimpleMDE({
-			element: $("div[name=description_long] input")[0],
-            status: [ {
-                className: "chars",
-                defaultValue: function(el) {
-                    el.innerHTML = "0 / "+512;
-                },
-                onUpdate: function(el) {
-                    el.innerHTML = smde_desc_l.value().length + " / "+512;
-                    misc.limit_characters()
-                }
-            }]
-		});
-		var smde_desc_s = new SimpleMDE({
-			element: $("div[name=description_short] input")[0],
-            status: [ {
-                className: "chars",
-                defaultValue: function(el) {
-                    el.innerHTML = "0 / "+256;
-                },
-                onUpdate: function(el) {
-                    el.innerHTML = smde_desc_s.value().length + " / "+256;
-                    misc.limit_characters()
-                }
-            }]
+		$(document).ready(() => {
+			var smde_desc_l = new SimpleMDE({
+				element: $("div[name=description_long] input")[0],
+				status: [ {
+					className: "chars",
+					defaultValue: function(el) {
+						el.innerHTML = "0 / "+512;
+					},
+					onUpdate: function(el) {
+						el.innerHTML = smde_desc_l.value().length + " / "+512;
+						misc.limit_characters()
+					}
+				}]
+			});
+			var smde_desc_s = new SimpleMDE({
+				element: $("div[name=description_short] input")[0],
+				status: [ {
+					className: "chars",
+					defaultValue: function(el) {
+						el.innerHTML = "0 / "+256;
+					},
+					onUpdate: function(el) {
+						el.innerHTML = smde_desc_s.value().length + " / "+256;
+						misc.limit_characters()
+					}
+				}]
+			});
 		});
 	</script>
 <?
