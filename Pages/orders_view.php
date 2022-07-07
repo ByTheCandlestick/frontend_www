@@ -158,21 +158,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="row align-items-center col-12 col-lg-4">
-                                                    <div class="col-4">
-                                                        <div class="form-floating">
-                                                            <input class="text-center form-control border-0 bg-transparent" placeholder="Leave a comment here" id="floatingTextarea" value="'.$invoiced_item_curr.$invoiced_item_price.'" disabled>
-                                                            <label for="floatingTextarea">Price</label>
-                                                        </div>
-                                                    </div>
                                                     <div class="col-12 col-lg-4">
                                                         <div class="form-floating">
-                                                            <input class="text-center form-control border-0 bg-transparent" placeholder="Leave a comment here" id="floatingTextarea" value="'.$invoiced_item_qty.'" disabled>
+                                                            <input class="text-center form-control border-0 bg-transparent" id="floatingTextarea" value="'.$invoiced_item_qty.'" disabled>
                                                             <label for="floatingTextarea">Quantity</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="form-floating">
-                                                            <input class="text-center form-control border-0 bg-transparent" placeholder="Leave a comment here" id="floatingTextarea" value="'.$invoiced_item_curr.$invoiced_item_total.'" disabled>
+                                                            <input class="text-center form-control border-0 bg-transparent" id="floatingTextarea" value="'.$invoiced_item_curr.$invoiced_item_total.'" disabled>
                                                             <label for="floatingTextarea">Total</label>
                                                         </div>
                                                     </div>
