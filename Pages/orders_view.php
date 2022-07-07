@@ -188,7 +188,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            ")
+                            ");
                         } else {
                             print('
                                 <div class="border-bottom row p-3">
