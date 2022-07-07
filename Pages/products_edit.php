@@ -318,7 +318,7 @@
 					},
 					onUpdate: function(el) {
 						el.innerHTML = smde_desc_l.value().length + " / "+512;
-						misc.limit_characters()
+						misc.limit_characters(el)
 					}
 				}]
 			});
@@ -331,7 +331,7 @@
 					},
 					onUpdate: function(el) {
 						el.innerHTML = smde_desc_s.value().length + " / "+256;
-						misc.limit_characters()
+						misc.limit_characters(el)
 					}
 				}]
 			});

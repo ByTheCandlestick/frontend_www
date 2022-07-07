@@ -32,6 +32,9 @@ $(document).ready(() => {
 			redirect() {
 
 			},
+			limit_characters(el) {
+
+			},
 			copyToClipboard(str) {
 				var $temp = $("<input>");
 				$("body").append($temp);
