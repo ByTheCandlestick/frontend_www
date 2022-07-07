@@ -188,8 +188,8 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title">Refund value</h5>
+                    <button type="button" class="close" aria-label="Close" onClick="javascript:$('#refundModal').modal('hide');">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
