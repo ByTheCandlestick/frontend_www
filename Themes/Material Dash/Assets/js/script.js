@@ -1000,6 +1000,12 @@ $( document ).ready(() => {
 
 			}
 		}
+		/** @wip */
+		orders = {
+			refund() {
+				$('#myModal').modal(options)
+			},
+		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
 		mode.modeSwitch.click(() => { mode.toggle() });
