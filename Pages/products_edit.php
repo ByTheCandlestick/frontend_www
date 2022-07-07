@@ -158,7 +158,7 @@
 									$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['Container_ID'])? $selected=' selected' : $selected='';
-										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+										print_r('<option value="'.$row['ID'].'" size="'.$row['Size'].'" price="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
 									}
 								?>
 							</select>
