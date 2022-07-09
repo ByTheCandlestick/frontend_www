@@ -5,6 +5,10 @@
         .form-floating label {
             left: unset!important;
         }
+        .card {
+            background-color: var(--text-area-bg);
+            border-color: var(--text-area-border);
+        }
     /* Max Width */
         .mw-10 { max-width: 10%!important; }
         .mw-15 { max-width: 15%!important; }
