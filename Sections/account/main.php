@@ -12,15 +12,15 @@
 		</div>
 		<hr>
 		<?
-			if($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `uid`=%d ORDER BY `invoice_number` DESC LIMIT 6", $userdata['ID']))) {
+			if($query = DB_Query(sprintf("SELECT * FROM `Sales - Orders` WHERE `UID`=%d ORDER BY `Invoice ID` DESC LIMIT 6", $userdata['ID']))) {
 				$orderHistory = array();
 				while($row = mysqli_fetch_assoc($query)): array_push($orderHistory, $row); endwhile;
 				$count = count($orderHistory);$more=false;
 				if($count == 6): $count=$count-1;$more=true; endif;
 				for($i=0; $i<$count; $i++):
-					$invoice_date = $orderHistory[$i]['invoice_date'];
-					$id = $orderHistory[$i]['id'];
-					$invoice_number = $orderHistory[$i]['invoice_number'];
+					$invoice_date = $orderHistory[$i]['Date'];
+					$id = $orderHistory[$i]['Invoice ID'];
+					$invoice_number = $orderHistory[$i]['Invoice ID'];
 					print("
 						<div class=\"row border-bottom m-3 p-3 / m-md-0 p-md-2 mx-md-5 px-md-5\">
 							<div class=\"row pb-2 pb-md-0\">
