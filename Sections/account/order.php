@@ -168,7 +168,7 @@
 									<source srcset='".__API__."/Images/fetch/$order_item_image/jpg/' type='image/jpg'/>
 									<source srcset='".__API__."/Images/fetch/$order_item_image/png/' type='image/png'/>
 									<source srcset='".__API__."/Images/fetch/$order_item_image/jpx/' type='image/jpx'/>
-									<img src='".__API__."/Images/fetch/$order_item_image/webp/' type='image/webp' width='414px' height='207px'>
+									<img src='".__API__."/Images/fetch/$order_item_image/webp/' type='image/webp' class=\"mw-100\" alt=\"$order_item_title\">
 								</picture>
 								</div>
 								<div class=\"col-8 col-md-10 align-items-center\">
