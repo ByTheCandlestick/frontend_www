@@ -20,6 +20,22 @@
 	--text-area-border:			rgb(  0,   0,   0,  12%);
 	--star:						rgb(255, 217,  44, 100%);
 	--message-btn:				rgb(255, 255, 255, 100%);
+
+	--chart-series-1: red;
+	--chart-series-2: red;
+	--chart-series-3: red;
+	--chart-series-4: red;
+	--chart-series-5: red;
+	--chart-series-6: red;
+	--chart-series-7: red;
+	--chart-series-8: red;
+	--chart-series-9: red;
+	--chart-series-10: red;
+	--chart-series-11: red;
+	--chart-series-12: red;
+	--chart-series-13: red;
+	--chart-series-14: red;
+	--chart-series-15: red;
 }
 .dark:root {
 	--app-container:			rgb( 31,  29,  43, 100%);
@@ -42,4 +58,20 @@
 	--text-area-bg:				rgb( 31,  41,  55, 100%);
 	--star:						rgb(255, 217,  44, 100%);
 	--message-btn:				rgb(195, 207, 244,  10%);
+
+	--chart-series-1: red;
+	--chart-series-2: red;
+	--chart-series-3: red;
+	--chart-series-4: red;
+	--chart-series-5: red;
+	--chart-series-6: red;
+	--chart-series-7: red;
+	--chart-series-8: red;
+	--chart-series-9: red;
+	--chart-series-10: red;
+	--chart-series-11: red;
+	--chart-series-12: red;
+	--chart-series-13: red;
+	--chart-series-14: red;
+	--chart-series-15: red;
 }
