@@ -45,7 +45,7 @@
 					?>
 				</title>
 			<!-- ===== Favicon ===== -->
-				<link rel="shortcut icon" href="<?print(__API__.'/Images/Fetch/candlestickLogo-transparent_20220530162542/')?>" type="image/x-icon" />
+				<link rel="shortcut icon" href="<?print(__API__.'/Images/Fetch/'.$website_info['favicon'].'/')?>" type="image/x-icon" />
 			<!-- ===== PWA ===== -->
 				<link rel="manifest" href="/manifest.json" />
 		  		<script>
