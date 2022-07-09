@@ -35,20 +35,20 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `sales_orders` ORDER BY `invoice_number` DESC");
+					$query = DB_Query("SELECT * FROM `Sales - orders` ORDER BY `Invoice ID` DESC");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<th scope="row"><a href="/Orders/View/'.$row['invoice_number'].'">'.$row['invoice_number'].'</a></th>
-									<td>'.$row['invoice_date'].'</td>
-									<td>'.$row['invoice_subtotal'].'</td>
-									<td>'.$row['invoice_tax'].'</td>
-									<td>'.$row['invoice_deposit'].'</td>
-									<td>'.$row['invoice_status'].'</td>
-									<td>'.$row['txn_id'].'</td>
+									<th scope="row"><a href="/Orders/View/'.$row['Invoice ID'].'">'.$row['Invoice ID'].'</a></th>
+									<td>'.$row['Date'].'</td>
+									<td>'.$row['Subtotal'].'</td>
+									<td>'.$row['Tax'].'</td>
+									<td>'.$row['Deposit'].'</td>
+									<td>'.$row['Status'].'</td>
+									<td>'.$row['Transaction ID'].'</td>
 									<td>
-										<a href="/Orders/Edit/'.$row['invoice_number'].'">
+										<a href="/Orders/Edit/'.$row['Invoice ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
