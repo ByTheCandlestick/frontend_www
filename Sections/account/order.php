@@ -135,7 +135,7 @@
 		<?
 			foreach($order_items as $order_item) {
 				$item_info = explode(',', $order_item);
-				$order_item_slug = $item_info[0];
+				$order_item_id = $item_info[0];
 				$order_item_qty = $item_info[1];
 				$order_item_opt = explode(',', $item_info[2]);
 				if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
