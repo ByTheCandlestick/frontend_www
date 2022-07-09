@@ -39,6 +39,12 @@ input[type=number],
 textarea {
   background: var(--text-area-bg)!important;
 }
+input[type=text]:disabled, input[type=text].disabled,
+input[type=number]:disabled, input[type=number].disabled,
+textarea:disabled, textarea.disabled {
+  background: var(--text-area-bg-disabled)!important;
+}
+
 .ct-area {
   fill-opacity: 0.25;
 }
