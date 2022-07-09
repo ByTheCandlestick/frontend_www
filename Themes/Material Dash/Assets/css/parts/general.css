@@ -45,7 +45,7 @@ textarea {
 .ct-series-a .ct-area,
 .ct-series-a .ct-slice-donut-solid,
 .ct-series-a .ct-slice-pie {
-  --chart-series-a: blue;
+  --chart-series-1: blue;
   fill: var(--chart-series-1);
 }
 .ct-series-b { fill: var(--chart-series-2); }
