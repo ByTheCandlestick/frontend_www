@@ -522,7 +522,7 @@ $(document).ready(() => {
 					});
 					
 				},
-				delete: (id) => {
+				delete(id) {
 					data = {
 						'api_key': api_key,
 					};
