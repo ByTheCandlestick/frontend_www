@@ -23,11 +23,6 @@
 	// get the page information
 		if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
 			while($layout_row = mysqli_fetch_assoc($layout_results)) {
-				$info = array();
-				$info_results = DB_Query("SELECT * FROM `shop_info`");
-				while($info_row = mysqli_fetch_row($info_results)) {
-					$info[$info_row[1]] = $info_row[2]; 
-				}
 ?>
 <!DOCTYPE html>
 	<html lang="en">
@@ -36,15 +31,15 @@
 				<meta charset="utf-8">
 				<meta content="ie=edge" http-eqiv="X-UA-Compatible">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<meta name="title" content="<?print($info['meta_title'])?>">
-				<meta name="description" content="<?print($info['meta_description'])?>">
-				<meta name="keywords" content="<?print($info['meta_keywords'])?>">
-				<meta name="theme-color" content="<?print($info['meta_colour'])?>">
+				<meta name="title" content="<?print($website_info['Meta_title'])?>">
+				<meta name="description" content="<?print($website_info['Meta_description'])?>">
+				<meta name="keywords" content="<?print($website_info['Meta_keywords'])?>">
+				<meta name="theme-color" content="<?print($website_info['Meta_colour'])?>">
 			<!-- ===== Title ===== -->
 				<title>
 					<?
 						print(
-							(($layout_row['page_title']=="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
+							(($layout_row['page_title']=="")?"":$layout_row['page_title']." | "). $website_info['Title']." - ".$website_info['Slogan']
 						)
 					?>
 				</title>

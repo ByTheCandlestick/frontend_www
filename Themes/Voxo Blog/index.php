@@ -24,11 +24,6 @@
 	// get the page information
 		if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
 			while($layout_row = mysqli_fetch_assoc($layout_results)) {
-				$info = array();
-				$info_results = DB_Query("SELECT * FROM `shop_info`");
-				while($info_row = mysqli_fetch_row($info_results)) {
-					$info[$info_row[1]] = $info_row[2]; 
-				}
 ?>
 <!DOCTYPE html>
 	<html lang="en">
@@ -37,15 +32,15 @@
 				<meta charset="utf-8">
 				<meta content="ie=edge" http-eqiv="X-UA-Compatible">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<meta name="title" content="<?print($info['meta_title'])?>">
-				<meta name="description" content="<?print($info['meta_description'])?>">
-				<meta name="keywords" content="<?print($info['meta_keywords'])?>">
-				<meta name="theme-color" content="<?print($info['meta_colour'])?>">
+				<meta name="title" content="<?print($website_info['Meta_title'])?>">
+				<meta name="description" content="<?print($website_info['Meta_description'])?>">
+				<meta name="keywords" content="<?print($website_info['Meta_keywords'])?>">
+				<meta name="theme-color" content="<?print($website_info['Meta_colour'])?>">
 			<!-- ===== Title ===== -->
 				<title>
 					<?
 						print(
-							(($layout_row['page_title']=="")?"":$layout_row['page_title']." | "). $info['name']." - ".$info['slogan']
+							(($layout_row['page_title']=="")?"":$layout_row['page_title']." | "). $website_info['Title']." - ".$website_info['Slogan']
 						)
 					?>
 				</title>
@@ -125,9 +120,9 @@
 					<div class="container d-flex align-items-center">
 						<div class="logo me-auto d-flex">
 							<a class="me-3" href="/">
-								<img src="<?print(__API__.'/Images/Fetch/'.$info['Logo'].'/')?>" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
+								<img src="<?print(__API__.'/Images/Fetch/'.$website_info['Logo'].'/')?>" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 							</a>
-						  <h1 class="d-none d-md-block"><a href="/"><?print($info['name'])?></a></h1>
+						  <h1 class="d-none d-md-block"><a href="/"><?print($website_info['Title'])?></a></h1>
 					  </div>
 						<nav id="navbar" class="navbar">
 							<ul>
@@ -240,11 +235,11 @@
 									</ul>
 								</div>
 								<div class="text-center footer-col-3 footer-info">
-									<img src="<?print(__API__.'/Images/Fetch/'.$info['Logo'].'/')?>" alt="logo" width="145px" height="145px" class="img-fluid mw-40">
-									<h3 class="text-center"><?print($info['name'])?></h3>
+									<img src="<?print(__API__.'/Images/Fetch/'.$website_info['Logo'].'/')?>" alt="logo" width="145px" height="145px" class="img-fluid mw-40">
+									<h3 class="text-center"><?print($website_info['Title'])?></h3>
 									<p class="text-center">
-										<strong>Phone:</strong> <a href="tel:<?print($info['phone'])?>"><?print($info['phone'])?></a><br>
-										<strong>Email:</strong> <a href="mailto:<?print($info['email'])?>"><?print($info['email'])?></a><br>
+										<strong>Phone:</strong> <a href="tel:<?print($website_info['Phone'])?>"><?print($website_info['Phone'])?></a><br>
+										<strong>Email:</strong> <a href="mailto:<?print($website_info['Email'])?>"><?print($website_info['Email'])?></a><br>
 									</p>
 									<div class="social-links mt-3 text-center">
 										<a href="https://www.pinterest.co.uk/bythecandlestick/" class="pintrest"><i class="fab fa-pinterest"></i></a>
