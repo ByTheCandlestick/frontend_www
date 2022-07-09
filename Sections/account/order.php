@@ -201,8 +201,8 @@
 			</div>
 			<div class="offset-md-10 col-md-2 text-end">
 				<?
-					$subtotal = $order['invoice_subtotal'];
-					$deposit = $order['invoice_deposit'];
+					$subtotal = $order['Subtotal'];
+					$deposit = $order['Deopsit'];
 					$diff = $subtotal - $deposit;
 					if($deposit == $subtotal) {
 						print("<h4> Total: $subtotal</h4>");
