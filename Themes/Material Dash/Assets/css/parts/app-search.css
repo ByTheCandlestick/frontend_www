@@ -7,7 +7,7 @@
 
 .search-area,
 .search-suggestions {
-	background-color: var(--text-area-bg);
+	overflow: hidden;
 	justify-content: space-between;
 	align-items: center;
 	color: var(--light-font);

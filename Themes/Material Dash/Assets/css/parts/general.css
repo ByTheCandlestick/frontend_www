@@ -37,5 +37,5 @@ thead.sticky-top {
 input[type=text],
 input[type=number],
 textarea {
-  background: var(--text-area-bg);
+  background: var(--text-area-bg)!important;
 }
