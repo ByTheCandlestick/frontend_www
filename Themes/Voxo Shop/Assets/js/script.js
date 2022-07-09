@@ -874,7 +874,7 @@ $(document).ready(function() {
 						$('.paymentSubmit').find('i').hide()
 						$('.paymentSubmit').find('span').show()
 						if(body.status == 'success') {
-							//location.href = '/my/order/' + body.invoice;
+							location.href = '/my/order/' + body.invoice;
 						}
 					},
 					error: function(body) {
