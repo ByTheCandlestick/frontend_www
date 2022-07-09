@@ -3,7 +3,7 @@
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Sales - orders` WHERE `Invoice ID`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
         $address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
-        $delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping By'])));
+        $delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
 ?>
     <section>
         <!-- Section Header -->
