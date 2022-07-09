@@ -135,7 +135,7 @@
 		<?
 			foreach($order_items as $order_item) {
 				$item_info = explode(',', $order_item);
-				$order_item_id = $item_info[0];
+				$order_item_slug = $item_info[0];
 				$order_item_qty = $item_info[1];
 				$order_item_opt = explode(',', $item_info[2]);
 				if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
@@ -170,7 +170,7 @@
 								</div>
 								<div class=\"col-8 col-md-10 align-items-center\">
 									<div class=\"top-50 position-relative\" style=\"transform:translatey(-50%);\">
-										<p><a class=\"link-dark\" href=\"/Boutique/Product/$order_item_id\">
+										<p><a class=\"link-dark\" href=\"/Boutique/Product/$order_item_slug\">
 											$order_item_title
 										</a></p>
 										<p class=\"font-monospace text-muted\">
