@@ -57,6 +57,11 @@ select:disabled, select.disabled {
 .editor-toolbar a {
   color: var(--main-color)!important;
 }
+.editor-toolbar a.active,
+.editor-toolbar a:hover {
+  background: var(--section);
+  border-color: var(--main-color);
+}
 
 /* Chartist*/
 .ct-area {
