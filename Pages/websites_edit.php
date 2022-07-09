@@ -44,7 +44,7 @@
 						<?
 							$query = DB_Query("SELECT * FROM `page_types` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
-								$row['ID'] == $domain['page_type'] ? $selected="selected" : $selected="";
+								$row['ID'] == $domain['Page_type'] ? $selected="selected" : $selected="";
 								print_r('<option value="'.$row['ID'].'" '.$selected.'>'.$row['Name'].'</option>');
 							}
 						?>
