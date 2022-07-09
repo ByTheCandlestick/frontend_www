@@ -41,7 +41,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `products_WickStands`");
+					$query = DB_Query("SELECT * FROM `products_wickstands`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
 							print('
