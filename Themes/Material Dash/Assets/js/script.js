@@ -17,12 +17,7 @@ $(document).ready(() => {
 				return Math.ceil(value * inv) / inv;
 			},
 			closestNum(goal, numbers) {
-				//numbers.reduce((prev, curr) => {
-				//	return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
-				//});
-				numbers.sort((a, b) => {
-					return Math.abs(goal - a)-Math.abs(goal - b)
-				})[0];
+				return numbers.reduce((prev, curr) => (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev));
 			},
 			currSymbol(str) {
 				Object.entries(misc.currencies).forEach(([key, value]) => {
