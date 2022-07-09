@@ -55,7 +55,7 @@ select:disabled, select.disabled {
   color: var(--main-color);
 }
 .editor-toolbar a {
-  color: var(--main-color);
+  color: var(--main-color)!important;
 }
 
 /* Chartist*/
