@@ -1,47 +1,45 @@
-
-:root {
-	--app-container:			rgb(243 246 253 100%);
-	--main-color:				rgb( 31  28  46 100%);
-	--secondary-color:			rgb( 74  74  74 100%);
-	--link-color:				rgb( 31  28  46 100%);
-	--link-color-hover:			rgb(195 207 244 100%);
-	--link-color-active:		rgb(255 255 255 100%);
-	--link-color-active-bg:		rgb( 31  28  46 100%);
-	--link-color-disabled:		rgb(227 227 227 100%);
-	--link-color-disabled-bg:	rgb(181 181 183 100%);
-	--section:					rgb(255 255 255 100%);
-	--message-box-hover:		rgb(250 252 255 100%);
-	--message-box-border:		rgb(233 235 240 100%);
-	--more-list-bg:				rgb(255 255 255 100%);
-	--more-list-bg-hover:		rgb(246 251 255 100%);
-	--more-list-bg-active:		rgb(237 247 255 100%);
-	--more-list-shadow:			rgb(209 209 209  40%);
-	--button-bg:				rgb( 31  28  36 100%);
-	--text-area-bg:				rgb(255 255 255 100%);
-	--text-area-border:			rgb(  0   0   0  12%);
-	--star:						rgb(255 217  44 100%);
-	--message-btn:				rgb(255 255 255 100%);
-  }
-  
-  .dark:root {
-	--app-container:			rgb( 31  29  43 100%);
-	--main-color:				rgb(255 255 255 100%);
-	--secondary-color:			rgb(255 255 255  80%);
-	--link-color:				rgb(255 255 255  80%);
-	--link-color-hover:			rgb(195 207 244  10%);
-	--link-color-active:		rgb(255 255 255 100%);
-	--link-color-active-bg:		rgb(195 207 244  20%);
-	--link-color-disabled:		rgb(227 227 227 100%);
-	--link-color-disabled-bg:	rgb(181 181 183 100%);
-	--section:					rgb( 31  41  55 100%);
-	--message-box-hover:		rgb( 36  50  68 100%);
-	--message-box-border:		rgb(255 255 255  10%);
-	--more-list-bg:				rgb( 47  49  66 100%);
-	--more-list-bg-hover:		rgb(195 207 244  10%);
-	--more-list-bg-active:		rgb(237 247 255 100%);
-	--more-list-shadow:			rgb(195 207 244  10%);
-	--button-bg:				rgb( 31  41  55 100%);
-	--text-area-bg:				rgb( 31  41  55 100%);
-	--star:						rgb(255 217  44 100%);
-	--message-btn:				rgb(195 207 244  10%);
-  }
+.light:root {
+	--app-container:			rgb(243, 246, 253, 100%);
+	--main-color:				rgb( 31,  28,  46, 100%);
+	--secondary-color:			rgb( 74,  74,  74, 100%);
+	--link-color:				rgb( 31,  28,  46, 100%);
+	--link-color-hover:			rgb(195, 207, 244, 100%);
+	--link-color-active:		rgb(255, 255, 255, 100%);
+	--link-color-active-bg:		rgb( 31,  28,  46, 100%);
+	--link-color-disabled:		rgb(227, 227, 227, 100%);
+	--link-color-disabled-bg:	rgb(181, 181, 183, 100%);
+	--section:					rgb(255, 255, 255, 100%);
+	--message-box-hover:		rgb(250, 252, 255, 100%);
+	--message-box-border:		rgb(233, 235, 240, 100%);
+	--more-list-bg:				rgb(255, 255, 255, 100%);
+	--more-list-bg-hover:		rgb(246, 251, 255, 100%);
+	--more-list-bg-active:		rgb(237, 247, 255, 100%);
+	--more-list-shadow:			rgb(209, 209, 209,  40%);
+	--button-bg:				rgb( 31,  28,  36, 100%);
+	--text-area-bg:				rgb(255, 255, 255, 100%);
+	--text-area-border:			rgb(  0,   0,   0,  12%);
+	--star:						rgb(255, 217,  44, 100%);
+	--message-btn:				rgb(255, 255, 255, 100%);
+}
+.dark:root {
+	--app-container:			rgb( 31,  29,  43, 100%);
+	--main-color:				rgb(255, 255, 255, 100%);
+	--secondary-color:			rgb(255, 255, 255,  80%);
+	--link-color:				rgb(255, 255, 255,  80%);
+	--link-color-hover:			rgb(195, 207, 244,  10%);
+	--link-color-active:		rgb(255, 255, 255, 100%);
+	--link-color-active-bg:		rgb(195, 207, 244,  20%);
+	--link-color-disabled:		rgb(227, 227, 227, 100%);
+	--link-color-disabled-bg:	rgb(181, 181, 183, 100%);
+	--section:					rgb( 31,  41,  55, 100%);
+	--message-box-hover:		rgb( 36,  50,  68, 100%);
+	--message-box-border:		rgb(255, 255, 255,  10%);
+	--more-list-bg:				rgb( 47,  49,  66, 100%);
+	--more-list-bg-hover:		rgb(195, 207, 244,  10%);
+	--more-list-bg-active:		rgb(237, 247, 255, 100%);
+	--more-list-shadow:			rgb(195, 207, 244,  10%);
+	--button-bg:				rgb( 31,  41,  55, 100%);
+	--text-area-bg:				rgb( 31,  41,  55, 100%);
+	--star:						rgb(255, 217,  44, 100%);
+	--message-btn:				rgb(195, 207, 244,  10%);
+}
