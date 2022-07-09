@@ -113,13 +113,13 @@
 			
 			<div class="col-12 col-md-6 col-lg-3" name="primary_colour">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Colour_Primary']=='')?'No domain was set':'')?>" value="<? print(($domain['Colour_Primary']=='')?'':$domain['Colour_Primary'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Colour_primary']=='')?'No domain was set':'')?>" value="<? print(($domain['Colour_primary']=='')?'':$domain['Colour_primary'])?>">
 					<label for="floatingInput">Primary colour</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="secondary_colour">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Colour_Secondary']=='')?'No domain was set':'')?>" value="<? print(($domain['Colour_Secondary']=='')?'':$domain['Colour_Secondary'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Colour_secondary']=='')?'No domain was set':'')?>" value="<? print(($domain['Colour_secondary']=='')?'':$domain['Colour_secondary'])?>">
 					<label for="floatingInput">Secondary colour</label>
 				</div>
 			</div>
