@@ -800,6 +800,8 @@ $(document).ready(() => {
 				]);
 
 				console.log((misc.round(grossPrice, 1.00) - 0.00).toFixed(2));
+				console.log((misc.round(grossPrice, 0.10) - 0.01).toFixed(2));
+				console.log((misc.round(grossPrice, 0.10) - 0.05).toFixed(2));
 
 				$('div[name=net]').find('input').val(netPrice);
 				$('div[name=gross]').find('input').val(grossPrice);
