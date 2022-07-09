@@ -39,3 +39,6 @@ input[type=number],
 textarea {
   background: var(--text-area-bg)!important;
 }
+.ct-label {
+  color: var(--main-color);
+}
