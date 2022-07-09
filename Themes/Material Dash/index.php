@@ -89,7 +89,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
+				<link rel="stylesheet" href="/style.css">
 			<!-- ===== EOS =====-->
 		</head>
 		<body>
@@ -99,7 +99,7 @@
 						printScripts($layout_row['script_ids']);
 					}
 				?>
-				<script src="/Themes/<?print(__THEME__)?>/Assets/js/script.js" type="text/javascript"></script>
+				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<!-- ===== Preloader ===== -->
