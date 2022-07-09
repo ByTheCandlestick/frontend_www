@@ -1,9 +1,9 @@
 <?
     $cart_total = 0;
-	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS))) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Sales - Orders` WHERE `Invoice ID`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
-        $address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['billto_address'])));
-        $delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['invoice_shipped_by'])));
+        $address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
+        $delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping Address'])));
 ?>
     <section>
         <!-- Section Header -->
@@ -14,10 +14,10 @@
             <div class="col-12 col-md-6 text-md-end">
                 <div class="row">
                     <div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-                        <a href="mailto:<?print($invoice['email'])?>;" class="btn btn-outline-primary m-1">
+                        <a href="mailto:<?print($invoice['Email'])?>;" class="btn btn-outline-primary m-1">
                             <i class="fa fa-envelope"></i>
                         </a>
-                        <a href="javascript:orders.refund('<?print($invoice['invoice_number'])?>');" class="btn btn-outline-primary m-1">
+                        <a href="javascript:orders.refund('<?print($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
                             <i class="fa fa-fax"></i>
                         </a>
                     </div>
@@ -37,7 +37,7 @@
                     <div class="col-8">
                         <div class="row">
                             <div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['name'])?>" disabled>
+                                <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Name'])?>" disabled>
                                 <label for="floatingInput">Deliver to name</label>
                             </div>
                             <div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
@@ -46,11 +46,11 @@
                             </div>
                             
                             <div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['email'])?>" disabled>
+                                <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Email'])?>" disabled>
                                 <label for="floatingInput">Customer email</label>
                             </div>
                             <div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" value="<? print($delivery['phone'])?>" disabled>
+                                <input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Phone'])?>" disabled>
                                 <label for="floatingInput">Customer phone</label>
                             </div>
                         </div>
@@ -62,19 +62,19 @@
                 <h5>Taxonomy</h5>
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_subtotal'])?>" disabled>
+                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Subtotal'])?>" disabled>
                         <label for="floatingInput">Goods price</label>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_tax'])?>" disabled>
+                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Tax'])?>" disabled>
                         <label for="floatingInput">Tax</label>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_deposit'])?>" disabled>
+                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Deposit'])?>" disabled>
                         <label for="floatingInput">Total paid</label>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['invoice_subtotal'] - $invoice['invoice_deposit'])?>" disabled>
+                        <input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Subtotal'] - $invoice['Deposit'])?>" disabled>
                         <label for="floatingInput">Balance</label>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                 <h5>Notes</h5>
                 <div class="row">
                     <div class="col-12 col-md-6 form-floating mb-3">
-                        <textarea type="text" class="form-control" id="floatingInput" style="resize:none;" disabled><? print($invoice['notes'])?></textarea>
+                        <textarea type="text" class="form-control" id="floatingInput" style="resize:none;" disabled><? print($invoice['Notes'])?></textarea>
                         <label for="floatingInput">Order notes</label>
                     </div>
                 </div>
