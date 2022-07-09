@@ -5,7 +5,7 @@
 				if(strpos($secext, '!') === 0) {
 					$secext = substr($secext, 1); # Remove the Exclamation mark
 					print($secext);
-				} elseif($query = DB_Query("SELECT * FROM `shop_texts` where `name`='$secext' AND `type`='title' AND `active`=1")) {
+				} elseif($query = DB_Query("SELECT * FROM `Shop texts` where `Name`='$secext' AND `Type`='title' AND `Active`=1")) {
 					$row = mysqli_fetch_row($query);
 					print($row[0]);
 				}

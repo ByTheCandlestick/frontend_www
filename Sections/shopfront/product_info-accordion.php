@@ -1,7 +1,7 @@
 <?
-	$result = DB_Query("SELECT * FROM `shop_texts` where `active`=1");
+	$result = DB_Query("SELECT * FROM `Shop texts` where `Active`=1");
 	while($texts = mysqli_fetch_array($result)) {
-		$text[$texts['name']] = $texts['text'];
+		$text[$texts['Name']] = $texts['Text'];
 	}
 ?>
 <div class="accordion px-4 py-2" id="product-accordian">
