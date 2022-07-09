@@ -799,7 +799,7 @@ $(document).ready(() => {
 					(misc.round(grossPrice, 0.10) - 0.05).toFixed(2),	// 05, 15, 25, 35, 45, 55, 65, 75, 85, 95
 				]);
 
-				console.log(container_size);
+				console.log(container_price);
 
 				$('div[name=net]').find('input').val(netPrice);
 				$('div[name=gross]').find('input').val(grossPrice);
