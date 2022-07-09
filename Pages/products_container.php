@@ -50,7 +50,7 @@
 					<label for="floatingInput">Supplier</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="itemref">
+			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['ItemRef'])?>" disabled>
 					<label for="floatingInput">Supplier Reference</label>

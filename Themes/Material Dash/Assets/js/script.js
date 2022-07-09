@@ -1106,6 +1106,9 @@ $(document).ready(() => {
 		$('div[name=quantity] input, div[name=price_b] input').change(() => {
 			product.container.calculate();
 		});
+		$('div[name=supplier] input').change(() => {
+			$($('div[name=supplierref] input')).value($('div[name=supplier] input').val());
+		});
 	// -----========== Assistance nav ==========----- //
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
