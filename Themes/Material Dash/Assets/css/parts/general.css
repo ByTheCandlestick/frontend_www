@@ -42,18 +42,18 @@ textarea {
 .ct-label {
   color: var(--main-color);
 }
-.series-a {}
-.series-b {}
-.series-c {}
-.series-d {}
-.series-e {}
-.series-f {}
-.series-g {}
-.series-h {}
-.series-i {}
-.series-j {}
-.series-k {}
-.series-l {}
-.series-m {}
-.series-n {}
-.series-o {}
+.ct-series-a { fill: var(--chart-series-1); }
+.ct-series-b { fill: var(--chart-series-2); }
+.ct-series-c { fill: var(--chart-series-3); }
+.ct-series-d { fill: var(--chart-series-4); }
+.ct-series-e { fill: var(--chart-series-5); }
+.ct-series-f { fill: var(--chart-series-6); }
+.ct-series-g { fill: var(--chart-series-7); }
+.ct-series-h { fill: var(--chart-series-8); }
+.ct-series-i { fill: var(--chart-series-9); }
+.ct-series-j { fill: var(--chart-series-10); }
+.ct-series-k { fill: var(--chart-series-11); }
+.ct-series-l { fill: var(--chart-series-12); }
+.ct-series-m { fill: var(--chart-series-13); }
+.ct-series-n { fill: var(--chart-series-14); }
+.ct-series-o { fill: var(--chart-series-15); }
