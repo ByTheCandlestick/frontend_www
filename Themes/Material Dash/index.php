@@ -92,7 +92,7 @@
 				<link rel="stylesheet" href="/Themes/<?print(__THEME__)?>/Assets/css/style.css">
 			<!-- ===== EOS =====-->
 		</head>
-		<body class="online" onLoad="">
+		<body>
 			<!-- ===== Javascript ===== -->
 				<?
 					if($layout_row['script_ids'] != NULL) {
