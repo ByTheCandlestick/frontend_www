@@ -61,31 +61,6 @@
 				</div>
 			</div>
 			
-			<div class="col-12 col-md-6 col-lg-3" name="meta_title">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_title']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_title']=='')?'':$domain['Meta_title'])?>">
-					<label for="floatingInput">Meta title</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="meta_keywords">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_keywords']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_keywords']=='')?'':$domain['Meta_keywords'])?>">
-					<label for="floatingInput">Meta keywords</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="meta_description">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_description']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_description']=='')?'':$domain['Meta_description'])?>">
-					<label for="floatingInput">Meta description</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="meta_colour">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_colour']=='')?'':$domain['Meta_colour'])?>">
-					<label for="floatingInput">Meta colour</label>
-				</div>
-			</div>
-			
 			<div class="col-12 col-md-6 col-lg-3" name="title">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Title']=='')?'No domain was set':'')?>" value="<? print(($domain['Title']=='')?'':$domain['Title'])?>">
@@ -108,6 +83,31 @@
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Phone']=='')?'No domain was set':'')?>" value="<? print(($domain['Phone']=='')?'':$domain['Phone'])?>">
 					<label for="floatingInput">Phone</label>
+				</div>
+			</div>
+			
+			<div class="col-12 col-md-6 col-lg-3" name="meta_title">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_title']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_title']=='')?'':$domain['Meta_title'])?>">
+					<label for="floatingInput">Meta title</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="meta_keywords">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_keywords']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_keywords']=='')?'':$domain['Meta_keywords'])?>">
+					<label for="floatingInput">Meta keywords</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="meta_description">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_description']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_description']=='')?'':$domain['Meta_description'])?>">
+					<label for="floatingInput">Meta description</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="meta_colour">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_colour']=='')?'':$domain['Meta_colour'])?>">
+					<label for="floatingInput">Meta colour</label>
 				</div>
 			</div>
 			
