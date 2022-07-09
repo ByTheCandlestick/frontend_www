@@ -1,5 +1,5 @@
 <?
-	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `misc_websites` WHERE `ID`=%s", QS))) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Websites` WHERE `ID`=%s", QS))) > 0) {
 		$domain = mysqli_fetch_assoc($query);
 ?>
 	<section>

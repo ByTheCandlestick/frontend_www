@@ -19,7 +19,7 @@
 	 *
 	 */
 		function domainID() {
-			return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
+			return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `Websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 		}
 	/**
 	 * getThemepage
@@ -31,7 +31,7 @@
 	 */
 		function getThemepage($require) {
 			global $userdata, $website_info, $user_ok, $product, $partner;
-			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `misc_websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
+			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `Websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
 			if($theme_location != "") {
 				if($require){

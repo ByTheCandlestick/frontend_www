@@ -93,7 +93,7 @@
 					<?
 						if(isset($_GET['rw']) && $_GET['rw'] != "") {
 							print('
-								<rw data="' . mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Domain` FROM `misc_websites` WHERE `ID`='%s'", $_GET['rw'])))[0] . '"></rw>
+								<rw data="' . mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Domain` FROM `Websites` WHERE `ID`='%s'", $_GET['rw'])))[0] . '"></rw>
 							');
 						}
 						if(isset($_GET['rwp']) && $_GET['rwp'] != "") {

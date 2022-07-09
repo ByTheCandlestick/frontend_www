@@ -44,7 +44,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `misc_websites`");
+					$query = DB_Query("SELECT * FROM `Websites`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
 							print('

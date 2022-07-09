@@ -52,7 +52,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `misc_websites`");
+									$query = DB_Query("SELECT * FROM `Websites`");
 									while ($row = mysqli_fetch_array($query)) {
 										print_r('<option value="'.$row['ID'].'">'.$row['Domain'].' - '.$row['Name'].'</option>');
 									}
@@ -190,7 +190,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `misc_websites`");
+									$query = DB_Query("SELECT * FROM `Websites`");
 									while ($row = mysqli_fetch_array($query)) {
 										$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="";
 										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');

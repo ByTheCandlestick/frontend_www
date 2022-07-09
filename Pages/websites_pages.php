@@ -1,5 +1,5 @@
 <?
-	$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `misc_websites` WHERE `ID`=%s", QS)));
+	$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Websites` WHERE `ID`=%s", QS)));
 ?>
 <section>
 	<!-- Section Header -->
