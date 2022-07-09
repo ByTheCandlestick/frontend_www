@@ -140,7 +140,7 @@
 				$order_item_opt = explode(',', $item_info[2]);
 				if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
-						echo $order_item_image  = explode(',', $res['Images'])[0];
+						$order_item_image = explode(',', $res['Images'])[0];
 						$order_item_slug = $res['Slug'];
 						$order_item_title = $res['Title'];
 						$titles=$options=array();
@@ -163,11 +163,13 @@
 						<div class=\"row border-bottom p-3 / m-md-0 p-md-2 mx-md-5 px-md-5\">
 							<div class=\"row col-12 pb-2 pb-md-0\">
 								<div class=\"col-4 pe-3 / col-md-2\">
-									<picture>
-										<source srcset=\"https://cdn.thecandlestick.co.uk/_assets/_websites/thecandlestick/images/$order_item_image.webp\" type=\"image/webp\">
-										<source srcset=\"https://cdn.thecandlestick.co.uk/_assets/_websites/thecandlestick/images/$order_item_image.jpg\" type=\"image/jpeg\"> 
-										<img src=\"https://cdn.thecandlestick.co.uk/_assets/_websites/thecandlestick/images/$order_item_image.jpg\" class=\"mw-100\" alt=\"$order_item_title\">
-									</picture>
+								<picture>
+									<source srcset='".__API__."/Images/fetch/$order_item_image/jpeg/' type='image/jpeg'/>
+									<source srcset='".__API__."/Images/fetch/$order_item_image/jpg/' type='image/jpg'/>
+									<source srcset='".__API__."/Images/fetch/$order_item_image/png/' type='image/png'/>
+									<source srcset='".__API__."/Images/fetch/$order_item_image/jpx/' type='image/jpx'/>
+									<img src='".__API__."/Images/fetch/$order_item_image/webp/' type='image/webp' width='414px' height='207px'>
+								</picture>
 								</div>
 								<div class=\"col-8 col-md-10 align-items-center\">
 									<div class=\"top-50 position-relative\" style=\"transform:translatey(-50%);\">
