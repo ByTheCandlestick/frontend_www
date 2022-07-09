@@ -32,11 +32,9 @@
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
-					<th scope="col">Type</th>
 					<th scope="col">Supplier</th>
 					<th scope="col">Suppplier Ref</th>
 					<th scope="col">Size (cl)</th>
-					<th scope="col">Price (ea)</th>
 					<th scope="col">Active</th>
 					<th scope="col"></th>
 				</tr>
@@ -50,11 +48,9 @@
 								<tr>
 									<th scope="row">'.$row['ID'].'</th>
 									<td>'.$row['Name'].'</td>
-									<td>'.$row['Type'].'</td>
 									<td><a href="javascript:modal.simple();">'.$suppliers[$row['Supplier']]['Name'].'<a></td>
 									<td><a href="javascript:misc.copyToClipboard(\''.$row['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$row['Supplier']]['Website'].'\');},1500);">'.$row['ItemRef'].'</a></td>
 									<td>'.$row['Size (cl)'].'</td>
-									<td>'.$row['Price (ea)'].'</td>
 									<td>'.$row['Active'].'</td>
 									<td>
 										<a href="/Products/Container/'.$row['ID'].'">
@@ -69,8 +65,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
