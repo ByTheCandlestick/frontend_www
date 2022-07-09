@@ -39,6 +39,9 @@ input[type=number],
 textarea {
   background: var(--text-area-bg)!important;
 }
+.ct-area {
+  fill-opacity: 0.25;
+}
 .ct-label {
   color: var(--main-color);
 }
@@ -72,53 +75,63 @@ textarea {
 .ct-series-e .ct-bar, .ct-series-e .ct-line, .ct-series-e .ct-point, .ct-series-e .ct-slice-donut {
   stroke: var(--chart-series-5)!important;
 }
-.ct-series-f .ct-area, .ct-series-f .ct-slice-donut-solid, .ct-series-f .ct-slice-pie {}
-.ct-series-f .ct-bar, .ct-series-f .ct-line, .ct-series-f .ct-point, .ct-series-f .ct-slice-donut {
+.ct-series-f .ct-area, .ct-series-f .ct-slice-donut-solid, .ct-series-f .ct-slice-pie {
   fill: var(--chart-series-6)!important;
+}
+.ct-series-f .ct-bar, .ct-series-f .ct-line, .ct-series-f .ct-point, .ct-series-f .ct-slice-donut {
   stroke: var(--chart-series-6)!important;
 }
-.ct-series-g .ct-area, .ct-series-g .ct-slice-donut-solid, .ct-series-g .ct-slice-pie {}
-.ct-series-g .ct-bar, .ct-series-g .ct-line, .ct-series-g .ct-point, .ct-series-g .ct-slice-donut {
+.ct-series-g .ct-area, .ct-series-g .ct-slice-donut-solid, .ct-series-g .ct-slice-pie {
   fill: var(--chart-series-7)!important;
+}
+.ct-series-g .ct-bar, .ct-series-g .ct-line, .ct-series-g .ct-point, .ct-series-g .ct-slice-donut {
   stroke: var(--chart-series-7)!important;
 }
-.ct-series-h .ct-area, .ct-series-h .ct-slice-donut-solid, .ct-series-h .ct-slice-pie {}
-.ct-series-h .ct-bar, .ct-series-h .ct-line, .ct-series-h .ct-point, .ct-series-h .ct-slice-donut {
+.ct-series-h .ct-area, .ct-series-h .ct-slice-donut-solid, .ct-series-h .ct-slice-pie {
   fill: var(--chart-series-8)!important;
+}
+.ct-series-h .ct-bar, .ct-series-h .ct-line, .ct-series-h .ct-point, .ct-series-h .ct-slice-donut {
   stroke: var(--chart-series-8)!important;
 }
-.ct-series-i .ct-area, .ct-series-i .ct-slice-donut-solid, .ct-series-i .ct-slice-pie {}
-.ct-series-i .ct-bar, .ct-series-i .ct-line, .ct-series-i .ct-point, .ct-series-i .ct-slice-donut {
+.ct-series-i .ct-area, .ct-series-i .ct-slice-donut-solid, .ct-series-i .ct-slice-pie {
   fill: var(--chart-series-9)!important;
+}
+.ct-series-i .ct-bar, .ct-series-i .ct-line, .ct-series-i .ct-point, .ct-series-i .ct-slice-donut {
   stroke: var(--chart-series-9)!important;
 }
-.ct-series-j .ct-area, .ct-series-j .ct-slice-donut-solid, .ct-series-j .ct-slice-pie {}
-.ct-series-j .ct-bar, .ct-series-j .ct-line, .ct-series-j .ct-point, .ct-series-j .ct-slice-donut {
+.ct-series-j .ct-area, .ct-series-j .ct-slice-donut-solid, .ct-series-j .ct-slice-pie {
   fill: var(--chart-series-10)!important;
+}
+.ct-series-j .ct-bar, .ct-series-j .ct-line, .ct-series-j .ct-point, .ct-series-j .ct-slice-donut {
   stroke: var(--chart-series-10)!important;
 }
-.ct-series-k .ct-area, .ct-series-k .ct-slice-donut-solid, .ct-series-k .ct-slice-pie {}
-.ct-series-k .ct-bar, .ct-series-k .ct-line, .ct-series-k .ct-point, .ct-series-k .ct-slice-donut {
+.ct-series-k .ct-area, .ct-series-k .ct-slice-donut-solid, .ct-series-k .ct-slice-pie {
   fill: var(--chart-series-11)!important;
+}
+.ct-series-k .ct-bar, .ct-series-k .ct-line, .ct-series-k .ct-point, .ct-series-k .ct-slice-donut {
   stroke: var(--chart-series-11)!important;
 }
-.ct-series-l .ct-area, .ct-series-l .ct-slice-donut-solid, .ct-series-l .ct-slice-pie {}
-.ct-series-l .ct-bar, .ct-series-l .ct-line, .ct-series-l .ct-point, .ct-series-l .ct-slice-donut {
+.ct-series-l .ct-area, .ct-series-l .ct-slice-donut-solid, .ct-series-l .ct-slice-pie {
   fill: var(--chart-series-12)!important;
+}
+.ct-series-l .ct-bar, .ct-series-l .ct-line, .ct-series-l .ct-point, .ct-series-l .ct-slice-donut {
   stroke: var(--chart-series-12)!important;
 }
-.ct-series-m .ct-area, .ct-series-m .ct-slice-donut-solid, .ct-series-m .ct-slice-pie {}
-.ct-series-m .ct-bar, .ct-series-m .ct-line, .ct-series-m .ct-point, .ct-series-m .ct-slice-donut {
+.ct-series-m .ct-area, .ct-series-m .ct-slice-donut-solid, .ct-series-m .ct-slice-pie {
   fill: var(--chart-series-13)!important;
+}
+.ct-series-m .ct-bar, .ct-series-m .ct-line, .ct-series-m .ct-point, .ct-series-m .ct-slice-donut {
   stroke: var(--chart-series-13)!important;
 }
-.ct-series-n .ct-area, .ct-series-n .ct-slice-donut-solid, .ct-series-n .ct-slice-pie {}
-.ct-series-n .ct-bar, .ct-series-n .ct-line, .ct-series-n .ct-point, .ct-series-n .ct-slice-donut {
+.ct-series-n .ct-area, .ct-series-n .ct-slice-donut-solid, .ct-series-n .ct-slice-pie {
   fill: var(--chart-series-14)!important;
+}
+.ct-series-n .ct-bar, .ct-series-n .ct-line, .ct-series-n .ct-point, .ct-series-n .ct-slice-donut {
   stroke: var(--chart-series-14)!important;
 }
-.ct-series-o .ct-area, .ct-series-o .ct-slice-donut-solid, .ct-series-o .ct-slice-pie {}
-.ct-series-o .ct-bar, .ct-series-o .ct-line, .ct-series-o .ct-point, .ct-series-o .ct-slice-donut {
+.ct-series-o .ct-area, .ct-series-o .ct-slice-donut-solid, .ct-series-o .ct-slice-pie {
   fill: var(--chart-series-15)!important;
+}
+.ct-series-o .ct-bar, .ct-series-o .ct-line, .ct-series-o .ct-point, .ct-series-o .ct-slice-donut {
   stroke: var(--chart-series-15)!important;
 }
