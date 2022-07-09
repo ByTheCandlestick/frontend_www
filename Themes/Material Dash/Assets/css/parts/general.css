@@ -33,3 +33,9 @@ button, a {
 thead.sticky-top {
   z-index: 1!important;
 }
+
+input[type=text],
+input[type=number],
+textarea {
+  background: var(--text-area-bg);
+}
