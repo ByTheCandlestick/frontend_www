@@ -791,11 +791,11 @@ $(document).ready(() => {
 				netProfit = (grossPrice - netPrice).toFixed(2);
 
 				// Round to nearest 5 0r 9
-				console.log(retailPrice = misc.closestNum(grossPrice, [
+				retailPrice = misc.closestNum(grossPrice, [
 					(misc.round(grossPrice, 1.00) - 0.00).toFixed(2),	// 00
 					(misc.round(grossPrice, 0.10) - 0.01).toFixed(2),	// 09, 19, 29, 39, 49, 59, 69, 79, 89, 99
 					(misc.round(grossPrice, 0.10) - 0.05).toFixed(2),	// 05, 15, 25, 35, 45, 55, 65, 75, 85, 95
-				]));
+				]);
 
 				$('div[name=net]').find('input').val(netPrice);
 				$('div[name=gross]').find('input').val(grossPrice);
