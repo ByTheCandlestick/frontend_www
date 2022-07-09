@@ -140,7 +140,7 @@
 				$order_item_opt = explode(',', $item_info[2]);
 				if($q = DB_Query("SELECT * FROM `products` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
-						print($res['Images']);
+						print(explode(',',$res['Images']));
 						$order_item_image  = explode(',', $res['Images'])[0];
 						$order_item_slug = $res['Slug'];
 						$order_item_title = $res['Title'];
