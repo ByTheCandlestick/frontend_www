@@ -20,8 +20,8 @@ $(document).ready(() => {
 				//numbers.reduce((prev, curr) => {
 				//	return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
 				//});
-				return numbers.sort((a, b) => {
-					Math.abs(goal - a)-Math.abs(goal - b)
+				numbers.sort((a, b) => {
+					return Math.abs(goal - a)-Math.abs(goal - b)
 				})[0];
 			},
 			currSymbol(str) {
