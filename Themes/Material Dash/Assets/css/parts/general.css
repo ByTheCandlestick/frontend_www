@@ -45,7 +45,7 @@ textarea:disabled, textarea.disabled,
 select:disabled, select.disabled {
   background: var(--text-area-bg-disabled)!important;
 }
-.form-control:focus {
+.form-control:focus, .form-floating:focus {
   color: var(--main-color)!important;
 }
 
