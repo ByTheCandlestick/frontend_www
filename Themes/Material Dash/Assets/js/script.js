@@ -238,6 +238,17 @@ $(document).ready(() => {
 						'domain': $("div[name=domain] input").val(),
 						'page_type': $("div[name=page_type]").find("option:selected").val(),
 						'maintenance': (($("div[name=status] input[name=maintenance]:checked").length === 0)?0:1),
+						'meta_title': $("div[name=meta_title]").find("input").val(),
+						'meta_keywords': $("div[name=meta_keywords]").find("input").val(),
+						'meta_description': $("div[name=meta_description]").find("input").val(),
+						'meta_colour': $("div[name=meta_colour]").find("input").val(),
+						'title': $("div[name=title]").find("input").val(),
+						'slogan': $("div[name=slogan]").find("input").val(),
+						'email': $("div[name=email]").find("input").val(),
+						'phone': $("div[name=phone]").find("input").val(),
+						'primary_colour': $("div[name=primary_colour]").find("input").val(),
+						'secondary_colour': $("div[name=secondary_colour]").find("input").val(),
+						'logo': $("div[name=logo]").find("input").val(),
 					}
 					$.ajax({
 						url: api_url + '/Website/' + sid + '/',
