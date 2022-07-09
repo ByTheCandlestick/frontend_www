@@ -27,7 +27,8 @@
 					<th scope="col">Date</th>
 					<th scope="col">Subtotal</th>
 					<th scope="col">Tax</th>
-					<th scope="col">Paid</th>
+					<th scope="col">Deposit</th>
+					<th scope="col">Payment status</th>
 					<th scope="col">Status</th>
 					<th scope="col">txn ID</th>
 					<th scope="col"></th>
@@ -45,6 +46,7 @@
 									<td>'.$row['Subtotal'].'</td>
 									<td>'.$row['Tax'].'</td>
 									<td>'.$row['Deposit'].'</td>
+									<td>'.$row['Payment status'].'</td>
 									<td>'.$row['Status'].'</td>
 									<td>'.$row['Transaction ID'].'</td>
 									<td>
@@ -60,6 +62,7 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
