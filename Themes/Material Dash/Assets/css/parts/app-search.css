@@ -46,6 +46,7 @@
 	display: none;
 	max-height: 80vh;
     overflow-y: scroll;
+	background: var(--text-area-bg);
 }
 .search-suggestions > li {
     margin: 5px;
