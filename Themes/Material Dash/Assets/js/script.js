@@ -20,7 +20,7 @@ $(document).ready(() => {
 				//numbers.reduce((prev, curr) => {
 				//	return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
 				//});
-				numbers.sort((a, b) => {
+				return numbers.sort((a, b) => {
 					Math.abs(goal - a)-Math.abs(goal - b)
 				})[0];
 			},
