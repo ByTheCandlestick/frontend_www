@@ -41,10 +41,14 @@ textarea {
 }
 input[type=text]:disabled, input[type=text].disabled,
 input[type=number]:disabled, input[type=number].disabled,
-textarea:disabled, textarea.disabled {
+textarea:disabled, textarea.disabled,
+select:disabled, select.disabled {
   background: var(--text-area-bg-disabled)!important;
 }
-
+.CodeMirror {
+  background: var(--text-area-bg);
+  color: var(--main-color);
+}
 .ct-area {
   fill-opacity: 0.25;
 }
