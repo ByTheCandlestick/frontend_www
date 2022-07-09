@@ -1107,7 +1107,7 @@ $(document).ready(() => {
 			product.container.calculate();
 		});
 		$('div[name=supplier] input').change(() => {
-			$('div[name=supplierref] input').val($('div[name=supplier] input').val());
+			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
 		});
 	// -----========== Assistance nav ==========----- //
 		if($(".assistanceNav").length != 0) {
