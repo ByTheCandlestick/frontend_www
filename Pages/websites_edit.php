@@ -88,6 +88,50 @@
 							<label for="floatingInput">Meta colour</label>
 						</div>
 					</div>
+					
+					<div class="col-12 col-md-6 col-lg-3" name="domain">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['meta_colour']=='')?'':$domain['meta_colour'])?>">
+							<label for="floatingInput">Title</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3" name="domain">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['meta_colour']=='')?'':$domain['meta_colour'])?>">
+							<label for="floatingInput">Slogan</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3" name="domain">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['meta_colour']=='')?'':$domain['meta_colour'])?>">
+							<label for="floatingInput">Email</label>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-3" name="domain">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['meta_colour']=='')?'':$domain['meta_colour'])?>">
+							<label for="floatingInput">Phone</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3" name="domain">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['meta_colour']=='')?'':$domain['meta_colour'])?>">
+							<label for="floatingInput">Primary colour</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3" name="domain">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['meta_colour']=='')?'':$domain['meta_colour'])?>">
+							<label for="floatingInput">Secondary colour</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3" name="domain">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['meta_colour']=='')?'':$domain['meta_colour'])?>">
+							<label for="floatingInput">Logo</label>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
