@@ -21,21 +21,21 @@
 	--star:						rgb(255, 217,  44, 100%);
 	--message-btn:				rgb(255, 255, 255, 100%);
 
-	--chart-series-1: red;
+	--chart-series-1: darkred;
 	--chart-series-2: red;
-	--chart-series-3: red;
-	--chart-series-4: red;
-	--chart-series-5: red;
-	--chart-series-6: red;
-	--chart-series-7: red;
-	--chart-series-8: red;
-	--chart-series-9: red;
-	--chart-series-10: red;
-	--chart-series-11: red;
-	--chart-series-12: red;
-	--chart-series-13: red;
-	--chart-series-14: red;
-	--chart-series-15: red;
+	--chart-series-3: darkorange;
+	--chart-series-4: orange;
+	--chart-series-5: rgb(155, 135, 12);
+	--chart-series-6: yellow;
+	--chart-series-7: darkgreen;
+	--chart-series-8: green;
+	--chart-series-9: darkblue;
+	--chart-series-10: blue;
+	--chart-series-11: indigo;
+	--chart-series-12: purple;
+	--chart-series-13: darkviolet;
+	--chart-series-14: violet;
+	--chart-series-15: white;
 }
 .dark:root {
 	--app-container:			rgb( 31,  29,  43, 100%);
