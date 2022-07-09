@@ -49,10 +49,16 @@ select:disabled, select.disabled {
   color: var(--main-color)!important;
 }
 
+/* SIMPLE MDE*/
 .CodeMirror {
   background: var(--text-area-bg);
   color: var(--main-color);
 }
+.editor-toolbar a {
+  color: var(--main-color);
+}
+
+/* Chartist*/
 .ct-area {
   fill-opacity: 0.25;
 }
