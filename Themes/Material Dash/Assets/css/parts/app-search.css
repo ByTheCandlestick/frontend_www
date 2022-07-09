@@ -21,7 +21,7 @@
     position: inherit;
 }
 .search-area input {
-	background: transparent;
+	color: var(--secondary-color);
 	border: none;
 	width: 100%;
 	height: 100%;
