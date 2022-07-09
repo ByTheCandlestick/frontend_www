@@ -45,6 +45,10 @@ textarea:disabled, textarea.disabled,
 select:disabled, select.disabled {
   background: var(--text-area-bg-disabled)!important;
 }
+.form-control:focus {
+  color: var(--main-color)!important;
+}
+
 .CodeMirror {
   background: var(--text-area-bg);
   color: var(--main-color);
