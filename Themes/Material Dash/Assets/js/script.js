@@ -249,6 +249,7 @@ $(document).ready(() => {
 						'primary_colour': $("div[name=primary_colour]").find("input").val(),
 						'secondary_colour': $("div[name=secondary_colour]").find("input").val(),
 						'logo': $("div[name=logo]").find("input").val(),
+						'favicon': $("div[name=favicon]").find("input").val(),
 					}
 					$.ajax({
 						url: api_url + '/Website/' + sid + '/',
