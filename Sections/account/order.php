@@ -1,11 +1,11 @@
 <?
-	if($q = DB_Query(sprintf("SELECT * FROM `sales_orders` WHERE `invoice_number`='%s'", QS))) {
+	if($q = DB_Query(sprintf("SELECT * FROM `Sales - orders` WHERE `Invoice ID`='%s'", QS))) {
 		$order = mysqli_fetch_assoc($q);
-		$currency = $order['currency'];
+		$currency = $order['Currency'];
 		$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );
 		$order_curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
-		$user_id = $order['uid'];
-		$order_items = explode(';', $order['items']);
+		$user_id = $order['UID'];
+		$order_items = explode(';', $order['Items']);
 ?>
 	<style>
 		/* --=== standard ===-- */
@@ -91,35 +91,35 @@
 		<div class="mb-2 row p-2 border text-center">
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Order ID:</h5>
-				<p><?print($order['invoice_number']) ?></p>
+				<p><?print($order['Invoice ID']) ?></p>
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Estimated Delivery time: </h5>
-				<p><?print(date('d M Y', strtotime($order['invoice_date'].'+ 7 days')))?></p>
+				<p><?print(date('d M Y', strtotime($order['Date'].'+ 7 days')))?></p>
 			</div>
 			<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Status: </h5>
-				<p><?print($order['invoice_status']) ?></p>
+				<p><?print($order['Status']) ?></p>
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Shipped by: </h5>
-				<p><?print($order['invoice_shipped_by']) ?></p>
+				<p><?print($order['Shipping by']) ?></p>
 			</div>
 		</div>
 		<div class="order-progress-stepper">
 			<?
 				$s1=$s2=$s3=$s4='';
-				if($order['invoice_status'] > 0 && $order['invoice_status'] <= 9) :
+				if($order['Status'] > 0 && $order['Status'] <= 9) :
 					$s1 = 'completed';
 					$s2 = 'active';
-				elseif($order['invoice_status'] > 10 && $order['invoice_status'] <= 19) :
+				elseif($order['Status'] > 10 && $order['Status'] <= 19) :
 					$s1=$s2 = 'completed';
 					$s3 = 'active';
-				elseif($order['invoice_status'] > 20 && $order['invoice_status'] <= 29) :
+				elseif($order['Status'] > 20 && $order['Status'] <= 29) :
 					$s1=$s2=$s3 = 'completed';
 					$s4 = 'active';
-				elseif($order['invoice_status'] > 30 && $order['invoice_status'] <= 39) :
+				elseif($order['Status'] > 30 && $order['Status'] <= 39) :
 					$s1=$s2=$s3=$s4 = 'completed';
 				endif;
 
