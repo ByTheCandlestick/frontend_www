@@ -93,7 +93,7 @@
                 <h5>Items</h5>
                 <div class="row">
                     <?
-                        $invoiced_items = explode(";", $invoice['items']);
+                        $invoiced_items = explode(";", $invoice['Items']);
                         if($invoiced_items != null) {
                             $invoiced_items_count = count($invoiced_items);
                             for($i=0;$i<$invoiced_items_count;$i++) {
