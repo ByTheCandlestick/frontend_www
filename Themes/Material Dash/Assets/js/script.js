@@ -1106,7 +1106,7 @@ $(document).ready(() => {
 		$('div[name=quantity] input, div[name=price_b] input').change(() => {
 			product.container.calculate();
 		});
-		$('div[name=supplier] input').change(() => {
+		$('div[name=supplier] select').change(() => {
 			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
 		});
 	// -----========== Assistance nav ==========----- //
