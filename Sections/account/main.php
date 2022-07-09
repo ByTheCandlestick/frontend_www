@@ -12,7 +12,7 @@
 		</div>
 		<hr>
 		<?
-			if($query = DB_Query(sprintf("SELECT * FROM `Sales - Orders` WHERE `UID`=%d ORDER BY `Invoice ID` DESC LIMIT 6", $userdata['ID']))) {
+			if($query = DB_Query(sprintf("SELECT * FROM `Sales - orders` WHERE `UID`=%d ORDER BY `Invoice ID` DESC LIMIT 6", $userdata['ID']))) {
 				$orderHistory = array();
 				while($row = mysqli_fetch_assoc($query)): array_push($orderHistory, $row); endwhile;
 				$count = count($orderHistory);$more=false;
