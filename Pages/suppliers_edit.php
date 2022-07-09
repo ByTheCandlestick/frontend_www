@@ -1,5 +1,5 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `suppliers` WHERE `Reference`=%s", QS));
+	$query = DB_Query(sprintf("SELECT * FROM `Suppliers` WHERE `Reference`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$supp = mysqli_fetch_assoc($query);
 ?>
