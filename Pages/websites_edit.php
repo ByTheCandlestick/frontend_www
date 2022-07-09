@@ -132,7 +132,7 @@
 			<div class="col-12 col-md-6 col-lg-3" name="favicon">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Favicon']=='')?'No domain was set':'')?>" value="<? print(($domain['Favicon']=='')?'':$domain['Favicon'])?>">
-					<label for="floatingInput">Logo</label>
+					<label for="floatingInput">Favicon</label>
 				</div>
 			</div>
 		</div>
