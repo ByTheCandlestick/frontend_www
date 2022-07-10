@@ -139,6 +139,10 @@
 					  </div>
 						<nav id="navbar" class="navbar">
 							<ul>
+								<?
+
+								?>
+								<!--
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='index')?print(' active'):null; ?>" href="/">Home</a></li>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/About">About us</a></li>
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='boutique' && strtolower(QS_SUBPAGE)=='partners')?print(' active'):null; ?>" href="/Boutique/Partners">Our partners</a></li>
@@ -166,6 +170,7 @@
 									</ul>
 								</li>
 								<li><a class="nav-link" href="<?print(URL_BLOG)?>">Blog</a></li>
+								-->
 								<? if(!$user_ok) { ?>
 									<li><a class="nav-link<?(strtolower(QS_PAGE)=='login')?print(' active'):null; ?>" href="/Login">Login</a></li>
 								<? } else { ?>
