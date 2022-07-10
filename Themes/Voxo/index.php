@@ -140,7 +140,26 @@
 						<nav id="navbar" class="navbar">
 							<ul>
 								<?
-
+									$items = DB_Query("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 ORDER BY `menu_order` ASC");
+									foreach($items as $item) {
+										if($item['page_url'] == QS_PAGE) {
+											$link = '#';
+											$active = 'active';
+										} else {
+											$link = $item['menu_url'];
+											$active = '';
+										}
+										print(sprintf('
+											<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
+												<i class="fa fa-%s"></i>
+											</a>
+											',
+											$link,
+											$active,
+											$item['page_name'],
+											$item['menu_icon']
+										));
+									}
 								?>
 								<!--
 								<li><a class="nav-link<?(strtolower(QS_PAGE)=='index')?print(' active'):null; ?>" href="/">Home</a></li>
