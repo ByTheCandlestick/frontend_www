@@ -1,5 +1,5 @@
 <?
-	if($result = DB_Query(sprintf('SELECT * FROM `section_jumbotron` WHERE `title`=\'%s\'', $secext))){
+	if($result = DB_Query(sprintf('SELECT * FROM `Sections  carousel` WHERE `Title`=\'%s\'', $secext))){
 		if(mysqli_num_rows($result) > 0) {
 			$jumbotron = mysqli_fetch_assoc($result);
 			$btn_1 = ($jumbotron['button_1_enabled'])?'<a href="'.$jumbotron['button_1_link'].'" class="btn-get-started animate__animated animate__fadeInUp">'.$jumbotron['button_1_text'].'</a>':'';
