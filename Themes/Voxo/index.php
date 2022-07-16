@@ -140,7 +140,7 @@
 						<nav id="navbar" class="navbar">
 							<ul>
 								<?
-									$items = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 AND `ID`=%i ORDER BY `menu_order` ASC", $website_info['ID']));
+									$items = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 AND `ID`=%s ORDER BY `menu_order` ASC", $website_info['ID']));
 									foreach($items as $item) {
 										if($item['page_url'] == QS_PAGE) {
 											$link = '#';
