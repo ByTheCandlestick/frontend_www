@@ -1,5 +1,5 @@
 <?
-	if($result = DB_Query('SELECT * FROM `section_carousel`')){
+	if($result = DB_Query(sprintf('SELECT * FROM `section_carousel` WHERE `title`=\'%s\'', $secext))){
 		if(mysqli_num_rows($result) > 0) {
 			$slides = mysqli_num_rows($result);
 ?>
