@@ -150,14 +150,18 @@
 											$active = '';
 										}
 										print(sprintf('
+											<li>
+												<a class="nav-link %s" href="%s">%s</a>
+											</li>
+
 											<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
 												<i class="fa fa-%s"></i>
 											</a>
 											',
-											$link,
+
 											$active,
-											$item['page_name'],
-											$item['menu_icon']
+											$link,
+											$item['page_name']
 										));
 									}
 								?>
