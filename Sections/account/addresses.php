@@ -1,5 +1,5 @@
 <section>
-	<div class="row">
+	<div class="row p-4">
 		<?
 			$items = DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `UID`=%s ORDER BY `ID` ASC", $userdata['ID']));
 			foreach($items as $item) {
