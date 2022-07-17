@@ -66,12 +66,20 @@
 						<label for="floatingInput">Goods price</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Deposit'])?>" disabled>
+						<label for="floatingInput">Total paid</label>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Processing Fees'])?>" disabled>
+						<label for="floatingInput">Processing Fees</label>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Tax'])?>" disabled>
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Deposit'])?>" disabled>
-						<label for="floatingInput">Total paid</label>
+						<input type="text" class="form-control" id="floatingInput" value="<? print(($invoice['Subtotal']-$invoice['Processing Fees'])-$invoice['tax'])?>" disabled>
+						<label for="floatingInput">Income</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Subtotal'] - $invoice['Deposit'])?>" disabled>
