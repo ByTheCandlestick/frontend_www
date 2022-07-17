@@ -33,7 +33,7 @@
 					<th scope="col">ID</th>
 					<th scope="col">URL</th>
 					<th scope="col">Sub URL</th>
-					<th scope="col">Page Title</th>
+					<th scope="col">Page Name</th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
@@ -46,7 +46,7 @@
 								<th scope="row">'.$row['ID'].'</th>
 								<td>'.$row['page_url'].'</td>
 								<td>'.$row['subpage_url'].'</td>
-								<td>'.$row['page_title'].'</td>
+								<td>'.$row['page_name'].'</td>
 								<td>
 									<a href="/Websites/Page/'.$row['ID'].'">
 										<i class="fa fa-pencil"></i>
