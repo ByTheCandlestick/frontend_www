@@ -160,10 +160,7 @@
 										));
 									}
 								?>
-								<!--
-								<li><a class="nav-link<?(strtolower(QS_PAGE)=='index')?print(' active'):null; ?>" href="/">Home</a></li>
-								<li><a class="nav-link<?(strtolower(QS_PAGE)=='about')?print(' active'):null; ?>" href="/About">About us</a></li>
-								<li><a class="nav-link<?(strtolower(QS_PAGE)=='boutique' && strtolower(QS_SUBPAGE)=='partners')?print(' active'):null; ?>" href="/Boutique/Partners">Our partners</a></li>
+								<!--/Partners">Our partners</a></li>
 								<li class="dropdown">
 									<a class="nav-link<?(strtolower(QS_PAGE)=='boutique' && strtolower(QS_SUBPAGE)!='partners')?print(' active'):null; ?>"><span>Boutique</span> <i class="fad fa-chevron-down"></i></a>
 									<ul>
