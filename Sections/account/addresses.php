@@ -14,10 +14,15 @@
 						<h5 class=\"card-title\">Name:</h5>
 						<p class=\"card-text\">
 							$l1
+
 							$l2
+
 							$l3
+							
 							$l4
+							
 							$l5
+							
 							$l6
 						</p>
 						<a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
