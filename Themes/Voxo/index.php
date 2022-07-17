@@ -142,7 +142,7 @@
 								<?
 									$items = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 AND `domain_id`=%s ORDER BY `menu_order` ASC", $website_info['ID']));
 									foreach($items as $item) {
-										if($item['page_suburl'] == QS_SUBPAGE && $item['page_url'] == QS_PAGE) {
+										if($item['page_url'] == QS_PAGE && $item['page_url'] == QS_PAGE) {
 											$link = '#';
 											$active = 'active';
 										} else {
