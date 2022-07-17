@@ -156,7 +156,7 @@
 											',
 											$active,
 											$link,
-											$item['page_name']
+											$item['page_title']
 										));
 									}
 								?>
