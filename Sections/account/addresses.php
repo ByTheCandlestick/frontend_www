@@ -19,7 +19,7 @@
 									$l5,<br>
 									$l6
 								</p>
-								<a href=\"#\" class=\"btn btn-primary-outline\">Edit</a>
+								<a href=\"#\" class=\"btn btn-outline-primary\">Edit</a>
 							</div>
 						</div>
 					</div>
