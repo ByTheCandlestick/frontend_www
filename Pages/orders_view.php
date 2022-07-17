@@ -84,7 +84,7 @@
 				<h5>Stripe</h5>
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Transactiob ID'])?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Transaction ID'])?>" disabled>
 						<label for="floatingInput">Transaction ID</label>
 					</div>
 				</div>
