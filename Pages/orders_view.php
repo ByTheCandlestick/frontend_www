@@ -66,7 +66,7 @@
 						<label for="floatingInput">Transaction ID</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<a type="text" class="form-control" id="floatingInput" href="https://dashboard.stripe.com<?(DOMAIN_TYPE=='indev')?print('/test'):print('');?>/payments/<? print($invoice['Charge ID'])?>" disabled><? print($invoice['Charge ID'])?></a>
+						<a type="text" class="form-control" id="floatingInput" href="https://dashboard.stripe.com<?(DOMAIN_TYPE=='indev')?print('/test'):print('');?>/payments/<? print($invoice['Charge ID'])?>" target="_blank" rel="noreferrer noopener" disabled><? print($invoice['Charge ID'])?></a>
 						<label for="floatingInput">Charge ID</label>
 					</div>
 				</div>
@@ -168,7 +168,7 @@
 													<div class="col-9 col-md-8 align-items-center">
 														<div class="top-50 position-relative" style="transform:translatey(-50%);">
 															<p>
-																<a href="'.URL_ADMIN.'/Products/Edit/'.$invoiced_item_sku.'" target="_blank" rel="noreferrer noopener">
+																<a href="'.URL_ADMIN.'/Products/Edit/'.$invoiced_item_sku.'">
 																	'.$invoiced_item_title.'
 																</a>
 																<span class="font-monospace text-muted">');
