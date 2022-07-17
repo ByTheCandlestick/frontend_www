@@ -37,6 +37,11 @@ ErrorDocument 404 /Error/404/
 		RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 	</IfModule>
 #
+#	APPEND WWW. IF NO SUBDOMAIN EXISTS
+#
+	RewriteEngine On
+	RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+	RewriteRule ^(.*)$ www.%{HTTP_HOST}/$1 [L,R=301]
 #	REDIRECT ALL REQUESTS TO INDEX 
 	<IfModule mod_rewrite.c>
 		RewriteRule ^([0-9a-zA-Z\-\/\_]+).(json|css|js|txt|xml|md)$ /index.php?file=$1&ext=$2 [END,L,QSA]
