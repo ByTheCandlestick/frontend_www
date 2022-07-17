@@ -50,8 +50,8 @@
 									<td>'.$row['Status'].'</td>
 									<td>'.$row['Transaction ID'].'</td>
 									<td>
-										<a href="/Orders/Edit/'.$row['Invoice ID'].'">
-											<i class="fa fa-pencil"></i>
+										<a href="javascript:orders.printOrder('.$row['Invoice ID'].');">
+											<i class="fa fa-print"></i>
 										</a>
 									</td>
 								</tr>

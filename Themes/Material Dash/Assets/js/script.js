@@ -1018,6 +1018,7 @@ $(document).ready(() => {
 			refund() {
 				$('#refundModal').modal('show')
 			},
+			print
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
