@@ -19,6 +19,10 @@ body {
   background-color: var(--app-container);
 }
 
+a { color: var(--link-color); }
+a:hover { color: var(--link-color-hover); }
+a:active { color: var(--link-color-active); }
+
 button, a {
   cursor: pointer;
   text-decoration: none;
