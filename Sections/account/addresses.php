@@ -8,7 +8,7 @@
 				$l4 = $item['county']; $l5 = $item['country'];
 				$l6 = $item['postcode'];
 				print("
-					<div class=\"col-sm-6\">
+					<div class=\"col-6 col-md-4 col-lg-3\">
 						<div class=\"card\">
 							<div class=\"card-body\">
 								<h5 class=\"card-title\">Name:</h5>
