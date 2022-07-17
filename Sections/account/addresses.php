@@ -13,7 +13,12 @@
 							<div class=\"card-body\">
 								<h5 class=\"card-title\">Name:</h5>
 								<p class=\"card-text\">
-									$l1\n, $l2\n, $l3\n, $l4\n, $l5\n, $l6
+									$l1,<br>
+									$l2,<br>
+									$l3,<br>
+									$l4,<br>
+									$l5,<br>
+									$l6
 								</p>
 								<a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
 							</div>
