@@ -11,7 +11,6 @@
 					<div class=\"col-6 col-md-4 col-lg-3\">
 						<div class=\"card\">
 							<div class=\"card-body\">
-								<h5 class=\"card-title\">Name:</h5>
 								<p class=\"card-text\">
 									$l1,<br>
 									$l2,<br>
@@ -20,7 +19,7 @@
 									$l5,<br>
 									$l6
 								</p>
-								<a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
+								<a href=\"#\" class=\"btn btn-primary-outline\">Edit</a>
 							</div>
 						</div>
 					</div>
