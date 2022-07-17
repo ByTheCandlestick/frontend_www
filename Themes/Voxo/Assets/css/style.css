@@ -17,8 +17,8 @@
 @import url('./parts/forms.css');
 @import url('./parts/app-gdpr.css');
 @import url('./parts/app-header.css');
-@import url('./parts/hero_carousel.css');
-@import url('./parts/hero_jumbotron.css');
+@import url('./parts/hero-carousel.css');
+@import url('./parts/hero-jumbotron.css');
 @import url('./parts/portfolio-details.css');
 @import url('./parts/portfolio.css');
 @import url('./parts/app-preloader.css');
