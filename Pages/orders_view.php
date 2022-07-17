@@ -27,36 +27,6 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			<div class="col-12">
-				<h5>Delivery</h5>
-				<div class="row">
-					<div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
-						<textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['number_name'].' '.$address['line_1'].','.PHP_EOL.$address['line_2'].','.PHP_EOL.$address['town'].','.PHP_EOL.$address['county'].','.PHP_EOL.$address['country'].','.PHP_EOL.$address['postcode'])?></textarea>
-						<label for="floatingInput">Delivery address</label>
-					</div>
-					<div class="col-8">
-						<div class="row">
-							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-								<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Name'])?>" disabled>
-								<label for="floatingInput">Deliver to name</label>
-							</div>
-							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-								<input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Name'])?>" disabled>
-								<label for="floatingInput">Delivery by</label>
-							</div>
-							
-							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-								<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Email'])?>" disabled>
-								<label for="floatingInput">Customer email</label>
-							</div>
-							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-								<input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Phone'])?>" disabled>
-								<label for="floatingInput">Customer phone</label>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<div class="col-12">
 				<h5>Taxonomy</h5>
@@ -101,6 +71,38 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="col-12">
+				<h5>Delivery</h5>
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-4 form-floating mb-3">
+						<textarea type="text" class="form-control" id="floatingInput" style="height:10rem; resize:none;" disabled><? print($address['number_name'].' '.$address['line_1'].','.PHP_EOL.$address['line_2'].','.PHP_EOL.$address['town'].','.PHP_EOL.$address['county'].','.PHP_EOL.$address['country'].','.PHP_EOL.$address['postcode'])?></textarea>
+						<label for="floatingInput">Delivery address</label>
+					</div>
+					<div class="col-8">
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
+								<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Name'])?>" disabled>
+								<label for="floatingInput">Deliver to name</label>
+							</div>
+							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
+								<input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Name'])?>" disabled>
+								<label for="floatingInput">Delivery by</label>
+							</div>
+							
+							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
+								<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Email'])?>" disabled>
+								<label for="floatingInput">Customer email</label>
+							</div>
+							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
+								<input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Phone'])?>" disabled>
+								<label for="floatingInput">Customer phone</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="col-12">
 				<h5>Notes</h5>
 				<div class="row">
