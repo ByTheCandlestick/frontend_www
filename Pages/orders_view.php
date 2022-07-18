@@ -239,7 +239,12 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<p>Modal body text goes here.</p>
+					<p>How much would you like to refund to the customer?.</p>
+					<div class="form-floating mb-3 input-group">
+						<span class="input-group-text" id="">£</span>
+						<input type="text" class="form-control" id="floatingInput" value="00.00">
+						<label for="floatingInput" class="ps-5">Value</label>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary">Refund</button>
