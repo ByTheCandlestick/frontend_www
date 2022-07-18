@@ -212,7 +212,7 @@
 						}
 						print("
 							<div class=\"row m-3 p-3 / m-md-0 p-md-2 mx-md-5 px-md-5\">
-								<div class=\"pb-3 offset-0 col-12 / offset-md-2 col-md-4\">
+								<div class=\"pb-3 offset-0 col-12 / offset-md-9 col-md-2\">
 									<div class=\"row\">
 										<div class=\"col-6 text-center\">
 											<h4>Subtotal</h4>
