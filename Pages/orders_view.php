@@ -48,6 +48,10 @@
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+						<input type="text" class="form-control" id="floatingInput" value="<? print('0.00')?>" disabled>
+						<label for="floatingInput">Refunds</label>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" value="<? print(($invoice['Subtotal']-$invoice['Processing Fees'])-$invoice['tax'])?>" disabled>
 						<label for="floatingInput">Income</label>
 					</div>
