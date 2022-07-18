@@ -4,6 +4,7 @@
 		$invoice = mysqli_fetch_assoc($query);
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
+		$refunds = '0.00';
 ?>
 	<section>
 		<!-- Section Header -->
@@ -48,11 +49,11 @@
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print('0.00')?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($refunds)?>" disabled>
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print(($invoice['Subtotal']-$invoice['Processing Fees'])-$invoice['tax'])?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print((($invoice['Subtotal']-$invoice['Processing Fees'])-$invoice['tax'])-$refunds)?>" disabled>
 						<label for="floatingInput">Income</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
