@@ -266,7 +266,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal" tabindex="-1" role="dialog" id="refund.confirmModal">
+	<div class="modal" tabindex="-1" role="dialog" id="refundConfirmModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
