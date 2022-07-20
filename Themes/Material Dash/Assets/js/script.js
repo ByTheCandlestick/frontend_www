@@ -1033,7 +1033,10 @@ $(document).ready(() => {
 				commit() {
 					$.ajax({
 						url: api_url + '/Stripe/Refund/',
-						data: data,
+						data: {
+							'value': $('input[name=refundCurrValue]').val(),
+							'txn_id': $('input[name=transaction_id]').val()
+						},
 						type: 'PUT',
 						xhrFields: {
 							withCredentials: true,
