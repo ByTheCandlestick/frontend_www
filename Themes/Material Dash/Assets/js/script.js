@@ -1015,10 +1015,10 @@ $(document).ready(() => {
 		}
 		/** @wip */
 		orders = {
-			refund() {
-				$('#refundModal').modal('show');
-			},
-			refund: {
+			refunds: {
+				modal() {
+					$('#refundModal').modal('show');
+				},
 				check() {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
