@@ -1034,6 +1034,7 @@ $(document).ready(() => {
 					$.ajax({
 						url: api_url + '/Stripe/Refund/',
 						data: {
+							'api_key': api_key,
 							'value': $('input[name=refundCurrValue]').val(),
 							'txn_id': $('input[name=transaction_id]').val()
 						},
