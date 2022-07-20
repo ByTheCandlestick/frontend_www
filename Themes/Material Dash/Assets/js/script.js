@@ -1016,7 +1016,33 @@ $(document).ready(() => {
 		/** @wip */
 		orders = {
 			refund() {
-				$('#refundModal').modal('show')
+				$('#refundModal').modal('show');
+			},
+			refundCheck() {
+				var currValue = $('input[name=refundCurrValue]'),
+					maxValue = $('input[name=refundMaxValue]');
+				if(currValue.val() > maxValue.val()) {
+					currValue.val(maxValue.val());
+				}
+			},
+			refundConfirm() {
+				$('#refundConfirmModal').modal('show');
+			},
+			refundCommit() {
+				$.ajax({
+					url: api_url + '/Stripe/Refund/',
+					data: data,
+					type: 'PUT',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 			printOrder() {
 				
