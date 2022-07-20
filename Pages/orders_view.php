@@ -239,9 +239,6 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Refund order</h5>
-					<button type="button" class="close" aria-label="Close" onClick="javascript:$('#refundModal').modal('hide');">
-						<span aria-hidden="true">&times;</span>
-					</button>
 				</div>
 				<div class="modal-body">
 					<p>How much would you like to refund to the customer?</p>
@@ -249,7 +246,7 @@
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refundCurrValue" onChange="orders.refundCheck();">
+								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refund.currValue" onChange="orders.refund.check();">
 								<label for="floatingInput" class="ps-5">Value</label>
 							</div>
 						</div>
@@ -263,20 +260,17 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onClick="javascript:orders.refundConfirm();">Refund</button>
+					<button type="button" class="btn btn-primary" onClick="javascript:orders.refund.confirm();">Refund</button>
 					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refundModal').modal('hide');">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="modal" tabindex="-1" role="dialog" id="refundConfirmModal">
+	<div class="modal" tabindex="-1" role="dialog" id="refund.confirmModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Refund order</h5>
-					<button type="button" class="close" aria-label="Close" onClick="javascript:$('#refundConfirmModal').modal('hide');">
-						<span aria-hidden="true">&times;</span>
-					</button>
 				</div>
 				<div class="modal-body">
 					<p>
@@ -284,8 +278,8 @@
 					</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-warning" onClick="jsvsdcript:refundCommit();">Confirm.</button>
-					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refundConfirmModal').modal('hide');">Close</button>
+					<button type="button" class="btn btn-warning" onClick="jsvsdcript:orders.refund.commit();">Confirm.</button>
+					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refund.confirmModal').modal('hide');">Close</button>
 				</div>
 			</div>
 		</div>
