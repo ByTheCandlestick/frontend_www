@@ -246,15 +246,19 @@
 				<div class="modal-body">
 					<p>How much would you like to refund to the customer?</p>
 					<div class="row">
-						<div class="form-floating mb-3 input-group">
-							<span class="input-group-text" id="">£</span>
-							<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01">
-							<label for="floatingInput" class="ps-5">Value</label>
+						<div class="col-6">
+							<div class="form-floating mb-3 input-group">
+								<span class="input-group-text" id="">£</span>
+								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01">
+								<label for="floatingInput" class="ps-5">Value</label>
+							</div>
 						</div>
-						<div class="form-floating mb-3 input-group">
-							<span class="input-group-text" id="">£</span>
-							<input type="text" class="form-control" id="floatingInput" value="<?print($invoice['Deposit'])?>" step=".01" disabled>
-							<label for="floatingInput" class="ps-5">Max</label>
+						<div class="col-6">
+							<div class="form-floating mb-3 input-group">
+								<span class="input-group-text" id="">£</span>
+								<input type="text" class="form-control" id="floatingInput" value="<?print($invoice['Deposit'])?>" step=".01" disabled>
+								<label for="floatingInput" class="ps-5">Max</label>
+							</div>
 						</div>
 					</div>
 				</div>
