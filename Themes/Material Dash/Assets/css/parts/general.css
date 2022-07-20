@@ -23,6 +23,11 @@ a { color: var(--link-color); }
 a:hover { color: var(--link-color-hover); }
 a:active { color: var(--link-color-active); }
 
+.modal-content {
+	background-color: var(--section)!important;
+	color: var(--main-color)!important;
+}
+
 button, a {
   cursor: pointer;
   text-decoration: none;
