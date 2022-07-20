@@ -149,15 +149,7 @@
 											$link = $item['menu_url'];
 											$active = '';
 										}
-										print(sprintf('
-											<li>
-												<a class="nav-link %s" href="%s">%s</a>
-											</li>
-											',
-											$active,
-											$link,
-											$item['page_title']
-										));
+										print(sprintf('<li><a class="nav-link %s" href="%s">%s</a></li>',$active,$link,$item['page_name']));
 									}
 								?>
 								<? if(!$user_ok) { ?>
