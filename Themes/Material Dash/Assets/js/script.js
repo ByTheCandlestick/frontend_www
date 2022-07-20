@@ -1026,6 +1026,7 @@ $(document).ready(() => {
 				}
 			},
 			refundConfirm() {
+				$('#refundModal').modal('hide');
 				$('#refundConfirmModal').modal('show');
 			},
 			refundCommit() {
