@@ -18,7 +18,7 @@
 						<a href="mailto:<?print($invoice['Email'])?>;" class="btn btn-outline-primary m-1">
 							<i class="fa fa-envelope"></i>
 						</a>
-						<a href="javascript:orders.refund('<?print($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
+						<a href="javascript:orders.refunds.modal('<?print($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
 							<i class="fa fa-fax"></i>
 						</a>
 					</div>
@@ -246,7 +246,7 @@
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refund.currValue" onChange="orders.refund.check();">
+								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refund.currValue" onChange="orders.refunds.check();">
 								<label for="floatingInput" class="ps-5">Value</label>
 							</div>
 						</div>
@@ -260,7 +260,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onClick="javascript:orders.refund.confirm();">Refund</button>
+					<button type="button" class="btn btn-primary" onClick="javascript:orders.refunds.confirm();">Refund</button>
 					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refundModal').modal('hide');">Close</button>
 				</div>
 			</div>
@@ -278,7 +278,7 @@
 					</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-warning" onClick="jsvsdcript:orders.refund.commit();">Confirm.</button>
+					<button type="button" class="btn btn-warning" onClick="jsvsdcript:orders.refunds.commit();">Confirm.</button>
 					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refund.confirmModal').modal('hide');">Close</button>
 				</div>
 			</div>
