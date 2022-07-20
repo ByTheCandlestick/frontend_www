@@ -1018,32 +1018,34 @@ $(document).ready(() => {
 			refund() {
 				$('#refundModal').modal('show');
 			},
-			refundCheck() {
-				var currValue = $('input[name=refundCurrValue]'),
-					maxValue = $('input[name=refundMaxValue]');
-				if(currValue.val() > maxValue.val()) {
-					currValue.val(maxValue.val());
-				}
-			},
-			refundConfirm() {
-				$('#refundModal').modal('hide');
-				$('#refundConfirmModal').modal('show');
-			},
-			refundCommit() {
-				$.ajax({
-					url: api_url + '/Stripe/Refund/',
-					data: data,
-					type: 'PUT',
-					xhrFields: {
-						withCredentials: true,
-					},
-					success(body) {
-						
-					},
-					error(body) {
-						alert.simple("An error has occurred. Please try again later", "danger");
+			refund: {
+				check() {
+					var currValue = $('input[name=refundCurrValue]'),
+						maxValue = $('input[name=refundMaxValue]');
+					if(currValue.val() > maxValue.val()) {
+						currValue.val(maxValue.val());
 					}
-				});
+				},
+				confirm() {
+					$('#refundModal').modal('hide');
+					$('#refundConfirmModal').modal('show');
+				},
+				commit() {
+					$.ajax({
+						url: api_url + '/Stripe/Refund/',
+						data: data,
+						type: 'PUT',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success(body) {
+							
+						},
+						error(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				},
 			},
 			printOrder() {
 				
