@@ -5,7 +5,7 @@
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
 		$refunds = mysqli_fetch_array(DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s'", $invoice['Charge ID'])));
-		print_r($refunds);
+		var_dump($refunds);
 		$refundsValue = 0;
 		foreach($refund as $refunds) {
 			$refundsValue =+ $refund['Subtotal'];
