@@ -1001,7 +1001,7 @@ $(document).ready(() => {
 					$('#refundModal').modal('hide');
 					$('#refundConfirmModal').modal('show');
 				},
-				commit() {
+				commit(e) {
 					$.ajax({
 						url: api_url + '/Stripe/Refund/',
 						data: {
