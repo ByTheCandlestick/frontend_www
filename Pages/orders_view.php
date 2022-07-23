@@ -6,11 +6,11 @@
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
 		$refunds = mysqli_fetch_row(DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s'", $invoice['Charge ID'])));
 		foreach($refund as $refunds) {
-			$refundValue =+ $refund['Subtotal'];
+			$refundsValue =+ $refund['Subtotal'];
 		}
 		$income = ($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax'];
-		$incomeAfterRefunds = (($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax']) - $refundValue;
-		$depositAfterRefunds = $invoice['Deposit'] - $refundValue;
+		$incomeAfterRefunds = (($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax']) - $refundsValue;
+		$depositAfterRefunds = $invoice['Deposit'] - $refundsValue;
 ?>
 	<section>
 		<!-- Section Header -->
@@ -55,7 +55,7 @@
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($refundValue)?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($refundsValue)?>" disabled>
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
