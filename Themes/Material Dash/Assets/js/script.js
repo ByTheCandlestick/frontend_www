@@ -44,9 +44,9 @@ $(document).ready(() => {
 				window.open(str, '_blank');
 				window.focus();
 			},
-			setTwoDecimal(el) {
-				t = el.value;
-				el.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
+			setTwoDecimal(e) {
+				var t = e.value;
+				e.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
 			}
 			
 		}
