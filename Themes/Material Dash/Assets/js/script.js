@@ -993,7 +993,7 @@ $(document).ready(() => {
 						maxValue = $('input[name=refundMaxValue]');
 					if(currValue.val().match(/\./).length == 1) {
 						val = currValue.val().match(/([0-9]+)\.([0-9]+)/);
-						console.log(val);
+						currValue.val(parseFloat(val[0]).toFixed(2));
 					}
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
