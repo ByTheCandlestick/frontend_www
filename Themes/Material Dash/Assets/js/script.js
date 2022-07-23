@@ -45,8 +45,6 @@ $(document).ready(() => {
 				window.focus();
 			},
 			setTwoDecimal(e) {
-				var t = e.value;
-				e.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
 			}
 			
 		}
@@ -992,7 +990,9 @@ $(document).ready(() => {
 				},
 				check() {
 					var currValue = $('input[name=refundCurrValue]'),
-						maxValue = $('input[name=refundMaxValue]');
+						maxValue = $('input[name=refundMaxValue]'),
+						t = e.value;
+					e.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
