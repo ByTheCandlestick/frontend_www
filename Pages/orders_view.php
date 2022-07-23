@@ -4,7 +4,7 @@
 		$invoice = mysqli_fetch_assoc($query);
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
-		$refunds = mysqli_fetch_row(DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `id`=%s", $invoice['Shipping to'])));
+		$refunds = mysqli_fetch_row(DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`=%s", $invoice['Charge ID'])));
 		$income = ($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax'];
 		$incomeAfterRefunds = (($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax']) - $refunds;
 		$depositAfterRefunds = $invoice['Deposit'] - $refunds;
