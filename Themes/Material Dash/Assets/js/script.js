@@ -991,7 +991,7 @@ $(document).ready(() => {
 				check() {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
-					if(currValue.val().match(/\./g).length == 1) {
+					if((currValue.val()).match(/\./g).length == 1) {
 
 					}
 					if(currValue.val() > maxValue.val()) {
