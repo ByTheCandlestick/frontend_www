@@ -44,6 +44,10 @@ $(document).ready(() => {
 				window.open(str, '_blank');
 				window.focus();
 			},
+			setTwoNumberDecimal(event) {
+				this.value = parseFloat(this.value).toFixed(2);
+			},
+			
 		}
 		/** @final */
 		cookie = {
