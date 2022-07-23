@@ -1011,7 +1011,7 @@ $(document).ready(() => {
 						data: {
 							'api_key': api_key,
 							'value': $('input[name=refundCurrValue]').val(),
-							'txn_id': $('input[name=transaction_id]').val()
+							'ch_id': $('a[name=charge_id]').html()
 						},
 						type: 'PUT',
 						xhrFields: {
