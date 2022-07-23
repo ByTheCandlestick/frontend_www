@@ -55,7 +55,7 @@
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($depositAfterRefunds)?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($incomeAfterRefunds)?>" disabled>
 						<label for="floatingInput">Income</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
