@@ -988,7 +988,7 @@ $(document).ready(() => {
 				modal() {
 					$('#refundModal').modal('show');
 				},
-				check() {
+				check(e) {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]'),
 						t = e.value;
@@ -1001,7 +1001,7 @@ $(document).ready(() => {
 					$('#refundModal').modal('hide');
 					$('#refundConfirmModal').modal('show');
 				},
-				commit(e) {
+				commit() {
 					$.ajax({
 						url: api_url + '/Stripe/Refund/',
 						data: {
