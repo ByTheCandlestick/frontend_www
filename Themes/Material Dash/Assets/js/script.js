@@ -44,8 +44,8 @@ $(document).ready(() => {
 				window.open(str, '_blank');
 				window.focus();
 			},
-			setTwoNumberDecimal(event) {
-				this.value = parseFloat(this.value).toFixed(2);
+			setTwoDecimal(val) {
+				return parseFloat(val).toFixed(2);
 			},
 			
 		}
@@ -1026,10 +1026,10 @@ $(document).ready(() => {
 				check(event) {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
-					misc.setTwoNumberDecimal(event);
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
+					currValue.val(misc.setTwoDecimal(currValue.val()));
 				},
 				confirm() {
 					$('#refundModal').modal('hide');
