@@ -46,9 +46,7 @@ $(document).ready(() => {
 			},
 			setTwoDecimal(el) {
 				t = el.value;
-				if(t.indexOf(".") >= 0) {
-					t = t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3);
-				}
+				el.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
 			}
 			
 		}
