@@ -45,7 +45,7 @@ $(document).ready(() => {
 				window.focus();
 			},
 			setTwoDecimal(val) {
-				return parseFloat(val).toFixed(2);
+				return (parseFloat(val).toFixed(2));
 			},
 			
 		}
