@@ -5,6 +5,7 @@
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
 		$refunds = mysqli_fetch_row(DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `id`=%s", $invoice['Shipping to'])));
+		$depositAfterRefunds = (($invoice['Subtotal']-$invoice['Processing Fees'])-$invoice['tax'])-$refunds;
 ?>
 	<section>
 		<!-- Section Header -->
@@ -53,7 +54,7 @@
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print((($invoice['Subtotal']-$invoice['Processing Fees'])-$invoice['tax'])-$refunds)?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($depositAfterRefunds)?>" disabled>
 						<label for="floatingInput">Income</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -246,14 +247,14 @@
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check();" onChange="misc.setTwoDecimal();">
+								<input type="text" class="form-control" id="floatingInput" value="0" min="0" max="<?print($depositAfterRefunds)?>" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check();" onChange="misc.setTwoDecimal();">
 								<label for="floatingInput" class="ps-5">Value</label>
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="text" class="form-control" id="floatingInput" value="<?print($invoice['Deposit'])?>" step=".01" name="refundMaxValue" disabled>
+								<input type="text" class="form-control" id="floatingInput" value="<?print($depositAfterRefunds)?>" step=".01" name="refundMaxValue" disabled>
 								<label for="floatingInput" class="ps-5">Max</label>
 							</div>
 						</div>
