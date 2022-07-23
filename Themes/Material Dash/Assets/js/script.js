@@ -991,14 +991,14 @@ $(document).ready(() => {
 				check() {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
-					if((currValue.val()).match(/\./).length == 1) {
+					if(currValue.val() > maxValue.val()) {
+						currValue.val(maxValue.val());
+					}
+					if(currValue.val().match(/\./).length == 1) {
 						val = currValue.val().match(/([0-9]+)\.([0-9]+)/);
 						if(val[2] > 9) {
 							currValue.val(parseFloat(currValue.val()).toFixed(2));
 						}
-					}
-					if(currValue.val() > maxValue.val()) {
-						currValue.val(maxValue.val());
 					}
 				},
 				confirm() {
