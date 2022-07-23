@@ -988,11 +988,12 @@ $(document).ready(() => {
 				modal() {
 					$('#refundModal').modal('show');
 				},
-				check(e) {
+				check() {
 					var currValue = $('input[name=refundCurrValue]'),
-						maxValue = $('input[name=refundMaxValue]'),
-						t = e.value;
-					e.value = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
+						maxValue = $('input[name=refundMaxValue]');
+					if(currValue.val().match(/\./g).length = 1) {
+						
+					}
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
