@@ -43,6 +43,12 @@ $(document).ready(() => {
 			openInNewTab(str) {
 				window.open(str, '_blank');
 				window.focus();
+			},
+			setTwoDecimal(el) {
+				t = el.value;
+				if(t.indexOf(".") >= 0) {
+					t = t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 3);
+				}
 			}
 			
 		}
@@ -989,7 +995,6 @@ $(document).ready(() => {
 				check() {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
-					currValue.val(parseFloat(currValue.val()).toFixed(2));
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
