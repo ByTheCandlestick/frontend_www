@@ -28,10 +28,10 @@ $(document).ready(() => {
 				});
 			},
 			redirect() {
-
+				// TODO: Redirect page
 			},
 			limit_characters(el) {
-
+				// TODO: Limit characters in specific element
 			},
 			copyToClipboard(str) {
 				var $temp = $("<input>");
@@ -43,10 +43,7 @@ $(document).ready(() => {
 			openInNewTab(str) {
 				window.open(str, '_blank');
 				window.focus();
-			},
-			setTwoDecimal(el) {
-				el.value = parseFloat(el.value).toFixed(2);
-			},
+			}
 			
 		}
 		/** @final */
@@ -110,40 +107,6 @@ $(document).ready(() => {
 					}, stay);
 				});
 			}
-		}
-		/** @todo */
-		modal = {
-			count: 0,
-			close(id) {
-
-			},
-			simple() {
-				this.count++;
-				$('.modals').append(''+
-					'<div class="modal '+this.count+'" tabindex="-1" role="dialog">'+
-						'<div class="modal-dialog" role="document">'+
-							'<div class="modal-content">'+
-								'<div class="modal-header">'+
-									'<h5 class="modal-title">Modal title</h5>'+
-									'<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
-										'<span aria-hidden="true">&times;</span>'+
-									'</button>'+
-								'</div>'+
-								'<div class="modal-body">'+
-									'<p>Modal body text goes here.</p>'+
-								'</div>'+
-								'<div class="modal-footer">'+
-									'<button type="button" class="btn btn-primary">Save changes</button>'+
-									'<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
-								'</div>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-				'');
-				$('.modal.'+this.count).on('shown.bs.modal', function () {
-					$('#myInput').trigger('focus')
-				})
-			},
 		}
 		/** @final */
 		search = {
@@ -714,7 +677,7 @@ $(document).ready(() => {
 		/** @wip */
 		product = {
 			create() {
-
+				// TODO: Create new product
 			},
 			update(pid) {
 				discontinued = (($("div[name=status] input[name=discontinued]:checked").length === 0) ? 0 : 1);
@@ -873,7 +836,7 @@ $(document).ready(() => {
 					});
 				},
 				delete() {
-
+					// TODO: Delect container
 				},
 				calculate() {
 					price_b	= Number($("div[name=price_b] input").val());
@@ -1026,6 +989,7 @@ $(document).ready(() => {
 				check() {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
+					currValue.val(parseFloat(currValue.val()).toFixed(2));
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
@@ -1056,10 +1020,10 @@ $(document).ready(() => {
 				},
 			},
 			printOrder() {
-				
+				// TODO: Send printer the customer order
 			},
 			printReciept() {
-				
+				// TODO: Send reciept printer order info
 			}
 		}
 	// -----========== Dark mode toggle ==========----- // @final //
