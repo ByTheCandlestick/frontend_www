@@ -246,7 +246,7 @@
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refundCurrValue" onkeypress="orders.refunds.check(); misc.setTwoNumberDecimal(event);">
+								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refundCurrValue" onkeyup="orders.refunds.check(); misc.setTwoNumberDecimal(event);">
 								<label for="floatingInput" class="ps-5">Value</label>
 							</div>
 						</div>
