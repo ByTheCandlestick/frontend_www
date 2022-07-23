@@ -1023,9 +1023,10 @@ $(document).ready(() => {
 				modal() {
 					$('#refundModal').modal('show');
 				},
-				check() {
+				check(event) {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
+					misc.setTwoNumberDecimal(event);
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
