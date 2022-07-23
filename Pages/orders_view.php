@@ -246,7 +246,7 @@
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check" onChange="misc.setTwoDecimal">
+								<input type="text" class="form-control" id="floatingInput" value="0.00" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check();" onChange="misc.setTwoDecimal();">
 								<label for="floatingInput" class="ps-5">Value</label>
 							</div>
 						</div>
@@ -260,8 +260,8 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onClick="javascript:orders.refunds.confirm();">Refund</button>
-					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refundModal').modal('hide');">Close</button>
+					<button type="button" class="btn btn-primary" onClick="orders.refunds.confirm();">Refund</button>
+					<button type="button" class="btn btn-secondary" onClick="$('#refundModal').modal('hide');">Close</button>
 				</div>
 			</div>
 		</div>
