@@ -994,7 +994,7 @@ $(document).ready(() => {
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
-					if(currValue.val().match(/\./g).length > 0) {
+					if(currValue.val().match(/\./).length > 0) {
 						val = currValue.val().match(/([0-9]+)\.([0-9]+)/);
 						if(val[2] > 9) {
 							currValue.val(parseFloat(currValue.val()).toFixed(2));
@@ -1018,7 +1018,7 @@ $(document).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
-							
+							alert.simple("Successfully refunded", "success")
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
