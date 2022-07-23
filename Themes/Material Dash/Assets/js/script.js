@@ -44,9 +44,8 @@ $(document).ready(() => {
 				window.open(str, '_blank');
 				window.focus();
 			},
-			setTwoDecimal(val) {
-				exit();
-				return parseFloat(val).toFixed(2);
+			setTwoDecimal(event) {
+				this.value = parseFloat(this.value).toFixed(2);
 			},
 			
 		}
@@ -1024,13 +1023,12 @@ $(document).ready(() => {
 				modal() {
 					$('#refundModal').modal('show');
 				},
-				check(event) {
+				check() {
 					var currValue = $('input[name=refundCurrValue]'),
 						maxValue = $('input[name=refundMaxValue]');
 					if(currValue.val() > maxValue.val()) {
 						currValue.val(maxValue.val());
 					}
-					currValue.val(misc.setTwoDecimal(currValue.val()));
 				},
 				confirm() {
 					$('#refundModal').modal('hide');
