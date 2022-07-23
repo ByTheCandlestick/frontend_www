@@ -249,7 +249,7 @@
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="number" class="form-control" id="floatingInput" value="0" min="0" max="<?print($depositAfterRefunds)?>" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check();" onInput="misc.setTwoDecimal(el);">
+								<input type="number" class="form-control" id="floatingInput" value="0" min="0" max="<?print($depositAfterRefunds)?>" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check();" onInput="misc.setTwoDecimal(this);">
 								<label for="floatingInput" class="ps-5">Value</label>
 							</div>
 						</div>
