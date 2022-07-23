@@ -10,8 +10,8 @@
 			$refundValue =+ $refund['amount'];
 		}
 		$income = ($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax'];
-		$incomeAfterRefunds = (($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax']) - $refunds;
-		$depositAfterRefunds = $invoice['Deposit'] - $refunds;
+		$incomeAfterRefunds = (($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax']) - $refundValue;
+		$depositAfterRefunds = $invoice['Deposit'] - $refundValue;
 ?>
 	<section>
 		<!-- Section Header -->
@@ -56,7 +56,7 @@
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($refunds)?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($refundValue)?>" disabled>
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
