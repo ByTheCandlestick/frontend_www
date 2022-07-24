@@ -110,7 +110,7 @@
 								<label for="floatingInput">Customer email</label>
 							</div>
 							<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
-								<input type="text" class="form-control" id="floatingInput" value="<? print($delivery['Phone'])?>" disabled>
+								<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Phone'])?>" disabled>
 								<label for="floatingInput">Customer phone</label>
 							</div>
 						</div>
