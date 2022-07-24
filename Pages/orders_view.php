@@ -312,6 +312,7 @@
 							<?
 								print_r($refunds);
 								while($refund = mysqli_fetch_array($refunds)) {
+									print_r($refund);
 									print(sprintf('
 										<tr>
 											<th scope="row">%s</th>
