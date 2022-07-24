@@ -311,6 +311,7 @@
 						<tbody>
 							<?
 								while($refund = mysqli_fetch_assoc($refunds)) {
+									print_r($refund);
 									$rid = $refund['Refund ID'];
 									$sub = $refund['Subtotal'];
 									$txn = $refund['Transaction ID'];
