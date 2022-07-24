@@ -4,9 +4,10 @@
 		$invoice = mysqli_fetch_assoc($query);
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
-		$refunds = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s'", $invoice['Charge ID'])));
+		$refunds = DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s'", $invoice['Charge ID']));
+		$allRefunds = mysqli_fetch_assoc($refunds);
 		$refundsValue = 0;
-		foreach($refunds as $refund) {
+		foreach($allRefunds as $refund) {
 			$refundsValue += $refund['Subtotal'];
 		}
 		$income = ($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax'];
@@ -310,23 +311,25 @@
 						</thead>
 						<tbody>
 							<?
-								foreach($refunds as $row) {
-									print(
-										sprintf(
-											'<tr>
-												<th scope="row">%s</th>
-												<td>%s</td>
-												<td>%s</td>
-												<td>%s</td>
-												<td>%s</td>
-											</tr>',
-											$row['Refund ID'],
-											$row['Subtotal'],
-											$row['Transaction ID'],
-											$row['Refund status'],
-											$row['Created']
-										)
-									);
+								if(mysqli_num_rows($refunds) > 0) {
+									foreach($refunds as $row) {
+										print(
+											sprintf(
+												'<tr>
+													<th scope="row">%s</th>
+													<td>%s</td>
+													<td>%s</td>
+													<td>%s</td>
+													<td>%s</td>
+												</tr>',
+												$row['Refund ID'],
+												$row['Subtotal'],
+												$row['Transaction ID'],
+												$row['Refund status'],
+												$row['Created']
+											)
+										);
+									}
 								}
 							?>
 						</tbody>
