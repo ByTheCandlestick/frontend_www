@@ -6,6 +6,7 @@
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
 		$refundsValue = 0;
 		$refunds = DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s'", $invoice['Charge ID']));
+		$allRefunds = mysqli_fetch_assoc($refunds)
 		while($refund = mysqli_fetch_array($refunds)) {
 			$refundsValue += $refund['Subtotal'];
 		}
@@ -311,7 +312,7 @@
 						<tbody>
 							<?
 								if(mysqli_num_rows($refunds) > 0) {
-									while($row = mysqli_fetch_assoc($refunds)) {
+									foreach($refunds as $row) {
 										print('here 2');
 										print(
 											sprintf(
