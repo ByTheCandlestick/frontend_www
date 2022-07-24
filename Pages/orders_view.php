@@ -6,8 +6,7 @@
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
 		$refundsValue = 0;
 		$refunds = DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s'", $invoice['Charge ID']));
-		$allRefunds = mysqli_fetch_assoc($refunds);
-		foreach($refund = mysqli_fetch_assoc($allRefunds)) {
+		foreach($refund = mysqli_fetch_assoc($Refunds)) {
 			$refundsValue += $refund['Subtotal'];
 		}
 		$income = ($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax'];
