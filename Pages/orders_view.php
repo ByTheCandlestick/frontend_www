@@ -7,7 +7,7 @@
 		$refundsValue = 0;
 		$refunds = DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s'", $invoice['Charge ID']));
 		$allRefunds = mysqli_fetch_assoc($refunds);
-		foreach($refund = mysqli_fetch_assoc($refunds)) {
+		foreach($refund = mysqli_fetch_assoc($allRefunds)) {
 			$refundsValue += $refund['Subtotal'];
 		}
 		$income = ($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax'];
