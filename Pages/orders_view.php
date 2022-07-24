@@ -311,8 +311,8 @@
 						<tbody>
 							<?
 								print_r($refunds);
-								while($refund = mysqli_fetch_array($refunds)) {
-									print_r($refund);
+								while($row = mysqli_fetch_assoc($refunds)) {
+									print_r($row);
 									print(sprintf('
 										<tr>
 											<th scope="row">%s</th>
@@ -322,11 +322,11 @@
 											<td>%s</td>
 										</tr>
 									',
-									$refund['Refund ID'],
-									$refund['Subtotal'],
-									$refund['Transaction ID'],
-									$refund['Status'],
-									$refund['Created']
+									$row['Refund ID'],
+									$row['Subtotal'],
+									$row['Transaction ID'],
+									$row['Status'],
+									$row['Created']
 								));
 								}
 							?>
