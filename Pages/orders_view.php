@@ -313,7 +313,6 @@
 							<?
 								if(mysqli_num_rows($refunds) > 0) {
 									foreach($refunds as $row) {
-										print('here 2');
 										print(
 											sprintf(
 												'<tr>
