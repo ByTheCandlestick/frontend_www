@@ -311,8 +311,7 @@
 						<tbody>
 							<?
 								if(mysqli_num_rows($refunds) > 0) {
-									print('here 1');
-									while($row = mysqli_fetch_array($refunds)) {
+									while($row = mysqli_fetch_assoc($refunds)) {
 										print('here 2');
 										print(
 											sprintf(
