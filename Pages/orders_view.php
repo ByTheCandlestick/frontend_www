@@ -56,7 +56,7 @@
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<a class="form-control" id="floatingInput"value="<? print($refundsValue)?>" onclick="alert('display refunds modal')" disabled><? print($refundsValue)?></a>
+						<a class="form-control" id="floatingInput"value="<? print($refundsValue)?>" href="javascript:alert('display refunds modal');" disabled><? print($refundsValue)?></a>
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
