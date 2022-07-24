@@ -312,7 +312,7 @@
 							<?
 								if(mysqli_num_rows($query) > 0) {
 									print('here');
-									while ($row = mysqli_fetch_array($query)) {
+									while($row = mysqli_fetch_array($refunds)) {
 										print('here');
 										print(
 											sprintf(
