@@ -56,7 +56,7 @@
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<a class="form-control" id="floatingInput"value="<? print($refundsValue)?>" onclick="console.log('display refunds modal')" disabled><? print($refundsValue)?></a>
+						<a class="form-control" id="floatingInput"value="<? print($refundsValue)?>" onclick="" disabled><? print($refundsValue)?></a>
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -286,7 +286,27 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning" onClick="jsvsdcript:orders.refunds.commit();">Confirm.</button>
-					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refund.confirmModal').modal('hide');">Close</button>
+					<button type="button" class="btn btn-secondary" onClick="javascript:$('#refundconfirmModal').modal('hide');">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" tabindex="-1" role="dialog" id="allRefundModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Order refunds</h5>
+				</div>
+				<div class="modal-body">
+					<table>
+						<thead>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" onClick="javascript:$('#allRefundModal').modal('hide');">Close</button>
 				</div>
 			</div>
 		</div>

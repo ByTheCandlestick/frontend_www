@@ -1018,6 +1018,7 @@ $(document).ready(() => {
 							withCredentials: true,
 						},
 						success(body) {
+							$('#refundConfirmModal').modal('hide');
 							alert.simple("Successfully refunded", "success")
 						},
 						error(body) {
@@ -1025,6 +1026,9 @@ $(document).ready(() => {
 						}
 					});
 				},
+			},
+			displayRefunds() {
+				$('#allRefundModal').modal('show');
 			},
 			printOrder() {
 				// TODO: Send printer the customer order
