@@ -50,6 +50,9 @@
 									<td>'.$row['Status'].'</td>
 									<td>'.$row['Transaction ID'].'</td>
 									<td>
+										<a href="/Orders/Shipping/'.$row['Invoice ID'].'">
+											<i class="fa fa-truck"></i>
+										</a>
 										<a href="javascript:orders.printOrder('.$row['Invoice ID'].');">
 											<i class="fa fa-print"></i>
 										</a>
