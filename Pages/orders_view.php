@@ -312,11 +312,6 @@
 							<?
 								while($refund = mysqli_fetch_array($refunds)) {
 									print_r($refund);
-									$rid = $refund['Refund ID'];
-									$sub = $refund['Subtotal'];
-									$txn = $refund['Transaction ID'];
-									$sta = $refund['Status'];
-									$cre = $refund['Created'];
 									print(sprintf('
 										<tr>
 											<th scope="row">%s</th>
@@ -325,7 +320,13 @@
 											<td>%s</td>
 											<td>%s</td>
 										</tr>
-									', $rid, $sub, $txn, $sta, $cre));
+									',
+									$refund['Refund ID'],
+									$refund['Subtotal'],
+									$refund['Transaction ID'],
+									$refund['Status'],
+									$refund['Created']
+								));
 								}
 							?>
 						</tbody>
