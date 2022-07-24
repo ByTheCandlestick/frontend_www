@@ -292,16 +292,28 @@
 		</div>
 	</div>
 	<div class="modal" tabindex="-1" id="allRefundModal">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Order refunds</h5>
 				</div>
 				<div class="modal-body">
-					<table>
+					<table class="table">
 						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">First</th>
+								<th scope="col">Last</th>
+								<th scope="col">Handle</th>
+							</tr>
 						</thead>
 						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
