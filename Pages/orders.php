@@ -53,7 +53,7 @@
 										<a href="/Orders/Shipping/'.$row['Invoice ID'].'">
 											<i class="fa fa-truck"></i>
 										</a>
-										<a href="javascript:orders.printOrder('.$row['Invoice ID'].');">
+										<a href="javascript:orders.printReciept('.$row['Invoice ID'].');">
 											<i class="fa fa-print"></i>
 										</a>
 									</td>

@@ -25,6 +25,9 @@
 						<a href="mailto:<?print($invoice['Email'])?>;" class="btn btn-outline-primary m-1">
 							<i class="fa fa-envelope"></i>
 						</a>
+						<a href="javascript:orders.printOrder('<?print($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
+							<i class="fa fa-print"></i>
+						</a>
 						<a href="javascript:orders.refunds.modal('<?print($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
 							<i class="fa fa-fax"></i>
 						</a>
