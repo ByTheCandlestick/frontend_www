@@ -310,7 +310,7 @@
 						</thead>
 						<tbody>
 							<?
-								while($refund = mysqli_fetch_array($refunds)) {
+								while($refund = mysqli_fetch_assoc($refunds)) {
 									$rid = $refund['Refund ID'];
 									$sub = $refund['Subtotal'];
 									$txn = $refund['Transaction ID'];
