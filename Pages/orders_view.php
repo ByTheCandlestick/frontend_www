@@ -310,24 +310,25 @@
 						</thead>
 						<tbody>
 							<?
-								print_r($refunds);
-								while($row = mysqli_fetch_assoc($refunds)) {
-									print_r($row);
-									print(sprintf('
-										<tr>
-											<th scope="row">%s</th>
-											<td>%s</td>
-											<td>%s</td>
-											<td>%s</td>
-											<td>%s</td>
-										</tr>
-									',
-									$row['Refund ID'],
-									$row['Subtotal'],
-									$row['Transaction ID'],
-									$row['Status'],
-									$row['Created']
-								));
+								if(mysqli_num_rows($query) > 0) {
+									while ($row = mysqli_fetch_array($query)) {
+										print(
+											sprintf(
+												'<tr>
+													<th scope="row">%s</th>
+													<td>%s</td>
+													<td>%s</td>
+													<td>%s</td>
+													<td>%s</td>
+												</tr>',
+												$row['Refund ID'],
+												$row['Subtotal'],
+												$row['Transaction ID'],
+												$row['Status'],
+												$row['Created']
+											)
+										);
+									}
 								}
 							?>
 						</tbody>
