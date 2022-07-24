@@ -183,7 +183,7 @@
 													<div class="col-9 col-md-8 align-items-center">
 														<div class="top-50 position-relative" style="transform:translatey(-50%);">
 															<p>
-																<a href="'.URL_ADMIN.'/Products/Edit/'.$invoiced_item_sku.'">
+																<a href="'.URL_ADMIN.'/Products/Method/'.$invoiced_item_sku.'">
 																	'.$invoiced_item_title.'
 																</a>
 																<span class="font-monospace text-muted">');
