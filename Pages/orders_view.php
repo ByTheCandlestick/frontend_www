@@ -311,9 +311,9 @@
 						<tbody>
 							<?
 								if(mysqli_num_rows($refunds) > 0) {
-									print('here');
+									print('here 1');
 									while($row = mysqli_fetch_array($refunds)) {
-										print('here');
+										print('here 2');
 										print(
 											sprintf(
 												'<tr>
