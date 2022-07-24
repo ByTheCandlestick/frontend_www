@@ -318,11 +318,11 @@
 									$cre = $refund['Created'];
 									print(sprintf('
 										<tr>
-											<th scope="row"></th>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<th scope="row">%s</th>
+											<td>%s</td>
+											<td>%s</td>
+											<td>%s</td>
+											<td>%s</td>
 										</tr>
 									', $rid, $sub, $txn, $sta, $cre));
 								}
