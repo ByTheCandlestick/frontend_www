@@ -241,7 +241,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="modal" tabindex="-1" role="dialog" id="refundModal">
+	<div class="modal" tabindex="-1" id="refundModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -273,7 +273,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal" tabindex="-1" role="dialog" id="refundConfirmModal">
+	<div class="modal" tabindex="-1" id="refundConfirmModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -291,7 +291,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal" tabindex="-1" role="dialog" id="allRefundModal">
+	<div class="modal" tabindex="-1" id="allRefundModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
