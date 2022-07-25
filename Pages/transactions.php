@@ -33,9 +33,9 @@
 			<thead class="sticky-top">
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col"></th>
-					<th scope="col"></th>
-					<th scope="col"></th>
+					<th scope="col">type</th>
+					<th scope="col">Status</th>
+					<th scope="col">Value</th>
 					<th scope="col">Modified</th>
 					<th scope="col">Created</th>
 					<th scope="col"></th>
@@ -48,9 +48,9 @@
 							print('
 								<tr>
 									<th scope="row">'.$t['ID'].'</th>
-									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
+									<td>'.$t['type'].'</td>
+									<td>'.$t['Status'].'</td>
+									<td>'.$t['Subtotal'].'</td>
 									<td>'.$t['Modified'].'</td>
 									<td>'.$t['Created'].'</td>
 									<td>
