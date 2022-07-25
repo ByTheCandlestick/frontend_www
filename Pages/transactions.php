@@ -6,8 +6,6 @@
 	while($refund = mysqli_fetch_assoc($q)) { array_push($transactions, $refund); }
     $createdDate = array_column($transactions, 'Created');
     array_multisort($createdDate, SORT_DESC, $transactions);
-
-    print_r($transactions);
 ?>
 <section>
 	<!-- Section Header -->
@@ -44,6 +42,39 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?
+					if(count($transactions) > 0) {
+						foreach($transactions as $t) {
+							print('
+								<tr>
+									<th scope="row">'.$t[''].'</th>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
+									<td>
+										<a href="#">
+											<i class="fa fa-dots"></i>
+										</a>
+									</td>
+								</tr>
+							');
+						}
+					} else {
+						print('
+							<tr>
+								<th scope="row"></th>
+								<td>No data found</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						');
+					}
+                ?>
 			</tbody>
 		</table>
 	</div>
