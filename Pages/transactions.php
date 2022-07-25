@@ -47,7 +47,9 @@
 						foreach($transactions as $t) {
 							print('
 								<tr>
-									<th scope="row">'.$t['ID'].'</th>
+									<th scope="row">
+										<a onclick="">'.$t['ID'].'</a>
+									</th>
 									<td>'.$t['type'].'</td>
 									<td>'.$t['Status'].'</td>
 									<td>'.number_format($t['Subtotal'], 2).'</td>
