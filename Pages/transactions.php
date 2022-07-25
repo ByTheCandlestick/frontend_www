@@ -32,12 +32,12 @@
 		<table class="transactionsTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
-					<th scope="col">SKU</th>
-					<th scope="col">Title</th>
-					<th scope="col">Category</th>
-					<th scope="col">Range</th>
-					<th scope="col">Price</th>
-					<th scope="col">Slug</th>
+					<th scope="col">#</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
+					<th scope="col"></th>
+					<th scope="col">Modified</th>
+					<th scope="col">Created</th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
