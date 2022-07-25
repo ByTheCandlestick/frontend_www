@@ -1,4 +1,5 @@
 <?
+    $transactions = [];
 	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - orders`"))) {
         array_push($transactions, $row);
     }
