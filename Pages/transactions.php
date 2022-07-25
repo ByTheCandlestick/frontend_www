@@ -44,7 +44,7 @@
 							print('
 								<tr>
 									<th scope="row">
-										<a onclick="">'.$t['ID'].'</a>
+										<a onclick="">'.$t['Transaction ID'].'</a>
 									</th>
 									<td>'.$t['Type'].'</td>
 									<td>'.$t['Status'].'</td>
