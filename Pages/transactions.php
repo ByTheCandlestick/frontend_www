@@ -1,6 +1,6 @@
 <?
     $transactions = array();
-    $q = DB_Query("SELECT * FROM `Transactions` LIMIT 50");
+    $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` ASC LIMIT 50");
 	while($transaction = mysqli_fetch_assoc($q)) { array_push($transactions, $transaction); }
 ?>
 <section>
