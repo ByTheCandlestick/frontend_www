@@ -1,7 +1,7 @@
 <?
     $transactions = array();
     $q = DB_Query("SELECT * FROM `Transactions` LIMIT 50");
-	while($transaction = mysqli_fetch_assoc($q)) { $order['type'] = "Order"; array_push($transactions, $transaction); }
+	while($transaction = mysqli_fetch_assoc($q)) { array_push($transactions, $transaction); }
 ?>
 <section>
 	<!-- Section Header -->
@@ -46,9 +46,9 @@
 									<th scope="row">
 										<a onclick="">'.$t['ID'].'</a>
 									</th>
-									<td>'.$t['type'].'</td>
+									<td>'.$t['Type'].'</td>
 									<td>'.$t['Status'].'</td>
-									<td class="text-'.(($t['type'] == 'Refund')?"danger":"success").'">'.(($t['type'] == 'Refund')?"-":"+").number_format($t['Subtotal'], 2).'</td>
+									<td class="text-'.(($t['Type'] == 'Refund')?"danger":"success").'">'.(($t['type'] == 'Refund')?"-":"+").number_format($t['Subtotal'], 2).'</td>
 									<td>'.$t['Modified'].'</td>
 									<td>'.$t['Created'].'</td>
 									<td>
