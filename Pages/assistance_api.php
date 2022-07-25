@@ -22,7 +22,7 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="row">
+	<div class="row overflow-scroll">
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css" />
         <style>
             .topbar, .information-container {
