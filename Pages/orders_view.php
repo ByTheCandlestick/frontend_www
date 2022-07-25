@@ -324,7 +324,7 @@
 													<td>%s</td>
 													<td>%s</td>
 												</tr>',
-												$row['Refund ID'],
+												$row['ID'],
 												$row['Subtotal'],
 												$row['Transaction ID'],
 												$row['Refund status'],
