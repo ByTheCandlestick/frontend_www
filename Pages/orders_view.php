@@ -1,6 +1,6 @@
 <?
 	$cart_total = 0;
-	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Invoice ID`='%s'", QS))) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Invoice ID`='%s' AND `Type`='Order'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
 		print_r($invoice);
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
