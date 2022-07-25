@@ -52,7 +52,7 @@
 									</th>
 									<td>'.$t['type'].'</td>
 									<td>'.$t['Status'].'</td>
-									<td>'.(($t['type'] == 'Refund')?"-":"+").number_format($t['Subtotal'], 2).'</td>
+									<td class="text-'.(($t['type'] == 'Refund')?"danger":"success").'">'.(($t['type'] == 'Refund')?"-":"+").number_format($t['Subtotal'], 2).'</td>
 									<td>'.$t['Modified'].'</td>
 									<td>'.$t['Created'].'</td>
 									<td>
