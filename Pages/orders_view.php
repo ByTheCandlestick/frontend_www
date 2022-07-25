@@ -51,7 +51,7 @@
 						<label for="floatingInput">Total paid</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Processing Fees'])?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Processing fees'])?>" disabled>
 						<label for="floatingInput">Processing Fees</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
