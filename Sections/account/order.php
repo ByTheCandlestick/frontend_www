@@ -1,5 +1,5 @@
 <?
-	if($q = DB_Query(sprintf("SELECT * FROM `Sales - orders` WHERE `Invoice ID`='%s'", QS))) {
+	if($q = DB_Query(sprintf("SELECT * FROM `Transactions - orders` WHERE `Invoice ID`='%s'", QS))) {
 		$order = mysqli_fetch_assoc($q);
 		$currency = $order['Currency'];
 		$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );

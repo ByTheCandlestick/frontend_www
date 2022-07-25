@@ -1,10 +1,10 @@
 <?
 	$cart_total = 0;
-	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Sales - orders` WHERE `Invoice ID`='%s'", QS))) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Transactions - orders` WHERE `Invoice ID`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_address` WHERE `id`=%s", $invoice['Billing address'])));
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
-		$refunds = DB_Query(sprintf("SELECT * FROM `Sales - refunds` WHERE `Charge ID`='%s' ORDER BY `Created` ASC", $invoice['Charge ID']));
+		$refunds = DB_Query(sprintf("SELECT * FROM `Transactions - refunds` WHERE `Charge ID`='%s' ORDER BY `Created` ASC", $invoice['Charge ID']));
 		$refundsValue = 0;
 		while($refund = mysqli_fetch_assoc($refunds)) {
 			$refundsValue += $refund['Subtotal'];
