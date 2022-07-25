@@ -5,6 +5,7 @@
 	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - refunds`"))) {
         array_push($transactions, $row);
     }
+    print_r($transactions);
 ?>
 <section>
 	<!-- Section Header -->
