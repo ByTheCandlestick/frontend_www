@@ -1,6 +1,8 @@
 <?
-	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1"))) { $categories[$row['ID']] = $row['Name']; }
-	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1"))) { $collections[$row['ID']] = $row['Name']; }
+	$q = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
+	while($row = mysqli_fetch_array($q)) { $categories[$row['ID']] = $row['Name']; }
+	$q = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
+	while($row = mysqli_fetch_array($q)) { $collections[$row['ID']] = $row['Name']; }
 ?>
 <section>
 	<!-- Section Header -->
@@ -26,7 +28,7 @@
 				</div>
 				<div class="col-12 col-lg-6">
 					<div class="form-floating">
-						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder="">
+						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
 						<label for="tableSearch" class="ps-5">Search</label>
 					</div>
 				</div>
