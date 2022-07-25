@@ -1,6 +1,6 @@
 <?
 	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `Store - orders`"))) {
-        
+
     }
 	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `Store - refunds`"))) {
         
@@ -42,17 +42,16 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `products`");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
+                    if(count($transactions) > 0) {
+                        foreach($transactions as $t) {
 							print('
 								<tr>
-									<th scope="row">'.$row['SKU'].'</th>
-									<td>'.$row['Title'].'</td>
-									<td>'.$categories[$row['Category_ID']].'</td>
-									<td>'.$collections[$row['Collection_ID']].'</td>
-									<td>'.$row['RetailPrice'].'</td>
-									<td>'.$row['Slug'].'</td>
+									<th scope="row">'.$t['Re'].'</th>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
+									<td>'.$t[''].'</td>
 									<td>
 										<a href="/Products/Edit/'.$row['SKU'].'">
 											<i class="fa fa-pencil"></i>
