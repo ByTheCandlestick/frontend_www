@@ -18,7 +18,7 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="row">
+	<div class="row overflow-scroll">
         <div class="col-12 col-md-6 col-lg-4 p-2">
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">

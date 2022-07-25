@@ -22,7 +22,7 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="row">
+	<div class="row overflow-scroll">
 		<table class="themesTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
