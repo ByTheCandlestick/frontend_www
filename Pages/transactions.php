@@ -1,11 +1,7 @@
 <?
     $transactions = array();
-    $q = DB_Query("SELECT * FROM `Transactions - orders` LIMIT 50");
-	while($order = mysqli_fetch_assoc($q)) { $order['type'] = "Order"; array_push($transactions, $order); }
-    $q = DB_Query("SELECT * FROM `Transactions - refunds` LIMIT 50");
-	while($refund = mysqli_fetch_assoc($q)) { $refund['type'] = "Refund"; array_push($transactions, $refund); }
-    $createdDate = array_column($transactions, 'Created');
-    array_multisort($createdDate, SORT_DESC, $transactions);
+    $q = DB_Query("SELECT * FROM `Transactions` LIMIT 50");
+	while($transaction = mysqli_fetch_assoc($q)) { $order['type'] = "Order"; array_push($transactions, $transaction); }
 ?>
 <section>
 	<!-- Section Header -->
