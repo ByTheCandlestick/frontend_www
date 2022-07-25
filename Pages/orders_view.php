@@ -319,12 +319,13 @@
 											sprintf(
 												'<tr>
 													<th scope="row">%s</th>
-													<td class="text-'.(($t['Type'] == 'Refund')?"danger":"success").'">'.(($t['type'] == 'Refund')?"-":"+").number_format($row['Subtotal'], 2).'</td>
+													<td class="text-danger">-%s</td>
 													<td>%s</td>
 													<td>%s</td>
 													<td>%s</td>
 												</tr>',
 												$row['ID'],
+												number_format($row['Subtotal'], 2),
 												$row['Transaction ID'],
 												$row['Status'],
 												$row['Created']
