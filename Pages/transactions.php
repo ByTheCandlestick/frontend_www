@@ -1,10 +1,10 @@
 <?
     $transactions = array();
-	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - orders` LIMIT 50"))) {
-        array_push($transactions, $row);
+	while($order = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - orders` LIMIT 50"))) {
+        array_push($transactions, $order);
     }
-	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - refunds` LIMIT 50"))) {
-        array_push($transactions, $row);
+	while($refund = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - refunds` LIMIT 50"))) {
+        array_push($transactions, $refund);
     }
     print_r($transactions);
 ?>
