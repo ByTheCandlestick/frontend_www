@@ -10,7 +10,7 @@
 				</div>
 				<div class="col-12 col-lg-6">
 					<div class="form-floating">
-						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
+						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder="">
 						<label for="tableSearch" class="ps-5">Search</label>
 					</div>
 				</div>

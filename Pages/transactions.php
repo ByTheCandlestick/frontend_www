@@ -20,7 +20,7 @@
 				</div>
 				<div class="col-12 col-lg-6">
 					<div class="form-floating">
-						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
+						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder="">
 						<label for="tableSearch" class="ps-5">Search</label>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<table class="productsTable table table-striped table-hover">
+		<table class="transactionsTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
 					<th scope="col">SKU</th>
@@ -43,39 +43,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?
-                    if(count($transactions) > 0) {
-                        foreach($transactions as $t) {
-							print('
-								<tr>
-									<th scope="row">'.$t[''].'</th>
-									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
-									<td>
-										<a href="/Products/Edit/'.$row['SKU'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</td>
-								</tr>
-							');
-						}
-					} else {
-						print('
-							<tr>
-								<th scope="row"></th>
-								<td>No data found</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-						');
-					}
-				?>
 			</tbody>
 		</table>
 	</div>
@@ -84,7 +51,7 @@
 	$(document).ready(function(){
 		$(".tableFilter").on("keyup", function() {
 			var value = $(this).val().toLowerCase();
-			$(".productsTable tbody tr").filter(function() {
+			$(".transactionsTable tbody tr").filter(function() {
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 		});
