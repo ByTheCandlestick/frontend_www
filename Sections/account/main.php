@@ -18,7 +18,7 @@
 				$count = count($orderHistory);$more=false;
 				if($count == 6): $count=$count-1;$more=true; endif;
 				for($i=0; $i<$count; $i++):
-					$invoice_date = $orderHistory[$i]['Date'];
+					$invoice_date = $orderHistory[$i]['Created'];
 					$id = $orderHistory[$i]['Invoice ID'];
 					$invoice_number = $orderHistory[$i]['Invoice ID'];
 					print("
