@@ -29,7 +29,6 @@
 					<th scope="col">Tax</th>
 					<th scope="col">Deposit</th>
 					<th scope="col">Status</th>
-					<th scope="col">Status</th>
 					<th scope="col">txn ID</th>
 					<th scope="col"></th>
 				</tr>
@@ -42,11 +41,10 @@
 							print('
 								<tr>
 									<th scope="row"><a href="/Orders/View/'.$row['Invoice ID'].'">'.$row['Invoice ID'].'</a></th>
-									<td>'.$row['Date'].'</td>
+									<td>'.$row['Created'].'</td>
 									<td>'.$row['Subtotal'].'</td>
 									<td>'.$row['Tax'].'</td>
 									<td>'.$row['Deposit'].'</td>
-									<td>'.$row['Status'].'</td>
 									<td>'.$row['Status'].'</td>
 									<td>'.$row['Transaction ID'].'</td>
 									<td>
