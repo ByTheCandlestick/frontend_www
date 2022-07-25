@@ -1,8 +1,6 @@
 <?
-	$q = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
-	while($row = mysqli_fetch_array($q)) { $categories[$row['ID']] = $row['Name']; }
-	$q = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
-	while($row = mysqli_fetch_array($q)) { $collections[$row['ID']] = $row['Name']; }
+	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1"))) { $categories[$row['ID']] = $row['Name']; }
+	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1"))) { $collections[$row['ID']] = $row['Name']; }
 ?>
 <section>
 	<!-- Section Header -->
