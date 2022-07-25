@@ -306,7 +306,7 @@
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">Subtotal</th>
-								<th scope="col">Transaction ID</th>
+								<th scope="col">Refund ID</th>
 								<th scope="col">Status</th>
 								<th scope="col">Created</th>
 							</tr>
@@ -326,7 +326,7 @@
 												</tr>',
 												$row['Transaction ID'],
 												number_format($row['Subtotal'], 2),
-												$row['Transaction ID'],
+												$row['Refund ID'],
 												$row['Status'],
 												$row['Created']
 											)
