@@ -5,7 +5,9 @@
     $q = DB_Query("SELECT * FROM `Transactions - refunds` LIMIT 50");
 	while($refund = mysqli_fetch_assoc($q)) { array_push($transactions, $refund); }
     $createdDate = array_column($transactions, 'Created');
-    print_r(array_multisort($createdDate, SORT_DESC, $transactions));
+    array_multisort($createdDate, SORT_DESC, $transactions);
+
+    print_r($transactions);
 ?>
 <section>
 	<!-- Section Header -->
