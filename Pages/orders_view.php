@@ -324,7 +324,7 @@
 													<td>%s</td>
 													<td>%s</td>
 												</tr>',
-												$row['ID'],
+												$row['Transaction ID'],
 												number_format($row['Subtotal'], 2),
 												$row['Transaction ID'],
 												$row['Status'],
