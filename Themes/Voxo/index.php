@@ -245,7 +245,7 @@
 										</li>
 										<li>
 											<i class="fad fa-sign-out pe-1"></i>
-											<a onclick="account.logout('<?print($_COOKIE['session_code'])?>)'">Logout</a>
+											<a onclick="account.logout('<?print($_COOKIE['session_code'])?>')">Logout</a>
 										</li>
 									<?
 										} else {
