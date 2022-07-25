@@ -1,9 +1,9 @@
 <?
     $transactions = [];
-	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - orders`"))) {
+	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - orders` LIMIT 50"))) {
         array_push($transactions, $row);
     }
-	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - refunds`"))) {
+	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - refunds` LIMIT 50"))) {
         array_push($transactions, $row);
     }
     print_r($transactions);
