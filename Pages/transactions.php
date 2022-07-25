@@ -55,7 +55,7 @@
 									<td>'.$t['Created'].'</td>
 									<td>
 										<a href="#">
-											<i class="fa fa-external-link"></i>
+											<i class="fa fa-external-link-alt"></i>
 										</a>
 									</td>
 								</tr>
