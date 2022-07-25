@@ -327,7 +327,7 @@
 												$row['ID'],
 												$row['Subtotal'],
 												$row['Transaction ID'],
-												$row['Refund status'],
+												$row['Status'],
 												$row['Created']
 											)
 										);
