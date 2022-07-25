@@ -1,8 +1,8 @@
 <?
-	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `Store - orders`"))) {
+	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - orders`"))) {
 
     }
-	while($row = mysqli_fetch_array(DB_Query("SELECT * FROM `Store - refunds`"))) {
+	while($row = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - refunds`"))) {
         
     }
 ?>
@@ -46,7 +46,7 @@
                         foreach($transactions as $t) {
 							print('
 								<tr>
-									<th scope="row">'.$t['Re'].'</th>
+									<th scope="row">'.$t[''].'</th>
 									<td>'.$t[''].'</td>
 									<td>'.$t[''].'</td>
 									<td>'.$t[''].'</td>
