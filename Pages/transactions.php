@@ -47,12 +47,12 @@
 						foreach($transactions as $t) {
 							print('
 								<tr>
-									<th scope="row">'.$t[''].'</th>
+									<th scope="row">'.$t['ID'].'</th>
 									<td>'.$t[''].'</td>
 									<td>'.$t[''].'</td>
 									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
-									<td>'.$t[''].'</td>
+									<td>'.$t['Modified'].'</td>
+									<td>'.$t['Created'].'</td>
 									<td>
 										<a href="#">
 											<i class="fa fa-dots"></i>
