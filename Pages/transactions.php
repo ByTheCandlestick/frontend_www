@@ -50,7 +50,7 @@
 									<th scope="row">'.$t['ID'].'</th>
 									<td>'.$t['type'].'</td>
 									<td>'.$t['Status'].'</td>
-									<td>'.$t['Subtotal'].'</td>
+									<td>'.number_format($t['Subtotal'], 2).'</td>
 									<td>'.$t['Modified'].'</td>
 									<td>'.$t['Created'].'</td>
 									<td>
