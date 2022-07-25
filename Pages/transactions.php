@@ -1,11 +1,9 @@
 <?
     $transactions = array();
-	while($order = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - orders` LIMIT 50"))) {
-        $transactions[$order['Created']] = $order;
-    }
-	while($refund = mysqli_fetch_assoc(DB_Query("SELECT * FROM `Transactions - refunds` LIMIT 50"))) {
-        $transactions[$refund['Created']] = $refund;
-    }
+    $q = DB_Query("SELECT * FROM `Transactions - orders` LIMIT 50");
+	while($order = mysqli_fetch_assoc($q)) { array_push($transactions, $order); }
+    $q = DB_Query("SELECT * FROM `Transactions - refunds` LIMIT 50");
+	while($refund = mysqli_fetch_assoc()) { array_push($transactions, $refund); }
     $createdDate = array_column($transactions, 'Created');
     print_r(array_multisort($createdDate, SORT_DESC, $transactions));
 ?>
