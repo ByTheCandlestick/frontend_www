@@ -31,7 +31,7 @@
 					<p class="card-text">
 						<span>£<?print(number_format($currYearSales[0], 2))?></span>
 						</br>
-						<span>$<?print(number_format($lastYearSales[0], 2))?></span>
+						<span>£<?print(number_format($lastYearSales[0], 2))?></span>
 					</p>
 				</div>
 			</div>
