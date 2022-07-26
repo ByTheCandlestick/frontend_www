@@ -31,7 +31,7 @@
 					<p class="card-text">
 						<span>
 							<?
-								if($currYearSales[1] = 0) {
+								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
 									print($currYearSales[0] . number_format($currYearSales[1], 2));
@@ -41,7 +41,7 @@
 						</br>
 						<span>
 							<?
-								if($lastYearSales[1] = 0) {
+								if($lastYearSales[1] == 0) {
 									print('NaN');
 								} else {
 									print($lastYearSales[0] . number_format($lastYearSales[1], 2));
