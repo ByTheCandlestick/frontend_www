@@ -90,7 +90,32 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">SALES TODAY</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<?
+						$currYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", date("d/m/Y"))));
+						$lastYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", date("d/m/Y")-1, date("d/m/Y"))));
+						print(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", date("d/m/Y")-1, date("d/m/Y"));
+					?>
+					<p class="card-text">
+						<span>
+							<?
+								if($currYearSales[1] == 0) {
+									print('NaN');
+								} else {
+									print($currYearSales[0] . number_format($currYearSales[1], 2));
+								}
+							?>
+						</span>
+						</br>
+						<span>
+							<?
+								if($lastYearSales[1] == 0) {
+									print('NaN');
+								} else {
+									print($lastYearSales[0] . number_format($lastYearSales[1], 2));
+								}
+							?>
+						</span>
+					</p>
 				</div>
 			</div>
 		</div>
