@@ -7,9 +7,8 @@
 	for ($i=count($days_b)-1; $i>=0; $i--) {
 		array_push($days, $days_b[$i]);
 	}
-	echo $currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
-	echo ' - ';
-	echo $lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
+	$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
+	$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
 ?>
 <section>
 	<!-- Section Header -->
