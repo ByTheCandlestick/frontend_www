@@ -1,5 +1,5 @@
 <?
-	require_once(__ROOT__.'/Vendor/symphony/Intl.php');
+	require_once(__ROOT__.'/Vendor/symfony/Intl.php');
 	$days = $days_b = array();
 	for ($i = 0; $i < 7; $i++){
 		array_push($days_b, date('l', $day));
