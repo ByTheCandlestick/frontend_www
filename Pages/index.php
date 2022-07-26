@@ -29,21 +29,25 @@
 						$lastYearSales = mysqli_fetch_row(DB_QUERY("SELECT `Currency`, SUM(`Subtotal`) as `Subtotal` FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2021' AND `Created`<='01/01/2022' GROUP BY `Currency`;"));
 					?>
 					<p class="card-text">
-						<span><?
-						if($currYearSales = 0) {
-							print('NaN')
-						} else {
-							print($currYearSales[0] . number_format($currYearSales[1], 2))
-						}
-						?></span>
+						<span>
+							<?
+								if($currYearSales[1] = 0) {
+									print('NaN');
+								} else {
+									print($currYearSales[0] . number_format($currYearSales[1], 2));
+								}
+							?>
+						</span>
 						</br>
-						<span><?
-						if($lastYearSales = 0) {
-							print('NaN')
-						} else {
-							print($lastYearSales[0] . number_format($lastYearSales[1], 2))
-						}
-						?></span>
+						<span>
+							<?
+								if($lastYearSales[1] = 0) {
+									print('NaN');
+								} else {
+									print($lastYearSales[0] . number_format($lastYearSales[1], 2));
+								}
+							?>
+						</span>
 					</p>
 				</div>
 			</div>
