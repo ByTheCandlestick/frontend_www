@@ -56,7 +56,33 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT YoY</h5>
-					<p class="card-text">With supporting text below as a natural lead-in.</p>
+					<?
+						$currYearIncome = mysqli_fetch_row(DB_QUERY("SELECT `Currency`, SUM(`Subtotal`) as `Subtotal` FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2022' GROUP BY `Currency`;"));
+						$currYearExpences = mysqli_fetch_row(DB_QUERY("SELECT `Currency`, SUM(`Subtotal`) as `Subtotal` FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='01/01/2022' GROUP BY `Currency`;"));
+						$lastYearIncome = mysqli_fetch_row(DB_QUERY("SELECT `Currency`, SUM(`Subtotal`) as `Subtotal` FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2021' AND `Created`<='01/01/2022' GROUP BY `Currency`;"));
+						$lastYearExpences = mysqli_fetch_row(DB_QUERY("SELECT `Currency`, SUM(`Subtotal`) as `Subtotal` FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='01/01/2021' AND `Created`<='01/01/2022' GROUP BY `Currency`;"));
+					?>
+					<p class="card-text">
+						<span>
+							<?
+								if($currYearIncome[1] == 0) {
+									print('NaN');
+								} else {
+									print($currYearIncome[0] . number_format($currYearIncome[1] - $currYearExpences[1], 2));
+								}
+							?>
+						</span>
+						</br>
+						<span>
+							<?
+								if($lastYearIncome[1] == 0) {
+									print('NaN');
+								} else {
+									print($lastYearIncome[0] . number_format($lastYearIncome[1] - $lastYearExpences[1], 2));
+								}
+							?>
+						</span>
+					</p>
 				</div>
 			</div>
 		</div>
