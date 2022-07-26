@@ -65,7 +65,7 @@
 					<p class="card-text">
 						<span>
 							<?
-								if($currYearIncome[1] == 0) {
+								if($currYearIncome[1] == 0 && $currYearExpences[1] == 0) {
 									print('NaN');
 								} else {
 									print($currYearIncome[0] . number_format($currYearIncome[1] - $currYearExpences[1], 2));
@@ -75,7 +75,7 @@
 						</br>
 						<span>
 							<?
-								if($lastYearIncome[1] == 0) {
+								if($lastYearIncome[1] == 0 && $lastYearExpences[1] == 0) {
 									print('NaN');
 								} else {
 									print($lastYearIncome[0] . number_format($lastYearIncome[1] - $lastYearExpences[1], 2));
