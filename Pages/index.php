@@ -25,8 +25,8 @@
 				<div class="card-body">
 					<h5 class="card-title">YOY Sales</h5>
 					<?
-						$currYearSales = mysqli_fetch_row(DB_QUERY("SELECT SUM(Subtotal) as Subtotal FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2022';"));
-						$lastYearSales = mysqli_fetch_row(DB_QUERY("SELECT SUM(Subtotal) as Subtotal FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2021' AND `Created`<='01/01/2022';"));
+						$currYearSales = mysqli_fetch_row(DB_QUERY("SELECT `Currency`, SUM(`Subtotal`) as `Subtotal` FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2022' GROUP BY `Currency`;"));
+						$lastYearSales = mysqli_fetch_row(DB_QUERY("SELECT `Currency`, SUM(`Subtotal`) as `Subtotal` FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2021' AND `Created`<='01/01/2022' GROUP BY `Currency`;"));
 					?>
 					<p class="card-text">
 						<span>£<?print(number_format($currYearSales[0], 2))?></span>
