@@ -93,7 +93,7 @@
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body">
-					<h5 class="card-title">SALES MONTH ON MONTH</h5>
+					<h5 class="card-title">SALES MoM</h5>
 					<?
 						$currYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
 						$lastYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
@@ -125,7 +125,7 @@
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body">
-					<h5 class="card-title">GROSS PROFIT MONTH ON MONTH</h5>
+					<h5 class="card-title">GROSS PROFIT MoM</h5>
 					<?
 						$currYearIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
 						$currYearExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
