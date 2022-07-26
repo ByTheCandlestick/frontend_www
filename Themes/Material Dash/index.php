@@ -123,7 +123,7 @@
 								<span class="app-icon">
 									<img src="<?print(__API__)?>/Images/Fetch/<?print($website_info['Logo'])?>/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 								</span>
-								<p class="app-name"> <? print($website_info['Title']); if(DOMAIN_TYPE=='indev') print(' indev');?></p>
+								<p class="app-name"> <? print($website_info['Title']); if(DOMAIN_TYPE=='indev') print(' <span class="text-info">indev</span>');?></p>
 							</div>
 							<!-- Search -->
 							<div class="search-wrapper" rel="/search.json">
