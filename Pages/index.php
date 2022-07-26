@@ -8,6 +8,7 @@
 		array_push($days, $days_b[$i]);
 	}
 	echo $currYear = date(mktime(0, 0, 0, 1, 1, date('Y')));
+	echo ' - ';
 	echo $lastYear = date(mktime(0, 0, 0, 1, 1, date('Y')-1));
 ?>
 <section>
