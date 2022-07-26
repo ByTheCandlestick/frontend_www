@@ -27,7 +27,7 @@
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body">
-					<h5 class="card-title">YOY Sales</h5>
+					<h5 class="card-title">SALES YOY</h5>
 					<?
 						$currYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/%d' GROUP BY `Currency`;", date("Y"))));
 						$lastYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/%d' AND `Created`<='01/01/%d' GROUP BY `Currency`;", date("Y")-1, date("Y"))));
