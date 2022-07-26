@@ -29,8 +29,8 @@
 						$lastYearSales = mysqli_fetch_row(DB_QUERY("SELECT SUM(Subtotal) as Subtotal FROM `Transactions` WHERE `Type`='Order' AND `Created`>='01/01/2021' AND `Created`<='01/01/2022';"));
 					?>
 					<p class="card-text">
-						<span><?print($currYearSales[0])?></span>
-						<span><?print($lastYearSales[0])?></span>
+						<span><?print(number_format($currYearSales[0], 2))?></span>
+						<span><?print(number_format($lastYearSales[0], 2))?></span>
 					</p>
 				</div>
 			</div>
