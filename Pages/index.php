@@ -1,4 +1,5 @@
 <?
+	require_once(__ROOT__.'/Vendor/Symphony/intl.php');
 	$days = $days_b = array();
 	for ($i = 0; $i < 7; $i++){
 		array_push($days_b, date('l', $day));
@@ -35,6 +36,8 @@
 					<p class="card-text">
 						<span>
 							<?
+								$fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
+								$symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
