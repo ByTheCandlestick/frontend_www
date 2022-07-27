@@ -42,7 +42,7 @@
 									$fmt->setTextAttribute(NumberFormatter::CURRENCY_CODE, 'EUR');
 									$fmt->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 									$fmt->formatCurrency(100, 'EUR');
-									$fmt->format( 1234.56 )
+									$fmt->format( 1234.56 );
 									print($currYearSales[0] . number_format($currYearSales[1], 2));
 								}
 							?>
