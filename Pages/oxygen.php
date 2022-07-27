@@ -65,7 +65,6 @@
 								print('
 									<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 										<div class="accordion-body">
-											'.$row['id'].'
 											'.$row['short_description'].'
 										</div>
 									</div>');
