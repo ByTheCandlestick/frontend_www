@@ -43,8 +43,8 @@
 			}
 		</style>
 		<div class="col-lg-3">
-			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row builderElements">
+			<div class="accordion accordion-flush builderElements" id="SectionElements">
+				<div class="accordion-item container row">
 					<?
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 						$type = null;
@@ -54,7 +54,7 @@
 								if($type != null && $type != $row['section_type']) {
 									print('
 										</div>
-										<div class="accordion-item container row builderElements">
+										<div class="accordion-item container row">
 											<h2 class="accordion-header p-0" id="headingOne">
 												<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
 													'.$row['section_type'].'
