@@ -24,13 +24,14 @@
 		$dailySales = array();
 		$dailySales_raw = DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1");
 		while($ds = mysqli_fetch_assoc($dailySales_raw)) {
-			array_push($dailySales, $ds[1]);
+			print_r($ds);
+			array_push($dailySales, $ds);
 		}
 	// Gets all sales data from the last 12 months
 		$monthlySales = array();
 		$monthlySales_raw = DB_QUERY("SELECT date_format(`Created`,'%Y-%m') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1");
 		while($ms = mysqli_fetch_assoc($monthlySales_raw)) {
-			array_push($monthlySales, $ms[1]);
+			array_push($monthlySales, $ms);
 		}
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
