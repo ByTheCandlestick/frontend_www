@@ -197,7 +197,7 @@
 										<h5>
 											'.$all[$seccode]['short_description'].'
 										</h5>
-										'.$secext.'
+										<input type="text" value="'.$secext.'">
 									</div>
 								');
 								unset($secext);
