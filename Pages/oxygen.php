@@ -48,15 +48,8 @@
 					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 					if(mysqli_num_rows($query) > 0) {
 						while($row = mysqli_fetch_array($query)) {
-
-							/*
 								$type = null;
 								$sections[$row['id']] = $row;
-								if($type != null && $type != $row['section_type']) {
-									print('
-										</div>
-									');
-								}
 								if($type != $row['section_type']) {
 									print('
 										<div class="accordion-item container row templateBuilderElements">
@@ -75,6 +68,12 @@
 									</div>
 								');
 								$type = $row['section_type'];
+							/*
+								if($type != null && $type != $row['section_type']) {
+									print('
+										</div>
+									');
+								}
 							*/
 						}
 					}
