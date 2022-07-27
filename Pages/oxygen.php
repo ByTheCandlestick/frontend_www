@@ -44,38 +44,6 @@
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<?
-					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
-					if(mysqli_num_rows($query) > 0) {
-						while($row = mysqli_fetch_array($query)) {
-							$type = null;
-							$sections[$row['id']] = $row;
-							if($type != null && $type != $row['section_type']) {
-								print('
-									</div>
-								');
-							}
-							if($type != $row['section_type']) {
-								print('
-									<div class="accordion-item container row templateBuilderElements">
-										<h2 class="accordion-header p-0" id="headingOne">
-											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
-												'.$row['section_type'].'
-											</button>
-										</h2>
-								');
-							}
-							print('
-								<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-									<div class="accordion-body">
-										'.$row['short_description'].'
-									</div>
-								</div>
-							');
-							$type = $row['section_type'];
-						}
-					}
-				?>
 			</div>
 		</div>
 		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
