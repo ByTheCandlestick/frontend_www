@@ -52,6 +52,11 @@
 							$sections[$row['id']] = $row;
 							if($type != null && $type != $row['section_type']) {
 								print('
+									</div>
+								');
+							}
+							if($type != $row['section_type']) {
+								print('
 									<div class="accordion-item container row templateBuilderElements">
 										<h2 class="accordion-header p-0" id="headingOne">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
