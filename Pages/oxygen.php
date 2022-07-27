@@ -50,7 +50,7 @@
 					if(mysqli_num_rows($query) > 0) {
 						while($row = mysqli_fetch_array($query)) {
 							$sections[$row['id']] = $row;
-							if($type == null) {
+							if($type == null && $type != $row['section_type']) {
 								print('
 									<div class="accordion-item container row templateBuilderElements">
 										<h2 class="accordion-header p-0" id="headingOne">
@@ -58,7 +58,7 @@
 												'.$row['section_type'].'
 											</button>
 										</h2>
-								');
+								')
 							}
 							if($type != null && $type != $row['section_type']) {
 								print('
