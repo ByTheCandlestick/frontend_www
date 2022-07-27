@@ -45,12 +45,11 @@
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
 				<?
-					if(mysqli_num_rows($query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`")) > 0) {
-						print_r($templateItems = mysqli_fetch_all($query));
-
-
-						while(1 == 0) {
-							$type = null; $sections[$row['id']] = $row;
+					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
+					if(mysqli_num_rows($query) > 0) {
+						while($row = mysqli_fetch_array($query)) {
+							var $type = null,
+								$sections[$row['id']] = $row;
 							if($type != null && $type != $row['section_type']) {
 								print('
 									<div class="accordion-item container row templateBuilderElements">
