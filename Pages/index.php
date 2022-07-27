@@ -24,7 +24,7 @@
 		$dailySales = array();
 		$dailySales_raw = mysqli_fetch_all(DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d'), SUM(`Deposit`) FROM `Transactions` GROUP BY 1"));
 		for($i=1; $i<8; $i++) {
-			if(isset($monthlySales_raw[$i])) {
+			if(isset($dailySales_raw[$i])) {
 				array_push($dailySales, $dailySales_raw[$i][1]);
 			} else {
 				array_push($dailySales, 0);
