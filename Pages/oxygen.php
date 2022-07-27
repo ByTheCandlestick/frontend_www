@@ -44,7 +44,7 @@
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row builderElements">
+				<div class="accordion-item container row">
 					<?
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 						$type = null;
