@@ -26,6 +26,8 @@
 		for($i=0; $i<7; $i++) {
 			if(isset($dailySales_raw[$i])) {
 				array_push($dailySales, $dailySales_raw[$i][1]);
+			} else {
+				array_push($dailySales, 0);
 			}
 		}
 	// Gets all sales data from the last 12 months
@@ -34,6 +36,8 @@
 		for($i=0; $i<12; $i++) {
 			if(isset($monthlySales_raw[$i])) {
 				array_push($monthlySales, $monthlySales_raw[$i][1]);
+			} else {
+				array_push($monthlySales, 0);
 			}
 		}
 	// Gets current and last year / month
