@@ -20,6 +20,10 @@
 		for($i=count($months_b)-1; $i>=0; $i--) {
 			array_push($months, $months_b[$i]);
 		}
+	// Gets all sales data for the last 7 days
+		$MonthlySales = mysqli_fetch_assoc(DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
+	// Gets all sales data from the last 12 months
+		$MonthlySales = mysqli_fetch_assoc(DB_QUERY("SELECT date_format(`Created`,'%Y-%m') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
 		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
