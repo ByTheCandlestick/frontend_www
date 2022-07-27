@@ -200,7 +200,7 @@
 				new Chartist.Line('.ct-sales-day', {
 					labels: ['<?print(implode('\', \'', $days))?>'],
 					series: [
-						[print(implode(', ', $dailySales))?>]
+						[<?print(implode(', ', $dailySales))?>]
 					]
 				}, {
 					fullWidth: true,
