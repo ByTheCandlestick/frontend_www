@@ -104,28 +104,28 @@
 				<div class="card-body">
 					<h5 class="card-title">SALES MoM</h5>
 					<?
-						$currYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
-						$lastYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
+						$currSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
+						$lastSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
 					?>
 					<p class="card-text">
 						<span>
 							<?
-								if($currYearSales[1] == 0) {
+								if($currSales[1] == 0) {
 									print('NaN');
 								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearSales[0] );
-									print($fmt->format(number_format($currYearSales[1], 2)));
+									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currSales[0] );
+									print($fmt->format(number_format($currSales[1], 2)));
 								}
 							?>
 						</span>
 						</br>
 						<span>
 							<?
-								if($lastYearSales[1] == 0) {
+								if($lastSales[1] == 0) {
 									print('NaN');
 								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearSales[0] );
-									print($fmt->format(number_format($lastYearSales[1], 2)));
+									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastSales[0] );
+									print($fmt->format(number_format($lastSales[1], 2)));
 								}
 							?>
 						</span>
@@ -138,30 +138,30 @@
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT MoM</h5>
 					<?
-						$currYearIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
-						$currYearExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
-						$lastYearIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
-						$lastYearExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
+						$currIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
+						$currExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
+						$lastIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
+						$lastExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
 					?>
 					<p class="card-text">
 						<span>
 							<?
-								if($currMonthIncome[1] == 0 && $currMonthExpences[1] == 0) {
+								if($currIncome[1] == 0 && $currExpences[1] == 0) {
 									print('NaN');
 								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
-									print($fmt->format(number_format($currMonthIncome[1] - $currMonthExpences[1], 2)));
+									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currIncome[0] );
+									print($fmt->format(number_format($currIncome[1] - $currExpences[1], 2)));
 								}
 							?>
 						</span>
 						</br>
 						<span>
 							<?
-								if($lastMonthIncome[1] == 0 && $lastMonthExpences[1] == 0) {
+								if($lastIncome[1] == 0 && $lastExpences[1] == 0) {
 									print('NaN');
 								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
-									print($fmt->format(number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)));
+									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastIncome[0] );
+									print($fmt->format(number_format($lastIncome[1] - $lastExpences[1], 2)));
 								}
 							?>
 						</span>
