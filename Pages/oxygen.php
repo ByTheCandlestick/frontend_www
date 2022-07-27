@@ -47,7 +47,7 @@
 				<?
 					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 					if(mysqli_num_rows($query) > 0) {
-						while($row = mysqli_fetch_array($query)) {
+						while($row = mysqli_fetch_all($query)) {
 								$type = null;
 								$sections[$row['id']] = $row;
 								if($type != $row['section_type']) {
