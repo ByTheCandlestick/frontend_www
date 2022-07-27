@@ -44,7 +44,7 @@
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row">
+				<div class="accordion-item container row builderElements">
 					<?
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 						$type = null;
@@ -99,7 +99,7 @@
 	dragula([
 		document.querySelector('.templateBuilder'),
 		document.querySelector('.templateBuilderGrid'),
-		document.querySelector('.builderElements'),
+		document.querySelector('.builderElements')
 	], {
 		isContainer: function (el) {
 			return false; // only elements in drake.containers will be taken into account
