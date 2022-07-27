@@ -53,7 +53,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h1>Dashboard</h1>
+			<h1>Dashboard <span class="text-warning">Warning: This page is currently in development and does not hold any accurate values.</span></h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 		</div>
