@@ -29,7 +29,7 @@
 	// Gets all sales data from the last 12 months
 		$monthlySales = array();
 		$monthlySales_raw = mysqli_fetch_array(DB_QUERY("SELECT date_format(`Created`,'%Y-%m') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
-		for($i=0, $i<12, $i++) {
+		for($i=0, $i<12, $i++;) {
 			if(isset($monthlySales_raw[$i])) {
 				print_r($monthlySales_raw[$i]);
 			}
