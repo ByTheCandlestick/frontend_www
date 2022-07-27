@@ -39,7 +39,7 @@
 									print('NaN');
 								} else {
 									$fmt = new \NumberFormatter( 'en', \NumberFormatter::CURRENCY);
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, '$currYearSales[0]' );
+									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearSales[0] );
 									$fmt->setAttribute( $fmt::FRACTION_DIGITS, 2 );
 									print($fmt->format(number_format($currYearSales[1], 2)));
 								}
