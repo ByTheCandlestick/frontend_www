@@ -201,10 +201,10 @@
 			</script>
 		<div class="col-12 col-lg-6">
 			<h3>Sales This year</h3>
-			<chart class="ct-sales-day" />
+			<chart class="ct-sales-month" />
 		</div>
 			<script>
-				new Chartist.Line('.ct-sales-months', {
+				new Chartist.Line('.ct-sales-month', {
 					labels: ['<?print(implode('\', \'', $months))?>'],
 					series: [
 						[12, 9, 7, 8, 5, 11, 0, 5, 7, 10]
