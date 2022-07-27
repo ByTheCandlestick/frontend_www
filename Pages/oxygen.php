@@ -46,7 +46,7 @@
 			<div class="accordion accordion-flush" id="SectionElements">
 				<?
 					if(mysqli_num_rows($query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`")) > 0) {
-						print_r($templateItems = mysqli_fetch_array($query));
+						print_r($templateItems = mysqli_fetch_all($query));
 
 
 						while(1 == 0) {
