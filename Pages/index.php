@@ -207,7 +207,7 @@
 				new Chartist.Line('.ct-sales-month', {
 					labels: ['<?print(implode('\', \'', $months))?>'],
 					series: [
-						[12, 9, 7, 8, 5, 11, 0, 5, 7, 10]
+						[12, 9, 7, 8, 5, 11, 0, 5, 7, 10, 16, 2]
 					]
 				}, {
 					fullWidth: true,
