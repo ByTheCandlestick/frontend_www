@@ -11,6 +11,15 @@
 		for ($i=count($days_b)-1; $i>=0; $i--) {
 			array_push($days, $days_b[$i]);
 		}
+	// List of all Months from this month backwards 1 week
+		$month = $months_b = array();
+		for ($i = 0; $i < 12; $i++){
+			array_push($months_b, date('l', $month));
+			$month = strtotime('last month', $month);
+		}
+		for($i=count($months_b)-1; $i>=0; $i--) {
+			array_push($months, $months_b[$i]);
+		}
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
 		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
@@ -55,7 +64,7 @@
 									print('NaN');
 								} else {
 									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastSales[0] );
-									print($fmt->format(number_format($lastSales[1], 2)));
+									print($fmt->format(number_format($lastYearSales[1], 2)));
 								}
 							?>
 						</span>
