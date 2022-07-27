@@ -12,7 +12,7 @@
 			array_push($days, $days_b[$i]);
 		}
 	// List of all Months from this month backwards 1 week
-		$month = $months_b = array();
+		$months = $months_b = array();
 		for ($i = 0; $i < 12; $i++){
 			array_push($months_b, date('l', $month));
 			$month = strtotime('last month', $month);
