@@ -38,11 +38,10 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									$fmt = new \NumberFormatter( 'fr', \NumberFormatter::CURRENCY);
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, 'COP' );
+									$fmt = new \NumberFormatter( 'en', \NumberFormatter::CURRENCY);
+									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, '$currYearSales[0]' );
 									$fmt->setAttribute( $fmt::FRACTION_DIGITS, 2 );
-									echo $numberString = $fmt->format( 1234.56 );
-									print($currYearSales[0] . number_format($currYearSales[1], 2));
+									print($fmt->format(number_format($currYearSales[1], 2)));
 								}
 							?>
 						</span>
