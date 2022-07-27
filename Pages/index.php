@@ -20,7 +20,6 @@
 		for($i=count($months_b)-1; $i>=0; $i--) {
 			array_push($months, $months_b[$i]);
 		}
-		print_r($months);
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
 		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
