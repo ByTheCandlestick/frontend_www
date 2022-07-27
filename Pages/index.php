@@ -1,16 +1,21 @@
 <?
-	$days = $days_b = array();
-	for ($i = 0; $i < 7; $i++){
-		array_push($days_b, date('l', $day));
-		$day = strtotime('yesterday', $day);
-	}
-	for ($i=count($days_b)-1; $i>=0; $i--) {
-		array_push($days, $days_b[$i]);
-	}
-	$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
-	$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
-	$currMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
-	$lastMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
+	// Currencies
+		$fmt = new \NumberFormatter( 'en', \NumberFormatter::CURRENCY);
+		$fmt->setAttribute( $fmt::FRACTION_DIGITS, 2 );
+	// List of all days from today backwards 1 week
+		$days = $days_b = array();
+		for ($i = 0; $i < 7; $i++){
+			array_push($days_b, date('l', $day));
+			$day = strtotime('yesterday', $day);
+		}
+		for ($i=count($days_b)-1; $i>=0; $i--) {
+			array_push($days, $days_b[$i]);
+		}
+	// Gets current and last year / month
+		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
+		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
+		$currMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
+		$lastMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
 ?>
 <section>
 	<!-- Section Header -->
@@ -38,9 +43,7 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									$fmt = new \NumberFormatter( 'en', \NumberFormatter::CURRENCY);
 									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearSales[0] );
-									$fmt->setAttribute( $fmt::FRACTION_DIGITS, 2 );
 									print($fmt->format(number_format($currYearSales[1], 2)));
 								}
 							?>
