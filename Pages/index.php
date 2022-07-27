@@ -1,5 +1,4 @@
 <?
-	require_once(__ROOT__.'/Vendor/symfony/Currencies.php');
 	$days = $days_b = array();
 	for ($i = 0; $i < 7; $i++){
 		array_push($days_b, date('l', $day));
@@ -39,8 +38,7 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									$currency = Currencies::getSymbol($currYearSales[0]);
-									print($currency . number_format($currYearSales[1], 2));
+									print($currYearSales[0] . number_format($currYearSales[1], 2));
 								}
 							?>
 						</span>
@@ -50,7 +48,7 @@
 								if($lastYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									print(Currencies::getSymbol($lastYearSales[0]) . number_format($lastYearSales[1], 2));
+									print($lastYearSales[0] . number_format($lastYearSales[1], 2));
 								}
 							?>
 						</span>
@@ -74,7 +72,7 @@
 								if($currYearIncome[1] == 0 && $currYearExpences[1] == 0) {
 									print('NaN');
 								} else {
-									print(Currencies::getSymbol($currYearIncome[0]) . number_format($currYearIncome[1] - $currYearExpences[1], 2));
+									print($currYearIncome[0] . number_format($currYearIncome[1] - $currYearExpences[1], 2));
 								}
 							?>
 						</span>
@@ -84,7 +82,7 @@
 								if($lastYearIncome[1] == 0 && $lastYearExpences[1] == 0) {
 									print('NaN');
 								} else {
-									print(Currencies::getSymbol($lastYearIncome[0]) . number_format($lastYearIncome[1] - $lastYearExpences[1], 2));
+									print($lastYearIncome[0] . number_format($lastYearIncome[1] - $lastYearExpences[1], 2));
 								}
 							?>
 						</span>
@@ -106,7 +104,7 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									print(Currencies::getSymbol($currYearSales[0]) . number_format($currYearSales[1], 2));
+									print($currYearSales[0] . number_format($currYearSales[1], 2));
 								}
 							?>
 						</span>
@@ -116,7 +114,7 @@
 								if($lastYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									print(Currencies::getSymbol($lastYearSales[0]) . number_format($lastYearSales[1], 2));
+									print($lastYearSales[0] . number_format($lastYearSales[1], 2));
 								}
 							?>
 						</span>
