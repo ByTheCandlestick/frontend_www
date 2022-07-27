@@ -226,7 +226,7 @@
 			<chart class="ct-sales-day" />
 		</div>
 			<script>
-				new Chartist.Line('.ct-sales-day', {
+				new Chartist.Line('.ct-sales-months', {
 					labels: ['<?print(implode('\', \'', $months))?>'],
 					series: [
 						[12, 9, 7, 8, 5, 11, 0, 5, 7, 10]
@@ -245,7 +245,7 @@
 			<chart class="ct-money-day" />
 		</div>
 			<script>
-				new Chartist.Line('.ct-money-day', {
+				new Chartist.Line('.ct-money-months', {
 					labels: ['<?print(implode('\', \'', $months))?>'],
 					series: [
 						[24, 18, 14, 16, 10, 22, 0, 8, 2, 12],
