@@ -220,7 +220,7 @@
 				});
 			</script>
 	</div>
-	<div class="row" name="Website analytics">
+	<div class="row" name="Sales / Month">
 		<div class="col-12 col-lg-6">
 			<h3>Sales This year</h3>
 			<chart class="ct-sales-day" />
