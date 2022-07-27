@@ -21,9 +21,17 @@
 			array_push($months, $months_b[$i]);
 		}
 	// Gets all sales data for the last 7 days
-		$dailySales = mysqli_fetch_assoc(DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
+		$dailySales = array();
+		$dailySales_raw = mysqli_fetch_assoc(DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
+		foreach($dailySales_raw as $ds) {
+			array_push($dailySales, $ds);
+		}
 	// Gets all sales data from the last 12 months
-		$monthlySales = mysqli_fetch_assoc(DB_QUERY("SELECT date_format(`Created`,'%Y-%m') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
+		$monthlySales = array();
+		$monthlySales_raw = mysqli_fetch_assoc(DB_QUERY("SELECT date_format(`Created`,'%Y-%m') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
+		foreach($monthlySales_raw as $ms) {
+			array_push($monthlySales, $ms);
+		}
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
 		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
@@ -192,7 +200,7 @@
 				new Chartist.Line('.ct-sales-day', {
 					labels: ['<?print(implode('\', \'', $days))?>'],
 					series: [
-						[print(implode(', ', $dailySales[1]))?>]
+						[print(implode(', ', $dailySales))?>]
 					]
 				}, {
 					fullWidth: true,
@@ -211,7 +219,7 @@
 				new Chartist.Line('.ct-sales-month', {
 					labels: ['<?print(implode('\', \'', $months))?>'],
 					series: [
-						[<?print(implode(', ', $monthlySales[1]))?>]
+						[<?print(implode(', ', $monthlySales))?>]
 					]
 				}, {
 					fullWidth: true,
