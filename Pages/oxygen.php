@@ -51,7 +51,7 @@
 						while($row = mysqli_fetch_array($query)) {
 							$sections[$row['id']] = $row;
 							print_r($row);
-							if($type != null && $type != $row['section_type'] && $row['id'] == $row[1]) {
+							if($type != null && $type != $row['section_type'] && $row['id'] == $row[0]) {
 								print('</div>');
 							}
 							if($type != null && $type != $row['section_type']) {
