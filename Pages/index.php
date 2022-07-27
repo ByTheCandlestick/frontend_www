@@ -43,7 +43,7 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									print(Currencies::getSymbol($currYearSales[0]) . number_format($currYearSales[1], 2));
+									print($currency = Currencies::getSymbol($currYearSales[0]) . number_format($currYearSales[1], 2));
 								}
 							?>
 						</span>
