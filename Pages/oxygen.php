@@ -54,7 +54,7 @@
 								if($type != null && $type != $row['section_type']) {
 									print('
 										</div>
-										<div class="accordion-item container row Elements">
+										<div class="accordion-item container row builderElements">
 											<h2 class="accordion-header p-0" id="headingOne">
 												<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
 													'.$row['section_type'].'
@@ -124,7 +124,7 @@
 	});
 	
 	dragula([
-		document.querySelector('.SectionElements')
+		document.querySelector('.builderElements')
 	], {
 		isContainer: function (el) {
 			return false; // only elements in drake.containers will be taken into account
