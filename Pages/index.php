@@ -159,6 +159,9 @@
 			</div>
 		</div>
 	</div>
+	<?
+		phpinfo();
+	?>
 	<div class="row" name="Sales / day">
 		<div class="col-12 col-lg-6">
 			<h3>Sales per day</h3>
