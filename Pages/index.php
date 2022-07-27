@@ -30,6 +30,7 @@
 				array_push($dailySales, 0);
 			}
 		}
+		array_reverse($dailySales);
 	// Gets all sales data from the last 12 months
 		$monthlySales = array();
 		$monthlySales_raw = mysqli_fetch_array(DB_QUERY("SELECT date_format(`Created`,'%Y-%m') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1"));
@@ -40,6 +41,7 @@
 				array_push($monthlySales, 0);
 			}
 		}
+		array_reverse($monthlySales);
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
 		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
