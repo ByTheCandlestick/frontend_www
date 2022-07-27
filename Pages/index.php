@@ -1,5 +1,6 @@
 <?
-	use Symfony\Component\Intl\Languages;
+	require_once(__ROOT__.'/Vendor/symfony/Intl.php');
+	use Symfony\Component\Intl\Currencies;
 	\Locale::setDefault('en');
 	$days = $days_b = array();
 	for ($i = 0; $i < 7; $i++){
