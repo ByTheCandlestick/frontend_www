@@ -41,7 +41,7 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									$currency = getSymbol($currYearSales[0]);
+									$currency = Symfony\Component\Intl\Currencies::getSymbol($currYearSales[0]);
 									print($currency . number_format($currYearSales[1], 2));
 								}
 							?>
