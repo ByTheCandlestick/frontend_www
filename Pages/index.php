@@ -24,7 +24,6 @@
 		$dailySales = array();
 		$dailySales_raw = DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d') AS 'Date', SUM(`Deposit`) AS 'Deposit' FROM `Transactions` GROUP BY 1");
 		while($ds = mysqli_fetch_array($dailySales_raw)) {
-			print_r($ds);
 			array_push($dailySales, $ds[1]);
 		}
 	// Gets all sales data from the last 12 months
