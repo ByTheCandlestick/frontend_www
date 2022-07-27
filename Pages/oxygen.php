@@ -97,7 +97,7 @@
 	</div>
 </section>
 <script>
-	dragula([document.querySelector('.templateBuilder')]);
+	dragula([document.querySelector('.templateBuilder'), document.querySelector('.templateBuilderGrid'), document.querySelector('.templateBuilder')]);
 </script>
 <?
 	} else {

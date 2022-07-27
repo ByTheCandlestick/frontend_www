@@ -185,7 +185,7 @@
 			array_shift($columns);
 			foreach($columns as $column) {
 				[$width, $section_string] = explode(';', $column);
-				print("<div class=\"col-md-$width container\">");
+				print("<div class=\"col-md-$width container templateBuilderGrid\">");
 					$sections = explode(',', $section_string);
 					foreach($sections as $section) {
 						[$seccode, $secext] = explode(':', $section);
