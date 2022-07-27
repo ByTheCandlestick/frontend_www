@@ -38,12 +38,11 @@
 					<p class="card-text">
 						<span>
 							<?
-								$fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
-								$symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									print($currency = Currencies::getSymbol($currYearSales[0]) . number_format($currYearSales[1], 2));
+									$currency = Currencies::getSymbol($currYearSales[0]);
+									print($currency . number_format($currYearSales[1], 2));
 								}
 							?>
 						</span>
