@@ -38,6 +38,11 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
+									$fmt = new NumberFormatter('en_US', NumberFormatter::CURRENCY);
+									$fmt->setTextAttribute(NumberFormatter::CURRENCY_CODE, 'EUR');
+									$fmt->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
+									$fmt->formatCurrency(100, 'EUR');
+									print_r($fmt);
 									print($currYearSales[0] . number_format($currYearSales[1], 2));
 								}
 							?>
