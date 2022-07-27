@@ -58,7 +58,7 @@
 												'.$row['section_type'].'
 											</button>
 										</h2>
-								')
+								');
 							}
 							if($type != null && $type != $row['section_type']) {
 								print('
