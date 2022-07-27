@@ -76,7 +76,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-9 h-100" style="border: 2px solid var(--main-color);border-radius: 15px;">
+		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
 			<?
 				if($page['section_ids'] != "") {
 					printSectionTemplates($sections, $page['section_ids']);
@@ -96,6 +96,9 @@
 		</div>
 	</div>
 </section>
+<script>
+	dragula([document.querySelector('.templateBuilder')]);
+</script>
 <?
 	} else {
 ?>
