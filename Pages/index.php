@@ -1,6 +1,6 @@
 <?
 	require_once(__ROOT__.'/Vendor/symfony/Intl.php');
-	use Symfony\Component\Intl\Currencies;
+	use Symfony\Component\Intl;
 	\Locale::setDefault('en');
 	$days = $days_b = array();
 	for ($i = 0; $i < 7; $i++){
@@ -41,7 +41,7 @@
 								if($currYearSales[1] == 0) {
 									print('NaN');
 								} else {
-									$currency = Symfony\Component\Intl\Currencies::getSymbol($currYearSales[0]);
+									$currency = \Currencies::getSymbol($currYearSales[0]);
 									print($currency . number_format($currYearSales[1], 2));
 								}
 							?>
