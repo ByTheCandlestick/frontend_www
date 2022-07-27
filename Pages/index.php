@@ -1,5 +1,4 @@
 <?
-	require_once(__ROOT__.'/Vendor/symfony/Intl.php');
 	use Symfony\Component\Intl\Languages;
 	\Locale::setDefault('en');
 	$days = $days_b = array();
