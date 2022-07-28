@@ -25,6 +25,10 @@
 		} else {
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
+	// REDIRECT TO WWW. IF NO SUBDOMAIN EXISTS
+		if(explode('.', $_SERVER['HTTP_HOST'])[0] == removeSubdomain($_SERVER['HTTP_HOST'])) {
+			print('ERROR');
+		}
 	// GET PAGE INFORMATION
 		$website_info = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Websites` WHERE `Domain`='%s' LIMIT 1", $_SERVER['HTTP_HOST'])));
 	// CHECK IF THE USER IS LOGGED IN
