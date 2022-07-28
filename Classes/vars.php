@@ -25,16 +25,17 @@
 		} else {
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
-	// REDIRECT TO WWW. IF NO SUBDOMAIN EXISTS
-		$h = $_SERVER['HTTP_HOST'];
-		$x = array('uk'=>'co'); // exceptions of tld's with 2 parts
-		$r = explode('.',$h); // split host on dot
-		$t = array_pop($r); // create tld
-		if(isset($x[$t]) and end($r)==$x[$t]) $t=array_pop($r).'.'.$t; // add to tld for the exceptions
-		$d = implode('.',$r); // domain
-		echo "sld:$d, tld:$t";
 	// GET PAGE INFORMATION
 		$website_info = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Websites` WHERE `Domain`='%s' LIMIT 1", $_SERVER['HTTP_HOST'])));
+	// REDIRECT TO WWW. IF NO SUBDOMAIN EXISTS
+		$x = array('uk'=>'co');		// exceptions of tld's with 2 parts
+		$r = explode('.',$_SERVER['HTTP_HOST'];);		// split host on dot
+		$t = array_pop($r);			// create tld
+		if(isset($x[$t]) && end($r)==$x[$t]) $t=array_pop($r).'.'.$t; // add to tld for the exceptions
+		$d = implode('.',$r);
+		$s = explode('.'. $d);
+		print_r($s.' / '.$d.' / '.$t);
+		$website_info['Subdomain'] = $s; $website_info['Domain'] = $d; $website_info['TLD'] = $t;
 	// CHECK IF THE USER IS LOGGED IN
 		// SET THE VARIABLES
 			$user_ok = false;
