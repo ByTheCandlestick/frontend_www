@@ -4,7 +4,7 @@
 	require_once('./Classes/vars.php');
 	// Set www. as subdomain if no subdomain exists
 		if($website_info['Subdomain'] == null) {
-			header('Location: www.'.$website_info['Domain'].'.'.$website_info['TLD']);
+			header('Location: ' . URL_WWW);
 		}
 	//
 	if(isset($_GET['file']) && isset($_GET['ext'])) {
