@@ -2,6 +2,11 @@
 	date_default_timezone_set('Europe/London');
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/vars.php');
+	// Set www. as subdomain if no subdomain exists
+		if($website_info['Subdomain'] == null) {
+			header('Location: www.'.$website_info['Domain'].'.'.$website_info['TLD']);
+		}
+	//
 	if(isset($_GET['file']) && isset($_GET['ext'])) {
 		if(file_exists($path = sprintf("%s/Themes/%s/Assets/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
 			header('Content-Type: text/'.$_GET['ext']);
