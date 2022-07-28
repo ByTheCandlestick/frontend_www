@@ -38,7 +38,7 @@
 			$website_info['Subdomain'] = null;
 		} else {
 			$website_info['Domain'] = $website_info['Subdomain'][1];
-			array_pop($website_info['Subdomain'])
+			array_pop($website_info['Subdomain']);
 		}
 		print_r($website_info['Subdomain'] . ' / ' . $website_info['Domain'] . ' / ' . $website_info['TLD']);
 	// CHECK IF THE USER IS LOGGED IN
