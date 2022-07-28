@@ -34,6 +34,12 @@
 		if(isset($x[$t]) && end($r)==$x[$t]) $website_info['TLD'] = array_pop($r) . '.' . $t; // add to tld for the exceptions
 		$website_info['Domain'] = implode('.', $r);
 		$website_info['Subdomain'] = explode('.', $website_info['Domain'])[0];
+		if($website_info['Subdomain'] == $website_info['Domain']) {
+			$website_info['Subdomain'] = null;
+		} else {
+			$website_info['Domain'] = $website_info['Subdomain'][1];
+			array_pop($website_info['Subdomain'])
+		}
 		print_r($website_info['Subdomain'] . ' / ' . $website_info['Domain'] . ' / ' . $website_info['TLD']);
 	// CHECK IF THE USER IS LOGGED IN
 		// SET THE VARIABLES
