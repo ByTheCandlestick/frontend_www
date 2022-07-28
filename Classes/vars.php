@@ -29,7 +29,7 @@
 		$website_info = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Websites` WHERE `Domain`='%s' LIMIT 1", $_SERVER['HTTP_HOST'])));
 	// REDIRECT TO WWW. IF NO SUBDOMAIN EXISTS
 		$x = array('uk'=>'co');		// exceptions of tld's with 2 parts
-		$r = explode('.',$_SERVER['HTTP_HOST'];);		// split host on dot
+		$r = explode('.',$_SERVER['HTTP_HOST']);		// split host on dot
 		$t = array_pop($r);			// create tld
 		if(isset($x[$t]) && end($r)==$x[$t]) $t=array_pop($r).'.'.$t; // add to tld for the exceptions
 		$d = implode('.',$r);
