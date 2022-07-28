@@ -37,7 +37,7 @@
 		if($website_info['Subdomain'] == $website_info['Domain']) {
 			$website_info['Subdomain'] = null;
 		} else {
-			$website_info['Domain'] = $website_info['Subdomain'][1];
+			$website_info['Domain'] = end($website_info['Subdomain']);
 			array_pop($website_info['Subdomain']);
 		}
 		print_r($website_info['Subdomain'] . ' / ' . $website_info['Domain'] . ' / ' . $website_info['TLD']);
