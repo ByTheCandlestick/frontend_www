@@ -4,7 +4,7 @@
 	require_once('./Classes/vars.php');
 	// Set www. as subdomain if no subdomain exists
 		if($website_info['Subdomain'] == null) {
-			($_SERVER['HTTPS'] ? 'https://www.' : 'http://www.' ) . $_SERVER['HTTP_HOST'] . '/';
+			print ($_SERVER['HTTPS'] ? 'https://www.' : 'http://www.' ) . $_SERVER['HTTP_HOST'] . '/';
 			//header('Location: '($_SERVER['HTTPS'] ? 'https://www.' : 'http://www.' ) . $_SERVER['HTTP_HOST'] . '/');
 		}
 	//
