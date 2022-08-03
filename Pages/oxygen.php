@@ -40,7 +40,8 @@
 					margin: 10px;
 					padding: 10px;
 				}
-				.accordion-item .element input {
+				.accordion-item .element input,
+				.accordion-item .element#Columns div {
 					display: none;
 				}
 				.container .element#Columns h6 {
