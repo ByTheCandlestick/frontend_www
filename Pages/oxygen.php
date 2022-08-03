@@ -42,9 +42,6 @@ if(QS_SUBPAGE != "") {
 				margin: 5px 0px 7px 10px;
 				border-radius: 10px;
 			}
-			.templateElementMenu {
-				display: none;
-			}
 			.templateBase .templateElementMenu:hover,
 			.templateBase .templateElement:hover .templateElementMenu,
 			.templateBase .templateElementGrid:hover .templateElementMenu {
@@ -64,6 +61,8 @@ if(QS_SUBPAGE != "") {
 				background: var(--app-container);
 			}
 
+			.templateElementMenu,
+			.accordion .templateElement .input,
 			.accordion .templateElementGrid .templateGrid {
 				display: none;
 			}
