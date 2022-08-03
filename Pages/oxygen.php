@@ -32,6 +32,8 @@
 				.templateBase {
 					border: 2px solid var(--main-color);
 					border-radius: 15px;
+					padding: unset;
+					overflow: hidden;
 				}
 				.templateElements {
 
@@ -131,7 +133,7 @@
 				</div>
 			</div>
 			
-			<div class="col-lg-9 h-100 templateBase" style="border: 2px solid var(--main-color);border-radius: 15px;"><?/*
+			<div class="col-lg-9 h-100 templateBase"><?/*
 				if($page['section_ids'] != "") {
 					print('<div class="row">');
 						$columns = explode("#", $page['section_ids']);
