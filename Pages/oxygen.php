@@ -97,8 +97,8 @@
 						foreach($columns as $column) {
 							[$width, $section_string] = explode(';', $column);
 							print("<div class=\"col-md-$width container templateBuilderGrid\">");
-								$sections = explode(',', $section_string);
-								foreach($sections as $section) {
+								$templateSections = explode(',', $section_string);
+								foreach($templateSections as $section) {
 									[$seccode, $secext] = explode(':', $section);
 									if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
 										if(mysqli_num_rows($result) == 1) {
@@ -106,7 +106,7 @@
 											print('
 												<div class="element">
 													<h5>
-														'.$all_sections[$seccode]['short_description'].'
+														'.$sections[$seccode]['short_description'].'
 													</h5>
 													<input type="text" value="'.$secext.'">
 												</div>
