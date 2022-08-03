@@ -54,17 +54,22 @@
 					</h2>
 					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
-							2
+							2 columns
 						</div>
 					</div>
 					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
-							3
+							3 columns
 						</div>
 					</div>
 					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
-							4
+							4 columns
+						</div>
+					</div>
+					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div class="accordion-body">
+							5 columns
 						</div>
 					</div>
 				</div>
