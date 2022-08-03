@@ -47,27 +47,27 @@
 					<div class="accordion-item container row templateBuilderElements">
 						<h2 class="accordion-header p-0" id="headingOne">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Columns" aria-expanded="true" aria-controls="Columns">
-								Columns
+								<h5>Columns</h5>
 							</button>
 						</h2>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
-								2
+								<h6>2</h6>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
-								3
+								<h6>3</h6>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
-								4
+								<h6>4</h6>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
-								5
+								<h6>5</h6>
 							</div>
 						</div>
 						<? 
