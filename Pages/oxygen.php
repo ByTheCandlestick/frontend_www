@@ -52,9 +52,11 @@
 					width: 60px;
 					height: 20px;
 					background: blue;
-					position: relative;
-					left: calc(50% - 30px);
-					top: -43px;
+					position: absolute;
+					z-index: 999;
+					left: 50%;
+					top: 0;
+					transform: translate(-50%, -50px)
 				}
 				.templateBase .templateElement,
 				.templateBase .templateElementGrid {
