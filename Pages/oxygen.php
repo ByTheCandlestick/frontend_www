@@ -44,23 +44,35 @@
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
+				<div class="accordion-item container row templateBuilderElements">
+					<h2 class="accordion-header p-0" id="headingOne">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
+							Grids
+						</button>
+					</h2>
+					<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div class="accordion-body">
+							2
+						</div>
+					</div>
+					<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div class="accordion-body">
+							3
+						</div>
+					</div>
+					<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div class="accordion-body">
+							4
+						</div>
+					</div>
+				</div>
 				<?
 					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 					$type = null;
 					if(mysqli_num_rows($query) > 0) {
 						while($row = mysqli_fetch_array($query)) {
 							$sections[$row['id']] = $row;
-							if($type == null) {
-								print('
-									<div class="accordion-item container row templateBuilderElements">
-										<h2 class="accordion-header p-0" id="headingOne">
-											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
-												'.$row['section_type'].'
-											</button>
-										</h2>
-								');
-							}
-							if($type != null && $type != $row['section_type']) {
+							if($type != $row['section_type']) {
 								print('
 									</div>
 									<div class="accordion-item container row templateBuilderElements">
@@ -89,7 +101,6 @@
 		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
 			<?
 				if($page['section_ids'] != "") {
-					
 					print('<div class="row">');
 						$columns = explode("#", $page['section_ids']);
 						$seccode = $secext = NULL;
