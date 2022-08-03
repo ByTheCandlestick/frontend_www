@@ -51,6 +51,7 @@
 									<a href="/Oxygen/'.$row['ID'].'/">
 										<i class="fad fa-circle"></i>
 									</a>
+									<span></span>
 									<a href="/Websites/Page/'.$row['ID'].'">
 										<i class="fa fa-pencil"></i>
 									</a>
