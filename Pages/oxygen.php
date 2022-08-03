@@ -62,7 +62,7 @@ if(QS_SUBPAGE != "") {
 			}
 
 			.templateElementMenu,
-			.accordion .templateElement .input,
+			.accordion .templateElement input,
 			.accordion .templateElementGrid .templateGrid {
 				display: none;
 			}
