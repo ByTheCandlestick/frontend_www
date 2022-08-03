@@ -98,8 +98,8 @@
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body row">
-								<div class="templateElementMenu position-relative">
+							<div class="accordion-body row position-relative">
+								<div class="templateElementMenu">
 									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
 								<h6>3 columns</h6>
@@ -109,8 +109,8 @@
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body row">
-								<div class="templateElementMenu position-relative">
+							<div class="accordion-body row position-relative">
+								<div class="templateElementMenu">
 									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
 								<h6>4 columns</h6>
@@ -121,8 +121,8 @@
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body row">
-								<div class="templateElementMenu position-relative">
+							<div class="accordion-body row position-relative">
+								<div class="templateElementMenu">
 									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
 								<h6>5 columns</h6>
