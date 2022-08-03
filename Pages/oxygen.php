@@ -126,15 +126,15 @@
 		direction: 'vertical',			// Y axis is considered when determining where an element would be dropped
 		copy: false,					// elements are moved by default, not copied
 		copySortSource: false,			// elements in copy-source containers can be reordered
-		revertOnSpill: true,			// spilling will put the element back where it was dragged from, if this is true
-		removeOnSpill: false,			// spilling will `.remove` the element, if this is true
+		revertOnSpill: false,			// spilling will put the element back where it was dragged from, if this is true
+		removeOnSpill: true,			// spilling will `.remove` the element, if this is true
 		mirrorContainer: document.body,	// set the element that gets mirror elements appended
 		ignoreInputTextSelection: true,	// allows users to select input text, see details below
 		slideFactorX: 0,				// allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
 		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
 	});
 	function changeMethod (){
-		this.copyOption = false;
+		this.copyOption = true;
 	}
 
 </script>
