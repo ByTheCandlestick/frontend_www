@@ -28,7 +28,6 @@
 	<br>
 	<!-- Section Type -->
 	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;" data-original-sections="<?print($page['section_ids'])?>">
-		<h2 class="text-danger text-center mb-5"> WORK IN PROGRESS, PLEASE DO NOT USE </h2>
 		<style>
 			.container {
 				background: var(--app-container);
