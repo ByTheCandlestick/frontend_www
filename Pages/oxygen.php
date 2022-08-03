@@ -44,7 +44,7 @@
 				padding: 10px;
 			}
 		</style>
-		<div class="col-lg-3">
+		<div class="col-lg-3"> <!-- ALL SECTION TYPES -->
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row templateBuilderElements">
 					<h2 class="accordion-header p-0" id="headingOne">
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		
-		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
+		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;"> <!-- Template -->
 			<?
 				if($page['section_ids'] != "") {
 					print('<div class="row">');
