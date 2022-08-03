@@ -29,6 +29,10 @@
 		<!-- Section Type -->
 		<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;" data-original-sections="<?print($page['section_ids'])?>">
 			<style>
+				.templateBase {
+					border: 2px solid var(--main-color);
+					border-radius: 15px;
+				}
 				.container {
 					background: var(--app-container);
 					border-radius: 15px;
@@ -56,35 +60,35 @@
 						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>2</h6>
-								<div class="templateBuilderGrid col-6"></div>
-								<div class="templateBuilderGrid col-6"></div>
+								<div class="templateGrid col-6"></div>
+								<div class="templateGrid col-6"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>3</h6>
-								<div class="templateBuilderGrid col-4"></div>
-								<div class="templateBuilderGrid col-4"></div>
-								<div class="templateBuilderGrid col-4"></div>
+								<div class="templateGrid col-4"></div>
+								<div class="templateGrid col-4"></div>
+								<div class="templateGrid col-4"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>4</h6>
-								<div class="templateBuilderGrid col-3"></div>
-								<div class="templateBuilderGrid col-3"></div>
-								<div class="templateBuilderGrid col-3"></div>
-								<div class="templateBuilderGrid col-3"></div>
+								<div class="templateGrid col-3"></div>
+								<div class="templateGrid col-3"></div>
+								<div class="templateGrid col-3"></div>
+								<div class="templateGrid col-3"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>5</h6>
-								<div class="templateBuilderGrid col-2 offset-1"></div>
-								<div class="templateBuilderGrid col-2"></div>
-								<div class="templateBuilderGrid col-2"></div>
-								<div class="templateBuilderGrid col-2"></div>
-								<div class="templateBuilderGrid col-2"></div>
+								<div class="templateGrid col-2 offset-1"></div>
+								<div class="templateGrid col-2"></div>
+								<div class="templateGrid col-2"></div>
+								<div class="templateGrid col-2"></div>
+								<div class="templateGrid col-2"></div>
 							</div>
 						</div>
 						<? 
@@ -118,7 +122,7 @@
 				</div>
 			</div>
 			
-			<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
+			<div class="col-lg-9 h-100 templateBase" style="border: 2px solid var(--main-color);border-radius: 15px;">
 				<? /*
 					if($page['section_ids'] != "") {
 						print('<div class="row">');
@@ -167,7 +171,7 @@
 	</section>
 	<script>
 		dragula([
-			document.querySelector('.templateBuilder'),
+			document.querySelector('.templateBase'),
 			document.querySelector('.templateBuilderGrid'),
 			document.querySelector('.templateBuilderElements')
 		], {
