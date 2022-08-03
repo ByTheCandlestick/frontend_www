@@ -48,10 +48,10 @@
 					background: var(--app-container);
 				}
 
-				.accordion .templateElement .templateGrid {
+				.accordion .templateGrid {
 					display: none;
 				}
-				.templateBase .templateElement .templateGrid {
+				.templateBase .templateGrid {
 					min-height: 20px;
 					outline: solid;
 				}
