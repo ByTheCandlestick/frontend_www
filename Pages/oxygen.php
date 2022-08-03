@@ -183,7 +183,7 @@
 				return source === document.querySelector('.templateElements, .noCopy')
 			},
 			accepts: function (el, target, source, sibling) {
-				return target !== document.querySelector('.templateElements')
+				return target !== document.querySelector('.templateElements, .noAccept')
 			},
 			invalid: function (el, handle) {
 				return false;				// don't prevent any drags from initiating by default
