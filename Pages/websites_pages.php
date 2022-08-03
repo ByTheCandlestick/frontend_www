@@ -49,7 +49,7 @@
 								<td>'.$row['subpage_url'].'</td>
 								<td>
 									<a href="/Oxygen/'.$row['ID'].'/">
-										<i class="fa fad-circle"></i>
+										<i class="fad fa-circle"></i>
 									</a>
 									<a href="/Websites/Page/'.$row['ID'].'">
 										<i class="fa fa-pencil"></i>
