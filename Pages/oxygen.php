@@ -52,7 +52,7 @@
 			<div class="col-lg-3">
 				<div class="accordion accordion-flush" id="SectionElements">
 					<div class="accordion-item container row templateElements">
-						<h2 class="accordion-header p-0" id="headingOne">
+						<h2 class="accordion-header p-0 noCopy" id="headingOne">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Columns" aria-expanded="true" aria-controls="Columns">
 								<h5>Columns</h5>
 							</button>
@@ -100,7 +100,7 @@
 									if($type != $row['section_type']) print('
 										</div>
 										<div class="accordion-item container row templateElements">
-											<h2 class="accordion-header p-0" id="headingOne">
+											<h2 class="accordion-header p-0 noCopy" id="headingOne">
 												<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
 													<h5>'.$row['section_type'].'</h5>
 												</button>
