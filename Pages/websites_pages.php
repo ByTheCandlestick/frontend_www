@@ -48,11 +48,10 @@
 								<td>'.$row['page_url'].'</td>
 								<td>'.$row['subpage_url'].'</td>
 								<td>
-									<a href="/Oxygen/'.$row['ID'].'/">
+									<a href="/Oxygen/'.$row['ID'].'/" class="px-1">
 										<i class="fad fa-circle"></i>
 									</a>
-									    
-									<a href="/Websites/Page/'.$row['ID'].'">
+									<a href="/Websites/Page/'.$row['ID'].'" class="px-1">
 										<i class="fa fa-pencil"></i>
 									</a>
 								</td>
