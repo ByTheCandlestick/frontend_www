@@ -46,21 +46,21 @@
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row templateBuilderElements">
 					<h2 class="accordion-header p-0" id="headingOne">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
-							Grids
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Columns" aria-expanded="true" aria-controls="Columns">
+							Columns
 						</button>
 					</h2>
-					<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
 							2
 						</div>
 					</div>
-					<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
 							3
 						</div>
 					</div>
-					<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
 							4
 						</div>
