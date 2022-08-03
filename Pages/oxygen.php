@@ -65,6 +65,11 @@
 								4
 							</div>
 						</div>
+						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+							<div class="accordion-body">
+								5
+							</div>
+						</div>
 						<?
 							$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 							$type = null;
