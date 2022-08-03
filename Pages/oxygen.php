@@ -42,7 +42,7 @@
 					margin: 5px 0px 7px 10px;
 					border-radius: 10px;
 				}
-				.templateElementMenu,
+				.templateElementMenu:hover,
 				.templateBase .templateElement:hover .templateElementMenu,
 				.templateBase .templateElementGrid:hover .templateElementMenu {
 					display: show;
