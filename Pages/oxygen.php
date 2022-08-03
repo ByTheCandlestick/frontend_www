@@ -129,42 +129,40 @@
 				</div>
 			</div>
 			
-			<div class="col-lg-9 h-100 templateBase" style="border: 2px solid var(--main-color);border-radius: 15px;">
-				<? /*
-					if($page['section_ids'] != "") {
-						print('<div class="row">');
-							$columns = explode("#", $page['section_ids']);
-							$seccode = $secext = NULL;
-							array_shift($columns);
-							foreach($columns as $column) {
-								[$width, $section_string] = explode(';', $column);
-								print("<div class=\"col-md-$width container templateBuilderGrid\">");
-									$templateSections = explode(',', $section_string);
-									foreach($templateSections as $section) {
-										[$seccode, $secext] = explode(':', $section);
-										if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
-											if(mysqli_num_rows($result) == 1) {
-												$row = mysqli_fetch_array($result);
-												print('
-													<div class="element">
-														<h5>
-															'.$sections[$seccode]['short_description'].'
-														</h5>
-														<input type="text" value="'.$secext.'">
-													</div>
-												');
-												unset($secext);
-											}
+			<div class="col-lg-9 h-100 templateBase" style="border: 2px solid var(--main-color);border-radius: 15px;"><?/*
+				if($page['section_ids'] != "") {
+					print('<div class="row">');
+						$columns = explode("#", $page['section_ids']);
+						$seccode = $secext = NULL;
+						array_shift($columns);
+						foreach($columns as $column) {
+							[$width, $section_string] = explode(';', $column);
+							print("<div class=\"col-md-$width container templateBuilderGrid\">");
+								$templateSections = explode(',', $section_string);
+								foreach($templateSections as $section) {
+									[$seccode, $secext] = explode(':', $section);
+									if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
+										if(mysqli_num_rows($result) == 1) {
+											$row = mysqli_fetch_array($result);
+											print('
+												<div class="element">
+													<h5>
+														'.$sections[$seccode]['short_description'].'
+													</h5>
+													<input type="text" value="'.$secext.'">
+												</div>
+											');
+											unset($secext);
 										}
 									}
-								print("</div>");
-							}
-						print('</div>');
-					} else {
-						print("Drag an element from the left hand side to start building the website!");
-					} */
-				?>
-			</div>
+								}
+							print("</div>");
+						}
+					print('</div>');
+				} else {
+					print("Drag an element from the left hand side to start building the website!");
+				}
+			*/?></div>
 		</div>
 		<!-- Page Type -->
 		<div class="row" type="page" style="display: <?($page['display_type']==1)?print("none"):print("flex")?>;">
