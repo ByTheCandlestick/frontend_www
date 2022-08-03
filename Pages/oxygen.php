@@ -50,6 +50,16 @@
 					if(mysqli_num_rows($query) > 0) {
 						while($row = mysqli_fetch_array($query)) {
 							$sections[$row['id']] = $row;
+							if($type == null) {
+								print('
+									<div class="accordion-item container row templateBuilderElements">
+										<h2 class="accordion-header p-0" id="headingOne">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
+												'.$row['section_type'].'
+											</button>
+										</h2>
+								');
+							}
 							if($type != null && $type != $row['section_type']) {
 								print('
 									</div>
