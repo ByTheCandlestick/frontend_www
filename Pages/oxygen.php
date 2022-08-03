@@ -36,8 +36,8 @@
 				.templateElements {
 
 				}
-				.templateElement {
-
+				.accordian .templateElement {
+					width: 50%;
 				}
 				.templateGrid {
 
@@ -180,7 +180,7 @@
 				return true;				// elements are always draggable by default
 			},
 			copy: function(el, source) {
-				return source === document.querySelector('.templateElements')
+				return source === document.querySelector('.templateElements, .noCopy')
 			},
 			accepts: function (el, target, source, sibling) {
 				return target !== document.querySelector('.templateElements')
