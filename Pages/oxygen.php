@@ -40,6 +40,12 @@
 					margin: 10px;
 					padding: 10px;
 				}
+				.accordion-item .element input {
+					display: none;
+				}
+				.container .element {
+					
+				}
 			</style>
 			<div class="col-lg-3">
 				<div class="accordion accordion-flush" id="SectionElements">
@@ -88,6 +94,7 @@
 											<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 												<div class="accordion-body">
 													<h6>'.$row['short_description'].'</h6>
+													<input type="text" value="">
 												</div>
 											</div>
 									');
