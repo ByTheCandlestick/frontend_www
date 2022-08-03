@@ -87,10 +87,10 @@
 											</div>
 										</div>
 								');
+								$type = $row['section_type'];
 								if($type != $row['section_type'] && $type != null) print('
 									</div>
 								');
-								$type = $row['section_type'];
 							}
 						}
 					?>
