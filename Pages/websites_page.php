@@ -148,9 +148,6 @@
 						<a href="javascript:website.page.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
-						<a href="/Oxygen/<?print(QS)?>/" class="btn btn-outline-primary m-1">
-							<i class="fa fa-pencil"></i>
-						</a>
 					</div>
 				</div>
 			</div>
