@@ -49,6 +49,12 @@
 				.templateBase .templateElement:hover .templateElementMenu,
 				.templateBase .templateElementGrid:hover .templateElementMenu {
 					display: block;
+					width: 60px;
+					height: 20px;
+					background: blue;
+					position: relative;
+					left: calc(50% - 30px);
+					top: -43px;
 				}
 				.templateBase .templateElement,
 				.templateBase .templateElementGrid {
