@@ -56,7 +56,7 @@
 					z-index: 999;
 					left: 50%;
 					top: 0;
-					transform: translate(-50%, -50px)
+					transform: translate(-50%, -50%)
 				}
 				.templateBase .templateElement,
 				.templateBase .templateElementGrid {
@@ -70,6 +70,7 @@
 				.templateBase .templateElementGrid .templateGrid {
 					min-height: 20px;
 					outline: solid;
+					background: var(--section);
 				}
 
 				.container {
