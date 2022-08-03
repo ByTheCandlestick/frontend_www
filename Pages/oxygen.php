@@ -56,35 +56,35 @@
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>2</h6>
-								<div class="containerGrid col-6"></div>
-								<div class="containerGrid col-6"></div>
+								<div class="templateBuilderGrid col-6"></div>
+								<div class="templateBuilderGrid col-6"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>3</h6>
-								<div class="containerGrid col-4"></div>
-								<div class="containerGrid col-4"></div>
-								<div class="containerGrid col-4"></div>
+								<div class="templateBuilderGrid col-4"></div>
+								<div class="templateBuilderGrid col-4"></div>
+								<div class="templateBuilderGrid col-4"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>4</h6>
-								<div class="containerGrid col-3"></div>
-								<div class="containerGrid col-3"></div>
-								<div class="containerGrid col-3"></div>
-								<div class="containerGrid col-3"></div>
+								<div class="templateBuilderGrid col-3"></div>
+								<div class="templateBuilderGrid col-3"></div>
+								<div class="templateBuilderGrid col-3"></div>
+								<div class="templateBuilderGrid col-3"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>5</h6>
-								<div class="containerGrid col-2 offset-1"></div>
-								<div class="containerGrid col-2"></div>
-								<div class="containerGrid col-2"></div>
-								<div class="containerGrid col-2"></div>
-								<div class="containerGrid col-2"></div>
+								<div class="templateBuilderGrid col-2 offset-1"></div>
+								<div class="templateBuilderGrid col-2"></div>
+								<div class="templateBuilderGrid col-2"></div>
+								<div class="templateBuilderGrid col-2"></div>
+								<div class="templateBuilderGrid col-2"></div>
 							</div>
 						</div>
 						<? 
