@@ -86,17 +86,19 @@
 						</h2>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
-								<h6>2 columns</h6>
 								<div class="templateElementMenu">
-									<a onclick="console.log($(this).closest('.templateElement, .templateElementGrid').remove())">DELETE</a>
-
+									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
+								<h6>2 columns</h6>
 								<div class="templateGrid col-6"></div>
 								<div class="templateGrid col-6"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
+								<div class="templateElementMenu">
+									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
+								</div>
 								<h6>3 columns</h6>
 								<div class="templateGrid col-4"></div>
 								<div class="templateGrid col-4"></div>
@@ -105,6 +107,9 @@
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
+								<div class="templateElementMenu">
+									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
+								</div>
 								<h6>4 columns</h6>
 								<div class="templateGrid col-3"></div>
 								<div class="templateGrid col-3"></div>
@@ -114,6 +119,9 @@
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
+								<div class="templateElementMenu">
+									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
+								</div>
 								<h6>5 columns</h6>
 								<div class="templateGrid col-2 offset-1"></div>
 								<div class="templateGrid col-2"></div>
