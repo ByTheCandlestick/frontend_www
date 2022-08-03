@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Oxygen - '<?print($page['page_name'])?>'</h1>
-			<p class="text-danger text-center mb-5">
+			<p class="text-danger">
 				WORK IN PROGRESS, PLEASE DO NOT USE
 			</p>
 		</div>
