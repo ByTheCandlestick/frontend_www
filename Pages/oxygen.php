@@ -40,6 +40,10 @@
 				.accordian .templateElementGrid {
 					width: 50%;
 				}
+				.templateBase .templateElement,
+				.templateBase .templateElementGrid {
+					width: 100%;
+				}
 				.templateGrid {
 
 				}
