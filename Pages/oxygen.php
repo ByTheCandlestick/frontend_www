@@ -186,7 +186,7 @@
 				return target !== document.querySelector('.templateElements')
 			},
 			invalid: function (el, handle) {
-				return source === document.querySelector('.dragDisabled')
+				return false // source === document.querySelector('.dragDisabled')
 			},
 			direction: 'vertical',			// Y axis is considered when determining where an element would be dropped
 			copySortSource: false,			// elements in copy-source containers can be reordered
