@@ -42,10 +42,13 @@
 					margin: 5px 0px 7px 10px;
 					border-radius: 10px;
 				}
+				.templateElementMenu {
+					display: none;
+				}
 				.templateElementMenu:hover,
 				.templateBase .templateElement:hover .templateElementMenu,
 				.templateBase .templateElementGrid:hover .templateElementMenu {
-					display: show;
+					display: block;
 				}
 				.templateBase .templateElement,
 				.templateBase .templateElementGrid {
@@ -78,6 +81,9 @@
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
 								<h6>2 columns</h6>
+								<div class="templateElementMenu">
+
+								</div>
 								<div class="templateGrid col-6"></div>
 								<div class="templateGrid col-6"></div>
 							</div>
