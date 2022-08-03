@@ -87,7 +87,7 @@
 							</button>
 						</h2>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body row">
+							<div class="accordion-body row position-relative">
 								<div class="templateElementMenu">
 									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
@@ -98,7 +98,7 @@
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
-								<div class="templateElementMenu">
+								<div class="templateElementMenu position-relative">
 									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
 								<h6>3 columns</h6>
@@ -109,7 +109,7 @@
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
-								<div class="templateElementMenu">
+								<div class="templateElementMenu position-relative">
 									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
 								<h6>4 columns</h6>
@@ -121,7 +121,7 @@
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body row">
-								<div class="templateElementMenu">
+								<div class="templateElementMenu position-relative">
 									<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 								</div>
 								<h6>5 columns</h6>
@@ -149,7 +149,7 @@
 									');
 									print('
 											<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 templateElement" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-												<div class="accordion-body">
+												<div class="accordion-body row position-relative">
 													<h6>'.$row['short_description'].'</h6>
 													<input type="text" value="">
 												</div>
