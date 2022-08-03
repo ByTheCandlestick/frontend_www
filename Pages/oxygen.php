@@ -39,10 +39,12 @@
 				.accordion .templateElement,
 				.accordion .templateElementGrid {
 					width: 50%;
+					background: var(--section);
 				}
 				.templateBase .templateElement,
 				.templateBase .templateElementGrid {
 					width: 100%;
+					background: var(--app-container);
 				}
 				.templateGrid {
 
