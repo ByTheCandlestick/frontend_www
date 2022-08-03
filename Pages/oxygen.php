@@ -43,8 +43,8 @@
 				.accordion-item .element input {
 					display: none;
 				}
-				.container .element {
-					
+				.container .element#Columns h6 {
+					display: none;
 				}
 			</style>
 			<div class="col-lg-3">
@@ -58,6 +58,7 @@
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>2</h6>
+
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
