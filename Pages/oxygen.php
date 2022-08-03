@@ -94,10 +94,10 @@
 										</div>
 									</div>
 							');
+							$type = $row['section_type'];
 							if($type != $row['section_type']) print('
 								</div>
 							');
-							$type = $row['section_type'];
 						}
 					}
 				?>
@@ -121,7 +121,7 @@
 										if(mysqli_num_rows($result) == 1) {
 											$row = mysqli_fetch_array($result);
 											print('
-												<div class="element">
+												<div class="element" data-elem-id="'.$seccode.'">
 													<h5>
 														'.$sections[$seccode]['short_description'].'
 													</h5>

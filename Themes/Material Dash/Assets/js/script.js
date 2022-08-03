@@ -352,26 +352,29 @@ $(document).ready(() => {
 			/** @wip */
 			layout: {
 				update(pid) {
-					data = {
-						'api_key': api_key,
-						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
-						'sections': $("div[type=sections]").attr('data-original-sections'),
-						'page': $("div[name=name] input").val(),
-					}
-					$.ajax({
-						url: api_url + '/Page/Layout/' + pid + '/',
-						data: data,
-						type: 'POST',
-						xhrFields: {
-							withCredentials: true,
-						},
-						success(body) {
-							alert.simple("Successfully updated the layout", "success");
-						},
-						error(body) {
-							alert.simple("An error has occurred. Please try again later", "danger");
+					$()
+					/*
+						data = {
+							'api_key': api_key,
+							'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
+							'sections': $("div[type=sections]").attr('data-original-sections'),
+							'page': $("div[name=name] input").val(),
 						}
-					});
+						$.ajax({
+							url: api_url + '/Page/Layout/' + pid + '/',
+							data: data,
+							type: 'POST',
+							xhrFields: {
+								withCredentials: true,
+							},
+							success(body) {
+								alert.simple("Successfully updated the layout", "success");
+							},
+							error(body) {
+								alert.simple("An error has occurred. Please try again later", "danger");
+							}
+						});
+					*/
 				}
 			},
 			/** @final */
