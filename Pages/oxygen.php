@@ -89,12 +89,12 @@
 									</div>
 								</div>
 							');
-							$type = $row['section_type'];
 							if($type != $row['section_type']) {
 								print('
 									</div>
 								');
 							}
+							$type = $row['section_type'];
 						}
 					}
 				?>
