@@ -89,6 +89,7 @@
 		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
 			<?
 				if($page['section_ids'] != "") {
+					
 					print('<div class="row">');
 						$columns = explode("#", $page['section_ids']);
 						$seccode = $secext = NULL;
@@ -105,7 +106,7 @@
 											print('
 												<div class="element">
 													<h5>
-														'.$sections[$seccode]['short_description'].'
+														'.$all_sections[$seccode]['short_description'].'
 													</h5>
 													<input type="text" value="'.$secext.'">
 												</div>
