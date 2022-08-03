@@ -87,7 +87,7 @@
 											</div>
 										</div>
 								');
-								if($type != $row['section_type']) print('
+								if($type != $row['section_type'] && $type != null) print('
 									</div>
 								');
 								$type = $row['section_type'];
