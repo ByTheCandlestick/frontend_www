@@ -151,9 +151,9 @@
 </section>
 <script>
 	dragula([
-		document.querySelector('.templateBuilder'),
-		document.querySelector('.templateBuilderGrid'),
-		document.querySelector('.templateBuilderElements')
+		$('.templateBuilder'),
+		$('.templateBuilderGrid'),
+		$('.templateBuilderElements')
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
