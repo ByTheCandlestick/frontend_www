@@ -109,7 +109,7 @@
 	dragula([
 		document.querySelector('.templateBuilder'),
 		document.querySelector('.templateBuilderGrid'),
-		document.querySelector('.accordion > .templateBuilderElements')
+		document.querySelector('.templateBuilderElements')
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
@@ -117,8 +117,11 @@
 		moves: function (el, source, handle, sibling) {
 			return true;				// elements are always draggable by default
 		},
+		copy: function(el, source) {
+			return source === document.querySelector('.templateBuilderElements')
+		},
 		accepts: function (el, target, source, sibling) {
-			return true;				// elements can be dropped in any of the `containers` by default
+			return target !== document.querySelector('.templateBuilderElements')
 		},
 		invalid: function (el, handle) {
 			return false;				// don't prevent any drags from initiating by default
