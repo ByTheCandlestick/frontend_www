@@ -52,6 +52,8 @@
 					display: none;
 				}
 				.templateBase .templateElement .templateGrid {
+					min-height: 20px;
+					outline: solid;
 				}
 
 				.container {
