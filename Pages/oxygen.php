@@ -33,6 +33,13 @@
 					border: 2px solid var(--main-color);
 					border-radius: 15px;
 				}
+				.templateElements {
+					
+				}
+				.templateGrid {
+
+				}
+
 				.container {
 					background: var(--app-container);
 					border-radius: 15px;
@@ -51,7 +58,7 @@
 			</style>
 			<div class="col-lg-3">
 				<div class="accordion accordion-flush" id="SectionElements">
-					<div class="accordion-item container row templateBuilderElements">
+					<div class="accordion-item container row templateElements">
 						<h2 class="accordion-header p-0" id="headingOne">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Columns" aria-expanded="true" aria-controls="Columns">
 								<h5>Columns</h5>
@@ -99,7 +106,7 @@
 									$sections[$row['id']] = $row;
 									if($type != $row['section_type']) print('
 										</div>
-										<div class="accordion-item container row templateBuilderElements">
+										<div class="accordion-item container row templateElements">
 											<h2 class="accordion-header p-0" id="headingOne">
 												<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
 													<h5>'.$row['section_type'].'</h5>
@@ -173,7 +180,7 @@
 		dragula([
 			document.querySelector('.templateBase'),
 			document.querySelector('.templateBuilderGrid'),
-			document.querySelector('.templateBuilderElements')
+			document.querySelector('.templateElements')
 		], {
 			isContainer: function (el) {
 				return false;				// only elements in drake.containers will be taken into account
@@ -182,10 +189,10 @@
 				return true;				// elements are always draggable by default
 			},
 			copy: function(el, source) {
-				return source === document.querySelector('.templateBuilderElements')
+				return source === document.querySelector('.templateElements')
 			},
 			accepts: function (el, target, source, sibling) {
-				return target !== document.querySelector('.templateBuilderElements')
+				return target !== document.querySelector('.templateElements')
 			},
 			invalid: function (el, handle) {
 				return false;				// don't prevent any drags from initiating by default
