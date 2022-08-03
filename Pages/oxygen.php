@@ -133,8 +133,7 @@
 		slideFactorX: 0,				// allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
 		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
 	});
-	changeMethod(){
-		// here write logic for change option for target.
+	function changeMethod (){
 		this.copyOption = false;
 	}
 
