@@ -7,9 +7,6 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Oxygen - '<?print($page['page_name'])?>'</h1>
-			<p class="text-danger">
-				WORK IN PROGRESS, PLEASE DO NOT USE
-			</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -31,6 +28,7 @@
 	<br>
 	<!-- Section Type -->
 	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;" data-original-sections="<?print($page['section_ids'])?>">
+		<h2 class="text-danger text-center mb-5"> WORK IN PROGRESS, PLEASE DO NOT USE </h2>
 		<style>
 			.container {
 				background: var(--app-container);
@@ -44,7 +42,7 @@
 				padding: 10px;
 			}
 		</style>
-		<div class="col-lg-3"> <!-- ALL SECTION TYPES -->
+		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row templateBuilderElements">
 					<h2 class="accordion-header p-0" id="headingOne">
@@ -54,32 +52,27 @@
 					</h2>
 					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
-							2 columns
+							2
 						</div>
 					</div>
 					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
-							3 columns
+							3
 						</div>
 					</div>
 					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 						<div class="accordion-body">
-							4 columns
+							4
 						</div>
 					</div>
-					<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-						<div class="accordion-body">
-							5 columns
-						</div>
-					</div>
-					<?
-						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
-						$type = null;
-						if(mysqli_num_rows($query) > 0) {
-							while($row = mysqli_fetch_array($query)) {
-								$sections[$row['id']] = $row;
-								if($type != $row['section_type']) print('
-								</div>
+				</div>
+				<?
+					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
+					$type = null;
+					if(mysqli_num_rows($query) > 0) {
+						while($row = mysqli_fetch_array($query)) {
+							$sections[$row['id']] = $row;
+							if($type != $row['section_type']) print('
 									<div class="accordion-item container row templateBuilderElements">
 										<h2 class="accordion-header p-0" id="headingOne">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
@@ -87,22 +80,26 @@
 											</button>
 										</h2>
 								');
-								print('
-										<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-											<div class="accordion-body">
-												'.$row['short_description'].'
-											</div>
-										</div>
+							print('
+								<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+									<div class="accordion-body">
+										'.$row['short_description'].'
+									</div>
+								</div>
+							');
+							if($type != $row['section_type']) print('
+									</div>
 								');
-								$type = $row['section_type'];
 							}
+							$type = $row['section_type'];
 						}
-					?>
+					}
+				?>
 				</div>
 			</div>
 		</div>
 		
-		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;"> <!-- Template -->
+		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
 			<?
 				if($page['section_ids'] != "") {
 					print('<div class="row">');
@@ -119,7 +116,7 @@
 										if(mysqli_num_rows($result) == 1) {
 											$row = mysqli_fetch_array($result);
 											print('
-												<div class="element" data-elem-id="'.$seccode.'">
+												<div class="element">
 													<h5>
 														'.$sections[$seccode]['short_description'].'
 													</h5>
@@ -153,7 +150,7 @@
 	dragula([
 		document.querySelector('.templateBuilder'),
 		document.querySelector('.templateBuilderGrid'),
-		document.querySelector('.templateBuilderElements'),
+		document.querySelector('.templateBuilderElements')
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
@@ -162,10 +159,10 @@
 			return true;				// elements are always draggable by default
 		},
 		copy: function(el, source) {
-			return source === document.querySelector('.templateBuilderElements');
+			return source === document.querySelector('.templateBuilderElements')
 		},
 		accepts: function (el, target, source, sibling) {
-			return target !== document.querySelector('.templateBuilderElements');
+			return target !== document.querySelector('.templateBuilderElements')
 		},
 		invalid: function (el, handle) {
 			return false;				// don't prevent any drags from initiating by default
