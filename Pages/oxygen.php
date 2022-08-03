@@ -35,9 +35,6 @@
 					padding: unset;
 					overflow: hidden;
 				}
-				.templateElements {
-
-				}
 				.accordion .templateElement,
 				.accordion .templateElementGrid {
 					width: calc(50% - 15px);
@@ -50,8 +47,11 @@
 					width: 100%;
 					background: var(--app-container);
 				}
-				.templateGrid {
 
+				.accordion .templateElement .templateGrid {
+					display: none;
+				}
+				.templateBase .templateElement .templateGrid {
 				}
 
 				.container {
@@ -69,14 +69,14 @@
 							</button>
 						</h2>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body">
+							<div class="accordion-body row">
 								<h6>2 columns</h6>
 								<div class="templateGrid col-6"></div>
 								<div class="templateGrid col-6"></div>
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body">
+							<div class="accordion-body row">
 								<h6>3 columns</h6>
 								<div class="templateGrid col-4"></div>
 								<div class="templateGrid col-4"></div>
@@ -84,7 +84,7 @@
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body">
+							<div class="accordion-body row">
 								<h6>4 columns</h6>
 								<div class="templateGrid col-3"></div>
 								<div class="templateGrid col-3"></div>
@@ -93,7 +93,7 @@
 							</div>
 						</div>
 						<div id="Columns" class="accordion-collapse collapse templateElementGrid" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-							<div class="accordion-body">
+							<div class="accordion-body row">
 								<h6>5 columns</h6>
 								<div class="templateGrid col-2 offset-1"></div>
 								<div class="templateGrid col-2"></div>
