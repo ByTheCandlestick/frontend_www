@@ -65,6 +65,7 @@
 							4
 						</div>
 					</div>
+				</div>
 				<?
 					$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 					$type = null;
@@ -73,7 +74,6 @@
 							$sections[$row['id']] = $row;
 							if($type != $row['section_type']) {
 								print('
-									</div>
 									<div class="accordion-item container row templateBuilderElements">
 										<h2 class="accordion-header p-0" id="headingOne">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
@@ -90,6 +90,11 @@
 								</div>
 							');
 							$type = $row['section_type'];
+							if($type != $row['section_type']) {
+								print('
+									</div>
+								');
+							}
 						}
 					}
 				?>
