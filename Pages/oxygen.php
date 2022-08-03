@@ -82,6 +82,7 @@
 						</div>
 						<div id="Columns" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
+								<h6>5</h6>
 								<div class="containerGrid col-2 offset-1"></div>
 								<div class="containerGrid col-2"></div>
 								<div class="containerGrid col-2"></div>
