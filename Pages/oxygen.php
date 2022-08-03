@@ -85,10 +85,38 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;">
 			<?
 				if($page['section_ids'] != "") {
-					printSectionTemplates($sections, $page['section_ids']);
+					print('<div class="row">');
+						$columns = explode("#", $page['section_ids']);
+						$seccode = $secext = NULL;
+						array_shift($columns);
+						foreach($columns as $column) {
+							[$width, $section_string] = explode(';', $column);
+							print("<div class=\"col-md-$width container templateBuilderGrid\">");
+								$sections = explode(',', $section_string);
+								foreach($sections as $section) {
+									[$seccode, $secext] = explode(':', $section);
+									if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
+										if(mysqli_num_rows($result) == 1) {
+											$row = mysqli_fetch_array($result);
+											print('
+												<div class="element">
+													<h5>
+														'.$sections[$seccode]['short_description'].'
+													</h5>
+													<input type="text" value="'.$secext.'">
+												</div>
+											');
+											unset($secext);
+										}
+									}
+								}
+							print("</div>");
+						}
+					print('</div>');
 				} else {
 					print("Drag an element from the left hand side to start building the website!");
 				}
@@ -128,8 +156,8 @@
 		},
 		direction: 'vertical',			// Y axis is considered when determining where an element would be dropped
 		copySortSource: false,			// elements in copy-source containers can be reordered
-		revertOnSpill: false,			// spilling will put the element back where it was dragged from, if this is true
-		removeOnSpill: true,			// spilling will `.remove` the element, if this is true
+		revertOnSpill: true,			// spilling will put the element back where it was dragged from, if this is true
+		removeOnSpill: false,			// spilling will `.remove` the element, if this is true
 		mirrorContainer: document.body,	// set the element that gets mirror elements appended
 		ignoreInputTextSelection: true,	// allows users to select input text, see details below
 		slideFactorX: 0,				// allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
