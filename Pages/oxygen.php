@@ -94,7 +94,7 @@
 										</div>
 									</div>
 							');
-							if($type == $row['section_type']) print('
+							if($type != $row['section_type']) print('
 								</div>
 							');
 							$type = $row['section_type'];
