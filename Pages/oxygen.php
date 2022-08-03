@@ -151,9 +151,9 @@
 </section>
 <script>
 	dragula([
-		$('.templateBuilder'),
-		$('.templateBuilderGrid'),
-		$('.templateBuilderElements')
+		document.querySelector('.templateBuilder'),
+		document.querySelector('.templateBuilderGrid'),
+		document.querySelector('.templateBuilderElements'),
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
@@ -162,10 +162,10 @@
 			return true;				// elements are always draggable by default
 		},
 		copy: function(el, source) {
-			return source === document.querySelector('.templateBuilderElements')
+			return source === document.querySelector('.templateBuilderElements');
 		},
 		accepts: function (el, target, source, sibling) {
-			return target !== document.querySelector('.templateBuilderElements')
+			return target !== document.querySelector('.templateBuilderElements');
 		},
 		invalid: function (el, handle) {
 			return false;				// don't prevent any drags from initiating by default
