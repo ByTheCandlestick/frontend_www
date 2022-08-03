@@ -88,7 +88,7 @@
 							<div class="accordion-body row">
 								<h6>2 columns</h6>
 								<div class="templateElementMenu">
-
+									<a onclick="console.log($(this).parent().parent())"></a>
 								</div>
 								<div class="templateGrid col-6"></div>
 								<div class="templateGrid col-6"></div>
