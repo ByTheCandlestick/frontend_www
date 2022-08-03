@@ -44,9 +44,6 @@
 				.accordion-item .element#Columns div {
 					display: none;
 				}
-				.templateBuilder .element#Columns h6 {
-					display: none;
-				}
 			</style>
 			<div class="col-lg-3">
 				<div class="accordion accordion-flush" id="SectionElements">
