@@ -177,7 +177,7 @@
 				return false;				// only elements in drake.containers will be taken into account
 			},
 			moves: function (el, source, handle, sibling) {
-				return source === document.querySelector('.dragDisabled')
+				return true
 			},
 			copy: function(el, source) {
 				return source === document.querySelector('.templateElements')
@@ -186,7 +186,7 @@
 				return target !== document.querySelector('.templateElements')
 			},
 			invalid: function (el, handle) {
-				return false;				// don't prevent any drags from initiating by default
+				return source === document.querySelector('.dragDisabled')
 			},
 			direction: 'vertical',			// Y axis is considered when determining where an element would be dropped
 			copySortSource: false,			// elements in copy-source containers can be reordered
