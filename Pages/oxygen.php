@@ -98,6 +98,8 @@
 						}
 					}
 				?>
+				</div>
+			</div>
 		</div>
 		
 		<div class="col-lg-9 h-100 templateBuilder" style="border: 2px solid var(--main-color);border-radius: 15px;"> <!-- Template -->
