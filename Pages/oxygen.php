@@ -72,6 +72,7 @@
 								while($row = mysqli_fetch_array($query)) {
 									$sections[$row['id']] = $row;
 									if($type != $row['section_type']) print('
+										</div>
 										<div class="accordion-item container row templateBuilderElements">
 											<h2 class="accordion-header p-0" id="headingOne">
 												<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-expanded="true" aria-controls="'.$row['section_type'].'">
@@ -85,9 +86,6 @@
 													'.$row['short_description'].'
 												</div>
 											</div>
-									');
-									if($type != $row['section_type'] && $type != null) print('
-										</div>
 									');
 									$type = $row['section_type'];
 								}
