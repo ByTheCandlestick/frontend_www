@@ -34,7 +34,7 @@
 					border-radius: 15px;
 				}
 				.templateElements {
-					
+
 				}
 				.templateGrid {
 
@@ -64,14 +64,14 @@
 								<h5>Columns</h5>
 							</button>
 						</h2>
-						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>2</h6>
 								<div class="templateGrid col-6"></div>
 								<div class="templateGrid col-6"></div>
 							</div>
 						</div>
-						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>3</h6>
 								<div class="templateGrid col-4"></div>
@@ -79,7 +79,7 @@
 								<div class="templateGrid col-4"></div>
 							</div>
 						</div>
-						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>4</h6>
 								<div class="templateGrid col-3"></div>
@@ -88,7 +88,7 @@
 								<div class="templateGrid col-3"></div>
 							</div>
 						</div>
-						<div id="Columns" class="accordion-collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>5</h6>
 								<div class="templateGrid col-2 offset-1"></div>
