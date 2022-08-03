@@ -70,7 +70,7 @@
 								5
 							</div>
 						</div>
-						<?
+						<? 
 							$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 							$type = null;
 							if(mysqli_num_rows($query) > 0) {
