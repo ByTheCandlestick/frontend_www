@@ -38,8 +38,10 @@
 				}
 				.accordion .templateElement,
 				.accordion .templateElementGrid {
-					width: 50%;
+					width: calc(50% - 15px);
 					background: var(--section);
+					margin: 5px 0px 7px 10px;
+					border-radius: 10px;
 				}
 				.templateBase .templateElement,
 				.templateBase .templateElementGrid {
