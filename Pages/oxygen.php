@@ -45,16 +45,6 @@
 					border-radius: 15px;
 					padding: unset;
 				}
-				.templateElements {
-					background: var(--section);
-					border-radius: 15px;
-					margin: 10px;
-					padding: 10px;
-				}
-				.accordion-item .templateElements input,
-				.accordion-item .templateElements#Columns div {
-					display: none;
-				}
 			</style>
 			<div class="col-lg-3">
 				<div class="accordion accordion-flush" id="SectionElements">
