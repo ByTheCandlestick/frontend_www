@@ -36,6 +36,9 @@
 				.templateElements {
 
 				}
+				.templateElement {
+
+				}
 				.templateGrid {
 
 				}
@@ -54,14 +57,14 @@
 								<h5>Columns</h5>
 							</button>
 						</h2>
-						<div id="Columns" class="accordion-collapse collapse templateElements" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse templateElement" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>2</h6>
 								<div class="templateGrid col-6"></div>
 								<div class="templateGrid col-6"></div>
 							</div>
 						</div>
-						<div id="Columns" class="accordion-collapse collapse templateElements" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse templateElement" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>3</h6>
 								<div class="templateGrid col-4"></div>
@@ -69,7 +72,7 @@
 								<div class="templateGrid col-4"></div>
 							</div>
 						</div>
-						<div id="Columns" class="accordion-collapse collapse templateElements" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse templateElement" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>4</h6>
 								<div class="templateGrid col-3"></div>
@@ -78,7 +81,7 @@
 								<div class="templateGrid col-3"></div>
 							</div>
 						</div>
-						<div id="Columns" class="accordion-collapse collapse templateElements" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+						<div id="Columns" class="accordion-collapse collapse templateElement" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 							<div class="accordion-body">
 								<h6>5</h6>
 								<div class="templateGrid col-2 offset-1"></div>
@@ -104,7 +107,7 @@
 											</h2>
 									');
 									print('
-											<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 templateElements" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+											<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 templateElement" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
 												<div class="accordion-body">
 													<h6>'.$row['short_description'].'</h6>
 													<input type="text" value="">
