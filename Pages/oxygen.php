@@ -45,7 +45,7 @@
 				.templateElementMenu {
 					display: none;
 				}
-				.templateElementMenu:hover,
+				.templateBase .templateElementMenu:hover,
 				.templateBase .templateElement:hover .templateElementMenu,
 				.templateBase .templateElementGrid:hover .templateElementMenu {
 					display: block;
