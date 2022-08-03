@@ -36,8 +36,8 @@
 				.templateElements {
 
 				}
-				.accordian .templateElement,
-				.accordian .templateElementGrid {
+				.accordian-item .templateElement,
+				.accordian-item .templateElementGrid {
 					width: 50%;
 				}
 				.templateBase .templateElement,
