@@ -83,11 +83,11 @@
 									</h2>
 							');
 							print('
-								<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
-									<div class="accordion-body">
-										'.$row['short_description'].'
+									<div id="'.$row['section_type'].'" class="accordion-collapse collapse col-12 col-md-5 element" aria-labelledby="headingOne" data-bs-parent="#SectionElements">
+										<div class="accordion-body">
+											'.$row['short_description'].'
+										</div>
 									</div>
-								</div>
 							');
 							if($type != $row['section_type']) print('
 								</div>
@@ -96,7 +96,6 @@
 						}
 					}
 				?>
-				</div>
 			</div>
 		</div>
 		
