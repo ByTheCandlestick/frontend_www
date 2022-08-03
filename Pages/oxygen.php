@@ -153,7 +153,7 @@
 	dragula([
 		document.querySelector('.templateBuilder'),
 		document.querySelector('.templateBuilderGrid'),
-		document.querySelector('.templateBuilderElements')
+		document.querySelector('.accordion > .templateBuilderElements')
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
@@ -162,10 +162,10 @@
 			return true;				// elements are always draggable by default
 		},
 		copy: function(el, source) {
-			return source === document.querySelector('.templateBuilderElements')
+			return source === document.querySelector('.accordion > .templateBuilderElements')
 		},
 		accepts: function (el, target, source, sibling) {
-			return target !== document.querySelector('.templateBuilderElements')
+			return target !== document.querySelector('.accordion > .templateBuilderElements')
 		},
 		invalid: function (el, handle) {
 			return target == document.querySelector('.dragDisabled')
