@@ -44,7 +44,7 @@
 				.accordion-item .element#Columns div {
 					display: none;
 				}
-				.container .element#Columns h6 {
+				.templateBuilder .element#Columns h6 {
 					display: none;
 				}
 			</style>
