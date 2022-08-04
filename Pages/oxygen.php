@@ -328,7 +328,7 @@ if(QS_SUBPAGE != "") {
 	});
 	function save() {
 		elementIds = [];
-		elementString = "#1:";
+		elementString = "#1|";
 		$('	.templateBase .templateGrid, \
 			.templateBase .templateElementGrid, \
 			.templateBase .templateElementGrid .templateElement').each(function() {
