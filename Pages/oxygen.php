@@ -243,22 +243,7 @@ if(QS_SUBPAGE != "") {
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-9 templateBase dragulaContainer"><?
-			// Convert and finish in JS
-			if($page['section_ids'] != "") {
-				$columns = explode("$", $page['section_ids']);
-				$seccode = $secext = NULL;
-				array_shift($columns);
-				foreach($columns as $column) {
-					[$columns, $column] = explode("|", $column);
-					
-					print_r($columns.' - ');
-					print_r($column.' - ');
-				}
-			} else {
-				print("Drag an element from the left hand side to start building the website!");
-			}
-		?></div>
+		<div class="col-lg-9 templateBase dragulaContainer"></div>
 	</div>
 	<!-- Page Type -->
 	<div class="row" type="page" style="display: <?($page['display_type']==1)?print("none"):print("flex")?>;">
@@ -309,12 +294,16 @@ if(QS_SUBPAGE != "") {
 	});
 	$(document).ready(() => {
 		var sectionString = $('section .sections').attr('data-original-sections');
-		var columns = sectionString.split('$').shift();
-		var seccode, secext = null;
-		$.each(columns, function() {
-			columns = this.split('|');
-			console.log(columns);
-		})
+		if(sectionString == "") {
+			var columns = sectionString.split('$').shift();
+			var seccode, secext = null;
+			$.each(columns, function() {
+				columns = this.split('|');
+				console.log(columns);
+			})
+		} else {
+			$('.templateBase').text("Drag an element from the left hand side to start building the website!");
+		}
 	})
 </script>
 <?
