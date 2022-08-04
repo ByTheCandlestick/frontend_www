@@ -227,9 +227,7 @@ if(QS_SUBPAGE != "") {
 	dragula([
 		document.querySelector('.templateBase'),
 		document.querySelector('.templateGrid'),
-		document.querySelector('.templateElements.cat-columns'),
-		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
-		");}?>
+		[].slice.apply(document.querySelectorAll('.templateElements')),
 	], {
 		isContainer: function (el) {
 			return false;
@@ -241,7 +239,6 @@ if(QS_SUBPAGE != "") {
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
-			console.log(target);
 			return target.classList.contains('dragulaContainer');
 		},
 		invalid: function (el, handle) {
