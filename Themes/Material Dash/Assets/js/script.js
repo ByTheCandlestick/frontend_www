@@ -355,7 +355,6 @@ $(document).ready(() => {
 					elementIds = [];
 					elementString = "#12;";
 					$('.templateBase .templateGrid, .templateBase .templateElement').each(function() {
-						console.log($(this).find('input').val());
 						if($(this).find('input').length > 0 && $(this).find('input').val() != '') {
 							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 						} else {
