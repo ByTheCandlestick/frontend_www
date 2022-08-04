@@ -323,10 +323,14 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elements = $('.templateBase').children();
 		elements.each(function() {
-			if($(this).find('input') && $(this).find('input').val()!='') {
-				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
+			if($(this).find('templateGrid')) {
+				elementIds.push($(this).find('templateGrid').attr('element-id'));
 			} else {
-				elementIds.push($(this).attr('element-id'));
+				if($(this).find('input') && $(this).find('input').val()!='') {
+					elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
+				} else {
+					elementIds.push($(this).attr('element-id'));
+				}
 			}
 		})
 		console.log(elementIds.join(','));
