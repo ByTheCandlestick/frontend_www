@@ -292,7 +292,7 @@ if(QS_SUBPAGE != "") {
 		");}?>
 	], {
 		isContainer: function (el) {
-			return target.classList.contains('dragulaContainer');
+			return el.classList.contains('dragulaContainer');
 		},
 		moves: function (el, source, handle, sibling) {
 			return true;
