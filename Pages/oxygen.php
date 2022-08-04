@@ -17,8 +17,7 @@ if(QS_SUBPAGE != "") {
 							<label class="btn btn-outline-primary" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 						</div>
 					</div>
-					<!--<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">-->
-					<a href="javascript:save();" class="btn btn-outline-primary m-1">
+					<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -98,7 +97,7 @@ if(QS_SUBPAGE != "") {
 							<h5>Columns</h5>
 						</button>
 					</h2>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#2|">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).fadeOut(300, function(){$(this).remove();});})">
@@ -106,15 +105,15 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<div class="templateGrid col-6">
+							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-6" element-id=";">
+							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#3|">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">
@@ -122,18 +121,18 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
-							<div class="templateGrid col-4" element-id="#4|">
+							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-4" element-id="#4|">
+							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-4" element-id="#4|">
+							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#4|">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">
@@ -141,21 +140,21 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>4 columns</h6>
-							<div class="templateGrid col-3" element-id="#3|">
+							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-3" element-id="#3|">
+							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-3" element-id="#3|">
+							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-3" element-id="#3|">
+							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#5|">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">
@@ -163,24 +162,24 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>5 columns</h6>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-4" element-id="#4|">
+							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#6|">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">
@@ -188,22 +187,22 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>6 columns</h6>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-2" element-id="#2|">
+							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
@@ -326,30 +325,6 @@ if(QS_SUBPAGE != "") {
 			$(this).removeClass('accordion-body');
 		});
 	});
-	function save() {
-		elementIds = [];
-		elementString = "";
-		$('	.templateBase .templateElementGrid, \
-			.templateBase .templateElementGrid .templateGrid, \
-			.templateBase .templateElementGrid .templateElement').each(function() {
-			if($(this).find('input')>0 && $(this).find('input').val != '') {
-				console.log($(this));
-				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
-			} else {
-				elementIds.push($(this).attr('element-id'))
-			}
-		});
-		for(let i = 0; i < elementIds.length; i++) {
-			if(elementString != "" && elementIds[i].startsWith('#')) {
-				elementString += ";"+elementIds[i];
-			} else if(elementString.endsWith('|') || elementIds[i].startsWith('#') || elementString == "") {
-				elementString += elementIds[i];
-			} else {
-				elementString += ','+ elementIds[i];
-			}
-		}
-		console.log(elementString);
-	}
 </script>
 <?
 	} else {

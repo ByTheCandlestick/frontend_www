@@ -351,6 +351,23 @@ $(document).ready(() => {
 			/** @wip */
 			layout: {
 				update(pid) {
+					elementIds = [];
+					elementString = "#1:";
+					$('.templateBase .templateGrid, .templateBase .templateElement').each(function() {
+						if($(this).find('input')>0 && $(this).find('input').val != '') {
+							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
+						} else {
+							elementIds.push($(this).attr('element-id'))
+						}
+					});
+					for(let i = 0; i < elementIds.length; i++) {
+						if(elementString.endsWith(';') || elementIds[i].startsWith('#') || elementString == "") {
+							elementString += elementIds[i];
+						} else {
+							elementString += ','+ elementIds[i];
+						}
+					}
+					console.log(elementString);
 					/*$.ajax({
 						url: api_url + '/Page/Layout/' + pid + '/',
 						data: {
