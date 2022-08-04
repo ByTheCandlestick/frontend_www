@@ -19,7 +19,7 @@ if(QS_SUBPAGE != "") {
 						</div>
 					</div>
 					<!--<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">-->
-					<a href="javascript:save($('.templateBase').children());" class="btn btn-outline-primary m-1">
+					<a href="javascript:save();" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -319,8 +319,14 @@ if(QS_SUBPAGE != "") {
 		slideFactorX: 0,
 		slideFactorY: 0,
 	});
+	//////////
+	function save() {
+		$('.templateBase').children().each(function() {
 
-	function save(elements) {
+		})
+	}
+	//////////
+	function simpleSave(elements) {
 		elementIds = [];
 		elements.each(function() {
 			if($(this).find('input') > 0 && $(this).find('input').val() != '') {
@@ -333,11 +339,11 @@ if(QS_SUBPAGE != "") {
 	}
 </script>
 <?
-} else {
+	} else {
 ?>
-<script>
-window.location = "/";
-</script>
+	<script>
+		window.location = "/";
+	</script>
 <?
-}
+	}
 ?>
