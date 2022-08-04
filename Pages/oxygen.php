@@ -333,6 +333,7 @@ if(QS_SUBPAGE != "") {
 			.templateBase .templateElementGrid, \
 			.templateBase .templateElementGrid .templateElement').each(function() {
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
+				console.log($(this));
 				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 			} else {
 				elementIds.push($(this).attr('element-id'))
