@@ -323,7 +323,7 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elements = $('.templateBase').children();
 		elements.each(function() {
-			if($(this).find('templateGrid')) {
+			if($(this).find('.templateGrid')) {
 				console.log($(this).find('.templateGrid'));
 			} else {
 				if($(this).find('input') && $(this).find('input').val()!='') {
