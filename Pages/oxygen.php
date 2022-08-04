@@ -329,7 +329,7 @@ if(QS_SUBPAGE != "") {
 	//////////
 	elementIds = [];
 	function save() {
-		$('.templateGrid .templateElement').each(function() {
+		$('.templateGrid, .templateElement').each(function() {
 			console.log($(this));
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
 				console.log($(this).attr('element-id')+':'+$(this).find('input').val())
