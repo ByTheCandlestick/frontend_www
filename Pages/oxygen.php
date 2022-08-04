@@ -17,7 +17,8 @@ if(QS_SUBPAGE != "") {
 							<label class="btn btn-outline-primary" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 						</div>
 					</div>
-					<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">
+					<!--<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">-->
+					<a href="javascript:save();" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -325,6 +326,26 @@ if(QS_SUBPAGE != "") {
 			$(this).removeClass('accordion-body');
 		});
 	});
+	function save() {
+		elementIds = [];
+		elementString = "#1:";
+		$('.templateBase .templateGrid, .templateBase .templateElement, .templateBase .templateElementGrid').each(function() {
+			if($(this).find('input')>0 && $(this).find('input').val != '') {
+				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
+			} else {
+				elementIds.push($(this).attr('element-id'))
+			}
+		});
+		console.log(elementIds.join(','))
+		for(let i = 0; i < elementIds.length; i++) {
+			if(elementString.endsWith('|') || elementIds[i].startsWith('#') || elementString == "") {
+				elementString += elementIds[i];
+			} else {
+				elementString += ','+ elementIds[i];
+			}
+		}
+		console.log(elementString);
+	}
 </script>
 <?
 	} else {
