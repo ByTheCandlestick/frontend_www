@@ -223,7 +223,10 @@ if(QS_SUBPAGE != "") {
 			return true
 		},
 		copy: function(el, source) {
-			return source === document.querySelector('.templateElements')
+			arr = document.querySelectAll('.templateElements')
+			arr.foreach(function(element) {
+				return source === element;
+			})
 		},
 		accepts: function (el, target, source, sibling) {
 			return target !== document.querySelector('.templateElements')
