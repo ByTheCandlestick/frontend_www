@@ -329,8 +329,7 @@ if(QS_SUBPAGE != "") {
 	function save() {
 		elementIds = [];
 		elementString = "";
-		$('	.templateBase .templateGrid, \
-			.templateBase .templateElementGrid, \
+		$('	.templateBase .templateElementGrid, \
 			.templateBase .templateElementGrid .templateElement').each(function() {
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
 				console.log($(this));
