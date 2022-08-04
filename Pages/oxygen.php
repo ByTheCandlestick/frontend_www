@@ -301,7 +301,7 @@ if(QS_SUBPAGE != "") {
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
-			return target.classList.contains('dragulaContainer');
+			return target.classList.contains('dragContainer');
 		},
 		invalid: function (el, handle) {
 			return el.classList.contains('dragulaDisabled');
@@ -315,7 +315,7 @@ if(QS_SUBPAGE != "") {
 		slideFactorX: 0,
 		slideFactorY: 0,
 	}).on('drop', function(el, target, source, sibling) {
-		console.log('dropped')
+		
 	});
 	//////////
 	elementIds = [];
