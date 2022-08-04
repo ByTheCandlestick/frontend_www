@@ -245,13 +245,12 @@ if(QS_SUBPAGE != "") {
 		</div>
 		<div class="col-lg-9 templateBase dragulaContainer"><?
 			if($page['section_ids'] != "") {
-					$columns = explode("$", $page['section_ids']);
-					$seccode = $secext = NULL;
-					array_shift($columns);
-					print_r($columns);
-					foreach($columns as $column) {
-					}
-				print('</div>');
+				$columns = explode("$", $page['section_ids']);
+				$seccode = $secext = NULL;
+				array_shift($columns);
+				foreach($columns as $column) {
+					print_r($elements = explode("|", $page['section_ids']))s;
+				}
 			} else {
 				print("Drag an element from the left hand side to start building the website!");
 			}
