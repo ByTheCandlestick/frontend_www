@@ -328,7 +328,7 @@ if(QS_SUBPAGE != "") {
 	});
 	function save() {
 		elementIds = [];
-		elementString = "#1|";
+		elementString = "";
 		$('	.templateBase .templateGrid, \
 			.templateBase .templateElementGrid, \
 			.templateBase .templateElementGrid .templateElement').each(function() {
@@ -339,7 +339,7 @@ if(QS_SUBPAGE != "") {
 				elementIds.push($(this).attr('element-id'))
 			}
 		});
-		console.log(elementString+elementIds.join(','));
+		console.log(elementIds.join(','));
 /*
 		for(let i = 0; i < elementIds.length; i++) {
 			if(elementString.endsWith('|') || elementIds[i].startsWith('#') || elementString == "") {
