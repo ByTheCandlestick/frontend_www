@@ -285,13 +285,12 @@ if(QS_SUBPAGE != "") {
 <script>
 	dragula([
 		document.querySelector('.templateGrid'),
-		document.querySelector('.templateBase'),
 		document.querySelector('.templateElements.cat-columns'),
 		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
 		");}?>
 	], {
 		isContainer: function (el) {
-			return el.classList.contains('dragulaContainer');
+			return el.classList.contains('dragulaContainer templateBase');
 		},
 		moves: function (el, source, handle, sibling) {
 			return true;
