@@ -157,7 +157,7 @@ if(QS_SUBPAGE != "") {
 										</h2>
 								');
 								print('
-										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" data-elm-id="'.$row['id'].'" data-bs-parent="#SectionElements">
+										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" element-id="'.$row['id'].'" data-bs-parent="#SectionElements">
 											<div class="accordion-body row position-relative">
 												<div class="templateElementMenu">
 													<a onclick="$(this).closest(\'.templateElement, .templateElementGrid\').remove()">
@@ -258,7 +258,7 @@ if(QS_SUBPAGE != "") {
 	function save() {
 		console.log(elements = $('.templateBase').children());
 		elements.forEach(function(elem) {
-			console.log($(elem).attr('data-elm-id'));
+			console.log($(elem).attr('element-id'));
 		})
 	}
 </script>
