@@ -352,29 +352,43 @@ $(document).ready(() => {
 			/** @wip */
 			layout: {
 				update(pid) {
-					$()
-					/*
-						data = {
-							'api_key': api_key,
-							'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
-							'sections': $("div[type=sections]").attr('data-original-sections'),
-							'page': $("div[name=name] input").val(),
+					elementIds = [];
+					elementString = "";
+					$('.templateBase .templateGrid, .templateBase .templateElement').each(function() {
+						if($(this).find('input')>0 && $(this).find('input').val != '') {
+							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
+						} else {
+							elementIds.push($(this).attr('element-id'))
 						}
-						$.ajax({
-							url: api_url + '/Page/Layout/' + pid + '/',
-							data: data,
-							type: 'POST',
-							xhrFields: {
-								withCredentials: true,
-							},
-							success(body) {
-								alert.simple("Successfully updated the layout", "success");
-							},
-							error(body) {
-								alert.simple("An error has occurred. Please try again later", "danger");
-							}
-						});
-					*/
+					})
+					for(let i = 0; i < elementIds.length; i++) {
+						if(elementString.endsWith(';') || elementIds[i].startsWith('#')) {
+							elementString += elementIds[i];
+						} else {
+							elementString += ','+ elementIds[i];
+						}
+					}
+					console.log(elementString);
+					data = {
+						'api_key': api_key,
+						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
+						'sections': elementString,
+						'page': $("div[name=name] input").val(),
+					}
+					$.ajax({
+						url: api_url + '/Page/Layout/' + pid + '/',
+						data: data,
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success(body) {
+							alert.simple("Successfully updated the layout", "success");
+						},
+						error(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
 				}
 			},
 			/** @final */
