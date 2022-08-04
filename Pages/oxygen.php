@@ -89,7 +89,7 @@ if(QS_SUBPAGE != "") {
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
-								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
+								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()"><i class="fas fa-trash-alt"></i></a>
 							</div>
 							<h6>2 columns</h6>
 							<div class="templateGrid dragulaContainer col-6"></div>
