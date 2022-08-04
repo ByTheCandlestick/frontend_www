@@ -261,7 +261,7 @@ if(QS_SUBPAGE != "") {
 		elements.each(function() {
 			elementIds.push($(this).attr('element-id'));
 		})
-		console.log(elementIds.join(', '));
+		console.log(elementIds.join(','));
 	}
 </script>
 <?
