@@ -100,8 +100,12 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<div class="templateGrid dragulaContainer col-6"></div>
-							<div class="templateGrid dragulaContainer col-6"></div>
+							<div class="templateGrid col-6">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-6">
+								<div class="dragulaContainer"></div>
+							</div>
 						</div>
 					</div>
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
@@ -112,9 +116,18 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
-							<div class="templateGrid dragulaContainer col-4"></div>
-							<div class="templateGrid dragulaContainer col-4"></div>
-							<div class="templateGrid dragulaContainer col-4"></div>
+							<div class="templateGrid col-4">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-4">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-4">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-4">
+								<div class="dragulaContainer"></div>
+							</div>
 						</div>
 					</div>
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
@@ -125,10 +138,18 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>4 columns</h6>
-							<div class="templateGrid dragulaContainer col-3"></div>
-							<div class="templateGrid dragulaContainer col-3"></div>
-							<div class="templateGrid dragulaContainer col-3"></div>
-							<div class="templateGrid dragulaContainer col-3"></div>
+							<div class="templateGrid col-3">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-3">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-3">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-3">
+								<div class="dragulaContainer"></div>
+							</div>
 						</div>
 					</div>
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
