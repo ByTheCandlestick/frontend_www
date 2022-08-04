@@ -210,13 +210,11 @@ if(QS_SUBPAGE != "") {
 	</div>
 </section>
 <script>
-	console.log(document.querySelectorAll('.templateElements'));
-	console.log(document.querySelector('.templateElements'));
 	dragula([
 		document.querySelectorAll('.templateBase'),
 		document.querySelectorAll('.templateElementGrid'),
 		document.querySelectorAll('.templateElements-columns'),
-		<?foreach($elementCategories as $elementCategory) {print("document.querySelectorAll('.templateElements-$elementCategory'),
+		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements-$elementCategory'),
 		");}?>
 	], {
 		isContainer: function (el) {
