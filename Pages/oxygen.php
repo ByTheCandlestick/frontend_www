@@ -292,7 +292,7 @@ if(QS_SUBPAGE != "") {
 		");}?>
 	], {
 		isContainer: function (el) {
-			return $(el).hasClass('dragulaContainer templateBase');
+			return $(el).hasClass('dragulaContainer');
 		},
 		moves: function (el, source, handle, sibling) {
 			return true;
