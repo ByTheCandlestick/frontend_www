@@ -302,7 +302,7 @@ if(QS_SUBPAGE != "") {
 				console.log(columns);
 			})
 		} else {
-			$('.templateBase').text("Drag an element from the left hand side to start building the website!");
+			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
 		}
 	})
 </script>
