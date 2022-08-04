@@ -323,10 +323,9 @@ if(QS_SUBPAGE != "") {
 	function save(elements) {
 		elementIds = [];
 		elements.each(function() {
-			if($(this).find('.templateGrid')>0) {
+			if($(this).hasClass('.templateElementGrid')) {
 				$(".templateGrid").each(function(){
-					save(this);
-					console.log($(this));
+					save($(this).children('.templateGrid '));
 				})
 			} else {
 				if($(this).find('input')>0 && $(this).find('input').val()!='') {
