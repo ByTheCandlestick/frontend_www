@@ -214,7 +214,8 @@ if(QS_SUBPAGE != "") {
 		document.querySelector('.templateBase'),
 		document.querySelector('.templateElementGrid'),
 		document.querySelector('.templateElements.columns'),
-
+		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements-$elementCategory'),
+		");}?>
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
@@ -223,10 +224,16 @@ if(QS_SUBPAGE != "") {
 			return true
 		},
 		copy: function(el, source) {
-			return source === document.querySelector('.templateElements')
+			arr = document.querySelectAll('.templateElements')
+			arr.foreach(function(element) {
+				return source === element;
+			})
 		},
 		accepts: function (el, target, source, sibling) {
-			return target !== document.querySelector('.templateElements')
+			arr = document.querySelectAll('.templateElements')
+			arr.foreach(function(element) {
+				return source === element;
+			})
 		},
 		invalid: function (el, handle) {
 			return false // source === document.querySelector('.dragDisabled')
