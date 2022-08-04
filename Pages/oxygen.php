@@ -5,11 +5,10 @@ if(QS_SUBPAGE != "") {
 <section>
 	<!-- Section Header -->
 	<div class="row">
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-8">
 			<h1>Oxygen - '<?print($page['page_name'])?>'</h1>
-			<p class="text-danger"> WORK IN PROGRESS, PLEASE DO NOT USE </p>
 		</div>
-		<div class="col-12 col-md-6 text-md-end">
+		<div class="col-12 col-md-4 text-md-end">
 			<div class="row">
 				<div class="col-12 d-flex justify-content-end align-items-center p-0">
 					<div class="form-floating m-1">
