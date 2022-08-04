@@ -26,7 +26,7 @@ if(QS_SUBPAGE != "") {
 	</div>
 	<hr>
 	<!-- Section Type -->
-	<div class="row" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;" data-original-sections="<?print($page['section_ids'])?>">
+	<div class="row sections" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;" data-original-sections="<?print($page['section_ids'])?>">
 		<style>
 			.templateBase {
 				border: 2px solid var(--main-color);
@@ -307,6 +307,11 @@ if(QS_SUBPAGE != "") {
 			$(this).removeClass('accordion-body');
 		});
 	});
+
+	function initialize() {
+		var sectionString = $('.sections').attr('data-original-sections');
+		console.log(sectionString);
+	}
 </script>
 <?
 	} else {
