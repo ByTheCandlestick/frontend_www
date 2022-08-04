@@ -338,8 +338,6 @@ if(QS_SUBPAGE != "") {
 				elementIds.push($(this).attr('element-id'))
 			}
 		});
-		console.log(elementIds.join(','));
-/*
 		for(let i = 0; i < elementIds.length; i++) {
 			if(elementString.endsWith('|') || elementIds[i].startsWith('#') || elementString == "") {
 				elementString += elementIds[i];
@@ -348,7 +346,6 @@ if(QS_SUBPAGE != "") {
 			}
 		}
 		console.log(elementString);
-*/
 	}
 </script>
 <?
