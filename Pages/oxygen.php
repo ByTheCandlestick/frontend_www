@@ -259,7 +259,11 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elements = $('.templateBase').children();
 		elements.each(function() {
-			elementIds.push($(this).attr('element-id'));
+			if($(this).find('input')) {
+				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
+			} else {
+				elementIds.push($(this).attr('element-id'));
+			}
 		})
 		console.log(elementIds.join(','));
 	}
