@@ -213,9 +213,8 @@ if(QS_SUBPAGE != "") {
 	dragula([
 		document.querySelector('.templateBase'),
 		document.querySelector('.templateElementGrid'),
-		document.querySelector('.templateElements-columns'),
-		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements-$elementCategory'),
-		");}?>
+		document.querySelector('.templateElements-columns, .templateElements-blog'),
+
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
