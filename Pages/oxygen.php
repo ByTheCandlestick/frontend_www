@@ -286,15 +286,11 @@ if(QS_SUBPAGE != "") {
 	</div>
 </section>
 <script>
-	(function() {
-		dragula([].slice.apply(document.querySelectorAll('.templateGrid')));
-	})();
 	dragula([
+		Array.prototype.slice.call(),
 		document.querySelector('.templateGrid'),
 		document.querySelector('.templateBase'),
-		document.querySelector('.templateElements.cat-columns'),
-		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
-		");}?>
+		Array.prototype.slice.call(document.querySelectorAll('.templateElements')),
 	], {
 		isContainer: function (el) {
 			return false;
@@ -320,7 +316,9 @@ if(QS_SUBPAGE != "") {
 		slideFactorX: 0,				// allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
 		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
 	});
-	dragula([document.querySelector('.templateGrid')], {
+	dragula([
+		[].splitdocument.querySelector('.templateGrid')
+	], {
 		moves: function(el, container, handle) {
 			return !handle.classList.contains('blocinner');
 		}
