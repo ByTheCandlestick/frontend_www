@@ -157,13 +157,13 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>5 columns</h6>
-							<div class="templateGrid col-2 offset-1">
-								<div class="dragulaContainer"></div>
-							</div>
 							<div class="templateGrid col-2">
 								<div class="dragulaContainer"></div>
 							</div>
 							<div class="templateGrid col-2">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-3">
 								<div class="dragulaContainer"></div>
 							</div>
 							<div class="templateGrid col-2">
