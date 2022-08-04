@@ -350,7 +350,7 @@ if(QS_SUBPAGE != "") {
 			}
 		})
 		for(let i = 0; i < elementIds.length; i++) {
-			if(elementString.endsWith(';')) {
+			if(elementString.endsWith(';') || elementIds[i].startsWith('#')) {
 				elementString += elementIds[i];
 			} else {
 				elementString += ','+ elementIds[i];
