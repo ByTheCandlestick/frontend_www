@@ -213,8 +213,9 @@ if(QS_SUBPAGE != "") {
 	console.log(document.querySelector('.templateElements'));
 	dragula([
 		document.querySelectorAll('.templateBase'),
-		document.querySelectorAll('.templateBuilderGrid'),
 		document.querySelectorAll('.templateElements'),
+		document.querySelectorAll('.templateElement'),
+		document.querySelectorAll('.templateElementGrid'),
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
