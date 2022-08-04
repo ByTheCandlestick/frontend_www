@@ -331,7 +331,7 @@ if(QS_SUBPAGE != "") {
 	function save() {
 		$('.templateGrid .templateElement').each(function() {
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
-				console.log('Columns');
+				console.log($(this).attr('element-id')+':'+$(this).find('input').val())
 			} else {
 				console.log($(this).attr('element-id'))
 			}
