@@ -354,7 +354,7 @@ $(document).ready(() => {
 				update(pid) {
 					elementIds = [];
 					elementString = "#12;";
-					$('.templateBase .templateGrid, .templateBase .templateElement').each(function() {
+					$('.templateBase [element-id]').each(function() {
 						if($(this).find('input').length > 0 && $(this).find('input').val() != '') {
 							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 						} else {
