@@ -229,7 +229,10 @@ if(QS_SUBPAGE != "") {
 			})
 		},
 		accepts: function (el, target, source, sibling) {
-			return target !== document.querySelector('.templateElements')
+			arr = document.querySelectAll('.templateElements')
+			arr.foreach(function(element) {
+				return source !== element;
+			})
 		},
 		invalid: function (el, handle) {
 			return false // source === document.querySelector('.dragDisabled')
