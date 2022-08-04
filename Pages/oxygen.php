@@ -59,7 +59,7 @@ if(QS_SUBPAGE != "") {
 				width: 100%;
 				background: var(--app-container);
 			    border-bottom: dotted silver 2px;
-				padding: 8px 15px 8px 15px;
+				padding: 1rem 1.25rem;
 			}
 
 			.templateElementMenu,
