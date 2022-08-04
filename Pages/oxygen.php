@@ -309,12 +309,10 @@ if(QS_SUBPAGE != "") {
 	});
 	$(document).ready(() => {
 		var sectionString = $('section .sections').attr('data-original-sections');
-		var columns = sectionString.split('$')
+		var columns = sectionString.split('$').shift();
 		var seccode, secext = null;
 		$.each(columns, function() {
-			if(this != "") {
-				console.log(this);
-			}
+			console.log(this);
 		})
 	})
 </script>
