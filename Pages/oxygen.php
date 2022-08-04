@@ -60,6 +60,7 @@ if(QS_SUBPAGE != "") {
 			.templateBase .templateElementGrid {
 				width: 100%;
 				background: var(--app-container);
+			    border-bottom: dotted silver 2px;
 			}
 
 			.templateElementMenu,
