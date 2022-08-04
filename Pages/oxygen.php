@@ -309,7 +309,7 @@ if(QS_SUBPAGE != "") {
 	});
 
 	function initialize() {
-		var sectionString = $('.sections').attr('data-original-sections');
+		var sectionString = $('section .sections').attr('data-original-sections');
 		console.log(sectionString);
 	}
 </script>
