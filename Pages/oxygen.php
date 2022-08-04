@@ -158,9 +158,11 @@ if(QS_SUBPAGE != "") {
 								print('
 										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" data-bs-parent="#SectionElements">
 											<div class="accordion-body row position-relative">
-												<a onclick="$(this).closest(\'.templateElement, .templateElementGrid\').remove()">
-													<i class="fas fa-trash-alt"></i>
-												</a>
+												<div class="templateElementMenu">
+													<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
+														<i class="fas fa-trash-alt"></i>
+													</a>
+												</div>
 												<h6>'.$row['short_description'].'</h6>
 												<input type="text" value="">
 											</div>
