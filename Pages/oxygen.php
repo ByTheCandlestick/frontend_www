@@ -245,32 +245,11 @@ if(QS_SUBPAGE != "") {
 		</div>
 		<div class="col-lg-9 templateBase dragulaContainer"><?
 			if($page['section_ids'] != "") {
-				print('<div class="row">');
 					$columns = explode("#", $page['section_ids']);
 					$seccode = $secext = NULL;
 					array_shift($columns);
 					foreach($columns as $column) {
-						[$width, $section_string] = explode(';', $column);
-						print("<div class=\"col-md-$width container templateBuilderGrid\">");
-							$templateSections = explode(',', $section_string);
-							foreach($templateSections as $section) {
-								[$seccode, $secext] = explode(':', $section);
-								if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
-									if(mysqli_num_rows($result) == 1) {
-										$row = mysqli_fetch_array($result);
-										print('
-											<div class="element">
-												<h5>
-													'.$sections[$seccode]['short_description'].'
-												</h5>
-												<input type="text" value="'.$secext.'">
-											</div>
-										');
-										unset($secext);
-									}
-								}
-							}
-						print("</div>");
+						print_r($columns);
 					}
 				print('</div>');
 			} else {
