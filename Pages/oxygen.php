@@ -323,11 +323,11 @@ if(QS_SUBPAGE != "") {
 	function save(elements) {
 		elementIds = [];
 		elements.each(function() {
-			if($(this).find('.templateGrid')) {
+			if($(this).find('.templateGrid')>0) {
 				$(".templateGrid").each(function(){
 				})
 			} else {
-				if($(this).find('input') && $(this).find('input').val()!='') {
+				if($(this).find('input')>0 && $(this).find('input').val()!='') {
 					elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
 				} else {
 					elementIds.push($(this).attr('element-id'));
