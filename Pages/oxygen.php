@@ -320,9 +320,14 @@ if(QS_SUBPAGE != "") {
 		slideFactorY: 0,
 	});
 	//////////
+	elementIds = [];
 	function save() {
 		$('.templateBase').children().each(function() {
-			console.log($(this).attr('element-id'))
+			if($(this).hasClass('templateElementGrid')) {
+
+			} else {
+				console.log($(this).attr('element-id'))
+			}
 		})
 	}
 	//////////
