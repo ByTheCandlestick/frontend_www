@@ -83,7 +83,7 @@ if(QS_SUBPAGE != "") {
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row templateElements columns dragulaCopy">
 					<h2 class="accordion-header p-0 dragDisabled">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-controls="'.$row['section_type'].'">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#columns" aria-controls="columns">
 							<h5>Columns</h5>
 						</button>
 					</h2>
