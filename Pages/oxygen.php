@@ -227,6 +227,7 @@ if(QS_SUBPAGE != "") {
 	dragula([
 		document.querySelector('.templateBase'),
 		document.querySelector('.templateGrid'),
+		document.querySelector('.templateElements'),
 		[].slice.apply(document.querySelectorAll('.templateElements')),
 	], {
 		isContainer: function (el) {
