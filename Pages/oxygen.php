@@ -298,8 +298,8 @@ if(QS_SUBPAGE != "") {
 			var columns = sectionString.split('$').shift();
 			var seccode, secext = null;
 			$.each(columns, function() {
-				columns = this.split('|');
-				console.log(columns);
+				column = this.split('|');
+				console.log(column);
 			})
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
