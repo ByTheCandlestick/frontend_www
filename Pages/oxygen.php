@@ -80,13 +80,13 @@ if(QS_SUBPAGE != "") {
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row templateElements columns">
+				<div class="accordion-item container row templateElements columns dragulaCopy">
 					<h2 class="accordion-header p-0 dragDisabled">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#columns" aria-expanded="true" aria-controls="columns">
 							<h5>Columns</h5>
 						</button>
 					</h2>
-					<div id="columns" class="accordion-collapse collapse templateElement dragulaCopy templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -96,7 +96,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid dragulaContainer col-6"></div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElement dragulaCopy templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -107,7 +107,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid dragulaContainer col-4"></div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElement dragulaCopy templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -119,7 +119,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid dragulaContainer col-3"></div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElement dragulaCopy templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -148,7 +148,7 @@ if(QS_SUBPAGE != "") {
 										</h2>
 								');
 								print('
-										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement dragulaCopy" data-bs-parent="#SectionElements">
+										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" data-bs-parent="#SectionElements">
 											<div class="accordion-body row position-relative">
 												<h6>'.$row['short_description'].'</h6>
 												<input type="text" value="">
@@ -225,7 +225,7 @@ if(QS_SUBPAGE != "") {
 			return true
 		},
 		copy: function(el, source) {
-			return el.classList.contains('dragulaCopy');
+			return el.parent().classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
 			return target.classList.contains('dragulaContainer');
