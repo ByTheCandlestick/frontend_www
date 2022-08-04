@@ -322,7 +322,7 @@ if(QS_SUBPAGE != "") {
 
 	function save(elements) {
 		elementIds = [];
-		if($(this).find('input')>0 && $(this).find('input').val()!='') {
+		if($(this).find('input') > 0 && $(this).find('input').val() != '') {
 			elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
 		} else {
 			elementIds.push($(this).attr('element-id'));
