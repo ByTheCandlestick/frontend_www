@@ -336,19 +336,6 @@ if(QS_SUBPAGE != "") {
 				elementIds.push($(this).attr('element-id'))
 			}
 		})
-		console.log(elementIds.join(','));
-	}
-	//////////
-	function simpleSave(elements) {
-		elementIds = [];
-		elementString = "";
-		elements.each(function() {
-			if($(this).find('input') > 0 && $(this).find('input').val() != '') {
-				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
-			} else {
-				elementIds.push($(this).attr('element-id'));
-			}
-		})
 		for(let i = 0; i < elementIds.length; i++) {
 			if(elementString.endsWith(';') || elementIds[i].startsWith('#')) {
 				elementString += elementIds[i];
