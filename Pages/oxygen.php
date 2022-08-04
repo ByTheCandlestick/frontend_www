@@ -301,7 +301,8 @@ if(QS_SUBPAGE != "") {
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
-			return target.classList.contains('dragContainer');
+			console.log(target);
+			return target.classList.contains('dragulaContainer');
 		},
 		invalid: function (el, handle) {
 			return el.classList.contains('dragulaDisabled');
