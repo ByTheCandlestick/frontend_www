@@ -312,7 +312,7 @@ if(QS_SUBPAGE != "") {
 		var columns = sectionString.split('$').shift();
 		var seccode, secext = null;
 		$.each(columns, function() {
-			columns = this.split('|').shift();
+			columns = this.split('|');
 			console.log(columns);
 		})
 	})
