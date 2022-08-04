@@ -157,7 +157,7 @@ if(QS_SUBPAGE != "") {
 										</h2>
 								');
 								print('
-										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" data-elm-id="'.$row['id'].'" data-bs-parent="#SectionElements">
+										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" data-elm-id="#'.$row['id'].'" data-bs-parent="#SectionElements">
 											<div class="accordion-body row position-relative">
 												<div class="templateElementMenu">
 													<a onclick="$(this).closest(\'.templateElement, .templateElementGrid\').remove()">
