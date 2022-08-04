@@ -310,7 +310,10 @@ if(QS_SUBPAGE != "") {
 	$(document).ready(() => {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		var columns = sectionString.split('$')
-		console.log(columns);
+		var seccode, secext = null;
+		$(columns).each(column) {
+			console.log(column);
+		}
 	})
 </script>
 <?
