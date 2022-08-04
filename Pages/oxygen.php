@@ -297,9 +297,8 @@ if(QS_SUBPAGE != "") {
 		if(sectionString != "") {
 			var seccode, secext, column = null;
 			var columns = sectionString.split('$').shift();
-			jQuery.each(columns, function() {
-				var column = this.split('|');
-				console.log(column);
+			$(columns).each(function() {
+				console.log(this);
 			})
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
