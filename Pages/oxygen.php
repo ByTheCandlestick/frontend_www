@@ -295,8 +295,8 @@ if(QS_SUBPAGE != "") {
 	$(document).ready(() => {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
-			var columns = sectionString.split('$').shift();
 			var seccode, secext, column = null;
+			var columns = sectionString.split('$').shift();
 			jQuery.each(columns, function() {
 				var column = this.split('|');
 				console.log(column);
