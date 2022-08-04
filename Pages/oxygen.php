@@ -315,7 +315,7 @@ if(QS_SUBPAGE != "") {
 		slideFactorX: 0,
 		slideFactorY: 0,
 	}).on('drop', function(el, target, source, sibling) {
-		
+		console.log('dropped')
 	});
 	//////////
 	elementIds = [];
