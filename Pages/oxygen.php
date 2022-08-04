@@ -257,8 +257,8 @@ if(QS_SUBPAGE != "") {
 	});
 	function save() {
 		elements = $('.templateBase').children();
-		elements.each(function(elem) {
-			console.log($(elem).attr('element-id'));
+		elements.each(function() {
+			console.log($(this).attr('element-id'));
 		})
 	}
 </script>
