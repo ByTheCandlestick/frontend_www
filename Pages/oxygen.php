@@ -210,9 +210,9 @@ if(QS_SUBPAGE != "") {
 </section>
 <script>
 	dragula([
-		document.querySelector('.templateBase'),
-		document.querySelector('.templateBuilderGrid'),
-		document.querySelector('#SectionElements > .templateElements')
+		document.querySelectorAll('.templateBase'),
+		document.querySelectorAll('.templateBuilderGrid'),
+		document.querySelectorAll('.templateElements')
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
