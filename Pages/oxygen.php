@@ -51,8 +51,8 @@ if(QS_SUBPAGE != "") {
 				background: var(--link-color-hover);
 				position: absolute;
 				z-index: 999;
-				right: 2%;
-				top: 0;
+				right: 0;
+				top: -1rem;
 			}
 			.templateBase .templateElement,
 			.templateBase .templateElementGrid {
