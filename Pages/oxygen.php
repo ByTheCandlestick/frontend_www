@@ -327,16 +327,16 @@ if(QS_SUBPAGE != "") {
 		});
 	});
 	//////////
-	elementIds = [];
 	function save() {
-		$('.templateGrid, .templateElement').each(function() {
-			console.log($(this));
+		elementIds = [];
+		$('.templateBase .templateGrid, .templateBase .templateElement').each(function() {
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
-				console.log($(this).attr('element-id')+':'+$(this).find('input').val())
+				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 			} else {
-				console.log($(this).attr('element-id'))
+				elementIds.push($(this).attr('element-id'))
 			}
 		})
+		console.log(elementIds.join(','));
 	}
 	//////////
 	function simpleSave(elements) {
