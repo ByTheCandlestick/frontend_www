@@ -140,7 +140,7 @@ if(QS_SUBPAGE != "") {
 								$sections[$row['id']] = $row;
 								if($type != $row['section_type']) print('
 									</div>
-									<div class="accordion-item container row templateElements">
+									<div class="accordion-item container row templateElements-'.$row['section_type'].'">
 										<h2 class="accordion-header p-0 dragDisabled">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-controls="'.$row['section_type'].'">
 												<h5>'.ucwords($row['section_type']).'</h5>
@@ -155,7 +155,7 @@ if(QS_SUBPAGE != "") {
 											</div>
 										</div>
 								');
-								if($type != $row['section_type']) array_push($elementCategories, $type);
+								if($type != $row['section_type'] && $type != null) array_push($elementCategories, $type);
 								$type = $row['section_type'];
 							}
 						}
