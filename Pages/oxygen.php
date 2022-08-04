@@ -322,7 +322,7 @@ if(QS_SUBPAGE != "") {
 	//////////
 	function save() {
 		$('.templateBase').children().each(function() {
-			console.log($(this))
+			console.log($(this).attr('element-id'))
 		})
 	}
 	//////////
