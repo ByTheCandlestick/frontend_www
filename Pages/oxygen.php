@@ -339,7 +339,9 @@ if(QS_SUBPAGE != "") {
 			}
 		});
 		for(let i = 0; i < elementIds.length; i++) {
-			if(elementString.endsWith('|') || elementIds[i].startsWith('#') || elementString == "") {
+			if(elementString != "" && elementIds[i].startsWith('#')) {
+				elementString += ";"+elementIds[i];
+			} else if(elementString.endsWith('|') || elementIds[i].startsWith('#') || elementString == "") {
 				elementString += elementIds[i];
 			} else {
 				elementString += ','+ elementIds[i];
