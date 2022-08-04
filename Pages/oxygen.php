@@ -224,13 +224,13 @@ if(QS_SUBPAGE != "") {
 			return true
 		},
 		copy: function(el, source) {
-			arr = document.querySelectAll('.templateElements')
+			arr = document.querySelectorAll('.templateElements')
 			arr.foreach(function(element) {
 				return source === element;
 			})
 		},
 		accepts: function (el, target, source, sibling) {
-			arr = document.querySelectAll('.templateElements')
+			arr = document.querySelectorAll('.templateElements')
 			arr.foreach(function(element) {
 				return source === element;
 			})
