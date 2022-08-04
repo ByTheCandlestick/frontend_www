@@ -214,7 +214,7 @@ if(QS_SUBPAGE != "") {
 		document.querySelector('.templateBase'),
 		document.querySelector('.templateElementGrid'),
 		document.querySelector('.templateElements.columns'),
-		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements-$elementCategory'),
+		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements .$elementCategory'),
 		");}?>
 	], {
 		isContainer: function (el) {
