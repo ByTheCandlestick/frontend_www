@@ -225,10 +225,11 @@ if(QS_SUBPAGE != "") {
 </section>
 <script>
 	dragula([
+		[].slice.apply(document.querySelectorAll('.templateGrid'))
 		document.querySelector('.templateBase'),
-		document.querySelector('.templateGrid'),
-		document.querySelector('.templateElements'),
-		[].slice.apply(document.querySelectorAll('.templateElements')),
+		document.querySelector('.templateElements.cat-columns'),
+		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('..cat-$elementCategory'),
+		");}?>
 	], {
 		isContainer: function (el) {
 			return false;
