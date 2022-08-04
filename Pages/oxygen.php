@@ -211,9 +211,9 @@ if(QS_SUBPAGE != "") {
 </section>
 <script>
 	dragula([
-		document.querySelectorAll('.templateBase'),
-		document.querySelectorAll('.templateElementGrid'),
-		document.querySelectorAll('.templateElements-columns'),
+		document.querySelector('.templateBase'),
+		document.querySelector('.templateElementGrid'),
+		document.querySelector('.templateElements-columns'),
 		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements-$elementCategory'),
 		");}?>
 	], {
