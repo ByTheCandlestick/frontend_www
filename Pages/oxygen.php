@@ -309,7 +309,8 @@ if(QS_SUBPAGE != "") {
 	});
 	$(document).ready(() => {
 		var sectionString = $('section .sections').attr('data-original-sections');
-		console.log(sectionString);
+		var columns = sectionString.split('$')
+		console.log(columns);
 	})
 </script>
 <?
