@@ -249,8 +249,9 @@ if(QS_SUBPAGE != "") {
 				$seccode = $secext = NULL;
 				array_shift($columns);
 				foreach($columns as $column) {
-					$column = explode("|", $column);
+					[$columns, $column] = explode("|", $column);
 					array_shift($column);
+					
 					print_r($column);
 				}
 			} else {
