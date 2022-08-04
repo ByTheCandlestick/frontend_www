@@ -298,11 +298,10 @@ if(QS_SUBPAGE != "") {
 			return true;
 		},
 		copy: function(el, source) {
-			$('.templateBase').find('.templateElement#'+$(el).attr('id')).removeAttr('id');
+			$('.templateBase').find('.templateElement#'+$(el).attr('data-bs-parent')).removeAttr('data-bs-parent');
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
-			console.log($(target));
 			return target.classList.contains('dragulaContainer');
 		},
 		invalid: function (el, handle) {
