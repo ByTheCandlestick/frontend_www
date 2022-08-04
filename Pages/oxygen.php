@@ -232,7 +232,7 @@ if(QS_SUBPAGE != "") {
 													</a>
 												</div>
 												<h6>'.$row['short_description'].'</h6>
-												<input type="text" value="">
+												<input type="text" value="" placeholder="'.$row['extention_hint'].'">
 											</div>
 										</div>
 								');
