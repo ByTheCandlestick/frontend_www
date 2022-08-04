@@ -330,7 +330,7 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elementString = "";
 		$('	.templateBase .templateElementGrid, \
-			.templateBase .templateElementGrid, .templateGrid \
+			.templateBase .templateElementGrid .templateGrid \
 			.templateBase .templateElementGrid .templateElement').each(function() {
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
 				console.log($(this));
