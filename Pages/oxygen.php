@@ -163,7 +163,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid col-2">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-3">
+							<div class="templateGrid col-4">
 								<div class="dragulaContainer"></div>
 							</div>
 							<div class="templateGrid col-2">
