@@ -322,19 +322,11 @@ if(QS_SUBPAGE != "") {
 
 	function save(elements) {
 		elementIds = [];
-		elements.each(function() {
-			if($(this).hasClass('.templateElementGrid')) {
-				$(this).children(".templateGrid").each(function(){
-					save($(this).children('.templateGrid'));
-				})
-			} else {
-				if($(this).find('input')>0 && $(this).find('input').val()!='') {
-					elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
-				} else {
-					elementIds.push($(this).attr('element-id'));
-				}
-			}
-		})
+		if($(this).find('input')>0 && $(this).find('input').val()!='') {
+			elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
+		} else {
+			elementIds.push($(this).attr('element-id'));
+		}
 		console.log(elementIds.join(','));
 	}
 </script>
