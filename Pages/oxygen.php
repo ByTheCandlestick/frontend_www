@@ -341,6 +341,7 @@ if(QS_SUBPAGE != "") {
 	//////////
 	function simpleSave(elements) {
 		elementIds = [];
+		elementString = "";
 		elements.each(function() {
 			if($(this).find('input') > 0 && $(this).find('input').val() != '') {
 				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
@@ -348,7 +349,14 @@ if(QS_SUBPAGE != "") {
 				elementIds.push($(this).attr('element-id'));
 			}
 		})
-		console.log(elementIds.join(','));
+		for(let i = 0; i < elementIds.length; i++) {
+			if(elementString.endsWith(';')) {
+				elementString += elementIds[i];
+			} else {
+				elementString += ','+ elementIds[i];
+			}
+		}
+		console.log(elementString);
 	}
 </script>
 <?
