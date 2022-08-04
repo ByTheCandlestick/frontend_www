@@ -294,7 +294,7 @@ if(QS_SUBPAGE != "") {
 	});
 	$(document).ready(() => {
 		var sectionString = $('section .sections').attr('data-original-sections');
-		if(sectionString == "") {
+		if(sectionString != "") {
 			var columns = sectionString.split('$').shift();
 			var seccode, secext = null;
 			$.each(columns, function() {
