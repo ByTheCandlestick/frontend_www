@@ -101,7 +101,9 @@ if(QS_SUBPAGE != "") {
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
-								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
+								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
+									<i class="fas fa-trash-alt"></i>
+								</a>
 							</div>
 							<h6>3 columns</h6>
 							<div class="templateGrid dragulaContainer col-4"></div>
@@ -112,7 +114,9 @@ if(QS_SUBPAGE != "") {
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
-								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
+								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
+									<i class="fas fa-trash-alt"></i>
+								</a>
 							</div>
 							<h6>4 columns</h6>
 							<div class="templateGrid dragulaContainer col-3"></div>
@@ -124,7 +128,9 @@ if(QS_SUBPAGE != "") {
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
-								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
+								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
+									<i class="fas fa-trash-alt"></i>
+								</a>
 							</div>
 							<h6>5 columns</h6>
 							<div class="templateGrid dragulaContainer col-2 offset-1"></div>
@@ -152,6 +158,9 @@ if(QS_SUBPAGE != "") {
 								print('
 										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" data-bs-parent="#SectionElements">
 											<div class="accordion-body row position-relative">
+												<a onclick="$(this).closest(\'.templateElement, .templateElementGrid\').remove()">
+													<i class="fas fa-trash-alt"></i>
+												</a>
 												<h6>'.$row['short_description'].'</h6>
 												<input type="text" value="">
 											</div>
