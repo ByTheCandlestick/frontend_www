@@ -307,11 +307,10 @@ if(QS_SUBPAGE != "") {
 			$(this).removeClass('accordion-body');
 		});
 	});
-
-	function initialize() {
+	$(document).ready(() => {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		console.log(sectionString);
-	}
+	})
 </script>
 <?
 	} else {
