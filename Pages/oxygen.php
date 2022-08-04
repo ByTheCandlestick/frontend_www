@@ -109,7 +109,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid col-6">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-6">
+							<div class="templateGrid col-6" element-id=";">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
@@ -330,6 +330,7 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elementString = "";
 		$('	.templateBase .templateElementGrid, \
+			.templateBase .templateElementGrid, .templateGrid \
 			.templateBase .templateElementGrid .templateElement').each(function() {
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
 				console.log($(this));
