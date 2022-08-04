@@ -313,6 +313,7 @@ if(QS_SUBPAGE != "") {
 		var seccode, secext = null;
 		$.each(columns, function() {
 			[columns, column] = this.split('|').shift();
+			console.log(columns+' - '+column);
 		})
 	})
 </script>
