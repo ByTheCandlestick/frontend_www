@@ -225,13 +225,13 @@ if(QS_SUBPAGE != "") {
 			return true
 		},
 		copy: function(el, source) {
-			return console.log(source.classList.contains('dragulaCopy'));
+			return console.log(el.classList.contains('dragulaCopy'));
 		},
 		accepts: function (el, target, source, sibling) {
 			return target.classList.contains('dragulaContainer');
 		},
 		invalid: function (el, handle) {
-			return false // source === document.querySelector('.dragDisabled')
+			return el.classList.contains('dragulaDisabled');
 		},
 		direction: 'vertical',			// Y axis is considered when determining where an element would be dropped
 		copySortSource: false,			// elements in copy-source containers can be reordered
