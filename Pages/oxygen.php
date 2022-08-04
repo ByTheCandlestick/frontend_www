@@ -228,7 +228,7 @@ if(QS_SUBPAGE != "") {
 			return source.classList.contains('templateElement');
 		},
 		accepts: function (el, target, source, sibling) {
-			return console.log(target.classList.contains('dragulaContainer'));
+			return target.classList.contains('dragulaContainer');
 		},
 		invalid: function (el, handle) {
 			return false // source === document.querySelector('.dragDisabled')
