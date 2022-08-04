@@ -325,6 +325,7 @@ if(QS_SUBPAGE != "") {
 		elements.each(function() {
 			if($(this).find('.templateGrid')>0) {
 				$(".templateGrid").each(function(){
+					console.log(this);
 				})
 			} else {
 				if($(this).find('input')>0 && $(this).find('input').val()!='') {
