@@ -320,6 +320,12 @@ if(QS_SUBPAGE != "") {
 		slideFactorX: 0,				// allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
 		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
 	});
+	dragula([document.querySelector('.templateGrid')], {
+		moves: function(el, container, handle) {
+			return !handle.classList.contains('blocinner');
+		}
+	});
+
 	function save() {
 		elementIds = [];
 		elements = $('.templateBase').children();
