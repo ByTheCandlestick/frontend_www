@@ -362,7 +362,7 @@ $(document).ready(() => {
 					});
 					console.log(elementIds.join(','))
 					for(let i = 0; i < elementIds.length; i++) {
-						if(elementString.endsWith(';') || elementIds[i].startsWith('#') || elementString == "") {
+						if(elementString.endsWith('|') || elementIds[i].startsWith('#') || elementString == "") {
 							elementString += elementIds[i];
 						} else {
 							elementString += ','+ elementIds[i];
