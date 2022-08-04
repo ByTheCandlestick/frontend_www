@@ -64,7 +64,7 @@ if(QS_SUBPAGE != "") {
 			.templateElementMenu,
 			.accordion .templateElement input,
 			.accordion .templateElementGrid .templateGrid,
-			.templateBase .templateElementGrid h6:first-of-type {
+			.templateBase .templateElementGrid > div > h6 {
 				display: none;
 			}
 			.templateBase .templateElementGrid .templateGrid {
