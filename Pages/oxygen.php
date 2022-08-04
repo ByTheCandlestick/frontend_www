@@ -287,10 +287,9 @@ if(QS_SUBPAGE != "") {
 <script>
 	dragula([
 		[].slice.apply(document.querySelectorAll('.templateGrid')),
+		[].slice.apply(document.querySelectorAll('.templateElements')),
+		[].slice.apply(document.querySelectorAll('.dragulaContainer')),
 		document.querySelector('.templateBase'),
-		document.querySelector('.templateElements.cat-columns'),
-		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
-		");}?>
 	], {
 		isContainer: function (el) {
 			return false;
