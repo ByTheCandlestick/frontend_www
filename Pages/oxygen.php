@@ -18,7 +18,8 @@ if(QS_SUBPAGE != "") {
 							<label class="btn btn-outline-primary" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 						</div>
 					</div>
-					<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">
+					<!--<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">-->
+					<a href="javascript:save();" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -255,7 +256,9 @@ if(QS_SUBPAGE != "") {
 		slideFactorX: 0,				// allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
 		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
 	});
-
+	function save() {
+		
+	}
 </script>
 <?
 } else {
