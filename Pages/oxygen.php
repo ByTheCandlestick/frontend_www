@@ -213,7 +213,7 @@ if(QS_SUBPAGE != "") {
 	dragula([
 		document.querySelector('.templateBase'),
 		document.querySelector('.templateElementGrid'),
-		document.querySelector('.templateElements.columns, .templateElements.blog'),
+		document.querySelector('.templateElements.columns'),
 
 	], {
 		isContainer: function (el) {
@@ -223,16 +223,10 @@ if(QS_SUBPAGE != "") {
 			return true
 		},
 		copy: function(el, source) {
-			arr = document.querySelectorAll('.templateElements')
-			arr.forEach(function(element) {
-				return source === element;
-			})
+			return source === document.querySelector('.templateElements')
 		},
 		accepts: function (el, target, source, sibling) {
-			arr = document.querySelectorAll('.templateElements')
-			arr.forEach(function(element) {
-				return source !== element;
-			})
+			return target !== document.querySelector('.templateElements')
 		},
 		invalid: function (el, handle) {
 			return false // source === document.querySelector('.dragDisabled')
