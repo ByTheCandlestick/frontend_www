@@ -68,8 +68,13 @@ if(QS_SUBPAGE != "") {
 				display: none;
 			}
 			.templateBase .templateElementGrid .templateGrid {
-				min-height: 20px;
-				outline: solid;
+				min-height: 30px;
+				margin-inline: auto;
+			}
+			.templateBase .templateElementGrid .templateGrid .dragulaContainer {
+				outline: grey dotted thin;
+				height: 100%;
+				position: relative;
 				background: var(--section);
 			}
 
