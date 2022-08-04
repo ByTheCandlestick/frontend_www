@@ -251,6 +251,7 @@ if(QS_SUBPAGE != "") {
 				foreach($columns as $column) {
 					$column = explode("|", $column);
 					array_shift($column);
+					print_r($column);
 				}
 			} else {
 				print("Drag an element from the left hand side to start building the website!");
