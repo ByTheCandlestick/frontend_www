@@ -46,14 +46,14 @@ if(QS_SUBPAGE != "") {
 			.templateBase .templateElement:hover .templateElementMenu,
 			.templateBase .templateElementGrid:hover .templateElementMenu {
 				display: block;
-				width: 60px;
-				height: 20px;
-				background: blue;
+				width: auto;
+				height: auto;
+				background: var(--link-color-hover);
 				position: absolute;
 				z-index: 999;
 				left: 50%;
 				top: 0;
-				transform: translate(-50%, -50%)
+				transform: translatex(-50%);
 			}
 			.templateBase .templateElement,
 			.templateBase .templateElementGrid {
