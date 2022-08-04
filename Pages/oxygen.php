@@ -250,8 +250,7 @@ if(QS_SUBPAGE != "") {
 				array_shift($columns);
 				foreach($columns as $column) {
 					[$columns, $column] = explode("|", $column);
-					array_shift($column);
-					
+					print_r($columns);
 					print_r($column);
 				}
 			} else {
