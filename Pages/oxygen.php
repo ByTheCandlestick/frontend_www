@@ -298,7 +298,7 @@ if(QS_SUBPAGE != "") {
 			return true;
 		},
 		copy: function(el, source) {
-			$('.templateBase').find('.templateElement'+$(el).attr('data-bs-parent')).removeAttr('data-bs-parent');
+			$('.templateBase').find('.templateElement#'+$(el).attr('id')).removeAttr('data-bs-parent');
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
