@@ -297,7 +297,7 @@ if(QS_SUBPAGE != "") {
 		if(sectionString != "") {
 			var columns = sectionString.split('$').shift();
 			var seccode, secext = null;
-			$.each(columns, function() {
+			jQuery.each(columns, function() {
 				column = this.split('|');
 				console.log(column);
 			})
