@@ -312,7 +312,7 @@ if(QS_SUBPAGE != "") {
 		var columns = sectionString.split('$')
 		var seccode, secext = null;
 		$.each(columns, () => {
-			console.log(column);
+			console.log(this);
 		})
 	})
 </script>
