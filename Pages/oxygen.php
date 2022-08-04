@@ -302,6 +302,7 @@ if(QS_SUBPAGE != "") {
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
+			console.log($(target));
 			return target.classList.contains('dragulaContainer');
 		},
 		invalid: function (el, handle) {
