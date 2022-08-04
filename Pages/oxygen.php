@@ -289,6 +289,7 @@ if(QS_SUBPAGE != "") {
 	dragula([
 		document.querySelector('.templateGrid'),
 		document.querySelector('.templateBase'),
+		document.querySelector('.dragulaContainer'),
 		document.querySelector('.templateElements.cat-columns'),
 		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
 		");}?>
