@@ -329,8 +329,9 @@ if(QS_SUBPAGE != "") {
 	function save() {
 		elementIds = [];
 		elementString = "#1:";
-		$('.templateBase .templateGrid, .templateBase .templateElementGrid .templateElement, .templateBase .templateElementGrid').each(function() {
-			
+		$('	.templateBase .templateGrid, \
+			.templateBase .templateElementGrid, \
+			.templateBase .templateElementGrid .templateElement').each(function() {
 			if($(this).find('input')>0 && $(this).find('input').val != '') {
 				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 			} else {
