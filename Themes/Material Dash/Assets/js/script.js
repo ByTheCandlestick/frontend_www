@@ -354,10 +354,12 @@ $(document).ready(() => {
 					elementIds = [];
 					elementString = "#1:";
 					$('.templateBase .templateGrid, .templateBase .templateElement, .templateBase .templateElementGrid').each(function() {
-						if($(this).find('input')>0 && $(this).find('input').val != '') {
-							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
-						} else {
-							elementIds.push($(this).attr('element-id'))
+						if($(this).attr('element-id') != '') {
+							if($(this).find('input')>0 && $(this).find('input').val != '') {
+								elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
+							} else {
+								elementIds.push($(this).attr('element-id'))
+							}	
 						}
 					});
 					console.log(elementIds.join(','))
