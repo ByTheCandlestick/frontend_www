@@ -292,7 +292,7 @@ if(QS_SUBPAGE != "") {
 		");}?>
 	], {
 		isContainer: function (el) {
-			return false;
+			return target.classList.contains('dragulaContainer');
 		},
 		moves: function (el, source, handle, sibling) {
 			return true;
@@ -301,8 +301,7 @@ if(QS_SUBPAGE != "") {
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
-			console.log(target);
-			return target.classList.contains('dragulaContainer');
+			return true;
 		},
 		invalid: function (el, handle) {
 			return el.classList.contains('dragulaDisabled');
