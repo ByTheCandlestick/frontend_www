@@ -19,7 +19,7 @@ if(QS_SUBPAGE != "") {
 						</div>
 					</div>
 					<!--<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">-->
-					<a href="javascript:save();" class="btn btn-outline-primary m-1">
+					<a href="javascript:save($('.templateBase').children());" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -319,18 +319,13 @@ if(QS_SUBPAGE != "") {
 		slideFactorY: 0,
 	});
 
-	function save() {
+	function save(elements) {
 		elementIds = [];
-		elements = $('.templateBase').children();
 		elements.each(function() {
-			if($(this).find('.templateGrid')) {
-				console.log($(this).find('.templateGrid'));
+			if($(this).find('input') && $(this).find('input').val()!='') {
+				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
 			} else {
-				if($(this).find('input') && $(this).find('input').val()!='') {
-					elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
-				} else {
-					elementIds.push($(this).attr('element-id'));
-				}
+				elementIds.push($(this).attr('element-id'));
 			}
 		})
 		console.log(elementIds.join(','));
