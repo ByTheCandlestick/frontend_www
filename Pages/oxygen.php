@@ -244,12 +244,14 @@ if(QS_SUBPAGE != "") {
 			</div>
 		</div>
 		<div class="col-lg-9 templateBase dragulaContainer"><?
+			// Convert and finish in JS
 			if($page['section_ids'] != "") {
 				$columns = explode("$", $page['section_ids']);
 				$seccode = $secext = NULL;
 				array_shift($columns);
 				foreach($columns as $column) {
 					[$columns, $column] = explode("|", $column);
+					
 					print_r($columns.' - ');
 					print_r($column.' - ');
 				}
