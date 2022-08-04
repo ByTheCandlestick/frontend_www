@@ -60,6 +60,10 @@ if(QS_SUBPAGE != "") {
 				background: var(--app-container);
 				padding: 1rem 1.25rem;
 			}
+			.templateBase .templateElement input {
+				border: unset;
+				border-bottom: 1px dashed grey;
+			}
 
 			.templateElementMenu,
 			.accordion .templateElement input,
