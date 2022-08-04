@@ -300,7 +300,7 @@ if(QS_SUBPAGE != "") {
 		copy: function(el, source) {
 			$('.templateBase').find('.templateElement#'+$(el).attr('id')).removeClass('accordion-collapse collapse show');
 			$('.templateBase').find('.templateElement#'+$(el).attr('id')).removeAttr('data-bs-parent id');
-			$(el).children().each(function() {
+			$('.templateBase').find('.templateElement#'+$(el).attr('id')).children().each(function() {
 				$(this).removeClass('accordion-body');
 			})
 			return el.parentNode.classList.contains('dragulaCopy');
