@@ -315,7 +315,9 @@ if(QS_SUBPAGE != "") {
 		slideFactorX: 0,
 		slideFactorY: 0,
 	}).on('drop', function(el, target, source, sibling) {
-		
+		$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+			$(this).removeClass('accordion-body');
+		});
 	});
 	//////////
 	elementIds = [];
