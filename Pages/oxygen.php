@@ -287,7 +287,7 @@ if(QS_SUBPAGE != "") {
 </section>
 <script>
 	(function() {
-		dragula([].slice.apply(document.querySelectorAll('.nested')));
+		dragula([].slice.apply(document.querySelectorAll('.templateGrid')));
 	})();
 	dragula([
 		document.querySelector('.templateGrid'),
