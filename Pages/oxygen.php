@@ -238,6 +238,7 @@ if(QS_SUBPAGE != "") {
 			return true;
 		},
 		copy: function(el, source) {
+			console.log(el);
 			return el.parentNode.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
