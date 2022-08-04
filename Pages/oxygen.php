@@ -155,6 +155,7 @@ if(QS_SUBPAGE != "") {
 											</div>
 										</div>
 								');
+								if($type != $row['section_type']) array_push($elementCategories, $type);
 								$type = $row['section_type'];
 							}
 						}
@@ -213,8 +214,13 @@ if(QS_SUBPAGE != "") {
 	console.log(document.querySelector('.templateElements'));
 	dragula([
 		document.querySelectorAll('.templateBase'),
-		document.querySelectorAll('.templateElements'),
 		document.querySelectorAll('.templateElementGrid'),
+		document.querySelectorAll('.templateElements-columns'),
+		<?
+			foreach($types as $type) {
+				print("document.querySelectorAll('.templateElements-$type'),");
+			}
+		?>
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
