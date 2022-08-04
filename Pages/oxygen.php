@@ -217,8 +217,8 @@ if(QS_SUBPAGE != "") {
 		document.querySelectorAll('.templateElementGrid'),
 		document.querySelectorAll('.templateElements-columns'),
 		<?
-			foreach($types as $type) {
-				print("document.querySelectorAll('.templateElements-$type'),");
+			foreach($elementCategories as $elementCategory) {
+				print("document.querySelectorAll('.templateElements-$elementCategory'),");
 			}
 		?>
 	], {
