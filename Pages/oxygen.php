@@ -63,7 +63,8 @@ if(QS_SUBPAGE != "") {
 
 			.templateElementMenu,
 			.accordion .templateElement input,
-			.accordion .templateElementGrid .templateGrid {
+			.accordion .templateElementGrid .templateGrid,
+			.templateBase .templateElementGrid h6 {
 				display: none;
 			}
 			.templateBase .templateElementGrid .templateGrid {
