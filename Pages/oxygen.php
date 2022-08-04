@@ -249,7 +249,9 @@ if(QS_SUBPAGE != "") {
 				$seccode = $secext = NULL;
 				array_shift($columns);
 				foreach($columns as $column) {
-					print_r(explode("|", $column));
+					$column = explode("|", $column)
+					array_shift($column);
+					print_r();
 				}
 			} else {
 				print("Drag an element from the left hand side to start building the website!");
