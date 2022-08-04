@@ -52,9 +52,8 @@ if(QS_SUBPAGE != "") {
 				background: var(--link-color-hover);
 				position: absolute;
 				z-index: 999;
-				left: 50%;
+				right: 0;
 				top: 0;
-				transform: translatex(-50%);
 			}
 			.templateBase .templateElement,
 			.templateBase .templateElementGrid {
@@ -239,8 +238,7 @@ if(QS_SUBPAGE != "") {
 				</div>
 			</div>
 		</div>
-		
-		<div class="col-lg-9 h-100 templateBase dragulaContainer"><?/*
+		<div class="col-lg-9 templateBase dragulaContainer"><?/*
 			if($page['section_ids'] != "") {
 				print('<div class="row">');
 					$columns = explode("#", $page['section_ids']);
