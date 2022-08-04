@@ -52,7 +52,7 @@ if(QS_SUBPAGE != "") {
 				background: var(--link-color-hover);
 				position: absolute;
 				z-index: 999;
-				right: 0;
+				right: 10%;
 				top: 0;
 			}
 			.templateBase .templateElement,
