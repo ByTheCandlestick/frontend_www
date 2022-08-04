@@ -324,8 +324,7 @@ if(QS_SUBPAGE != "") {
 		elements = $('.templateBase').children();
 		elements.each(function() {
 			if($(this).find('templateGrid')) {
-				console.log($($(this).find('.templateGrid')[0]));
-				elementIds.push($($(this).find('.templateGrid')[0]).attr('element-id'));
+				console.log($(this).find('.templateGrid'));
 			} else {
 				if($(this).find('input') && $(this).find('input').val()!='') {
 					elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val());
