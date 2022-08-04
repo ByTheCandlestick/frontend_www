@@ -91,7 +91,7 @@ if(QS_SUBPAGE != "") {
 							<h5>Columns</h5>
 						</button>
 					</h2>
-					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
@@ -107,7 +107,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
@@ -126,7 +126,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
@@ -148,7 +148,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
@@ -173,7 +173,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
