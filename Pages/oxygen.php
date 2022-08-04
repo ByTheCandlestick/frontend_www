@@ -283,7 +283,7 @@ if(QS_SUBPAGE != "") {
 	</div>
 </section>
 <script>
-	dragula([
+	var drake = dragula([
 		document.querySelector('.templateGrid'),
 		document.querySelector('.templateBase'),
 		document.querySelector('.dragulaContainer'),
@@ -295,11 +295,6 @@ if(QS_SUBPAGE != "") {
 			return false;
 		},
 		moves: function (el, source, handle, sibling) {
-			$('.templateBase').find('.templateElement#'+$(el).attr('id')).removeClass('accordion-collapse collapse show');
-			$('.templateBase').find('.templateElement#'+$(el).attr('id')).removeAttr('data-bs-parent id');
-			$('.templateBase').find('.templateElement#'+$(el).attr('id')).children().each(function() {
-				$(this).removeClass('accordion-body');
-			})
 			return true;
 		},
 		copy: function(el, source) {
@@ -319,6 +314,8 @@ if(QS_SUBPAGE != "") {
 		ignoreInputTextSelection: true,
 		slideFactorX: 0,
 		slideFactorY: 0,
+	}).on('drop', function(el, target, source, sibling) {
+		
 	});
 	//////////
 	elementIds = [];
