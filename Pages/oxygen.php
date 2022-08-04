@@ -243,7 +243,7 @@ if(QS_SUBPAGE != "") {
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-9 templateBase dragulaContainer"><?/*
+		<div class="col-lg-9 templateBase dragulaContainer"><?
 			if($page['section_ids'] != "") {
 				print('<div class="row">');
 					$columns = explode("#", $page['section_ids']);
@@ -276,7 +276,7 @@ if(QS_SUBPAGE != "") {
 			} else {
 				print("Drag an element from the left hand side to start building the website!");
 			}
-		*/?></div>
+		?></div>
 	</div>
 	<!-- Page Type -->
 	<div class="row" type="page" style="display: <?($page['display_type']==1)?print("none"):print("flex")?>;">
