@@ -149,7 +149,7 @@ if(QS_SUBPAGE != "") {
 								$sections[$row['id']] = $row;
 								if($type != $row['section_type']) print('
 									</div>
-									<div class="accordion-item container row templateElements '.$row['section_type'].'">
+									<div class="accordion-item container row templateElements '.$row['section_type'].' dragulaCopy">
 										<h2 class="accordion-header p-0 dragDisabled">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-controls="'.$row['section_type'].'">
 												<h5>'.ucwords($row['section_type']).'</h5>
@@ -233,10 +233,10 @@ if(QS_SUBPAGE != "") {
 		");}?>
 	], {
 		isContainer: function (el) {
-			return false;				// only elements in drake.containers will be taken into account
+			return false;
 		},
 		moves: function (el, source, handle, sibling) {
-			return true
+			return true;
 		},
 		copy: function(el, source) {
 			return el.parentNode.classList.contains('dragulaCopy');
@@ -257,7 +257,7 @@ if(QS_SUBPAGE != "") {
 		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
 	});
 	function save() {
-		
+
 	}
 </script>
 <?
