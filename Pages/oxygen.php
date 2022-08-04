@@ -311,7 +311,7 @@ if(QS_SUBPAGE != "") {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		var columns = sectionString.split('$')
 		var seccode, secext = null;
-		$.each(columns, () => {
+		$.each(columns, function() {
 			console.log(this);
 		})
 	})
