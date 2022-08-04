@@ -97,7 +97,7 @@ if(QS_SUBPAGE != "") {
 							<h5>Columns</h5>
 						</button>
 					</h2>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#2">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$2|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).fadeOut(300, function(){$(this).remove();});})">
@@ -113,7 +113,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#3">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$3|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">
@@ -132,7 +132,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#4">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$4|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">
@@ -154,7 +154,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#5">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$5|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">
@@ -179,7 +179,7 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="#6">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$6|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').fadeOut(300, function(){$(this).remove();})">

@@ -353,7 +353,7 @@ $(document).ready(() => {
 			layout: {
 				update(pid) {
 					elementIds = [];
-					elementString = "#1|12;";
+					elementString = "$1|#12;";
 					$('.templateBase [element-id]').each(function() {
 						if($(this).find('input').length > 0 && $(this).find('input').val() != '') {
 							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
