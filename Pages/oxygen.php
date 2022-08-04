@@ -63,6 +63,7 @@ if(QS_SUBPAGE != "") {
 			.templateBase .templateElement input {
 				border: unset;
 				border-bottom: 1px dashed grey;
+				border-radius: unset;
 			}
 
 			.templateElementMenu,
