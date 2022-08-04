@@ -174,6 +174,34 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
+					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
+						<div class="accordion-body row position-relative">
+							<div class="templateElementMenu">
+								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
+									<i class="fas fa-trash-alt"></i>
+								</a>
+							</div>
+							<h6>6 columns</h6>
+							<div class="templateGrid col-2">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-2">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-2">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-2">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-2">
+								<div class="dragulaContainer"></div>
+							</div>
+							<div class="templateGrid col-2">
+								<div class="dragulaContainer"></div>
+							</div>
+						</div>
+					</div>
 					<? 
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 						$type = null; $elementCategories = array();
