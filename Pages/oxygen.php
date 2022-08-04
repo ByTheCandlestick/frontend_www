@@ -218,7 +218,8 @@ if(QS_SUBPAGE != "") {
 		document.querySelectorAll('.templateElements-columns'),
 		<?
 			foreach($elementCategories as $elementCategory) {
-				print("document.querySelectorAll('.templateElements-$elementCategory'),");
+				print("document.querySelectorAll('.templateElements-$elementCategory'),
+				");
 			}
 		?>
 	], {
