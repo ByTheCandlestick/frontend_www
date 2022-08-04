@@ -81,7 +81,7 @@ if(QS_SUBPAGE != "") {
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row templateElements columns dragulaCopy">
+				<div class="accordion-item container row dragulaCopy templateElements columns">
 					<h2 class="accordion-header p-0 dragDisabled">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#columns" aria-controls="columns">
 							<h5>Columns</h5>
@@ -149,7 +149,7 @@ if(QS_SUBPAGE != "") {
 								$sections[$row['id']] = $row;
 								if($type != $row['section_type']) print('
 									</div>
-									<div class="accordion-item container row templateElements '.$row['section_type'].' dragulaCopy">
+									<div class="accordion-item container row dragulaCopy templateElements '.$row['section_type'].'">
 										<h2 class="accordion-header p-0 dragDisabled">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-controls="'.$row['section_type'].'">
 												<h5>'.ucwords($row['section_type']).'</h5>
