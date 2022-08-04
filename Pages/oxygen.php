@@ -70,6 +70,7 @@ if(QS_SUBPAGE != "") {
 			.templateBase .templateElementGrid .templateGrid {
 				min-height: 30px;
 				margin-inline: auto;
+				margin-top: 1rem;
 			}
 			.templateBase .templateElementGrid .templateGrid .dragulaContainer {
 				outline: grey dotted thin;
