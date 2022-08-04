@@ -245,7 +245,7 @@ if(QS_SUBPAGE != "") {
 		</div>
 		<div class="col-lg-9 templateBase dragulaContainer"><?
 			if($page['section_ids'] != "") {
-					$columns = explode("#", $page['section_ids']);
+					$columns = explode("$", $page['section_ids']);
 					$seccode = $secext = NULL;
 					array_shift($columns);
 					print_r($columns);
