@@ -324,8 +324,8 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elements.each(function() {
 			if($(this).hasClass('.templateElementGrid')) {
-				$(".templateGrid").each(function(){
-					save($(this).children('.templateGrid '));
+				$(this).children(".templateGrid").each(function(){
+					save($(this).children('.templateGrid'));
 				})
 			} else {
 				if($(this).find('input')>0 && $(this).find('input').val()!='') {
