@@ -80,7 +80,7 @@ if(QS_SUBPAGE != "") {
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row templateElements-columns">
+				<div class="accordion-item container row templateElements columns">
 					<h2 class="accordion-header p-0 dragDisabled">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#columns" aria-expanded="true" aria-controls="columns">
 							<h5>Columns</h5>
