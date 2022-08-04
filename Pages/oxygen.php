@@ -256,7 +256,7 @@ if(QS_SUBPAGE != "") {
 		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
 	});
 	function save() {
-		console.log(elements = $('templateBase').children());
+		console.log(elements = $('.templateBase').children());
 		elements.forEach(function(elem) {
 			console.log($(elem).attr('data-elm-id'));
 		})
