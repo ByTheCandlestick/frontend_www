@@ -125,9 +125,6 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid col-4">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid col-4">
-								<div class="dragulaContainer"></div>
-							</div>
 						</div>
 					</div>
 					<div id="columns" class="accordion-collapse collapse templateElement templateElementGrid" data-bs-parent="#SectionElements">
