@@ -248,8 +248,8 @@ if(QS_SUBPAGE != "") {
 					$columns = explode("#", $page['section_ids']);
 					$seccode = $secext = NULL;
 					array_shift($columns);
+					print_r($columns);
 					foreach($columns as $column) {
-						print_r($columns);
 					}
 				print('</div>');
 			} else {
