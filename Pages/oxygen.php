@@ -324,7 +324,7 @@ if(QS_SUBPAGE != "") {
 	function save() {
 		$('.templateBase').children().each(function() {
 			if($(this).hasClass('templateElementGrid')) {
-
+				console.log('Columns');
 			} else {
 				console.log($(this).attr('element-id'))
 			}
