@@ -353,7 +353,7 @@ $(document).ready(() => {
 				update(pid) {
 					elementIds = [];
 					elementString = "#1:";
-					$('.templateBase .templateGrid, .templateBase .templateElement').each(function() {
+					$('.templateBase .templateGrid, .templateBase .templateElement, .templateBase .templateElementGrid').each(function() {
 						if($(this).find('input')>0 && $(this).find('input').val != '') {
 							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 						} else {
