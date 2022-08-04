@@ -159,7 +159,7 @@ if(QS_SUBPAGE != "") {
 										<div id="'.$row['section_type'].'" class="accordion-collapse collapse templateElement" data-bs-parent="#SectionElements">
 											<div class="accordion-body row position-relative">
 												<div class="templateElementMenu">
-													<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">
+													<a onclick="$(this).closest(\'.templateElement, .templateElementGrid\').remove()">
 														<i class="fas fa-trash-alt"></i>
 													</a>
 												</div>
