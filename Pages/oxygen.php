@@ -92,8 +92,8 @@ if(QS_SUBPAGE != "") {
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 							</div>
 							<h6>2 columns</h6>
-							<div class="templateGrid col-6"></div>
-							<div class="templateGrid col-6"></div>
+							<div class="templateGrid dragulaContainer col-6"></div>
+							<div class="templateGrid dragulaContainer col-6"></div>
 						</div>
 					</div>
 					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
@@ -102,9 +102,9 @@ if(QS_SUBPAGE != "") {
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 							</div>
 							<h6>3 columns</h6>
-							<div class="templateGrid col-4"></div>
-							<div class="templateGrid col-4"></div>
-							<div class="templateGrid col-4"></div>
+							<div class="templateGrid dragulaContainer col-4"></div>
+							<div class="templateGrid dragulaContainer col-4"></div>
+							<div class="templateGrid dragulaContainer col-4"></div>
 						</div>
 					</div>
 					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
@@ -113,10 +113,10 @@ if(QS_SUBPAGE != "") {
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 							</div>
 							<h6>4 columns</h6>
-							<div class="templateGrid col-3"></div>
-							<div class="templateGrid col-3"></div>
-							<div class="templateGrid col-3"></div>
-							<div class="templateGrid col-3"></div>
+							<div class="templateGrid dragulaContainer col-3"></div>
+							<div class="templateGrid dragulaContainer col-3"></div>
+							<div class="templateGrid dragulaContainer col-3"></div>
+							<div class="templateGrid dragulaContainer col-3"></div>
 						</div>
 					</div>
 					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
@@ -125,11 +125,11 @@ if(QS_SUBPAGE != "") {
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
 							</div>
 							<h6>5 columns</h6>
-							<div class="templateGrid col-2 offset-1"></div>
-							<div class="templateGrid col-2"></div>
-							<div class="templateGrid col-2"></div>
-							<div class="templateGrid col-2"></div>
-							<div class="templateGrid col-2"></div>
+							<div class="templateGrid dragulaContainer col-2 offset-1"></div>
+							<div class="templateGrid dragulaContainer col-2"></div>
+							<div class="templateGrid dragulaContainer col-2"></div>
+							<div class="templateGrid dragulaContainer col-2"></div>
+							<div class="templateGrid dragulaContainer col-2"></div>
 						</div>
 					</div>
 					<? 
@@ -140,7 +140,7 @@ if(QS_SUBPAGE != "") {
 								$sections[$row['id']] = $row;
 								if($type != $row['section_type']) print('
 									</div>
-									<div class="accordion-item container row templateElements-'.$row['section_type'].'">
+									<div class="accordion-item container row templateElements">
 										<h2 class="accordion-header p-0 dragDisabled">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-controls="'.$row['section_type'].'">
 												<h5>'.ucwords($row['section_type']).'</h5>
@@ -164,7 +164,7 @@ if(QS_SUBPAGE != "") {
 			</div>
 		</div>
 		
-		<div class="col-lg-9 h-100 templateBase"><?/*
+		<div class="col-lg-9 h-100 templateBase dragulaContainer"><?/*
 			if($page['section_ids'] != "") {
 				print('<div class="row">');
 					$columns = explode("#", $page['section_ids']);
@@ -215,6 +215,8 @@ if(QS_SUBPAGE != "") {
 		document.querySelector('.templateGrid'),
 		document.querySelector('.templateElementGrid'),
 		document.querySelector('.templateElements'),
+		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements-$elementCategory'),
+		");}?>
 	], {
 		isContainer: function (el) {
 			return false;				// only elements in drake.containers will be taken into account
@@ -223,10 +225,10 @@ if(QS_SUBPAGE != "") {
 			return true
 		},
 		copy: function(el, source) {
-			return source === document.querySelector('.templateElements')
+			return source.classList.contains('dragulaCopy');
 		},
 		accepts: function (el, target, source, sibling) {
-			return target !== document.querySelector('.templateElements')
+			return target.classList.contains('dragulaConainer');
 		},
 		invalid: function (el, handle) {
 			return false // source === document.querySelector('.dragDisabled')
