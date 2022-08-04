@@ -289,7 +289,9 @@ if(QS_SUBPAGE != "") {
 	dragula([
 		document.querySelector('.templateGrid'),
 		document.querySelector('.templateBase'),
-		Array.prototype.slice.call(document.querySelectorAll('.templateElements')),
+		document.querySelector('.templateElements.cat-columns'),
+		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
+		");}?>
 	], {
 		isContainer: function (el) {
 			return false;
@@ -306,14 +308,14 @@ if(QS_SUBPAGE != "") {
 		invalid: function (el, handle) {
 			return el.classList.contains('dragulaDisabled');
 		},
-		direction: 'vertical',			// Y axis is considered when determining where an element would be dropped
-		copySortSource: false,			// elements in copy-source containers can be reordered
-		revertOnSpill: true,			// spilling will put the element back where it was dragged from, if this is true
-		removeOnSpill: false,			// spilling will `.remove` the element, if this is true
-		mirrorContainer: document.body,	// set the element that gets mirror elements appended
-		ignoreInputTextSelection: true,	// allows users to select input text, see details below
-		slideFactorX: 0,				// allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
-		slideFactorY: 0,				// allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
+		direction: 'vertical',
+		copySortSource: false,
+		revertOnSpill: true,
+		removeOnSpill: false,
+		mirrorContainer: document.body,
+		ignoreInputTextSelection: true,
+		slideFactorX: 0,
+		slideFactorY: 0,
 	});
 
 	function save() {
