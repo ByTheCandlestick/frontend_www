@@ -212,6 +212,7 @@ if(QS_SUBPAGE != "") {
 <script>
 	dragula([
 		document.querySelector('.templateBase'),
+		document.querySelector('.templateGrid'),
 		document.querySelector('.templateElementGrid'),
 		document.querySelector('.templateElements.columns'),
 		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.$elementCategory'),
@@ -230,7 +231,7 @@ if(QS_SUBPAGE != "") {
 			})
 		},
 		accepts: function (el, target, source, sibling) {
-			arr = document.querySelectorAll('.templateElements')
+			arr = document.querySelectorAll('.templateBase, .templateGrid')
 			arr.forEach(function(element) {
 				return source === element;
 			})
