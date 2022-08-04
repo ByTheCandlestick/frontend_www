@@ -300,22 +300,23 @@ $(document).ready(() => {
 					var scripts = [];
 					$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
 					$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
+					data = {
+						'api_key': api_key,
+						'style': styles.join(","),
+						'script': scripts.join(","),
+						'name': $("div[name=name] input").val(),
+						'title': $("div[name=title] input").val(),
+						'page_url': $("div[name=page_url] input").val(),
+						'subpage_url': $("div[name=subpage_url] input").val(),
+						'domain_id': $("div[name=domain]").find("option:selected").val(),
+						'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
+						'menu_order': $("div[name=menu_order] input").val(),
+						'menu_icon': $("div[name=menu_icon] input").val(),
+						'menu_url': $("div[name=menu_url] input").val(),
+					}
 					$.ajax({
 						url: api_url + '/Page/' + pid + '/',
-						data: {
-							'api_key': api_key,
-							'style': styles.join(","),
-							'script': scripts.join(","),
-							'name': $("div[name=name] input").val(),
-							'title': $("div[name=title] input").val(),
-							'page_url': $("div[name=page_url] input").val(),
-							'subpage_url': $("div[name=subpage_url] input").val(),
-							'domain_id': $("div[name=domain]").find("option:selected").val(),
-							'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
-							'menu_order': $("div[name=menu_order] input").val(),
-							'menu_icon': $("div[name=menu_icon] input").val(),
-							'menu_url': $("div[name=menu_url] input").val(),
-						},
+						data: data,
 						type: 'POST',
 						xhrFields: {
 							withCredentials: true,
@@ -352,14 +353,14 @@ $(document).ready(() => {
 			layout: {
 				update(pid) {
 					elementIds = [];
-					elementString = "#1:";
+					elementString = "#12;";
 					$('.templateBase .templateGrid, .templateBase .templateElement').each(function() {
 						if($(this).find('input')>0 && $(this).find('input').val != '') {
 							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 						} else {
 							elementIds.push($(this).attr('element-id'))
 						}
-					});
+					})
 					for(let i = 0; i < elementIds.length; i++) {
 						if(elementString.endsWith(';') || elementIds[i].startsWith('#') || elementString == "") {
 							elementString += elementIds[i];
@@ -368,14 +369,15 @@ $(document).ready(() => {
 						}
 					}
 					console.log(elementString);
-					/*$.ajax({
+					data = {
+						'api_key': api_key,
+						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
+						'sections': elementString,
+						'page': $("div[name=name] input").val(),
+					}
+					$.ajax({
 						url: api_url + '/Page/Layout/' + pid + '/',
-						data: {
-							'api_key': api_key,
-							'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
-							'sections': elementString,
-							'page': $("div[name=name] input").val(),
-						},
+						data: data,
 						type: 'POST',
 						xhrFields: {
 							withCredentials: true,
@@ -386,7 +388,7 @@ $(document).ready(() => {
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
-					});*/
+					});
 				}
 			},
 			/** @final */
