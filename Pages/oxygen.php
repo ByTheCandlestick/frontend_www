@@ -287,7 +287,6 @@ if(QS_SUBPAGE != "") {
 </section>
 <script>
 	dragula([
-		Array.prototype.slice.call(),
 		document.querySelector('.templateGrid'),
 		document.querySelector('.templateBase'),
 		Array.prototype.slice.call(document.querySelectorAll('.templateElements')),
