@@ -296,9 +296,9 @@ if(QS_SUBPAGE != "") {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
 			var columns = sectionString.split('$').shift();
-			var seccode, secext = null;
+			var seccode, secext, column = null;
 			jQuery.each(columns, function() {
-				column = this.split('|');
+				var column = this.split('|');
 				console.log(column);
 			})
 		} else {
