@@ -80,13 +80,13 @@ if(QS_SUBPAGE != "") {
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row templateElements">
+				<div class="accordion-item container row templateElements-columns">
 					<h2 class="accordion-header p-0 dragDisabled">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Columns" aria-expanded="true" aria-controls="Columns">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#columns" aria-expanded="true" aria-controls="columns">
 							<h5>Columns</h5>
 						</button>
 					</h2>
-					<div id="Columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -96,7 +96,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid col-6"></div>
 						</div>
 					</div>
-					<div id="Columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -107,7 +107,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid col-4"></div>
 						</div>
 					</div>
-					<div id="Columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -119,7 +119,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid col-3"></div>
 						</div>
 					</div>
-					<div id="Columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
+					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
 								<a onclick="$(this).closest('.templateElement, .templateElementGrid').remove()">DELETE</a>
@@ -143,7 +143,7 @@ if(QS_SUBPAGE != "") {
 									<div class="accordion-item container row templateElements">
 										<h2 class="accordion-header p-0 dragDisabled">
 											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'.$row['section_type'].'" aria-controls="'.$row['section_type'].'">
-												<h5>'.$row['section_type'].'</h5>
+												<h5>'.ucwords($row['section_type']).'</h5>
 											</button>
 										</h2>
 								');
