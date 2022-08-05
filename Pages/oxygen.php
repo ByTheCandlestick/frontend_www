@@ -316,6 +316,7 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elementString = "";
 		$('.templateBase [element-id]').each(function() {
+			console.log(this);
 			if($(this).find('input').length > 0 && $(this).find('input').val() != '') {
 				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 			} else {
