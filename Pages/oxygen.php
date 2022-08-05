@@ -304,7 +304,7 @@ if(QS_SUBPAGE != "") {
 			columns.shift();
 			console.log(columns);
 			columns.each(function() {
-
+				console.log(this);
 			})
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
