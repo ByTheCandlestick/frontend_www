@@ -304,7 +304,7 @@ if(QS_SUBPAGE != "") {
 			columns = sectionString.split('$')
 			columns.shift();
 			console.log(columns);
-			columns.each(function(column) {
+			columns.forEach(function(column) {
 				console.log(column);
 			})
 		} else {
