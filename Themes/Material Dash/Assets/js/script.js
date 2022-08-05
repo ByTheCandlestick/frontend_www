@@ -353,7 +353,7 @@ $(document).ready(() => {
 			layout: {
 				update(pid) {
 					var elementIds = [];
-					var elementString = "";
+					var elementString = "$1|#12;";
 					$('.templateBase [element-id]').each(function() {
 						var hasInput = false;
 						$(this).children().first().children().each(function() {
