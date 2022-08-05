@@ -317,8 +317,12 @@ if(QS_SUBPAGE != "") {
 		var elementString = "";
 		$('.templateBase [element-id]').each(function() {
 			var hasInput = false;
+			$(this).first().children().each(function() {
+				hasInput = true;
+				inputElement = this;
+			})
 			if(hasInput) {
-				elementIds.push($(this).attr('element-id')+':'+$(inputElem).find('input').val())
+				elementIds.push($(this).attr('element-id')+':'+$(inputElement).find('input').val())
 			} else {
 				elementIds.push($(this).attr('element-id'))
 			}
