@@ -318,15 +318,13 @@ if(QS_SUBPAGE != "") {
 		$('.templateBase [element-id]').each(function() {
 			var hasInput = false;
 			$(this).children().first().children().each(function() {
-				console.log($(this).prop('nodeName'))
 				if($(this).prop('nodeName') == 'INPUT') {
 					hasInput = true;
-					inputElement = this;
+					inputVal = $(this).val();
 				}
 			})
-			console.log('---');
 			if(hasInput) {
-				elementIds.push($(this).attr('element-id')+':'+$(inputElement).find('input').val())
+				elementIds.push($(this).attr('element-id')+':'+inputVal)
 			} else {
 				elementIds.push($(this).attr('element-id'))
 			}
