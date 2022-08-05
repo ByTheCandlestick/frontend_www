@@ -209,7 +209,7 @@ if(QS_SUBPAGE != "") {
 					</div>
 					<? 
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
-						$type = null; $elementCategories = array();
+						$type = null; $elementCategories = array('columns');
 						if(mysqli_num_rows($query) > 0) {
 							while($row = mysqli_fetch_array($query)) {
 								$sections[$row['id']] = $row;
@@ -260,7 +260,6 @@ if(QS_SUBPAGE != "") {
 		document.querySelector('.templateGrid'),
 		document.querySelector('.templateBase'),
 		document.querySelector('.dragulaContainer'),
-		document.querySelector('.templateElements.cat-columns'),
 		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
 		");}?>
 	], {
