@@ -17,8 +17,7 @@ if(QS_SUBPAGE != "") {
 							<label class="btn btn-outline-primary" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 						</div>
 					</div>
-					<!-- <a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1"> -->
-					<a href="javascript:saveLayout();" class="btn btn-outline-primary m-1">
+					<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 					<a href="javascript:initialize();" class="btn btn-outline-primary m-1">
@@ -311,35 +310,6 @@ if(QS_SUBPAGE != "") {
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
 		}
-	}
-	function saveLayout() {
-		var elementIds = [];
-		var elementString = "";
-		$('.templateBase [element-id]').each(function() {
-			var hasInput = false;
-			$(this).children().first().children().each(function() {
-				if($(this).prop('nodeName') == 'INPUT' && $(this).val() != '') {
-					hasInput = true;
-					inputVal = $(this).val();
-				}
-			})
-			if(hasInput) {
-				elementIds.push($(this).attr('element-id')+':'+inputVal)
-			} else {
-				elementIds.push($(this).attr('element-id'))
-			}
-		})
-		for(let i = 0; i < elementIds.length; i++) {
-			if(	elementString.endsWith(';') ||
-				elementIds[i].startsWith('#') ||
-				elementIds[i].startsWith('|') ||
-				elementString == "") {
-				elementString += elementIds[i];
-			} else {
-				elementString += ','+ elementIds[i];
-			}
-		}
-		console.log(elementString);
 	}
 </script>
 <?

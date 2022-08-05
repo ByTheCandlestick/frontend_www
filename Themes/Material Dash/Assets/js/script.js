@@ -352,11 +352,18 @@ $(document).ready(() => {
 			/** @wip */
 			layout: {
 				update(pid) {
-					elementIds = [];
-					elementString = "";
+					var elementIds = [];
+					var elementString = "";
 					$('.templateBase [element-id]').each(function() {
-						if($(this).children('input').length > 0 && $(this).children('input').val() != '') {
-							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
+						var hasInput = false;
+						$(this).children().first().children().each(function() {
+							if($(this).prop('nodeName') == 'INPUT' && $(this).val() != '') {
+								hasInput = true;
+								inputVal = $(this).val();
+							}
+						})
+						if(hasInput) {
+							elementIds.push($(this).attr('element-id')+':'+inputVal)
 						} else {
 							elementIds.push($(this).attr('element-id'))
 						}
@@ -371,8 +378,6 @@ $(document).ready(() => {
 							elementString += ','+ elementIds[i];
 						}
 					}
-					console.log(elementString);
-					/*
 					data = {
 						'api_key': api_key,
 						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
@@ -393,7 +398,6 @@ $(document).ready(() => {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
-					*/
 				}
 			},
 			/** @final */
