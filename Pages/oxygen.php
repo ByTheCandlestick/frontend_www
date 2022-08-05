@@ -318,8 +318,10 @@ if(QS_SUBPAGE != "") {
 		$('.templateBase [element-id]').each(function() {
 			var hasInput = false;
 			$(this).first().children().each(function() {
-				hasInput = true;
-				inputElement = this;
+				if($(this).prop('nodeName') == 'input') {
+					hasInput = true;
+					inputElement = this;
+				}
 			})
 			if(hasInput) {
 				elementIds.push($(this).attr('element-id')+':'+$(inputElement).find('input').val())
