@@ -355,7 +355,7 @@ $(document).ready(() => {
 					elementIds = [];
 					elementString = "$1|#12;";
 					$('.templateBase [element-id]').each(function() {
-						if($(this).find('input').length > 0 && $(this).find('input').val() != '') {
+						if($(this).has('input').length > 0 && $(this).has('input').val() != '') {
 							elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
 						} else {
 							elementIds.push($(this).attr('element-id'))
@@ -369,6 +369,7 @@ $(document).ready(() => {
 						}
 					}
 					console.log(elementString);
+					/*
 					data = {
 						'api_key': api_key,
 						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
@@ -389,6 +390,7 @@ $(document).ready(() => {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
+					*/
 				}
 			},
 			/** @final */
