@@ -313,18 +313,10 @@ if(QS_SUBPAGE != "") {
 		}
 	}
 	function saveLayout() {
-		elementIds = [];
-		elementString = "";
+		var elementIds = [];
+		var elementString = "";
 		$('.templateBase [element-id]').each(function() {
 			var hasInput = false;
-			var inputElem = null;
-			$(this).find(':first-child').children().each(function() {
-				console.log($(this).prop('nodeName'));
-				if($(this).prop('nodeName') == 'input') {
-					hasInput = true
-					inputElem = this;
-				}
-			})
 			if(hasInput) {
 				elementIds.push($(this).attr('element-id')+':'+$(inputElem).find('input').val())
 			} else {
