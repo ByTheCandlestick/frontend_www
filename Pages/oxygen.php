@@ -291,7 +291,7 @@ if(QS_SUBPAGE != "") {
 			$(this).removeClass('accordion-body');
 		});
 	});
-	$(document).ready(() => {
+	function initialize() {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
 			var seccode, secext, column = null;
@@ -302,7 +302,7 @@ if(QS_SUBPAGE != "") {
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
 		}
-	})
+	}
 </script>
 <?
 	} else {
