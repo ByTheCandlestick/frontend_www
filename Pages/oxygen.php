@@ -301,8 +301,7 @@ if(QS_SUBPAGE != "") {
 		if(sectionString != "") {
 			var seccode, secext, column = null;
 			var columns = [];
-			columns = sectionString.split('$').shift();
-			columns.each(function() {
+			sectionString.split('$').shift().each(function() {
 				console.log(this);
 			})
 		} else {
