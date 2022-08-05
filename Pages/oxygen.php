@@ -20,6 +20,9 @@ if(QS_SUBPAGE != "") {
 					<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
+					<a href="javascript:initialize();" class="btn btn-outline-primary m-1">
+						<i class="fa fa-bolt"></i>
+					</a>
 				</div>
 			</div>
 		</div>
