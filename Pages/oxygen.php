@@ -317,7 +317,7 @@ if(QS_SUBPAGE != "") {
 		var elementString = "";
 		$('.templateBase [element-id]').each(function() {
 			var hasInput = false;
-			$(this).first().children().each(function() {
+			$(this).children().first().children().each(function() {
 				console.log($(this).prop('nodeName'))
 				if($(this).prop('nodeName') == 'input' && $(this).val() != '') {
 					hasInput = true;
