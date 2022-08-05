@@ -259,37 +259,39 @@ if(QS_SUBPAGE != "") {
 	</div>
 </section>
 <script>
-	dragula([
-		document.querySelector('.templateGrid'),
-		document.querySelector('.templateBase'),
-		document.querySelector('.dragulaContainer'),
-		<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
-		");}?>
-	], {
-		isContainer: function (el) {
-			return $(el).hasClass('dragulaContainer');
-		},
-		moves: function (el, source, handle, sibling) {
-			return true;
-		},
-		copy: function(el, source) {
-			return el.parentNode.classList.contains('dragulaCopy');
-		},
-		accepts: function (el, target, source, sibling) {
-			return true;
-		},
-		invalid: function (el, handle) {
-			return el.classList.contains('dragulaDisabled');
-		},
-		direction: 'vertical',
-		copySortSource: false,
-		revertOnSpill: true,
-		removeOnSpill: false,
-		mirrorContainer: document.body,
-		ignoreInputTextSelection: true,
-		slideFactorX: 0,
-		slideFactorY: 0,
-	}).on('drop', function(el, target, source, sibling) {
+	dragula(
+		[
+			document.querySelector('.templateGrid'),
+			document.querySelector('.templateBase'),
+			document.querySelector('.dragulaContainer'),
+			<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
+			");}?>
+		], {
+			isContainer: function (el) {
+				return $(el).hasClass('dragulaContainer');
+			},
+			moves: function (el, source, handle, sibling) {
+				return true;
+			},
+			copy: function(el, source) {
+				return el.parentNode.classList.contains('dragulaCopy');
+			},
+			accepts: function (el, target, source, sibling) {
+				return true;
+			},
+			invalid: function (el, handle) {
+				return el.classList.contains('dragulaDisabled');
+			},
+			direction: 'vertical',
+			copySortSource: false,
+			revertOnSpill: true,
+			removeOnSpill: false,
+			mirrorContainer: document.body,
+			ignoreInputTextSelection: true,
+			slideFactorX: 0,
+			slideFactorY: 0,
+		}
+	).on('drop', function(el, target, source, sibling) {
 		$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 			$(this).removeClass('accordion-body');
 		});
@@ -299,7 +301,7 @@ if(QS_SUBPAGE != "") {
 		if(sectionString != "") {
 			var seccode, secext, column = null;
 			var columns = sectionString.split('$').shift();
-			$(columns).each(function() {
+			columns.each(function() {
 				console.log(this);
 			})
 		} else {
