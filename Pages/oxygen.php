@@ -320,7 +320,7 @@ if(QS_SUBPAGE != "") {
 			var hasInput = false;
 			var inputElem = null;
 			$(this).children().each(function() {
-				if($(this).prop('input');) {
+				if($(this).prop('nodeName') == 'input') {
 					hasInput = true
 					inputElem = this;
 				}
