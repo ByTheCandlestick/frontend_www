@@ -300,10 +300,7 @@ if(QS_SUBPAGE != "") {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
 			var seccode, secext, column = null;
-			var columns = [];
-			sectionString.split('$').shift().each(function() {
-				console.log(this);
-			})
+			console.log(sectionString.split('$').shift());
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
 		}
