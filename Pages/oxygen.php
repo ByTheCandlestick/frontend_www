@@ -319,7 +319,7 @@ if(QS_SUBPAGE != "") {
 			var hasInput = false;
 			$(this).children().first().children().each(function() {
 				console.log($(this).prop('nodeName'))
-				if($(this).prop('nodeName') == 'input') {
+				if($(this).prop('nodeName') == 'INPUT') {
 					hasInput = true;
 					inputElement = this;
 				}
