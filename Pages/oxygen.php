@@ -317,8 +317,16 @@ if(QS_SUBPAGE != "") {
 		elementString = "";
 		$('.templateBase [element-id]').each(function() {
 			console.log(this);
-			if($(this).find('input') && $(this).find('input').val() != '') {
-				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
+			var hasInput = false;
+			var inputElem = null;
+			$(this).children().each(function() {
+				if($(this).prop('input');) {
+					hasInput = true
+					inputElem = this;
+				}
+			})
+			if(hasInput) {
+				elementIds.push($(this).attr('element-id')+':'+$(inputElem).find('input').val())
 			} else {
 				elementIds.push($(this).attr('element-id'))
 			}
