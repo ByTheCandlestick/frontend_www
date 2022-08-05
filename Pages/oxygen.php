@@ -316,10 +316,10 @@ if(QS_SUBPAGE != "") {
 		elementIds = [];
 		elementString = "";
 		$('.templateBase [element-id]').each(function() {
-			console.log(this);
 			var hasInput = false;
 			var inputElem = null;
 			$(this).children().each(function() {
+				console.log($(this).prop('nodeName'));
 				if($(this).prop('nodeName') == 'input') {
 					hasInput = true
 					inputElem = this;
