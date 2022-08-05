@@ -300,7 +300,8 @@ if(QS_SUBPAGE != "") {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
 			var seccode, secext, column = null;
-			var columns = sectionString.split('$').shift();
+			var columns = [];
+			columns = sectionString.split('$').shift();
 			columns.each(function() {
 				console.log(this);
 			})
