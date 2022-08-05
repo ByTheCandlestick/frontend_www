@@ -260,28 +260,6 @@ if(QS_SUBPAGE != "") {
 	</div>
 </section>
 <script>
-	function saveLayout() {
-		elementIds = [];
-		elementString = "";
-		$('.templateBase [element-id]').each(function() {
-			if($(this).children('input').length > 0 && $(this).children('input').val() != '') {
-				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
-			} else {
-				elementIds.push($(this).attr('element-id'))
-			}
-		})
-		for(let i = 0; i < elementIds.length; i++) {
-			if(	elementString.endsWith(';') ||
-				elementIds[i].startsWith('#') ||
-				elementIds[i].startsWith('|') ||
-				elementString == "") {
-				elementString += elementIds[i];
-			} else {
-				elementString += ','+ elementIds[i];
-			}
-		}
-		console.log(elementString);
-	}
 	dragula(
 		[
 			document.querySelector('.templateGrid'),
@@ -333,6 +311,28 @@ if(QS_SUBPAGE != "") {
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
 		}
+	}
+	function saveLayout() {
+		elementIds = [];
+		elementString = "";
+		$('.templateBase [element-id]').each(function() {
+			if($(this).find('input').length > 0 && $(this).find('input').val() != '') {
+				elementIds.push($(this).attr('element-id')+':'+$(this).find('input').val())
+			} else {
+				elementIds.push($(this).attr('element-id'))
+			}
+		})
+		for(let i = 0; i < elementIds.length; i++) {
+			if(	elementString.endsWith(';') ||
+				elementIds[i].startsWith('#') ||
+				elementIds[i].startsWith('|') ||
+				elementString == "") {
+				elementString += elementIds[i];
+			} else {
+				elementString += ','+ elementIds[i];
+			}
+		}
+		console.log(elementString);
 	}
 </script>
 <?
