@@ -324,6 +324,7 @@ if(QS_SUBPAGE != "") {
 					inputElement = this;
 				}
 			})
+			console.log('---');
 			if(hasInput) {
 				elementIds.push($(this).attr('element-id')+':'+$(inputElement).find('input').val())
 			} else {
