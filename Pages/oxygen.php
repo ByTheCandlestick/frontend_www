@@ -115,7 +115,7 @@ if(QS_SUBPAGE != "") {
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
-					</div  element-id="$1#12;">
+					</div>
 					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$3|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
@@ -134,7 +134,7 @@ if(QS_SUBPAGE != "") {
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
-					</div element-id="$1#12;">
+					</div>
 					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$4|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
@@ -156,7 +156,7 @@ if(QS_SUBPAGE != "") {
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
-					</div element-id="$1#12;">
+					</div>
 					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$5|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
@@ -181,7 +181,7 @@ if(QS_SUBPAGE != "") {
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
-					</div element-id="$1#12;">
+					</div>
 					<div id="columns" class="accordion-collapse collapse templateElementGrid" data-bs-parent="#SectionElements" element-id="$6|">
 						<div class="accordion-body row position-relative">
 							<div class="templateElementMenu">
@@ -209,7 +209,7 @@ if(QS_SUBPAGE != "") {
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
-					</div element-id="$1#12;">
+					</div>
 					<? 
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 						$type = null; $elementCategories = array('columns');
