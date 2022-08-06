@@ -312,7 +312,10 @@ if(QS_SUBPAGE != "") {
 				console.log(colCount);
 				if(colCount > 1) {
 					console.log('Here');
-					$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase');
+					$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+						$(this).removeClass('accordion-body');
+					});
+
 				}
 				columns.forEach(function(column) {
 					console.log(column);
