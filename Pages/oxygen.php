@@ -327,6 +327,10 @@ if(QS_SUBPAGE != "") {
 								$(this).removeClass('accordion-body');
 							});
 							currCol++;
+						} else {
+							$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+								$(this).removeClass('accordion-body');
+							});
 						}
 					})
 				})
