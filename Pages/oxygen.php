@@ -318,7 +318,7 @@ if(QS_SUBPAGE != "") {
 				}
 				columns.forEach(function(column) {
 					elements = column.split(';').pop().split(',');
-					var currCol = 1
+					var currCol = 0
 					elements.forEach(function(element) {
 						[elemID, elementString] = element.split(':');
 						if(contained) {
