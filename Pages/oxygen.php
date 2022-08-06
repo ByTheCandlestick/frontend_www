@@ -312,7 +312,7 @@ if(QS_SUBPAGE != "") {
 				console.log(colCount);
 				if(colCount > 1) {
 					console.log('Here');
-					$('div[element-id=$'+colCount+'|]').clone().appendTo('.templateBase');
+					$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase');
 				}
 				columns.forEach(function(column) {
 					console.log(column);
