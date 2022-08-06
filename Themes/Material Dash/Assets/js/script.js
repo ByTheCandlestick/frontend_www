@@ -369,7 +369,7 @@ $(document).ready(() => {
 								elementIds.push($(this).attr('element-id')+':'+inputVal)
 							}
 						} else {
-							if($(this).parent().hasClass('templateBase')) {
+							if($(this).parent().hasClass('templateBase') && !$(this).attr('element-id').startsWith('$')) {
 								elementIds.push('$1|#12;'+$(this).attr('element-id'))
 							} else {
 								elementIds.push($(this).attr('element-id'))
