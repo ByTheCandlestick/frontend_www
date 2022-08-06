@@ -300,8 +300,8 @@ if(QS_SUBPAGE != "") {
 	function initialize() {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
-			var seccode, secext, column = null;
-			var sections, columns = [];
+			var contained = null;
+			var sections, columns, elements = [];
 			sections = sectionString.split('$')
 			sections.shift();
 			sections.forEach(function(section) {
