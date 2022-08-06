@@ -306,10 +306,11 @@ if(QS_SUBPAGE != "") {
 			sections.shift();
 			sections.forEach(function(section) {
 				columns = section.split('#')
-				if(columns[0] > 1) {
-					$('div[element-id=$'+columns[0]+'|]').clone().appendTo('.templateBase');
-				}
+				var colCount = columns[0];
 				columns.shift();
+				if(colCount > 1) {
+					$('div[element-id=$'+colCount+'|]').clone().appendTo('.templateBase');
+				}
 				columns.forEach(function(column) {
 					console.log(column);
 				})
