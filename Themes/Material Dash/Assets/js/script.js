@@ -353,7 +353,7 @@ $(document).ready(() => {
 			layout: {
 				update(pid) {
 					var elementIds = [];
-					var elementString = "$1|#12;";
+					var elementString = "";
 					$('.templateBase [element-id]').each(function() {
 						var hasInput = false;
 						$(this).children().first().children().each(function() {
@@ -363,9 +363,17 @@ $(document).ready(() => {
 							}
 						})
 						if(hasInput) {
-							elementIds.push($(this).attr('element-id')+':'+inputVal)
+							if($(this).hasClass('templateBase')) {
+								elementIds.push('$1|#12;'+$(this).attr('element-id')+':'+inputVal)
+							} else {
+								elementIds.push($(this).attr('element-id')+':'+inputVal)
+							}
 						} else {
-							elementIds.push($(this).attr('element-id'))
+							if($(this).hasClass('templateBase')) {
+								elementIds.push('$1|#12;'+$(this).attr('element-id'))
+							} else {
+								elementIds.push($(this).attr('element-id'))
+							}
 						}
 					})
 					for(let i = 0; i < elementIds.length; i++) {
