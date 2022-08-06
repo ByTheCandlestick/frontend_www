@@ -296,6 +296,7 @@ if(QS_SUBPAGE != "") {
 			$(this).removeClass('accordion-body');
 		});
 	});
+	initialize();
 	function initialize() {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
