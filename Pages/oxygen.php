@@ -306,7 +306,9 @@ if(QS_SUBPAGE != "") {
 			sections.shift();
 			sections.forEach(function(section) {
 				columns = section.split('#')
-				columns.shift();
+				if(columns[0] > 1) {
+					$('div[element-id=$'+columns[0]+'|]').clone().appendTo('.templateBase');
+				}
 				columns.forEach(function(column) {
 					console.log(column);
 				})
