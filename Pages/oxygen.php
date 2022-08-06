@@ -300,7 +300,7 @@ if(QS_SUBPAGE != "") {
 	function initialize() {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
-			var contained, colCount, currCol = null;
+			var contained, colCount, currCol, elemID, elementString = null;
 			var sections, columns, elements, cols = [];
 			sections = sectionString.split('$')
 			sections.shift();
@@ -325,11 +325,13 @@ if(QS_SUBPAGE != "") {
 							cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
 							$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 								$(this).removeClass('accordion-body');
+								$(this).find('input').first().val(elementString);
 							});
 							currCol++;
 						} else {
 							$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 								$(this).removeClass('accordion-body');
+								$(this).find('input').first().val(elementString);
 							});
 						}
 					})
