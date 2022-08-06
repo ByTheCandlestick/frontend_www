@@ -300,13 +300,14 @@ if(QS_SUBPAGE != "") {
 	function initialize() {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
-			var contained = null;
-			var sections, columns, elements = [];
+			var contained, colCount = null;
+			var sections, columns, elements, cols = [];
+			var currCol = 0;
 			sections = sectionString.split('$')
 			sections.shift();
 			sections.forEach(function(section) {
 				columns = section.split('#')
-				var colCount = columns[0].replace('|', '');
+				colCount = columns[0].replace('|', '');
 				columns.shift();
 				if(colCount > 1) {
 					$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
@@ -318,11 +319,10 @@ if(QS_SUBPAGE != "") {
 				}
 				columns.forEach(function(column) {
 					elements = column.split(';').pop().split(',');
-					var currCol = 0
 					elements.forEach(function(element) {
 						[elemID, elementString] = element.split(':');
 						if(contained) {
-							var cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
+							cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
 							$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 								$(this).removeClass('accordion-body');
 							});
