@@ -386,6 +386,7 @@ $(document).ready(() => {
 							elementString += ','+ elementIds[i];
 						}
 					}
+					console.log(elementString);
 					data = {
 						'api_key': api_key,
 						'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
