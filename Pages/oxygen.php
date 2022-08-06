@@ -321,7 +321,9 @@ if(QS_SUBPAGE != "") {
 						[elemID, elementString] = element.split(':');
 						if(contained) {
 							var cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
-							$("div[element-id='"+elemID+"']").clone().appemdTo(cols[currCol]);
+							$("div[element-id='"+elemID+"']").clone().appemdTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+								$(this).removeClass('accordion-body');
+							});
 							currCol++;
 						}
 					})
