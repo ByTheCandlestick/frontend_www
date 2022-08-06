@@ -301,12 +301,13 @@ if(QS_SUBPAGE != "") {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
 			var seccode, secext, column = null;
-			var columns = [];
-			columns = sectionString.split('$')
-			columns.shift();
-			console.log(columns);
-			columns.forEach(function(column) {
-				console.log(column);
+			var sections, columns = [];
+			sections = sectionString.split('$')
+			sections.shift();
+			sections.forEach(function(section) {
+				columns = section.split('#')
+				columns.shift();
+				console.log(columns);
 			})
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
