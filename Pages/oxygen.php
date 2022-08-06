@@ -313,6 +313,8 @@ if(QS_SUBPAGE != "") {
 						$(this).removeClass('accordion-body');
 					});
 					contained = true;
+				} else {
+					contained = false;
 				}
 				columns.forEach(function(column) {
 					elements = column.split(';').pop().split(',');
@@ -321,7 +323,7 @@ if(QS_SUBPAGE != "") {
 						[elemID, elementString] = element.split(':');
 						if(contained) {
 							var cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
-							$("div[element-id='"+elemID+"']").clone().appemdTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+							$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 								$(this).removeClass('accordion-body');
 							});
 							currCol++;
