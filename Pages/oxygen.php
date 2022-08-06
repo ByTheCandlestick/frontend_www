@@ -312,11 +312,19 @@ if(QS_SUBPAGE != "") {
 					$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 						$(this).removeClass('accordion-body');
 					});
-
+					contained = true;
 				}
 				columns.forEach(function(column) {
-					elements = column.split(';').pop();
-					console.log(elements);
+					elements = column.split(';').pop().split(',');
+					var currCol = 1
+					elements.forEach(function(element) {
+						[elemID, elementString] = element.split(':');
+						if(contained) {
+							var cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
+							$("div[element-id='"+elemID+"']").clone().appemdTo(cols[currCol]);
+							currCol++;
+						}
+					})
 				})
 			})
 		} else {
