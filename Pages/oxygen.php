@@ -307,7 +307,9 @@ if(QS_SUBPAGE != "") {
 			sections.forEach(function(section) {
 				columns = section.split('#')
 				columns.shift();
-				console.log(columns);
+				columns.forEach(function(column) {
+					console.log(column);
+				})
 			})
 		} else {
 			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
