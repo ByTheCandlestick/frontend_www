@@ -300,14 +300,14 @@ if(QS_SUBPAGE != "") {
 	function initialize() {
 		var sectionString = $('section .sections').attr('data-original-sections');
 		if(sectionString != "") {
-			var contained, colCount = null;
+			var contained, colCount, currCol = null;
 			var sections, columns, elements, cols = [];
-			var currCol = 0;
 			sections = sectionString.split('$')
 			sections.shift();
 			sections.forEach(function(section) {
 				columns = section.split('#')
 				colCount = columns[0].replace('|', '');
+				currCol = 0;
 				columns.shift();
 				if(colCount > 1) {
 					$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
