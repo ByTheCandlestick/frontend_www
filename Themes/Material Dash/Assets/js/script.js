@@ -406,6 +406,50 @@ $(document).ready(() => {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
 					});
+				},
+				initializeOxygen() {
+					var sectionString = $('section .sections').attr('data-original-sections');
+					if(sectionString != "") {
+						var contained, colCount, currCol, elemID, elementString = null;
+						var sections, columns, elements, cols = [];
+						sections = sectionString.split('$')
+						sections.shift();
+						sections.forEach(function(section) {
+							columns = section.split('#')
+							colCount = columns[0].replace('|', '');
+							currCol = 0;
+							columns.shift();
+							if(colCount > 1) {
+								$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+									$(this).removeClass('accordion-body');
+								});
+								contained = true;
+							} else {
+								contained = false;
+							}
+							columns.forEach(function(column) {
+								elements = column.split(';').pop().split(',');
+								elements.forEach(function(element) {
+									[elemID, elementString] = element.split(':');
+									if(contained) {
+										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
+										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+											$(this).removeClass('accordion-body');
+											$(this).find('input').first().val(elementString);
+										});
+										currCol++;
+									} else {
+										$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+											$(this).removeClass('accordion-body');
+											$(this).find('input').first().val(elementString);
+										});
+									}
+								})
+							})
+						})
+					} else {
+						$('.templateBase').html("Drag an element from the left hand side to start building the website!");
+					}
 				}
 			},
 			/** @final */

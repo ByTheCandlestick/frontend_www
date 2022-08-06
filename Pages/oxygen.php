@@ -259,88 +259,46 @@ if(QS_SUBPAGE != "") {
 	</div>
 </section>
 <script>
-	dragula(
-		[
-			document.querySelector('.templateGrid'),
-			document.querySelector('.templateBase'),
-			document.querySelector('.dragulaContainer'),
-			<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
-			");}?>
-		], {
-			isContainer: function (el) {
-				return $(el).hasClass('dragulaContainer');
-			},
-			moves: function (el, source, handle, sibling) {
-				return true;
-			},
-			copy: function(el, source) {
-				return el.parentNode.classList.contains('dragulaCopy');
-			},
-			accepts: function (el, target, source, sibling) {
-				return true;
-			},
-			invalid: function (el, handle) {
-				return el.classList.contains('dragulaDisabled');
-			},
-			direction: 'vertical',
-			copySortSource: false,
-			revertOnSpill: true,
-			removeOnSpill: false,
-			mirrorContainer: document.body,
-			ignoreInputTextSelection: true,
-			slideFactorX: 0,
-			slideFactorY: 0,
-		}
-	).on('drop', function(el, target, source, sibling) {
-		$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
-			$(this).removeClass('accordion-body');
+	$(document).ready(() => {
+		website.layout.initializeOxygen();
+		dragula(
+			[
+				document.querySelector('.templateGrid'),
+				document.querySelector('.templateBase'),
+				document.querySelector('.dragulaContainer'),
+				<?foreach($elementCategories as $elementCategory) {print("document.querySelector('.templateElements.cat-$elementCategory'),
+				");}?>
+			], {
+				isContainer: function (el) {
+					return $(el).hasClass('dragulaContainer');
+				},
+				moves: function (el, source, handle, sibling) {
+					return true;
+				},
+				copy: function(el, source) {
+					return el.parentNode.classList.contains('dragulaCopy');
+				},
+				accepts: function (el, target, source, sibling) {
+					return true;
+				},
+				invalid: function (el, handle) {
+					return el.classList.contains('dragulaDisabled');
+				},
+				direction: 'vertical',
+				copySortSource: false,
+				revertOnSpill: true,
+				removeOnSpill: false,
+				mirrorContainer: document.body,
+				ignoreInputTextSelection: true,
+				slideFactorX: 0,
+				slideFactorY: 0,
+			}
+		).on('drop', function(el, target, source, sibling) {
+			$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+				$(this).removeClass('accordion-body');
+			});
 		});
 	});
-	initialize();
-	function initialize() {
-		var sectionString = $('section .sections').attr('data-original-sections');
-		if(sectionString != "") {
-			var contained, colCount, currCol, elemID, elementString = null;
-			var sections, columns, elements, cols = [];
-			sections = sectionString.split('$')
-			sections.shift();
-			sections.forEach(function(section) {
-				columns = section.split('#')
-				colCount = columns[0].replace('|', '');
-				currCol = 0;
-				columns.shift();
-				if(colCount > 1) {
-					$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
-						$(this).removeClass('accordion-body');
-					});
-					contained = true;
-				} else {
-					contained = false;
-				}
-				columns.forEach(function(column) {
-					elements = column.split(';').pop().split(',');
-					elements.forEach(function(element) {
-						[elemID, elementString] = element.split(':');
-						if(contained) {
-							cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
-							$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
-								$(this).removeClass('accordion-body');
-								$(this).find('input').first().val(elementString);
-							});
-							currCol++;
-						} else {
-							$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
-								$(this).removeClass('accordion-body');
-								$(this).find('input').first().val(elementString);
-							});
-						}
-					})
-				})
-			})
-		} else {
-			$('.templateBase').html("Drag an element from the left hand side to start building the website!");
-		}
-	}
 </script>
 <?
 	} else {
