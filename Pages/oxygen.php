@@ -315,7 +315,8 @@ if(QS_SUBPAGE != "") {
 
 				}
 				columns.forEach(function(column) {
-					console.log(column);
+					elements = column.split(',').pop();
+					console.log(elements);
 				})
 			})
 		} else {
