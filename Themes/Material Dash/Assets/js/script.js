@@ -379,7 +379,7 @@ $(document).ready(() => {
 					for(let i = 0; i < elementIds.length; i++) {
 						if(	elementString.endsWith(';') ||
 							elementIds[i].startsWith('#') ||
-							elementIds[i].startsWith('|') ||
+							elementIds[i].startsWith('$') ||
 							elementString == "") {
 							elementString += elementIds[i];
 						} else {
