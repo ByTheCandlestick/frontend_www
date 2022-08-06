@@ -309,6 +309,7 @@ if(QS_SUBPAGE != "") {
 				var colCount = columns[0];
 				columns.shift();
 				if(colCount > 1) {
+					console.log('Here');
 					$('div[element-id=$'+colCount+'|]').clone().appendTo('.templateBase');
 				}
 				columns.forEach(function(column) {
