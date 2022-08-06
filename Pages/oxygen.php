@@ -306,7 +306,7 @@ if(QS_SUBPAGE != "") {
 			sections.shift();
 			sections.forEach(function(section) {
 				columns = section.split('#')
-				var colCount = columns[0];
+				var colCount = columns[0].replace('|', '');
 				console.log(columns[0]);
 				columns.shift();
 				console.log(colCount);
