@@ -305,7 +305,7 @@ if(QS_SUBPAGE != "") {
 		});
 		noUiSlider.create(document.querySelector('range#5'), {
 			start: [4000, 8000, 12000, 16000],
-			connect: [false, true, true, false, true],
+			connect: [false, false, false, false, false],
 			range: {
 				'min': [2000],
 				'max': [20000]
