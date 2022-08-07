@@ -303,7 +303,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		noUiSlider.create(document.querySelector('range#2'), {
+		noUiSlider.create(document.querySelector('range#5'), {
 			start: [4000, 8000, 12000, 16000],
 			connect: [false, true, true, false, true],
 			range: {
