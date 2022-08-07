@@ -108,6 +108,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
+							<range id="2"></range>
 							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -124,6 +125,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
+							<range id="3"></range>
 							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -143,6 +145,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>4 columns</h6>
+							<range id="4"></range>
 							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -165,6 +168,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>5 columns</h6>
+							<range id="5"></range>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -190,6 +194,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>6 columns</h6>
+							<range id="6"></range>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -297,6 +302,14 @@ if(QS_SUBPAGE != "") {
 			$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 				$(this).removeClass('accordion-body');
 			});
+		});
+		noUiSlider.create(document.querySelector('range#2'), {
+			start: [4000, 8000, 12000, 16000],
+			connect: [false, true, true, false, true],
+			range: {
+				'min': [2000],
+				'max': [20000]
+			}
 		});
 	});
 </script>
