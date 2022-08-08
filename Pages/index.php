@@ -27,7 +27,7 @@
 			if(isset($dailySales_raw[$i])) {
 				array_push($dailySales, $dailySales_raw[$i][1]);
 			} else {
-				array_push($dailySales, 0);
+				array_unshift($skills, 0);
 			}
 		}
 		print_r($dailySales);
