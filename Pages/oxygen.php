@@ -82,6 +82,9 @@ if(QS_SUBPAGE != "") {
 				position: relative;
 				background: var(--section);
 			}
+			.templateGrid.2 {
+				width: ;
+			}
 
 			.container {
 				background: var(--app-container);
@@ -108,11 +111,11 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<div class="templateGrid col-6" element-id="#6;">
+							<div class="templateGrid 2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
 							<div class="columnResizer handle"></div>
-							<div class="templateGrid col-6" element-id="#6;">
+							<div class="templateGrid 2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
