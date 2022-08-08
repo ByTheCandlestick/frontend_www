@@ -83,7 +83,10 @@ if(QS_SUBPAGE != "") {
 				background: var(--section);
 			}
 			.tGrid2 {
-				width: 45%;
+				width: calc(50% - 10px);
+			}
+			.columnResizer {
+				width: 10px;
 			}
 
 			.container {
