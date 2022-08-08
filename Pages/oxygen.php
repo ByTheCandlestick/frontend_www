@@ -212,10 +212,10 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
+				</div>
 					<? 
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 						$type = null; $elementCategories = array('columns');
-						print_r($query);
 						if(mysqli_num_rows($query) > 0) {
 							while($row = mysqli_fetch_array($query)) {
 								$sections[$row['id']] = $row;
@@ -245,6 +245,7 @@ if(QS_SUBPAGE != "") {
 								$type = $row['section_type'];
 							}
 						}
+
 					?>
 				</div>
 			</div>
