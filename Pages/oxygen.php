@@ -330,15 +330,15 @@ if(QS_SUBPAGE != "") {
 		console.log('start');
 		dragging = true;
 	}
-	$(document).mousemove(function() {
+	$(document).mousemove(function(event) {
 		if (dragging) {
 			console.log('moving');
-			var percentage = 100 / this.attr('id');
+			var percentage = 100 / event.target.attr('id');
 			console.log(percentage);
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = 25 - 0.75 - percentage;
-				this.previousSibling.style.width = percentage + "%";
-				this.nextSibling.style.width = rightPercentage + "%";
+				event.target.previousSibling.style.width = percentage + "%";
+				event.target.nextSibling.style.width = rightPercentage + "%";
 			}
 		}
 	})
