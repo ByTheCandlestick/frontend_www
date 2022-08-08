@@ -331,6 +331,7 @@ if(QS_SUBPAGE != "") {
 	function dragstart(event) {
 		event.preventDefault();
 		dragging = true;
+		console.log('here');
 	}
 	function dragmove(event) {
 		if (dragging) {
