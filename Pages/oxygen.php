@@ -332,6 +332,7 @@ if(QS_SUBPAGE != "") {
 	$(".columnResizer.handle").mousedown((event) => {
 		event.preventDefault();
 		dragging = true;
+		console.log('down');
 	});
 	function dragmove(event) {
 		if (dragging) {
