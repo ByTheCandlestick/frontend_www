@@ -304,7 +304,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		$('div.range-5').each().rangeslider();
+		$('.nouirange').each().rangeslider();
 	});
 </script>
 <?
