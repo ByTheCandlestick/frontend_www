@@ -115,11 +115,11 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<div class="templateGrid tGrid2 col" element-id="#6;">
+							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="handle columnResizer col"></div>
-							<div class="templateGrid tGrid2 col" element-id="#6;">
+							<div class="handle columnResizer"></div>
+							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
