@@ -30,7 +30,6 @@
 				array_push($dailySales, 0);
 			}
 		}
-		print_r($dailySales);
 	// Gets all sales data from the last 12 months
 		$monthlySales = array();
 		$monthlySales_raw = mysqli_fetch_all(DB_QUERY("SELECT date_format(`Created`,'%Y-%m'), SUM(`Deposit`) FROM `Transactions` GROUP BY 1 ORDER BY 1 DESC LIMIT 12"));
