@@ -40,6 +40,7 @@
 				array_unshift($monthlySales, 0);
 			}
 		}
+		print_r($monthlySales);
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
 		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
