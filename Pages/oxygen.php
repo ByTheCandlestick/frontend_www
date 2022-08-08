@@ -88,15 +88,7 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 				cursor: col-resize;
 			}
-			.columnResizer.handle:before {
-				content: "";
-				height: 55%;
-				width: 1px;
-				background: black;
-				bottom: 3px;
-				position: absolute;
-				transform: translateX(2.5px);
-			}
+			.columnResizer.handle:before,
 			.columnResizer.handle:after {
 				content: "";
 				height: 55%;
@@ -104,8 +96,9 @@ if(QS_SUBPAGE != "") {
 				background: black;
 				bottom: 3px;
 				position: absolute;
-				transform: translateX(5.5px);
 			}
+			.columnResizer.handle:before {  transform: translateX(2.5px); }
+			.columnResizer.handle:after { transform: translateX(5.5px); }
 			.tGrid2 { width: calc(50.00% - 10px); }
 			.tGrid3 { width: calc(33.33% - 10px); }
 			.tGrid4 { width: calc(25.00% - 10px); }
