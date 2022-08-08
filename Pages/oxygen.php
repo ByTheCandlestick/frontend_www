@@ -89,8 +89,6 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 			}
 			.nouirange {
-				display: block;
-				width: 100%;
 				height: 10px;
 			}
 		</style>
@@ -306,7 +304,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		noUiSlider.create(document.querySelector('.range-5'), {
+		noUiSlider.create(document.querySelectorAll('.range-5'), {
 			start: [2, 4, 8, 10],
 			connect: [false, false, false, false, false],
 			range: {
