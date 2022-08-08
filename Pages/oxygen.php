@@ -105,7 +105,6 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<div id="nouirange-2"></range>
 							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -212,7 +211,6 @@ if(QS_SUBPAGE != "") {
 							</div>
 						</div>
 					</div>
-				</div>
 					<? 
 						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
 						$type = null; $elementCategories = array('columns');
