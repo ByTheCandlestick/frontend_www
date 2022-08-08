@@ -35,7 +35,6 @@
 		$monthlySales = array();
 		$monthlySales_raw = mysqli_fetch_all(DB_QUERY("SELECT date_format(`Created`,'%Y-%m'), SUM(`Deposit`) FROM `Transactions` GROUP BY 1"));
 		for($i=1; $i<13; $i++) {
-			print_r($monthlySales_raw[$i]);
 			if(isset($monthlySales_raw[$i])) {
 				array_push($monthlySales, $monthlySales_raw[$i][1]);
 			} else {
