@@ -89,8 +89,8 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 				cursor: col-resize;
 			}
-			.columnResizer.handle:before,
-			.columnResizer.handle:after {
+			.columnResizer:before,
+			.columnResizer:after {
 				content: "";
 				height: 55%;
 				width: 1px;
@@ -98,8 +98,8 @@ if(QS_SUBPAGE != "") {
 				bottom: 3px;
 				position: absolute;
 			}
-			.columnResizer.handle:before {  transform: translateX(2.5px); }
-			.columnResizer.handle:after { transform: translateX(5.5px); }
+			.columnResizer:before {  transform: translateX(2.5px); }
+			.columnResizer:after { transform: translateX(5.5px); }
 			.tGrid2 { width: calc(50.00% - 10px); }
 			.tGrid3 { width: calc(33.33% - 10px); }
 			.tGrid4 { width: calc(25.00% - 10px); }
@@ -130,8 +130,8 @@ if(QS_SUBPAGE != "") {
 							<h6>2 columns</h6>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
-							</div>
-							<div class="handle columnResizer" onmousedown="dragstart" ontouchstart="dragstart"></div>
+							</div>	
+							<div class="dragulaDisabled columnResizer" onmousedown="dragstart" ontouchstart="dragstart"></div>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -329,7 +329,6 @@ if(QS_SUBPAGE != "") {
 	function dragstart(event) {
 		event.preventDefault();
 		dragging = true;
-		console.log('');
 	}
 	function dragmove(event) {
 		if (dragging) {
