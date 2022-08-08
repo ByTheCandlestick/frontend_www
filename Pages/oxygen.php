@@ -131,7 +131,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>	
-							<div class="dragulaDisabled columnResizer" onmousedown="dragstart(event)" ontouchstart="dragstart(event)"></div>
+							<div class="dragulaDisabled columnResizer" id="2" onmousedown="dragstart(event)" ontouchstart="dragstart(event)"></div>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -337,7 +337,7 @@ if(QS_SUBPAGE != "") {
 	function dragmove(event) {
 		console.log('move');
 		if (dragging) {
-			var percentage = (event.pageX / window.innerWidth) * 100;
+			var percentage = 100 / event.target.attr('id');
 			console.log(percentage);
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = 25 - 0.75 - percentage;
