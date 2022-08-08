@@ -111,6 +111,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
+							<div class="columnResizer handle"></div>
 							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
