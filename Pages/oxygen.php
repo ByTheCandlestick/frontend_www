@@ -88,6 +88,11 @@ if(QS_SUBPAGE != "") {
 				border-radius: 15px;
 				padding: unset;
 			}
+			.nouirange {
+				display: block;
+				width: 100%;
+				height: 10px;
+			}
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
