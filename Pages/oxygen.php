@@ -75,7 +75,6 @@ if(QS_SUBPAGE != "") {
 				min-height: 30px;
 				margin-inline: auto;
 				margin-top: 1rem;
-				display: flex;
 				padding: unset;
 			}
 			.templateBase .templateElementGrid .templateGrid .dragulaContainer {
@@ -85,7 +84,6 @@ if(QS_SUBPAGE != "") {
 				background: var(--section);
 			}
 			.columnResizer {
-				display: flex;
 				width: 10px;
 				padding: unset;
 				cursor: col-resize;
@@ -99,7 +97,7 @@ if(QS_SUBPAGE != "") {
 				position: absolute;
 				transform: translateX(2.5px);
 			}
-			.columnResizer.handle:before {
+			.columnResizer.handle:after {
 				content: "";
 				height: 55%;
 				width: 1px;
