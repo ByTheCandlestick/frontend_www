@@ -131,7 +131,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>	
-							<div class="dragulaDisabled columnResizer" onmousedown="dragstart" ontouchstart="dragstart"></div>
+							<div class="dragulaDisabled columnResizer" onmousedown="dragstart()" ontouchstart="dragstart()"></div>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
