@@ -131,9 +131,7 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="handle columnResizer"
-								onmousedown="dragstart"
-								ontouchstart="dragstart"></div>
+							<div class="handle columnResizer" onmousedown="dragstart" ontouchstart="dragstart"></div>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -331,7 +329,7 @@ if(QS_SUBPAGE != "") {
 	function dragstart(event) {
 		event.preventDefault();
 		dragging = true;
-		console.log('here');
+		console.log('');
 	}
 	function dragmove(event) {
 		if (dragging) {
