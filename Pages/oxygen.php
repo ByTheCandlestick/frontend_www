@@ -342,8 +342,8 @@ if(QS_SUBPAGE != "") {
 			console.log(percentage);
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = 25 - 0.75 - percentage;
-				event.target.previousSibling.previousSibling.style.width = percentage + "%";
-				event.target.nextSibling.nextSibling.style.width = rightPercentage + "%";
+				event.target.previousSibling.style.width = percentage + "%";
+				event.target.nextSibling.style.width = rightPercentage + "%";
 			}
 		}
 	}
