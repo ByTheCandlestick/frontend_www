@@ -337,7 +337,7 @@ if(QS_SUBPAGE != "") {
 	function dragmove(event) {
 		if (dragging) {
 			console.log('moving');
-			var percentage = 100 / event.target.attr('id');
+			var percentage = 100 event.target.attr('id');
 			console.log(percentage);
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = 25 - 0.75 - percentage;
