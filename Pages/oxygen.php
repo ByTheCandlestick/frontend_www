@@ -81,6 +81,8 @@ if(QS_SUBPAGE != "") {
 				height: 100%;
 				position: relative;
 				background: var(--section);
+				display: inline;
+				padding: unset;
 			}
 			.columnResizer {
 				display: inline;
@@ -88,31 +90,11 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 				cursor: col-resize;
 			}
-			.tGrid2 {
-				display: inline;
-				width: calc(50.00% - 10px);
-				padding: unset;
-			}
-			.tGrid3 {
-				display: inline;
-				width: calc(33.33% - 10px);
-				padding: unset;
-			}
-			.tGrid4 {
-				display: inline;
-				width: calc(25.00% - 10px);
-				padding: unset;
-			}
-			.tGrid5 {
-				display: inline;
-				width: calc(20.00% - 10px);
-				padding: unset;
-			}
-			.tGrid6 {
-				display: inline;
-				width: calc(16.66% - 10px);
-				padding: unset;
-			}
+			.tGrid2 { width: calc(50.00% - 10px); }
+			.tGrid3 { width: calc(33.33% - 10px); }
+			.tGrid4 { width: calc(25.00% - 10px); }
+			.tGrid5 { width: calc(20.00% - 10px); }
+			.tGrid6 { width: calc(16.66% - 10px); }
 
 			.container {
 				background: var(--app-container);
