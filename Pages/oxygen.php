@@ -93,7 +93,7 @@ if(QS_SUBPAGE != "") {
 				content: "";
 				height: 55%;
 				width: 1px;
-				background: black;
+				background: var(--link-color-disabled-bg);
 				bottom: 3px;
 				position: absolute;
 			}
