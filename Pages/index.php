@@ -21,15 +21,7 @@
 			array_push($months, $months_b[$i]);
 		}
 	// Gets all sales data for the last 7 days
-		$dailySales = array();
-		$dailySales_raw = mysqli_fetch_all(DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d'), SUM(`Deposit`) FROM `Transactions` GROUP BY 1 ORDER BY 1 DESC LIMIT 7"));
-		for($i=1; $i<8; $i++) {
-			if(isset($dailySales_raw[$i])) {
-				array_push($dailySales, $dailySales_raw[$i][1]);
-			} else {
-				array_push($dailySales, 0);
-			}
-		}
+		$dailySales = mysqli_fetch_all(DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d'), SUM(`Deposit`) FROM `Transactions` GROUP BY 1 ORDER BY 1 DESC LIMIT 7"));
 		$dailySales = array_reverse($dailySales);
 	// Gets all sales data from the last 12 months
 		$monthlySales = array();
