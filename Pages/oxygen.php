@@ -121,7 +121,9 @@ if(QS_SUBPAGE != "") {
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="handle columnResizer"></div>
+							<div class="handle columnResizer"
+								mousedown="dragstart"
+								touchstart="dragstart"></div>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -315,6 +317,32 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 	});
+
+	var dragging = false;
+	function dragstart(event) {
+		event.preventDefault();
+		dragging = true;
+	}
+	function dragmove(event) {
+		if (dragging) {
+			var percentage = (event.pageX / window.innerWidth) * 100;
+			console.log(percentage);
+			if (percentage > 10 && percentage < 90) {
+				var rightPercentage = 25 - 0.75 - percentage;
+				event.target.previousSibling.previousSibling.style.width = percentage + "%";
+				event.target.nextSibling.nextSibling.style.width = rightPercentage + "%";
+			}
+		}
+	}
+	function dragend() {
+		dragging = false;
+	}
+	window.onload = function() {
+		window.addEventListener("mousemove", dragmove);
+		window.addEventListener("touchmove", dragmove);
+		window.addEventListener("mouseup", dragend);
+		window.addEventListener("touchend", dragend);
+	}
 </script>
 <?
 	} else {
