@@ -304,14 +304,16 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		noUiSlider.create(document.querySelectorAll('.range-5'), {
-			start: [2, 4, 8, 10],
-			connect: [false, false, false, false, false],
-			range: {
-				'min': [0],
-				'max': [12]
-			}
-		});
+		document.querySelectorAll('.range-5').each(function() {
+			noUiSlider.create(this, {
+				start: [2, 4, 8, 10],
+				connect: [false, false, false, false, false],
+				range: {
+					'min': [0],
+					'max': [12]
+				}
+			});
+		})
 	});
 </script>
 <?
