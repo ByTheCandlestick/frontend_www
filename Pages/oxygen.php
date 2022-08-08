@@ -83,19 +83,20 @@ if(QS_SUBPAGE != "") {
 				background: var(--section);
 			}
 			.tGrid2 {
+				display: inline;
 				width: calc(50% - 10px);
+				padding: unset;
 			}
 			.columnResizer {
+				display: inline;
 				width: 10px;
+				padding: unset;
 			}
 
 			.container {
 				background: var(--app-container);
 				border-radius: 15px;
 				padding: unset;
-			}
-			.nouirange {
-				height: 10px;
 			}
 		</style>
 		<div class="col-lg-3">
