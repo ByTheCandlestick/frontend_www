@@ -54,7 +54,6 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Dashboard</h1>
-			<p class="text-warning">Warning: This page is currently in development and does not hold any accurate values.</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 		</div>
