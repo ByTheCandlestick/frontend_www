@@ -68,6 +68,7 @@ if(QS_SUBPAGE != "") {
 			.templateElementMenu,
 			.accordion .templateElement input,
 			.accordion .templateElementGrid .templateGrid,
+			.accordion .templateElementGrid .columnResizer,
 			.templateBase .templateElementGrid > div > h6 {
 				display: none;
 			}
@@ -328,10 +329,10 @@ if(QS_SUBPAGE != "") {
 	});
 
 	var dragging = false;
-	function dragstart(event) {
+	$(".columnResizer.handle").mousedown((event) => {
 		event.preventDefault();
 		dragging = true;
-	}
+	});
 	function dragmove(event) {
 		if (dragging) {
 			var percentage = (event.pageX / window.innerWidth) * 100;
