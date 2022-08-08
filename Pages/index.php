@@ -37,7 +37,7 @@
 			if(isset($monthlySales_raw[$i])) {
 				array_push($monthlySales, $monthlySales_raw[$i][1]);
 			} else {
-				array_push($monthlySales, 0);
+				array_unshift($dailySales, 0);
 			}
 		}
 	// Gets current and last year / month
