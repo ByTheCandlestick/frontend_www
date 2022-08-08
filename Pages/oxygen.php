@@ -325,19 +325,15 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 	});
-	$(document).on('mousemove', (event)=> {dragmove()})
-	$(document).on('touchmove', (event)=> {dragmove()})
-	$(document).on('mouseup', (event)=> {dragend()})
-	$(document).on('touchend', (event)=> {dragend()})
 	var dragging = false;
 	function dragstart(event) {
 		console.log('start');
 		dragging = true;
 	}
-	function dragmove(event) {
+	$(document).mousemove(function() {
 		if (dragging) {
 			console.log('moving');
-			var percentage = 100 event.target.attr('id');
+			var percentage = 100 / event.target.attr('id');
 			console.log(percentage);
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = 25 - 0.75 - percentage;
@@ -345,11 +341,15 @@ if(QS_SUBPAGE != "") {
 				event.target.nextSibling.style.width = rightPercentage + "%";
 			}
 		}
-	}
-	function dragend() {
+	})
+	$(document).mouseup(function() {
 		console.log('end');
 		dragging = false;
-	}
+	})
+
+
+	$(document).on('touchmove', (event)=> {dragmove()})
+	$(document).on('touchend', (event)=> {dragend()})
 </script>
 <?
 	} else {
