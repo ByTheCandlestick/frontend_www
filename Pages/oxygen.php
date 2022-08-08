@@ -333,8 +333,7 @@ if(QS_SUBPAGE != "") {
 	$(document).mousemove(function(event) {
 		if (dragging) {
 			console.log('moving');
-			var percentage = 100 / event.target.getAttribute('id');
-			console.log(percentage);
+			var percentage =  (event.pageX / window.innerWidth) * 100;
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = 25 - 0.75 - percentage;
 				event.target.previousSibling.style.width = percentage + "%";
