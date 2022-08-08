@@ -325,10 +325,10 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 	});
-	$(document).on('mousemove', ()=> {dragmove()})
-	$(document).on('touchmove', ()=> {dragmove()})
-	$(document).on('mouseup', ()=> {dragend()})
-	$(document).on('touchend', ()=> {dragend()})
+	$(document).on('mousemove', (event)=> {dragmove()})
+	$(document).on('touchmove', (event)=> {dragmove()})
+	$(document).on('mouseup', (event)=> {dragend()})
+	$(document).on('touchend', (event)=> {dragend()})
 	var dragging = false;
 	function dragstart(event) {
 		console.log('start');
