@@ -304,18 +304,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		elements = null;
-		elements = document.querySelectorAll('.range-5');
-		elemenents.each(function() {
-			noUiSlider.create(this, {
-				start: [2, 4, 8, 10],
-				connect: [false, false, false, false, false],
-				range: {
-					'min': [0],
-					'max': [12]
-				}
-			});
-		})
+		$('div.range-5').rangeslider();
 	});
 </script>
 <?
