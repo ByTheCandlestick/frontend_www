@@ -304,7 +304,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		document.querySelectorAll('.range-5').each(function() {
+		document.getElementsByClassName('.range-5').each(function() {
 			noUiSlider.create(this, {
 				start: [2, 4, 8, 10],
 				connect: [false, false, false, false, false],
