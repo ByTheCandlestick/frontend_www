@@ -344,12 +344,10 @@ if(QS_SUBPAGE != "") {
 	function dragend() {
 		dragging = false;
 	}
-	window.onload = function() {
-		window.addEventListener("mousemove", dragmove);
-		window.addEventListener("touchmove", dragmove);
-		window.addEventListener("mouseup", dragend);
-		window.addEventListener("touchend", dragend);
-	}
+	$(document).on('mousemove', ()=> {dragmove()})
+	$(document).on('touchmove', ()=> {dragmove()})
+	$(document).on('mouseup', ()=> {dragend()})
+	$(document).on('touchend', ()=> {dragend()})
 </script>
 <?
 	} else {
