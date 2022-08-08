@@ -75,7 +75,7 @@ if(QS_SUBPAGE != "") {
 				min-height: 30px;
 				margin-inline: auto;
 				margin-top: 1rem;
-				display: inline;
+				display: flex;
 				padding: unset;
 			}
 			.templateBase .templateElementGrid .templateGrid .dragulaContainer {
@@ -85,7 +85,7 @@ if(QS_SUBPAGE != "") {
 				background: var(--section);
 			}
 			.columnResizer {
-				display: inline;
+				display: flex;
 				width: 10px;
 				padding: unset;
 				cursor: col-resize;
