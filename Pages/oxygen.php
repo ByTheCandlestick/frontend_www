@@ -82,8 +82,8 @@ if(QS_SUBPAGE != "") {
 				position: relative;
 				background: var(--section);
 			}
-			.templateGrid.2 {
-				width: ;
+			.templateGrid2 {
+				width: 45%;
 			}
 
 			.container {
