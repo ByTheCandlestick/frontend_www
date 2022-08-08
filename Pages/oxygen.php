@@ -325,12 +325,18 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 	});
+	$(document).on('mousemove', ()=> {dragmove()})
+	$(document).on('touchmove', ()=> {dragmove()})
+	$(document).on('mouseup', ()=> {dragend()})
+	$(document).on('touchend', ()=> {dragend()})
 	var dragging = false;
 	function dragstart(event) {
+		console.log('start');
 		event.preventDefault();
 		dragging = true;
 	}
 	function dragmove(event) {
+		console.log('move');
 		if (dragging) {
 			var percentage = (event.pageX / window.innerWidth) * 100;
 			console.log(percentage);
@@ -342,12 +348,9 @@ if(QS_SUBPAGE != "") {
 		}
 	}
 	function dragend() {
+		console.log('end');
 		dragging = false;
 	}
-	$(document).on('mousemove', ()=> {dragmove()})
-	$(document).on('touchmove', ()=> {dragmove()})
-	$(document).on('mouseup', ()=> {dragend()})
-	$(document).on('touchend', ()=> {dragend()})
 </script>
 <?
 	} else {
