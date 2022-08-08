@@ -110,7 +110,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<div id="nouirange-2"></div>
+							<div class="nouirange 2"></div>
 							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -127,7 +127,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
-							<div id="nouirange-3"></div>
+							<div class="nouirange 3"></div>
 							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -147,7 +147,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>4 columns</h6>
-							<div id="nouirange-4"></div>
+							<div class="nouirange 4"></div>
 							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -170,7 +170,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>5 columns</h6>
-							<div id="nouirange-5"></div>
+							<div class="nouirange 5"></div>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -196,7 +196,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>6 columns</h6>
-							<div id="nouirange-6"></div>
+							<div class="nouirange 6"></div>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -306,7 +306,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		noUiSlider.create(document.querySelector('#nouirange-5'), {
+		noUiSlider.create(document.querySelector('.nouirange.5'), {
 			start: [2, 4, 8, 10],
 			connect: [false, false, false, false, false],
 			range: {
