@@ -75,14 +75,14 @@ if(QS_SUBPAGE != "") {
 				min-height: 30px;
 				margin-inline: auto;
 				margin-top: 1rem;
+				display: inline;
+				padding: unset;
 			}
 			.templateBase .templateElementGrid .templateGrid .dragulaContainer {
 				outline: grey dotted thin;
 				height: 100%;
 				position: relative;
 				background: var(--section);
-				display: inline;
-				padding: unset;
 			}
 			.columnResizer {
 				display: inline;
