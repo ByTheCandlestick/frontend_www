@@ -333,12 +333,12 @@ if(QS_SUBPAGE != "") {
 	$(document).mousemove(function() {
 		if (dragging) {
 			console.log('moving');
-			var percentage = 100 / event.target.attr('id');
+			var percentage = 100 / thisattr('id');
 			console.log(percentage);
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = 25 - 0.75 - percentage;
-				event.target.previousSibling.style.width = percentage + "%";
-				event.target.nextSibling.style.width = rightPercentage + "%";
+				this.previousSibling.style.width = percentage + "%";
+				this.nextSibling.style.width = rightPercentage + "%";
 			}
 		}
 	})
