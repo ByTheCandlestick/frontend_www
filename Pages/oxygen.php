@@ -340,7 +340,7 @@ if(QS_SUBPAGE != "") {
 		}
 	})
 	$(document).touchmove(function() { })
-	$(document).mouseup(function() { dragging = false; })
+	$(document).mouseup(function() { console.log('up'); dragging = false; })
 	$(document).touchend(function() { dragging = false; })
 
 
