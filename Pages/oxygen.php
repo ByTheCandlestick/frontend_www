@@ -329,7 +329,7 @@ if(QS_SUBPAGE != "") {
 	function dragstart(event) {
 		dragging = true;
 	}
-	$(document).mousemove(function(event) {
+	$(document).on('mousemove', (event)=> {
 		if (dragging) {
 			var percentage = (event.pageX / window.innerWidth) * 100;
 			console.log(percentage);
@@ -339,13 +339,7 @@ if(QS_SUBPAGE != "") {
 			}
 		}
 	})
-	$(document).touchmove(function() { })
-	$(document).mouseup(function() { console.log('up'); dragging = false; })
-	$(document).touchend(function() { dragging = false; })
-
-
-	$(document).on('touchmove', (event)=> {dragmove()})
-	$(document).on('touchend', (event)=> {dragend()})
+	$(document).on('mouseup', (event)=> {dragging = false;})
 </script>
 <?
 	} else {
