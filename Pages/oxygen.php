@@ -335,7 +335,7 @@ if(QS_SUBPAGE != "") {
 			console.log(percentage);
 			if(percentage > 10 && percentage < 90) {
 				$(event.target).prev().css({"background": "green"});
-				$(event.target).prev().width(percentage"%");
+				$(event.target).prev().width(percentage+"%");
 			}
 		}
 	})
