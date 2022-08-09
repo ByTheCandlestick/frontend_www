@@ -127,12 +127,13 @@
 						height: calc(100vh - 50px);
 					}
 					.right > .row > div {
-						padding: 10px;
+						padding: 5px;
 						height: 10vh;
 					}
 					.sidebarButton {
 						text-align: center;
-						height: -webkit-fill-available;
+						height: 100%;
+						width: 100%;
 					}
 					.sidebarButton.numpad {
 						background: #45585f;
