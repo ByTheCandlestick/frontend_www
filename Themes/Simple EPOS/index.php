@@ -131,6 +131,7 @@
 						padding: 5px;
 						height: 10vh;
 					}
+					.productSearch,
 					.sidebarButton {
 						font-size: 2rem;
 						color: #f6f6f6;
