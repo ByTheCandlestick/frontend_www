@@ -132,6 +132,6 @@
 <?
 		}
 	} else {
-		header('location: /Error/404');
+		//header('location: /Error/404');
    }
 ?>
