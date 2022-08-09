@@ -128,10 +128,11 @@
 					}
 					.right > .row > div {
 						padding: 10px;
+						max-height: 10vh;
 					}
 					.sidebarButton {
 						text-align: center;
-						height: 10px;
+						height: -webkit-fill-available;
 						background: #45585f;
 						border: solid 1px #55656b;
 					}
@@ -151,10 +152,10 @@
 						</div>
 					</div>
 				</section>
-				<section class="col-8 left">
+				<section class="col-9 left">
 
 				</section>
-				<section class="col-4 right">
+				<section class="col-3 right">
 					<div class="row">
 						<div class="col-12">
 							<div class="sidebarButton"></div>
