@@ -98,6 +98,13 @@
 			<!-- ===== Preloader ===== -->
 			<!-- ===== App ===== -->
 			<div class="row">
+				<style>
+					.header {
+						height: 10%;
+						background: grey;
+						position: fixed;
+					}
+				</style>
 				<!-- ===== Header ===== -->
 				<section class="col-12">
 
