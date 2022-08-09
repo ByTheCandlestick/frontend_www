@@ -106,7 +106,7 @@
 					}
 				</style>
 				<!-- ===== Header ===== -->
-				<section class="col-12">
+				<section class="col-12 header">
 
 				</section>
 				<!-- ===== Content ===== -->
