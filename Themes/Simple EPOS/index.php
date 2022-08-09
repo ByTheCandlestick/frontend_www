@@ -126,6 +126,7 @@
 						background: #3d4c53;
 						height: calc(100vh - 50px);
 					}
+					.left > .row > div,
 					.right > .row > div {
 						padding: 5px;
 						height: 10vh;
