@@ -108,7 +108,7 @@
 							if($layout_row['section_ids'] != null) {
 								printSections($layout_row['section_ids']);
 							} else {
-								Redirect('/Error/404/');
+								//Redirect('/Error/404/');
 							}
 						} else {
 							include('./Pages/'.$layout_row['page_file'].'.php');
@@ -132,6 +132,6 @@
 <?
 		}
 	} else {
-		//header('location: /Error/404');
+		header('location: /Error/404');
    }
 ?>
