@@ -154,10 +154,15 @@
 						border: solid 1px #55656b;
 					}
 					.productSearch.bar {
-
+						color: black;
+						background: white;
+						border: solid 1px #dbdee1;
+						border-radius: 5px;
 					}
 					.productSearch.submit {
-
+						background: #f9bd4e;
+						border: solid 1px #e8bb6a;
+						border-radius: 5px;
 					}
 				</style>
 				<!-- ===== Content ===== -->
