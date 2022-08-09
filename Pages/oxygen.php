@@ -331,7 +331,8 @@ if(QS_SUBPAGE != "") {
 	}
 	$(document).mousemove(function(event) {
 		if (dragging) {
-			var percentage =  (event.pageX / window.innerWidth) * 100;
+			var percentage = (event.pageX / window.innerWidth) * 100;
+			$(event.target).prev().css({"background": "green"});
 			$(event.target).prev().width("calc(" + percentage + " - 5px)");
 		}
 	})
