@@ -129,7 +129,7 @@
 					.left > .row > div,
 					.right > .row > div {
 						padding: 5px;
-						height: 10vh;
+						min-height: 10vh;
 					}
 					.productSearch,
 					.sidebarButton {
