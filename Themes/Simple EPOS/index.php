@@ -126,6 +126,10 @@
 						background: #3d4c53;
 						height: 90vh;
 					}
+					.right > .row > div {
+						text-align: center;
+						height: 10px;
+					}
 				</style>
 				<!-- ===== Content ===== -->
 				<section class="col-12 header">
