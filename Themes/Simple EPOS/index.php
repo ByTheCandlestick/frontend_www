@@ -103,15 +103,15 @@
 						margin: unset;
 					}
 					.header {
-						background: grey;
+						background: #3d4c53;
 						height: 10vh;
 					}
 					.left {
-						background: whitesmoke;
+						background: #f6f6f6;
 						height: 90vh;
 					}
 					.right {
-						background: grey;
+						background: #3d4c53;
 						height: 90vh;
 					}
 				</style>
