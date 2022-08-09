@@ -334,8 +334,8 @@ if(QS_SUBPAGE != "") {
 			var percentage = (event.pageX / window.innerWidth) * 100;
 			console.log(percentage);
 			if(percentage > 10 && percentage < 90) {
-				$(event.target).prev().width(percentage + "%");
-				$(event.target).next().width((100-percentage) + "%");
+				$(event.target).prev().width("calc("+percentage + "% - 5px)");
+				$(event.target).next().width("calc("+(100-percentage) + "% - 5px)");
 			}
 		}
 	})
