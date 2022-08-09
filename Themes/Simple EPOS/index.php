@@ -133,7 +133,19 @@
 					.sidebarButton {
 						text-align: center;
 						height: -webkit-fill-available;
+					}
+					.sidebarButton.normal {
 						background: #45585f;
+						border: solid 1px #55656b;
+					}
+					.sidebarButton.checkout {
+						background: #68a2ff;
+					}
+					.sidebarButton.shortcut {
+						background: #f7f7f7;
+					}
+					.sidebarButton.enter {
+						background: #38526d;
 						border: solid 1px #55656b;
 					}
 				</style>
@@ -158,61 +170,61 @@
 				<section class="col-3 right">
 					<div class="row">
 						<div class="col-12">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton checkout"></div>
 						</div>
 						<div class="col-6">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton shortcut"></div>
 						</div>
 						<div class="col-6">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton shortcut"></div>
 						</div>
 						<div class="col-6">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton shortcut"></div>
 						</div>
 						<div class="col-6">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton shortcut"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton enter"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-8">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
 							<div class="sidebarButton"></div>
