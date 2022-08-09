@@ -117,7 +117,11 @@
 				</style>
 				<!-- ===== Content ===== -->
 				<section class="col-12 header">
-
+					<div class="row">
+						<div class="col-3"></div>
+						<div class="col-6"></div>
+						<div class="col-3"></div>
+					</div>
 				</section>
 				<section class="col-8 left">
 
