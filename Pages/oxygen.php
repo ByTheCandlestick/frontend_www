@@ -338,19 +338,9 @@ if(QS_SUBPAGE != "") {
 			}
 		}
 	})
+	$(document).dragmove(function() { })
 	$(document).mouseup(function() { dragging = false; })
-	$(document).dragend(function() { dragging = false; })
-	$(document).dragmove(function() {
-		if (dragging) {
-			var percentage =  (event.pageX / window.innerWidth) * 100;
-			if (percentage > 10 && percentage < 90) {
-				console.log(event.target.previousElementSibling);
-				console.log(event.target.nextElementSibling);
-				event.target.previousElementSibling.style.width = "calc("+percentage+" - 5px)";
-				event.target.nextElementSibling.style.width = "calc("+percentage+" - 5px)";
-			}
-		}
-	})
+	$(document).touchend(function() { dragging = false; })
 
 
 	$(document).on('touchmove', (event)=> {dragmove()})
