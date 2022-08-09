@@ -336,9 +336,9 @@ if(QS_SUBPAGE != "") {
 			var percentage =  (event.pageX / window.innerWidth) * 100;
 			if (percentage > 10 && percentage < 90) {
 				var rightPercentage = (25 - 0.75 - percentage);
-				console.log(event.target.previousSibling);
-				event.target.previousSibling.style.width = percentage + "%";
-				event.target.nextSibling.style.width = rightPercentage + "%";
+				console.log(event.target.previousElementSibling);
+				event.target.previousElementSibling.style.width = percentage + "%";
+				event.target.nextElementSibling.style.width = rightPercentage + "%";
 			}
 		}
 	})
