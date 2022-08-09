@@ -335,8 +335,8 @@ if(QS_SUBPAGE != "") {
 			var rPercentage = 100 - lPercentage;
 			console.log(lPercentage);
 			if(lPercentage > 10 && lPercentage < 90) {
-				$(event.target).prev().width("calc("+lPercentage+"% - 5px)");
-				$(event.target).next().width("calc("+rPercentage+"% - 5px)");
+				$(event.target).prev().width("calc("+lPercentage+"px - 5px)");
+				$(event.target).next().width("calc("+rPercentage+"px - 5px)");
 			}
 		}
 	})
