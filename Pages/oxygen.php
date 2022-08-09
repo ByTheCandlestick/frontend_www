@@ -335,9 +335,10 @@ if(QS_SUBPAGE != "") {
 			console.log('moving');
 			var percentage =  (event.pageX / window.innerWidth) * 100;
 			if (percentage > 10 && percentage < 90) {
-				var rightPercentage = 25 - 0.75 - percentage;
-				event.target.previousSibling.style.width = percentage + "%";
-				event.target.nextSibling.style.width = rightPercentage + "%";
+				var rightPercentage = (25 - 0.75 - percentage) + "%";
+				percentage = percentage + "%";
+				event.target.previousSibling.style.width = percentage;
+				event.target.nextSibling.style.width = rightPercentage;
 			}
 		}
 	})
