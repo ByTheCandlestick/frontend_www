@@ -329,17 +329,17 @@ if(QS_SUBPAGE != "") {
 	function dragstart(event) {
 		dragging = true;
 	}
-	$(document).on('mousemove', (event)=> {
+	$(document).on('mousemove', function(event) {
 		if (dragging) {
-			var percentage = (event.pageX / window.innerWidth) * 100;
-			console.log(percentage);
-			if(percentage > 10 && percentage < 90) {
-				$(event.target).prev().width("calc("+percentage + "% - 5px)");
-				$(event.target).next().width("calc("+(100-percentage) + "% - 5px)");
+			var lPercentage = (event.pageX / window.innerWidth) * 100;
+			if(lPercentage > 10 && lPercentage < 90) {
+				var rPercentage = 25 - 0.75 - percentage;
+				$(event.target).prev().width("calc("+lPercentage+"% - 5px)");
+				$(event.target).next().width("calc("+rPercentage+"% - 5px)");
 			}
 		}
 	})
-	$(document).on('mouseup', (event)=> {dragging = false;})
+	$(document).on('mouseup', function(event) {dragging = false;})
 </script>
 <?
 	} else {
