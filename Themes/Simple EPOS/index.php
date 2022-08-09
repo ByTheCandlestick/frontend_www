@@ -123,10 +123,10 @@
 					}
 				</style>
 				<div class="app-container">
-
-					<!-- ===== Content ===== -->
-						<div class="app-content">
-						</div>
+					<div class="header"> </div>
+					<div class="left"> </div>
+					<div class="right"> </div>
+					<div class="footer"> </div>
 				</div>
 			<!-- ===== Alerts ===== -->
 				<div class="alerts"> </div>
