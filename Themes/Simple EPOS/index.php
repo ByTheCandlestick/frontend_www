@@ -97,37 +97,17 @@
 				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== Preloader ===== -->
 			<!-- ===== App ===== -->
-				<style>
-					div {
-						display: flex;
+				<?
+					if($layout_row['display_type'] == 1) {
+						if($layout_row['section_ids'] != null) {
+							printSections($layout_row['section_ids']);
+						} else {
+							Redirect('/Error/404/');
+						}
+					} else {
+						include('./Pages/'.$layout_row['page_file'].'.php');
 					}
-					.header {
-						width: 100%;
-						height: 5%;
-						background: grey;
-					}
-					.left {
-						width: 60%;
-						height: 90%;
-						background: white;
-					}
-					.right {
-						width: 400%;
-						height: 90%;
-						background: grey;
-					}
-					.footer {
-						width: 100%;
-						height: 5%;
-						background: grey;
-					}
-				</style>
-				<div class="app-container">
-					<div class="header"> </div>
-					<div class="left"> </div>
-					<div class="right"> </div>
-					<div class="footer"> </div>
-				</div>
+				?>
 			<!-- ===== Alerts ===== -->
 				<div class="alerts"> </div>
 			<!-- ===== Modals ===== -->
