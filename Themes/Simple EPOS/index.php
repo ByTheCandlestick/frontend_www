@@ -99,6 +99,9 @@
 			<!-- ===== App ===== -->
 			<div class="row">
 				<style>
+					.row {
+						margin: unset;
+					}
 					.header {
 						height: 10%;
 						background: grey;
