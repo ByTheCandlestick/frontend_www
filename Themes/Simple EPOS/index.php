@@ -148,6 +148,7 @@
 					}
 					.sidebarButton.shortcut {
 						background: #f7f7f7;
+						color: #3d4c53;
 					}
 					.sidebarButton.enter {
 						background: #38526d;
