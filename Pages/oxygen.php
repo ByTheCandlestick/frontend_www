@@ -335,7 +335,7 @@ if(QS_SUBPAGE != "") {
 			$(event.target).prev().width("calc(" + percentage + " - 5px)");
 		}
 	})
-	$(document).dragmove(function() { })
+	$(document).touchmove(function() { })
 	$(document).mouseup(function() { dragging = false; })
 	$(document).touchend(function() { dragging = false; })
 
