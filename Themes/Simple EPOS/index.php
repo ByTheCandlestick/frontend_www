@@ -196,19 +196,19 @@
 				<section class="col-3 right">
 					<div class="row">
 						<div class="col-12">
-							<input type="button" class="sidebarButton checkout">
+							<input type="button" class="sidebarButton checkout" value="Checkout">
 						</div>
 						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut">
+							<input type="button" class="sidebarButton shortcut" value="Discount item">
 						</div>
 						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut">
+							<input type="button" class="sidebarButton shortcut" value="Discount order">
 						</div>
 						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut">
+							<input type="button" class="sidebarButton shortcut" value="Options">
 						</div>
 						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut">
+							<input type="button" class="sidebarButton shortcut" value="Void transaction">
 						</div>
 						<div class="col-4">
 							<input type="button" class="sidebarButton numpad" value="1">
