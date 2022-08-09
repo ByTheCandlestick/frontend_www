@@ -333,7 +333,7 @@ if(QS_SUBPAGE != "") {
 		if (dragging) {
 			var lPercentage = (event.pageX / window.innerWidth) * 70;
 			if(lPercentage > 10 && lPercentage < 90) {
-				var rPercentage = (25 * 0.75) - lPercentage;
+				var rPercentage = (50 * 0.75) - lPercentage;
 				$(event.target).prev().width("calc("+lPercentage+"% - 5px)");
 				$(event.target).next().width("calc("+rPercentage+"% - 5px)");
 			}
