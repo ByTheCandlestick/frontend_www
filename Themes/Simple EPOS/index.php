@@ -126,12 +126,14 @@
 						background: #3d4c53;
 						height: 90vh;
 					}
+					.right > .row > div {
+						padding: 10px;
+					}
 					.sidebarButton {
 						text-align: center;
 						height: 10px;
 						background: #45585f;
 						border: solid 1px #55656b;
-						padding: 10px;
 					}
 				</style>
 				<!-- ===== Content ===== -->
