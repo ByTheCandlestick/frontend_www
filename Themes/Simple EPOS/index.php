@@ -183,7 +183,7 @@
 				<section class="col-9 left">
 					<div class="row">
 						<div class="col-9">
-							<input type="text" class="productSearch bar">
+							<input type="text" class="productSearch bar" plaeholder="Scan barcode or enter item code">
 						</div>
 						<div class="col-3">
 							<input type="button" class="productSearch submit">
