@@ -184,8 +184,11 @@
 						<div class="col-6">
 							<div class="sidebarButton shortcut"></div>
 						</div>
-						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+						<div class="col-6">
+							<div class="sidebarButton shortcut"></div>
+						</div>
+						<div class="col-6">
+							<div class="sidebarButton shortcut"></div>
 						</div>
 						<div class="col-4">
 							<div class="sidebarButton normal"></div>
@@ -210,12 +213,6 @@
 						</div>
 						<div class="col-4">
 							<div class="sidebarButton normal"></div>
-						</div>
-						<div class="col-4">
-							<div class="sidebarButton normal"></div>
-						</div>
-						<div class="col-4">
-							<div class="sidebarButton enter"></div>
 						</div>
 						<div class="col-4">
 							<div class="sidebarButton normal"></div>
@@ -224,16 +221,16 @@
 							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-8">
+							<div class="sidebarButton enter"></div>
+						</div>
+						<div class="col-4">
 							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton"></div>
-						</div>
-						<div class="col-4">
-							<div class="sidebarButton"></div>
+							<div class="sidebarButton normal"></div>
 						</div>
 					</div>
 				</section>
