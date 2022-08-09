@@ -142,10 +142,10 @@
 						</div>
 					</div>
 				</section>
-				<section class="col-9 left">
+				<section class="col-8 left">
 
 				</section>
-				<section class="col-3 right">
+				<section class="col-4 right">
 
 				</section>
 			</div>
