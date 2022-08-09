@@ -123,50 +123,7 @@
 					</style>
 				<div class="app-container">
 					<!-- ===== Preloader ===== -->
-						<div class="app-preloader">
-							<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
-								<defs>
-									<linearGradient id="pl-grad1" x1="0" y1="0" x2="0" y2="1">
-										<stop offset="0%" stop-color="rgb(37 95 244)" />
-										<stop offset="100%" stop-color="rgb(82 37 244)" />
-									</linearGradient>
-									<linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
-										<stop offset="0%" stop-color="rgb(37 199 244)" />
-										<stop offset="50%" stop-color="rgb(37 95 244)" />
-										<stop offset="100%" stop-color="rgb(82 37 244)" />
-									</linearGradient>
-								</defs>
-								<circle class="pl_ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16" stroke-linecap="round" />
-								<circle class="pl_worm1" r="56" cx="64" cy="192" fill="none" stroke="url(#pl-grad1)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 263.89" />
-								<path class="pl_worm2" d="M120,192A56,56,0,0,1,8,192C8,161.07,16,8,64,8S120,161.07,120,192Z" fill="none" stroke="url(#pl-grad2)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 494" />
-							</svg>
-						</div>
-					<!-- ===== Header ===== -->
-						<div class="app-header">
-							<!-- Brand Info -->
-							<div class="app-header-left">
-								<span class="app-icon">
-									<img src="<?print(__API__)?>/Images/Fetch/<?print($website_info['Logo'])?>/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
-								</span>
-								<p class="app-name"> <? print($website_info['Title']); if(DOMAIN_TYPE=='indev') print(' <span class="text-info">indev</span>');?></p>
-							</div>
-							<!-- Search -->
-							<div class="search-wrapper" rel="/search.json">
-								<div class="search-area">
-									<input type="text" onkeyup="search.process(event)" placeholder="Search">
-								</div>
-								<div class="search-suggestions"> </div>
-							</div>
-							<!-- Profile, Notifications and Dark mode -->
-							<div class="app-header-right">
-								<button class="mode-switch" title="Switch Theme">
-									<i class="fa-moon fa-lg"></i>
-								</button>
-								<button class="profile-btn">
-									<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
-								</button>
-							</div>
-						</div>
+
 					<!-- ===== Content ===== -->
 						<div class="app-content">
 						</div>
