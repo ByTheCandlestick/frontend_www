@@ -211,10 +211,10 @@
 							<input type="button" class="sidebarButton shortcut" value="Discount order">
 						</div>
 						<div class="col-6">
-							<input type="button" class="sidebarButton void" value="Options">
+							<input type="button" class="sidebarButton shortcut" value="Options">
 						</div>
 						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut" value="Void transaction">
+							<input type="button" class="sidebarButton void" value="Void transaction">
 						</div>
 						<div class="col-4">
 							<input type="button" class="sidebarButton numpad" value="1">
