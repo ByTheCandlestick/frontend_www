@@ -168,7 +168,17 @@
 					</div>
 				</section>
 				<section class="col-9 left">
+					<div class="row">
+						<div class="col-9">
+							<input type="text">
+						</div>
+						<div class="col-3">
+							<input type="button">
+						</div>
+						<div class="col-12">
 
+						</div>
+					</div>
 				</section>
 				<section class="col-3 right">
 					<div class="row">
