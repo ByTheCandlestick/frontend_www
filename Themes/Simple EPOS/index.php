@@ -134,7 +134,7 @@
 						text-align: center;
 						height: -webkit-fill-available;
 					}
-					.sidebarButton.normal {
+					.sidebarButton.numpad {
 						background: #45585f;
 						border: solid 1px #55656b;
 					}
@@ -184,53 +184,56 @@
 						<div class="col-6">
 							<div class="sidebarButton shortcut"></div>
 						</div>
-						<div class="col-6">
-							<div class="sidebarButton shortcut"></div>
-						</div>
-						<div class="col-6">
-							<div class="sidebarButton shortcut"></div>
+						<div class="col-4">
+							<div class="sidebarButton numpad">1</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">2</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">3</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">4</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">5</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">6</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">7</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">8</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">9</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">.</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">0</div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton numpad">00</div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton numpad">▲</div>
 						</div>
 						<div class="col-8">
-							<div class="sidebarButton enter"></div>
+							<div class="sidebarButton enter">Enter</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">▼</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">Back</div>
 						</div>
 						<div class="col-4">
-							<div class="sidebarButton normal"></div>
+							<div class="sidebarButton numpad">Clear</div>
 						</div>
 					</div>
 				</section>
