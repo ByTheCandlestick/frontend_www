@@ -126,7 +126,7 @@
 						background: #3d4c53;
 						height: 90vh;
 					}
-					.right > .row > div {
+					.sidebarButton {
 						text-align: center;
 						height: 10px;
 						background: #45585f;
@@ -154,28 +154,72 @@
 				</section>
 				<section class="col-4 right">
 					<div class="row">
-						<div class="col-12"></div>
-						<div class="col-6"></div>
-						<div class="col-6"></div>
-						<div class="col-6"></div>
-						<div class="col-6"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-8"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
-						<div class="col-4"></div>
+						<div class="col-12">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-6">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-6">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-6">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-6">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-8">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
+						<div class="col-4">
+							<div class="sidebarButton"></div>
+						</div>
 					</div>
 				</section>
 			</div>
