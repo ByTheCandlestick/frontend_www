@@ -332,7 +332,7 @@ if(QS_SUBPAGE != "") {
 	$(document).on('mousemove', function(event) {
 		if (dragging) {
 			console.log(event);
-			var lPercentage = (event.pageX - event.offsetX) / window.innerWidth * 100;
+			var lPercentage = (event.pageX - (window.innerWidth * 0.25)) / window.innerWidth * 100;
 			if(lPercentage > 10 && lPercentage < 90) {
 				var rPercentage = 100 - lPercentage;
 				$(event.target).prev().width("calc("+lPercentage+"% - 5px)");
