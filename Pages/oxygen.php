@@ -332,10 +332,7 @@ if(QS_SUBPAGE != "") {
 	$(document).mousemove(function(event) {
 		if (dragging) {
 			var percentage =  (event.pageX / window.innerWidth) * 100;
-			if (percentage > 10 && percentage < 90) {
-				$(event.target).prev().width("calc(" + percentage + " - 5px)");
-				$(event.target).next().width("calc(" + percentage + " - 5px)");
-			}
+			$(event.target).prev().width("calc(" + percentage + " - 5px)");
 		}
 	})
 	$(document).dragmove(function() { })
