@@ -146,7 +146,30 @@
 
 				</section>
 				<section class="col-4 right">
-
+					<div class="row">
+						<div class="col-12"></div>
+						<div class="col-6"></div>
+						<div class="col-6"></div>
+						<div class="col-6"></div>
+						<div class="col-6"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-8"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+					</div>
 				</section>
 			</div>
 			<!-- ===== Alerts ===== -->
