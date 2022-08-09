@@ -186,55 +186,55 @@
 							<input type="button" class="sidebarButton shortcut"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">1</input>
+							<input type="button" class="sidebarButton numpad" value="1"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">2</input>
+							<input type="button" class="sidebarButton numpad" value="2"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">3</input>
+							<input type="button" class="sidebarButton numpad" value="3"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">4</input>
+							<input type="button" class="sidebarButton numpad" value="4"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">5</input>
+							<input type="button" class="sidebarButton numpad" value="5"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">6</input>
+							<input type="button" class="sidebarButton numpad" value="6"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">7</input>
+							<input type="button" class="sidebarButton numpad" value="7"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">8</input>
+							<input type="button" class="sidebarButton numpad" value="8"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">9</input>
+							<input type="button" class="sidebarButton numpad" value="9"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">.</input>
+							<input type="button" class="sidebarButton numpad" value="."></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">0</input>
+							<input type="button" class="sidebarButton numpad" value="0"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">00</input>
+							<input type="button" class="sidebarButton numpad" value="00"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">▲</input>
+							<input type="button" class="sidebarButton numpad" value="▲"></input>
 						</div>
 						<div class="col-8">
-							<input type="button" class="sidebarButton enter">Enter</input>
+							<input type="button" class="sidebarButton enter" value="Enter"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">▼</input>
+							<input type="button" class="sidebarButton numpad" value="▼"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">Back</input>
+							<input type="button" class="sidebarButton numpad" value="Back"></input>
 						</div>
 						<div class="col-4">
-							<input type="button" class="sidebarButton numpad">Clear</input>
+							<input type="button" class="sidebarButton numpad" value="Clear"></input>
 						</div>
 					</div>
 				</section>
