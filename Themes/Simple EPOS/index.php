@@ -103,19 +103,16 @@
 						margin: unset;
 					}
 					.header {
-						position: fixed;
 						background: grey;
-						height: 10%;
+						height: 10vh;
 					}
 					.left {
-						position: fixed;
 						background: whitesmoke;
-						height: 90%;
+						height: 90vh;
 					}
 					.right {
-						position: fixed;
 						background: grey;
-						height: 90%;
+						height: 90vh;
 					}
 				</style>
 				<!-- ===== Content ===== -->
