@@ -97,17 +97,24 @@
 				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== Preloader ===== -->
 			<!-- ===== App ===== -->
-				<?
-					if($layout_row['display_type'] == 1) {
-						if($layout_row['section_ids'] != null) {
-							printSections($layout_row['section_ids']);
+			<div class="row">
+				<!-- ===== Header ===== -->
+				<section class="col-12">
+
+				</section>
+				<!-- ===== Content ===== -->
+					<?
+						if($layout_row['display_type'] == 1) {
+							if($layout_row['section_ids'] != null) {
+								printSections($layout_row['section_ids']);
+							} else {
+								Redirect('/Error/404/');
+							}
 						} else {
-							Redirect('/Error/404/');
+							include('./Pages/'.$layout_row['page_file'].'.php');
 						}
-					} else {
-						include('./Pages/'.$layout_row['page_file'].'.php');
-					}
-				?>
+					?>
+			</div>
 			<!-- ===== Alerts ===== -->
 				<div class="alerts"> </div>
 			<!-- ===== Modals ===== -->
