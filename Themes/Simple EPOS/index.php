@@ -118,9 +118,16 @@
 				<!-- ===== Content ===== -->
 				<section class="col-12 header">
 					<div class="row">
-						<div class="col-3"></div>
-						<div class="col-6"></div>
-						<div class="col-3"></div>
+						<div class="col-3">
+							User info
+						</div>
+						<div class="col-6">
+							xPOS info
+						</div>
+						<div class="col-3">
+							Date
+							Time
+						</div>
 					</div>
 				</section>
 				<section class="col-8 left">
