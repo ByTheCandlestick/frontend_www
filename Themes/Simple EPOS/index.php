@@ -151,6 +151,10 @@
 						background: #f7f7f7;
 						color: #3d4c53;
 					}
+					.sidebarButton.void {
+						background: #f85448;
+						color: #f7f7f7;
+					}
 					.sidebarButton.enter {
 						background: #38526d;
 						border: solid 1px #55656b;
@@ -207,7 +211,7 @@
 							<input type="button" class="sidebarButton shortcut" value="Discount order">
 						</div>
 						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut" value="Options">
+							<input type="button" class="sidebarButton void" value="Options">
 						</div>
 						<div class="col-6">
 							<input type="button" class="sidebarButton shortcut" value="Void transaction">
