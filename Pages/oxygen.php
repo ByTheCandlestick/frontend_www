@@ -327,24 +327,31 @@ if(QS_SUBPAGE != "") {
 	});
 	var dragging = false;
 	function dragstart(event) {
-		console.log('start');
 		dragging = true;
 	}
 	$(document).mousemove(function(event) {
 		if (dragging) {
-			console.log('moving');
 			var percentage =  (event.pageX / window.innerWidth) * 100;
 			if (percentage > 10 && percentage < 90) {
-				var rightPercentage = (25 - 0.75 - percentage);
 				console.log(event.target.previousElementSibling);
+				console.log(event.target.nextElementSibling);
 				event.target.previousElementSibling.style.width = "calc("+percentage+" - 5px)";
 				event.target.nextElementSibling.style.width = "calc("+percentage+" - 5px)";
 			}
 		}
 	})
-	$(document).mouseup(function() {
-		console.log('end');
-		dragging = false;
+	$(document).mouseup(function() { dragging = false; })
+	$(document).dragend(function() { dragging = false; })
+	$(document).dragmove(function() {
+		if (dragging) {
+			var percentage =  (event.pageX / window.innerWidth) * 100;
+			if (percentage > 10 && percentage < 90) {
+				console.log(event.target.previousElementSibling);
+				console.log(event.target.nextElementSibling);
+				event.target.previousElementSibling.style.width = "calc("+percentage+" - 5px)";
+				event.target.nextElementSibling.style.width = "calc("+percentage+" - 5px)";
+			}
+		}
 	})
 
 
