@@ -128,7 +128,7 @@
 					}
 					.right > .row > div {
 						padding: 10px;
-						max-height: 10vh;
+						height: 10vh;
 					}
 					.sidebarButton {
 						text-align: center;
