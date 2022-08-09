@@ -131,6 +131,8 @@
 						height: 10vh;
 					}
 					.sidebarButton {
+						font-size: 2rem;
+						color: #f6f6f6;
 						text-align: center;
 						height: 100%;
 						width: 100%;
