@@ -331,10 +331,10 @@ if(QS_SUBPAGE != "") {
 	}
 	$(document).on('mousemove', function(event) {
 		if (dragging) {
-			console.log(event);
-			var lPercentage = event.clientX - $(event.target).offset().left
+			var lPercentage = event.clientX - $(event.target).offset().left;
+			var rPercentage = 100 - lPercentage;
+			console.log(lPercentage);
 			if(lPercentage > 10 && lPercentage < 90) {
-				var rPercentage = 100 - lPercentage;
 				$(event.target).prev().width("calc("+lPercentage+"% - 5px)");
 				$(event.target).next().width("calc("+rPercentage+"% - 5px)");
 			}
