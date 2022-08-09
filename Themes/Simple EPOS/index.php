@@ -108,13 +108,13 @@
 						height: 10vh;
 					}
 					.header > .row > div:nth-child(1) {
-						
+						text-align: left;
 					}
 					.header > .row > div:nth-child(2) {
 						text-align: center;
 					}
 					.header > .row > div:nth-child(3) {
-
+						text-align: right;
 					}
 					.left {
 						color: #3d4c53;
