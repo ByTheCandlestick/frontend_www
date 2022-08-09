@@ -153,6 +153,12 @@
 						background: #38526d;
 						border: solid 1px #55656b;
 					}
+					.productSearch.bar {
+
+					}
+					.productSearch.submit {
+
+					}
 				</style>
 				<!-- ===== Content ===== -->
 				<section class="col-12 header">
@@ -172,10 +178,10 @@
 				<section class="col-9 left">
 					<div class="row">
 						<div class="col-9">
-							<input type="text" class="productSearch Bar">
+							<input type="text" class="productSearch bar">
 						</div>
 						<div class="col-3">
-							<input type="button" class="productSearch Submit">
+							<input type="button" class="productSearch submit">
 						</div>
 						<div class="col-12">
 
