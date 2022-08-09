@@ -103,14 +103,17 @@
 						margin: unset;
 					}
 					.header {
+						color: #f6f6f6;
 						background: #3d4c53;
 						height: 10vh;
 					}
 					.left {
+						color: #3d4c53;
 						background: #f6f6f6;
 						height: 90vh;
 					}
 					.right {
+						color: #f6f6f6;
 						background: #3d4c53;
 						height: 90vh;
 					}
