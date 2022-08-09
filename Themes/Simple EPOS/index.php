@@ -95,34 +95,34 @@
 					}
 				?>
 				<script src="/script.js" type="text/javascript"></script>
+			<!-- ===== Preloader ===== -->
 			<!-- ===== App ===== -->
-					<style>
-						div {
-							display: flex;
-						}
-						.header {
-							width: 100%;
-							height: 5%;
-							background: grey;
-						}
-						.left {
-							width: 60%;
-							height: 90%;
-							background: white;
-						}
-						.right {
-							width: 400%;
-							height: 90%;
-							background: grey;
-						}
-						.footer {
-							width: 100%;
-							height: 5%;
-							background: grey;
-						}
-					</style>
+				<style>
+					div {
+						display: flex;
+					}
+					.header {
+						width: 100%;
+						height: 5%;
+						background: grey;
+					}
+					.left {
+						width: 60%;
+						height: 90%;
+						background: white;
+					}
+					.right {
+						width: 400%;
+						height: 90%;
+						background: grey;
+					}
+					.footer {
+						width: 100%;
+						height: 5%;
+						background: grey;
+					}
+				</style>
 				<div class="app-container">
-					<!-- ===== Preloader ===== -->
 
 					<!-- ===== Content ===== -->
 						<div class="app-content">
