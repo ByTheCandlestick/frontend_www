@@ -133,13 +133,14 @@
 					}
 					.productSearch,
 					.sidebarButton {
-						font-size: 2rem;
+						font-size: 1rem;
 						color: #f6f6f6;
 						text-align: center;
 						height: 100%;
 						width: 100%;
 					}
 					.sidebarButton.numpad {
+						font-size: 2rem;
 						background: #45585f;
 						border: solid 1px #55656b;
 					}
