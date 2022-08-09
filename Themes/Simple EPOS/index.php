@@ -105,7 +105,7 @@
 					.header {
 						color: #f6f6f6;
 						background: #3d4c53;
-						height: 10vh;
+						height: 50px;
 					}
 					.header > .row > div:nth-child(1) {
 						text-align: left;
@@ -119,12 +119,12 @@
 					.left {
 						color: #3d4c53;
 						background: #f6f6f6;
-						height: 90vh;
+						height: calc(100vh - 50px);
 					}
 					.right {
 						color: #f6f6f6;
 						background: #3d4c53;
-						height: 90vh;
+						height: calc(100vh - 50px);
 					}
 					.right > .row > div {
 						padding: 10px;
