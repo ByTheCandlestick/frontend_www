@@ -129,6 +129,7 @@
 					.right > .row > div {
 						text-align: center;
 						height: 10px;
+						background: blue;
 					}
 				</style>
 				<!-- ===== Content ===== -->
