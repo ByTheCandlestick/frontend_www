@@ -129,7 +129,9 @@
 					.right > .row > div {
 						text-align: center;
 						height: 10px;
-						background: blue;
+						background: #45585f;
+						border: solid 1px #55656b;
+						padding: 10px;
 					}
 				</style>
 				<!-- ===== Content ===== -->
