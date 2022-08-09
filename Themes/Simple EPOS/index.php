@@ -107,11 +107,15 @@
 						background: #3d4c53;
 						height: 10vh;
 					}
-					.header > .row:nth-child(1) {}
-					.header > .row:nth-child(2) {
+					.header > .row > div:nth-child(1) {
+						
+					}
+					.header > .row > div:nth-child(2) {
 						text-align: center;
 					}
-					.header > .row:nth-child(3) {}
+					.header > .row > div:nth-child(3) {
+
+					}
 					.left {
 						color: #3d4c53;
 						background: #f6f6f6;
