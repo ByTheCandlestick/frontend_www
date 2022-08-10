@@ -130,7 +130,7 @@
 					.right > .row > div {
 						padding: 5px;
 						--height: calc(100vw / 12);
-						min-height: calc(var(--height) * 2);
+						min-height: calc(var(--height) * 0.5);
 					}
 					.productSearch,
 					.sidebarButton {
