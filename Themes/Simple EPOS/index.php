@@ -202,7 +202,7 @@
 					}
 				?>
 				<script>
-					$('document').ready(function(){
+					$( document ).ready(function(){
 						var interval = setInterval(function(){
 							var date = new Date();
 							var d = date.getDate();
@@ -210,12 +210,12 @@
 							var m = date.getMonth() + 1;
 							var month = (m < 10) ? "0" + m : m;
 							var year = date.getFullYear();
-							$('span.date').html(day + '/' + month + '/' + year);
+							$('div.date').html(day + '/' + month + '/' + year);
 							var h = date.getHours();
 							var hour = (h < 10) ? "0" + h : h;
 							var m = date.getMinutes();
 							var minute = (m < 10) ? "0" + m : m;
-							$('span.time').html(hour + ':' + minute);
+							$('div.time').html(hour + ':' + minute);
 						},100);
 					});
 				</script>
