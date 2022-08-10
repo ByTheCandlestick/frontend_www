@@ -126,13 +126,11 @@
 					}
 					.header .right .date {
 						font-size: 1rem;
-						line-height: calc(1rem - 20px);
-						padding: 5px;
+						margin: unset;
 					}
 					.header .right .time {
 						font-size: 2rem;
-						line-height: calc(2rem - 20px);
-						padding: 5px;
+						margin: unset;
 					}
 					.content {
 						color: #3d4c53;
