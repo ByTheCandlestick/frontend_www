@@ -7,6 +7,7 @@
 	</div>
 	<div class="col-3 right">
 		<span class="date">Date</span>
+		<br>
 		<span class="time">Time</span>
 	</div>
 </div>
