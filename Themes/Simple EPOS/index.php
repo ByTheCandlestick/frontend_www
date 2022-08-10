@@ -120,6 +120,10 @@
 					.header .right {
 						text-align: right;
 					}
+					.header .right p {
+						display: inline-grid;
+						font: message-box;
+					}
 					.header .right .date {
 						font-size: 1rem;
 						line-height: calc(1rem - 20px);
