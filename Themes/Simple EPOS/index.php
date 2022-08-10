@@ -96,8 +96,7 @@
 				?>
 				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== Preloader ===== -->
-			<!-- ===== App ===== -->
-			<div class="row">
+			<!-- ===== Content ===== -->
 				<style>
 					.row {
 						margin: unset;
@@ -180,105 +179,17 @@
 						border-radius: 5px;
 					}
 				</style>
-				<!-- ===== Content ===== -->
-				<section class="col-12 header">
-					<div class="row">
-						<div class="col-3">
-							User info
-						</div>
-						<div class="col-6">
-							xPOS info
-						</div>
-						<div class="col-3">
-							Date
-							Time
-						</div>
-					</div>
-				</section>
-				<section class="col-10 left">
-					<div class="row">
-						<div class="col-9">
-							<input type="text" class="productSearch bar" plaeholder="Scan barcode or enter item code">
-						</div>
-						<div class="col-3">
-							<input type="button" class="productSearch submit">
-						</div>
-						<div class="col-12">
-
-						</div>
-					</div>
-				</section>
-				<section class="col-2 right">
-					<div class="row">
-						<div class="col-12">
-							<input type="button" class="sidebarButton checkout" value="Checkout">
-						</div>
-						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut" value="Discount item">
-						</div>
-						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut" value="Discount order">
-						</div>
-						<div class="col-6">
-							<input type="button" class="sidebarButton shortcut" value="Options">
-						</div>
-						<div class="col-6">
-							<input type="button" class="sidebarButton void" value="Void transaction">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="1">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="2">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="3">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="4">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="5">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="6">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="7">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="8">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="9">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value=".">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="0">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="00">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="▲">
-						</div>
-						<div class="col-8">
-							<input type="button" class="sidebarButton enter" value="Enter">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="▼">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="Back">
-						</div>
-						<div class="col-4">
-							<input type="button" class="sidebarButton numpad" value="Clear">
-						</div>
-					</div>
-				</section>
-			</div>
+				<?
+					if($layout_row['display_type'] == 1) {
+						if($layout_row['section_ids'] != null) {
+							printSections($layout_row['section_ids']);
+						} else {
+							Redirect('/Error/404/');
+						}
+					} else {
+						include('./Pages/'.$layout_row['page_file'].'.php');
+					}
+				?>
 			<!-- ===== Alerts ===== -->
 				<div class="alerts"> </div>
 			<!-- ===== Modals ===== -->
