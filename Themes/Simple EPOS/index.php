@@ -110,14 +110,20 @@
 						background: #3d4c53;
 						height: 50px;
 					}
-					.header > .left {
+					.header .left {
 						text-align: left;
 					}
-					.header > .middle {
+					.header .middle {
 						text-align: center;
 					}
-					.header > .right {
+					.header .right {
 						text-align: right;
+					}
+					.header .right .date {
+
+					}
+					.header .right .time {
+
 					}
 					.content {
 						color: #3d4c53;
@@ -209,10 +215,7 @@
 							var hour = (h < 10) ? "0" + h : h;
 							var m = date.getMinutes();
 							var minute = (m < 10) ? "0" + m : m;
-							var s = date.getSeconds();
-							var second = (s < 10) ? "0" + s : s;
-							var milisecond = date.getMilliseconds();
-							$('span.time').html(hour + ':' + minute + ':' + second);
+							$('span.time').html(hour + ':' + minute);
 						},100);
 					});
 				</script>
