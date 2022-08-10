@@ -126,7 +126,7 @@
 						padding: 5px;
 					}
 					.header .right .time {
-						font-size: 1.4rem;
+						font-size: 2rem;
 						line-height: calc(2rem - 20px);
 						padding: 5px;
 					}
