@@ -223,7 +223,7 @@
 							var m = date.getMinutes();
 							var minute = (m < 10) ? "0" + m : m;
 							$('.time').html(hour + ':' + minute);
-						},100);
+						}, 500);
 					});
 				</script>
 			<!-- ===== Alerts ===== -->
