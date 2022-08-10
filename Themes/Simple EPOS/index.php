@@ -110,16 +110,16 @@
 						background: #3d4c53;
 						height: 50px;
 					}
-					.header > .row > div:nth-child(1) {
+					.header > .left {
 						text-align: left;
 					}
-					.header > .row > div:nth-child(2) {
+					.header > .middle {
 						text-align: center;
 					}
-					.header > .row > div:nth-child(3) {
+					.header > .right {
 						text-align: right;
 					}
-					.left {
+					.content {
 						color: #3d4c53;
 						background: #f6f6f6;
 						height: calc(100vh - 50px);
@@ -129,7 +129,7 @@
 						background: #3d4c53;
 						height: calc(100vh - 50px);
 					}
-					.left > .row > div,
+					.content > .row > div,
 					.keypad > .row > div {
 						padding: 5px;
 						--height: calc(100vw / 12);
