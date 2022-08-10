@@ -145,6 +145,14 @@
 						background: #45585f;
 						border: solid 1px #55656b;
 					}
+					.sidebarButton.numpad:hover {
+						background: #3E5259;
+						transition: 0.25s background;
+					}
+					.sidebarButton.numpad:active {
+						background: #374d54;
+						transition: background 0.25s;
+					}
 					.sidebarButton.checkout {
 						background: #68a2ff;
 					}
