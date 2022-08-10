@@ -129,7 +129,8 @@
 					.left > .row > div,
 					.right > .row > div {
 						padding: 5px;
-						min-height: 10vh;
+						--height: calc(100vw / 12);
+						min-height: calc(var(--height) * 2);
 					}
 					.productSearch,
 					.sidebarButton {
@@ -186,7 +187,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="col-9 left">
+				<section class="col-10 left">
 					<div class="row">
 						<div class="col-9">
 							<input type="text" class="productSearch bar" plaeholder="Scan barcode or enter item code">
@@ -199,7 +200,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="col-3 right">
+				<section class="col-2 right">
 					<div class="row">
 						<div class="col-12">
 							<input type="button" class="sidebarButton checkout" value="Checkout">
