@@ -129,8 +129,8 @@
 						background: #3d4c53;
 						height: calc(100vh - 50px);
 					}
-					.content > .row > div,
-					.keypad > .row > div {
+					.content > div,
+					.keypad > div {
 						padding: 5px;
 						--height: calc(100vw / 12);
 						min-height: calc(var(--height) * 0.5);
