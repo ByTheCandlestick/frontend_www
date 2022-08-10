@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row header">
 	<div class="col-3">
 		User info
 	</div>

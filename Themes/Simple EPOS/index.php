@@ -98,6 +98,10 @@
 			<!-- ===== Preloader ===== -->
 			<!-- ===== Content ===== -->
 				<style>
+					main > .row > div {
+						padding: unset;
+						margin: unset;
+					}
 					.row {
 						margin: unset;
 					}
@@ -120,13 +124,13 @@
 						background: #f6f6f6;
 						height: calc(100vh - 50px);
 					}
-					.right {
+					.keypad {
 						color: #f6f6f6;
 						background: #3d4c53;
 						height: calc(100vh - 50px);
 					}
 					.left > .row > div,
-					.right > .row > div {
+					.keypad > .row > div {
 						padding: 5px;
 						--height: calc(100vw / 12);
 						min-height: calc(var(--height) * 0.5);

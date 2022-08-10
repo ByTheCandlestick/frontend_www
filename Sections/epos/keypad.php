@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row keypad">
 	<div class="col-12">
 		<input type="button" class="sidebarButton checkout" value="Checkout">
 	</div>
