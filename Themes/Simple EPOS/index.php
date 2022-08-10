@@ -217,12 +217,12 @@
 							var m = date.getMonth() + 1;
 							var month = (m < 10) ? "0" + m : m;
 							var year = date.getFullYear();
-							$('div.date').html(day + '/' + month + '/' + year);
+							$('.date').html(day + '/' + month + '/' + year);
 							var h = date.getHours();
 							var hour = (h < 10) ? "0" + h : h;
 							var m = date.getMinutes();
 							var minute = (m < 10) ? "0" + m : m;
-							$('div.time').html(hour + ':' + minute);
+							$('.time').html(hour + ':' + minute);
 						},100);
 					});
 				</script>
