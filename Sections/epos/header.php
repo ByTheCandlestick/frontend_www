@@ -6,7 +6,7 @@
 		xPOS info
 	</div>
 	<div class="col-3 right">
-		Date
-		Time
+		<span class="date">Date</span>
+		<span class="time">Time</span>
 	</div>
 </div>
