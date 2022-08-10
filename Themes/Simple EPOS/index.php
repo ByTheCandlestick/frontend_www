@@ -107,6 +107,7 @@
 					}
 					.header {
 						color: #f6f6f6;
+						font-family: monospace;
 						background: #3d4c53;
 						height: 50px;
 					}
@@ -121,15 +122,13 @@
 					}
 					.header .right .date {
 						font-size: 1rem;
-						letter-spacing: 0px;
-						font-family: monospace;
-						line-height: 1rem;
+						line-height: calc(1rem - 20px);
+						padding: 5px;
 					}
 					.header .right .time {
 						font-size: 1.4rem;
-						letter-spacing: 0px;
-						font-family: monospace;
-						line-height: 1.4rem;
+						line-height: calc(2rem - 20px);
+						padding: 5px;
 					}
 					.content {
 						color: #3d4c53;
