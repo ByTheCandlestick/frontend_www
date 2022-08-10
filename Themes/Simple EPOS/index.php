@@ -128,6 +128,7 @@
 						color: #f6f6f6;
 						background: #3d4c53;
 						height: calc(100vh - 50px);
+						padding: 10px;
 					}
 					.content > div,
 					.keypad > div {
