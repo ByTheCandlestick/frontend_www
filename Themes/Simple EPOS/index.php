@@ -120,10 +120,16 @@
 						text-align: right;
 					}
 					.header .right .date {
-
+						font-size: 1rem;
+						letter-spacing: 0px;
+						font-family: monospace;
+						line-height: 1rem;
 					}
 					.header .right .time {
-
+						font-size: 1.4rem;
+						letter-spacing: 0px;
+						font-family: monospace;
+						line-height: 1.4rem;
 					}
 					.content {
 						color: #3d4c53;
