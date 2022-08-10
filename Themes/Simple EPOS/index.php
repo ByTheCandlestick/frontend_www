@@ -195,6 +195,27 @@
 						include('./Pages/'.$layout_row['page_file'].'.php');
 					}
 				?>
+				<script>
+					$('document').ready(function(){
+						var interval = setInterval(function(){
+							var date = new Date();
+							var d = date.getDate();
+							var day = (d < 10) ? "0" + d : d;
+							var m = date.getMonth() + 1;
+							var month = (m < 10) ? "0" + m : m;
+							var year = date.getFullYear();
+							$('span.date').html(day + '/' + month + '/' + year);
+							var h = date.getHours();
+							var hour = (h < 10) ? "0" + h : h;
+							var m = date.getMinutes();
+							var minute = (m < 10) ? "0" + m : m;
+							var s = date.getSeconds();
+							var second = (s < 10) ? "0" + s : s;
+							var milisecond = date.getMilliseconds();
+							$('span.time').html(hour + ':' + minute + ':' + second);
+						},100);
+					});
+				</script>
 			<!-- ===== Alerts ===== -->
 				<div class="alerts"> </div>
 			<!-- ===== Modals ===== -->
