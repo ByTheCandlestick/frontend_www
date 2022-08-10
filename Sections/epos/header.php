@@ -7,8 +7,8 @@
 	</div>
 	<div class="col-3 right">
 		<p>
-			<span class="date">Date</span>
-			<span class="time">Time</span>
+			<span class="date">00/00/0000</span>
+			<span class="time">00:00</span>
 		</p>
 	</div>
 </div>
