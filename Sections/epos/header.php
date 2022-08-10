@@ -3,7 +3,8 @@
 		User info
 	</div>
 	<div class="col-6 middle">
-		xPOS info
+		<h3>ByTheCabdlestick xPOS</h3>
+		<p> All Systems: <span class="systemStatus">Operational</span></p>
 	</div>
 	<div class="col-3 right">
 		<p>
