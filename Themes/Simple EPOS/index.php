@@ -160,13 +160,13 @@
 						color: var(--primary);
 						text-align: center;
 						width: 100%;
-						height: 100%;
 					}
 					.sidebarButton {
 						font-size: 1rem;
 						color: var(--section);
 						text-align: center;
 						width: 100%;
+						height: 100%;
 					}
 					.sidebarButton.numpad {
 						font-size: 2rem;
