@@ -47,7 +47,7 @@ $(document).ready(function() {
 					if(/[a-z 0-9\.]/.text(btn)){
 						$(".productSearch").value($(".productSearch").value() + btn);
 					} else {
-
+						alert('FAIL');
 					}
 				}
 			}
