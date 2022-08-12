@@ -1,69 +1,69 @@
 
 <div class="row keypad">
 	<div class="col-12">
-		<input type="button" class="sidebarButton checkout" value="Checkout">
+		<input type="button" class="sidebarButton checkout" onclick="keypad.click('Checkout')" value="Checkout">
 	</div>
 	<div class="col-6">
-		<input type="button" class="sidebarButton shortcut" value="Discount item">
+		<input type="button" class="sidebarButton shortcut" onclick="keypad.click('Discount item')" value="Discount item">
 	</div>
 	<div class="col-6">
-		<input type="button" class="sidebarButton shortcut" value="Discount order">
+		<input type="button" class="sidebarButton shortcut" onclick="keypad.click('Discount order')" value="Discount order">
 	</div>
 	<div class="col-6">
-		<input type="button" class="sidebarButton shortcut" value="Options">
+		<input type="button" class="sidebarButton shortcut" onclick="keypad.click('Options')" value="Options">
 	</div>
 	<div class="col-6">
-		<input type="button" class="sidebarButton void" value="Void transaction">
+		<input type="button" class="sidebarButton void" onclick="keypad.click('Void transaction')" value="Void transaction">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="1">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('1')" value="1">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="2">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('2')" value="2">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="3">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('3')" value="3">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="4">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('4')" value="4">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="5">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('5')" value="5">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="6">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('6')" value="6">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="7">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('7')" value="7">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="8">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('8')" value="8">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="9">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('9')" value="9">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value=".">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('.')" value=".">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="0">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('0')" value="0">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="00">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('00')" value="00">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="▲">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('Up')" value="▲">
 	</div>
 	<div class="col-8">
-		<input type="button" class="sidebarButton enter" value="Enter">
+		<input type="button" class="sidebarButton enter" onclick="keypad.click('Enter')" value="Enter">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="▼">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('Down')" value="▼">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="Back">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('Back')" value="Back">
 	</div>
 	<div class="col-4">
-		<input type="button" class="sidebarButton numpad" value="Clear">
+		<input type="button" class="sidebarButton numpad" onclick="keypad.click('Clear')" value="Clear">
 	</div>
 </div>

@@ -13,3 +13,21 @@
 		</p>
 	</div>
 </div>
+<script>
+	$( document ).ready(function(){
+		var interval = setInterval(function(){
+			var date = new Date();
+			var d = date.getDate();
+			var day = (d < 10) ? "0" + d : d;
+			var m = date.getMonth() + 1;
+			var month = (m < 10) ? "0" + m : m;
+			var year = date.getFullYear();
+			$('.date').html(day + '/' + month + '/' + year);
+			var h = date.getHours();
+			var hour = (h < 10) ? "0" + h : h;
+			var m = date.getMinutes();
+			var minute = (m < 10) ? "0" + m : m;
+			$('.time').html(hour + ':' + minute);
+		}, 500);
+	});
+</script>
