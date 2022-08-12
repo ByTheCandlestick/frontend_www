@@ -143,6 +143,9 @@
 						background: var(--section);
 						height: calc(100vh - 50px);
 					}
+					.receipt thead {
+						background: var(--section);
+					}
 					.keypad {
 						color: var(--section);
 						background: var(--primary);
