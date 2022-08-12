@@ -48,12 +48,9 @@ $(document).ready(function() {
 					if(/[0-9\.]/.test(btn)){
 						searchbar.val(searchbar.val() + btn);
 					} else {
-						if(btn == 'clear')
-							searchbar.val('');
-						elseif(btn == 'back')
-
-						elseif(btn == 'enter')
-
+						if(btn == 'clear') { searchbar.val(''); }
+						else if(btn == 'back') {  }
+						else if(btn == 'enter') {  }
 						endif;
 					}
 				}
