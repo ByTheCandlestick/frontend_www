@@ -145,6 +145,7 @@
 					}
 					.receipt table {
 						border: 1px solid var(--section-outline);
+						height: calc(100vh - 314px);
 					}
 					.receipt thead {
 						background: var(--section);
@@ -152,11 +153,18 @@
 					.receipt tbody {
 						background: white;
 					}
+					.receipt tr {
+						max-height: 10px;
+					}
 					.receipt .table>:not(caption)>*>* {
 						border-bottom-width: 0px;
 					}
 					.receipt .summary {
-						
+						background: var(--section);
+						border: 1px solid var(--section-outline);
+						display: table;
+						width: 100%;
+						height: 150px;
 					}
 					.keypad {
 						color: var(--section);
