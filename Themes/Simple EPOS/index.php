@@ -163,6 +163,7 @@
 						color: var(--primary);
 						text-align: center;
 						width: 100%;
+						border-radius: 3px;
 					}
 					.sidebarButton {
 						font-size: 1rem;
@@ -170,6 +171,7 @@
 						text-align: center;
 						width: 100%;
 						height: 100%;
+						border-radius: 3px;
 					}
 					.sidebarButton.numpad {
 						font-size: 2rem;
