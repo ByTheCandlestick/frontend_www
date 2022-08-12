@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row receipt">
 	<div class="col-9">
 		<input type="text" class="productSearch bar" plaeholder="Scan barcode or enter item code">
 	</div>

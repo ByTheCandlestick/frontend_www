@@ -138,7 +138,7 @@
 						font-size: 2rem;
 						margin: unset;
 					}
-					.content {
+					.receipt {
 						color: var(--primary);
 						background: var(--section);
 						height: calc(100vh - 50px);
@@ -149,7 +149,7 @@
 						height: calc(100vh - 50px);
 						padding: 10px;
 					}
-					.content > div,
+					.receipt > div,
 					.keypad > div {
 						padding: 5px;
 						--height: calc(100vw / 12);
