@@ -41,12 +41,12 @@ $(document).ready(function() {
 			console.error(err);
 		})
 	//
-		const searchbar = $(".productSearch input[type=number]");
+		const searchbar = $(".productSearch.bar");
 		keypad = {
 			click: (btn) => {
-				if($("input[type=number]").length <= 1 && $(".productSearch").length > 0) {
+				if($("input[type=number]").length <= 1 && searchbar.length == 1) {
 					if(/[a-z 0-9\.]/.test(btn)){
-						$(".productSearch input[type=number]").val($(".productSearch input[type=number]").val() + btn);
+						searchbar.val(searchbar.val() + btn);
 					} else {
 						alert('FAIL');
 					}
