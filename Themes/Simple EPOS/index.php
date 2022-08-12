@@ -152,6 +152,10 @@
 					.receipt tbody {
 						background: white;
 					}
+					.receipt th,
+					.receipt tr {
+						border-bottom-width: 1px;
+					}
 					.keypad {
 						color: var(--section);
 						background: var(--primary);
