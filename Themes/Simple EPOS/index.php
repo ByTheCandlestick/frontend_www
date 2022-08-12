@@ -100,7 +100,8 @@
 				<style>
 					:root {
 						--primary: #344a4c;
-						--secondary: ;
+						--secondary: #45585f;
+						--tirtiary: #55656b;
 						--section: #f5f5f5;
 					}
 					main > .row > div {
@@ -164,8 +165,8 @@
 					}
 					.sidebarButton.numpad {
 						font-size: 2rem;
-						background: #45585f;
-						border: solid 1px #55656b;
+						background: var(--secondary);
+						border: solid 1px var(--tirtiary);
 					}
 					.sidebarButton.numpad:hover {
 						background: #3E5259;
@@ -188,7 +189,7 @@
 					}
 					.sidebarButton.enter {
 						background: #38526d;
-						border: solid 1px #55656b;
+						border: solid 1px var(--tirtiary);
 					}
 					.productSearch.bar {
 						color: black;
