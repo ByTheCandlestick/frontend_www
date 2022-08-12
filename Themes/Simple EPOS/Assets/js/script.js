@@ -45,7 +45,7 @@ $(document).ready(function() {
 			click: (btn) => {
 				if($("input[type=number]").length <= 1 && $(".productSearch").length > 0) {
 					if(/[a-z 0-9\.]/.test(btn)){
-						$(".productSearch").value($(".productSearch").value() + btn);
+						$(".productSearch").val($(".productSearch").val() + btn);
 					} else {
 						alert('FAIL');
 					}
