@@ -51,7 +51,6 @@ $(document).ready(function() {
 						if(btn == 'clear') { searchbar.val(''); }
 						else if(btn == 'back') {  }
 						else if(btn == 'enter') {  }
-						endif;
 					}
 				}
 			}
