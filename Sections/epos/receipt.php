@@ -9,30 +9,34 @@
 		<table class="table table-hover ">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
-					<th scope="col">First</th>
-					<th scope="col">Last</th>
-					<th scope="col">Handle</th>
+					<th scope="col">Product</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Discount</th>
+					<th scope="col">Price</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
+					<th scope="row">Soap</th>
+					<td>2</td>
+					<td>-</td>
+					<td>-</td>
+					<td>#</td>
 				</tr>
 				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
+					<th scope="row">Scrub</th>
+					<td>2</td>
+					<td>-</td>
+					<td>-</td>
+					<td>#</td>
 				</tr>
 				<tr>
-					<th scope="row">3</th>
-					<td>Larry the Bird</td>
-					<td>@handle</td>
-					<td>@twitter</td>
+					<th scope="row">Candle</th>
+					<td>1</td>
+					<td>-</td>
+					<td>-</td>
+					<td>#</td>
 				</tr>
 			</tbody>
 		</table>
