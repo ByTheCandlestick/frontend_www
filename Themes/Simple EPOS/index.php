@@ -153,7 +153,7 @@
 						background: white;
 					}
 					.table>:not(caption)>*>* {
-						border-bottom-width: 1px;
+						border-bottom-width: 0px;
 					}
 					.keypad {
 						color: var(--section);
