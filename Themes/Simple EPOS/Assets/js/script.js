@@ -1,22 +1,22 @@
 $(document).ready(function() {
     let selectedDeviceId;
     const codeReader = new ZXing.BrowserMultiFormatReader()
-    console.log('ZXing code reader initialized')
+    console.log('ZXing reader initialized')
     codeReader.listVideoInputDevices().then((videoInputDevices) => {
         const sourceSelect = document.getElementById('sourceSelect');
         selectedDeviceId = videoInputDevices[0].deviceId;
         if(videoInputDevices.length >= 1) {
             videoInputDevices.forEach((element) => {
                 const sourceOption = document.createElement('option')
-                sourceOption.text = element.label
-                sourceOption.value = element.deviceId
-                sourceSelect.appendChild(sourceOption)
+                sourceOption.text = element.label;
+                sourceOption.value = element.deviceId;
+                sourceSelect.appendChild(sourceOption);
             })
             sourceSelect.onchange = () => {
                 selectedDeviceId = sourceSelect.value;
             };
-            const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-            sourceSelectPanel.style.display = 'block'
+            const sourceSelectPanel = document.getElementById('sourceSelectPanel');
+            sourceSelectPanel.style.display = 'block';
         }
         document.getElementById('startButton').addEventListener('click', () => {
             codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
