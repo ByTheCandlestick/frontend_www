@@ -98,6 +98,11 @@
 			<!-- ===== Preloader ===== -->
 			<!-- ===== Content ===== -->
 				<style>
+					:root {
+						--primary: #344a4c;
+						--secondary: ;
+						--section: #f5f5f5;
+					}
 					main > .row > div {
 						padding: unset;
 						margin: unset;
@@ -106,9 +111,9 @@
 						margin: unset;
 					}
 					.header {
-						color: #f6f6f6;
+						color: var(--section);
 						font-family: monospace;
-						background: #3d4c53;
+						background: var(--primary);
 						height: 50px;
 					}
 					.header .left {
@@ -133,13 +138,13 @@
 						margin: unset;
 					}
 					.content {
-						color: #3d4c53;
-						background: #f6f6f6;
+						color: var(--primary);
+						background: var(--section);
 						height: calc(100vh - 50px);
 					}
 					.keypad {
-						color: #f6f6f6;
-						background: #3d4c53;
+						color: var(--section);
+						background: var(--primary);
 						height: calc(100vh - 50px);
 						padding: 10px;
 					}
@@ -152,7 +157,7 @@
 					.productSearch,
 					.sidebarButton {
 						font-size: 1rem;
-						color: #f6f6f6;
+						color: var(--section);
 						text-align: center;
 						height: 100%;
 						width: 100%;
@@ -175,7 +180,7 @@
 					}
 					.sidebarButton.shortcut {
 						background: #f7f7f7;
-						color: #3d4c53;
+						color: var(--primary);
 					}
 					.sidebarButton.void {
 						background: #f85448;
