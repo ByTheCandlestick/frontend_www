@@ -152,8 +152,11 @@
 					.receipt tbody {
 						background: white;
 					}
-					.table>:not(caption)>*>* {
+					.receipt .table>:not(caption)>*>* {
 						border-bottom-width: 0px;
+					}
+					.receipt .summary {
+						
 					}
 					.keypad {
 						color: var(--section);

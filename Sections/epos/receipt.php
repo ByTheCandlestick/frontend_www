@@ -40,5 +40,8 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="summary">
+
+		</div>
 	</div>
 </div>
