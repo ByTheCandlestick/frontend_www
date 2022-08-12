@@ -150,6 +150,7 @@
 					}
 					.receipt thead {
 						background: var(--section);
+						position: sticky;
 					}
 					.receipt tbody {
 						background: white;
