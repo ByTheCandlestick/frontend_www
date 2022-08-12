@@ -146,6 +146,7 @@
 					.receipt table {
 						border: 1px solid var(--section-outline);
 						height: calc(100vh - 314px);
+						margin: unset;
 					}
 					.receipt thead {
 						background: var(--section);
