@@ -6,7 +6,7 @@
 		<input type="button" class="productSearch submit">
 	</div>
 	<div class="col-12">
-		<table class="table table-hover table-bordered">
+		<table class="table table-hover ">
 			<thead>
 				<tr>
 					<th scope="col">#</th>

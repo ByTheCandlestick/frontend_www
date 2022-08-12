@@ -103,6 +103,7 @@
 						--secondary: #45585f;
 						--tirtiary: #55656b;
 						--section: #f5f5f5;
+						--section-outline: #dcdcdc;
 					}
 					main > .row > div {
 						padding: unset;
@@ -142,6 +143,9 @@
 						color: var(--primary);
 						background: var(--section);
 						height: calc(100vh - 50px);
+					}
+					.receipt table {
+						border: 1px solid var(--section-outline);
 					}
 					.receipt thead {
 						background: var(--section);
