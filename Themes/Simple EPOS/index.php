@@ -155,12 +155,17 @@
 						--height: calc(100vw / 12);
 						min-height: calc(var(--height) * 0.5);
 					}
-					.productSearch,
+					.productSearch {
+						font-size: 2rem;
+						color: var(--primary);
+						text-align: center;
+						width: 100%;
+						height: 100%;
+					}
 					.sidebarButton {
 						font-size: 1rem;
 						color: var(--section);
 						text-align: center;
-						height: 100%;
 						width: 100%;
 					}
 					.sidebarButton.numpad {
