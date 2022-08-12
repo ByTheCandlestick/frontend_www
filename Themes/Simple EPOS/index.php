@@ -162,9 +162,9 @@
 					.receipt .summary {
 						background: var(--section);
 						border: 1px solid var(--section-outline);
-						display: table;
 						width: 100%;
 						height: 150px;
+						transform: translatey(-1px);
 					}
 					.keypad {
 						color: var(--section);
