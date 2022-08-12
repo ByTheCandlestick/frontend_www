@@ -149,7 +149,10 @@
 						height: calc(100vh - 50px);
 						padding: 10px;
 					}
-					.receipt > div,
+					.receipt > div {
+						padding: 5px;
+						
+					}
 					.keypad > div {
 						padding: 5px;
 						--height: calc(100vw / 12);
