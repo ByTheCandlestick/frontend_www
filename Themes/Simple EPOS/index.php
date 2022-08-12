@@ -145,7 +145,7 @@
 					}
 					.receipt table {
 						border: 1px solid var(--section-outline);
-						height: calc(100vh - 314px);
+						height: calc(100vh - 288px);
 						margin: unset;
 					}
 					.receipt thead {
@@ -166,6 +166,7 @@
 						width: 100%;
 						height: 150px;
 						transform: translatey(-1px);
+						margin-bottom: 10px;
 					}
 					.keypad {
 						color: var(--section);
