@@ -160,7 +160,7 @@
 					}
 					.keypad > div {
 						padding: 5px;
-						--height: calc(100vh - 70px);
+						--h: calc(100vh - 70px);
 						height: calc(var(--h) / 9);
 					}
 					.productSearch {
