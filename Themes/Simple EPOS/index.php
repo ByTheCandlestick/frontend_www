@@ -142,7 +142,6 @@
 					.receipt {
 						color: var(--primary);
 						background: var(--section);
-						height: calc(100vh - 50px);
 					}
 					.receipt table {
 						border: 1px solid var(--section-outline);
@@ -153,7 +152,6 @@
 					.keypad {
 						color: var(--section);
 						background: var(--primary);
-						height: calc(100vh - 50px);
 						padding: 10px;
 					}
 					.receipt > div {
