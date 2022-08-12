@@ -160,8 +160,8 @@
 					}
 					.keypad > div {
 						padding: 5px;
-						--height: calc(100vw / 12);
-						min-height: calc(var(--height) * 0.5);
+						--height: calc(100vw - 70px);
+						min-height: calc(var(--height) / 9);
 					}
 					.productSearch {
 						font-size: 2rem;
