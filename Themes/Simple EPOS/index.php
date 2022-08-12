@@ -149,6 +149,9 @@
 					.receipt thead {
 						background: var(--section);
 					}
+					.receipt tbody {
+						background: white;
+					}
 					.keypad {
 						color: var(--section);
 						background: var(--primary);
