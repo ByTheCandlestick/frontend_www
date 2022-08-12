@@ -44,7 +44,7 @@ $(document).ready(function() {
 		keypad = {
 			click: (btn) => {
 				if($("input[type=number]").length <= 1 && $(".productSearch").length > 0) {
-					if(/[a-z 0-9\.]/.text(btn)){
+					if(/[a-z 0-9\.]/.test(btn)){
 						$(".productSearch").value($(".productSearch").value() + btn);
 					} else {
 						alert('FAIL');
