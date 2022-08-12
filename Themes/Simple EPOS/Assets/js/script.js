@@ -45,10 +45,16 @@ $(document).ready(function() {
 		keypad = {
 			click: (btn) => {
 				if($("input[type=number]").length <= 1 && searchbar.length == 1) {
-					if(/[a-z 0-9\.]/.test(btn)){
+					if(/[0-9\.]/.test(btn)){
 						searchbar.val(searchbar.val() + btn);
 					} else {
-						alert('FAIL');
+						if(btn == 'clear')
+							searchbar.val('');
+						elseif(btn == 'back')
+
+						elseif(btn == 'enter')
+
+						endif;
 					}
 				}
 			}
