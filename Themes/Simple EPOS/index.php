@@ -150,8 +150,8 @@
 						padding: 10px;
 					}
 					.receipt > div {
-						padding: 5px;
-						
+						padding: 10px;
+						height: fit-content;
 					}
 					.keypad > div {
 						padding: 5px;
