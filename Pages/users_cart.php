@@ -7,7 +7,8 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>User info</h1>
+				<h1>User Cart</h1>
+                <p> UID: <?print(QS)?></p>
 			</div>
 		</div>
 		<hr>
