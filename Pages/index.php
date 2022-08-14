@@ -41,7 +41,7 @@
 			}
 		}
 	// Gets current and last year / month
-		$currYear = date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')));
+		print_r($currYear = date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y'))));
 		$lastYear = date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
 		$currMonth = date("m/d/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
 		$lastMonth = date("m/d/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
@@ -166,19 +166,17 @@
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT MoM</h5>
 					<?
-						$currIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
-						$currExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
 						$lastIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s'AND `Created`<='%s' GROUP BY `Currency`) as a;", $lastMonth, $currMonth)));
 						$lastExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`) as a;", $lastMonth, $currMonth)));
 					?>
 					<p class="card-text">
 						<span>
 							<?
-								if($currIncome[1] == 0 && $currExpences[1] == 0) {
+								if($currMonthSales[1] == 0 && $currMonthExpences[1] == 0) {
 									print('NaN');
 								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currIncome[0] );
-									print($fmt->format(number_format($currIncome[1] - $currExpences[1], 2)));
+									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthSales[0] );
+									print($fmt->format(number_format($currMonthSales[1] - $currMonthExpences[1], 2)));
 								}
 							?>
 						</span>
