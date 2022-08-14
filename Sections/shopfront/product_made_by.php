@@ -1,7 +1,7 @@
 <?
 	$partners = [];
-	$query = DB_Query("SELECT * FROM `Partners` WHERE `Active`=1");
-	while($partner = mysqli_fetch_assoc($query)) {
+	$q = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
+	while($partner = mysqli_fetch_assoc($q)) {
 		$partners[$partner['ID']] = $partner;
 	}
 	$partner_image = $partners[$product['made_by_ID']]['logo_url'];
