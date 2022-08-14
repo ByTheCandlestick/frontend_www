@@ -41,10 +41,10 @@
 			}
 		}
 	// Gets current and last year / month
-		echo $currMonth	= date("m/d/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
-		echo $lastMonth	= date("m/d/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
-		echo $currYear	= date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')));
-		echo $lastYear	= date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
+		echo ' '.$currMonth	= date("m/d/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
+		echo ' '.$lastMonth	= date("m/d/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
+		echo ' '.$currYear	= date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')));
+		echo ' '.$lastYear	= date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
 	//
 		$currMonthIncome	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY 1) as a;", $currMonth)));
 		$currMonthExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY 1) as a;", $currMonth)));
