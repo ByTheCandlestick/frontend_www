@@ -235,7 +235,96 @@ $(document).ready(function() {
 			cookie.accept();
 			$('#gdpr-cookie-message').hide();
 		})
-
+	// Modals
+		modal = {
+			create: function(type, open) {
+				if (type == 'login-cart') {
+					if ($('modals>.modal-' + type).length == 0) {
+						var structure = [
+							'<div class="modal modal-login-cart" style="background:#00000066;" onClick="modal.close(\'login-cart\')">',
+							'<div class="modal-dialog">',
+							'<div class="modal-content">',
+							'<div class="modal-header">',
+							'<h5 class="modal-title">Account required</h5>',
+							'<button type="button" class="btn-close" onClick="modal.close(\'login-cart\')"></button>',
+							'</div>',
+							'<div class="modal-body">',
+							'<p> You have to login to add things to your cart </p>',
+							'</div>',
+							'<div class="modal-footer">',
+							'<button type="button" class="btn btn-secondary" onClick="modal.close(\'login-cart\')">Close</button>',
+							'<a href="/login" class="btn btn-primary">Login</a>',
+							'</div>',
+							'</div>',
+							'</div>',
+							'</div>'
+						];
+						$(structure.join('')).appendTo($('modals'));
+					}
+				}
+				if (open) {
+					modal.open(type)
+				}
+			},
+			open: function(type) {
+				$('.modal-' + type).fadeIn(100)
+			},
+			close: function(type) {
+				$('.modal-' + type).fadeOut(100)
+			}
+		}
+	// Alerts
+		alerts = {
+			count: Number,
+			icon: function(icon, text, colour = 'primary') {
+				alerts.count++;
+				var structure = [
+					'<div class="alert alert-' + colour + ' d-flex align-items-center" role="alert" data-alert-id="' + alerts.count + '">',
+					'<div><i class="fad fa-2x fa-' + icon + ' me-2"></i></div>',
+					'<div>',
+					'' + text + '',
+					'</div>',
+					'</div>'
+				];
+				$(structure.join('')).appendTo($('alerts'));
+				setTimeout(() => {
+					alerts.hide(alerts.count);
+				}, 2500);
+			},
+			additional: function(heading, text, footer, colour = 'primary') {
+				alerts.count++;
+				var structure = [
+					'<div class="alert alert-' + colour + '" role="alert" data-alert-id="' + alerts.count + '">',
+					'<h4 class="alert-heading">' + heading + '</h4>',
+					'<p>' + text + '</p>',
+					'<hr>',
+					'<p class="mb-0">' + footer + '</p>',
+					'</div>'
+				];
+				$(structure.join('')).appendTo($('alerts'));
+				setTimeout(() => {
+					alerts.hide(alerts.count);
+				}, 2500);
+			},
+			simple: function(text) {
+				alerts.count++;
+				var structure = [
+					'<div class="alert alert-primary" role="alert" data-alert-id="' + alerts.count + '">',
+					text,
+					'</div>'
+				];
+				$(structure.join('')).appendTo($('alerts'));
+				setTimeout(() => {
+					alerts.hide(alerts.count);
+				}, 2500);
+			},
+			hide: function(id) {
+				$('[data-alert-id=' + id + ']').fadeOut(1000, function() {
+					$(this).remove()
+					alerts.count--;
+				});
+			}
+		}
 	/*
 	 * Validate form elements
 	 */
@@ -534,96 +623,6 @@ $(document).ready(function() {
 					error: function(result) {
 						alert("Error: " + result);
 					}
-				});
-			}
-		}
-	// Modals
-		modal = {
-			create: function(type, open) {
-				if (type == 'login-cart') {
-					if ($('modals>.modal-' + type).length == 0) {
-						var structure = [
-							'<div class="modal modal-login-cart" style="background:#00000066;" onClick="modal.close(\'login-cart\')">',
-							'<div class="modal-dialog">',
-							'<div class="modal-content">',
-							'<div class="modal-header">',
-							'<h5 class="modal-title">Account required</h5>',
-							'<button type="button" class="btn-close" onClick="modal.close(\'login-cart\')"></button>',
-							'</div>',
-							'<div class="modal-body">',
-							'<p> You have to login to add things to your cart </p>',
-							'</div>',
-							'<div class="modal-footer">',
-							'<button type="button" class="btn btn-secondary" onClick="modal.close(\'login-cart\')">Close</button>',
-							'<a href="/login" class="btn btn-primary">Login</a>',
-							'</div>',
-							'</div>',
-							'</div>',
-							'</div>'
-						];
-						$(structure.join('')).appendTo($('modals'));
-					}
-				}
-				if (open) {
-					modal.open(type)
-				}
-			},
-			open: function(type) {
-				$('.modal-' + type).fadeIn(100)
-			},
-			close: function(type) {
-				$('.modal-' + type).fadeOut(100)
-			}
-		}
-	// Alerts
-		alerts = {
-			count: Number,
-			icon: function(icon, text, colour = 'primary') {
-				alerts.count++;
-				var structure = [
-					'<div class="alert alert-' + colour + ' d-flex align-items-center" role="alert" data-alert-id="' + alerts.count + '">',
-					'<div><i class="fad fa-2x fa-' + icon + ' me-2"></i></div>',
-					'<div>',
-					'' + text + '',
-					'</div>',
-					'</div>'
-				];
-				$(structure.join('')).appendTo($('alerts'));
-				setTimeout(() => {
-					alerts.hide(alerts.count);
-				}, 2500);
-			},
-			additional: function(heading, text, footer, colour = 'primary') {
-				alerts.count++;
-				var structure = [
-					'<div class="alert alert-' + colour + '" role="alert" data-alert-id="' + alerts.count + '">',
-					'<h4 class="alert-heading">' + heading + '</h4>',
-					'<p>' + text + '</p>',
-					'<hr>',
-					'<p class="mb-0">' + footer + '</p>',
-					'</div>'
-				];
-				$(structure.join('')).appendTo($('alerts'));
-				setTimeout(() => {
-					alerts.hide(alerts.count);
-				}, 2500);
-			},
-			simple: function(text) {
-				alerts.count++;
-				var structure = [
-					'<div class="alert alert-primary" role="alert" data-alert-id="' + alerts.count + '">',
-					text,
-					'</div>'
-				];
-				$(structure.join('')).appendTo($('alerts'));
-				setTimeout(() => {
-					alerts.hide(alerts.count);
-				}, 2500);
-			},
-			hide: function(id) {
-				$('[data-alert-id=' + id + ']').fadeOut(1000, function() {
-					$(this).remove()
-					alerts.count--;
 				});
 			}
 		}
