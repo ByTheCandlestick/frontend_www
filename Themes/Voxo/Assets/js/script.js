@@ -597,7 +597,7 @@ $(document).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
-							if (body == 'success') {
+							if(body.status == 'success') {
 								alerts.icon('info-circle', 'Item has been added to cart')
 							}
 						},
@@ -616,7 +616,7 @@ $(document).ready(function() {
 						withCredentials: true,
 					},
 					success: function(body) {
-						if (body == 'success') {
+						if (body.status == 'success') {
 							alerts.icon('info-circle', 'Item has been removed from cart')
 						}
 					},
