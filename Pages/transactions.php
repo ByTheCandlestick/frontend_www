@@ -49,7 +49,7 @@
 								$valueDirection = "+";
 							} else {
 								$textCol = "primary";
-								$valueDirection = "";
+								$valueDirection = "±";
 							}
 							print('
 								<tr>
