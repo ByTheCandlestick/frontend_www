@@ -101,8 +101,6 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT YoY</h5>
-					<?
-					?>
 					<p class="card-text">
 						<span>
 							<?
@@ -133,8 +131,6 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">SALES MoM</h5>
-					<?
-					?>
 					<p class="card-text">
 						<span>
 							<?
@@ -165,10 +161,6 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">GROSS PROFIT MoM</h5>
-					<?
-						$lastIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s'AND `Created`<='%s' GROUP BY `Currency`) as a;", $lastMonth, $currMonth)));
-						$lastExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`) as a;", $lastMonth, $currMonth)));
-					?>
 					<p class="card-text">
 						<span>
 							<?
