@@ -2,6 +2,7 @@
 	$supplier_image = 'http://candlestick-indev.co.uk/assets/images/logos/logo.svg';
 	$supplier_title = 'By The Candlestick';
 	$supplier_shop_link = 'https://www.thecandlestick.co.uk/';
+	print_r($product['made_by']);
 	if($product['made_by'] != 'candlestick') {
 		$supplier_image = '';
 		$supplier_title = 'TODO';
