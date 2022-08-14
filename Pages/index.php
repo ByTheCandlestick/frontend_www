@@ -46,14 +46,14 @@
 		$currMonth = date("m/d/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
 		$lastMonth = date("m/d/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
 	//
-		$currMonthSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
-		$lastMonthSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`<'%s' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth, $lastMonth)));
-		$currYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currYear)));
-		$lastYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`<'%s' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currYear, $lastYear)));
-		$currYearIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currYear)));
-		$currYearExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`;", $currYear)));
-		$lastYearIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastYear, $currYear)));
-		$lastYearExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastYear, $currYear)));
+		$currMonthSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
+		$currMonthExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
+		$lastMonthSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`<'%s' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth, $lastMonth)));
+		$lastMonthExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`<'%s' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth, $lastMonth)));
+		$currYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currYear)));
+		$currYearExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currYear)));
+		$lastYearSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`<'%s' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currYear, $lastYear)));
+		$lastYearExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`<'%s' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currYear, $lastYear)));
 ?>
 <section>
 	<!-- Section Header -->
