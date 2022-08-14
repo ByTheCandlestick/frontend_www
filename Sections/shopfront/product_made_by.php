@@ -1,12 +1,12 @@
 <?
-	$partner_image = 'http://candlestick-indev.co.uk/assets/images/logos/logo.svg';
-	$partner_title = 'By The Candlestick';
-	$partner_shop_link = 'https://www.thecandlestick.co.uk/';
-	if($product['made_by_ID'] != 1) {
-		$partner_image = '';
-		$partner_title = 'TODO';
-		$partner_shop_link = '';
+	$partners = [];
+	$query = DB_Query("SELECT * FROM `Partners` WHERE `Active`=1")
+	while($partner = mysqli_fetch_assoc($query)) {
+		$partners[$partner['ID']] = $partner;
 	}
+	$partner_image = $partners[$product['made_by_ID']]['logo_url'];
+	$partner_title = $partners[$product['made_by_ID']]['name'];
+	$partner_shop_link = $partners[$product['made_by_ID']]['shop_link'];
 
 	print_r("
 		<div class=\"row\">
