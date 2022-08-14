@@ -48,7 +48,7 @@
 								$textCol = "success";
 								$valueDirection = "+";
 							} else {
-								$textCol = "primary";
+								$textCol = "muted";
 								$valueDirection = "±";
 							}
 							print('
