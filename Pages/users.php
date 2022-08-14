@@ -49,6 +49,9 @@
 									<td>'.$row['Active'].'</td>
 									<td>'.$row['Created'].'</td>
 									<td>
+										<a href="/Users/Cart/'.$row['ID'].'">
+											<i class="fa fa-cart"></i>
+										</a>
 										<a href="/Users/Edit/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
