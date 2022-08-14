@@ -255,6 +255,11 @@
 		cart-item .input-group.form-floating label {
 			left: 25px;
 		}
+		cart-item .input-group.form-floating .input-group-prepend,
+		cart-item .input-group.form-floating .input-group-append {
+			height: 100%;
+			display: content;
+		}
 	/* Custom buttons */
 		.btn-outline-primary {
 			color: var(--primary);
