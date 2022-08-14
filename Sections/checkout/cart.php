@@ -85,9 +85,15 @@
 										</div>
 									</div>
 									<div class="col-12 col-lg-6">
-										<div class="form-floating">
+										<div class="form-floating input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">-</span>
+											</div>
 											<input class="text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'">
 											<label for="floatingTextarea">Quantity</label>
+											<div class="input-group-append">
+												<span class="input-group-text">+</span>
+											</div>
 										</div>
 									</div>
 									<div class="col-3">
