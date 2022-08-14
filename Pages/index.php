@@ -43,7 +43,7 @@
 	// Gets current and last year / month
 		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
 		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
-		$currMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
+		print_r($currMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m'), date('Y'))));
 		$lastMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
 ?>
 <section>
@@ -132,7 +132,7 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">SALES MoM</h5>
-					<?print($currMonth);
+					<?
 						$currSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY `Currency`;", $currMonth)));
 						$lastSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT `Currency`, SUM(`Subtotal`) FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<='%s' GROUP BY `Currency`;", $lastMonth, $currMonth)));
 					?>
