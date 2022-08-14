@@ -255,8 +255,8 @@
 		cart-item .input-group.form-floating label {
 			left: 25px;
 		}
-		cart-item .input-group.form-floating .input-group-prepend,
-		cart-item .input-group.form-floating .input-group-append {
+		cart-item .input-group.form-floating .input-group-prepend input,
+		cart-item .input-group.form-floating .input-group-append input {
 			height: 100%;
 			display: content;
 		}
