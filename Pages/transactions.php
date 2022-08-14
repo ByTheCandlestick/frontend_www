@@ -48,7 +48,7 @@
 									</th>
 									<td>'.$t['Type'].'</td>
 									<td>'.$t['Status'].'</td>
-									<td class="text-'.(($t['Type'] == 'Refund')?"danger":"success").'">'.(($t['type'] == 'Refund')?"-":"+").number_format($t['Subtotal'], 2).'</td>
+									<td class="text-'.(($t['Type'] == 'Refund')?"danger":($t['Type'] == 'Order')?"sucess":"").'">'.(($t['Type'] == 'Refund')?"-":($t['Type'] == 'Order')?"+":"").number_format($t['Subtotal'], 2).'</td>
 									<td>'.$t['Modified'].'</td>
 									<td>'.$t['Created'].'</td>
 									<td>
