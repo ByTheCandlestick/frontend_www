@@ -41,10 +41,10 @@
 			}
 		}
 	// Gets current and last year / month
-		$currYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')));
-		$lastYear = date("d/m/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
-		print_r($currMonth = date("m/d/Y", mktime(0, 0, 0, 1, date('m'), date('Y'))));
-		$lastMonth = date("d/m/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
+		$currYear = date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')));
+		$lastYear = date("m/d/Y", mktime(0, 0, 0, 1, 1, date('Y')-1));
+		$currMonth = date("m/d/Y", mktime(0, 0, 0, 1, date('m'), date('Y')));
+		$lastMonth = date("m/d/Y", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
 ?>
 <section>
 	<!-- Section Header -->
