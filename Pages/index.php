@@ -133,8 +133,8 @@
 				<div class="card-body">
 					<h5 class="card-title">SALES MoM</h5>
 					<?
-						$currIncome = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
-						$currExpences = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
+						$currSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth)));
+						$currSales = mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr, SUM(a.Depo) FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`<'%s' AND `Created`>='%s' GROUP BY `Currency`) as a;", $currMonth, $lastMonth)));
 					?>
 					<p class="card-text">
 						<span>
