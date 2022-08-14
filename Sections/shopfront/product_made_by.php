@@ -6,7 +6,7 @@
 	}
 	$partner_image = $partners[$product['made_by_ID']]['logo_url'];
 	$partner_title = $partners[$product['made_by_ID']]['name'];
-	$partner_shop_link = $partners[$product['made_by_ID']]['shop_link'];
+	$partner_shop_link = __API__.'/Images/fetch/'.$partners[$product['made_by_ID']]['shop_link'];
 
 	print_r("
 		<div class=\"row\">
