@@ -154,7 +154,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
-							<input type="range" class="nouirange range-3" min="0" max="12"></input>
+							<range></range>
 							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -333,7 +333,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		riot.mount('input[type=range]', {
+		riot.mount('range', {
 			legend: 'temperature',
 			min: 0,
 			max: 12,
