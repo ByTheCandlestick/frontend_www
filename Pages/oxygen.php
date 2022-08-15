@@ -120,6 +120,7 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 			}
 		</style>
+		<script src="https://cdn.jsdelivr.net/g/riot@2.0(riot.min.js+compiler.min.js)"></script>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row dragulaCopy templateElements cat-columns">
@@ -332,23 +333,25 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
+		riot.mount('range', {
+			legend: 'temperature',
+			min: -30,
+			max: 80,
+			step: 1,
+			units: '°C',
+			lowPoint: true,
+			lowToggle: true,
+			lowAdjective: ['over', 'under'],
+			low: 2,
+			combinator: ['and', 'or'],
+			highPoint: true,
+			highToggle: true,
+			highAdjective: ['under', 'over'],
+			high: 33,
+			invertToggle: true,
+			invert: 0
+		})
 	});
-	var dragging = false;
-	function dragstart(event) {
-		dragging = true;
-	}
-	$(document).on('mousemove', function(event) {
-		if (dragging) {
-			var lPercentage = event.clientX - $(event.target).offset().left;
-			var rPercentage = 100 - lPercentage;
-			console.log(lPercentage);
-			if(lPercentage > 10 && lPercentage < 90) {
-				$(event.target).prev().width("calc("+lPercentage+"px - 5px)");
-				$(event.target).next().width("calc("+rPercentage+"px - 5px)");
-			}
-		}
-	})
-	$(document).on('mouseup', function(event) {dragging = false;})
 </script>
 <?
 	} else {
