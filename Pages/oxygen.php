@@ -413,9 +413,9 @@ if(QS_SUBPAGE != "") {
 			},
 			values: [
 				2,
-				2,
 				4,
-				2
+				8,
+				10
 			],
 			showRanges:	true,
 			min:		0,
@@ -431,10 +431,10 @@ if(QS_SUBPAGE != "") {
 			},
 			values: [
 				2,
-				2,
-				2,
-				2,
-				2
+				4,
+				6,
+				8,
+				10
 			],
 			showRanges:	true,
 			min:		0,
