@@ -117,6 +117,8 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 			}
 		</style>
+		<link href="https://projects.verou.me/multirange/multirange.css"></link>
+		<script src="https://projects.verou.me/multirange/multirange.js"></script>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row dragulaCopy templateElements cat-columns">
