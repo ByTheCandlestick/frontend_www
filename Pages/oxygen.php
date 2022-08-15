@@ -137,7 +137,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<input type="range" value="6" class="nouirange range-2" min="0" max="12"></input>
+							<div value="6" class="nouirange range-2" min="0" max="12"></div>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -154,7 +154,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
-							<input type="range" value="4" class="nouirange range-3" min="0" max="12"></input>
+							<div value="4" class="nouirange range-3" min="0" max="12"></div>
 							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -174,7 +174,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>4 columns</h6>
-							<input type="range" value="3" class="nouirange range-4" min="0" max="12"></input>
+							<div value="3" class="nouirange range-4" min="0" max="12"></div>
 							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -197,7 +197,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>5 columns</h6>
-							<input type="range" value="2" class="nouirange range-5" min="0" max="12"></input>
+							<div value="2" class="nouirange range-5" min="0" max="12"></div>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -223,7 +223,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>6 columns</h6>
-							<input type="range" value="2" class="nouirange range-6" min="0" max="12"></input>
+							<div value="2" class="nouirange range-6" min="0" max="12"></div>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
