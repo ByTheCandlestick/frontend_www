@@ -343,9 +343,9 @@ if(QS_SUBPAGE != "") {
 					if(handle > 0) {
 						
 					} else {
-						lColNew = parseInt(lColCurr + (lColCurr - value));
+						lColNew = parseInt(lColCurr - (lColCurr - value));
 					}
-					console.log(""+lcolCurr+" + ( "+lcolCurr+" - "+value+" ) = "+lColNew)
+					console.log(lColCurr+" + ( "+lcolCurr+" - "+value+" ) = "+lColNew)
 					$(containers[handle]).attr('element-id', '#'+lColNew+';')
 					$(containers[handle]).addClass("col-"+lColNew);
 			// Rightmost column.
