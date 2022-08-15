@@ -341,7 +341,7 @@ if(QS_SUBPAGE != "") {
 					for(var i = 0; i < classes.length; i++ ) {
 						if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
 							toReturn += classes[i] +' ';
-							console.log(nextColWidth = /col-([0-9])+/.test(classes[i]))
+							console.log(nextColWidth = classes[i].match(/col-([0-9])+/))
 						}
 					}
 					return toReturn ; /* Returns all classes to be removed */
