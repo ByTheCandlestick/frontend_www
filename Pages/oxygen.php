@@ -354,7 +354,7 @@ if(QS_SUBPAGE != "") {
 					});
 				// add class col-x
 					console.log(lColCurr+"-"+lColNew+"="+(lColCurr - lColNew))
-					$(containers[ui.handleIndex+1]).addClass("col-"+ parseInt(nextColWidthCURR + (ColWidthCURR - ui.value)));
+					$(containers[ui.handleIndex+1]).addClass("col-"+ parseInt(rColCurr + (lColCurr - lColNew)));
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
