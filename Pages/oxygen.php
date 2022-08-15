@@ -322,7 +322,8 @@ if(QS_SUBPAGE != "") {
 					containers = $(parentGrid).find(".templateGrid");
 				let lColCurr=null,
 					rColCurr=null,
-					handle=parseInt(ui.handleIndex);
+					handle=parseInt(ui.handleIndex),
+					value=parseInt(ui.value);
 			// Leftmost column
 				// remove class col-x
 					$(containers[handle]).removeClass(function() {
