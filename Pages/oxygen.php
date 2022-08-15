@@ -310,7 +310,7 @@ if(QS_SUBPAGE != "") {
 					return $(el).hasClass('dragulaContainer');
 				},
 				moves: function (el, source, handle, sibling) {
-					console.log(el)
+					console.log(target)
 					return $(el).hasClass('templateElementGrid');
 				},
 				copy: function(el, source) {
