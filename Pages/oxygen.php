@@ -89,6 +89,9 @@ if(QS_SUBPAGE != "") {
 				position: relative;
 				background: var(--section);
 			}
+			input[type=range] {
+				padding: unset;
+			}
 			.columnResizer {
 				width: 10px;
 				padding: unset;
