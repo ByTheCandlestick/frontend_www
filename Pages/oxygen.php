@@ -320,65 +320,75 @@ if(QS_SUBPAGE != "") {
 		}
 		$('.range-2').limitslider({
 			values:		[
-				col(6)
+				6
 			],
 			showRanges:	true,
-			left:		col(1),
-			right:		col(12),
-			step:		col(1),
-			gap:		col(1),
+			min:		0,
+			max:		12,
+			left:		1,
+			right:		12,
+			step:		1,
+			gap:		1,
 		}).change(function() {
 			console.log(this);
 		});
 		$('.range-3').limitslider({
 			values:		[
-				col(4),
-				col(8)
+				4,
+				8
 			],
 			showRanges:	true,
-			left:		col(1),
-			right:		col(12),
-			step:		col(1),
-			gap:		col(1),
+			min:		0,
+			max:		12,
+			left:		1,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 		$('.range-4').limitslider({
 			values:		[
-				col(3),
-				col(6),
-				col(9)
+				3,
+				6,
+				9
 			],
 			showRanges:	true,
-			left:		col(1),
-			right:		col(12),
-			step:		col(1),
-			gap:		col(1),
+			min:		0,
+			max:		12,
+			left:		1,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 		$('.range-5').limitslider({
 			values:		[
-				col(2),
-				col(2),
-				col(4),
-				col(2)
+				2,
+				2,
+				4,
+				2
 			],
 			showRanges:	true,
-			left:		col(1),
-			right:		col(12),
-			step:		col(1),
-			gap:		col(1),
+			min:		0,
+			max:		12,
+			left:		1,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 		$('.range-6').limitslider({
 			values:		[
-				col(2),
-				col(2),
-				col(2),
-				col(2),
-				col(2)
+				2,
+				2,
+				2,
+				2,
+				2
 			],
 			showRanges:	true,
-			left:		col(1),
-			right:		col(12),
-			step:		col(1),
-			gap:		col(1),
+			min:		0,
+			max:		12,
+			left:		1,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 	});
 </script>
