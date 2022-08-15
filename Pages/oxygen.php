@@ -322,10 +322,11 @@ if(QS_SUBPAGE != "") {
 					containers = $(parentGrid).find(".templateGrid");
 				let lColCurr=null,
 					rColCurr=null,
-					lColNew=parseInt(ui.value);
+					lColNew=parseInt(ui.value),
+					handle=parseInt(ui.handleIndex);
 			// Leftmost column
 				// remove class col-x
-					$(containers[ui.handleIndex]).removeClass(function() {
+					$(containers[handle]).removeClass(function() {
 						var toReturn = '',
 							classes = this.className.split(' ');
 						for(var i = 0; i < classes.length; i++ ) {
@@ -336,11 +337,15 @@ if(QS_SUBPAGE != "") {
 						}
 						return toReturn ; /* Returns all classes to be removed */
 					});
+				// check if isnt 1st handle
+					if(handle > 0) {
+						
+					}
 				// add class col-x
-					$(containers[ui.handleIndex]).addClass("col-"+lColNew);
+					$(containers[handle]).addClass("col-"+lColNew);
 			// Rightmost column.
 				// remove class col-x
-					$(containers[ui.handleIndex+1]).removeClass(function() {
+					$(containers[handle+1]).removeClass(function() {
 						var toReturn = '',
 							classes = this.className.split(' ');
 						for(var i = 0; i < classes.length; i++ ) {
@@ -352,7 +357,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					$(containers[ui.handleIndex+1]).addClass("col-"+ parseInt(rColCurr + (lColCurr - lColNew)));
+					$(containers[handle+1]).addClass("col-"+ parseInt(rColCurr + (lColCurr - lColNew)));
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
