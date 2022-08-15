@@ -320,7 +320,7 @@ if(QS_SUBPAGE != "") {
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
-				console.log($(event).parent())
+				console.log($(event.target).parent())
 				//ui.handleIndex
 			},
 			values:		[
