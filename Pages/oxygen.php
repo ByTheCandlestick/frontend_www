@@ -345,7 +345,6 @@ if(QS_SUBPAGE != "") {
 					} else {
 						lColNew = parseInt(lColCurr - (lColCurr - value));
 					}
-					console.log(lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
 					$(containers[handle]).attr('element-id', '#'+lColNew+';')
 					$(containers[handle]).addClass("col-"+lColNew);
 			// Rightmost column.
@@ -369,6 +368,10 @@ if(QS_SUBPAGE != "") {
 					}
 					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
 					$(containers[handle+1]).addClass("col-"+rColNew);
+
+					
+					console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
+					console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew)
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
