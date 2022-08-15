@@ -322,7 +322,17 @@ if(QS_SUBPAGE != "") {
 			slide: function(event, ui) {
 				parentGrid = $(event.target).parent().parent()[0];
 				containers = $(parentGrid).find(".templateGrid")
-				console.log(containers[ui.handleIndex])//.removeclass()
+				$(containers[ui.handleIndex]).removeclass(function() {
+					var toReturn = '',
+						classes = this.className.split(' ');
+					for(var i = 0; i < classes.length; i++ ) {
+						if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
+							toReturn += classes[i] +' ';
+						}
+					}
+					return toReturn ; /* Returns all classes to be removed */
+
+				})
 			},
 			values:		[
 				6
