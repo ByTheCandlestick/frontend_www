@@ -366,9 +366,8 @@ if(QS_SUBPAGE != "") {
 					} else {
 						rColNew = parseInt(rColCurr + (lColCurr - value))
 					}
-					$(containers[handle+1]).attr('element-id', '#'+lColNew+';')
+					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
 					$(containers[handle+1]).addClass("col-"+rColNew);
-					$(containers[handle+1]).addClass("col-"+lColNew);
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
