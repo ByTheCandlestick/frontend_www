@@ -333,9 +333,6 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		$('.range-2').limitslider({
-			values: [6]
-		});
 		$('.range-3').limitslider({
 			values: [4,8]
 		});
