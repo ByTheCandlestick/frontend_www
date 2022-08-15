@@ -353,9 +353,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					colDiff = ColWidthCURR - ui.value
-					nextColWidthCURR+=colDiff;
-					console.log(nextColWidthCURR);
+					console.log(nextColWidthNEW = nextColWidthCURR + (ColWidthCURR - ui.value));
 					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
 		}
 		$('.range-2').limitslider({
