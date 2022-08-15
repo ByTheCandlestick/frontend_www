@@ -89,9 +89,6 @@ if(QS_SUBPAGE != "") {
 				position: relative;
 				background: var(--section);
 			}
-			input[type=range] {
-				padding: unset;
-			}
 			.columnResizer {
 				width: 10px;
 				padding: unset;
@@ -120,11 +117,6 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 			}
 		</style>
-		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/normalize.css"><link>
-		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/range.css"><link>
-		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/skin.css"><link>
-		<script src="https://raw.githubusercontent.com/sakamies/range-multiple/master/range.tag" type="riot/tag"></script>
-		<script src="https://cdn.jsdelivr.net/g/riot@2.0(riot.min.js+compiler.min.js)"></script>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row dragulaCopy templateElements cat-columns">
@@ -141,10 +133,10 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
+							<input type="range" multiple value="6" class="nouirange range-2" min="0" max="12"></input>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
-							</div>	
-							<div class="dragulaDisabled columnResizer" id="2" onmousedown="dragstart(event)" ontouchstart="dragstart(event)"></div>
+							</div>
 							<div class="templateGrid tGrid2" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -158,7 +150,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
-							<range></range>
+							<input type="range" multiple value="4,8" class="nouirange range-3" min="0" max="12"></input>
 							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -178,7 +170,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>4 columns</h6>
-							<input type="range" class="nouirange range-4" min="0" max="12"></input>
+							<input type="range" multiple value="3,6,9" class="nouirange range-4" min="0" max="12"></input>
 							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -201,7 +193,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>5 columns</h6>
-							<input type="range" class="nouirange range-5" min="0" max="12"></input>
+							<input type="range" multiple value="2,4,8,10" class="nouirange range-5" min="0" max="12"></input>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -227,7 +219,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>6 columns</h6>
-							<input type="range" class="nouirange range-6" min="0" max="12"></input>
+							<input type="range" multiple value="2,2,2,2,2" class="nouirange range-6" min="0" max="12"></input>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -337,25 +329,23 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		riot.mount('range', {
-			legend: 'Width',
-			min: 0,
-			max: 12,
-			step: 1,
-			units: '',
-			lowPoint: true,
-			lowToggle: true,
-			lowAdjective: ['over', 'under'],
-			low: 4,
-			combinator: ['and', 'or'],
-			highPoint: true,
-			highToggle: true,
-			highAdjective: ['under', 'over'],
-			high: 8,
-			invertToggle: true,
-			invert: 0
-		})
 	});
+	var dragging = false;
+	function dragstart(event) {
+		dragging = true;
+	}
+	$(document).on('mousemove', function(event) {
+		if (dragging) {
+			var lPercentage = event.clientX - $(event.target).offset().left;
+			var rPercentage = 100 - lPercentage;
+			console.log(lPercentage);
+			if(lPercentage > 10 && lPercentage < 90) {
+				$(event.target).prev().width("calc("+lPercentage+"px - 5px)");
+				$(event.target).next().width("calc("+rPercentage+"px - 5px)");
+			}
+		}
+	})
+	$(document).on('mouseup', function(event) {dragging = false;})
 </script>
 <?
 	} else {
