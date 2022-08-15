@@ -335,40 +335,63 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
+		function col(width) {
+			return (100/12)*width;
+		}
 		$('.range-2').limitslider({
-			values:		[6],
-			left:		0,
-			right:		12,
-			step:		1,
-			gap:		1,
+			values:		[
+				col(6)
+			],
+			left:		col(0),
+			right:		col(12),
+			step:		col(1),
+			gap:		col(1),
 		});
 		$('.range-3').limitslider({
-			values:		[4,4],
-			left:		0,
-			right:		12,
-			step:		1,
-			gap:		1,
+			values:		[
+				col(4),
+				col(8)
+			],
+			left:		col(0),
+			right:		col(12),
+			step:		col(1),
+			gap:		col(1),
 		});
 		$('.range-4').limitslider({
-			values:		[3,3,3],
-			left:		0,
-			right:		12,
-			step:		1,
-			gap:		1,
+			values:		[
+				col(3),
+				col(6),
+				col(9)
+			],
+			left:		col(0),
+			right:		col(12),
+			step:		col(1),
+			gap:		col(1),
 		});
 		$('.range-5').limitslider({
-			values:		[2,2,4,2],
-			left:		0,
-			right:		12,
-			step:		1,
-			gap:		1,
+			values:		[
+				col(2),
+				col(2),
+				col(4),
+				col(2)
+			],
+			left:		col(0),
+			right:		col(12),
+			step:		col(1),
+			gap:		col(1),
 		});
 		$('.range-6').limitslider({
-			values:		[2,2,2,2,2],
-			left:		0,
-			right:		12,
-			step:		1,
-			gap:		1,
+			values:		[
+				col(2),
+				col(2),
+				col(2),
+				col(2),
+				col(2)
+			],
+			left:		col(0),
+			right:		col(12),
+			step:		col(1),
+			gap:		col(1),
 		});
 	});
 </script>
