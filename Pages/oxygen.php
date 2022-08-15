@@ -334,19 +334,19 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 		$('.range-2').limitslider({
-			values: [6];
+			values: [6]
 		});
 		$('.range-3').limitslider({
-			values: [4,8];
+			values: [4,8]
 		});
 		$('.range-4').limitslider({
-			values: [3,6,9];
+			values: [3,6,9]
 		});
 		$('.range-5').limitslider({
-			values: [2,4,8,10];
+			values: [2,4,8,10]
 		});
 		$('.range-6').limitslider({
-			values: [2,4,6,8,10];
+			values: [2,4,6,8,10]
 		});
 	});
 </script>
