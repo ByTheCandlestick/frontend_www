@@ -331,23 +331,37 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-	});
-	var dragging = false;
-	function dragstart(event) {
-		dragging = true;
-	}
-	$(document).on('mousemove', function(event) {
-		if (dragging) {
-			var lPercentage = event.clientX - $(event.target).offset().left;
-			var rPercentage = 100 - lPercentage;
-			console.log(lPercentage);
-			if(lPercentage > 10 && lPercentage < 90) {
-				$(event.target).prev().width("calc("+lPercentage+"px - 5px)");
-				$(event.target).next().width("calc("+rPercentage+"px - 5px)");
+		noUiSlider.create(document.getElementById('range-3'), {
+			range: {
+				'min': 1,
+				'max': 12
+			},
+			step: 150,
+			// Handles start at ...
+			start: [4,8],
+			// ... must be at least 300 apart
+			margin: 1,
+			// ... but no more than 600
+			limit: 12,
+			// Display colored bars between handles
+			connect: true,
+			// Put '0' at the bottom of the slider
+			direction: 'rtl',
+			orientation: 'horizontal',
+			// Move handle on tap, bars are draggable
+			behaviour: 'tap-drag',
+			tooltips: true,
+			format: wNumb({
+				decimals: 0
+			}),
+			// Show a scale with the slider
+			pips: {
+				mode: 'steps',
+				stepped: true,
+				density: 4
 			}
-		}
-	})
-	$(document).on('mouseup', function(event) {dragging = false;})
+		});
+	});
 </script>
 <?
 	} else {
