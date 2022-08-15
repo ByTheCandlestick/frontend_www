@@ -120,6 +120,8 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 			}
 		</style>
+		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/range.css"><link>
+		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/skin.css"><link>
 		<script src="https://raw.githubusercontent.com/sakamies/range-multiple/master/range.tag" type="riot/tag"></script>
 		<script src="https://cdn.jsdelivr.net/g/riot@2.0(riot.min.js+compiler.min.js)"></script>
 		<div class="col-lg-3">
