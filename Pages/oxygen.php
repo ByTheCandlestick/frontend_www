@@ -327,9 +327,9 @@ if(QS_SUBPAGE != "") {
 			right:		col(12),
 			step:		col(1),
 			gap:		col(1),
-		}).change() {
+		}).change(function() {
 
-		};
+		});
 		$('.range-3').limitslider({
 			values:		[
 				col(4),
