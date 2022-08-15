@@ -319,6 +319,10 @@ if(QS_SUBPAGE != "") {
 			return (100/12)*width;
 		}
 		$('.range-2').limitslider({
+			slide: function(event, ui) {
+				console.log(event);
+				console.log(ui);
+			},
 			values:		[
 				6
 			],
@@ -329,9 +333,7 @@ if(QS_SUBPAGE != "") {
 			right:		12,
 			step:		1,
 			gap:		1,
-		}).change(function() {
-			console.log(this);
-		});
+		})
 		$('.range-3').limitslider({
 			values:		[
 				4,
