@@ -335,6 +335,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		})
 		$('.range-3').limitslider({
+			slide: function(event, ui) {
+				console.log(event);
+				console.log(ui);
+			},
 			values:		[
 				4,
 				8
@@ -348,6 +352,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		});
 		$('.range-4').limitslider({
+			slide: function(event, ui) {
+				console.log(event);
+				console.log(ui);
+			},
 			values:		[
 				3,
 				6,
@@ -362,6 +370,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		});
 		$('.range-5').limitslider({
+			slide: function(event, ui) {
+				console.log(event);
+				console.log(ui);
+			},
 			values:		[
 				2,
 				2,
@@ -377,6 +389,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		});
 		$('.range-6').limitslider({
+			slide: function(event, ui) {
+				console.log(event);
+				console.log(ui);
+			},
 			values:		[
 				2,
 				2,
