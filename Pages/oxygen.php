@@ -316,38 +316,45 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		function col(width) {
-			return (100/12)*width;
-		}
-		$('.range-2').limitslider({
-			slide: function(event, ui) {
+		function rangeMovement(event, ui) {
+			// Vars
 				parentGrid = $(event.target).parent().parent()[0];
 				containers = $(parentGrid).find(".templateGrid")
 				var nextColWidthCURR, ColWidthCURR, nextColWidthNEW = null;
-				$(containers[ui.handleIndex]).removeClass(function() {
-					var toReturn = '',
-						classes = this.className.split(' ');
-					for(var i = 0; i < classes.length; i++ ) {
-						if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
-							toReturn += classes[i] +' ';
-							ColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
+			// Leftmost column
+				// remove class col-x
+					$(containers[ui.handleIndex]).removeClass(function() {
+						var toReturn = '',
+							classes = this.className.split(' ');
+						for(var i = 0; i < classes.length; i++ ) {
+							if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
+								toReturn += classes[i] +' ';
+								ColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
+							}
 						}
-					}
-					return toReturn ; /* Returns all classes to be removed */
-				});
-				$(containers[ui.handleIndex]).addClass("col-"+ui.value);
-				$(containers[ui.handleIndex+1]).removeClass(function() {
-					var toReturn = '',
-						classes = this.className.split(' ');
-					for(var i = 0; i < classes.length; i++ ) {
-						if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
-							toReturn += classes[i] +' ';
-							nextColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
+						return toReturn ; /* Returns all classes to be removed */
+					});
+				// add class col-x
+					$(containers[ui.handleIndex]).addClass("col-"+ui.value);
+			// Rightmost column.
+				// remove class col-x
+					$(containers[ui.handleIndex+1]).removeClass(function() {
+						var toReturn = '',
+							classes = this.className.split(' ');
+						for(var i = 0; i < classes.length; i++ ) {
+							if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
+								toReturn += classes[i] +' ';
+								nextColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
+							}
 						}
-					}
-					return toReturn ; /* Returns all classes to be removed */
-				});
-				$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
+						return toReturn ; /* Returns all classes to be removed */
+					});
+				// add class col-x
+					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
+		}
+		$('.range-2').limitslider({
+			slide: function(event, ui) {
+				rangeMovement(event, ui)
 			},
 			values:		[
 				6
