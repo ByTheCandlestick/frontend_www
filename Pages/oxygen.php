@@ -337,38 +337,38 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-2').limitslider({
 			values:		[6],
-			left:		8.33,
-			right:		8.33,
-			step:		8.33,
-			gap:		8.33,
+			left:		0,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 		$('.range-3').limitslider({
 			values:		[4,4],
-			left:		8.33,
-			right:		8.33,
-			step:		8.33,
-			gap:		8.33,
+			left:		0,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 		$('.range-4').limitslider({
 			values:		[3,3,3],
-			left:		8.33,
-			right:		8.33,
-			step:		8.33,
-			gap:		8.33,
+			left:		0,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 		$('.range-5').limitslider({
 			values:		[2,2,4,2],
-			left:		8.33,
-			right:		8.33,
-			step:		8.33,
-			gap:		8.33,
+			left:		0,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 		$('.range-6').limitslider({
 			values:		[2,2,2,2,2],
-			left:		8.33,
-			right:		8.33,
-			step:		8.33,
-			gap:		8.33,
+			left:		0,
+			right:		12,
+			step:		1,
+			gap:		1,
 		});
 	});
 </script>
