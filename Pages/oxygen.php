@@ -346,7 +346,7 @@ if(QS_SUBPAGE != "") {
 					}
 					return toReturn ; /* Returns all classes to be removed */
 				});
-				$(containers[ui.handleIndex+1]).addClass("col-"+);
+				$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidth);
 			},
 			values:		[
 				6
