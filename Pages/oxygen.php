@@ -323,6 +323,7 @@ if(QS_SUBPAGE != "") {
 			slide: function(event, ui) {
 				parentGrid = $(event.target).parent().parent()[0];
 				containers = $(parentGrid).find(".templateGrid")
+				nextColWidth = 0;
 				$(containers[ui.handleIndex]).removeClass(function() {
 					var toReturn = '',
 						classes = this.className.split(' ');
@@ -334,6 +335,18 @@ if(QS_SUBPAGE != "") {
 					return toReturn ; /* Returns all classes to be removed */
 				});
 				$(containers[ui.handleIndex]).addClass("col-"+ui.value);
+				$(containers[ui.handleIndex+1]).removeClass(function() {
+					var toReturn = '',
+						classes = this.className.split(' ');
+					for(var i = 0; i < classes.length; i++ ) {
+						if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
+							toReturn += classes[i] +' ';
+							console.log(nextColWidth = /col-([0-9])+/.test(classes[i]))
+						}
+					}
+					return toReturn ; /* Returns all classes to be removed */
+				});
+				$(containers[ui.handleIndex+1]).addClass("col-"+);
 			},
 			values:		[
 				6
