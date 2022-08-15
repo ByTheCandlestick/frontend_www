@@ -80,6 +80,7 @@ if(QS_SUBPAGE != "") {
 				display: none;
 			}
 			.templateBase .templateElementGrid .templateGrid {
+				padding-inline: 5px!important;
 				min-height: 30px;
 				margin-inline: auto;
 				margin-top: 1rem;
@@ -94,27 +95,6 @@ if(QS_SUBPAGE != "") {
 			input[type=range] {
 				padding: unset;
 			}
-			.columnResizer {
-				width: 10px;
-				padding: unset;
-				cursor: col-resize;
-			}
-			.columnResizer:before,
-			.columnResizer:after {
-				content: "";
-				height: 55%;
-				width: 1px;
-				background: var(--link-color-disabled-bg);
-				bottom: 3px;
-				position: absolute;
-			}
-			.columnResizer:before {  transform: translateX(2.5px); }
-			.columnResizer:after { transform: translateX(5.5px); }
-			.tGrid2 { width: calc(50.00% - 10px); }
-			.tGrid3 { width: calc(33.33% - 10px); }
-			.tGrid4 { width: calc(25.00% - 10px); }
-			.tGrid5 { width: calc(20.00% - 10px); }
-			.tGrid6 { width: calc(16.66% - 10px); }
 
 			.container {
 				background: var(--app-container);
@@ -140,10 +120,10 @@ if(QS_SUBPAGE != "") {
 							</div>
 							<h6>2 columns</h6>
 							<div value="6" class="range-2" min="0" max="12"></div>
-							<div class="templateGrid tGrid2" element-id="#6;">
+							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
-							<div class="templateGrid tGrid2" element-id="#6;">
+							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
 						</div>
@@ -348,7 +328,7 @@ if(QS_SUBPAGE != "") {
 			step:		col(1),
 			gap:		col(1),
 		}).change() {
-			
+
 		};
 		$('.range-3').limitslider({
 			values:		[
