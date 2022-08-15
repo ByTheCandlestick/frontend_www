@@ -318,9 +318,12 @@ if(QS_SUBPAGE != "") {
 		});
 		function rangeMovement(event, ui) {
 			// Vars
-				parentGrid = $(event.target).parent().parent()[0];
-				containers = $(parentGrid).find(".templateGrid")
-				var nextColWidthCURR, ColWidthCURR, nextColWidthNEW, colDiff = 0;
+				var parentGrid = $(event.target).parent().parent()[0],
+					containers = $(parentGrid).find(".templateGrid"),
+					nextColWidthCURR,
+					ColWidthCURR,
+					nextColWidthNEW,
+					colDiff = 0;
 			// Leftmost column
 				// remove class col-x
 					$(containers[ui.handleIndex]).removeClass(function() {
