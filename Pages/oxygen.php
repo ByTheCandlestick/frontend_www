@@ -320,8 +320,10 @@ if(QS_SUBPAGE != "") {
 			// Vars
 				var parentGrid = $(event.target).parent().parent()[0],
 					containers = $(parentGrid).find(".templateGrid");
-				let ColWidthCURR=0,
-					nextColWidthCURR=0;
+				let lColCurr=null,
+					rColCurr=null,
+					lColNew=ui.value,
+					rColNew=null;
 			// Leftmost column
 				// remove class col-x
 					$(containers[ui.handleIndex]).removeClass(function() {
@@ -330,13 +332,13 @@ if(QS_SUBPAGE != "") {
 						for(var i = 0; i < classes.length; i++ ) {
 							if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
 								toReturn += classes[i] +' ';
-								ColWidthCURR = parseInt(classes[i].match(/col-([0-9])+/)[1]);
+								lColCurr = parseInt(classes[i].match(/col-([0-9])+/)[1]);
 							}
 						}
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					$(containers[ui.handleIndex]).addClass("col-"+ui.value);
+					$(containers[ui.handleIndex]).addClass("col-"+lColNew);
 			// Rightmost column.
 				// remove class col-x
 					$(containers[ui.handleIndex+1]).removeClass(function() {
@@ -345,13 +347,13 @@ if(QS_SUBPAGE != "") {
 						for(var i = 0; i < classes.length; i++ ) {
 							if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
 								toReturn += classes[i] +' ';
-								nextColWidthCURR = parseInt(classes[i].match(/col-([0-9])+/)[1]);
+								rColCurr = parseInt(classes[i].match(/col-([0-9])+/)[1]);
 							}
 						}
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					console.log(ColWidthCURR+"-"+ui.value+"="+(ColWidthCURR - ui.value))
+					console.log(lColCurr+"-"+lColNew+"="+(lColCurr - lColNew))
 					$(containers[ui.handleIndex+1]).addClass("col-"+ parseInt(nextColWidthCURR + (ColWidthCURR - ui.value)));
 		}
 		$('.range-2').limitslider({
