@@ -320,9 +320,9 @@ if(QS_SUBPAGE != "") {
 			// Vars
 				var parentGrid = $(event.target).parent().parent()[0],
 					containers = $(parentGrid).find(".templateGrid"),
-					nextColWidthCURR,
-					ColWidthCURR,
-					nextColWidthNEW,
+					nextColWidthCURR = 0,
+					ColWidthCURR = 0,
+					nextColWidthNEW = 0,
 					colDiff = 0;
 			// Leftmost column
 				// remove class col-x
