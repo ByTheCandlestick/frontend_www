@@ -355,7 +355,7 @@ if(QS_SUBPAGE != "") {
 				// add class col-x
 					colDiff = ColWidthCURR - ui.value
 					console.
-					nextColWidthNEW = nextColWidthCURR - colDiff;
+					nextColWidthNEW = nextColWidthCURR-colDiff;
 					console.log(nextColWidthNEW);
 					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
 		}
