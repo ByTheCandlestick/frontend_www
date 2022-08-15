@@ -337,7 +337,7 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 		riot.mount('range', {
-			legend: 'temperature',
+			legend: 'Width',
 			min: 0,
 			max: 12,
 			step: 1,
@@ -345,12 +345,12 @@ if(QS_SUBPAGE != "") {
 			lowPoint: true,
 			lowToggle: true,
 			lowAdjective: ['over', 'under'],
-			low: 2,
+			low: 4,
 			combinator: ['and', 'or'],
 			highPoint: true,
 			highToggle: true,
 			highAdjective: ['under', 'over'],
-			high: 33,
+			high: 8,
 			invertToggle: true,
 			invert: 0
 		})
