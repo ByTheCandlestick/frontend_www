@@ -343,7 +343,7 @@ if(QS_SUBPAGE != "") {
 				col(6)
 			],
 			showRanges:	true,
-			left:		col(0),
+			left:		col(1),
 			right:		col(12),
 			step:		col(1),
 			gap:		col(1),
