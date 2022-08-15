@@ -321,8 +321,7 @@ if(QS_SUBPAGE != "") {
 				var parentGrid = $(event.target).parent().parent()[0],
 					containers = $(parentGrid).find(".templateGrid");
 				let ColWidthCURR=0,
-					nextColWidthCURR=0,
-					nextColWidthNEW=0;
+					nextColWidthCURR=0;
 			// Leftmost column
 				// remove class col-x
 					$(containers[ui.handleIndex]).removeClass(function() {
@@ -352,8 +351,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					console.log(nextColWidthNEW = +nextColWidthCURR + (ColWidthCURR - ui.value));
-					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
+					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthCURR + (ColWidthCURR - ui.value));
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
