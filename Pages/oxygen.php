@@ -356,7 +356,7 @@ if(QS_SUBPAGE != "") {
 					colDiff = ColWidthCURR - ui.value
 					console.
 					nextColWidthNEW = nextColWidthCURR-colDiff;
-					console.log(nextColWidthNEW);
+					console.log(nextColWidthCURR+"+"+colDiff+"="+nextColWidthNEW);
 					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
 		}
 		$('.range-2').limitslider({
