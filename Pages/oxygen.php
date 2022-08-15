@@ -351,7 +351,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthCURR + (ColWidthCURR - ui.value));
+					$(containers[ui.handleIndex+1]).addClass("col-"+ +nextColWidthCURR + (ColWidthCURR - ui.value));
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
