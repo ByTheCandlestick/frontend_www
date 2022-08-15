@@ -120,6 +120,7 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 			}
 		</style>
+		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/normalize.css"><link>
 		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/range.css"><link>
 		<link href="https://raw.githubusercontent.com/sakamies/range-multiple/master/skin.css"><link>
 		<script src="https://raw.githubusercontent.com/sakamies/range-multiple/master/range.tag" type="riot/tag"></script>
