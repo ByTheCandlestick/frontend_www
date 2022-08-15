@@ -120,6 +120,7 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 			}
 		</style>
+		<script src="http://vanderlee.github.io/limitslider/jquery.limitslider.js"></script>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
 				<div class="accordion-item container row dragulaCopy templateElements cat-columns">
@@ -332,35 +333,20 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		noUiSlider.create(document.getElementById('range-3'), {
-			range: {
-				'min': 1,
-				'max': 12
-			},
-			step: 150,
-			// Handles start at ...
-			start: [4,8],
-			// ... must be at least 300 apart
-			margin: 1,
-			// ... but no more than 600
-			limit: 12,
-			// Display colored bars between handles
-			connect: true,
-			// Put '0' at the bottom of the slider
-			direction: 'rtl',
-			orientation: 'horizontal',
-			// Move handle on tap, bars are draggable
-			behaviour: 'tap-drag',
-			tooltips: true,
-			format: wNumb({
-				decimals: 0
-			}),
-			// Show a scale with the slider
-			pips: {
-				mode: 'steps',
-				stepped: true,
-				density: 4
-			}
+		$('.range-2').limitslider({
+			values: [6];
+		});
+		$('.range-3').limitslider({
+			values: [4,8];
+		});
+		$('.range-4').limitslider({
+			values: [3,6,9];
+		});
+		$('.range-5').limitslider({
+			values: [2,4,8,10];
+		});
+		$('.range-6').limitslider({
+			values: [2,4,6,8,10];
 		});
 	});
 </script>
