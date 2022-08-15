@@ -335,23 +335,23 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 		$('.range-2').limitslider({
-			values: [6],
+			values:		[50],
 			step:		1,
 		});
 		$('.range-3').limitslider({
-			values: [4,8],
+			values:		[33,33],
 			step:		1,
 		});
 		$('.range-4').limitslider({
-			values: [3,6,9],
+			values:		[25,50,75],
 			step:		1,
 		});
 		$('.range-5').limitslider({
-			values: [2,4,8,10],
+			values:		[20,40,60,80],
 			step:		1,
 		});
 		$('.range-6').limitslider({
-			values:		[2,4,6,8,10],
+			values:		[16,33,50,66,83],
 			step:		1,
 		});
 	});
