@@ -319,8 +319,8 @@ if(QS_SUBPAGE != "") {
 		function rangeMovement(event, ui) {
 			// Vars
 				var parentGrid = $(event.target).parent().parent()[0],
-					containers = $(parentGrid).find(".templateGrid"),
-					nextColWidthCURR=0,
+					containers = $(parentGrid).find(".templateGrid");
+				let nextColWidthCURR=0,
 					ColWidthCURR=0,
 					nextColWidthNEW=0,
 					colDiff = 0;
