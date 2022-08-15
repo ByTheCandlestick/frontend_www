@@ -448,7 +448,7 @@ $(document).ready(() => {
 							})
 						})
 					} else {
-						$('.templateBase').html("Drag an element from the left hand side to start building the website!");
+						$('.templateBase').html("<p>Drag an element from the left hand side to start building the website!</p>");
 					}
 				}
 			},

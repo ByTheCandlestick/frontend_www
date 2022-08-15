@@ -34,6 +34,11 @@ if(QS_SUBPAGE != "") {
 				padding: unset;
 				overflow: hidden;
 			}
+			.templateBase p {
+				padding: 10px;
+				margin-left: 50%;
+				transform: translateX(-50%);
+			}
 			.accordion .templateElement,
 			.accordion .templateElementGrid {
 				width: calc(50% - 15px);
