@@ -221,7 +221,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>6 columns</h6>
-							<input type="range" multiple value="2,2,2,2,2" class="nouirange range-6" min="0" max="12"></input>
+							<input type="range" multiple value="2,4,6,8,10" class="nouirange range-6" min="0" max="12"></input>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
