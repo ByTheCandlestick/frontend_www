@@ -342,6 +342,7 @@ if(QS_SUBPAGE != "") {
 			values:		[
 				col(6)
 			],
+			showRanges:	true,
 			left:		col(0),
 			right:		col(12),
 			step:		col(1),
@@ -352,6 +353,7 @@ if(QS_SUBPAGE != "") {
 				col(4),
 				col(8)
 			],
+			showRanges:	true,
 			left:		col(0),
 			right:		col(12),
 			step:		col(1),
@@ -363,6 +365,7 @@ if(QS_SUBPAGE != "") {
 				col(6),
 				col(9)
 			],
+			showRanges:	true,
 			left:		col(0),
 			right:		col(12),
 			step:		col(1),
@@ -375,6 +378,7 @@ if(QS_SUBPAGE != "") {
 				col(4),
 				col(2)
 			],
+			showRanges:	true,
 			left:		col(0),
 			right:		col(12),
 			step:		col(1),
@@ -388,6 +392,7 @@ if(QS_SUBPAGE != "") {
 				col(2),
 				col(2)
 			],
+			showRanges:	true,
 			left:		col(0),
 			right:		col(12),
 			step:		col(1),
