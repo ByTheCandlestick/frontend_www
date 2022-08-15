@@ -322,7 +322,7 @@ if(QS_SUBPAGE != "") {
 			slide: function(event, ui) {
 				parentGrid = $(event.target).parent().parent()[0];
 				containers = $(parentGrid).find("templateGrid")
-				console.log(containers[ui.handleIndex])//.removeclass()
+				console.log(containers)//.removeclass()
 			},
 			values:		[
 				6
