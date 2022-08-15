@@ -322,7 +322,6 @@ if(QS_SUBPAGE != "") {
 					containers = $(parentGrid).find(".templateGrid");
 				let lColCurr=null,
 					rColCurr=null,
-					lColNew=parseInt(ui.value),
 					handle=parseInt(ui.handleIndex);
 			// Leftmost column
 				// remove class col-x
@@ -337,13 +336,8 @@ if(QS_SUBPAGE != "") {
 						}
 						return toReturn ; /* Returns all classes to be removed */
 					});
-				// check if isnt 1st handle
-					console.log(handle);
-					if(handle > 0) {
-						
-					}
 				// add class col-x
-					$(containers[handle]).addClass("col-"+lColNew);
+					$(containers[handle]).addClass("col-"+lColCurr + (lColCurr - lColNew));
 			// Rightmost column.
 				// remove class col-x
 					$(containers[handle+1]).removeClass(function() {
