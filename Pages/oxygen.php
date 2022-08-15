@@ -331,6 +331,7 @@ if(QS_SUBPAGE != "") {
 						for(var i = 0; i < classes.length; i++ ) {
 							if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
 								toReturn += classes[i] +' ';
+								console.log(classes[i].match(/col-([0-9])+/));
 								lColCurr = parseInt(classes[i].match(/col-([0-9])+/)[1]);
 							}
 						}
