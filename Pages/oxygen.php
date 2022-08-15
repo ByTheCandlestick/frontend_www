@@ -336,27 +336,27 @@ if(QS_SUBPAGE != "") {
 			});
 		});
 		$('.range-2').limitslider({
-			values:		[50],
+			values:		[6],
 			step:		1,
 			gap:		1,
 		});
 		$('.range-3').limitslider({
-			values:		[33,33],
+			values:		[4,4],
 			step:		1,
 			gap:		1,
 		});
 		$('.range-4').limitslider({
-			values:		[25,50,75],
+			values:		[3,3,3],
 			step:		1,
 			gap:		1,
 		});
 		$('.range-5').limitslider({
-			values:		[20,40,60,80],
+			values:		[2,2,4,2],
 			step:		1,
 			gap:		1,
 		});
 		$('.range-6').limitslider({
-			values:		[16,33,50,66,83],
+			values:		[2,2,2,2,2],
 			step:		1,
 			gap:		1,
 		});
