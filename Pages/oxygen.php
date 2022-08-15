@@ -338,7 +338,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					$(containers[handle]).addClass("col-"+lColCurr + (lColCurr - lColNew));
+					$(containers[handle]).addClass("col-"+lColCurr + (lColCurr - value));
 			// Rightmost column.
 				// remove class col-x
 					$(containers[handle+1]).removeClass(function() {
@@ -353,7 +353,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					$(containers[handle+1]).addClass("col-"+ parseInt(rColCurr + (lColCurr - lColNew)));
+					$(containers[handle+1]).addClass("col-"+ parseInt(rColCurr + (lColCurr - value)));
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
