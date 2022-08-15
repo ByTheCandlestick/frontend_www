@@ -351,7 +351,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
-					console.log(ColWidthCURR+"-"+ui.value+"="+ColWidthCURR - ui.value)
+					console.log(ColWidthCURR+"-"+ui.value+"="+(ColWidthCURR - ui.value))
 					nxtCol = nextColWidthCURR + (ColWidthCURR - ui.value)
 					$(containers[ui.handleIndex+1]).addClass("col-"+ nxtCol);
 		}
