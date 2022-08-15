@@ -338,6 +338,7 @@ if(QS_SUBPAGE != "") {
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// check if isnt 1st handle
+					cosole.log(handle);
 					if(handle > 0) {
 						
 					}
