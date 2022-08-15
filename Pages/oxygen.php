@@ -338,7 +338,7 @@ if(QS_SUBPAGE != "") {
 		$('.range-2').limitslider({
 			values:		[6],
 			step:		8.33,
-			gap:		1,
+			gap:		8.33,
 		});
 		$('.range-3').limitslider({
 			values:		[4,4],
