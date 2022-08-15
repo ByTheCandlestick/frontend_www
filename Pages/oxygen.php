@@ -333,7 +333,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		riot.mount('range', {
+		riot.mount('input[type=range]', {
 			legend: 'temperature',
 			min: 0,
 			max: 12,
