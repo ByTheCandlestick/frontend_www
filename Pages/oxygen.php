@@ -335,10 +335,10 @@ if(QS_SUBPAGE != "") {
 		});
 		riot.mount('range', {
 			legend: 'temperature',
-			min: -30,
-			max: 80,
+			min: 0,
+			max: 12,
 			step: 1,
-			units: '°C',
+			units: '',
 			lowPoint: true,
 			lowToggle: true,
 			lowAdjective: ['over', 'under'],
