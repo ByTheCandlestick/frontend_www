@@ -85,6 +85,7 @@ if(QS_SUBPAGE != "") {
 				margin-inline: auto;
 				margin-top: 1rem;
 				padding: unset;
+				margin-left: 0px;
 			}
 			.templateBase .templateElementGrid .templateGrid .dragulaContainer {
 				outline: grey dotted thin;
