@@ -323,7 +323,7 @@ if(QS_SUBPAGE != "") {
 			slide: function(event, ui) {
 				parentGrid = $(event.target).parent().parent()[0];
 				containers = $(parentGrid).find(".templateGrid")
-				nextColWidth = 0;
+				var nextColWidthCURR, nextColWidthNEW = null;
 				$(containers[ui.handleIndex]).removeClass(function() {
 					var toReturn = '',
 						classes = this.className.split(' ');
@@ -341,7 +341,7 @@ if(QS_SUBPAGE != "") {
 					for(var i = 0; i < classes.length; i++ ) {
 						if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
 							toReturn += classes[i] +' ';
-							console.log(nextColWidth = classes[i].match(/col-([0-9])+/))
+							nextColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
 						}
 					}
 					return toReturn ; /* Returns all classes to be removed */
