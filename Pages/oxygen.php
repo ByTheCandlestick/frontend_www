@@ -354,14 +354,16 @@ if(QS_SUBPAGE != "") {
 					});
 				// add class col-x
 					colDiff = ColWidthCURR - ui.value
+					console.
 					nextColWidthNEW = nextColWidthCURR - colDiff;
+					console.log(nextColWidthNEW);
 					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
 				rangeMovement(event, ui)
 			},
-			values:		[
+			values: [
 				6
 			],
 			showRanges:	true,
@@ -373,7 +375,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		})
 		$('.range-3').limitslider({
-			values:		[
+			slide: function(event, ui) {
+				rangeMovement(event, ui)
+			},
+			values: [
 				4,
 				8
 			],
@@ -386,7 +391,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		});
 		$('.range-4').limitslider({
-			values:		[
+			slide: function(event, ui) {
+				rangeMovement(event, ui)
+			},
+			values: [
 				3,
 				6,
 				9
@@ -400,7 +408,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		});
 		$('.range-5').limitslider({
-			values:		[
+			slide: function(event, ui) {
+				rangeMovement(event, ui)
+			},
+			values: [
 				2,
 				2,
 				4,
@@ -415,7 +426,10 @@ if(QS_SUBPAGE != "") {
 			gap:		1,
 		});
 		$('.range-6').limitslider({
-			values:		[
+			slide: function(event, ui) {
+				rangeMovement(event, ui)
+			},
+			values: [
 				2,
 				2,
 				2,
