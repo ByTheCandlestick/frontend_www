@@ -321,7 +321,7 @@ if(QS_SUBPAGE != "") {
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
 				parentGrid = $(event.target).parent().parent()[0];
-				containers = $(parentGrid).find("templateGrid")
+				containers = $(parentGrid).find(".templateGrid")
 				console.log(containers)//.removeclass()
 			},
 			values:		[
