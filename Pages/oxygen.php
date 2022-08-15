@@ -342,23 +342,23 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-3').limitslider({
 			values:		[4,4],
-			step:		1,
-			gap:		1,
+			step:		8.33,
+			gap:		8.33,
 		});
 		$('.range-4').limitslider({
 			values:		[3,3,3],
-			step:		1,
-			gap:		1,
+			step:		8.33,
+			gap:		8.33,
 		});
 		$('.range-5').limitslider({
 			values:		[2,2,4,2],
-			step:		1,
-			gap:		1,
+			step:		8.33,
+			gap:		8.33,
 		});
 		$('.range-6').limitslider({
 			values:		[2,2,2,2,2],
-			step:		1,
-			gap:		1,
+			step:		8.33,
+			gap:		8.33,
 		});
 	});
 </script>
