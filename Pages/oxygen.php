@@ -330,7 +330,7 @@ if(QS_SUBPAGE != "") {
 						for(var i = 0; i < classes.length; i++ ) {
 							if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
 								toReturn += classes[i] +' ';
-								ColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
+								ColWidthCURR = parseInt(classes[i].match(/col-([0-9])+/)[1]);
 							}
 						}
 						return toReturn ; /* Returns all classes to be removed */
@@ -345,15 +345,14 @@ if(QS_SUBPAGE != "") {
 						for(var i = 0; i < classes.length; i++ ) {
 							if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
 								toReturn += classes[i] +' ';
-								nextColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
+								nextColWidthCURR = parseInt(classes[i].match(/col-([0-9])+/)[1]);
 							}
 						}
 						return toReturn ; /* Returns all classes to be removed */
 					});
 				// add class col-x
 					console.log(ColWidthCURR+"-"+ui.value+"="+(ColWidthCURR - ui.value))
-					nxtCol = nextColWidthCURR + (ColWidthCURR - ui.value)
-					$(containers[ui.handleIndex+1]).addClass("col-"+ nxtCol);
+					$(containers[ui.handleIndex+1]).addClass("col-"+ parseInt(nextColWidthCURR + (ColWidthCURR - ui.value)));
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
