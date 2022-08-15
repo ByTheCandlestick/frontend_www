@@ -119,7 +119,7 @@ if(QS_SUBPAGE != "") {
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row templateElements cat-columns">
+				<div class="accordion-item container row dragulaCopy templateElements cat-columns">
 					<h2 class="accordion-header p-0 dragulaDisabled">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#columns" aria-controls="columns">
 							<h5>Columns</h5>
@@ -310,7 +310,7 @@ if(QS_SUBPAGE != "") {
 					return el.parentNode.classList.contains('dragulaCopy');
 				},
 				accepts: function (el, target, source, sibling) {
-					return true;
+					return $(target).hasClass('dragulaContainer');
 				},
 				invalid: function (el, handle) {
 					return el.classList.contains('dragulaDisabled');
