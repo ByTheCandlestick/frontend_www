@@ -343,8 +343,10 @@ if(QS_SUBPAGE != "") {
 					if(handle > 0) {
 						
 					} else {
-						$(containers[handle]).addClass("col-"+lColCurr + (lColCurr - value));
+						lColNew = parseInt(lColCurr + (lColCurr - value));
 					}
+					$(containers[handle]).attr('element-id', '#'+lColNew+';')
+					$(containers[handle]).addClass("col-"+lColNew);
 			// Rightmost column.
 				// remove class col-x
 					$(containers[handle+1]).removeClass(function() {
@@ -362,8 +364,11 @@ if(QS_SUBPAGE != "") {
 					if(handle > 0) {
 						
 					} else {
-						$(containers[handle+1]).addClass("col-"+ parseInt(rColCurr + (lColCurr - value)));
+						rColNew = parseInt(rColCurr + (lColCurr - value))
 					}
+					$(containers[handle+1]).attr('element-id', '#'+lColNew+';')
+					$(containers[handle+1]).addClass("col-"+rColNew);
+					$(containers[handle+1]).addClass("col-"+lColNew);
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
