@@ -367,7 +367,7 @@ if(QS_SUBPAGE != "") {
 			min:		0,
 			max:		12,
 			left:		1,
-			right:		12,
+			right:		11,
 			step:		1,
 			gap:		1,
 		})
@@ -383,7 +383,7 @@ if(QS_SUBPAGE != "") {
 			min:		0,
 			max:		12,
 			left:		1,
-			right:		12,
+			right:		11,
 			step:		1,
 			gap:		1,
 		});
@@ -400,7 +400,7 @@ if(QS_SUBPAGE != "") {
 			min:		0,
 			max:		12,
 			left:		1,
-			right:		12,
+			right:		11,
 			step:		1,
 			gap:		1,
 		});
@@ -418,7 +418,7 @@ if(QS_SUBPAGE != "") {
 			min:		0,
 			max:		12,
 			left:		1,
-			right:		12,
+			right:		11,
 			step:		1,
 			gap:		1,
 		});
@@ -437,7 +437,7 @@ if(QS_SUBPAGE != "") {
 			min:		0,
 			max:		12,
 			left:		1,
-			right:		12,
+			right:		11,
 			step:		1,
 			gap:		1,
 		});
