@@ -351,7 +351,7 @@ if(QS_SUBPAGE != "") {
 					});
 				// add class col-x
 					colDiff = ColWidthCURR - ui.value
-					nextColWidthNEW = nextColWidthCURR + colDiff;
+					nextColWidthNEW = nextColWidthCURR - colDiff;
 					$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
 		}
 		$('.range-2').limitslider({
