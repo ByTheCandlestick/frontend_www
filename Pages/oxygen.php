@@ -323,13 +323,14 @@ if(QS_SUBPAGE != "") {
 			slide: function(event, ui) {
 				parentGrid = $(event.target).parent().parent()[0];
 				containers = $(parentGrid).find(".templateGrid")
-				var nextColWidthCURR, nextColWidthNEW = null;
+				var nextColWidthCURR, ColWidthCURR, nextColWidthNEW = null;
 				$(containers[ui.handleIndex]).removeClass(function() {
 					var toReturn = '',
 						classes = this.className.split(' ');
 					for(var i = 0; i < classes.length; i++ ) {
 						if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
 							toReturn += classes[i] +' ';
+							ColWidthCURR = classes[i].match(/col-([0-9])+/)[1]
 						}
 					}
 					return toReturn ; /* Returns all classes to be removed */
@@ -346,7 +347,7 @@ if(QS_SUBPAGE != "") {
 					}
 					return toReturn ; /* Returns all classes to be removed */
 				});
-				$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidth);
+				$(containers[ui.handleIndex+1]).addClass("col-"+nextColWidthNEW);
 			},
 			values:		[
 				6
