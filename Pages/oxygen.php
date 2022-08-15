@@ -119,7 +119,7 @@ if(QS_SUBPAGE != "") {
 		</style>
 		<div class="col-lg-3">
 			<div class="accordion accordion-flush" id="SectionElements">
-				<div class="accordion-item container row dragulaCopy templateElements cat-columns">
+				<div class="accordion-item container row templateElements cat-columns">
 					<h2 class="accordion-header p-0 dragulaDisabled">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#columns" aria-controls="columns">
 							<h5>Columns</h5>
@@ -327,6 +327,7 @@ if(QS_SUBPAGE != "") {
 		).on('drop', function(el, target, source, sibling) {
 			$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 				$(this).removeClass('accordion-body');
+				$(target).
 			});
 		});
 	});
