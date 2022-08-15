@@ -310,16 +310,16 @@ if(QS_SUBPAGE != "") {
 					return $(el).hasClass('dragulaContainer');
 				},
 				moves: function (el, source, handle, sibling) {
-					return $(el).hasClass("templateElementGrid");
+					return $(el).hasClass('templateElementGrid');
 				},
 				copy: function(el, source) {
-					return el.parentNode.classList.contains('dragulaCopy');
+					return $(el).hasClass('dragulaCopy');
 				},
 				accepts: function (el, target, source, sibling) {
 					return $(target).hasClass('dragulaContainer');
 				},
 				invalid: function (el, handle) {
-					return el.classList.contains('dragulaDisabled');
+					return $(el).hasClass('dragulaDisabled');
 				},
 				direction: 'vertical',
 				copySortSource: false,
