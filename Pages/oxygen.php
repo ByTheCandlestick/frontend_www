@@ -318,7 +318,7 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
-				website.layout.rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui);
 			},
 			values: [
 				6
@@ -333,7 +333,7 @@ if(QS_SUBPAGE != "") {
 		})
 		$('.range-3').limitslider({
 			slide: function(event, ui) {
-				website.layout.rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui);
 			},
 			values: [
 				4,
@@ -349,7 +349,7 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-4').limitslider({
 			slide: function(event, ui) {
-				website.layout.rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui);
 			},
 			values: [
 				3,
@@ -366,7 +366,7 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-5').limitslider({
 			slide: function(event, ui) {
-				website.layout.rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui);
 			},
 			values: [
 				2,
@@ -384,7 +384,7 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-6').limitslider({
 			slide: function(event, ui) {
-				website.layout.rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui);
 			},
 			values: [
 				2,
