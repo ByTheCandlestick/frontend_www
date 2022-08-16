@@ -513,7 +513,7 @@ $(document).ready(() => {
 					$('.range-2').each(function() {
 						$(this).limitslider({
 							slide: function(event, ui) {
-								rangeMovement(event, ui);
+								website.layout.rangeMovement(event, ui);
 							},
 							min:		0,
 							max:		12,
@@ -526,7 +526,7 @@ $(document).ready(() => {
 					$('.range-3').each(function() {
 						$(this).limitslider({
 							slide: function(event, ui) {
-								rangeMovement(event, ui);
+								website.layout.rangeMovement(event, ui);
 							},
 							min:		0,
 							max:		12,
@@ -539,7 +539,7 @@ $(document).ready(() => {
 					$('.range-4').each(function() {
 						$(this).limitslider({
 							slide: function(event, ui) {
-								rangeMovement(event, ui);
+								website.layout.rangeMovement(event, ui);
 							},
 							min:		0,
 							max:		12,
@@ -552,7 +552,7 @@ $(document).ready(() => {
 					$('.range-5').each(function() {
 						$(this).limitslider({
 							slide: function(event, ui) {
-								rangeMovement(event, ui);
+								website.layout.rangeMovement(event, ui);
 							},
 							min:		0,
 							max:		12,
@@ -565,7 +565,7 @@ $(document).ready(() => {
 					$('.range-6').each(function() {
 						$(this).limitslider({
 							slide: function(event, ui) {
-								rangeMovement(event, ui);
+								website.layout.rangeMovement(event, ui);
 							},
 							min:		0,
 							max:		12,

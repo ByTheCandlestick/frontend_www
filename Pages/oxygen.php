@@ -315,97 +315,39 @@ if(QS_SUBPAGE != "") {
 			$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 				$(this).removeClass('accordion-body');
 			});
-			initSliders();
+			website.layout.initializeSliders();
 		});
-		function rangeMovement(event, ui) {
-			// Vars
-				var parentGrid = $(event.target).parent().parent()[0],
-					containers = $(parentGrid).find(".templateGrid");
-				let lColCurr=null,
-					lColNew=null,
-					rColCurr=null,
-					rColNew=null,
-					handle=parseInt(ui.handleIndex),
-					value=parseInt(ui.value);
-			// Left column
-				// remove class col-x
-					$(containers[handle]).removeClass(function() {
-						var toReturn = '',
-							classes = this.className.split(' ');
-						for(var i = 0; i < classes.length; i++ ) {
-							if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
-								toReturn += classes[i] +' ';
-								lColCurr = parseInt(classes[i].substring(4));
-							}
-						}
-						return toReturn; /* Returns all classes to be removed */
-					});
-				// add class col-x and element-id attribute
-					if(handle > 0) {
-						lColNew = parseInt(value - ui.values[handle-1]);
-						console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
-					} else {
-						lColNew = parseInt(lColCurr - (lColCurr - value));
-						console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
-					}
-					$(containers[handle]).attr('element-id', '#'+lColNew+';')
-					$(containers[handle]).addClass("col-"+lColNew);
-			// Righ column.
-				// remove class col-x
-					$(containers[handle+1]).removeClass(function() {
-						var toReturn = '',
-							classes = this.className.split(' ');
-						for(var i = 0; i < classes.length; i++ ) {
-							if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
-								toReturn += classes[i] +' ';
-								rColCurr = parseInt(classes[i].substring(4));
-							}
-						}
-						return toReturn; /* Returns all classes to be removed */
-					});
-				// add class col-x and element-id attribute
-					if(handle > 0) {
-						rColNew = parseInt(rColCurr + (lColCurr - (value - ui.values[handle-1])));
-						//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + ( "+value+" - "+ui.values[handle-1]+" ) ) = "+rColNew);
-					} else {
-						rColNew = parseInt(rColCurr + (lColCurr - value));
-						//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
-					}
-					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
-					$(containers[handle+1]).addClass("col-"+rColNew);
-			//
-		}
-			$('.range-2').each(function() {
-				$(this).limitslider({
-					values:	[ 6 ],
-					min:	0,
-					max:	12,
-				})
+		$('.range-2').each(function() {
+			$(this).limitslider({
+				values:	[ 6 ],
+				min:	0,
+				max:	12,
+			})
+		});
+		$('.range-3').each(function() {
+			$(this).limitslider({
+				values:	[ 4, 8 ],
+				min:	0,
+				max:	12,
 			});
-			$('.range-3').each(function() {
-				$(this).limitslider({
-					values:	[ 4, 8 ],
-					min:	0,
-					max:	12,
-				});
+		});
+		$('.range-4').each(function() {
+			$(this).limitslider({
+				values: [ 3, 6, 9 ],
+				min:	0,
+				max:	12,
 			});
-			$('.range-4').each(function() {
-				$(this).limitslider({
-					values: [ 3, 6, 9 ],
-					min:	0,
-					max:	12,
-				});
+		});
+		$('.range-5').each(function() {
+			$(this).limitslider({
+				values: [ 2, 4, 8, 10 ],
+				min:	0,
+				max:	12,
 			});
-			$('.range-5').each(function() {
-				$(this).limitslider({
-					values: [ 2, 4, 8, 10 ],
-					min:	0,
-					max:	12,
-				});
-			});
-			$('.range-6').each(function() {
-				$(this).limitslider({
-					values: [ 2, 4, 6, 8, 10 ],
+		});
+		$('.range-6').each(function() {
+			$(this).limitslider({
+				values: [ 2, 4, 6, 8, 10 ],
 					min:	0,
 					max:	12,
 				});
