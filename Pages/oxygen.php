@@ -294,9 +294,7 @@ if(QS_SUBPAGE != "") {
 					return ($(el).hasClass('templateElementGrid') && !$(handle).hasClass('ui-slider-handle'))? true : false;
 				},
 				copy: function(el, source) {
-					console.log(el);
-					console.log(source);
-					return true;
+					return $(source).hasClass('dragulaCopy');
 				},
 				accepts: function (el, target, source, sibling) {
 					return $(target).hasClass('dragulaContainer');
