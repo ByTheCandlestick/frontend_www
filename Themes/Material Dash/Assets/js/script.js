@@ -416,7 +416,7 @@ $(document).ready(() => {
 						sections.shift();
 						sections.forEach(function(section) {
 							columns = section.split('#')
-							colWidths = columns[0].replace(';', '');
+							colWidths = columns;
 							colCount = columns[0].replace('|', '');
 							currCol = 0;
 							columns.shift();
