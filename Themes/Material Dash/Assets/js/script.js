@@ -453,6 +453,7 @@ $(document).ready(() => {
 					} else {
 						$('.templateBase').html("<p>Drag an element from the left hand side to start building the website!</p>");
 					}
+					initializeSliders();
 				},
 				rangeMovement(event, ui) {
 					// Vars
