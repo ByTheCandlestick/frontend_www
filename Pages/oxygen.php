@@ -316,67 +316,9 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		function rangeMovement(event, ui) {
-			// Vars
-				var parentGrid = $(event.target).parent().parent()[0],
-					containers = $(parentGrid).find(".templateGrid");
-				let lColCurr=null,
-					lColNew=null,
-					rColCurr=null,
-					rColNew=null,
-					handle=parseInt(ui.handleIndex),
-					value=parseInt(ui.value);
-			// Left column
-				// remove class col-x
-					$(containers[handle]).removeClass(function() {
-						var toReturn = '',
-							classes = this.className.split(' ');
-						for(var i = 0; i < classes.length; i++ ) {
-							if( /col-[0-9]+/.test( classes[i] ) ) { /* Filters */
-								toReturn += classes[i] +' ';
-								lColCurr = parseInt(classes[i].substring(4));
-							}
-						}
-						return toReturn; /* Returns all classes to be removed */
-					});
-				// add class col-x and element-id attribute
-					if(handle > 0) {
-						lColNew = parseInt(value - ui.values[handle-1]);
-						//console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
-					} else {
-						lColNew = parseInt(lColCurr - (lColCurr - value));
-						//console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
-					}
-					$(containers[handle]).attr('element-id', '#'+lColNew+';')
-					$(containers[handle]).addClass("col-"+lColNew);
-			// Righ column.
-				// remove class col-x
-					$(containers[handle+1]).removeClass(function() {
-						var toReturn = '',
-							classes = this.className.split(' ');
-						for(var i = 0; i < classes.length; i++ ) {
-							if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
-								toReturn += classes[i] +' ';
-								rColCurr = parseInt(classes[i].substring(4));
-							}
-						}
-						return toReturn; /* Returns all classes to be removed */
-					});
-				// add class col-x and element-id attribute
-					if(handle > 0) {
-						rColNew = parseInt(rColCurr + (lColCurr - (value - ui.values[handle-1])));
-						//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + ( "+value+" - "+ui.values[handle-1]+" ) ) = "+rColNew);
-					} else {
-						rColNew = parseInt(rColCurr + (lColCurr - value));
-						//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
-					}
-					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
-					$(containers[handle+1]).addClass("col-"+rColNew);
-			//
-		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
-				rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui)
 			},
 			values: [
 				6
@@ -391,7 +333,7 @@ if(QS_SUBPAGE != "") {
 		})
 		$('.range-3').limitslider({
 			slide: function(event, ui) {
-				rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui)
 			},
 			values: [
 				4,
@@ -407,7 +349,7 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-4').limitslider({
 			slide: function(event, ui) {
-				rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui)
 			},
 			values: [
 				3,
@@ -424,7 +366,7 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-5').limitslider({
 			slide: function(event, ui) {
-				rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui)
 			},
 			values: [
 				2,
@@ -442,7 +384,7 @@ if(QS_SUBPAGE != "") {
 		});
 		$('.range-6').limitslider({
 			slide: function(event, ui) {
-				rangeMovement(event, ui)
+				website.layout.rangeMovement(event, ui)
 			},
 			values: [
 				2,
