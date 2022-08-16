@@ -416,15 +416,17 @@ $(document).ready(() => {
 						sections.shift();
 						sections.forEach(function(section) {
 							columns = section.split('#')
-							colWidth = columns[0].replace(';', '');
+							colWidths = columns[0].replace(';', '');
 							colCount = columns[0].replace('|', '');
 							currCol = 0;
 							columns.shift();
 							if(colCount > 1) {
-								elem = $("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+								parent = $("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 									$(this).removeClass('accordion-body');
 								});
-								console.log(elem);
+								children = $(parent).find('.templateGrid');
+								console.log(children);
+								console.log(colWidths);
 								contained = true;
 							} else {
 								contained = false;
