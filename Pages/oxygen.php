@@ -316,7 +316,7 @@ if(QS_SUBPAGE != "") {
 				$(this).removeClass('accordion-body');
 			});
 		});
-		rangeMovement(event, ui) {
+		function rangeMovement(event, ui) {
 			// Vars
 				var parentGrid = $(event.target).parent().parent()[0],
 					containers = $(parentGrid).find(".templateGrid");
