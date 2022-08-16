@@ -369,8 +369,8 @@ if(QS_SUBPAGE != "") {
 						rColNew = parseInt(rColCurr + (lColCurr - value));
 						console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
 					}
-					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
-					$(containers[handle+1]).addClass("col-"+rColNew);
+					$(containers[handle]).attr('element-id', '#'+rColNew+';')
+					$(containers[handle]).addClass("col-"+rColNew);
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
