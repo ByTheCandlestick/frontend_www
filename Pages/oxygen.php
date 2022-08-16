@@ -342,10 +342,10 @@ if(QS_SUBPAGE != "") {
 				// add class col-x and element-id attribute
 					if(handle > 0) {
 						lColNew = parseInt(value - ui.values[handle-1]);
-						//console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
+						console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
 					} else {
 						lColNew = parseInt(lColCurr - (lColCurr - value));
-						//console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
+						console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
 					}
 					$(containers[handle]).attr('element-id', '#'+lColNew+';')
 					$(containers[handle]).addClass("col-"+lColNew);
