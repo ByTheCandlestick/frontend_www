@@ -344,6 +344,7 @@ if(QS_SUBPAGE != "") {
 						
 					} else {
 						lColNew = parseInt(lColCurr - (lColCurr - value));
+						console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
 					}
 					$(containers[handle]).attr('element-id', '#'+lColNew+';')
 					$(containers[handle]).addClass("col-"+lColNew);
@@ -363,15 +364,13 @@ if(QS_SUBPAGE != "") {
 				// add class col-x
 					if(handle > 0) {
 						rColNew = parseInt(value - ui.values[handle-1]);
+						console.log("Right: "+value+" - "+ui.values[handle-1]+" = "+rColNew);
 					} else {
-						rColNew = parseInt(rColCurr + (lColCurr - value))
+						rColNew = parseInt(rColCurr + (lColCurr - value));
+						console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
 					}
 					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
 					$(containers[handle+1]).addClass("col-"+rColNew);
-
-					
-					console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
-					console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew)
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
