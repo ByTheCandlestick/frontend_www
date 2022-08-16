@@ -423,8 +423,9 @@ $(document).ready(() => {
 							if(colCount > 1) {
 								$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 									$(this).removeClass('accordion-body');
+								}).children(function() {
+									console.log(this);
 								});
-								console.log($("div[element-id='$"+colCount+"|'] .templateGrid"))
 								contained = true;
 							} else {
 								contained = false;
