@@ -429,7 +429,7 @@ $(document).ready(() => {
 								console.log(colWidths);
 
 								for (let i = 0; i < children.length; i++) {
-									colWidths[i].replace(';', '');
+									colWidths[i].replace(/;/, '');
 									$(children[i]).removeClass(function() {
 										var toReturn = '',
 											classes = this.className.split(' ');
