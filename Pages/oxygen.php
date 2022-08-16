@@ -362,7 +362,7 @@ if(QS_SUBPAGE != "") {
 					});
 				// add class col-x
 					if(handle > 0) {
-						
+						rColNew = parseInt(value - ui.values[handle-1]);
 					} else {
 						rColNew = parseInt(rColCurr + (lColCurr - value))
 					}
