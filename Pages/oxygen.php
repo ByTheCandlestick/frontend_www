@@ -377,20 +377,22 @@ if(QS_SUBPAGE != "") {
 		}
 		
 		function initSliders() {
-			$('.range-2').each().limitslider({
-				slide: function(event, ui) {
-					rangeMovement(event, ui);
-				},
-				values: [
-					6
-				],
-				showRanges:	true,
-				min:		0,
-				max:		12,
-				left:		1,
-				right:		11,
-				step:		1,
-				gap:		1,
+			$('.range-2').each(function() {
+				$(this).limitslider({
+					slide: function(event, ui) {
+						rangeMovement(event, ui);
+					},
+					values: [
+						6
+					],
+					showRanges:	true,
+					min:		0,
+					max:		12,
+					left:		1,
+					right:		11,
+					step:		1,
+					gap:		1,
+				})
 			})
 			$('.range-3').each().limitslider({
 				slide: function(event, ui) {
