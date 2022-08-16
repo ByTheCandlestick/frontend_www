@@ -363,14 +363,14 @@ if(QS_SUBPAGE != "") {
 					});
 				// add class col-x
 					if(handle > 0) {
-						rColNew = parseInt(value - ui.values[handle-1]);
-						console.log("Right: "+value+" - "+ui.values[handle-1]+" = "+rColNew);
+						rColNew = parseInt(rColCurr + ((ui.values[handle-1] + rColCurr) - value));
+						console.log("Right: "+rColCurr+" + ( ( "+ui.values[handle-1]+" + "+rColCurr+" ) + "+value+" ) = "+rColNew);
 					} else {
 						rColNew = parseInt(rColCurr + (lColCurr - value));
 						console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
 					}
-					$(containers[handle]).attr('element-id', '#'+rColNew+';')
-					$(containers[handle]).addClass("col-"+rColNew);
+					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
+					$(containers[handle+1]).addClass("col-"+rColNew);
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
