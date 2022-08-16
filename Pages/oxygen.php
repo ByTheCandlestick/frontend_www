@@ -342,10 +342,10 @@ if(QS_SUBPAGE != "") {
 				// add class col-x
 					if(handle > 0) {
 						lColNew = parseInt(value - ui.values[handle-1]);
-						console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
+						//console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
 					} else {
 						lColNew = parseInt(lColCurr - (lColCurr - value));
-						console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
+						//console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
 					}
 					$(containers[handle]).attr('element-id', '#'+lColNew+';')
 					$(containers[handle]).addClass("col-"+lColNew);
@@ -365,10 +365,10 @@ if(QS_SUBPAGE != "") {
 				// add class col-x
 					if(handle > 0) {
 						rColNew = parseInt(rColCurr + (lColCurr - (value - ui.values[handle-1])));
-						console.log("Right: "+rColCurr+" + ( "+lColCurr+" + ( "+value+" - "+ui.values[handle-1]+" ) ) = "+rColNew);
+						//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + ( "+value+" - "+ui.values[handle-1]+" ) ) = "+rColNew);
 					} else {
 						rColNew = parseInt(rColCurr + (lColCurr - value));
-						console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
+						//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
 					}
 					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
 					$(containers[handle+1]).addClass("col-"+rColNew);
