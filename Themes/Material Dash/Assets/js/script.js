@@ -515,10 +515,6 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								rangeMovement(event, ui);
 							},
-							values: [
-								6
-							],
-							showRanges:	true,
 							min:		0,
 							max:		12,
 							left:		1,
@@ -532,11 +528,6 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								rangeMovement(event, ui);
 							},
-							values: [
-								4,
-								8
-							],
-							showRanges:	true,
 							min:		0,
 							max:		12,
 							left:		1,
@@ -550,12 +541,6 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								rangeMovement(event, ui);
 							},
-							values: [
-								3,
-								6,
-								9
-							],
-							showRanges:	true,
 							min:		0,
 							max:		12,
 							left:		1,
@@ -569,13 +554,6 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								rangeMovement(event, ui);
 							},
-							values: [
-								2,
-								4,
-								8,
-								10
-							],
-							showRanges:	true,
 							min:		0,
 							max:		12,
 							left:		1,
@@ -589,14 +567,6 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								rangeMovement(event, ui);
 							},
-							values: [
-								2,
-								4,
-								6,
-								8,
-								10
-							],
-							showRanges:	true,
 							min:		0,
 							max:		12,
 							left:		1,
