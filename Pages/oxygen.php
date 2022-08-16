@@ -75,6 +75,7 @@ if(QS_SUBPAGE != "") {
 			.templateElementMenu,
 			.accordion .templateElement input,
 			.accordion .templateElementGrid .templateGrid,
+			.accordion .templateElementGrid .range,
 			.accordion .templateElementGrid .columnResizer,
 			.templateBase .templateElementGrid > div > h6 {
 				display: none;
@@ -120,7 +121,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>2 columns</h6>
-							<div class="range-2"></div>
+							<div class="range range-2"></div>
 							<div class="templateGrid col-6" element-id="#6;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -137,7 +138,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>3 columns</h6>
-							<div class="range-3"></div>
+							<div class="range range-3"></div>
 							<div class="templateGrid col-4" element-id="#4;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -157,7 +158,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>4 columns</h6>
-							<div class="range-4"></div>
+							<div class="range range-4"></div>
 							<div class="templateGrid col-3" element-id="#3;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -180,7 +181,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>5 columns</h6>
-							<div class="range-5"></div>
+							<div class="range range-5"></div>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
@@ -206,7 +207,7 @@ if(QS_SUBPAGE != "") {
 								</a>
 							</div>
 							<h6>6 columns</h6>
-							<div class="range-6"></div>
+							<div class="range range-6"></div>
 							<div class="templateGrid col-2" element-id="#2;">
 								<div class="dragulaContainer"></div>
 							</div>
