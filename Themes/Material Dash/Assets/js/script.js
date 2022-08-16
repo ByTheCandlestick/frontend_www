@@ -427,6 +427,22 @@ $(document).ready(() => {
 								children = $(parent).find('.templateGrid');
 								console.log(children);
 								console.log(colWidths);
+
+								for (let i = 0; i < children.length; i++) {
+									$(children[i]).removeClass(function() {
+										var toReturn = '',
+											classes = this.className.split(' ');
+										for(var i = 0; i < classes.length; i++ ) {
+											if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
+												toReturn += classes[i] +' ';
+												rColCurr = parseInt(classes[i].substring(4));
+											}
+										}
+										return toReturn; /* Returns all classes to be removed */
+									});
+								  }
+								  
+
 								contained = true;
 							} else {
 								contained = false;
