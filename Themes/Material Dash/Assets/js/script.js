@@ -427,7 +427,7 @@ $(document).ready(() => {
 								children = $(parent).find('.templateGrid');
 								for (let i = 0; i < children.length; i++) {
 									let widths;
-									widths[i] = colWidths[i].split(';');
+									widths = colWidths[i].split(';');
 									$(children[i]).removeClass(function() {
 										var toReturn = '',
 											classes = this.className.split(' ');
