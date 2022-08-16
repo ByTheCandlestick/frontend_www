@@ -439,7 +439,7 @@ $(document).ready(() => {
 											}
 										}
 										return toReturn; /* Returns all classes to be removed */
-									}).attr('element-id', '#'+colWidths[i]+';').addClass("col-"+colWidths[i]);
+									}).attr('element-id', '#'+colWidths[i][0]+';').addClass("col-"+colWidths[i][0]);
 								}
 								contained = true;
 							} else {
