@@ -426,7 +426,7 @@ $(document).ready(() => {
 								});
 								children = $(parent).find('.templateGrid');
 								for (let i = 0; i < children.length; i++) {
-									colWidths[i].split(';');
+									widths = colWidths[i].split(';');
 									$(children[i]).removeClass(function() {
 										var toReturn = '',
 											classes = this.className.split(' ');
@@ -436,8 +436,8 @@ $(document).ready(() => {
 											}
 										}
 										return toReturn; /* Returns all classes to be removed */
-									}).attr('element-id', '#'+colWidths[i][0]+';').addClass("col-"+colWidths[i][0]);
-									console.log(colWidths[i]);
+									}).attr('element-id', '#'+Widths[i][0]+';').addClass("col-"+Widths[i][0]);
+									console.log(widths[i]);
 								}
 								contained = true;
 							} else {
