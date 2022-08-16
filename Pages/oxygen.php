@@ -294,7 +294,9 @@ if(QS_SUBPAGE != "") {
 					return ($(el).hasClass('templateElementGrid') && !$(handle).hasClass('ui-slider-handle'))? true : false;
 				},
 				copy: function(el, source) {
-					return $(el).hasClass('dragulaCopy');
+					console.log(el);
+					console.log(source);
+					return true;
 				},
 				accepts: function (el, target, source, sibling) {
 					return $(target).hasClass('dragulaContainer');
@@ -326,7 +328,7 @@ if(QS_SUBPAGE != "") {
 					rColNew=null,
 					handle=parseInt(ui.handleIndex),
 					value=parseInt(ui.value);
-			// Leftmost column
+			// Left column
 				// remove class col-x
 					$(containers[handle]).removeClass(function() {
 						var toReturn = '',
@@ -339,7 +341,7 @@ if(QS_SUBPAGE != "") {
 						}
 						return toReturn; /* Returns all classes to be removed */
 					});
-				// add class col-x
+				// add class col-x and element-id attribute
 					if(handle > 0) {
 						lColNew = parseInt(value - ui.values[handle-1]);
 						//console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
@@ -349,7 +351,7 @@ if(QS_SUBPAGE != "") {
 					}
 					$(containers[handle]).attr('element-id', '#'+lColNew+';')
 					$(containers[handle]).addClass("col-"+lColNew);
-			// Rightmost column.
+			// Righ column.
 				// remove class col-x
 					$(containers[handle+1]).removeClass(function() {
 						var toReturn = '',
@@ -362,7 +364,7 @@ if(QS_SUBPAGE != "") {
 						}
 						return toReturn; /* Returns all classes to be removed */
 					});
-				// add class col-x
+				// add class col-x and element-id attribute
 					if(handle > 0) {
 						rColNew = parseInt(rColCurr + (lColCurr - (value - ui.values[handle-1])));
 						//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + ( "+value+" - "+ui.values[handle-1]+" ) ) = "+rColNew);
@@ -372,6 +374,7 @@ if(QS_SUBPAGE != "") {
 					}
 					$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
 					$(containers[handle+1]).addClass("col-"+rColNew);
+			//
 		}
 		$('.range-2').limitslider({
 			slide: function(event, ui) {
