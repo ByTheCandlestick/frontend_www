@@ -510,7 +510,7 @@ $(document).ready(() => {
 					//
 				},
 				initializeSliders() {
-					$('.range-2').each(function() {
+					$('.templateBase .range-2').each(function() {
 						if(!$(this).hasClass('initialized')) {
 							$(this).limitslider({
 								slide: function(event, ui) {
@@ -527,7 +527,7 @@ $(document).ready(() => {
 							$(this).addClass('initialized');
 						}
 					});
-					$('.range-3').each(function() {
+					$('.templateBase .range-3').each(function() {
 						if(!$(this).hasClass('initialized')) {
 							$(this).limitslider({
 								slide: function(event, ui) {
@@ -544,7 +544,7 @@ $(document).ready(() => {
 							$(this).addClass('initialized');
 						}
 					});
-					$('.range-4').each(function() {
+					$('.templateBase .range-4').each(function() {
 						if(!$(this).hasClass('initialized')) {
 							$(this).limitslider({
 								slide: function(event, ui) {
@@ -561,7 +561,7 @@ $(document).ready(() => {
 							$(this).addClass('initialized');
 						}
 					});
-					$('.range-5').each(function() {
+					$('.templateBase .range-5').each(function() {
 						if(!$(this).hasClass('initialized')) {
 							$(this).limitslider({
 								slide: function(event, ui) {
@@ -578,7 +578,7 @@ $(document).ready(() => {
 							$(this).addClass('initialized');
 						}
 					});
-					$('.range-6').each(function() {
+					$('.templateBase .range-6').each(function() {
 						if(!$(this).hasClass('initialized')) {
 							$(this).limitslider({
 								slide: function(event, ui) {
