@@ -415,8 +415,8 @@ $(document).ready(() => {
 						sections = sectionString.split('$')
 						sections.shift();
 						sections.forEach(function(section) {
-							console.log(section);
 							columns = section.split('#')
+							console.log(columns);
 							colCount = columns[0].replace('|', '');
 							currCol = 0;
 							columns.shift();
