@@ -421,11 +421,10 @@ $(document).ready(() => {
 							currCol = 0;
 							columns.shift();
 							if(colCount > 1) {
-								$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+								elem = $("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 									$(this).removeClass('accordion-body');
-								}).children(function(element) {
-									console.log(element);
 								});
+								console.log(elem);
 								contained = true;
 							} else {
 								contained = false;
