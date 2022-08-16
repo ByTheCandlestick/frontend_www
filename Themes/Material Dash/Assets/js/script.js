@@ -417,7 +417,6 @@ $(document).ready(() => {
 						sections.forEach(function(section) {
 							columns = section.split('#')
 							colWidth = columns[0].replace(';', '');
-							console.log(colWidth);
 							colCount = columns[0].replace('|', '');
 							currCol = 0;
 							columns.shift();
@@ -425,6 +424,7 @@ $(document).ready(() => {
 								$("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 									$(this).removeClass('accordion-body');
 								});
+								console.log($("div[element-id='$"+colCount+"|'] .templateGrid"))
 								contained = true;
 							} else {
 								contained = false;
