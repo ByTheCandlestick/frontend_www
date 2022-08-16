@@ -393,76 +393,84 @@ if(QS_SUBPAGE != "") {
 					step:		1,
 					gap:		1,
 				})
-			})
-			$('.range-3').each().limitslider({
-				slide: function(event, ui) {
-					rangeMovement(event, ui);
-				},
-				values: [
-					4,
-					8
-				],
-				showRanges:	true,
-				min:		0,
-				max:		12,
-				left:		1,
-				right:		11,
-				step:		1,
-				gap:		1,
 			});
-			$('.range-4').each().limitslider({
-				slide: function(event, ui) {
-					rangeMovement(event, ui);
-				},
-				values: [
-					3,
-					6,
-					9
-				],
-				showRanges:	true,
-				min:		0,
-				max:		12,
-				left:		1,
-				right:		11,
-				step:		1,
-				gap:		1,
+			$('.range-3').each(function() {
+				$(this).limitslider({
+					slide: function(event, ui) {
+						rangeMovement(event, ui);
+					},
+					values: [
+						4,
+						8
+					],
+					showRanges:	true,
+					min:		0,
+					max:		12,
+					left:		1,
+					right:		11,
+					step:		1,
+					gap:		1,
+				});
 			});
-			$('.range-5').each().limitslider({
-				slide: function(event, ui) {
-					rangeMovement(event, ui);
-				},
-				values: [
-					2,
-					4,
-					8,
-					10
-				],
-				showRanges:	true,
-				min:		0,
-				max:		12,
-				left:		1,
-				right:		11,
-				step:		1,
-				gap:		1,
+			$('.range-4').each(function() {
+				$(this).limitslider({
+					slide: function(event, ui) {
+						rangeMovement(event, ui);
+					},
+					values: [
+						3,
+						6,
+						9
+					],
+					showRanges:	true,
+					min:		0,
+					max:		12,
+					left:		1,
+					right:		11,
+					step:		1,
+					gap:		1,
+				});
 			});
-			$('.range-6').each().limitslider({
-				slide: function(event, ui) {
-					rangeMovement(event, ui);
-				},
-				values: [
-					2,
-					4,
-					6,
-					8,
-					10
-				],
-				showRanges:	true,
-				min:		0,
-				max:		12,
-				left:		1,
-				right:		11,
-				step:		1,
-				gap:		1,
+			$('.range-5').each(function() {
+				$(this).limitslider({
+					slide: function(event, ui) {
+						rangeMovement(event, ui);
+					},
+					values: [
+						2,
+						4,
+						8,
+						10
+					],
+					showRanges:	true,
+					min:		0,
+					max:		12,
+					left:		1,
+					right:		11,
+					step:		1,
+					gap:		1,
+				});
+			});
+			$('.range-6').each(function() {
+				$(this).limitslider({
+					slide: function(event, ui) {
+						rangeMovement(event, ui);
+					},
+					values: [
+						2,
+						4,
+						6,
+						8,
+						10
+					],
+					showRanges:	true,
+					min:		0,
+					max:		12,
+					left:		1,
+					right:		11,
+					step:		1,
+					gap:		1,
+				});
 			});
 		}
 	});
