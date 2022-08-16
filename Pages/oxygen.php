@@ -364,8 +364,8 @@ if(QS_SUBPAGE != "") {
 					});
 				// add class col-x
 					if(handle > 0) {
-						rColNew = parseInt(rColCurr + ((ui.values[handle-1] + rColCurr) - value));
-						console.log("Right: "+rColCurr+" + ( ( "+ui.values[handle-1]+" + "+rColCurr+" ) + "+value+" ) = "+rColNew);
+						rColNew = parseInt(rColCurr + (lColCurr - value));
+						console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
 					} else {
 						rColNew = parseInt(rColCurr + (lColCurr - value));
 						console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
