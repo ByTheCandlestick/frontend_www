@@ -435,14 +435,11 @@ $(document).ready(() => {
 										for(var i = 0; i < classes.length; i++ ) {
 											if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
 												toReturn += classes[i] +' ';
-												rColCurr = parseInt(classes[i].substring(4));
 											}
 										}
 										return toReturn; /* Returns all classes to be removed */
-									}).attr('element-id', '');
-								  }
-								  
-
+									}).attr('element-id', '#'+colWidths[i]+';').addClass("col-"+colWidths[i]);
+								}
 								contained = true;
 							} else {
 								contained = false;
