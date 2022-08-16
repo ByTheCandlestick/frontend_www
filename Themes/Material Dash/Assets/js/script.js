@@ -439,7 +439,7 @@ $(document).ready(() => {
 											}
 										}
 										return toReturn; /* Returns all classes to be removed */
-									});
+									}).attr('element-id', '');
 								  }
 								  
 
