@@ -317,41 +317,6 @@ if(QS_SUBPAGE != "") {
 			});
 			website.layout.initializeSliders();
 		});
-		$('.range-2').each(function() {
-			$(this).limitslider({
-				values:	[ 6 ],
-				min:	0,
-				max:	12,
-			})
-		});
-		$('.range-3').each(function() {
-			$(this).limitslider({
-				values:	[ 4, 8 ],
-				min:	0,
-				max:	12,
-			});
-		});
-		$('.range-4').each(function() {
-			$(this).limitslider({
-				values: [ 3, 6, 9 ],
-				min:	0,
-				max:	12,
-			});
-		});
-		$('.range-5').each(function() {
-			$(this).limitslider({
-				values: [ 2, 4, 8, 10 ],
-				min:	0,
-				max:	12,
-			});
-		});
-		$('.range-6').each(function() {
-			$(this).limitslider({
-				values: [ 2, 4, 6, 8, 10 ],
-					min:	0,
-					max:	12,
-				});
-			});
 	});
 </script>
 <?

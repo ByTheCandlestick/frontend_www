@@ -515,6 +515,7 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								website.layout.rangeMovement(event, ui);
 							},
+							values:	[ 6 ],
 							min:		0,
 							max:		12,
 							left:		1,
@@ -528,6 +529,7 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								website.layout.rangeMovement(event, ui);
 							},
+							values:	[ 4, 8 ],
 							min:		0,
 							max:		12,
 							left:		1,
@@ -541,6 +543,7 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								website.layout.rangeMovement(event, ui);
 							},
+							values: [ 3, 6, 9 ],
 							min:		0,
 							max:		12,
 							left:		1,
@@ -554,6 +557,7 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								website.layout.rangeMovement(event, ui);
 							},
+							values: [ 2, 4, 8, 10 ],
 							min:		0,
 							max:		12,
 							left:		1,
@@ -567,6 +571,7 @@ $(document).ready(() => {
 							slide: function(event, ui) {
 								website.layout.rangeMovement(event, ui);
 							},
+							values: [ 2, 4, 6, 8, 10 ],
 							min:		0,
 							max:		12,
 							left:		1,
