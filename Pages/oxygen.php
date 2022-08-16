@@ -374,7 +374,7 @@ if(QS_SUBPAGE != "") {
 					$(containers[handle+1]).addClass("col-"+rColNew);
 			//
 		}
-		$('.range-2').limitslider({
+		$('.range-2').each().limitslider({
 			slide: function(event, ui) {
 				rangeMovement(event, ui);
 			},
@@ -389,7 +389,7 @@ if(QS_SUBPAGE != "") {
 			step:		1,
 			gap:		1,
 		})
-		$('.range-3').limitslider({
+		$('.range-3').each().limitslider({
 			slide: function(event, ui) {
 				rangeMovement(event, ui);
 			},
@@ -405,7 +405,7 @@ if(QS_SUBPAGE != "") {
 			step:		1,
 			gap:		1,
 		});
-		$('.range-4').limitslider({
+		$('.range-4').each().limitslider({
 			slide: function(event, ui) {
 				rangeMovement(event, ui);
 			},
@@ -422,7 +422,7 @@ if(QS_SUBPAGE != "") {
 			step:		1,
 			gap:		1,
 		});
-		$('.range-5').limitslider({
+		$('.range-5').each().limitslider({
 			slide: function(event, ui) {
 				rangeMovement(event, ui);
 			},
@@ -440,7 +440,7 @@ if(QS_SUBPAGE != "") {
 			step:		1,
 			gap:		1,
 		});
-		$('.range-6').limitslider({
+		$('.range-6').each().limitslider({
 			slide: function(event, ui) {
 				rangeMovement(event, ui);
 			},
