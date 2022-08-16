@@ -511,18 +511,21 @@ $(document).ready(() => {
 				},
 				initializeSliders() {
 					$('.range-2').each(function() {
-						$(this).limitslider({
-							slide: function(event, ui) {
-								website.layout.rangeMovement(event, ui);
-							},
-							values:	[ 6 ],
-							min:		0,
-							max:		12,
-							left:		1,
-							right:		11,
-							step:		1,
-							gap:		1,
-						})
+						if(!$(this).hasClass('initialized')) {
+							$(this).limitslider({
+								slide: function(event, ui) {
+									website.layout.rangeMovement(event, ui);
+								},
+								values:	[ 6 ],
+								min:		0,
+								max:		12,
+								left:		1,
+								right:		11,
+								step:		1,
+								gap:		1,
+							});
+							$(this).addClass('initialized');
+						}
 					});
 					$('.range-3').each(function() {
 						$(this).limitslider({
