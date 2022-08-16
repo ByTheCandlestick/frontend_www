@@ -415,7 +415,7 @@ $(document).ready(() => {
 						sections = sectionString.split('$')
 						sections.shift();
 						sections.forEach(function(section) {
-							columns = section.split('#')
+							columns = section.split('#');
 							colWidths = columns;
 							colCount = columns[0].replace('|', '');
 							currCol = 0;
@@ -429,7 +429,7 @@ $(document).ready(() => {
 								console.log(colWidths);
 
 								for (let i = 0; i < children.length; i++) {
-									colWidths[i].replace(";", "");
+									colWidths[i].split(';');
 									$(children[i]).removeClass(function() {
 										var toReturn = '',
 											classes = this.className.split(' ');
