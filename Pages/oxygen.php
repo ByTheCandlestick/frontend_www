@@ -375,104 +375,41 @@ if(QS_SUBPAGE != "") {
 					$(containers[handle+1]).addClass("col-"+rColNew);
 			//
 		}
-		
-		function initSliders() {
 			$('.range-2').each(function() {
 				$(this).limitslider({
-					slide: function(event, ui) {
-						rangeMovement(event, ui);
-					},
-					values: [
-						6
-					],
-					showRanges:	true,
-					min:		0,
-					max:		12,
-					left:		1,
-					right:		11,
-					step:		1,
-					gap:		1,
+					values:	[ 6 ],
+					min:	0,
+					max:	12,
 				})
 			});
 			$('.range-3').each(function() {
 				$(this).limitslider({
-					slide: function(event, ui) {
-						rangeMovement(event, ui);
-					},
-					values: [
-						4,
-						8
-					],
-					showRanges:	true,
-					min:		0,
-					max:		12,
-					left:		1,
-					right:		11,
-					step:		1,
-					gap:		1,
+					values:	[ 4, 8 ],
+					min:	0,
+					max:	12,
 				});
 			});
 			$('.range-4').each(function() {
 				$(this).limitslider({
-					slide: function(event, ui) {
-						rangeMovement(event, ui);
-					},
-					values: [
-						3,
-						6,
-						9
-					],
-					showRanges:	true,
-					min:		0,
-					max:		12,
-					left:		1,
-					right:		11,
-					step:		1,
-					gap:		1,
+					values: [ 3, 6, 9 ],
+					min:	0,
+					max:	12,
 				});
 			});
 			$('.range-5').each(function() {
 				$(this).limitslider({
-					slide: function(event, ui) {
-						rangeMovement(event, ui);
-					},
-					values: [
-						2,
-						4,
-						8,
-						10
-					],
-					showRanges:	true,
-					min:		0,
-					max:		12,
-					left:		1,
-					right:		11,
-					step:		1,
-					gap:		1,
+					values: [ 2, 4, 8, 10 ],
+					min:	0,
+					max:	12,
 				});
 			});
 			$('.range-6').each(function() {
 				$(this).limitslider({
-					slide: function(event, ui) {
-						rangeMovement(event, ui);
-					},
-					values: [
-						2,
-						4,
-						6,
-						8,
-						10
-					],
-					showRanges:	true,
-					min:		0,
-					max:		12,
-					left:		1,
-					right:		11,
-					step:		1,
-					gap:		1,
+					values: [ 2, 4, 6, 8, 10 ],
+					min:	0,
+					max:	12,
 				});
 			});
-		}
 	});
 </script>
 <?
