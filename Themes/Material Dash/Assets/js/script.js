@@ -425,9 +425,6 @@ $(document).ready(() => {
 									$(this).removeClass('accordion-body');
 								});
 								children = $(parent).find('.templateGrid');
-								console.log(children);
-								console.log(colWidths);
-
 								for (let i = 0; i < children.length; i++) {
 									colWidths[i].split(';');
 									$(children[i]).removeClass(function() {
@@ -440,6 +437,7 @@ $(document).ready(() => {
 										}
 										return toReturn; /* Returns all classes to be removed */
 									}).attr('element-id', '#'+colWidths[i][0]+';').addClass("col-"+colWidths[i][0]);
+									console.log(colWidths[i][0]);
 								}
 								contained = true;
 							} else {
