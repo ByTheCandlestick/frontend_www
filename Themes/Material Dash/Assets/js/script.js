@@ -451,10 +451,10 @@ $(document).ready(() => {
 							}
 							// Place the lements within the columns
 							columns.forEach(function(column) {
+								console.log(column);
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
-								
 									if(contained) {
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
 										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
