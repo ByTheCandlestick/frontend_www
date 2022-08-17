@@ -5,8 +5,21 @@
 	(isset($_GET['bcc']) && $_GET['bcc']!='')?$b=$_GET['bcc']:$b='';
 	(isset($_GET['subject']) && $_GET['subject']!='')?$s=$_GET['subject']:$s='';
 	(isset($_GET['content']) && $_GET['content']!='')?$m=$_GET['content']:$m='';
-	mail($t, $s, $m); 
 ?>
+
+<?php
+
+$headers = "From: $f";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+if (mail($t, $s, $m, $headers)) {
+    echo 'Mail sent successfully.';
+} else {
+    echo 'Unable to send mail. Please try again.';
+}
+?>
+
 <section>
 	<!-- Section Header -->
 	<div class="row">
