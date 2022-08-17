@@ -453,7 +453,6 @@ $(document).ready(() => {
 							columns.forEach(function(column) {
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
-									console.log(element);
 									[elemID, elementString] = element.split(':');
 									if(contained) {
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
@@ -462,6 +461,7 @@ $(document).ready(() => {
 											$(this).find('input').first().val(elementString);
 										});
 									} else {
+										console.log(elemID);
 										$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											$(this).removeClass('accordion-body');
 											$(this).find('input').first().val(elementString);
