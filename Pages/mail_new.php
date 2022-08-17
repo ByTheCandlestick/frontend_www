@@ -14,22 +14,31 @@
 	<!-- Section Body -->
 	<div class="row">
 		<style>
-			.mail input[type="text"] {
-				width: 100%;
-				margin: 5px;
-				padding: 3px;
-				border: solid thin grey;
-			}
 		</style>
         <div class="mail">
 			<div class="col-12">
-				<input type="text"></input>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
+					<label for="floatingInput">From</label>
+				</div>
 			</div>
 			<div class="col-12">
-				<input type="text"></input>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
+					<label for="floatingInput">To</label>
+				</div>
 			</div>
 			<div class="col-12">
-				<input type="text"></input>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
+					<label for="floatingInput">CC</label>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
+					<label for="floatingInput">BCC</label>
+				</div>
 			</div>
 		</div>
 	</div>
