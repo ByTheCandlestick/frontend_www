@@ -436,7 +436,7 @@ $(document).ready(() => {
 											}
 										}
 										return toReturn; /* Returns all classes to be removed */
-									}).attr('element-id', '#'+width+';').addClass("col-"+width);
+									}).attr('element-id', '#'+width[0]+';').addClass("col-"+width[0]);
 								}
 								contained = true;
 							} else {
