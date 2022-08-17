@@ -425,9 +425,10 @@ $(document).ready(() => {
 									$(this).removeClass('accordion-body');
 								});
 								children = $(parent).find('.templateGrid');
+								console.log(columns)
 								for (let i = 0; i < children.length; i++) {
 									let widths;
-									widths = colWidths[i].split(';');
+									widths = colWidths[0].split(';');
 									$(children[i]).removeClass(function() {
 										var toReturn = '',
 											classes = this.className.split(' ');
