@@ -410,7 +410,7 @@ $(document).ready(() => {
 				initializeOxygen() {
 					var sectionString = $('section .sections').attr('data-original-sections');
 					if(sectionString != "") {
-						var contained, colCount, currCol, elemID, elementString, lastVal = null;
+						var contained, colCount, currCol, elemID, elementString, floatingVal, left;
 						var sections, columns, elements, cols = [];
 						sections = sectionString.split('$')
 						sections.shift();
@@ -424,9 +424,10 @@ $(document).ready(() => {
 									$(this).removeClass('accordion-body');
 								});
 								children = $(parent).find('.templateGrid');
-
+								sliders = $(parent).find('ui-slider-handle');
 								for (let i = 0; i < children.length; i++) {
-									width =  columns[i].split(';');
+									width = columns[i].split(';');
+									floatingVal += width;
 									$(children[i]).removeClass(function() {
 										var toReturn = "",
 											classes = this.className.split(' ');
@@ -438,6 +439,8 @@ $(document).ready(() => {
 										return toReturn; /* Returns all classes to be removed */
 										console.log(width[0])
 									}).attr('element-id', '#'+width[0]+';').addClass("col-"+width[0]);
+									left = (100 / 12) * floatingVal;
+									sliders[i].css('left', left)
 								}
 								contained = true;
 							} else {
