@@ -428,7 +428,8 @@ $(document).ready(() => {
 								for (let i = 0; i < children.length; i++) {
 									width =  columns[i].split(';');
 									$(children[i]).removeClass(function() {
-										var toReturn = "", classes = this.className.split(' ');
+										var toReturn = "",
+											classes = this.className.split(' ');
 										for(var i = 0; i < classes.length; i++ ) {
 											if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
 												toReturn += classes[i] +' ';
