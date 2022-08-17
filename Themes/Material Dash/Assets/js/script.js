@@ -407,6 +407,7 @@ $(document).ready(() => {
 					});
 				},
 				initializeOxygen() {
+					$('.templateBase').innerHtml("");
 					var sectionString = $('section .sections').attr('data-original-sections');
 					if(sectionString != "") {
 						var contained, colCount, currCol, elemID, elementString='';
