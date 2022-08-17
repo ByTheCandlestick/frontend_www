@@ -15,10 +15,13 @@
 	<div class="row">
         <div class="mail">
 			<div class="col-12">
+				<input type="text"></input>
 			</div>
 			<div class="col-12">
+				<input type="text"></input>
 			</div>
 			<div class="col-12">
+				<input type="text"></input>
 			</div>
 		</div>
 	</div>
