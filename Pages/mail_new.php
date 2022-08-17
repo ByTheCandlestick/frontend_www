@@ -24,20 +24,20 @@
 			</div>
 			<div class="col-12">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
 					<label for="floatingInput">To</label>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
-					<label for="floatingInput">CC</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+					<label for="floatingInput">Cc</label>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
-					<label for="floatingInput">BCC</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+					<label for="floatingInput">Bcc</label>
 				</div>
 			</div>
 		</div>
