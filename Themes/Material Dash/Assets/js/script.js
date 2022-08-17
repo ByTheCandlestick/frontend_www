@@ -410,7 +410,7 @@ $(document).ready(() => {
 				initializeOxygen() {
 					var sectionString = $('section .sections').attr('data-original-sections');
 					if(sectionString != "") {
-						var contained, colCount, currCol, elemID, elementString, lastVal, toReturn = null;
+						var contained, colCount, currCol, elemID, elementString, lastVal = null;
 						var sections, columns, elements, cols = [];
 						sections = sectionString.split('$')
 						sections.shift();
@@ -428,7 +428,7 @@ $(document).ready(() => {
 								for (let i = 0; i < children.length; i++) {
 									width =  columns[i].split(';');
 									$(children[i]).removeClass(function() {
-										var classes = this.className.split(' ');
+										var toReturn = "", classes = this.className.split(' ');
 										for(var i = 0; i < classes.length; i++ ) {
 											if( /col-([0-9])+/.test( classes[i] ) ) { /* Filters */
 												toReturn += classes[i] +' ';
