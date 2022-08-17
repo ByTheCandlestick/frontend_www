@@ -53,7 +53,7 @@
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<textarea class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+				<textarea class="form-control" id="floatingInput" placeholder="mail@from.com" value=""></textarea>
 				<label for="floatingInput"></label>
 			</div>
 		</div>
