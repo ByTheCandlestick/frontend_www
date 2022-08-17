@@ -425,7 +425,7 @@ $(document).ready(() => {
 									$(this).removeClass('accordion-body');
 								});
 								children = $(parent).find('.templateGrid');
-								sliders = $(parent).find('ui-slider-handle');
+								sliders = $(parent).find('.ui-slider-handle');
 								for (let i = 0; i < children.length; i++) {
 									width = parseInt(columns[i].split(';')[0]);
 									floatingVal += width;
