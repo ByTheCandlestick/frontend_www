@@ -423,6 +423,7 @@ $(document).ready(() => {
 							if(colCount > 1) {
 								let floatingVal=0,
 									left=0;
+								contained = true;
 								parent = $("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 									$(this).removeClass('accordion-body');
 								});
@@ -445,7 +446,6 @@ $(document).ready(() => {
 									left = (100 / 12) * floatingVal;
 									$(sliders[i]).css('left', left+'%')
 								}
-								contained = true;
 							} else {
 								contained = false;
 							}
