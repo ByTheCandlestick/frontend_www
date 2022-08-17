@@ -229,7 +229,7 @@
 					<div class="col-12 col-md-6" name="styles">
 						<h5>Styles</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `page_styles` ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `page_styles` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								(in_array($row['ID'], $styles))?$checked=" checked":$checked="";
 								print('
@@ -246,7 +246,7 @@
 					<div class="col-12 col-md-6" name="scripts">
 						<h5>Scripts</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `page_scripts` ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `page_scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								(in_array($row['ID'], $scripts))?$checked=" checked":$checked="";
 								print('
