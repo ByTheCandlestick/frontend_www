@@ -437,9 +437,9 @@ $(document).ready(() => {
 										}
 										return toReturn; /* Returns all classes to be removed */
 									}).attr('element-id', '#'+width+';').addClass("col-"+width);
+									console.log('FloatingVal' + floatingVal);
 									left = (100 / 12) * floatingVal;
-									console.log(floatingVal);
-									console.log(left);
+									console.log('left' + left);
 									$(sliders[i]).css('left', left)
 								}
 								contained = true;
