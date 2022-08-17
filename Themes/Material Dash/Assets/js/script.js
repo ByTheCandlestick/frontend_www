@@ -440,6 +440,8 @@ $(document).ready(() => {
 										console.log(width[0])
 									}).attr('element-id', '#'+width[0]+';').addClass("col-"+width[0]);
 									left = (100 / 12) * floatingVal;
+									console.log(floatingVal);
+									console.log(left);
 									$(sliders[i]).css('left', left)
 								}
 								contained = true;
