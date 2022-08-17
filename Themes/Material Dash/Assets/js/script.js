@@ -424,6 +424,7 @@ $(document).ready(() => {
 								parent = $("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 									$(this).removeClass('accordion-body');
 								});
+								website.layout.initializeSliders();
 								children = $(parent).find('.templateGrid');
 								sliders = $(parent).find('.ui-slider-handle');
 								console.log(sliders);
@@ -470,7 +471,6 @@ $(document).ready(() => {
 					} else {
 						$('.templateBase').html("<p>Drag an element from the left hand side to start building the website!</p>");
 					}
-					website.layout.initializeSliders();
 				},
 				rangeMovement(event, ui) {
 					// Vars
