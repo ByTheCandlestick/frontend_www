@@ -456,7 +456,11 @@ $(document).ready(() => {
 									[elemID, elementString] = element.split(':');
 									if(contained) {
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
-										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol])
+										console.log("div[element-id='"+elemID+"']");
+										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+											$(this).removeClass('accordion-body');
+											$(this).find('input').first().val(elementString);
+										});
 									} else {
 										$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											$(this).removeClass('accordion-body');
