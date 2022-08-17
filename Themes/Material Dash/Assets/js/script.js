@@ -461,7 +461,7 @@ $(document).ready(() => {
 											$(this).find('input').first().val(elementString);
 										});
 										console.log('Placed');
-										console.log($(cols[currCol]).find('div[element-id=9905]').last());
+										console.log($(cols[currCol]).find('div[element-id=9905]').last()[0]);
 										console.log('Within');
 										console.log(cols[currCol]);
 									} else {
