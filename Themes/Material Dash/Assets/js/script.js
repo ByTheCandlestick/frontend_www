@@ -427,7 +427,6 @@ $(document).ready(() => {
 								website.layout.initializeSliders();
 								children = $(parent).find('.templateGrid');
 								sliders = $(parent).find('.ui-slider-handle');
-								console.log(sliders);
 								for (let i = 0; i < children.length; i++) {
 									width = parseInt(columns[i].split(';')[0]);
 									floatingVal += width;
@@ -450,6 +449,7 @@ $(document).ready(() => {
 							}
 							columns.forEach(function(column) {
 								elements = column.split(';').pop().split(',');
+								console.log(elements);
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
 									if(contained) {
