@@ -410,7 +410,7 @@ $(document).ready(() => {
 				initializeOxygen() {
 					var sectionString = $('section .sections').attr('data-original-sections');
 					if(sectionString != "") {
-						var contained, colCount, currCol, elemID, elementString = null;
+						var contained, colCount, currCol, elemID, elementString, lastVal = null;
 						var sections, columns, elements, cols = [];
 						sections = sectionString.split('$')
 						sections.shift();
@@ -424,6 +424,7 @@ $(document).ready(() => {
 									$(this).removeClass('accordion-body');
 								});
 								children = $(parent).find('.templateGrid');
+
 								for (let i = 0; i < children.length; i++) {
 									width =  columns[i].split(';');
 									$(children[i]).removeClass(function() {
