@@ -12,45 +12,43 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="row">
+	<div class="row mailNew">
 		<style>
 		</style>
-        <div class="mail">
-			<div class="col-12 col-lg-6">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print(strtolower($userdata['Username']))?>@thecandlestick.co.uk" disabled>
-					<label for="floatingInput">From</label>
-				</div>
+		<div class="col-12 col-lg-6">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print(strtolower($userdata['Username']))?>@thecandlestick.co.uk" disabled>
+				<label for="floatingInput">From</label>
 			</div>
-			<div class="col-12 col-lg-6">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
-					<label for="floatingInput">To</label>
-				</div>
+		</div>
+		<div class="col-12 col-lg-6">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+				<label for="floatingInput">To</label>
 			</div>
-			<div class="col-12 col-lg-6">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
-					<label for="floatingInput">Cc</label>
-				</div>
+		</div>
+		<div class="col-12 col-lg-6">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+				<label for="floatingInput">Cc</label>
 			</div>
-			<div class="col-12 col-lg-6">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
-					<label for="floatingInput">Bcc</label>
-				</div>
+		</div>
+		<div class="col-12 col-lg-6">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+				<label for="floatingInput">Bcc</label>
 			</div>
-			<div class="col-12">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
-					<label for="floatingInput">Subject</label>
-				</div>
+		</div>
+		<div class="col-12">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+				<label for="floatingInput">Subject</label>
 			</div>
-			<div class="col-12">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
-					<label for="floatingInput"></label>
-				</div>
+		</div>
+		<div class="col-12">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+				<label for="floatingInput"></label>
 			</div>
 		</div>
 	</div>
