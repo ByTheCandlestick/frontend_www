@@ -442,7 +442,7 @@ $(document).ready(() => {
 										return toReturn; /* Returns all classes to be removed */
 									}).attr('element-id', '#'+width+';').addClass("col-"+width);
 									left = (100 / 12) * floatingVal;
-									$(sliders[i]).css('left', left)
+									$(sliders[i]).css('left', left+'%')
 								}
 								contained = true;
 							} else {
