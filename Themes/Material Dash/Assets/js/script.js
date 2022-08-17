@@ -409,7 +409,7 @@ $(document).ready(() => {
 				initializeOxygen() {
 					var sectionString = $('section .sections').attr('data-original-sections');
 					if(sectionString != "") {
-						var contained, colCount, currCol, elemID, elementString='', floatingVal=0, left=0;
+						var contained, colCount, currCol, elemID, elementString='';
 						var sections, columns, elements, cols = [];
 						sections = sectionString.split('$')
 						sections.shift();
@@ -419,6 +419,8 @@ $(document).ready(() => {
 							currCol = 0;
 							columns.shift();
 							if(colCount > 1) {
+								let floatingVal=0,
+									left=0;
 								parent = $("div[element-id='$"+colCount+"|']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 									$(this).removeClass('accordion-body');
 								});
@@ -437,9 +439,7 @@ $(document).ready(() => {
 										}
 										return toReturn; /* Returns all classes to be removed */
 									}).attr('element-id', '#'+width+';').addClass("col-"+width);
-									console.log('FloatingVal: ' + floatingVal);
 									left = (100 / 12) * floatingVal;
-									console.log('left: ' + left);
 									$(sliders[i]).css('left', left)
 								}
 								contained = true;
