@@ -426,7 +426,7 @@ $(document).ready(() => {
 								children = $(parent).find('.templateGrid');
 								sliders = $(parent).find('ui-slider-handle');
 								for (let i = 0; i < children.length; i++) {
-									width = columns[i].split(';');
+									width = columns[i].split(';')[0];
 									floatingVal += width;
 									$(children[i]).removeClass(function() {
 										var toReturn = "",
@@ -437,8 +437,7 @@ $(document).ready(() => {
 											}
 										}
 										return toReturn; /* Returns all classes to be removed */
-										console.log(width[0])
-									}).attr('element-id', '#'+width[0]+';').addClass("col-"+width[0]);
+									}).attr('element-id', '#'+width+';').addClass("col-"+width);
 									left = (100 / 12) * floatingVal;
 									console.log(floatingVal);
 									console.log(left);
