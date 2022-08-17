@@ -454,6 +454,7 @@ $(document).ready(() => {
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
+									console.log(elemID);
 									if(elemID!==null || elemID!==undefined) {
 										if(contained) {
 											cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
@@ -461,8 +462,6 @@ $(document).ready(() => {
 												$(this).removeClass('accordion-body');
 												$(this).find('input').first().val(elementString);
 											});
-											console.log('From string: '+elemID+', '+elementString)
-											console.log('Placed'+$(cols[currCol]).find('div[element-id=9905]').last()[0]+'Within'+cols[currCol]);
 										} else {
 											$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 												$(this).removeClass('accordion-body');
