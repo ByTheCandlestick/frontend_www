@@ -23,7 +23,6 @@ $(document).ready(() => {
 				Object.entries(misc.currencies).forEach(([key, value]) => {
 					if(value.code == str) {
 						return ''+value.symbol;
-						console.log('FOUND: ' + value.symbol);
 					}
 				});
 			},
@@ -498,10 +497,8 @@ $(document).ready(() => {
 						// add class col-x and element-id attribute
 							if(handle > 0) {
 								lColNew = parseInt(value - ui.values[handle-1]);
-								//console.log("Left: "+value+" - "+ui.values[handle-1]+" = "+lColNew)
 							} else {
 								lColNew = parseInt(lColCurr - (lColCurr - value));
-								//console.log("Left: "+lColCurr+" + ( "+lColCurr+" - "+value+" ) = "+lColNew)
 							}
 							$(containers[handle]).attr('element-id', '#'+lColNew+';')
 							$(containers[handle]).addClass("col-"+lColNew);
@@ -521,10 +518,8 @@ $(document).ready(() => {
 						// add class col-x and element-id attribute
 							if(handle > 0) {
 								rColNew = parseInt(rColCurr + (lColCurr - (value - ui.values[handle-1])));
-								//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + ( "+value+" - "+ui.values[handle-1]+" ) ) = "+rColNew);
 							} else {
 								rColNew = parseInt(rColCurr + (lColCurr - value));
-								//console.log("Right: "+rColCurr+" + ( "+lColCurr+" + "+value+" ) = "+rColNew);
 							}
 							$(containers[handle+1]).attr('element-id', '#'+rColNew+';')
 							$(containers[handle+1]).addClass("col-"+rColNew);
@@ -1369,7 +1364,6 @@ $(document).ready(() => {
 		}
 		$('div[name=currency]').find('input').change(() => {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
-			console.log(symbol);
 			$('span.input-group-text#currSymbol').html(symbol);
 		})
 	// -----========== Auto-calculate Container ==========----- // @wip //
