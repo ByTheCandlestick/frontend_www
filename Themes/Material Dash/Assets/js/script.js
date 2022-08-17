@@ -455,15 +455,15 @@ $(document).ready(() => {
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
 									if(contained) {
-										console.log('Placing');
-										console.log(elemID+':'+elementString);
-										console.log('Within');
-										console.log(cols[currCol]);
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
 										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											$(this).removeClass('accordion-body');
 											$(this).find('input').first().val(elementString);
 										});
+										console.log('Placed');
+										console.log($(cols[currCol].find('div[element-id=9905]').last()));
+										console.log('Within');
+										console.log(cols[currCol]);
 									} else {
 										$("div[element-id='"+elemID+"']").clone().appendTo('.templateBase').removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											$(this).removeClass('accordion-body');
