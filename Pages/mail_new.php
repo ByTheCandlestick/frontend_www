@@ -40,6 +40,18 @@
 					<label for="floatingInput">Bcc</label>
 				</div>
 			</div>
+			<div class="col-12">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+					<label for="floatingInput">Subject</label>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="">
+					<label for="floatingInput"></label>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
