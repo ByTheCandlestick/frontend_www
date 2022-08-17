@@ -6,11 +6,11 @@
 	(isset($_GET['subject']) && $_GET['subject']!='')?$s=$_GET['subject']:$s='';
 	(isset($_GET['content']) && $_GET['content']!='')?$m=$_GET['content']:$m='';
 
-$h = "From: $f";
+$h = "From: The Candlestick <$f>\r\n";
 $h .= "MIME-Version: 1.0\r\n";
 $h .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-if (mail($t, $s, $m)) {
+if (mail($t, $s, $m, $h)) {
     echo 'Mail sent successfully.';
 } else {
     echo 'Unable to send mail. Please try again.';
