@@ -413,6 +413,7 @@ $(document).ready(() => {
 						var sections, columns, elements, cols = [];
 						sections = sectionString.split('$')
 						sections.shift();
+						// build the structure and columns
 						sections.forEach(function(section) {
 							columns = section.split('#');
 							colCount = columns[0].replace('|', '');
