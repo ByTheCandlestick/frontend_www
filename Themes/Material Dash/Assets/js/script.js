@@ -427,7 +427,7 @@ $(document).ready(() => {
 								sliders = $(parent).find('ui-slider-handle');
 								for (let i = 0; i < children.length; i++) {
 									width = parseInt(columns[i].split(';')[0]);
-									floatingVal += width;
+									floatingVal =+ width;
 									$(children[i]).removeClass(function() {
 										var toReturn = "",
 											classes = this.className.split(' ');
