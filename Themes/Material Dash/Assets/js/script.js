@@ -451,11 +451,13 @@ $(document).ready(() => {
 							// Place the lements within the columns
 							columns.forEach(function(column) {
 								elements = column.split(';').pop().split(',');
-								console.log(elements);
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
 									if(contained) {
-										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer')
+										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
+										$(elements).each(function (element) {
+											console.log(element);
+										})
 										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											$(this).removeClass('accordion-body');
 											$(this).find('input').first().val(elementString);
