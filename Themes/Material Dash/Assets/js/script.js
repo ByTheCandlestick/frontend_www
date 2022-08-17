@@ -452,6 +452,9 @@ $(document).ready(() => {
 							columns.forEach(function(column) {
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
+									if(element == "") {
+										currCol++;
+									}
 									console.log(element);
 									[elemID, elementString] = element.split(':');
 									if(contained) {
