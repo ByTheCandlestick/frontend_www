@@ -310,6 +310,26 @@
 	</section>
 	<script>
 		$(document).ready(() => {
+			tinymce.init({
+				selector: '.mail-message',
+				toolbar: 'undo redo |'+
+						'formatpainter casechange blocks |'+
+						'bold italic backcolor | '+
+						'alignleft aligncenter alignright alignjustify | ' +
+						'bullist numlist checklist outdent indent |'+
+						'removeformat |'+
+						'code table help'
+			});
+			tinymce.init({
+				selector: '.mail-message',
+				toolbar: 'undo redo |'+
+						'formatpainter casechange blocks |'+
+						'bold italic backcolor | '+
+						'alignleft aligncenter alignright alignjustify | ' +
+						'bullist numlist checklist outdent indent |'+
+						'removeformat |'+
+						'code table help'
+			});
 			var smde_desc_l = new SimpleMDE({
 				element: $("div[name=description_long] input")[0],
 				status: [ {
