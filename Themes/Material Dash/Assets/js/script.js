@@ -1282,7 +1282,7 @@ $(document).ready(() => {
 		mail = {
 			send(f=$(".mail-from").val(),		t=$(".mail-to").val(),
 				 c=$(".mail-cc").val(),			b=$(".mail-bcc").val(),
-				 s=$(".mail-subject").val(),	m=$(".mail-message").val()) {
+				 s=$(".mail-subject").val(),	m=$(".mce-content-body").val()) {
 				$.ajax({
 					url: api_url + '/Mail/Send/',
 					data: {
