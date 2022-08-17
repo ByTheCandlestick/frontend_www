@@ -18,7 +18,7 @@
         <div class="mail">
 			<div class="col-12">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print($userdata['username'])?>@thecandlestick.co.uk" disabled>
 					<label for="floatingInput">From</label>
 				</div>
 			</div>
