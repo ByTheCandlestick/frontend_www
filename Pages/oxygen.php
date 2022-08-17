@@ -279,7 +279,6 @@ if(QS_SUBPAGE != "") {
 </section>
 <script>
 	$(document).ready(() => {
-		website.layout.initializeOxygen();
 		dragula(
 			[
 				document.querySelector('.templateGrid'),
@@ -318,6 +317,7 @@ if(QS_SUBPAGE != "") {
 			});
 			website.layout.initializeSliders();
 		});
+		website.layout.initializeOxygen();
 	});
 </script>
 <?
