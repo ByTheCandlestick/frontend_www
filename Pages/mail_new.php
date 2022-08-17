@@ -10,7 +10,7 @@ $h = "From: $f";
 $h .= "MIME-Version: 1.0\r\n";
 $h .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-if (mail($t, $s, $m, $h)) {
+if (mail($t, $s, $m)) {
     echo 'Mail sent successfully.';
 } else {
     echo 'Unable to send mail. Please try again.';
