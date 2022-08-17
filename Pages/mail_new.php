@@ -62,8 +62,8 @@
 				<label for="floatingInput">Content</label>
 			</div>
 		</div>
-	</div>
+		</div>
+	<?
+		phpinfo();
+	?>
 </section>
-<?
-	phpinfo();
-?>
