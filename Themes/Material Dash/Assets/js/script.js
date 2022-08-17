@@ -1295,8 +1295,7 @@ $(document).ready(() => {
 						withCredentials: true,
 					},
 					success(body) {
-						$('#refundConfirmModal').modal('hide');
-						alert.simple("Successfully refunded", "success")
+						alert.simple("Email sent successfully", "success")
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
