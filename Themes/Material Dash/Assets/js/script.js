@@ -437,7 +437,7 @@ $(document).ready(() => {
 											}
 										}
 										console.log(colWidths);
-										console.log(colWidths[i]);
+										console.log(colWidths[0]);
 										return toReturn; /* Returns all classes to be removed */
 									}).attr('element-id', '#'+widths[i][0]+';').addClass("col-"+widths[i][0]);
 								}
