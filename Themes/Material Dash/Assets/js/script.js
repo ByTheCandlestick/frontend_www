@@ -456,7 +456,7 @@ $(document).ready(() => {
 									[elemID, elementString] = element.split(':');
 									if(contained) {
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
-										el = $("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol])
+										el = $("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]);
 										$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											console.log('4: '+elemID);
 											$(this).removeClass('accordion-body');
