@@ -426,7 +426,7 @@ $(document).ready(() => {
 								children = $(parent).find('.templateGrid');
 								sliders = $(parent).find('ui-slider-handle');
 								for (let i = 0; i < children.length; i++) {
-									width = columns[i].split(';')[0];
+									width = parseInt(columns[i].split(';')[0]);
 									floatingVal += width;
 									$(children[i]).removeClass(function() {
 										var toReturn = "",
