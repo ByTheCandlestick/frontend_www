@@ -8,6 +8,9 @@
 			<h1>New mail</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
+			<a href="javascript:mail.send()" class="btn btn-outline-primary m-1">
+				<i class="fa fa-paper-plane"></i>
+			</a>
 		</div>
 	</div>
 	<hr>
