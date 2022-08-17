@@ -456,9 +456,8 @@ $(document).ready(() => {
 									[elemID, elementString] = element.split(':');
 									if(contained) {
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
-										el = $("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]);
-										$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
-											console.log('4: '+elemID);
+										console.Log(cols[currCol]);
+										el = $("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											$(this).removeClass('accordion-body');
 											$(this).find('input').first().val(elementString);
 										});
