@@ -413,12 +413,12 @@ $(document).ready(() => {
 						var sections, columns, elements, cols = [];
 						sections = sectionString.split('$')
 						sections.shift();
-						// build the structure and columns
 						sections.forEach(function(section) {
 							columns = section.split('#');
 							colCount = columns[0].replace('|', '');
 							currCol = 0;
 							columns.shift();
+							// build the structure and columns
 							if(colCount > 1) {
 								let floatingVal=0,
 									left=0;
@@ -448,6 +448,7 @@ $(document).ready(() => {
 							} else {
 								contained = false;
 							}
+							// Place the lements within the columns
 							columns.forEach(function(column) {
 								elements = column.split(';').pop().split(',');
 								console.log(elements);
