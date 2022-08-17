@@ -416,7 +416,6 @@ $(document).ready(() => {
 						sections.shift();
 						sections.forEach(function(section) {
 							columns = section.split('#');
-							colWidths = columns;
 							colCount = columns[0].replace('|', '');
 							currCol = 0;
 							columns.shift();
@@ -427,8 +426,7 @@ $(document).ready(() => {
 								children = $(parent).find('.templateGrid');
 								console.log(columns)
 								for (let i = 0; i < children.length; i++) {
-									let widths;
-									widths = colWidths[0].split(';');
+									width =  columns[i].split(';');
 									$(children[i]).removeClass(function() {
 										var toReturn = '',
 											classes = this.className.split(' ');
