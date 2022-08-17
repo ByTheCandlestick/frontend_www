@@ -454,7 +454,7 @@ $(document).ready(() => {
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
-									console.log(elemID+', '+elementString);
+									console.log((elemID=""?'':elemID)+', '+(elementString=''?'null':elementStrng));
 									if(contained) {
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
 										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
