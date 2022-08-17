@@ -435,7 +435,7 @@ $(document).ready(() => {
 											}
 										}
 										return toReturn; /* Returns all classes to be removed */
-										console.log(width)
+										console.log(width[0])
 									}).attr('element-id', '#'+width[0]+';').addClass("col-"+width[0]);
 								}
 								contained = true;
