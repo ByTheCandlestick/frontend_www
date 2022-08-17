@@ -4,18 +4,7 @@
 	(isset($_GET['cc']) && $_GET['cc']!='')?$c=$_GET['cc']:$c='';
 	(isset($_GET['bcc']) && $_GET['bcc']!='')?$b=$_GET['bcc']:$b='';
 	(isset($_GET['subject']) && $_GET['subject']!='')?$s=$_GET['subject']:$s='';
-	(isset($_GET['content']) && $_GET['content']!='')?$m=$_GET['content']:$m='';
-	/*
-		$h = "From: The Candlestick <$f>\r\n";
-		$h .= "MIME-Version: 1.0\r\n";
-		$h .= "Content-Type: text/html; charset=UTF-8\r\n";
-
-		if (mail($t, $s, $m, $h)) {
-			echo 'Mail sent successfully.';
-		} else {
-			echo 'Unable to send mail. Please try again.';
-		}
-	*/
+	(isset($_GET['message']) && $_GET['message']!='')?$m=$_GET['message']:$m='';
 ?>
 
 <section>
@@ -36,46 +25,41 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row mailNew">
-		<style>
-		</style>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print($f)?>">
+				<input type="text" class="form-control mail-from" id="floatingInput" placeholder="mail@from.com" value="<?print($f)?>">
 				<label for="floatingInput">From</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print($t)?>">
+				<input type="text" class="form-control mail-to" id="floatingInput" placeholder="mail@from.com" value="<?print($t)?>">
 				<label for="floatingInput">To</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print($c)?>">
+				<input type="text" class="form-control mail-cc" id="floatingInput" placeholder="mail@from.com" value="<?print($c)?>">
 				<label for="floatingInput">Cc</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print($b)?>">
+				<input type="text" class="form-control mail-bcc" id="floatingInput" placeholder="mail@from.com" value="<?print($b)?>">
 				<label for="floatingInput">Bcc</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="mail@from.com" value="<?print($s)?>">
+				<input type="text" class="form-control mail-subject" id="floatingInput" placeholder="mail@from.com" value="<?print($s)?>">
 				<label for="floatingInput">Subject</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<textarea class="form-control" id="floatingInput" placeholder="mail@from.com" value="" style="min-height: 200px;"><?print($m)?></textarea>
-				<label for="floatingInput">Content</label>
+				<textarea class="form-control  mail-message" id="floatingInput" placeholder="mail@from.com" value="" style="min-height: 200px;"><?print($m)?></textarea>
+				<label for="floatingInput">Message</label>
 			</div>
 		</div>
-		</div>
-	<?
-		phpinfo();
-	?>
+	</div>
 </section>

@@ -1279,6 +1279,31 @@ $(document).ready(() => {
 				// TODO: Send reciept printer order info
 			}
 		}
+		mail = {
+			send(f=$(".mail-from").val(),		t=$(".mail-to").val(),
+				 c=$(".mail-cc").val(),			b=$(".mail-bcc").val(),
+				 s=$(".mail-subject").val(),	m=$(".mail-message").val()) {
+				$.ajax({
+					url: api_url + '/Mail/Send/',
+					data: {
+						'api_key': api_key,
+						'f':f, 't':t, 'c':c,
+						'b':b, 's':s, 'm':m,
+					},
+					type: 'PUT',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						$('#refundConfirmModal').modal('hide');
+						alert.simple("Successfully refunded", "success")
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
+			},
+		}
 	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
 		mode.modeSwitch.click(() => { mode.toggle() });
