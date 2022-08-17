@@ -410,7 +410,7 @@ $(document).ready(() => {
 				initializeOxygen() {
 					var sectionString = $('section .sections').attr('data-original-sections');
 					if(sectionString != "") {
-						var contained, colCount, currCol, elemID, elementString, floatingVal, left;
+						var contained, colCount, currCol, elemID, elementString='', floatingVal=0, left=0;
 						var sections, columns, elements, cols = [];
 						sections = sectionString.split('$')
 						sections.shift();
