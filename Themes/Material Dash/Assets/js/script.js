@@ -451,9 +451,9 @@ $(document).ready(() => {
 							}
 							// Place the lements within the columns
 							columns.forEach(function(column) {
-								console.log(column);
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
+									console.log(element);
 									[elemID, elementString] = element.split(':');
 									if(contained) {
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
