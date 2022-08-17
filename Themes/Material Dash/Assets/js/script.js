@@ -454,12 +454,10 @@ $(document).ready(() => {
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
-									console.log('1: '+elemID);
 									if(contained) {
-										console.log('2: '+elemID);
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
-										console.log('3: '+elemID);
-										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
+										el = $("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol])
+										$(el).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											console.log('4: '+elemID);
 											$(this).removeClass('accordion-body');
 											$(this).find('input').first().val(elementString);
