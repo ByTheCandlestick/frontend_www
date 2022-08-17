@@ -450,11 +450,9 @@ $(document).ready(() => {
 							}
 							// Place the lements within the columns
 							columns.forEach(function(column) {
+								console.log();
 								elements = column.split(';').pop().split(',');
 								elements.forEach(function(element) {
-									if(element == "") {
-										currCol++;
-									}
 									console.log(element);
 									[elemID, elementString] = element.split(':');
 									if(contained) {
@@ -470,6 +468,7 @@ $(document).ready(() => {
 										});
 									}
 								})
+								currCol++;
 							})
 						})
 					} else {
