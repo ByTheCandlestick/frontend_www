@@ -455,7 +455,10 @@ $(document).ready(() => {
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
 									if(contained) {
-										console.log((elemID==''||elemID===undefined?'----':elemID)+(elementString==''||elementString===undefined?'':', '+elementString));
+										console.log('Placing');
+										console.log(elemID+':'+elementString);
+										console.log('Within');
+										console.log(cols[currCol]);
 										cols = $("div[element-id='$"+colCount+"|']").last().find('.dragulaContainer');
 										$("div[element-id='"+elemID+"']").clone().appendTo(cols[currCol]).removeClass('accordion-collapse collapse show').removeAttr('data-bs-parent id').children().each(function() {
 											$(this).removeClass('accordion-body');
