@@ -450,7 +450,7 @@ $(document).ready(() => {
 							}
 							// Place the lements within the columns
 							columns.forEach(function(column) {
-								elements = column.split(';').pop().split(',');
+								elements = Array_filter(column.split(';').pop().split(','));
 								console.log(elements);
 								elements.forEach(function(element) {
 									[elemID, elementString] = element.split(':');
