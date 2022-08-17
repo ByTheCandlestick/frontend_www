@@ -13,6 +13,13 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-        
+        <div class="mail">
+			<div class="col-12">
+			</div>
+			<div class="col-12">
+			</div>
+			<div class="col-12">
+			</div>
+		</div>
 	</div>
 </section>
