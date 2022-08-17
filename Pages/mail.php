@@ -8,7 +8,7 @@
 			<h1>Mail</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
-			<a href="mailto:<?print($invoice['Email'])?>;" class="btn btn-outline-primary m-1">
+			<a href="/Mail/New/" class="btn btn-outline-primary m-1">
 				<i class="fa fa-envelope-open"></i>
 			</a>
 		</div>
