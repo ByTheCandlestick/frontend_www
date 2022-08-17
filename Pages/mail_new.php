@@ -1,10 +1,10 @@
 <?
 	(isset($_GET['from']) && $_GET['from']!='')?$f=$_GET['from']:$f=strtolower($userdata['Username']).'@thecandlestick.co.uk';
-	(isset($_GET['to']) && $_GET['to']!='')?$t=$_GET['to']:$t=''
-	(isset($_GET['cc']) && $_GET['cc']!='')?$c=$_GET['cc']:$c=''
-	(isset($_GET['bcc']) && $_GET['bcc']!='')?$b=$_GET['bcc']:$b=''
-	(isset($_GET['subject']) && $_GET['subject']!='')?$s=$_GET['subject']:$s=''
-	(isset($_GET['content']) && $_GET['content']!='')?$m=$_GET['content']:$m=''
+	(isset($_GET['to']) && $_GET['to']!='')?$t=$_GET['to']:$t='';
+	(isset($_GET['cc']) && $_GET['cc']!='')?$c=$_GET['cc']:$c='';
+	(isset($_GET['bcc']) && $_GET['bcc']!='')?$b=$_GET['bcc']:$b='';
+	(isset($_GET['subject']) && $_GET['subject']!='')?$s=$_GET['subject']:$s='';
+	(isset($_GET['content']) && $_GET['content']!='')?$m=$_GET['content']:$m='';
 ?>
 <section>
 	<!-- Section Header -->
