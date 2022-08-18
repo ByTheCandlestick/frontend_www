@@ -300,7 +300,7 @@
 						<input type="text" class="form-control description_short" id="floatingInput" placeholder="Short description" value="<?print($prod['DescriptionShort'])?>">
 					</div>
 					<div class="col-12" name="description_long">
-						<input type="text" class="form-control description_long" id="floatingInput" placeholder="Long description" value="<head><?print($prod['DescriptionLong'])?>">
+						<input type="text" class="form-control description_long" id="floatingInput" placeholder="Long description" value="<?print($prod['DescriptionLong'])?>">
 					</div>
 				</div>
 			</div>
