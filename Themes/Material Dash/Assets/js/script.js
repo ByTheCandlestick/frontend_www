@@ -928,8 +928,8 @@ $(document).ready(() => {
 				available = (($("div[name=status] input[name=available]:checked").length === 0) ? 0 : 1);
 				discounted = (($("div[name=pricing] input[name=discounted]:checked").length === 0) ? 0 : 1);
 				auto_calculate = (($("div[name=pricing] input[name=auto_calculate]:checked").length === 0) ? 0 : 1);
-				desc_l = smde_desc_l.value().replace('\n', '\\r\\n');
-				desc_s = smde_desc_s.value().replace('\n', '\\r\\n');
+				desc_l = $("iframe").contents().find('.mce-content-body').html();
+				desc_s = $("iframe").contents().find('.mce-content-body').html();
 
 				data = {
 					'api_key': api_key,
