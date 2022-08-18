@@ -310,17 +310,7 @@
 	</section>
 	<script>
 		var desc_long = tinymce.init({
-			selector: 'div[name=description_long] input',
-			toolbar: 'undo redo |'+
-					 'formatpainter casechange blocks |'+
-					 'bold italic backcolor | '+
-					 'alignleft aligncenter alignright alignjustify | ' +
-					 'bullist numlist checklist outdent indent |'+
-					 'removeformat |'+
-					 'code table help'
-		});
-		var desc_short = tinymce.init({
-			selector: 'div[name=description_short] input',
+			selector: 'div[name=description_long] input, div[name=description_short] input',
 			toolbar: 'undo redo |'+
 					 'formatpainter casechange blocks |'+
 					 'bold italic backcolor | '+
