@@ -297,10 +297,10 @@
 			<div class="col-12 col-md-6 col-lg-5">
 				<div class="row">
 					<div class="col-12" name="description_short">
-						<input type="text" class="form-control description_short" id="floatingInput" placeholder="Short description" value="<?print($prod['DescriptionShort'])?>">
+						<input type="text" class="form-control description_short" id="floatingInput" placeholder="Short description" value="<?= $prod['DescriptionShort'] ?>">
 					</div>
 					<div class="col-12" name="description_long">
-						<input type="text" class="form-control description_long" id="floatingInput" placeholder="Long description" value="<?print($prod['DescriptionLong'])?>">
+						<input type="text" class="form-control description_long" id="floatingInput" placeholder="Long description" value="<?= $prod['DescriptionLong'] ?>">
 					</div>
 				</div>
 			</div>
