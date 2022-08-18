@@ -926,7 +926,7 @@ $(document).ready(() => {
 			update(pid) {
 				$.ajax({
 					url: api_url + '/Product/' + pid + '/',
-					data = {
+					data: {
 						'api_key': api_key,
 						'title': $("div[name=title] input").val(),
 						'collection': $("div[name=range]").find("option:selected").val(),
