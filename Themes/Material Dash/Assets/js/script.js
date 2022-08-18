@@ -924,47 +924,39 @@ $(document).ready(() => {
 				// TODO: Create new product
 			},
 			update(pid) {
-				discontinued = (($("div[name=status] input[name=discontinued]:checked").length === 0) ? 0 : 1);
-				available = (($("div[name=status] input[name=available]:checked").length === 0) ? 0 : 1);
-				discounted = (($("div[name=pricing] input[name=discounted]:checked").length === 0) ? 0 : 1);
-				auto_calculate = (($("div[name=pricing] input[name=auto_calculate]:checked").length === 0) ? 0 : 1);
-				desc_l = $("div[name=description_long] iframe").contents().find('.mce-content-body').html();
-				desc_s = $("div[name=description_short] iframe").contents().find('.mce-content-body').html();
-
-				data = {
-					'api_key': api_key,
-					'title': $("div[name=title] input").val(),
-					'collection': $("div[name=range]").find("option:selected").val(),
-					'images': $("div[name=images] input").val(),
-					'category': $("div[name=category]").find("option:selected").val(),
-					'discontinued': discontinued,
-					'active': available,
-					'currency': $("div[name=currency] input").val(),
-					'profit': $("div[name=profit] input").val(),
-					'retail': $("div[name=retail] input").val(),
-					'net': $("div[name=net] input").val(),
-					'gross': $("div[name=gross] input").val(),
-					'markup': $("div[name=markup] input").val(),
-					'discounted': discounted,
-					'auto_calculate': auto_calculate,
-					'discount_type': $("div[name=discount_type]").find("option:selected").val(),
-					'discount_amount': $("div[name=discount_amount] input").val(),
-					'container': $("div[name=container]").find("option:selected").val(),
-					'wick': $("div[name=wick]").find("option:selected").val(),
-					'wick_stand': $("div[name=wick_stand]").find("option:selected").val(),
-					'material': $("div[name=material]").find("option:selected").val(),
-					'fragrance': $("div[name=fragrance]").find("option:selected").val(),
-					'colour': $("div[name=colour]").find("option:selected").val(),
-					'packaging': $("div[name=packaging]").find("option:selected").val(),
-					'shipping': $("div[name=shipping]").find("option:selected").val(),
-					'made_by': $("div[name=made_by]").find("option:selected").val(),
-					'description_long': encodeURIComponent(desc_l),
-					'description_short': encodeURIComponent(desc_s),
-					'slug': $("div[name=slug] input").val(),
-				};
 				$.ajax({
 					url: api_url + '/Product/' + pid + '/',
-					data: data,
+					data = {
+						'api_key': api_key,
+						'title': $("div[name=title] input").val(),
+						'collection': $("div[name=range]").find("option:selected").val(),
+						'images': $("div[name=images] input").val(),
+						'category': $("div[name=category]").find("option:selected").val(),
+						'discontinued': (($("div[name=status] input[name=discontinued]:checked").length === 0) ? 0 : 1),
+						'active': (($("div[name=status] input[name=available]:checked").length === 0) ? 0 : 1),
+						'currency': $("div[name=currency] input").val(),
+						'profit': $("div[name=profit] input").val(),
+						'retail': $("div[name=retail] input").val(),
+						'net': $("div[name=net] input").val(),
+						'gross': $("div[name=gross] input").val(),
+						'markup': $("div[name=markup] input").val(),
+						'discounted': (($("div[name=pricing] input[name=discounted]:checked").length === 0) ? 0 : 1),
+						'auto_calculate': (($("div[name=pricing] input[name=auto_calculate]:checked").length === 0) ? 0 : 1),
+						'discount_type': $("div[name=discount_type]").find("option:selected").val(),
+						'discount_amount': $("div[name=discount_amount] input").val(),
+						'container': $("div[name=container]").find("option:selected").val(),
+						'wick': $("div[name=wick]").find("option:selected").val(),
+						'wick_stand': $("div[name=wick_stand]").find("option:selected").val(),
+						'material': $("div[name=material]").find("option:selected").val(),
+						'fragrance': $("div[name=fragrance]").find("option:selected").val(),
+						'colour': $("div[name=colour]").find("option:selected").val(),
+						'packaging': $("div[name=packaging]").find("option:selected").val(),
+						'shipping': $("div[name=shipping]").find("option:selected").val(),
+						'made_by': $("div[name=made_by]").find("option:selected").val(),
+						'description_long': encodeURIComponent($("div[name=description_long] iframe").contents().find('.mce-content-body').html()),
+						'description_short': encodeURIComponent($("div[name=description_short] iframe").contents().find('.mce-content-body').html()),
+						'slug': $("div[name=slug] input").val(),
+					},
 					type: 'POST',
 					xhrFields: {
 						withCredentials: true,
