@@ -311,7 +311,7 @@
 	<script>
 		$(document).ready(() => {
 			tinymce.init({
-				selector: '.mail-message',
+				selector: 'div[name=description_long] input',
 				toolbar: 'undo redo |'+
 						'formatpainter casechange blocks |'+
 						'bold italic backcolor | '+
@@ -321,7 +321,7 @@
 						'code table help'
 			});
 			tinymce.init({
-				selector: '.mail-message',
+				selector: 'div[name=description_short] input',
 				toolbar: 'undo redo |'+
 						'formatpainter casechange blocks |'+
 						'bold italic backcolor | '+
@@ -329,32 +329,6 @@
 						'bullist numlist checklist outdent indent |'+
 						'removeformat |'+
 						'code table help'
-			});
-			var smde_desc_l = new SimpleMDE({
-				element: $("div[name=description_long] input")[0],
-				status: [ {
-					className: "chars",
-					defaultValue: function(el) {
-						el.innerHTML = "0 / "+512;
-					},
-					onUpdate: function(el) {
-						el.innerHTML = smde_desc_l.value().length + " / "+512;
-						misc.limit_characters(el)
-					}
-				}]
-			});
-			var smde_desc_s = new SimpleMDE({
-				element: $("div[name=description_short] input")[0],
-				status: [ {
-					className: "chars",
-					defaultValue: function(el) {
-						el.innerHTML = "0 / "+256;
-					},
-					onUpdate: function(el) {
-						el.innerHTML = smde_desc_s.value().length + " / "+256;
-						misc.limit_characters(el)
-					}
-				}]
 			});
 		});
 	</script>
