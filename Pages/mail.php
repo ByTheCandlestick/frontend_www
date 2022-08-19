@@ -35,11 +35,6 @@
 				right: 0.5rem;
 				margin-top: 6rem!important;
 			}
-			sidebar:hover {
-				-webkit-box-shadow: 10px 4px 34px -1px rgba(0,0,0,0.95);
-				-moz-box-shadow: 10px 4px 34px -1px rgba(0,0,0,0.95);
-				box-shadow: 10px 4px 34px -1px rgba(0,0,0,0.95);
-			}
 			sidebar div {
 				list-style: none;
 				display: block;
@@ -62,6 +57,9 @@
 			}
 			sidebar div:hover {
 				background-color: silver;
+			}
+			sidebar:hover {
+				width: 250px;
 			}
 		</style>
 		<sidebar>
