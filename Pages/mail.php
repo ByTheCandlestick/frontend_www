@@ -58,17 +58,19 @@
 			<a href="/Mail/Deleted/"><div><span>Deleted</span></div></a>
 		</div>
 <?
-	if(QS_SUBPAGE == null || QS_SUBPAGE == "") {
-		header("Location: /Mail/Inbox/");
-	} else if(strtolower(QS_SUBPAGE) == "inbox") {
+	if(QS_SUBPAGE!== NULL) {
+		if(strtolower(QS_SUBPAGE) == "inbox") {
 ?>
 		<div class="row">
 
 		</div>
 <?
-	} else {
+		} else {
 ?>
 <?
+		}
+	} else {
+		header("Location: /Mail/Inbox/");
 	}
 ?>
 </section>
