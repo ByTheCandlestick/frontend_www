@@ -30,9 +30,9 @@
 				background-color: var(--app-container);
 				width: 60px;
 				transition-duration: 0.5s;
-				border-radius: 5px 0px 0px 5px;
+				border-radius: 0px 5px 5px 0px;
 				position: fixed;
-				right: 0.5rem;
+				left: 0.5rem;
 				margin-top: 6rem!important;
 			}
 			sidebar div {
