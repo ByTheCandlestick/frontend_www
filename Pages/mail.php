@@ -70,9 +70,9 @@
 		</style>
 		<div id="sidebar">
 			<a href="/Mail/Inbox/"><div class="<?= (strtolower(QS_SUBPAGE) == "inbox")? "active":""; ?>"><span>Inbox</span></div></a>
-			<a href="/Mail/Sent/"><div class="<? if(strtolower(QS_SUBPAGE) == "sent") "active"; ?>"><span>Sent</span></div></a>
-			<a href="/Mail/Junk/"><div class="<? if(strtolower(QS_SUBPAGE) == "junk") "active"; ?>"><span>Junk</span></div></a>
-			<a href="/Mail/Deleted/"><div class="<? if(strtolower(QS_SUBPAGE) == "deleted") "active"; ?>"><span>Deleted</span></div></a>
+			<a href="/Mail/Sent/"><div class="<?= (strtolower(QS_SUBPAGE) == "sent") "active":""; ?>"><span>Sent</span></div></a>
+			<a href="/Mail/Junk/"><div class="<?= (strtolower(QS_SUBPAGE) == "junk") "active":""; ?>"><span>Junk</span></div></a>
+			<a href="/Mail/Deleted/"><div class="<?= (strtolower(QS_SUBPAGE) == "deleted") "active":""; ?>"><span>Deleted</span></div></a>
 		</div>
 		<div class="row">
 
