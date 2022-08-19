@@ -30,8 +30,7 @@
 				background-color: var(--app-container);
 				width: 60px;
 				transition-duration: 0.5s;
-				border-bottom-right-radius: 5px;
-				border-top-right-radius: 5px;
+				border-radius: 5px 0px 0px 5px;
 				position: fixed;
 				right: 1rem;
 				margin-top: 6rem!important;
