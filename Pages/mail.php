@@ -58,7 +58,7 @@
 			<a href="/Mail/Deleted/"><div><span>Deleted</span></div></a>
 		</div>
 <?
-	if(QS_SUBPAGE == "") {
+	if(QS_SUBPAGE == null) {
 
 	} else if(strtolower(QS_SUBPAGE) == "inbox") {
 ?>
