@@ -4,7 +4,7 @@
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
 	} else {
-		$url = URL_CURR."Mail/Inbox/";
+		$url = URL_CURR."/Mail/Inbox/";
 		?><script> misc.redirect("<?= $url ?>"); </script><?
 	}
 ?>
