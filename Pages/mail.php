@@ -45,7 +45,7 @@
 				transition-duration: 0.5s;
 			}
 			sidebar div:before {
-				content: "<<"
+				content: ">>"
 			}
 			sidebar div.active {
 				background: gainsboro;
