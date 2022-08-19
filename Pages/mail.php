@@ -5,7 +5,7 @@
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
 	} else {
 		header("Location: ".URL_CURR."/Mail/Inbox/");
-		echo URL_CURR;
+		echo URL_CURR."/Mail/Inbox/";
 	}
 ?>
 <section>
