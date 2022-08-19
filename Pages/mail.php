@@ -33,7 +33,7 @@
 				border-radius: 0px 5px 5px 0px;
 				position: fixed;
 				left: 72px;
-				margin-top: 6rem!important;
+				margin: 6rem 0rem 0rem 2px!important;
 			}
 			sidebar div {
 				list-style: none;
