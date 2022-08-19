@@ -50,22 +50,29 @@
 				trasintion: all;
 				transition-duration: 0.5s;
 			}
-			#sidebar div:before { content: "<<" }
+			#sidebar div:before {
+				content: "<<"
+			}
+			#sidebar div.active {
+				background: gainsboro;
+			}
 			#sidebar div span {
 				margin-left: 30px;
 				color: black;
 				font-size: 20px;
 			}
 			#sidebar div:hover {
-				background-color: #C9C9C9;
+				background-color: silver;
 			}
-			#sidebar:hover { width: 250px }
+			#sidebar:hover {
+				width: 250px;
+			}
 		</style>
 		<div id="sidebar">
-			<a href="/Mail/Inbox/"><div><span>Inbox</span></div></a>
-			<a href="/Mail/Sent/"><div><span>Sent</span></div></a>
-			<a href="/Mail/Junk/"><div><span>Junk</span></div></a>
-			<a href="/Mail/Deleted/"><div><span>Deleted</span></div></a>
+			<a href="/Mail/Inbox/"><div class="<?= (if(strtolower(QS_SUBPAGE) == "inbox") "active";)?>"><span>Inbox</span></div></a>
+			<a href="/Mail/Sent/"><div class="<?= (if(strtolower(QS_SUBPAGE) == "sent") "active";)?>"><span>Sent</span></div></a>
+			<a href="/Mail/Junk/"><div class="<?= (if(strtolower(QS_SUBPAGE) == "junk") "active";)?>"><span>Junk</span></div></a>
+			<a href="/Mail/Deleted/"><div class="<?= (if(strtolower(QS_SUBPAGE) == "deleted") "active";)?>"><span>Deleted</span></div></a>
 		</div>
 		<div class="row">
 
