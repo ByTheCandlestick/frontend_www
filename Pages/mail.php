@@ -26,7 +26,7 @@
 	<hr>
 	<!-- Section Body -->
 		<style>
-			#sidebar {
+			sidebar {
 				background-color: var(--app-container);
 				width: 60px;
 				transition-duration: 0.5s;
@@ -36,12 +36,12 @@
 				right: 1rem;
 				margin-top: 6rem!important;
 			}
-			#sidebar:hover {
+			sidebar:hover {
 				-webkit-box-shadow: 10px 4px 34px -1px rgba(0,0,0,0.95);
 				-moz-box-shadow: 10px 4px 34px -1px rgba(0,0,0,0.95);
 				box-shadow: 10px 4px 34px -1px rgba(0,0,0,0.95);
 			}
-			#sidebar div {
+			sidebar div {
 				list-style: none;
 				display: block;
 				color: black;
@@ -50,30 +50,30 @@
 				trasintion: all;
 				transition-duration: 0.5s;
 			}
-			#sidebar div:before {
+			sidebar div:before {
 				content: "<<"
 			}
-			#sidebar div.active {
+			sidebar div.active {
 				background: gainsboro;
 			}
-			#sidebar div span {
+			sidebar div span {
 				margin-left: 30px;
 				color: black;
 				font-size: 20px;
 			}
-			#sidebar div:hover {
+			sidebar div:hover {
 				background-color: silver;
 			}
-			#sidebar:hover {
+			sidebar:hover {
 				width: 250px;
 			}
 		</style>
-		<div id="sidebar">
+		<sidebar>
 			<a href="/Mail/Inbox/"><div class="<?=(strtolower(QS_SUBPAGE) == "inbox")?"active":"";?>"><span>Inbox</span></div></a>
 			<a href="/Mail/Sent/"><div class="<?=(strtolower(QS_SUBPAGE) == "sent")?"active":"";?>"><span>Sent</span></div></a>
 			<a href="/Mail/Junk/"><div class="<?=(strtolower(QS_SUBPAGE) == "junk")?"active":"";?>"><span>Junk</span></div></a>
 			<a href="/Mail/Deleted/"><div class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><span>Deleted</span></div></a>
-		</div>
+		</sidebar>
 		<div class="row">
 
 		</div>
