@@ -1,3 +1,12 @@
+<?
+	if(strtolower(QS_SUBPAGE) == "inbox") {
+	} elseif(strtolower(QS_SUBPAGE) == "sent") {
+	} elseif(strtolower(QS_SUBPAGE) == "junk") {
+	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
+	} else {
+		header("Location: /Mail/Inbox/");
+	}
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
@@ -57,23 +66,7 @@
 			<a href="/Mail/Junk/"><div><span>Junk</span></div></a>
 			<a href="/Mail/Deleted/"><div><span>Deleted</span></div></a>
 		</div>
-		<script>
-			console.log('<?= QS_SUBPAGE ?>');
-		</script>
-<?
-	if(QS_SUBPAGE!== NULL) {
-		if(strtolower(QS_SUBPAGE) == "inbox") {
-?>
 		<div class="row">
 
 		</div>
-<?
-		} else {
-?>
-<?
-		}
-	} else {
-		header("Location: /Mail/Inbox/");
-	}
-?>
 </section>
