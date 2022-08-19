@@ -4,7 +4,7 @@
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
 	} else {
-		header("Location: /Mail/Inbox/");
+		header("Location: ".."/Mail/Inbox/");
 	}
 ?>
 <section>

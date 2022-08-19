@@ -19,6 +19,7 @@
 	define('URL_WWW',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'www.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	define('URL_BLOG',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'blog.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	define('URL_ADMIN',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'admin.' . removeSubdomain($_SERVER['HTTP_HOST']));
+	define('URL_curr',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'admin.' . $_SERVER['HTTP_HOST']);
 	// SET USERS IP
 		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
