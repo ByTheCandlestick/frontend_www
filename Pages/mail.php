@@ -5,8 +5,7 @@
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
 	} else {
 		$url = URL_CURR."Mail/Inbox/";
-		?><script>misc.redirect("<?= $url ?>");</script><?
-		exit;
+		?><script> misc.redirect("<?= $url ?>"); </script><?
 	}
 ?>
 <section>

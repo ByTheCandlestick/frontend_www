@@ -26,8 +26,8 @@ $(document).ready(() => {
 					}
 				});
 			},
-			redirect() {
-				// TODO: Redirect page
+			redirect(url) {
+				window.location.href = url;
 			},
 			limit_characters(el) {
 				// TODO: Limit characters in specific element
