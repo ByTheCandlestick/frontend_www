@@ -60,9 +60,6 @@
 				color: black;
 				font-size: 20px;
 			}
-			sidebar div:hover {
-				background-color: silver;
-			}
 			sidebar:hover {
 				width: 250px;
 			}
