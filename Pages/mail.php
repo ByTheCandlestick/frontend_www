@@ -57,6 +57,9 @@
 			<a href="/Mail/Junk/"><div><span>Junk</span></div></a>
 			<a href="/Mail/Deleted/"><div><span>Deleted</span></div></a>
 		</div>
+		<script>
+			console.log(<?= QS_SUBPAGE ?>);
+		</script>
 <?
 	if(QS_SUBPAGE!== NULL) {
 		if(strtolower(QS_SUBPAGE) == "inbox") {
