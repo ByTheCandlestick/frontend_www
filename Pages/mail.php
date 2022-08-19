@@ -5,6 +5,9 @@
 			<h1>Mail / <?= ucwords(QS_SUBPAGE) ?></h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
+			<a href="/Mail/New/" class="btn btn-outline-primary m-1 d--none">
+				<i class="fa fa-trash"></i>
+			</a>
 			<a href="/Mail/New/" class="btn btn-outline-primary m-1">
 				<i class="fa fa-envelope-open"></i>
 			</a>
@@ -55,7 +58,7 @@
 			<a href="/Mail/Deleted/"><div><span>Deleted</span></div></a>
 		</div>
 <?
-	if( strtolower(QS_SUBPAGE) == "inbox" ) {
+	if(strtolower(QS_SUBPAGE) == "inbox") {
 ?>
 		<div class="row">
 
