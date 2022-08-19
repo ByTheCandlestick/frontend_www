@@ -32,7 +32,7 @@
 				transition-duration: 0.5s;
 				border-radius: 0px 5px 5px 0px;
 				position: fixed;
-				
+				left: 0rem;
 				margin-top: 6rem!important;
 			}
 			sidebar div {
