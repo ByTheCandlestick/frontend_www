@@ -59,7 +59,7 @@
 		</div>
 <?
 	if(QS_SUBPAGE == null) {
-
+		header("Location: /Mail/Inbox/");
 	} else if(strtolower(QS_SUBPAGE) == "inbox") {
 ?>
 		<div class="row">
