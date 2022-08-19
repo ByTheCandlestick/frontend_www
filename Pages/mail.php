@@ -4,8 +4,8 @@
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
 	} else {
-		header("Location: ${URL_CURR}/Mail/Inbox/");
-		echo "${URL_CURR}/Mail/Inbox/";
+		header("Location: ".URL_CURR."Mail/Inbox/");
+		exit;
 	}
 ?>
 <section>
