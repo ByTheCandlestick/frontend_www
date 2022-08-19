@@ -13,18 +13,6 @@
 	<hr>
 	<!-- Section Body -->
 		<style>
-			#wrap {
-				margin: 10px auto;
-				width: 500px;
-				overflow: hidden;
-				border: 1px solid grey;
-				text-align: center;
-			}
-			#wrap .title {
-				font-size: 30px;
-				padding: 10px;
-				border-bottom: 1px solid grey;
-			}
 			#sidebar {
 				background-color: var(--app-container);
 				width: 60px;
