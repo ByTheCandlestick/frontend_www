@@ -31,7 +31,7 @@
 				width: 60px;
 				transition-duration: 0.5s;
 				border-radius: 0px 5px 5px 0px;
-				margin: unset!important;
+				margin: 1rem 0 0px 0!important;
 				top: 1rem;
 			}
 			sidebar div {
