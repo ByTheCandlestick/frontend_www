@@ -32,7 +32,6 @@
 				transition-duration: 0.5s;
 				border-radius: 5px 0px 0px 5px;
 				position: fixed;
-				right: 1rem;
 				margin-top: 6rem!important;
 			}
 			sidebar:hover {
