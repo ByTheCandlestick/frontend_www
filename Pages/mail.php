@@ -32,6 +32,7 @@
 				transition-duration: 0.5s;
 				border-radius: 0px 5px 5px 0px;
 				margin: unset!important;
+				top: 1rem;
 			}
 			sidebar div {
 				list-style: none;
