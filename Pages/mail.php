@@ -49,10 +49,10 @@
 			#sidebar:hover { width: 250px }
 		</style>
 		<div id="sidebar">
-			<div><span><a href="/Mail/Inbox/">Inbox</a></span></div>
-			<div><span><a href="/Mail/Sent/">Sent</a></span></div>
-			<div><span><a href="/Mail/Junk/">Junk</a></span></div>
-			<div><span><a href="/Mail/Deleted/">Deleted</a></span></div>
+			<a href="/Mail/Inbox/"><div><span>Inbox</span></div></a>
+			<a href="/Mail/Sent/"><div><span>Sent</span></div></a>
+			<a href="/Mail/Junk/"><div><span>Junk</span></div></a>
+			<a href="/Mail/Deleted/"><div><span>Deleted</span></div></a>
 		</div>
 <?
 	if( strtolower(QS_SUBPAGE) == "inbox" ) {
