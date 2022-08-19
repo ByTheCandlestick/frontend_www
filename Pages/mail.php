@@ -26,15 +26,14 @@
 				border-bottom: 1px solid grey;
 			}
 			#sidebar {
-				position: fixed;
-				top: 20%;
-				left: 0px;
-				background-color: white;
+				background-color: var(--app-container);
 				width: 60px;
-				trasintion: all;
 				transition-duration: 0.5s;
 				border-bottom-right-radius: 5px;
 				border-top-right-radius: 5px;
+				position: fixed;
+				right: 1rem;
+				margin-top: 6rem!important;
 			}
 			#sidebar:hover {
 				-webkit-box-shadow: 10px 4px 34px -1px rgba(0,0,0,0.95);
@@ -50,7 +49,7 @@
 				trasintion: all;
 				transition-duration: 0.5s;
 			}
-			#sidebar div:before { content: ">>" }
+			#sidebar div:before { content: "<<" }
 			#sidebar div span {
 				margin-left: 30px;
 				color: black;
