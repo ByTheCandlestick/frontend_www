@@ -5,7 +5,7 @@
 			<h1>Mail / <?= ucwords(QS_SUBPAGE) ?></h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
-			<a href="/Mail/New/" class="btn btn-outline-danger m-1 d--none">
+			<a href="/Mail/New/" class="btn btn-outline-danger m-1 d-none">
 				<i class="fa fa-trash-alt"></i>
 			</a>
 			<a href="/Mail/New/" class="btn btn-outline-primary m-1">
