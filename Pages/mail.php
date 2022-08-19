@@ -68,6 +68,6 @@
 			<a href="/Mail/Deleted/"><div class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><span>Deleted</span></div></a>
 		</sidebar>
 		<div class="row">
-
+			
 		</div>
 </section>
