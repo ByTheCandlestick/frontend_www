@@ -65,9 +65,8 @@
 					 -o-transform: translateX(6rem);
 						transform: translateX(6rem);
 			}
-			.side-menu ul li a {
-				display: block;
-				text-decoration: none;
+			.side-menu ul li a:hover {
+				color: var(--link-color-hover);
 			}
 			.side-menu ul li span {
 				display: block;
