@@ -395,25 +395,17 @@ $(document).ready(function() {
 		account = {
 			register: function() {
 				validate.form();
-				var fname = $('.main-form__body--input[name=firstname]').val();
-				var sname = $('.main-form__body--input[name=surname]').val();
-				var uname = $('.main-form__body--input[name=username]').val();
-				var email = $('.main-form__body--input[name=email]').val();
-				var pass1 = $('.main-form__body--input[name=password]').val();
-				var pass2 = $('.main-form__body--input[name=password2]').val();
-				data = {
-					'api_key': api_key,
-					'fname': fname,
-					'sname': sname,
-					'uname': uname,
-					'email': email,
-					'pass1': pass1,
-					'pass2': pass2,
-				};
-
 				$.ajax({
 					url: api_url + '/Users/',
-					data: data,
+					data: {
+						'api_key': api_key,
+						'fname': $('.main-form__body--input[name=firstname]').val(),
+						'sname': $('.main-form__body--input[name=surname]').val(),
+						'uname': $('.main-form__body--input[name=username]').val(),
+						'email': $('.main-form__body--input[name=email]').val(),
+						'pass1': $('.main-form__body--input[name=password]').val(),
+						'pass2': $('.main-form__body--input[name=password2]').val(),
+					},
 					type: 'PUT',
 					xhrFields: {
 						withCredentials: true,
@@ -440,6 +432,7 @@ $(document).ready(function() {
 							withCredentials: true,
 						},
 						success: function(body) {
+							console.log(body);
 							if (body.status == "success") {
 								cookie.createFromArray(
 									body.cookies,
