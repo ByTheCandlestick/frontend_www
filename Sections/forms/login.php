@@ -17,7 +17,7 @@
 			console.log("Key pressed: " + e.code + " / " + e.key);
 			if (!e) e = window.event;
 			var keyCode = e.code || e.key;
-			if (keyCode === 13){
+			if (keyCode == 'Enter'){
 				// Enter pressed
 				console.log("Enter pressed");
 			}
