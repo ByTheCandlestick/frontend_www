@@ -27,7 +27,7 @@
 	<!-- Section Body -->
 		<style>
 			.side-menu {
-				width: 14em;
+				width: 10rem;
 				height: auto;
 				margin: 4em auto 0;
 				font-size: 1em;
