@@ -14,8 +14,7 @@
 	</div>
 	<script>
 		$("input[name=username], input[name=password]").keypress((e) => {
-			console.log("Key pressed");
-			console.log(e.code);
+			console.log("Key pressed: " + e.code+" " + typeof(e.code));
 			if (!e) e = window.event;
 			var keyCode = e.code || e.key;
 			if (keyCode === 13){
