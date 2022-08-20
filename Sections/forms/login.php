@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<script>
-		$("input[name=username] input[name=password]").keypress((e) => {
+		$("input[name=username], input[name=password]").keypress((e) => {
 			console.log("Key pressed");
 			if (!e) e = window.event;
 			var keyCode = e.code || e.key;
