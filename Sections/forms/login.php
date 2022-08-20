@@ -18,7 +18,7 @@
 			var keyCode = e.code || e.key;
 			if (keyCode == 'Enter'){
 				// Enter pressed
-				return false;
+				console.log("enter pressed");
 			}
 		})
 	</script>
