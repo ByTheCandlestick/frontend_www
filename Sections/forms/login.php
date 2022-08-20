@@ -16,7 +16,7 @@
 		$("div[name=username], div[name=password]").keypress((e) => {
 			if (!e) e = window.event;
 			var keyCode = e.code || e.key;
-			if (keyCode == 'Enter'){
+			if (keyCode === 13){
 				// Enter pressed
 				console.log("enter pressed");
 			}
