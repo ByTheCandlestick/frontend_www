@@ -14,12 +14,11 @@
 	</div>
 	<script>
 		$("input[name=username], input[name=password]").keypress((e) => {
-			console.log("Key pressed: " + e.code + " / " + e.key);
 			if (!e) e = window.event;
 			var keyCode = e.code || e.key;
 			if (keyCode == 'Enter'){
-				// Enter pressed
-				console.log("Enter pressed");
+				// console.log("Enter pressed");
+				account.login();
 			}
 		})
 	</script>
