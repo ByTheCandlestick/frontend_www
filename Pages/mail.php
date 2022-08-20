@@ -64,8 +64,7 @@
 				transform: translateX(10em);
 			}
 			.side-menu ul li a {
-				display:block;
-				color: #FFF;
+				display: block;
 				text-decoration: none;
 			}
 			.side-menu ul li span {
