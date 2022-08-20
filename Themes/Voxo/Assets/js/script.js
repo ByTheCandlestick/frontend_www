@@ -433,7 +433,7 @@ $(document).ready(function() {
 						},
 						success: function(body) {
 							console.log(body.status);
-							if (body.status == "success") {
+							if(body.status == "success") {
 								cookie.createFromArray(
 									body.cookies,
 									body.options.expires,
@@ -449,7 +449,7 @@ $(document).ready(function() {
 										window.location = window.location.protocol+'//' + $('rw').attr('data');
 									}
 								}
-								//location.reload();
+								location.reload();
 							} else {
 								console.log(body.status);
 							}
