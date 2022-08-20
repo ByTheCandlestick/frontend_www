@@ -50,16 +50,18 @@
 				background-color: var(--app-container);
 				padding: 1em 1.5em;
 				position: relative;
-				-webkit-transition: -webkit-transform 0.5s,     background-color .5s, color .5s;
+				-webkit-transition: -webkit-transform 0.5s, background-color .5s, color .5s;
+				   -moz-transition: -moz-transform 0.5s, background-color .5s, color .5s;
+					 -o-transition: -o-transform 0.5s, background-color .5s, color .5s;
 						transition: transform .5s, background-color .5s, color .5s;
 			}
 			.side-menu ul li.active {
 				background-color: gainsboro;
 			}
 			.side-menu ul li:hover {
-				background-color: silver; /*you can make different colors depending on the nth-child like above*/
+				background-color: silver;
 				-webkit-transform: translateX(10em);
-				transform: translateX(10em);/*equal to left in the .side-menu*/
+				transform: translateX(10em);
 			}
 			.side-menu ul li a {
 				display:block;
@@ -67,15 +69,15 @@
 				text-decoration: none;
 			}
 			.side-menu ul li span {
-				display:block;
+				display: block;
 				position: absolute;
-				font-size:1em;
+				font-size: 1em;
 				line-height: 2em;
-				height:2em;
-				top:0; 
-				bottom:0;
-				margin:0 auto;
-				padding:1em 1.5em;
+				height: 2em;
+				top: 0;
+				bottom: 0;
+				margin: 0 auto;
+				padding: 1em 1.5em;
 				right: 0.16666666666667em;
 			}
 		</style>
