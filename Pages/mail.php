@@ -38,7 +38,7 @@
 				position: relative;
 				top: 0;
 				bottom: 0;
-				left: -11em;
+				left: -7rem;
 			}
 			.side-menu ul {
 				list-style: none;
@@ -60,8 +60,10 @@
 			}
 			.side-menu ul li:hover {
 				background-color: silver;
-				-webkit-transform: translateX(10em);
-				transform: translateX(10em);
+				-webkit-transform: translateX(6rem);
+				   -moz-transform: translateX(6rem);
+					 -o-transform: translateX(6rem);
+						transform: translateX(6rem);
 			}
 			.side-menu ul li a {
 				display: block;
