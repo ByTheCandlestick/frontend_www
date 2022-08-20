@@ -12,4 +12,14 @@
 			<a href="/Register">Not got an account?</a> or <a href="/Forgotten-Password">Forgot your password?</a>
 		</div>
 	</div>
+	<script>
+		$("div[name=username], div[name=password]").keypress((e) => {
+			if (!e) e = window.event;
+			var keyCode = e.code || e.key;
+			if (keyCode == 'Enter'){
+				// Enter pressed
+				return false;
+			}
+		})
+	</script>
 </section>
