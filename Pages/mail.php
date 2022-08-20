@@ -79,10 +79,10 @@
 		</style>
 		<nav class="side-menu">
 			<ul>
-				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Inbox<span><i class="fa fa-inbox"></i></span></a></li>
-				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Sent<span><i class="fa fa-inbox-out"></i></span></a></li>
-				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Junk<span><i class="fa fa-"></i></span></a></li>
-				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Deleted<span><i class="fa fa-trash-alt"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Inbox<span><i class="fad fa-inbox"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Sent<span><i class="fad fa-inbox-out"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Junk<span><i class="fad fa-"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Deleted<span><i class="fad fa-trash-alt"></i></span></a></li>
 			</ul>
 		</nav>
 		<div class="row">
