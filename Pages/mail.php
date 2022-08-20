@@ -32,7 +32,7 @@
 				margin:4em auto 0;
 				font-size: 1em;
 				line-height: 2em;
-				color: #fff;
+				color: var(--text);
 				font-weight:700;
 				text-transform:uppercase;
 				position: relative;
