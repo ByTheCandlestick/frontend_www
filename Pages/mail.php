@@ -46,13 +46,12 @@
 				padding: 0;
 			}
 			.side-menu ul li {
-			display:block;
+				display:block;
 				background-color: #333;
-				height: 2em;
 				padding: 1em 1.5em;
 				position: relative;
 				-webkit-transition: -webkit-transform 0.5s,     background-color .5s, color .5s;
-				transition: transform .5s, background-color .5s, color .5s;
+						transition: transform .5s, background-color .5s, color .5s;
 			}
 			.side-menu ul li:nth-child(1) { background-color: #00aced;}
 			.side-menu ul li:nth-child(2) { background-color: #3b5998;}
