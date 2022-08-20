@@ -79,12 +79,10 @@
 		</style>
 		<nav class="side-menu">
 			<ul>
-				<li><a href="#">What to do?<span><i class="fa fa-map-marker"></i></span></a></li>
-				<li><a href="#">Where to go?<span><i class="fa fa-compass"></i></span></a></li>
-				<li><a href="#">Services<span><i class="fa fa-bicycle"></i></span></a></li>
-				<li><a href="#">Accomodation<span><i class="fa fa-bed"></i></span></a></li>
-				<li><a href="#">Free Time<span><i class="fa fa-book"></i></span></a></li>
-				<li><a href="#">Food&Drnk<span><i class="fa fa-beer"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Inbox<span><i class="fa fa-inbox"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Sent<span><i class="fa fa-inbox-out"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Junk<span><i class="fa fa-"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Deleted<span><i class="fa fa-trash-alt"></i></span></a></li>
 			</ul>
 		</nav>
 		<div class="row">
