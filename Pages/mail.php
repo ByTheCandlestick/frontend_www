@@ -35,10 +35,10 @@
 				color: #fff;
 				font-weight:700;
 				text-transform:uppercase;
-				position:absolute;
+				position: relative;
 				top:0; 
 				bottom:0;
-				left: -10em;
+				left: -11em;
 			}
 			.side-menu ul {
 				list-style: none;
@@ -54,14 +54,12 @@
 				-webkit-transition: -webkit-transform 0.5s,     background-color .5s, color .5s;
 				transition: transform .5s, background-color .5s, color .5s;
 			}
-			/*the colors of the different columns*/
 			.side-menu ul li:nth-child(1) { background-color: #00aced;}
 			.side-menu ul li:nth-child(2) { background-color: #3b5998;}
 			.side-menu ul li:nth-child(3) { background-color: #00a300;}
 			.side-menu ul li:nth-child(4) { background-color: #1e7145;}
 			.side-menu ul li:nth-child(5) { background-color: #ffc40d;}
 			.side-menu ul li:nth-child(6) { background-color: #cb2027;}
-
 			.side-menu ul li:hover {
 				background-color: #339966; /*you can make different colors depending on the nth-child like above*/
 				-webkit-transform: translateX(10em);
