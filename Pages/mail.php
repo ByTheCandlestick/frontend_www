@@ -27,17 +27,17 @@
 	<!-- Section Body -->
 		<style>
 			.side-menu {
-				width:14em;
+				width: 14em;
 				height: auto;
-				margin:4em auto 0;
+				margin: 4em auto 0;
 				font-size: 1em;
 				line-height: 2em;
 				color: var(--main-color);
-				font-weight:700;
-				text-transform:uppercase;
+				font-weight: 700;
+				text-transform: uppercase;
 				position: relative;
-				top:0; 
-				bottom:0;
+				top: 0;
+				bottom: 0;
 				left: -11em;
 			}
 			.side-menu ul {
@@ -46,20 +46,23 @@
 				padding: 0;
 			}
 			.side-menu ul li {
-				display:block;
+				display: block;
 				background-color: var(--app-container);
 				padding: 1em 1.5em;
 				position: relative;
 				-webkit-transition: -webkit-transform 0.5s,     background-color .5s, color .5s;
 						transition: transform .5s, background-color .5s, color .5s;
 			}
+			.side-menu ul li.active {
+				background-color: gainsboro;
+			}
 			.side-menu ul li:hover {
-				background-color: #339966; /*you can make different colors depending on the nth-child like above*/
+				background-color: silver; /*you can make different colors depending on the nth-child like above*/
 				-webkit-transform: translateX(10em);
 				transform: translateX(10em);/*equal to left in the .side-menu*/
 			}
 			.side-menu ul li a {
-			display:block;
+				display:block;
 				color: #FFF;
 				text-decoration: none;
 			}
