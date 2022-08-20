@@ -47,7 +47,7 @@
 			}
 			.side-menu ul li {
 				display:block;
-				background-color: #333;
+				background-color: var(--app-container);
 				padding: 1em 1.5em;
 				position: relative;
 				-webkit-transition: -webkit-transform 0.5s,     background-color .5s, color .5s;
