@@ -77,7 +77,6 @@
 				margin:0 auto;
 				padding:1em 1.5em;
 				right: 0.16666666666667em;
-				color: #F8F6FF;
 			}
 		</style>
 		<nav class="side-menu">
