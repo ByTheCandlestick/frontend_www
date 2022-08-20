@@ -541,6 +541,7 @@ $(document).ready(function() {
 						withCredentials: true
 					},
 					success: function(body) {
+						console.log(body);
 						if (body.status == 'success') {
 							location.reload();
 						} else {
