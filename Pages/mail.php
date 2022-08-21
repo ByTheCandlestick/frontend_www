@@ -1,4 +1,5 @@
 <?
+	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
 		$query = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Inbox'";
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
