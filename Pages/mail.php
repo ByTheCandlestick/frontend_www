@@ -30,63 +30,63 @@
 	<!-- Seperator -->
 	<hr>
 	<!-- Section Body -->
-	<style>
-		.side-menu {
-			z-index: 10;
-			width: 11rem;
-			height: auto;
-			font-size: 1rem;
-			line-height: 2rem;
-			color: var(--main-color);
-			font-weight: 700;
-			text-transform: uppercase;
-			position: relative;
-			top: 0;
-			bottom: 0;
-			left: -8rem;
-		}
-		.side-menu ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		.side-menu ul li {
-			display: block;
-			background-color: var(--app-container);
-			padding: 1em 1.5em;
-			position: relative;
-			-webkit-transition: -webkit-transform 0.5s, background-color .5s, color .5s;
-				-moz-transition: -moz-transform 0.5s, background-color .5s, color .5s;
-					-o-transition: -o-transform 0.5s, background-color .5s, color .5s;
-					transition: transform .5s, background-color .5s, color .5s;
-		}
-		.side-menu ul li.active {
-			background-color: gainsboro;
-		}
-		.side-menu ul li:hover {
-			background-color: silver;
-			-webkit-transform: translateX(6rem);
-				-moz-transform: translateX(6rem);
-					-o-transform: translateX(6rem);
-					transform: translateX(6rem);
-		}
-		.side-menu ul li a:hover {
-			color: var(--link-color-hover);
-		}
-		.side-menu ul li span {
-			display: block;
-			position: absolute;
-			font-size: 1em;
-			line-height: 2em;
-			height: 2em;
-			top: 0;
-			bottom: 0;
-			margin: 0 auto;
-			padding: 1em 1.5em;
-			right: 0.16666666666667em;
-		}
-	</style>
-	<div class="row">
+	<div class="row overflow-scroll">
+		<style>
+			.side-menu {
+				z-index: 10;
+				width: 11rem;
+				height: auto;
+				font-size: 1rem;
+				line-height: 2rem;
+				color: var(--main-color);
+				font-weight: 700;
+				text-transform: uppercase;
+				position: relative;
+				top: 0;
+				bottom: 0;
+				left: -8rem;
+			}
+			.side-menu ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.side-menu ul li {
+				display: block;
+				background-color: var(--app-container);
+				padding: 1em 1.5em;
+				position: relative;
+				-webkit-transition: -webkit-transform 0.5s, background-color .5s, color .5s;
+					-moz-transition: -moz-transform 0.5s, background-color .5s, color .5s;
+						-o-transition: -o-transform 0.5s, background-color .5s, color .5s;
+						transition: transform .5s, background-color .5s, color .5s;
+			}
+			.side-menu ul li.active {
+				background-color: gainsboro;
+			}
+			.side-menu ul li:hover {
+				background-color: silver;
+				-webkit-transform: translateX(6rem);
+					-moz-transform: translateX(6rem);
+						-o-transform: translateX(6rem);
+						transform: translateX(6rem);
+			}
+			.side-menu ul li a:hover {
+				color: var(--link-color-hover);
+			}
+			.side-menu ul li span {
+				display: block;
+				position: absolute;
+				font-size: 1em;
+				line-height: 2em;
+				height: 2em;
+				top: 0;
+				bottom: 0;
+				margin: 0 auto;
+				padding: 1em 1.5em;
+				right: 0.16666666666667em;
+			}
+		</style>
 		<div class="p-0" style="width: 3rem;">
 			<nav class="side-menu">
 				<ul>
