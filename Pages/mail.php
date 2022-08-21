@@ -108,6 +108,7 @@
 										<th scope="col">'.((strtolower(QS_SUBPAGE) == "sent")?'To':'From').'</th>
 										<th scope="col">Subject</th>
 										<th scope="col">Time</th>
+										<th scope="col"></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -117,8 +118,13 @@
 									<tr>
 										<th scope="row">'.$row['ID'].'</th>
 										<td>'.(($row['Direction']=='Inbound')?$row['From']:$row['To']).'</td>
-										<td>'.$row['Subject'].'</th>
-										<td>'.$row['Timestamp'].'</th>
+										<td>'.$row['Subject'].'</td>
+										<td>'.$row['Timestamp'].'</td>
+										<td>
+											<a onclick="mail.archive('.$row['ID'].')">
+												<i class="fa fa-archive"></i>
+											</a>
+										</td>
 									</tr>
 								');
 							}
@@ -139,6 +145,7 @@
 									<tr>
 										<th scope="row"></th>
 										<td>No data found</td>
+										<td></td>
 										<td></td>
 										<td></td>
 									</tr>
