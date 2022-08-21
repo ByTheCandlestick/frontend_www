@@ -32,7 +32,7 @@
 	<!-- Section Body -->
 	<style>
 		.side-menu {
-			width: 10rem;
+			width: 11rem;
 			height: auto;
 			font-size: 1rem;
 			line-height: 2rem;
@@ -42,7 +42,7 @@
 			position: relative;
 			top: 0;
 			bottom: 0;
-			left: -7rem;
+			left: -8rem;
 		}
 		.side-menu ul {
 			list-style: none;
