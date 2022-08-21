@@ -30,7 +30,7 @@
 	<!-- Seperator -->
 	<hr>
 	<!-- Section Body -->
-	<div class="row overflow-scroll">
+	<div class="row overflow-scroll m-0">
 		<style>
 			.side-menu {
 				z-index: 10;
