@@ -1,13 +1,13 @@
 <?
 	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		$query = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Inbox'";
+		$query = DB_Query("SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Inbox'");
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
-		$query = "SELECT * FROM `Mail` WHERE `Direction`='Outbound' AND `Status`='Sent'";
+		$query = DB_Query("SELECT * FROM `Mail` WHERE `Direction`='Outbound' AND `Status`='Sent'");
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
-		$query = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Junk'";
+		$query = DB_Query("SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Junk'");
 	} elseif(strtolower(QS_SUBPAGE) == "archived") {
-		$query = "SELECT * FROM `Mail` WHERE `Archived?`=1";
+		$query = DB_Query("SELECT * FROM `Mail` WHERE `Archived?`=1");
 	} else {
 		?><script> misc.redirect("<?= URL_CURR."/Mail/Inbox/" ?>");</script><?
 	}
@@ -101,9 +101,9 @@
 			<table class="categoriesTable table table-striped table-hover">
 				<thead class="sticky-top">
 					<tr>
-						<th scope="col">ID</th>
-						<th scope="col">Name</th>
-						<th scope="col">Enabled</th>
+						<th scope="col"></th>
+						<th scope="col">To</th>
+						<th scope="col">From</th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
