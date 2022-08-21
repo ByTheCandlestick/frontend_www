@@ -27,31 +27,31 @@
 	<div class="row mailNew">
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-from" id="floatingInput" placeholder="mail@from.com" value="<?print($f)?>">
+				<input type="text" class="form-control mail-from" id="floatingInput" value="<?print($f)?>">
 				<label for="floatingInput">From</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-to" id="floatingInput" placeholder="mail@from.com" value="<?print($t)?>">
+				<input type="text" class="form-control mail-to" id="floatingInput" value="<?print($t)?>">
 				<label for="floatingInput">To</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-cc" id="floatingInput" placeholder="mail@from.com" value="<?print($c)?>">
+				<input type="text" class="form-control mail-cc" id="floatingInput" value="<?print($c)?>">
 				<label for="floatingInput">Cc</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-bcc" id="floatingInput" placeholder="mail@from.com" value="<?print($b)?>">
+				<input type="text" class="form-control mail-bcc" id="floatingInput" value="<?print($b)?>">
 				<label for="floatingInput">Bcc</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-subject" id="floatingInput" placeholder="Re:..." value="<?print($s)?>">
+				<input type="text" class="form-control mail-subject" id="floatingInput" value="<?print($s)?>">
 				<label for="floatingInput">Subject</label>
 			</div>
 		</div>
