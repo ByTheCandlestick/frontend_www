@@ -99,17 +99,19 @@
 		</div>
 		<div class="" style="width: calc(100% - 3rem);">
 			<table class="categoriesTable table table-striped table-hover">
-				<thead class="sticky-top">
-					<tr>
-						<th scope="col"></th>
-						<th scope="col"><?= (strtolower(QS_SUBPAGE) == "sent")?'To':'From' ?></th>
-						<th scope="col">Subject</th>
-						<th scope="col">Time</th>
-					</tr>
-				</thead>
-				<tbody>
 					<?
 						if(mysqli_num_rows($query) > 0) {
+							print('
+								<thead class="sticky-top">
+									<tr>
+										<th scope="col"></th>
+										<th scope="col">'.((strtolower(QS_SUBPAGE) == "sent")?'To':'From').'</th>
+										<th scope="col">Subject</th>
+										<th scope="col">Time</th>
+									</tr>
+								</thead>
+								<tbody>
+							');
 							while ($row = mysqli_fetch_array($query)) {
 								print('
 									<tr>
@@ -120,18 +122,30 @@
 									</tr>
 								');
 							}
+							print('
+								</tbody>
+							');
 						} else {
 							print('
-								<tr>
-									<th scope="row"></th>
-									<td>No data found</td>
-									<td></td>
-									<td></td>
-								</tr>
+								<thead class="sticky-top">
+									<tr>
+										<th scope="col"></th>
+										<th scope="col">'.((strtolower(QS_SUBPAGE) == "sent")?'To':'From').'</th>
+										<th scope="col"></th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row"></th>
+										<td>No data found</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
 							');
 						}
 					?>
-				</tbody>
 			</table>
 		</div>
 	</div>
