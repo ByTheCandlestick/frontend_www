@@ -109,7 +109,6 @@
 				</thead>
 				<tbody>
 					<?
-						echo $query;
 						if(mysqli_num_rows($query) > 0) {
 							while ($row = mysqli_fetch_array($query)) {
 								print('
