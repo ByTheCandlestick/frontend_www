@@ -1,8 +1,10 @@
 <?
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Outgoing'";
+		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Inbox'";
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
+		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Outbound'";
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
+		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Junk'";
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
 	} else {
 		$url = URL_CURR."/Mail/Inbox/";
