@@ -86,7 +86,7 @@
 		}
 	</style>
 	<div class="row">
-		<div class="col-1 p-0">
+		<div class="p-0" style="width: 2rem;">
 			<nav class="side-menu">
 				<ul>
 					<li class="<?=(strtolower(QS_SUBPAGE) == "inbox")?"active":"";?>"><a href="/Mail/Inbox/">Inbox<span><i class="fad fa-inbox"></i></span></a></li>
@@ -96,7 +96,7 @@
 				</ul>
 			</nav>
 		</div>
-		<div class="col-11">
+		<div class="" style="width: calc(100% - 2rem);">
 
 		</div>
 	</div>
