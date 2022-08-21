@@ -120,7 +120,7 @@
 									<tr class="'.(($row['Read?'] && strtolower(QS_SUBPAGE)!="sent")?'':'unread').'">
 										<th scope="row">'.$row['ID'].'</th>
 										<td>'.(($row['Direction']=='Inbound')?$row['From']:$row['To']).'</td>
-										<td>'.$row['Subject'].'</td>
+										<td><a href="/Mail/Read/'.$row['ID'].'">'.$row['Subject'].'</a></td>
 										<td>'.$row['Timestamp'].'</td>
 										<td>
 											<a onclick="mail.archive('.$row['ID'].')">
