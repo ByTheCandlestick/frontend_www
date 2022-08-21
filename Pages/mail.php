@@ -6,6 +6,7 @@
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
 		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Junk'";
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
+		$sql = "SELECT * FROM `Mail` WHERE `Deleted`=1";
 	} else {
 		$url = URL_CURR."/Mail/Inbox/";
 		?><script> misc.redirect("<?= $url ?>"); </script><?
