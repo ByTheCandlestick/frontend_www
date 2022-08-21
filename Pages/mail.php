@@ -1,5 +1,6 @@
 <?
 	if(strtolower(QS_SUBPAGE) == "inbox") {
+		$sql = "SELECT * FROM `Mail` WHERE ``='Outgoing'"
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
@@ -85,11 +86,11 @@
 			<ul>
 				<li class="<?=(strtolower(QS_SUBPAGE) == "inbox")?"active":"";?>"><a href="#">Inbox<span><i class="fad fa-inbox"></i></span></a></li>
 				<li class="<?=(strtolower(QS_SUBPAGE) == "sent")?"active":"";?>"><a href="#">Sent<span><i class="fad fa-inbox-out"></i></span></a></li>
-				<li class="<?=(strtolower(QS_SUBPAGE) == "junk")?"active":"";?>"><a href="#">Junk<span><i class="fad fa-"></i></span></a></li>
+				<li class="<?=(strtolower(QS_SUBPAGE) == "junk")?"active":"";?>"><a href="#">Junk<span><i class="fad fa-ban"></i></span></a></li>
 				<li class="<?=(strtolower(QS_SUBPAGE) == "deleted")?"active":"";?>"><a href="#">Deleted<span><i class="fad fa-trash-alt"></i></span></a></li>
 			</ul>
 		</nav>
 		<div class="row">
-			
+
 		</div>
 </section>
