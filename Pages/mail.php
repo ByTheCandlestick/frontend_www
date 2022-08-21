@@ -104,7 +104,6 @@
 						<th scope="col"></th>
 						<th scope="col">To</th>
 						<th scope="col">From</th>
-						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -114,13 +113,8 @@
 								print('
 									<tr>
 										<th scope="row">'.$row['ID'].'</th>
-										<td>'.$row['Name'].'</td>
-										<td>'.$row['Active'].'</td>
-										<td>
-											<a href="/Categories/Edit/'.$row['ID'].'">
-												<i class="fa fa-pencil"></i>
-											</a>
-										</td>
+										<td>'.$row['To'].'</td>
+										<td>'.(($row['Direction']=='Inbound')?$row['From']:$row['To']).'</td>
 									</tr>
 								');
 							}
