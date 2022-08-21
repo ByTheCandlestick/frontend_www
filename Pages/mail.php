@@ -32,6 +32,7 @@
 	<!-- Section Body -->
 	<style>
 		.side-menu {
+			z-index: 10;
 			width: 11rem;
 			height: auto;
 			font-size: 1rem;
