@@ -34,7 +34,6 @@
 		.side-menu {
 			width: 10rem;
 			height: auto;
-			margin: -0.7rem;
 			font-size: 1rem;
 			line-height: 2rem;
 			color: var(--main-color);
@@ -87,7 +86,7 @@
 		}
 	</style>
 	<div class="row">
-		<div class="col-1">
+		<div class="col-1 p-0">
 			<nav class="side-menu">
 				<ul>
 					<li class="<?=(strtolower(QS_SUBPAGE) == "inbox")?"active":"";?>"><a href="#">Inbox<span><i class="fad fa-inbox"></i></span></a></li>
