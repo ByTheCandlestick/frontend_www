@@ -103,7 +103,8 @@
 					<tr>
 						<th scope="col"></th>
 						<th scope="col"><?= (strtolower(QS_SUBPAGE) == "sent")?'To':'From' ?></th>
-						<th scope="col"></th>
+						<th scope="col">Subject</th>
+						<th scope="col">Time</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -114,6 +115,8 @@
 									<tr>
 										<th scope="row">'.$row['ID'].'</th>
 										<td>'.(($row['Direction']=='Inbound')?$row['From']:$row['To']).'</td>
+										<td>'.$row['Subject'].'</th>
+										<td>'.$row['Timestamp'].'</th>
 									</tr>
 								');
 							}
@@ -122,10 +125,6 @@
 								<tr>
 									<th scope="row"></th>
 									<td>No data found</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
 									<td></td>
 									<td></td>
 								</tr>
