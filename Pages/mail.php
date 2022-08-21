@@ -102,8 +102,8 @@
 				<thead class="sticky-top">
 					<tr>
 						<th scope="col"></th>
-						<th scope="col">To</th>
-						<th scope="col">From</th>
+						<th scope="col"><?= (strtolower(QS_SUBPAGE) == "sent")?'To':'From' ?></th>
+						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>
