@@ -34,9 +34,9 @@
 		.side-menu {
 			width: 10rem;
 			height: auto;
-			margin: 4em auto 0;
-			font-size: 1em;
-			line-height: 2em;
+			margin: -0.7rem;
+			font-size: 1rem;
+			line-height: 2rem;
 			color: var(--main-color);
 			font-weight: 700;
 			text-transform: uppercase;
