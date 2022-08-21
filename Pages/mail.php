@@ -144,7 +144,7 @@
 								<tbody>
 									<tr>
 										<th scope="row"></th>
-										<td>No data found</td>
+										<td>Your mailbox is empty!</td>
 										<td></td>
 										<td></td>
 										<td></td>
