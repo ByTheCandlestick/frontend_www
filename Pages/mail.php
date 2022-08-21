@@ -137,7 +137,8 @@
 									<tr>
 										<th scope="col"></th>
 										<th scope="col">'.((strtolower(QS_SUBPAGE) == "sent")?'To':'From').'</th>
-										<th scope="col"></th>
+										<th scope="col">Subject</th>
+										<th scope="col">Timestamp</th>
 										<th scope="col"></th>
 									</tr>
 								</thead>
