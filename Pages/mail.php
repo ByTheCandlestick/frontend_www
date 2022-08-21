@@ -1,6 +1,6 @@
 <?
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		$sql = "SELECT * FROM `Mail` WHERE ``='Outgoing'"
+		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Outgoing'";
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
