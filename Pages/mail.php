@@ -44,7 +44,7 @@
 				position: relative;
 				top: 0;
 				bottom: 0;
-				left: -8rem;
+				left: -7rem;
 			}
 			.side-menu ul {
 				list-style: none;
@@ -87,7 +87,7 @@
 				right: 0.16666666666667em;
 			}
 		</style>
-		<div class="p-0" style="width: 3rem;">
+		<div class="p-0" style="width: 4rem;">
 			<nav class="side-menu">
 				<ul>
 					<li class="<?=(strtolower(QS_SUBPAGE) == "inbox")?"active":"";?>"><a href="/Mail/Inbox/">Inbox</a><span><i class="fad fa-inbox"></i></span></li>
@@ -99,7 +99,7 @@
 				</ul>
 			</nav>
 		</div>
-		<div class="" style="width: calc(100% - 3rem);">
+		<div class="" style="width: calc(100% - 4rem);">
 			<table class="categoriesTable table table-striped table-hover">
 					<?
 						if(mysqli_num_rows($query) > 0) {
