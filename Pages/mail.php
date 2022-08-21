@@ -8,8 +8,7 @@
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
 		$query = "SELECT * FROM `Mail` WHERE `Deleted`=1";
 	} else {
-		$url = URL_CURR."/Mail/Inbox/";
-		?><script> misc.redirect("<?= $url ?>"); </script><?
+		?><script> misc.redirect("<?= URL_CURR."/Mail/Inbox/" ?>");</script><?
 	}
 ?>
 <section>
