@@ -113,7 +113,6 @@
 								print('
 									<tr>
 										<th scope="row">'.$row['ID'].'</th>
-										<td>'.$row['To'].'</td>
 										<td>'.(($row['Direction']=='Inbound')?$row['From']:$row['To']).'</td>
 									</tr>
 								');
