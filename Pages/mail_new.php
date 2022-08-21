@@ -51,13 +51,13 @@
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-subject" id="floatingInput" placeholder="mail@from.com" value="<?print($s)?>">
+				<input type="text" class="form-control mail-subject" id="floatingInput" placeholder="Re:..." value="<?print($s)?>">
 				<label for="floatingInput">Subject</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<textarea class="form-control mail-message" id="floatingInput" placeholder="mail@from.com" value="" style="min-height: 200px;"><?print($m)?></textarea>
+				<textarea class="form-control mail-message" id="floatingInput" placeholder="Write your message here" value="" style="min-height: 200px;"><?print($m)?></textarea>
 				<label for="floatingInput">Message</label>
 			</div>
 		</div>
