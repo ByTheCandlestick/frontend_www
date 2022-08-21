@@ -115,7 +115,7 @@
 							');
 							while ($row = mysqli_fetch_array($query)) {
 								print('
-									<tr>
+									<tr class="'.(($row['Read?'] && strtolower(QS_SUBPAGE)!="sent")?'':'unread').'">
 										<th scope="row">'.$row['ID'].'</th>
 										<td>'.(($row['Direction']=='Inbound')?$row['From']:$row['To']).'</td>
 										<td>'.$row['Subject'].'</td>
