@@ -93,7 +93,8 @@
 					<li class="<?=(strtolower(QS_SUBPAGE) == "inbox")?"active":"";?>"><a href="/Mail/Inbox/">Inbox<span><i class="fad fa-inbox"></i></span></a></li>
 					<li class="<?=(strtolower(QS_SUBPAGE) == "sent")?"active":"";?>"><a href="/Mail/Sent/">Sent<span><i class="fad fa-inbox-out"></i></span></a></li>
 					<li class="<?=(strtolower(QS_SUBPAGE) == "junk")?"active":"";?>"><a href="/Mail/Junk/">Junk<span><i class="fad fa-ban"></i></span></a></li>
-					<li class="<?=(strtolower(QS_SUBPAGE) == "archived")?"active":"";?>"><a href="/Mail/Archived/">Archived<span><i class="fad fa-archive"></i></span></a></li>
+					<li class="<?=(strtolower(QS_SUBPAGE) == "draft")?"active":"";?>"><a href="/Mail/Drafts/">Drafts<span><i class="fad fa-archive"></i></span></a></li>
+					<li class="<?=(strtolower(QS_SUBPAGE) == "archived")?"active":"";?>"><a href="/Mail/Archived/">Archived <span class="fa-layers fa-fw"><i class="fa fa-envelope-open"></i><i class="fa fa-pencil"></i></span></a></li>
 				</ul>
 			</nav>
 		</div>
