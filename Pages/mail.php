@@ -1,12 +1,12 @@
 <?
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Inbox'";
+		$query = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Inbox'";
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
-		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Outbound'";
+		$query = "SELECT * FROM `Mail` WHERE `Direction`='Outbound'";
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
-		$sql = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Junk'";
+		$query = "SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Junk'";
 	} elseif(strtolower(QS_SUBPAGE) == "deleted") {
-		$sql = "SELECT * FROM `Mail` WHERE `Deleted`=1";
+		$query = "SELECT * FROM `Mail` WHERE `Deleted`=1";
 	} else {
 		$url = URL_CURR."/Mail/Inbox/";
 		?><script> misc.redirect("<?= $url ?>"); </script><?
@@ -97,7 +97,49 @@
 			</nav>
 		</div>
 		<div class="" style="width: calc(100% - 3rem);">
-
+			<table class="categoriesTable table table-striped table-hover">
+				<thead class="sticky-top">
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Name</th>
+						<th scope="col">Enabled</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?
+						if(mysqli_num_rows($query) > 0) {
+							while ($row = mysqli_fetch_array($query)) {
+								print('
+									<tr>
+										<th scope="row">'.$row['ID'].'</th>
+										<td>'.$row['Name'].'</td>
+										<td>'.$row['Active'].'</td>
+										<td>
+											<a href="/Categories/Edit/'.$row['ID'].'">
+												<i class="fa fa-pencil"></i>
+											</a>
+										</td>
+									</tr>
+								');
+							}
+						} else {
+							print('
+								<tr>
+									<th scope="row"></th>
+									<td>No data found</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							');
+						}
+					?>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </section>
