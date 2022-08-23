@@ -6,9 +6,9 @@
 				require_once('./API/'.QS_PAGE.'/base/BaseController.php');
 				require_once('./API/'.QS_PAGE.'/base/BaseModel.php');
 			// API Functions
-				require_once('./API/'.QS_PAGE.'/models/'.QS_SUBPAGE.'Model.php');
-				require_once('./API/'.QS_PAGE.'/controllers/'.QS_SUBPAGE.'Controller.php');
-				require_once('./API/'.QS_PAGE.'/contexts/'.QS_SUBPAGE.'Context.php');
+				require_once('./API/'.QS_PAGE.'/models/'.ucwords(QS_SUBPAGE).'Model.php');
+				require_once('./API/'.QS_PAGE.'/controllers/'.ucwords(QS_SUBPAGE).'Controller.php');
+				require_once('./API/'.QS_PAGE.'/contexts/'.ucwords(QS_SUBPAGE).'Context.php');
 		} else {
 			// Display the swagger api dashboard
 				require_once($dash);
