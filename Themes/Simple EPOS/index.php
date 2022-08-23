@@ -23,7 +23,7 @@
 	// get the page information
 		if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
 			while($layout_row = mysqli_fetch_assoc($layout_results)) {
-				print_r($layout_row);
+				print_r($layout_row['Permission']);
 				if($userperm[$layout_row['Permission']] != 1) {
 					if($_SERVER['REQUEST_URI'] != '/') {
 						header("Location: /");
