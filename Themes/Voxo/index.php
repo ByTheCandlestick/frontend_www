@@ -24,6 +24,7 @@
 	// get the page information
 		if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
 			while($layout_row = mysqli_fetch_assoc($layout_results)) {
+				print_r($layout_results);
 ?>
 <!DOCTYPE html>
 	<html lang="en">
