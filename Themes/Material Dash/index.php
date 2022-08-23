@@ -27,7 +27,7 @@
 					if($_SERVER['REQUEST_URI'] != '/') {
 						header("Location: /");
 					} else {
-						//header('Location: /Error/401/');
+						header('Location: /Error/401/');
 					}
 				}
 ?>
