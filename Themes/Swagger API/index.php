@@ -14,6 +14,6 @@
 				require_once($dash);
 		}
 	} else {
-		header("Location: /Error/404/")
+		print('Swagger Home')
 	}
 ?>
