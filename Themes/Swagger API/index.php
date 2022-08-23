@@ -1,5 +1,4 @@
 <?
-	print_r($uri);
 	if(QS_PAGE != "" && file_exists($dash = './API/'.QS_PAGE.'/dashboard.php')) {
 		if(QS_SUBPAGE != "") {
 			// Include the base files
@@ -15,6 +14,7 @@
 				require_once($dash);
 		}
 	} else {
+		print_r($uri);
 		$return = array(
 			"Status" => "error",
 			"Description" => "Please choose a version from the list below.",
