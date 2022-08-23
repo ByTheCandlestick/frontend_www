@@ -13,19 +13,19 @@
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
-					<?  if($userperm['adm_access-product-edit']==1) {?>
+					<?  if($userperm['adm_access-products-edit']==1) {?>
 						<a href="/Products/New/" class="btn btn-outline-primary m-1">
 							<i class="fa fa-plus"></i>
 						</a>
-					<?} if($userperm['adm_access-product-categories']==1) {?>
+					<?} if($userperm['adm_access-products-categories']==1) {?>
 						<a href="/Categories/" class="btn btn-outline-primary m-1">
 							Categories
 						</a>
-					<?} if($userperm['adm_access-product-collections']==1) {?>
+					<?} if($userperm['adm_access-products-collections']==1) {?>
 						<a href="/Collections/" class="btn btn-outline-primary m-1">
 							Collections
 						</a>
-					<?} if($userperm['adm_access-product-comodities']==1) {?>
+					<?} if($userperm['adm_access-products-comodities']==1) {?>
 						<a href="/Products/Comodities/" class="btn btn-outline-primary m-1">
 							Comodities
 						</a>
@@ -70,7 +70,7 @@
 									<td>'.$row['Slug'].'</td>
 									<td>
 							');
-							if($userperm['adm_access-product-edit']==1) {
+							if($userperm['adm_access-products-edit']==1) {
 								print('
 									<a href="/Products/Edit/'.$row['SKU'].'">
 										<i class="fa fa-pencil"></i>
