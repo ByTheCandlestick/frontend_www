@@ -10,7 +10,7 @@
 		if(isset($_GET['file']) && isset($_GET['ext'])) {
 			if(file_exists($path = sprintf("%s/Themes/%s/Assets/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
 				if($_GET['ext'] == "php") {
-					$file = sprintf("/Themes/%s/Assets/%s/%s.%s", __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext'])
+					$file = sprintf("/Themes/%s/Assets/%s/%s.%s", __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']);
 					include_once($file);
 				} else {
 					header('Content-Type: text/'.$_GET['ext']);
