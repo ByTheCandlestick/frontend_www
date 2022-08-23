@@ -22,7 +22,7 @@
 		$fh = opendir("./API");
 		while(($entry = readdir($fh)) !== false) {
 			if($entry != "." && $entry != "..") {
-				array_push($return['Versions'], $entry);
+				array_push($return['Versions'], '/'.$entry.'/');
 			}
 		}
 		fclose($fh);
