@@ -14,6 +14,10 @@
 				require_once($dash);
 		}
 	} else {
-		print('Swagger Home');
+		$fh = opendir("./API");
+		while(($entry = readdir($fh)) !== false) {
+			echo $entry;
+		}
+		fclose($fh);
 	}
 ?>
