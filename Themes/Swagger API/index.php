@@ -5,7 +5,6 @@
 				require_once('./API/'.QS_PAGE.'/Base/Bootstrap.php');
 				require_once('./API/'.QS_PAGE.'/Base/BaseController.php');
 				require_once('./API/'.QS_PAGE.'/Base/BaseModel.php');
-				print_r($uri);
 			// API Functions
 				require_once("./API/$uri[0]/Models/$uri[1]Model.php");
 				require_once("./API/$uri[0]/Controllers/$uri[1]Controller.php");
