@@ -1,4 +1,5 @@
 <?
+	print_r($uri);
 	if(QS_PAGE != "" && file_exists($dash = './API/'.QS_PAGE.'/dashboard.php')) {
 		if(QS_SUBPAGE != "") {
 			// Include the base files
