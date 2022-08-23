@@ -22,7 +22,6 @@
 				shell_exec("cd ".REPOSITORY." && git remote add upstream ".REMOTE_LINK);
 				die("Cloned. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			} else {
-				print_r("cd ".REPOSITORY." && git pull upstream ".BRANCH);
 				shell_exec("cd ".REPOSITORY." && git pull upstream ".BRANCH);
 				die("Updated. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			}
