@@ -69,7 +69,7 @@
 									<td>'.$row['RetailPrice'].'</td>
 									<td>'.$row['Slug'].'</td>
 									<td>
-							')
+							');
 							if($userperm['adm_access-product-edit']==1) {
 								print('
 									<a href="/Products/Edit/'.$row['SKU'].'">
