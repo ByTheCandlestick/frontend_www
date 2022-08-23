@@ -26,6 +26,7 @@
 			while($layout_row = mysqli_fetch_assoc($layout_results)) {
 				if($userperm[$layout_row['Permission']] != 1) {
 					if($_SERVER['REQUEST_URI'] != '/') {
+						print_r($layout_row['Permission']);
 						header("Location: /");
 					} else {
 						//header('Location: /Error/401/');
