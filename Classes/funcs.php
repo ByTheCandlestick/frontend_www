@@ -30,7 +30,7 @@
 	 *
 	 */
 		function getThemepage($require) {
-			global $userdata, $website_info, $user_ok, $product, $partner;
+			global $userdata, $userperm, $website_info, $user_ok, $product, $partner;
 			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `Websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
 			if($theme_location != "") {
@@ -154,7 +154,7 @@
 	 * 
 	**/
 		function printSections(string $string) {
-			global $userdata, $info, $user_ok, $product, $partner;
+			global $userdata, $userperm, $info, $user_ok, $product, $partner;
 			$columns = explode("#", $string);
 			$seccode = $secext = NULL;
 			print('<main><div class="row">');

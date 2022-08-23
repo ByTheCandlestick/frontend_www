@@ -1,7 +1,7 @@
 <?
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Users` WHERE `ID`=%s", QS))) > 0) {
 		$user = mysqli_fetch_assoc($query);
-		$permissions = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s", QS)));
+		$userperm = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s", QS)));
 ?>
 	<section>
 		<!-- Section Header -->
@@ -28,7 +28,7 @@
 				$query = DB_Query("DESCRIBE `Users_permissions`");
 				while($col = mysqli_fetch_array($query)[0]) {
 					if($col != "UID") {
-						($permissions[$col] == 1)? $checked = " checked" : $checked = "";
+						($userperm[$col] == 1)? $checked = " checked" : $checked = "";
 						print('
 							<div class="form-check col-12 col-md-4 col-lg-2">
 								<input class="form-check-input" type="checkbox" value="'.$col.'" id="permission_'.$col.'"'.$checked.'>

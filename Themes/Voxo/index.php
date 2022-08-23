@@ -1,7 +1,7 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 		if($user_ok) {
-			if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_www'] != 1) {
+			if($userperm['Access_www'] != 1) {
 				header('Location: /Error/401/');
 			}
 		}
@@ -194,7 +194,7 @@
 											<a href="/My/">My Account</a>
 										</li>
 										<?
-											if(mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s LIMIT 1", $userdata['ID'])))['Access_admin'] == 1) {
+											if($userperm['Access_admin'] == 1) {
 										?>
 											<li>
 												<i class="fad fa-cogs pe-1"></i>
