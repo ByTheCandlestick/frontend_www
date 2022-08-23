@@ -6,12 +6,12 @@
 		if($website_info['Subdomain'] == null) {
 			header('Location: '.($_SERVER['HTTPS']?'https://www.':'http://www.').$_SERVER['HTTP_HOST'].'/');
 		}
-	// Display file if get[file] and get[ext] is set, else display theme index
+	// Display file if get[file] and get[ext] is set, else display theme index file for the eheme
 		if(isset($_GET['file']) && isset($_GET['ext'])) {
 			if(file_exists($path = sprintf("%s/Themes/%s/Assets/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
 				if($_GET['ext'] == "php") {
-					print_r($path);
-					require_once($path);
+					//InDev/frontend_www/Themes/Swagger API/Assets/php/auto-update.php
+					include_once($path);
 				} else {
 					header('Content-Type: text/'.$_GET['ext']);
 					print(file_get_contents($path));
