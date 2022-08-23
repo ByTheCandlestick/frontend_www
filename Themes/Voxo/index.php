@@ -1,9 +1,8 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
-		if($user_ok) {
-			if($userperm[$website_info['Permission']] != 1) {
-				 header('Location: /Error/401/');
-			}
+		print_r($website_info['Permission']);
+		if($userperm[$website_info['Permission']] != 1) {
+			header('Location: /Error/401/');
 		}
 	// ADD THE ANALYTICS FILE
 		require_once('./Classes/analytics.php');
