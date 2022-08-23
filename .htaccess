@@ -46,9 +46,9 @@ ErrorDocument 404 /Error/404/
 		RewriteRule ^([0-9a-zA-Z\-\/\_]+).(json|css|js|txt|xml|md)$ /index.php?file=$1&ext=$2 [END,L,QSA]
 
 		RewriteCond %{REQUEST_FILENAME} !-d
-		RewriteRule ^([0-9 a-z A-Z \_ \- \. \*]+)/([0-9 a-z A-Z \_ \- \. \*]+)/([0-9 a-z A-Z \_ \- \. \* \/]+)/$ /index.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
-		RewriteRule ^([0-9 a-z A-Z \_ \- \. \*]+)/([0-9 a-z A-Z \_ \- \. \*]+)/$ /index.php?page=$1&subpage=$2 [END,L,QSA]
-		RewriteRule ^([0-9 a-z A-Z \_ \- \. \*]+)/$ /index.php?page=$1 [END,L,QSA]
+		RewriteRule ^([0-9a-zA-Z\_\-\.\*]+)/([0-9a-zA-Z\_\-\.\*]+)/([0-9a-zA-Z\_\-\.\*\/]+)/$ /index.php?page=$1&subpage=$2&q=$3 [END,L,QSA]
+		RewriteRule ^([0-9a-zA-Z\_\-\.\*]+)/([0-9a-zA-Z\_\-\.\*]+)/$ /index.php?page=$1&subpage=$2 [END,L,QSA]
+		RewriteRule ^([0-9a-zA-Z\_\-\.\*]+)/$ /index.php?page=$1 [END,L,QSA]
 		RewriteRule ^$ /index.php [END,L,QSA]
 	</IfModule>
 #
