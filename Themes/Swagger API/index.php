@@ -27,6 +27,6 @@
 			}
 		}
 		fclose($fh);
-		print_r($return);
+		echo json_encode($folders);
 	}
 ?>
