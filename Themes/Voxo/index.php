@@ -26,11 +26,11 @@
 			while($layout_row = mysqli_fetch_assoc($layout_results)) {
 				if($userperm[$layout_row['Permission']] != 1) {
 					print_r($_SERVER);
-					if() {
+					/*if() {
 						header("Location: /");
 					} else {
 
-					}
+					}*/
 				}
 ?>
 <!DOCTYPE html>
