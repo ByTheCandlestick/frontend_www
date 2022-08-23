@@ -23,10 +23,10 @@
 		$fh = opendir("./API");
 		while(($entry = readdir($fh)) !== false) {
 			if($entry != "." && $entry != "..") {
-				array_push($folders, $return['Versions']);
+				array_push($return['Versions'], $entry);
 			}
 		}
 		fclose($fh);
-		print_r($folders);
+		print_r($return);
 	}
 ?>
