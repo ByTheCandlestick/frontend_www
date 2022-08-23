@@ -2,7 +2,7 @@
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 		if($user_ok) {
 			if($userperm[$website_info['Permission']] != 1) {
-				//$user_ok = false;
+				$user_ok = false;
 			}
 		}
 		//require_user_ok();
@@ -27,7 +27,7 @@
 					if($_SERVER['REQUEST_URI'] != '/') {
 						header("Location: /");
 					} else {
-						//header('Location: /Error/401/');
+						header('Location: /Error/401/');
 					}
 				}
 ?>
