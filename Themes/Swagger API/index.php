@@ -14,6 +14,6 @@
 				require_once($dash);
 		}
 	} else {
-		print('Swagger Home: '.QS_PAGE . '/' . QS_SUBPAGE . '/' . QS);
+		print('Swagger Home: /' . QS_PAGE . '/' . QS_SUBPAGE . '/' . QS . '/');
 	}
 ?>
