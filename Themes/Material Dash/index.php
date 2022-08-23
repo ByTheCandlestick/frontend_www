@@ -159,23 +159,25 @@
 								<?
 									$items = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `Active`=1 AND `menu_item`=1 AND `domain_id`=%s ORDER BY `menu_order` ASC", $website_info['ID']));
 									foreach($items as $item) {
-										if($item['page_url'] == QS_PAGE) {
-											$link = '#';
-											$active = 'active';
-										} else {
-											$link = $item['menu_url'];
-											$active = '';
+										if($userperm[$item['Permission']] == 1) {
+											if($item['page_url'] == QS_PAGE) {
+												$link = '#';
+												$active = 'active';
+											} else {
+												$link = $item['menu_url'];
+												$active = '';
+											}
+											print(sprintf('
+												<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
+													<i class="fa fa-%s"></i>
+												</a>
+												',
+												$link,
+												$active,
+												$item['page_name'],
+												$item['menu_icon']
+											));
 										}
-										print(sprintf('
-											<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
-												<i class="fa fa-%s"></i>
-											</a>
-											',
-											$link,
-											$active,
-											$item['page_name'],
-											$item['menu_icon']
-										));
 									}
 								?>
 							</div>
