@@ -1,6 +1,5 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
-		print_r($userperm[$website_info['Permission']]);
 		if($userperm[$website_info['Permission']] != 1) {
 			header('Location: /Error/401/');
 		}
