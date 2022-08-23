@@ -5,6 +5,7 @@
 				require_once('./API/'.QS_PAGE.'/Base/Bootstrap.php');
 				require_once('./API/'.QS_PAGE.'/Base/BaseController.php');
 				require_once('./API/'.QS_PAGE.'/Base/BaseModel.php');
+				print_r($uri);
 			// API Functions
 				require_once('./API/'.QS_PAGE.'/Models/'.ucwords(QS_SUBPAGE).'Model.php');
 				require_once('./API/'.QS_PAGE.'/Controllers/'.ucwords(QS_SUBPAGE).'Controller.php');
@@ -14,7 +15,6 @@
 				require_once($dash);
 		}
 	} else {
-		print_r($uri);
 		$return = array(
 			"Status" => "error",
 			"Description" => "Please choose a version from the list below.",
