@@ -26,7 +26,7 @@
                         <h4>Containers</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <?  if($userperm['adm_access-products-comodities-edit']==1) {?>
+                        <?  if($userperm['adm_access-products-containers-edit']==1) {?>
                             <a href="/Products/Container/New/" class="btn btn-outline-primary">
                                 <i class="fa fa-plus"></i>
                             </a>
@@ -93,9 +93,11 @@
                         <h4>Wicks</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="/Products/Wick/New/" class="btn btn-outline-primary">
-                            <i class="fa fa-plus"></i>
-                        </a>
+                        <?  if($userperm['adm_access-products-wicks-edit']==1) {?>
+                            <a href="/Products/Wick/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <div class="card-body p-0 overflow-auto">
@@ -152,9 +154,11 @@
                         <h4>Wick stands</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="/Products/WickStand/New/" class="btn btn-outline-primary">
-                            <i class="fa fa-plus"></i>
-                        </a>
+                        <?  if($userperm['adm_access-products-wickstands-edit']==1) {?>
+                            <a href="/Products/WickStand/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <div class="card-body p-0 overflow-auto">
