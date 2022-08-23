@@ -124,10 +124,10 @@
 										default:
 									}
 								// Get the image
-								print_r(__ROOT__.'/API/'.$i['location']);
-								$str_response	= file_get_contents(__ROOT__.'/API/'.$i['location']);
+								print_r(__ROOT__.$i['location']);
+								$str_response	= file_get_contents(__ROOT__.$i['location']);
 								$arr_http		= array("Content-Type: ".$ctype,
-														"Content-Length: " . filesize(__ROOT__.'/API/'.$i['location']),
+														"Content-Length: " . filesize(__ROOT__.$i['location']),
 														"HTTP/1.1 200 OK");
 							else:
 								throw new Error('No image selected');
