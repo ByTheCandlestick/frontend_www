@@ -39,7 +39,7 @@
 		 */
 		protected function throwError($str_ErrorDesc, $str_ErrorHeader) {
 			$this->sendOutput(json_encode(
-				array("error" => $str_ErrorDesc)), 
+				array("error" => $str_ErrorDesc)),
 				array("Content-Type: application/json", $str_ErrorHeader)
 			);
 		}
@@ -117,5 +117,6 @@
 			if(strlen($username) >= 6) $username_strength++;
 			return ($username_strength == 1)?true:false;
 		}
+		
 	}
 ?>
