@@ -19,7 +19,6 @@
 			"Description" => "Please choose a version from the list below.",
 			"Versions" => array(),
 		);
-		$folders = [];
 		$fh = opendir("./API");
 		while(($entry = readdir($fh)) !== false) {
 			if($entry != "." && $entry != "..") {
@@ -27,6 +26,6 @@
 			}
 		}
 		fclose($fh);
-		echo json_encode($folders);
+		echo json_encode($return);
 	}
 ?>
