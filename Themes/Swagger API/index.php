@@ -14,11 +14,16 @@
 				require_once($dash);
 		}
 	} else {
+		$return = array(
+			"Status" => "error",
+			"Description" => "Please choose a version from the list below.",
+			"Versions" => array(),
+		);
 		$folders = [];
 		$fh = opendir("./API");
 		while(($entry = readdir($fh)) !== false) {
 			if($entry != "." && $entry != "..") {
-				array_push($folders, $entry);
+				array_push($folders, $return['Versions']);
 			}
 		}
 		fclose($fh);
