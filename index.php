@@ -9,8 +9,12 @@
 	// Display file if get[file] and get[ext] is set, else display theme index
 		if(isset($_GET['file']) && isset($_GET['ext'])) {
 			if(file_exists($path = sprintf("%s/Themes/%s/Assets/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
-				header('Content-Type: text/'.$_GET['ext']);
-				print(file_get_contents($path));
+				if($_GET['ext'] == "php") {
+					require_once($path);
+				} else {
+					header('Content-Type: text/'.$_GET['ext']);
+					print(file_get_contents($path));
+				}
 			} else {
 				header('Content-Type: text/json');
 				print(json_encode(array("error"=>"File not found")));
