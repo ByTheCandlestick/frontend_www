@@ -14,10 +14,14 @@
 				require_once($dash);
 		}
 	} else {
+		$folders = [];
 		$fh = opendir("./API");
 		while(($entry = readdir($fh)) !== false) {
-			echo $entry;
+			if($entry != "." && $entry != "..") {
+				array_push($folders, $entry);
+			}
 		}
 		fclose($fh);
+		print_r($folders);
 	}
 ?>
