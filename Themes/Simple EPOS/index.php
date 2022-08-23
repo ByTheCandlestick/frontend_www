@@ -1,7 +1,7 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
 		if($user_ok) {
-			if($userperm['Access_EPOS'] != 1) {
+			if($userperm[$website_info['Permission']] != 1) {
 				$user_ok = false;
 			}
 		}
