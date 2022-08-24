@@ -1,6 +1,6 @@
 <?
 	// Define all vars
-		(isset($_SERVER["HTTP_referrer"]))?$referrer=$_SERVER["HTTP_referrer"] : $referrer=$_SERVER["SERVER_NAME"];
+		(isset($_SERVER["HTTP_REFERER"]))?$referrer=$_SERVER["HTTP_REFERER"] : $referrer=$_SERVER["SERVER_NAME"];
 		if(str_contains($referrer, "indev")) {	#	THE WESBITE IN IN DEVELOPMENT MODE
 			define('STRIPE_API',	'sk_test_51JKqfVFDFLz8LpozmlliBbv92XkspmRyy2O7G6IMk2IccfP9ZnimCZ8rJHHCVfIGupLx5FJZafa92igVC2HFWPkz00umY4pOUm');
 			define('ANALYTICS',		['db5007323454.hosting-data.io',	'dbu557431',	'CandleStick2603',	'dbs6034000']);
