@@ -40,7 +40,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY `menu_order` DESC, `ID` ASC", QS));
+					$query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY case when `menu_order`=0 then `ID` else `menu_order` end, `ID` ASC", QS));
 					while($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
