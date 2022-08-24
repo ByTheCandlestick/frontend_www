@@ -109,7 +109,7 @@
 				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now()");
 				while($host = mysqli_fetch_array($query)) {
 					$hosts[$host['ID']] = $host['Hostname'];
-					echo "\"".$uri[1]."\":\"".$host."\"";
+					echo "\"".$uri[1]."\":\"".$host['Hostname']."\"";
 				}
 				if(isset($uri[1])) {
 					if(in_array(strtolower($uri[1]), $hosts)) {
