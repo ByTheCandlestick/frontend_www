@@ -106,7 +106,7 @@
 		 */
 			function checkHost() {
 				$Hosts = [];
-				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed Hosts` WHERE `Active?`=1 AND `Created`<now()");
+				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now()");
 				while($Host = mysqli_fetch_array($query)) {
 					$Hosts[$Host['ID']] = $Host['Hostname'];
 				}
