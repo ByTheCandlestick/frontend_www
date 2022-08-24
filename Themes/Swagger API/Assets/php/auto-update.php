@@ -18,7 +18,7 @@
 			if(!file_exists(BRANCH_DIR)) shell_exec("cd ".ROOT." && mkdir ".BRANCH);
 			if(!file_exists(REPOSITORY)) {
 				shell_exec("cd ".BRANCH_DIR." && git clone ".REMOTE_LINK);
-				shell_exec("cd ".BRANCH_DIR." && git checkout -b ".BRANCH);
+				shell_exec("cd ".REPOSITORY." && git checkout -b ".BRANCH);
 				shell_exec("cd ".REPOSITORY." && git remote add upstream ".REMOTE_LINK);
 				die("Cloned. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			} else {
