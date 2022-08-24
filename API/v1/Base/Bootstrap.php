@@ -119,7 +119,7 @@
 				return (!$active)?invalid_request(3): $origin;
 			};
 	//	Get URI Vars
-		print($_SERVER);
+		print_r($_SERVER);
 		if(checkHost($referrer)) {
 			header('Access-Control-Allow-Credentials: true');
 			header('Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE');
