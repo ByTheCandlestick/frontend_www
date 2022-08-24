@@ -335,7 +335,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 p-2">
-            <div class="card h-auto h-md-100">
+            <div class="card h-auto h-md-100"> 
                 <div class="card-header row m-0">
                     <div class="col-8">
                         <h4>Colours</h4>
