@@ -1,5 +1,5 @@
 <?
-	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Websites` WHERE `ID`=%s", QS))) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS))) > 0) {
 		$domain = mysqli_fetch_assoc($query);
 ?>
 	<section>
@@ -42,7 +42,7 @@
 					<select class="form-select" id="floatingSelect">
 						<option value="-1" selected>Please select</option>
 						<?
-							$query = DB_Query("SELECT * FROM `page_types` WHERE `Active`=1");
+							$query = DB_Query("SELECT * FROM `Website themes` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
 								$row['ID'] == $domain['Page_type'] ? $selected="selected" : $selected="";
 								print_r('<option value="'.$row['ID'].'" '.$selected.'>'.$row['Name'].'</option>');

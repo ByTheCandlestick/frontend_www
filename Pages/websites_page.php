@@ -52,7 +52,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `Websites`");
+									$query = DB_Query("SELECT * FROM `Website domains`");
 									while ($row = mysqli_fetch_array($query)) {
 										print_r('<option value="'.$row['ID'].'">'.$row['Domain'].' - '.$row['Name'].'</option>');
 									}
@@ -93,7 +93,7 @@
 					<div class="col-12 col-md-6" name="styles">
 						<h5>Styles</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `Websites styles` WHERE `Active`=1 ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `Website styles` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								print('
 									<div class="form-check">
@@ -109,7 +109,7 @@
 					<div class="col-12 col-md-6" name="scripts">
 						<h5>Scripts</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `Websites scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `Website scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								print('
 									<div class="form-check">
@@ -127,7 +127,7 @@
 		</div>
 	</section>
 <?
-	} else if($query = DB_Query(sprintf("SELECT * FROM `Websites pages` WHERE `ID`=%s", QS))) {
+	} else if($query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `ID`=%s", QS))) {
 		if(mysqli_num_rows($query) > 0) {
 			$page = mysqli_fetch_assoc($query);
 			$styles = explode(',', $page['style_ids']);
@@ -187,7 +187,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `Websites`");
+									$query = DB_Query("SELECT * FROM `Website domains`");
 									while ($row = mysqli_fetch_array($query)) {
 										$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="";
 										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
@@ -229,7 +229,7 @@
 					<div class="col-12 col-md-6" name="styles">
 						<h5>Styles</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `Websites styles` WHERE `Active`=1 ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `Website styles` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								(in_array($row['ID'], $styles))?$checked=" checked":$checked="";
 								print('
@@ -246,7 +246,7 @@
 					<div class="col-12 col-md-6" name="scripts">
 						<h5>Scripts</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `Websites scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `Website scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								(in_array($row['ID'], $scripts))?$checked=" checked":$checked="";
 								print('

@@ -1,5 +1,5 @@
 <?
-	$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Websites` WHERE `ID`=%s", QS)));
+	$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS)));
 ?>
 <section>
 	<!-- Section Header -->
@@ -39,7 +39,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query(sprintf("SELECT * FROM `Websites pages` WHERE `domain_id`=%s ORDER BY `id`", QS));
+					$query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY `id`", QS));
 					while ($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>

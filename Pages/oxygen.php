@@ -1,6 +1,6 @@
 <?
 if(QS_SUBPAGE != "") {
-	$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Websites pages` WHERE `ID`=%s", QS_SUBPAGE)));
+	$page = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `ID`=%s", QS_SUBPAGE)));
 ?>
 <section>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -229,7 +229,7 @@ if(QS_SUBPAGE != "") {
 						</div>
 					</div>
 					<? 
-						$query = DB_Query("SELECT * FROM `page_sections` ORDER BY `section_type`");
+						$query = DB_Query("SELECT * FROM `Website sections` ORDER BY `section_type`");
 						$type = null; $elementCategories = array('columns');
 						if(mysqli_num_rows($query) > 0) {
 							while($row = mysqli_fetch_array($query)) {

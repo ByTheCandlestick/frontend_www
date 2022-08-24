@@ -50,7 +50,7 @@
         </div>
     </section>
 <?
-	} elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Websites scripts` WHERE `ID`=%s", QS))) > 0) {
+	} elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Website scripts` WHERE `ID`=%s", QS))) > 0) {
 		$script = mysqli_fetch_assoc($query);
 ?>
 	<section>

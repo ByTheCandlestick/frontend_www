@@ -31,7 +31,7 @@
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
 	// GET PAGE INFORMATION
-		$website_info = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Websites` WHERE `Domain`='%s' LIMIT 1", $_SERVER['HTTP_HOST'])));
+		$website_info = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `Domain`='%s' LIMIT 1", $_SERVER['HTTP_HOST'])));
 	// REDIRECT TO WWW. IF NO SUBDOMAIN EXISTS
 		$x = array('uk'=>'co');		// exceptions of tld's with 2 parts
 		$r = explode('.', $_SERVER['HTTP_HOST']);

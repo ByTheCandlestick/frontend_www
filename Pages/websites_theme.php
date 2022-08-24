@@ -50,7 +50,7 @@
 		</div>
 	</section>
 <?
-	} else if($query = DB_Query(sprintf("SELECT * FROM `page_types` WHERE `ID`=%s", QS))) {
+	} else if($query = DB_Query(sprintf("SELECT * FROM `Website themes` WHERE `ID`=%s", QS))) {
 		if(mysqli_num_rows($query) > 0) {
 			$theme = mysqli_fetch_assoc($query);
 ?>

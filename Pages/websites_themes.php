@@ -36,7 +36,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query(sprintf("SELECT * FROM `page_types`"));
+					$query = DB_Query(sprintf("SELECT * FROM `Website themes`"));
 					while ($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>

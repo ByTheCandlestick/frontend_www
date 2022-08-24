@@ -19,7 +19,7 @@
 	 *
 	 */
 		function domainID() {
-			return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `Websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
+			return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `Website domains` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 		}
 	/**
 	 * getThemepage
@@ -31,8 +31,8 @@
 	 */
 		function getThemepage($require) {
 			global $userdata, $userperm, $website_info, $user_ok, $product, $partner;
-			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `Websites` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
-			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `page_types` WHERE `ID`='%s'", $page_type)))[0];
+			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `Website domains` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
+			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `Website themes` WHERE `ID`='%s'", $page_type)))[0];
 			if($theme_location != "") {
 				if($require){
 					if(file_exists('./Themes/'.$theme_location.'/index.php')) {
@@ -71,7 +71,7 @@
 		function printStyles(string $stylesheets) {
 			$stylesheets = explode(",", $stylesheets);
 			foreach($stylesheets as $style) {
-				if($result = DB_Query("SELECT * FROM `Websites styles` WHERE `ID`='$style'")) {
+				if($result = DB_Query("SELECT * FROM `Website styles` WHERE `ID`='$style'")) {
 					$res = mysqli_fetch_array($result);
 					$styleLocation = $res['Location'];
 					$preload = $res['Preload'];
@@ -108,7 +108,7 @@
 		function printScripts(string $scriptsheets) {
 			$scriptsheets = explode(",", $scriptsheets);
 			foreach($scriptsheets as $script) {
-				if($result = DB_Query("SELECT `Location` FROM `Websites scripts` WHERE `ID`='$script'")) {
+				if($result = DB_Query("SELECT `Location` FROM `Website scripts` WHERE `ID`='$script'")) {
 					$res = mysqli_fetch_array($result);
 					$scriptLocation = $res['Location'];
 
@@ -165,7 +165,7 @@
 					$sections = explode(',', $section_string);
 					foreach($sections as $section) {
 						[$seccode, $secext] = explode(':', $section);
-						if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
+						if($result = DB_Query("SELECT * FROM `Website sections` WHERE `id`='$seccode'")) {
 							if(mysqli_num_rows($result) == 1) {
 								$row = mysqli_fetch_array($result);
 								include('./Sections/'.$row['section_type'].'/'.$row['section_url'].'.php');
@@ -189,7 +189,7 @@
 					$sections = explode(',', $section_string);
 					foreach($sections as $section) {
 						[$seccode, $secext] = explode(':', $section);
-						if($result = DB_Query("SELECT * FROM `page_sections` WHERE `id`='$seccode'")) {
+						if($result = DB_Query("SELECT * FROM `Website sections` WHERE `id`='$seccode'")) {
 							if(mysqli_num_rows($result) == 1) {
 								$row = mysqli_fetch_array($result);
 								print('

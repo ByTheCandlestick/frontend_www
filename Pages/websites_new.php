@@ -37,7 +37,7 @@
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
 							<?
-								$query = DB_Query("SELECT * FROM `page_types` WHERE `Active`=1");
+								$query = DB_Query("SELECT * FROM `Website themes` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
 									print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
 								}
