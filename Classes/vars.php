@@ -12,7 +12,7 @@
 	}
 	$q = DB_Query("SELECT `Key` FROM `API Keys` WHERE `Active?`=1 AND `Created`<now()");
 	while($key = mysqli_fetch_assoc($q)) {
-		$keys += $key
+		$keys += $key;
 	}
 	define('__API_KEYS__',	$keys);
 	define('__ROOT__',		$_SERVER["DOCUMENT_ROOT"]);
