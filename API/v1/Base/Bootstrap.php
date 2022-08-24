@@ -119,7 +119,7 @@
 			};
 	//	Get URI Vars
 	print($referer);
-//		checkHost($referer);
+		checkHost($referer);
 		$uri = get_uri();
 		$version = checkVersion($uri);
 		$controller = checkController($uri);
