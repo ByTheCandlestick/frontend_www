@@ -35,7 +35,6 @@
 		<table class="websiteTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
-					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col">Domain</th>
 					<th scope="col">Maintenance</th>
@@ -49,9 +48,8 @@
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<th scope="row">'.$row['ID'].'</th>
-									<td><a href="/Websites/Pages/'.$row['ID'].'">'.$row['Name'].'</a></td>
-									<td>'.$row['Domain'].'</td>
+									<th scope="row"><a href="/Websites/Pages/'.$row['ID'].'">'.$row['Name'].'</a></th>
+									<td><a href="'.$row['Domain'].'" >'.$row['Domain'].'</a></td>
 									<td>'.$row['Maintenance'].'</td>
 									<td>
 										<a href="/Websites/Edit/'.$row['ID'].'">
