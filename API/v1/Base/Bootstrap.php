@@ -118,7 +118,6 @@
 				return (!$active)?invalid_request(3): $uri[1];
 			};
 	//	Get URI Vars
-	print($referer);
 		checkHost($referer);
 		$uri = get_uri();
 		$version = checkVersion($uri);
