@@ -10,7 +10,7 @@
 		define('ADMIN', 		['db5007320590.hosting-data.io',	'dbu1278426',	'CandleStick2603',	'dbs6031251']);
 		define('ANALYTICS',		['db5007301242.hosting-data.io',	'dbu235049',	'CandleStick2603',	'dbs6015868']);
 	}
-	define('__API_KEYS__', mysqli_fetch_array(DB_Query("SELECT `Key` FROM `API Keys` WHERE `Active?`=1 AND `Created`<now()")));
+	define('__API_KEYS__', mysqli_fetch_assoc(DB_Query("SELECT `Key` FROM `API Keys` WHERE `Active?`=1 AND `Created`<now()")));
 	define('__ROOT__',		$_SERVER["DOCUMENT_ROOT"]);
 	define('__THEME__',		getThemepage(false));
 	define('QS_PAGE',		isset($_GET['page']) ? strtolower($_GET['page']) : 'index');
