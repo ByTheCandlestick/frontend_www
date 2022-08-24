@@ -39,7 +39,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query(sprintf("SELECT * FROM `page_layouts` WHERE `domain_id`=%s ORDER BY `id`", QS));
+					$query = DB_Query(sprintf("SELECT * FROM `Websites pages` WHERE `domain_id`=%s ORDER BY `id`", QS));
 					while ($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
