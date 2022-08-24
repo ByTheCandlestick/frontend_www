@@ -1,22 +1,14 @@
-DirectoryIndex 
+DirectoryIndex index.php index.html index.htm index.js
 RewriteEngine on
 Options -Indexes
 Options +FollowSymLinks
 ErrorDocument 404 /Error/404/
+
 #
-#	SET ENVIRONMENT VARIABLES
-	SetEnv DefaultImageOnError off
-#
-#	SET HEADERS FOR PWA SERVICE WORKER
-	<IfModule mod_headers.c>
-		Header set Service-Worker-Allowed /
-	</IfModule>
-#
-#	SHOW A DEFAULT IMAGE IF THE ORIGINAL ONE COULD NOT BE FOUND
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_URI} .(gif|jpe?g|png|webp|jxr|svg)$ [NC]
-	RewriteCond %{env:DefaultImageOnError} ^on$
-	RewriteRule .* %{REQUEST_SCHEME}://api.%{HTTP_HOST}/v1/Images/Fetch/not_found/ [L]
+#	Allow REST api request methods. GET POST PUT and DELETE
+	<Limit GET POST PUT DELETE>
+		Allow from all
+	</Limit>
 #
 #	ACCEPT WEBP AND JXR
 	<ifModule mod_rewrite.c>
