@@ -105,13 +105,14 @@
 		 *	@return	array	Ends the API and displays an error
 		 */
 			function checkHost() {
-				$Hosts = [];
+				$hosts = [];
 				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now()");
-				while($Host = mysqli_fetch_array($query)) {
-					$Hosts[$Host['ID']] = $Host['Hostname'];
+				while($host = mysqli_fetch_array($query)) {
+					$hosts[$host['ID']] = $host['Hostname'];
+					echo "\"".$uri[1]."\":\"".$host."\"";
 				}
 				if(isset($uri[1])) {
-					if(in_array(strtolower($uri[1]), $Hosts)) {
+					if(in_array(strtolower($uri[1]), $hosts)) {
 						$active = true;
 					}
 				}
