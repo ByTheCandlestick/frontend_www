@@ -12,9 +12,8 @@
 	}
 	$query = DB_Query("SELECT `ID`, `Key` FROM `API Keys` WHERE `Active?`=1 AND `Created`<now()");
 	$keys = [];
-	while($key = mysqli_fetch_array($query)) {
+	while($key = mysqli_fetch_array($query)) {}
 //		$keys['ID'] =+ $key['Key'];
-	}
 	define('__API_KEYS__',	$keys);
 	define('__ROOT__',		$_SERVER["DOCUMENT_ROOT"]);
 	define('__THEME__',		getThemepage(false));
