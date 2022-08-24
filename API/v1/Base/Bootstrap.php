@@ -66,10 +66,10 @@
 			};
 		/**	checkVersion
 		 *	Confirm the Controller is accepted.
-		 *	@param	string	$uri
+		 *	@param	array	$uri
 		 *	@return	array	Ends the API and displays an error
 		 */
-			  function checkVersion(string $uri) {
+			  function checkVersion(array $uri) {
 			   $versions = [];
 			   $query = DB_Query("SELECT `ID`, `Version` FROM `API Versions` WHERE `Active?`=1 AND `Created`<now()");
 			   while($controller = mysqli_fetch_array($query)) {
@@ -84,10 +84,10 @@
 			};
 		/**	checkController
 		 *	Confirm the Controller is accepted.
-		 *	@param	string	$uri
+		 *	@param	array	$uri
 		 *	@return	array	Ends the API and displays an error
 		 */
-			function checkController(string $uri) {
+			function checkController(array $uri) {
 				$controllers = [];
 				$query = DB_Query("SELECT `ID`, `Controller` FROM `API Controllers` WHERE `Active?`=1 AND `Created`<now()");
 				while($controller = mysqli_fetch_array($query)) {
