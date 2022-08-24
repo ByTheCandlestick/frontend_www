@@ -11,8 +11,8 @@
 		define('ANALYTICS',		['db5007301242.hosting-data.io',	'dbu235049',	'CandleStick2603',	'dbs6015868']);
 	}
 	$query = DB_Query("SELECT `ID`, `Key` FROM `API Keys` WHERE `Active?`=1 AND `Created`<now()");
-	$keys = [];
-	while($key = mysqli_fetch_array($query)) {}
+//	$keys = [];
+//	while($key = mysqli_fetch_array($query)) {}
 //		$keys['ID'] =+ $key['Key'];
 	define('__API_KEYS__',	'$keys');
 	define('__ROOT__',		$_SERVER["DOCUMENT_ROOT"]);
