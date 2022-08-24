@@ -119,7 +119,7 @@
 				return (!$active)?invalid_request(3): $origin;
 			};
 	//	Get URI Vars
-		print($_SERVER['HTTP_ORIGIN']);
+		//print($_SERVER['HTTP_ORIGIN']);
 		if(checkHost($_SERVER['HTTP_ORIGIN'])) {
 			header('Access-Control-Allow-Credentials: true');
 			header('Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE');
