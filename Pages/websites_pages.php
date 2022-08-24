@@ -43,7 +43,7 @@
 					while($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
-								<t scope="row">'.$row['page_name'].'</th>
+								<th scope="row">'.$row['page_name'].'</th>
 								<td>'.$row['page_url'].'</td>
 								<td>'.$row['subpage_url'].'</td>
 								<td>'.(($row['menu_order']=='0')?null:$row['menu_order']).'</td>
