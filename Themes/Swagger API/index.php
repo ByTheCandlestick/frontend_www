@@ -1,6 +1,5 @@
 <?
-	print_r("\"".QS_PAGE."\"");
-	if(QS_PAGE!="") {
+	if(QS_PAGE!="index") {
 		// Include the base files
 		require_once('./API/'.QS_PAGE.'/Base/Bootstrap.php');
 		require_once('./API/'.QS_PAGE.'/Base/BaseController.php');
