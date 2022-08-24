@@ -54,9 +54,8 @@
 		*/
 		function confApiKey() {
 			parse_str(QUERY_STRING, $query);
-			if(isset($query['api_key'])) {}
-			foreach (__API_KEYS__ as $subarray) {
-				if(!in_array($query['api_key'], $subarray)) {
+			if(isset($query['api_key'])) {
+				if(!in_array($query['api_key'], __API_KEYS__)) {
 					$active = true;
 				}
 			}
