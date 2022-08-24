@@ -105,20 +105,20 @@
 		 *	@return	array	Ends the API and displays an error
 		 */
 			function checkHost() {
-				$controllers = [];
-				$query = DB_Query("SELECT `ID`, `Controller` FROM `API Controllers` WHERE `Active?`=1 AND `Created`<now()");
-				while($controller = mysqli_fetch_array($query)) {
-					$controllers[$controller['ID']] = $controller['Key'];
+				$Hosts = [];
+				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed Hosts` WHERE `Active?`=1 AND `Created`<now()");
+				while($Host = mysqli_fetch_array($query)) {
+					$Hosts[$Host['ID']] = $Host['Hostname'];
 				}
 				if(isset($uri[1])) {
-					if(in_array(strtolower($uri[1]), $controllers)) {
+					if(in_array(strtolower($uri[1]), $Hosts)) {
 						$active = true;
 					}
 				}
 				return (!$active)?invalid_request(3): $uri[1];
 			};
 	//	Get URI Vars
-//		checkHost();
+//		checkHost($referer);
 		$uri = get_uri();
 		$version = checkVersion($uri);
 		$controller = checkController($uri);
