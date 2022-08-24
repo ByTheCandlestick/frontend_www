@@ -119,7 +119,13 @@
 				return (!$active)?invalid_request(3): $referrer;
 			};
 	//	Get URI Vars
-		checkHost($referrer);
+		if(checkHost($referrer)) {
+			header('Access-Control-Allow-Credentials: true');
+			header('Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE');
+			header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+			header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+			ini_set('display_errors', 1);
+		}
 		$uri = get_uri();
 		$version = checkVersion($uri);
 		$controller = checkController($uri);
