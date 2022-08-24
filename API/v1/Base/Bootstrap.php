@@ -119,8 +119,8 @@
 				return (!$active)?invalid_request(3): $origin;
 			};
 	//	Get URI Vars
-		//print($_SERVER['HTTP_ORIGIN']);
-		if(checkHost($_SERVER['HTTP_ORIGIN'])) {
+		print($referrer);
+		if(checkHost($referrer)) {
 			header('Access-Control-Allow-Credentials: true');
 			header('Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE');
 			header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
