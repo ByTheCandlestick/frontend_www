@@ -54,7 +54,13 @@
 		*/
 		function confApiKey() {
 			parse_str(QUERY_STRING, $query);
-			if(!isset($query['api_key']) || $query['api_key'] != API_KEY) invalid_request(1);
+			if(isset($query['api_key'])) {}
+			foreach (__API_KEYS__ as $subarray) {
+				if(!in_array($query['api_key'], $subarray)) {
+					$active = true
+				}
+			}
+			if(!$active) invalid_request(1);
 		};
 	//	Get URI Var
 		$uri = get_uri();
