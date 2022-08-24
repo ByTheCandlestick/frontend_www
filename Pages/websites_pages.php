@@ -34,6 +34,7 @@
 					<th scope="col">Name</th>
 					<th scope="col">URL</th>
 					<th scope="col">Sub URL</th>
+					<th scope="col">Menu order</th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
@@ -47,7 +48,7 @@
 								<td>'.$row['page_name'].'</td>
 								<td>'.$row['page_url'].'</td>
 								<td>'.$row['subpage_url'].'</td>
-								<td>'.$row['menu_order'].'</td>
+								<td>'.($row['menu_order']=null)?'0':$row['menu_order'].'</td>
 								<td>
 									<a href="/Oxygen/'.$row['ID'].'/" class="px-1">
 										<i class="fad fa-circle"></i>
