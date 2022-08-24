@@ -14,7 +14,7 @@
 	$keys = [];
 	while($key = mysqli_fetch_array($query)) {}
 //		$keys['ID'] =+ $key['Key'];
-	define('__API_KEYS__',	$keys);
+	define('__API_KEYS__',	'$keys');
 	define('__ROOT__',		$_SERVER["DOCUMENT_ROOT"]);
 	define('__THEME__',		getThemepage(false));
 	define('QS_PAGE',		isset($_GET['page']) ? strtolower($_GET['page']) : 'index');
