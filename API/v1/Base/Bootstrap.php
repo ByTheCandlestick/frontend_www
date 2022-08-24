@@ -91,7 +91,7 @@
 				$controllers = [];
 				$query = DB_Query("SELECT `ID`, `Controller` FROM `API Controllers` WHERE `Active?`=1 AND `Created`<now()");
 				while($controller = mysqli_fetch_array($query)) {
-					$controllers[$controller['ID']] = $controller['Key'];
+					$controllers[$controller['ID']] = $controller['Controller'];
 				}
 				if(isset($uri[1])) {
 					if(in_array(strtolower($uri[1]), $controllers)) {
