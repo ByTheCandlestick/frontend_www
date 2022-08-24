@@ -105,21 +105,21 @@
 		 *	@param	string	$referrer
 		 *	@return	array	Ends the API and displays an error
 		 */
-			function checkHost(string $referrer) {
+			function checkHost(string $origin) {
 				$hosts = [];
 				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now()");
 				while($host = mysqli_fetch_array($query)) {
 					$hosts[$host['ID']] = $host['Hostname'];
 				}
-				if(isset($referrer)) {
-					if(in_array(strtolower($referrer), $hosts)) {
+				if(isset($origin)) {
+					if(in_array(strtolower($origin), $hosts)) {
 						$active = true;
 					}
 				}
-				return (!$active)?invalid_request(3): $referrer;
+				return (!$active)?invalid_request(3): $origin;
 			};
 	//	Get URI Vars
-		if(checkHost($referrer)) {
+		if(checkHost($_SERVER['HTTP_ORIGIN'])) {
 			header('Access-Control-Allow-Credentials: true');
 			header('Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE');
 			header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
