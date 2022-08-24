@@ -108,7 +108,7 @@
 		function printScripts(string $scriptsheets) {
 			$scriptsheets = explode(",", $scriptsheets);
 			foreach($scriptsheets as $script) {
-				if($result = DB_Query("SELECT `Location` FROM `page_scripts` WHERE `ID`='$script'")) {
+				if($result = DB_Query("SELECT `Location` FROM `Websites scripts` WHERE `ID`='$script'")) {
 					$res = mysqli_fetch_array($result);
 					$scriptLocation = $res['Location'];
 

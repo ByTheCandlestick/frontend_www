@@ -109,7 +109,7 @@
 					<div class="col-12 col-md-6" name="scripts">
 						<h5>Scripts</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `page_scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `Websites scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								print('
 									<div class="form-check">
@@ -246,7 +246,7 @@
 					<div class="col-12 col-md-6" name="scripts">
 						<h5>Scripts</h5>
 						<?
-							$query = DB_Query("SELECT * FROM `page_scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
+							$query = DB_Query("SELECT * FROM `Websites scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
 							while($row = mysqli_fetch_array($query)) {
 								(in_array($row['ID'], $scripts))?$checked=" checked":$checked="";
 								print('

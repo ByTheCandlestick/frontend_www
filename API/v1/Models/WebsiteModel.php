@@ -65,7 +65,7 @@
 		 * @result boolean
 		 */
 			public function CreateScript(array $info) {
-				return $this->Execute(sprintf("INSERT INTO `page_scripts`(`Name`, `Location`, `Importance`, `Active`) VALUES('%s', '%s', '%s', '%s')", $info['name'], $info['location'], $info['importance'], $info['active']), 1);
+				return $this->Execute(sprintf("INSERT INTO `Websites scripts`(`Name`, `Location`, `Importance`, `Active`) VALUES('%s', '%s', '%s', '%s')", $info['name'], $info['location'], $info['importance'], $info['active']), 1);
 			}
 		/** UpdateScript
 		 * @final
@@ -75,7 +75,7 @@
 		 * @result boolean
 		 */
 			public function UpdateScript(string $id, array $info) {
-				return $this->Execute(sprintf("UPDATE `page_scripts` SET `Name`='%s', `Location`='%s', `Importance`='%s', `Active`='%s' WHERE `ID`='%s'", $info['name'], $info['location'], $info['importance'], $info['active'], $id), 1);
+				return $this->Execute(sprintf("UPDATE `Websites scripts` SET `Name`='%s', `Location`='%s', `Importance`='%s', `Active`='%s' WHERE `ID`='%s'", $info['name'], $info['location'], $info['importance'], $info['active'], $id), 1);
 			}
 		/** DeleteScript
 		 * @final
@@ -84,7 +84,7 @@
 		 * @result boolean
 		 */
 			public function DeleteScript(string $id) {
-				return $this->Execute(sprintf("DELETE FROM `page_scripts` WHERE `ID`='%s'", $id), 1);
+				return $this->Execute(sprintf("DELETE FROM `Websites scripts` WHERE `ID`='%s'", $id), 1);
 			}
 		//
 		/** CreateTheme
