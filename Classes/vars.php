@@ -20,7 +20,6 @@
 	define('URL_BLOG',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'blog.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	define('URL_ADMIN',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'admin.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	define('URL_CURR',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST']);
-	print_r(__API_KEYS__);
 	// SET USERS IP
 		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
