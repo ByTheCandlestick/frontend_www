@@ -49,7 +49,7 @@
 							print('
 								<tr>
 									<th scope="row"><a href="/Websites/Pages/'.$row['ID'].'">'.$row['Name'].'</a></th>
-									<td><a href=".'$_SERVER['HTTP_HOST ']'.'.$row['Domain'].'" target="_blank">'.$row['Domain'].'</a></td>
+									<td><a href="'.$_SERVER['HTTP_HOST '].'://'.$row['Domain'].'" target="_blank">'.$row['Domain'].'</a></td>
 									<td>'.$row['Maintenance'].'</td>
 									<td>
 										<a href="/Websites/Edit/'.$row['ID'].'">
