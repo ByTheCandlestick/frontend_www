@@ -110,7 +110,6 @@
 				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now()");
 				while($host = mysqli_fetch_array($query)) {
 					$hosts[$host['ID']] = $host['Hostname'];
-					echo "\"" . $referrer . "\":\"" . $host['Hostname'] . "\"";
 				}
 				if(isset($referrer)) {
 					if(in_array(strtolower($referrer), $hosts)) {
