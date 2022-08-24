@@ -30,7 +30,6 @@
 		<table class="pagesTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
-					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col">URL</th>
 					<th scope="col">Sub URL</th>
@@ -44,8 +43,7 @@
 					while($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
-								<th scope="row">'.$row['ID'].'</th>
-								<td>'.$row['page_name'].'</td>
+								<t scope="row">'.$row['page_name'].'</th>
 								<td>'.$row['page_url'].'</td>
 								<td>'.$row['subpage_url'].'</td>
 								<td>'.(($row['menu_order']=='0')?null:$row['menu_order']).'</td>
