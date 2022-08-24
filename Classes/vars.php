@@ -10,9 +10,9 @@
 		define('ADMIN', 		['db5007320590.hosting-data.io',	'dbu1278426',	'CandleStick2603',	'dbs6031251']);
 		define('ANALYTICS',		['db5007301242.hosting-data.io',	'dbu235049',	'CandleStick2603',	'dbs6015868']);
 	}
-	$q = DB_Query("SELECT `ID`,`Key` FROM `API Keys` WHERE `Active?`=1 AND `Created`<now()");
+	$query = DB_Query("SELECT `ID`, `Key` FROM `API Keys` WHERE `Active?`=1 AND `Created`<now()");
 	$keys = [];
-	while($key = mysqli_fetch_array($q)) {
+	while($key = mysqli_fetch_array($query)) {
 //		$keys['ID'] =+ $key['Key'];
 	}
 	define('__API_KEYS__',	$keys);
