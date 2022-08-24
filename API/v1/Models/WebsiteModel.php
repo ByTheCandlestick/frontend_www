@@ -36,7 +36,7 @@
 		 * @result boolean
 		 */
 			public function CreateStyle(array $info) {
-				return $this->Execute(sprintf("INSERT INTO `page_styles`(`Name`, `Location`, `Importance`, `Preload`, `Active`) VALUES('%s', '%s', '%s', '%s', '%s')", $info['name'], $info['location'], $info['importance'], $info['preload'], $info['active']), 1);
+				return $this->Execute(sprintf("INSERT INTO `Websites styles`(`Name`, `Location`, `Importance`, `Preload`, `Active`) VALUES('%s', '%s', '%s', '%s', '%s')", $info['name'], $info['location'], $info['importance'], $info['preload'], $info['active']), 1);
 			}
 		/** UpdateStyle
 		 * @final
@@ -46,7 +46,7 @@
 		 * @result boolean
 		 */
 			public function UpdateStyle(string $id, array $info) {
-				return $this->Execute(sprintf("UPDATE `page_styles` SET `Name`='%s', `Location`='%s', `Importance`='%s', `Preload`='%s', `Active`='%s' WHERE `ID`='%s'", $info['name'], $info['location'], $info['importance'], $info['preload'], $info['active'], $id), 1);
+				return $this->Execute(sprintf("UPDATE `Websites styles` SET `Name`='%s', `Location`='%s', `Importance`='%s', `Preload`='%s', `Active`='%s' WHERE `ID`='%s'", $info['name'], $info['location'], $info['importance'], $info['preload'], $info['active'], $id), 1);
 			}
 		/** DeleteStyle
 		 * @final
@@ -55,7 +55,7 @@
 		 * @result boolean
 		 */
 			public function DeleteStyle(string $id) {
-				return $this->Execute(sprintf("DELETE FROM `page_styles` WHERE `ID`='%s'", $id), 1);
+				return $this->Execute(sprintf("DELETE FROM `Websites styles` WHERE `ID`='%s'", $id), 1);
 			}
 		//
 		/** CreateScript

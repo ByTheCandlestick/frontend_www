@@ -54,7 +54,7 @@
         </div>
     </section>
 <?
-	} elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `page_styles` WHERE `ID`=%s", QS))) > 0) {
+	} elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Websites styles` WHERE `ID`=%s", QS))) > 0) {
 		$style = mysqli_fetch_assoc($query);
 ?>
 	<section>

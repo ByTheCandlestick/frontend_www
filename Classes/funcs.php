@@ -71,7 +71,7 @@
 		function printStyles(string $stylesheets) {
 			$stylesheets = explode(",", $stylesheets);
 			foreach($stylesheets as $style) {
-				if($result = DB_Query("SELECT * FROM `page_styles` WHERE `ID`='$style'")) {
+				if($result = DB_Query("SELECT * FROM `Websites styles` WHERE `ID`='$style'")) {
 					$res = mysqli_fetch_array($result);
 					$styleLocation = $res['Location'];
 					$preload = $res['Preload'];
