@@ -57,7 +57,7 @@
 			if(isset($query['api_key'])) {}
 			foreach (__API_KEYS__ as $subarray) {
 				if(!in_array($query['api_key'], $subarray)) {
-					$active = true
+					$active = true;
 				}
 			}
 			if(!$active) invalid_request(1);
