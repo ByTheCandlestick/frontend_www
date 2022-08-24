@@ -102,9 +102,10 @@
 			};
 		/**	checkHost
 		 *	Confirm the host is accepted.
+		 *	@param	array	$uri
 		 *	@return	array	Ends the API and displays an error
 		 */
-			function checkHost() {
+			function checkHost(array $uri) {
 				$hosts = [];
 				$query = DB_Query("SELECT `ID`, `Hostname` FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now()");
 				while($host = mysqli_fetch_array($query)) {
@@ -120,7 +121,7 @@
 			};
 	//	Get URI Vars
 		checkHost($referer);
-		$uri = get_uri();
+		$uri = get_uri($uri);
 		$version = checkVersion($uri);
 		$controller = checkController($uri);
 	//	Confirm Controller exists
