@@ -39,14 +39,15 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY `id`", QS));
-					while ($row = mysqli_fetch_array($query)) {
+					$query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY `menu_order`, `ID`", QS));
+					while($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
 								<th scope="row">'.$row['ID'].'</th>
 								<td>'.$row['page_name'].'</td>
 								<td>'.$row['page_url'].'</td>
 								<td>'.$row['subpage_url'].'</td>
+								<td>'.$row['menu_order'].'</td>
 								<td>
 									<a href="/Oxygen/'.$row['ID'].'/" class="px-1">
 										<i class="fad fa-circle"></i>
