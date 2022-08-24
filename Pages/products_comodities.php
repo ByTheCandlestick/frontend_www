@@ -215,9 +215,11 @@
                         <h4>Materials</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="/Products/Material/New/" class="btn btn-outline-primary">
-                            <i class="fa fa-plus"></i>
-                        </a>
+                        <?  if($userperm['adm_access-products-materials-edit']==1) {?>
+                            <a href="/Products/Material/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <div class="card-body p-0 overflow-auto">
@@ -276,9 +278,11 @@
                         <h4>Fragrances</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="/Products/Fragrance/New/" class="btn btn-outline-primary">
-                            <i class="fa fa-plus"></i>
-                        </a>
+                        <?  if($userperm['adm_access-products-fragrances-edit']==1) {?>
+                            <a href="/Products/Fragrance/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <div class="card-body p-0 overflow-auto">
@@ -337,9 +341,11 @@
                         <h4>Colours</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="/Products/Colour/New/" class="btn btn-outline-primary">
-                            <i class="fa fa-plus"></i>
-                        </a>
+                        <?  if($userperm['adm_access-products-colours-edit']==1) {?>
+                            <a href="/Products/Colour/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <div class="card-body p-0 overflow-auto">
@@ -398,9 +404,11 @@
                         <h4>Packagings</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="/Products/Packaging/New/" class="btn btn-outline-primary">
-                            <i class="fa fa-plus"></i>
-                        </a>
+                        <?  if($userperm['adm_access-products-packagings-edit']==1) {?>
+                            <a href="/Products/Packaging/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <div class="card-body p-0 overflow-auto">
@@ -457,9 +465,11 @@
                         <h4>Shippings</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="/Products/Shipping/New/" class="btn btn-outline-primary">
-                            <i class="fa fa-plus"></i>
-                        </a>
+                        <?  if($userperm['adm_access-products-shippings-edit']==1) {?>
+                            <a href="/Products/Shipping/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <div class="card-body p-0 overflow-auto">
