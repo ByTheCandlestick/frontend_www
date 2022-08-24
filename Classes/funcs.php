@@ -29,7 +29,7 @@
 	 * @return string
 	 *
 	 */
-		function getThemepage($require) {
+		function getThemepage(bool $require) {
 			global $userdata, $userperm, $website_info, $user_ok, $product, $partner;
 			$page_type = mysqli_fetch_array(DB_Query(sprintf("SELECT `page_type` FROM `Website domains` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 			$theme_location = mysqli_fetch_array(DB_Query(sprintf("SELECT `Location` FROM `Website themes` WHERE `ID`='%s'", $page_type)))[0];
