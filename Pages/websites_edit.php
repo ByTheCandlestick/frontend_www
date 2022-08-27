@@ -151,8 +151,8 @@
 						$query = DB_Query("DESCRIBE `Users_permissions`");
 						print_r(mysqli_fetch_array($query));
 						while ($row = mysqli_fetch_array($query)) {
-							$row['ID'] == $domain['Page_type'] ? $selected="selected" : $selected="";
-							print_r('<option value="'.$row['ID'].'" '.$selected.'>'.$row['Name'].'</option>');
+							$row['Field'] == $domain['Permission'] ? $selected="selected" : $selected="";
+							print_r('<option value="'.$row['Field'].'" '.$selected.'>'.$row['Field'].'</option>');
 						}
 					?>
 				</select>
