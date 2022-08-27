@@ -34,13 +34,15 @@
 				<?
 					$query = DB_Query("DESCRIBE `Users_permissions`");
 					if(mysqli_num_rows($query) > 0) {
+                        $id=0;
 						while ($row = mysqli_fetch_array($query)) {
 							if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
                                 print('
                                     <tr>
-                                        <th scope="row"><a href="/Config/Permissions/'.$row['ID'].'/">'.$row['Field'].'</a></th>
+                                        <th scope="row"><a href="/Config/Permissions/'.$id.'/">'.$row['Field'].'</a></th>
                                     </tr>
                                 ');
+                                $id++
                             }
 						}
 					} else {
