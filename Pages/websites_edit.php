@@ -144,7 +144,7 @@
 					<?
 						$query = DB_Query("DESCRIBE `Users_permissions`");
 						while($row = mysqli_fetch_array($query)) {
-							if(preg_match("/([a-z]+\_[a-z\-]+)/", $row)) {
+							if(preg_match("([a-z]+\_[a-z\-]+)", $row)) {
 								$row['Field'] == $domain['Permission'] ? $selected="selected" : $selected="";
 								print_r('<option value="'.$row['Field'].'" '.$selected.'>'.$row['Field'].'</option>');
 							}
