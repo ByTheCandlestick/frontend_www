@@ -249,10 +249,10 @@
 								<option value="-1" selected>Please select</option>
 								<?
 									$query = DB_Query("DESCRIBE `Users_permissions`");
-									while($perm = mysqli_fetch_array($query)) {
-										if(preg_match("([a-z]+\_[a-z\-]+)", $perm['Field'])) {
-											$perm['Field'] == $row['Permission'] ? $selected="selected" : $selected="";
-											print_r('<option value="'.$perm['Field'].'" '.$selected.'>'.$perm['Field'].'</option>');
+									while($row = mysqli_fetch_array($query)) {
+										if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
+											$row['Field'] == $page['Permission'] ? $selected="selected" : $selected="";
+											print_r('<option value="'.$row['Field'].'" '.$selected.'>'.$row['Field'].'</option>');
 										}
 									}
 								?>
