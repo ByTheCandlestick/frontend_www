@@ -28,14 +28,13 @@
 	<div class="row overflow-scroll">
 		<table class="usersTable table table-striped table-hover">
 			<thead class="sticky-top">
-				<th scope="col">ID</th>
 				<th scope="col">Name</th>
 				<th scope="col">Username</th>
 				<th scope="col">Email</th>
 				<th scope="col">Phone</th>
 				<th scope="col">Enabled</th>
 				<th scope="col">Created</th>
-				<th scope="col"></th>
+				<th scope="col">Cart</th>
 			</thead>
 			<tbody>
 				<?
@@ -44,8 +43,7 @@
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<th scope="row">'.$row['ID'].'</th>
-									<td>'.$row['First_name'].' '.$row['Last_name'].'</td>
+									<td><a href="/Users/Edit/'.$row['ID'].'">'.$row['First_name'].' '.$row['Last_name'].'</a></td>
 									<td>'.$row['Username'].'</td>
 									<td>'.$row['Email'].'</td>
 									<td>'.$row['Phone'].'</td>
@@ -54,9 +52,6 @@
 									<td>
 										<a href="/Users/Cart/'.$row['ID'].'">
 											<i class="fa fa-shopping-cart"></i>
-										</a>
-										<a href="/Users/Edit/'.$row['ID'].'">
-											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
 								</tr>
