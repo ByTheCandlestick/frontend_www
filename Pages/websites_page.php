@@ -243,16 +243,16 @@
 						</div>
 					</div>
 					<h5>Permissions</h5>
-					<div class="col-12 col-md-6 col-lg-3" name="permission">
+					<div class="col-12 col-lg-6" name="permission">
 						<div class="form-floating mb-3">
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
 									$query = DB_Query("DESCRIBE `Users_permissions`");
-									while($row = mysqli_fetch_array($query)) {
-										if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
-											$row['Field'] == $domain['Permission'] ? $selected="selected" : $selected="";
-											print_r('<option value="'.$row['Field'].'" '.$selected.'>'.$row['Field'].'</option>');
+									while($perm = mysqli_fetch_array($query)) {
+										if(preg_match("([a-z]+\_[a-z\-]+)", $perm['Field'])) {
+											$perm['Field'] == $row['Permission'] ? $selected="selected" : $selected="";
+											print_r('<option value="'.$perm['Field'].'" '.$selected.'>'.$perm['Field'].'</option>');
 										}
 									}
 								?>
