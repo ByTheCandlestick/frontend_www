@@ -122,6 +122,26 @@
         <hr>
         <!-- Section Body -->
         <div class="row overflow-scroll">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="<? print(($permission[QS]['Name']=='')?'':'')?>" value="<? print(($domain['Favicon']=='')?'':$domain['Favicon'])?>">
+                        <label for="floatingInput">Name</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="<? print(($permission[QS]['Type']=='')?'':'')?>" value="<? print(($domain['Favicon']=='')?'':$domain['Favicon'])?>">
+                        <label for="floatingInput">Type</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" name="maintenance" id="flexCheck" <?($permission[QS]['Maintenance']=="No")?print("checked"):print("")?>>
+						<label class="form-check-label" for="flexCheck"> Null? </label>
+					</div>
+                </div>
+            </div>
         </div>
     </section>
 <?}?>
