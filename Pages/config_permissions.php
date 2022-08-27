@@ -97,10 +97,9 @@
                 if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
                     $permission[$i]['Name'] = $row['Field'];
                     $permission[$i]['Null'] = $row['Null'];
-                    preg_match("/([a-z]+)\(?([0-9]+)?\)?/", $permission[QS]['Type'], $type);
-                    print_r($type);
+                    preg_match("/([a-z]+)\(?([0-9]+)?\)?/", $row['Type'], $type);
                     $permission[$i]['Type'] = $type[0];
-                    $permission[$i]['Type_lim'] = $type[1];
+                    $permission[$i]['TypeLim'] = $type[1];
                     $i++;
                 }
             }
@@ -140,7 +139,7 @@
                 </div>
                 <div class="col-4 col-md-2 col-lg-1">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print(($permission[QS]['Type_lim']=='')?'':$permission[QS]['Type_lim'])?>">
+                        <input type="text" class="form-control" id="floatingInput" value="<? print(($permission[QS]['TypeLim']=='')?'':$permission[QS]['TypeLim'])?>">
                         <label for="floatingInput">limit</label>
                     </div>
                 </div>
