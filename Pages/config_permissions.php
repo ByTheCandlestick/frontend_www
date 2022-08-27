@@ -95,7 +95,7 @@
             $id=0;
             while ($row = mysqli_fetch_array($query)) {
                 if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
-                    $permission[$i] = $row;
+                    $permission[$i] = $row['Field'];
                     $id++;
                 }
             }
@@ -110,7 +110,7 @@
             <div class="col-12 col-md-6 text-md-end">
                 <div class="row">
                     <div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-                        <a href="javascript:config.permissions.save(<?=$permission?>)" class="btn btn-outline-primary m-1">
+                        <a href="javascript:config.permissions.save(<?=$permission[QS]?>)" class="btn btn-outline-primary m-1">
                             <i class="fa fa-save"></i>
                         </a>
                     </div>
