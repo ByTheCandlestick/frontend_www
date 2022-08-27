@@ -110,12 +110,12 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT LEFT(`Key` , 10) as 'Key', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT 7");
+                                $query = DB_Query("SELECT LEFT(`Key` , 13) as 'Key', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <td>'.$row['Key'].'</td>
+                                                <td>'.$row['Key'].'...</td>
                                                 <td>'.$row['Last used'].'</td>
                                                 <td>
                                         ');
