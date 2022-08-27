@@ -42,7 +42,7 @@
                                         <th scope="row"><a href="/Config/Permissions/'.$id.'/">'.$row['Field'].'</a></th>
                                     </tr>
                                 ');
-                                $id++
+                                $id++;
                             }
 						}
 					} else {
