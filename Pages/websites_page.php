@@ -87,7 +87,7 @@
 						</div>
 					</div>
 					<h5>Permissions</h5>
-					<div class="col-12 col-md-6 col-lg-3" name="permission">
+					<div class="col-12 col-lg-6" name="permission">
 						<div class="form-floating mb-3">
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
