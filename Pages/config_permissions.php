@@ -102,6 +102,7 @@
                 }
             }
         }
+        print_r($permission[QS]);
     ?>
     <section>
         <!-- Section Header -->
