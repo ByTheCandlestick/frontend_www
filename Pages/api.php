@@ -155,7 +155,7 @@
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>Private Keys</h4>
+                        <h4>Versions</h4>
                     </div>
                     <div class="col-4 text-end">
                         <?  if($userperm['api_access-Keys-edit']==1) {?>
