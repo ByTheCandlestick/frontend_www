@@ -139,7 +139,7 @@
 		<hr>
 		<div class="col-12 col-md-6 col-lg-3" name="permission">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+				<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Permission']=='')?'No domain was set':'')?>" value="<? print(($domain['Permission']=='')?'':$domain['Permission'])?>">
 				<label for="floatingInput">Permission</label>
 			</div>
 		</div>
