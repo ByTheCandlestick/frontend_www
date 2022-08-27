@@ -103,8 +103,8 @@
                     <table class="containersTable table table-striped table-hover m-0">
                         <thead class="sticky-top">
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Hostname</th>
+                                <th scope="col">Key</th>
+                                <th scope="col">Last used</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
