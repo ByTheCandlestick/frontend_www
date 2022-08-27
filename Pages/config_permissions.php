@@ -98,8 +98,8 @@
                     $permission[$i]['Name'] = $row['Field'];
                     $permission[$i]['Null'] = $row['Null'];
                     preg_match("/([a-z]+)\(?([0-9]+)?\)?/", $row['Type'], $type);
-                    $permission[$i]['Type'] = $type[0];
-                    $permission[$i]['TypeLim'] = $type[1];
+                    $permission[$i]['Type'] = $type[1];
+                    $permission[$i]['TypeLim'] = $type[2];
                     $i++;
                 }
             }
