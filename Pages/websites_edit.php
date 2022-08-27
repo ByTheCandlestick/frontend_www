@@ -137,9 +137,26 @@
 			</div>
 		</div>
 		<hr>
+		<div class="col-12 col-md-6 col-lg-3" name="page_type">
+			<div class="form-floating mb-3">
+				<label for="floatingInput">Page type</label>
+			</div>
+		</div>
 		<div class="col-12 col-md-6 col-lg-3" name="permission">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Permission']=='')?'No domain was set':'')?>" value="<? print(($domain['Permission']=='')?'':$domain['Permission'])?>">
+				
+				<select class="form-select" id="floatingSelect">
+					<option value="-1" selected>Please select</option>
+					<?
+						$query = DB_Query("DESCRIBE `Users_permissions`");
+						print_r(mysqli_fetch_array($query));
+						while ($row = mysqli_fetch_array($query)) {
+							$row['ID'] == $domain['Page_type'] ? $selected="selected" : $selected="";
+							print_r('<option value="'.$row['ID'].'" '.$selected.'>'.$row['Name'].'</option>');
+						}
+					?>
+				</select>
+
 				<label for="floatingInput">Permission</label>
 			</div>
 		</div>
