@@ -97,7 +97,7 @@
                 if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
                     $permission[$i]['Name'] = $row['Field'];
                     $permission[$i]['Null'] = $row['Null'];
-                    echo $type = preg_match("/([a-z]+)\(?([0-9]+)?\)?/", $permission[QS]['Type']);
+                    echo preg_match("/([a-z]+)\(?([0-9]+)?\)?/", $permission[QS]['Type'], $types);
                     $permission[$i]['Type'] = $type[0];
                     $permission[$i]['Type_lim'] = $type[1];
                     $i++;
