@@ -150,8 +150,8 @@
 					<?
 						$query = DB_Query("DESCRIBE `Users_permissions`");
 						while($row = array_shift(mysqli_fetch_array($query))) {
-							$row['Field'] == $domain['Permission'] ? $selected="selected" : $selected="";
-							print_r('<option value="'.$row['Field'].'" '.$selected.'>'.$row['Field'].'</option>');
+							$row['field'] == $domain['Permission'] ? $selected="selected" : $selected="";
+							print_r('<option value="'.$row['field'].'" '.$selected.'>'.$row['field'].'</option>');
 						}
 					?>
 				</select>
