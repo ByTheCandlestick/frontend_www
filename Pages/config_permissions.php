@@ -129,9 +129,9 @@
                         <label for="floatingInput">Name</label>
                     </div>
                 </div>
-                <div class="col-8 col-md-4 col-lg-2">
+                <div class="col-8 col-md-4 col-lg-2 d-none">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control d-none" id="floatingInput" value="<? print(($permission[QS]['Type']=='')?'':$permission[QS]['Type'])?>">
+                        <input type="text" class="form-control" id="floatingInput" value="<? print(($permission[QS]['Type']=='')?'':$permission[QS]['Type'])?>">
                         <label for="floatingInput">Type</label>
                     </div>
                 </div>
@@ -141,9 +141,9 @@
                         <label for="floatingInput">Default</label>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-3 d-none">
 					<div class="form-check form-switch">
-						<input class="form-check-input d-none" type="checkbox" name="maintenance" id="flexCheck" <?($permission[QS]['Maintenance']=="NO")?print(""):print("checked")?>>
+						<input class="form-check-input" type="checkbox" name="maintenance" id="flexCheck" <?($permission[QS]['Maintenance']=="NO")?print(""):print("checked")?>>
 						<label class="form-check-label" for="flexCheck">Nullable?</label>
 					</div>
                 </div>
