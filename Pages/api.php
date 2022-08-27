@@ -79,7 +79,73 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/Products/Containers/">
+                    <a href="/API/allowed_hosts/">
+                        See more
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 p-2">
+            <div class="card h-auto h-md-100">
+                <div class="card-header row m-0">
+                    <div class="col-8">
+                        <h4>Private Keys</h4>
+                    </div>
+                    <div class="col-4 text-end">
+                        <?  if($userperm['api_access-Keys-edit']==1) {?>
+                            <a href="/API/keys/New/" class="btn btn-outline-primary">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        <?}?>
+                    </div>
+                </div>
+                <div class="card-body p-0 overflow-auto">
+                    <table class="containersTable table table-striped table-hover m-0">
+                        <thead class="sticky-top">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Hostname</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?
+                                $query = DB_Query("SELECT * FROM `API Keys` WHERE `Active?`=1 LIMIT 7");
+                                if(mysqli_num_rows($query) > 0) {
+                                    while ($row = mysqli_fetch_array($query)) {
+                                        print('
+                                            <tr>
+                                                <td>'.$row['Name'].'</td>
+                                                <td>'.$row['Hostname'].'</td>
+                                                <td>
+                                        ');
+                                        if($userperm['api_access-Keys-edit']==1) {
+                                            print('
+                                                    <a href="/API/keys/'.$row['ID'].'">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                            ');
+                                        }
+                                        print('
+                                                </td>
+                                            </tr>
+                                        ');
+                                    }
+                                } else {
+                                    print('
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>No data found</td>
+                                            <td></td>
+                                        </tr>
+                                    ');
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="/API/keys/">
                         See more
                     </a>
                 </div>
