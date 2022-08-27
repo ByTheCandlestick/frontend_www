@@ -102,7 +102,6 @@
                 }
             }
         }
-        print_r($permission[QS]);
     ?>
     <section>
         <!-- Section Header -->
@@ -126,13 +125,13 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="<? print(($permission[QS]['Name']=='')?'':'')?>" value="<? print(($domain['Favicon']=='')?'':$domain['Favicon'])?>">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="<? print(($permission[QS]['Name']=='')?'':'')?>" value="<? print(($permission[QS]['Name']=='')?'':$permission[QS]['Name'])?>">
                         <label for="floatingInput">Name</label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="<? print(($permission[QS]['Type']=='')?'':'')?>" value="<? print(($domain['Favicon']=='')?'':$domain['Favicon'])?>">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="<? print(($permission[QS]['Type']=='')?'':'')?>" value="<? print(($permission[QS]['Type']=='')?'':$permission[QS]['Type'])?>">
                         <label for="floatingInput">Type</label>
                     </div>
                 </div>
