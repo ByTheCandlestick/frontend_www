@@ -92,11 +92,11 @@
         $permission = [];
         $query = DB_Query("DESCRIBE `Users_permissions`");
         if(mysqli_num_rows($query) > 0) {
-            $id=0;
+            $i=0;
             while ($row = mysqli_fetch_array($query)) {
                 if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
                     $permission[$i] = $row['Field'];
-                    $id++;
+                    $i++;
                 }
             }
         }
