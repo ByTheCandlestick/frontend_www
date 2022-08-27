@@ -149,7 +149,7 @@
 					<option value="-1" selected>Please select</option>
 					<?
 						$query = DB_Query("DESCRIBE `Users_permissions`");
-						while($row = array_shift(mysqli_fetch_array($query)['Field'])) {
+						while($row = array_shift(mysqli_fetch_array($query)[0])) {
 							$row['field'] == $domain['Permission'] ? $selected="selected" : $selected="";
 							print_r('<option value="'.$row['field'].'" '.$selected.'>'.$row['field'].'</option>');
 						}
