@@ -28,6 +28,6 @@
 			}
 		}
 		fclose($fh);
-		echo json_encode($return);
+		print(json_encode($return));
 	}
 ?>
