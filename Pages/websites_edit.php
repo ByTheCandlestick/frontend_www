@@ -137,11 +137,6 @@
 			</div>
 		</div>
 		<hr>
-		<div class="col-12 col-md-6 col-lg-3" name="page_type">
-			<div class="form-floating mb-3">
-				<label for="floatingInput">Page type</label>
-			</div>
-		</div>
 		<div class="col-12 col-md-6 col-lg-3" name="permission">
 			<div class="form-floating mb-3">
 				
