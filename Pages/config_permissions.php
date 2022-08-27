@@ -129,7 +129,13 @@
                         <label for="floatingInput">Name</label>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-8 col-md-4 col-lg-2">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" value="<? print(($permission[QS]['Type']=='')?'':$permission[QS]['Type'])?>">
+                        <label for="floatingInput">Type</label>
+                    </div>
+                </div>
+                <div class="col-4 col-md-2 col-lg-1">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" value="<? print(($permission[QS]['Type']=='')?'':$permission[QS]['Type'])?>">
                         <label for="floatingInput">Type</label>
