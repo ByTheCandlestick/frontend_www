@@ -97,14 +97,13 @@
                 if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
                     $permission[$i]['Name'] = $row['Field'];
                     $permission[$i]['Null'] = $row['Null'];
-                    
-                    $permission[$i]['Type'] = $row['Type'];
+                    $type = preg_match("/([a-z]+)\(?([0-9]+)?\)?/", $permission[QS]['Type']);
+                    $permission[$i]['Type'] = $type[0];
                     $permission[$i]['Type_lim'] = $type[1];
                     $i++;
                 }
             }
         }
-        print_r($type = preg_match("/([a-z]+)\(?([0-9]+)?\)?/", $permission[QS]['Type']));
     ?>
     <section>
         <!-- Section Header -->
