@@ -43,16 +43,13 @@
 					while($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
-								<th scope="row">'.$row['page_name'].'</th>
+								<th scope="row"><a href="/Websites/Page/'.$row['ID'].'">'.$row['page_name'].'<a/></th>
 								<td>'.$row['page_url'].'</td>
 								<td>'.$row['subpage_url'].'</td>
 								<td>'.(($row['menu_order']=='0')?null:$row['menu_order']).'</td>
 								<td>
 									<a href="/Oxygen/'.$row['ID'].'/" class="px-1">
 										<i class="fad fa-circle"></i>
-									</a>
-									<a href="/Websites/Page/'.$row['ID'].'" class="px-1">
-										<i class="fa fa-pencil"></i>
 									</a>
 								</td>
 							</tr>
