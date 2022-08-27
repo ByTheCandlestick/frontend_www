@@ -139,20 +139,18 @@
 		<hr>
 		<div class="col-12 col-md-6 col-lg-3" name="permission">
 			<div class="form-floating mb-3">
-				
 				<select class="form-select" id="floatingSelect">
 					<option value="-1" selected>Please select</option>
 					<?
 						$query = DB_Query("DESCRIBE `Users_permissions`");
 						while($row = mysqli_fetch_array($query)) {
-							if($row['Field'] != "UID") {
+							if(preg_match("/([a-z]+\_[a-z\-]+)/", $row)) {
 								$row['Field'] == $domain['Permission'] ? $selected="selected" : $selected="";
 								print_r('<option value="'.$row['Field'].'" '.$selected.'>'.$row['Field'].'</option>');
 							}
 						}
 					?>
 				</select>
-
 				<label for="floatingInput">Permission</label>
 			</div>
 		</div>
