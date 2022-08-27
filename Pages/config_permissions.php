@@ -104,7 +104,7 @@
                 }
             }
         }
-        print_r($type = preg_split("/([a-z]+)\(([0-9]+)\)/", $permission[QS]['Type']));
+        print_r($type = preg_split("/([a-z]+)\(?([0-9]+)?\)?/", $permission[QS]['Type']));
     ?>
     <section>
         <!-- Section Header -->
