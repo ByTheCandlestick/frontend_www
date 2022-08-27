@@ -39,7 +39,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=2 ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC", QS));
+					$query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC", QS));
 					while($row = mysqli_fetch_array($query)) {
 						print('
 							<tr>
