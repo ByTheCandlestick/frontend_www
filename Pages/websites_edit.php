@@ -148,9 +148,8 @@
 				<select class="form-select" id="floatingSelect">
 					<option value="-1" selected>Please select</option>
 					<?
-						$query = mysqli_fetch_array(DB_Query("DESCRIBE `Users_permissions`"));
-						array_shift($query);
-						while($row = $query) {
+						$query = DB_Query("DESCRIBE `Users_permissions` OFFSET 1");
+						while($row = mysqli_fetch_array($query)) {
 							$row['field'] == $domain['Permission'] ? $selected="selected" : $selected="";
 							print_r('<option value="'.$row['field'].'" '.$selected.'>'.$row['field'].'</option>');
 						}
