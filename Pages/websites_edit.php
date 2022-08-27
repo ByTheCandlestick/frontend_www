@@ -148,7 +148,7 @@
 				<select class="form-select" id="floatingSelect">
 					<option value="-1" selected>Please select</option>
 					<?
-						$query = mysqli_fetch_array(DB_Query("DESCRIBE `Users_permissions`"));
+						$query = mysqli_fetch_assoc(DB_Query("DESCRIBE `Users_permissions`"));
 						array_shift($query);
 						print_r($query);
 						forEach($query as $row) {
