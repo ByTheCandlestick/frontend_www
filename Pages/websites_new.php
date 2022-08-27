@@ -127,5 +127,12 @@
 				<label for="floatingInput">Favicon</label>
 			</div>
 		</div>
+		<hr>
+		<div class="col-12 col-md-6 col-lg-3" name="permission">
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+				<label for="floatingInput">Permission</label>
+			</div>
+		</div>
 	</div>
 </section>
