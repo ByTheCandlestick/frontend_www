@@ -12,7 +12,7 @@
 				$uid = intval($arr_cart_info['uid']); $sku = intval($arr_cart_info['sku']);
 				$qty = intval($arr_cart_info['qty']); $opt = $arr_cart_info['opt'];
 			// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
-				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Unsupported
+				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Add an item to a users cart
 					// Confirmations
 						try{
 							if(!isset($arr_cart_info['uid']) || $arr_cart_info['uid'] == "")	throw new Error("ERR-CRT-1");
