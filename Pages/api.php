@@ -115,8 +115,8 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <td>'.$row['Name'].'</td>
-                                                <td>'.$row['Hostname'].'</td>
+                                                <td>'.$row['Key'].'</td>
+                                                <td>'.$row['Last used'].'</td>
                                                 <td>
                                         ');
                                         if($userperm['api_access-Keys-edit']==1) {
