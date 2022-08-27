@@ -260,6 +260,11 @@
 							<label for="floatingInput">Permission</label>
 						</div>
 					</div>
+					<div class="col-12 col-lg-6" name="permission">
+						<div class="form-floating mb-3">
+							<a class="btn"><i class="fa fa-plus"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
