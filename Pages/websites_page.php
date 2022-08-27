@@ -262,7 +262,7 @@
 					</div>
 					<div class="col-12 col-lg-6" name="permission">
 						<div class="form-floating mb-3">
-							<a class="btn btn-primary"><i class="fa fa-plus"></i></a>
+							<a class="btn btn-outline-primary"><i class="fa fa-plus"></i></a>
 						</div>
 					</div>
 				</div>
