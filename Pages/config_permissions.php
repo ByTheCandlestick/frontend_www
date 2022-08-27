@@ -137,7 +137,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="maintenance" id="flexCheck" <?($permission[QS]['Maintenance']=="NO")?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="maintenance" id="flexCheck" <?($permission[QS]['Maintenance']=="NO")?print(""):print("checked")?>>
 						<label class="form-check-label" for="flexCheck"> Null? </label>
 					</div>
                 </div>
