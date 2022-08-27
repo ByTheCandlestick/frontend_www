@@ -75,8 +75,8 @@
             <div class="col-12 col-md-6 text-md-end">
                 <div class="row">
                     <div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-                        <a href="/Config/Permissions/New/" class="btn btn-outline-primary m-1">
-                            <i class="fa fa-plus"></i>
+                        <a href="javascript:config.permissions.new();" class="btn btn-outline-primary m-1">
+                            <i class="fa fa-save"></i>
                         </a>
                     </div>
                 </div>
