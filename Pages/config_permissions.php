@@ -120,6 +120,7 @@
         <hr>
         <!-- Section Body -->
         <div class="row overflow-scroll">
+            <? print_r($permission);?>
         </div>
     </section>
 <?}?>
