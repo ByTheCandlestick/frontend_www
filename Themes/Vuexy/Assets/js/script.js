@@ -1006,9 +1006,9 @@
 			margin			= Number($("div[name=markup] input").val());
 
 			// Calculate the final prices
-			GroddPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
-			netPrice = (netPrice + (netPrice * (margin / 100))).toFixed(2);
-			netProfit = (grossPrice - netPrice).toFixed(2);
+			grossPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
+			netPrice = (GrossPrice + (GrossPrice * (margin / 100))).toFixed(2);
+			netProfit = (netPrice - grossPrice).toFixed(2);
 
 			// Round to nearest 5 0r 9
 			retailPrice = misc.closestNum(grossPrice, [
