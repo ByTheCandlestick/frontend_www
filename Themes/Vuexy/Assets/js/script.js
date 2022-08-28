@@ -1462,11 +1462,14 @@ $(document).ready(() => {
 				$('div[name=discount_amount]').find('input').prop('disabled', false);
 			}
 		});
-		$('div.ProductInfo').find('input, select').change(() => {
-			if($('input[name=auto_calculate]:checked').length != 0) {
-				product.calculate();
-			}
-		});
+		if($('input[name=auto_calculate]:checked').length != 0) {
+			$('div.ProductInfo').find('input, select').change(() => {
+					product.calculate();
+			});
+			$('div.ProductInfo').find('input, select').on('input', () => {
+					product.calculate();
+			});
+		}
 		if($("div[name=currency]").length != 0) {
 			$.get('/currencies.json', (data) =>{
 				misc.currencies = data
