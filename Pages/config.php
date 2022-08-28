@@ -11,5 +11,14 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
+        <div class="col-12 col-md-6 col-lg-4">
+            .
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            .
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            .
+        </div>
     </div>
 </section>
