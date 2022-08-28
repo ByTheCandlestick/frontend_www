@@ -116,7 +116,7 @@
 						$active = true;
 					}
 				}
-				return (!$active)?invalid_request(3): $origin;
+				return (!$active)?invalid_request(4): $origin;
 			};
 	//	Get URI Vars
 		if(checkHost($referrer)) {
