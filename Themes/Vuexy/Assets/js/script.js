@@ -1351,7 +1351,28 @@
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
 				});
-			}
+			},
+			delete(n) {
+				$.ajax({
+					url: api_url + '/Config/Permission/',
+					data: {
+						'api_key': api_key,
+						'name': n,
+					},
+					type: 'DELETE',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						if(body.status == "success") {
+							alert.simple("Successfully deleted", "success");
+						}
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				})
+			},
 		},
 	}
 $(document).ready(() => {
