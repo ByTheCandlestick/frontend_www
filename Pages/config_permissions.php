@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="">
+                        <input type="text" class="form-control" id="floatingInput" value="" placeholder="">
                         <label for="floatingInput">Name</label>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="0">
+                        <input type="text" class="form-control" id="floatingInput" value="" placeholder="0">
                         <label for="floatingInput">Default</label>
                     </div>
                 </div>
