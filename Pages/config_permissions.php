@@ -91,7 +91,7 @@
                         <select class="form-select" id="floatingSelect">
                             <option value="-1" selected>Please select</option>
                             <?
-                                $query = DB_Query("SELECT * FROM `Website domains` WHERE `Active`=1");
+                                $query = DB_Query("SELECT * FROM `Website domains`");
                                 while ($row = mysqli_fetch_array($query)) {
                                     print_r('<option value="'.$row['Permission'].'"'.$selected.'>'.$row['Permission'].'</option>');
                                 }
