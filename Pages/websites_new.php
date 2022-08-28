@@ -128,6 +128,7 @@
 			</div>
 		</div>
 		<hr>
+		<h5>Permissions</h5>
 		<div class="col-12 col-md-6 col-lg-3" name="permission">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
