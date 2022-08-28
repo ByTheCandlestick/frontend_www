@@ -95,10 +95,10 @@
             $i=0;
             while ($row = mysqli_fetch_array($query)) {
                 if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
-                    print_r($row);
                     $permission[$i]['Name'] = $row['Field'];
                     $permission[$i]['Null'] = $row['Null'];
                     $permission[$i]['Type'] = $row['Type'];
+                    $permission[$i]['Default'] = $row['Default'];
                     $i++;
                 }
             }
