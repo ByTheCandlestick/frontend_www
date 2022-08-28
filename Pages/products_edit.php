@@ -6,7 +6,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Product info</h1>
+				<h1>Edit product</h1>
 				<p><? print($prod['SKU'])?> - <? print($prod['Title'])?></p>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
@@ -307,7 +307,7 @@
 		</div>
 	</section>
 	<script>
-		var desc_long = tinymce.init({
+		tinymce.init({
 			selector: 'div[name=description_long] input, div[name=description_short] input',
 			toolbar: 'undo redo |'+
 					 'formatpainter casechange blocks |'+

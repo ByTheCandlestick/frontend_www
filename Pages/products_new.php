@@ -3,12 +3,11 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>New product</h1>
-			<p></p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
-				<div class="col-12 d-flex justify-content-end align-items-center p-0">
-					<a href="javascript:product.create();" class="btn btn-outline-primary m-1">
+				<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
+					<a href="javascript:product.create(<?print(QS)?>);" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -22,13 +21,13 @@
 			<div class="row">
 				<div class="col-12 col-lg-6" name="title">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Title</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-6" name="images">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">IMAGES</label>
 					</div>
 				</div>
@@ -39,7 +38,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -53,7 +52,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -67,29 +66,28 @@
 							<label class="form-check-label" for="flexCheck"> Discontinued? </label>
 						</div>
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="available" id="flexCheck" checked>
+							<input class="form-check-input" type="checkbox" name="available" id="flexCheck">
 							<label class="form-check-label" for="flexCheck"> Active? </label>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="currency">
-					<div class="form-floating mb-3 input-group">
-						<span class="input-group-text" id="currSymbol">£</span>
-						<input type="text" class="form-control" id="floatingInput" value="GBP">
-						<label for="floatingInput" class="ps-5">Currency</label>
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<label for="floatingInput">Currency</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="profit">
 					<div class="form-floating mb-3 input-group">
-						<span class="input-group-text" id="currSymbol">£</span>
-						<input type="number" class="form-control" id="floatingInput" value="0.00" disabled>
+						<span class="input-group-text" id="GBP"><??>£</span>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="" disabled>
 						<label for="floatingInput" class="ps-5">Profit</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="retail">
 					<div class="form-floating mb-3 input-group">
-						<span class="input-group-text" id="currSymbol">£</span>
-						<input type="number" class="form-control" id="floatingInput" value="0.00">
+						<span class="input-group-text" id="GBP"><??>£</span>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput" class="ps-5">Retail</label>
 					</div>
 				</div>
@@ -107,22 +105,22 @@
 				</div>
 				<div class="col-12 col-lg-3" name="net">
 					<div class="form-floating mb-3 input-group">
-						<span class="input-group-text" id="currSymbol">£</span>
-						<input type="number" class="form-control" id="floatingInput" value="0.00" disabled>
+						<span class="input-group-text" id="GBP"><??>£</span>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>" disabled>
 						<label for="floatingInput" class="ps-5">Net</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="gross">
 					<div class="form-floating mb-3 input-group">
-						<span class="input-group-text" id="currSymbol">£</span>
-						<input type="number" class="form-control" id="floatingInput" value="0.00" aria-describedby="GBP" disabled>
+						<span class="input-group-text" id="GBP"><??>£</span>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="<?print($prod['GrossPrice'])?>" disabled>
 						<label for="floatingInput" class="ps-5">Gross</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="markup">
 					<div class="form-floating mb-3 input-group">
-						<span class="input-group-text" id="currSymbol">£</span>
-						<input type="number" class="form-control" id="floatingInput" value="100" aria-describedby="percentage">
+						<span class="input-group-text" id="GBP"><??>£</span>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
 						<label for="floatingInput" class="ps-5">Markup</label>
 						<span class="input-group-text" id="percentage">%</span>
 					</div>
@@ -139,18 +137,18 @@
 				</div>
 				<div class="col-12 col-lg-4" name="discount_amount">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="0.00" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="" disabled>
 						<label for="floatingInput">Discount</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-4" name="container">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0"selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'" size="'.$row['Size (cl)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" size="'.$row['Size (cl)'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -160,11 +158,11 @@
 				<div class="col-12 col-lg-4" name="wick">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0" selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_wicks` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -174,11 +172,11 @@
 				<div class="col-12 col-lg-4" name="wick_stand">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0" selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -188,11 +186,11 @@
 				<div class="col-12 col-lg-4" name="material">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0" selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_materials` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -202,11 +200,11 @@
 				<div class="col-12 col-lg-4" name="fragrance">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0" selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_fragrances` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -216,11 +214,11 @@
 				<div class="col-12 col-lg-4" name="colour">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0" selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_colours` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -230,11 +228,11 @@
 				<div class="col-12 col-lg-4" name="packaging">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0" selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_packagings` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -244,11 +242,11 @@
 				<div class="col-12 col-lg-4" name="shipping">
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect">
-							<option value="-1" price="0" selected>Please select</option>
+							<option value="-1" selected>Please select</option>
 							<?
 								$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['id'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['id'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -262,7 +260,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print('<option value="'.$row['ID'].'">'.$row['name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['name'].'</option>');
 								}
 							?>
 						</select>
@@ -271,7 +269,7 @@
 				</div>
 				<div class="col-12 col-lg-4" name="slug">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput">Slug</label>
 					</div>
 				</div>
@@ -280,28 +278,24 @@
 		<div class="col-12 col-md-6 col-lg-5">
 			<div class="row">
 				<div class="col-12" name="description_short">
-					<h5>Short description</h5>
-					<input type="text" class="form-control" id="floatingInput" placeholder="">
+					<input type="text" class="form-control description_short" id="floatingInput" placeholder="Short description" value="">
 				</div>
 				<div class="col-12" name="description_long">
-					<h5>Long description</h5>
-					<input type="text" class="form-control" id="floatingInput" placeholder="">
+					<input type="text" class="form-control description_long" id="floatingInput" placeholder="Long description" value="">
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 <script>
-	desc_l = {
-		char_lim: 512,
-		smde: new SimpleMDE({
-			element: $("div[name=description_long] input")[0]
-		})
-	};
-	desc_s ={
-		char_lim: 256,
-		smde: new SimpleMDE({
-			element: $("div[name=description_short] input")[0]
-		})
-	};
+	tinymce.init({
+		selector: 'div[name=description_long] input, div[name=description_short] input',
+		toolbar: 'undo redo |'+
+					'formatpainter casechange blocks |'+
+					'bold italic backcolor | '+
+					'alignleft aligncenter alignright alignjustify | ' +
+					'bullist numlist checklist outdent indent |'+
+					'removeformat |'+
+					'code table help'
+	});
 </script>
