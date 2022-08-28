@@ -154,7 +154,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control newname" id="floatingInput" value="<? print(($permission[QS]['Name']=='')?'':$permission[QS]['Name'])?>">
+                        <input type="text" class="form-control newname" id="floatingInput" value="<? print(($permission[QS]['Name']=='')?'':$permission[QS]['Name'])?>" disabled>
                         <label for="floatingInput">Name</label>
                     </div>
                 </div>
