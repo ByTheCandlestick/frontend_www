@@ -86,7 +86,21 @@
         <!-- Section Body -->
         <div class="row overflow-scroll">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect">
+                            <option value="-1" selected>Please select</option>
+                            <?
+                                $query = DB_Query("SELECT * FROM `Website domains` WHERE `Active`=1");
+                                while ($row = mysqli_fetch_array($query)) {
+                                    print_r('<option value="'.$row['Permission'].'"'.$selected.'>'.$row['Permission'].'</option>');
+                                }
+                            ?>
+                        </select>
+                        <label for="floatingInput">suffix</label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control name" id="floatingInput" value="" placeholder="placeholder">
                         <label for="floatingInput">Name</label>
@@ -138,13 +152,6 @@
         <!-- Section Body -->
         <div class="row overflow-scroll">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control newname" id="floatingInput" value="<? print(($permission[QS]['Name']=='')?'':$permission[QS]['Name'])?>">
-                        <label for="floatingInput">Name</label>
-                    </div>
-                </div>
-                <p>_</p>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control newname" id="floatingInput" value="<? print(($permission[QS]['Name']=='')?'':$permission[QS]['Name'])?>">
