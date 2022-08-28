@@ -1306,14 +1306,14 @@
 		},
 	}
 	config = {
-		permissions = {
+		permissions: {
 			new() {
 				console.log('Creates a new permission');
 			},
 			update() {
 				console.log('Updates a permission');
 			}
-		}
+		},
 	}
 $(document).ready(() => {
 	// -----========== Dark mode toggle ==========----- // @final //
