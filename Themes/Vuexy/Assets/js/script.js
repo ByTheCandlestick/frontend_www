@@ -923,8 +923,53 @@
 	}
 	/** @wip */
 	product = {
-		/** @wip TODO: Create new product */
-		create() {},
+		/** @final */
+		create() {
+			$.ajax({
+				url: api_url + '/Product/',
+				data: {
+					'api_key': api_key,
+					'title': $("div[name=title] input").val(),
+					'collection': $("div[name=range]").find("option:selected").val(),
+					'images': $("div[name=images] input").val(),
+					'category': $("div[name=category]").find("option:selected").val(),
+					'discontinued': (($("div[name=status] input[name=discontinued]:checked").length === 0) ? 0 : 1),
+					'active': (($("div[name=status] input[name=available]:checked").length === 0) ? 0 : 1),
+					'currency': $("div[name=currency] input").val(),
+					'profit': $("div[name=profit] input").val(),
+					'retail': $("div[name=retail] input").val(),
+					'net': $("div[name=net] input").val(),
+					'gross': $("div[name=gross] input").val(),
+					'markup': $("div[name=markup] input").val(),
+					'discounted': (($("div[name=pricing] input[name=discounted]:checked").length === 0) ? 0 : 1),
+					'auto_calculate': (($("div[name=pricing] input[name=auto_calculate]:checked").length === 0) ? 0 : 1),
+					'discount_type': $("div[name=discount_type]").find("option:selected").val(),
+					'discount_amount': $("div[name=discount_amount] input").val(),
+					'container': $("div[name=container]").find("option:selected").val(),
+					'wick': $("div[name=wick]").find("option:selected").val(),
+					'wick_stand': $("div[name=wick_stand]").find("option:selected").val(),
+					'material': $("div[name=material]").find("option:selected").val(),
+					'fragrance': $("div[name=fragrance]").find("option:selected").val(),
+					'colour': $("div[name=colour]").find("option:selected").val(),
+					'packaging': $("div[name=packaging]").find("option:selected").val(),
+					'shipping': $("div[name=shipping]").find("option:selected").val(),
+					'made_by': $("div[name=made_by]").find("option:selected").val(),
+					'description_long': encodeURIComponent($("div[name=description_long] iframe").contents().find('.mce-content-body').html()),
+					'description_short': encodeURIComponent($("div[name=description_short] iframe").contents().find('.mce-content-body').html()),
+					'slug': $("div[name=slug] input").val(),
+				},
+				type: 'PUT',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					alert.simple("Successfully creted the product", "success");
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
+		},
 		/** @final */
 		update(pid) {
 			$.ajax({
@@ -1033,73 +1078,76 @@
 			$('div[name=retail]').find('input').val(retailPrice);
 		},
 		/** @wip */
-		container: {
+		comodities: {
 			/** @wip */
-			create() {
-				$.ajax({
-					url: api_url + '/Product/Container/' + cid + '/',
-					data: {
-						'api_key': api_key,
-						'name': $("div[name=name] input").val(),
-						'supplier': $("div[name=supplier]").find("option:selected").val(),
-						'supplier_ref': $("div[name=itemref] input").val(),
-						'size': $("div[name=size] input").val(),
-						'price_b': $("div[name=price_b] input").val(),
-						'quantity': $("div[name=quantity] input").val(),
-						'price_e': $("div[name=price_e] input").val(),
-						'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
-					},
-					type: 'POST',
-					xhrFields: {
-						withCredentials: true,
-					},
-					success(body) {
-						// $(location).attr('href', '/Products/Container/' + id + '/?al_ty=success&al_tx=Successfully created the container');
-						alert.simple("Successfully updated the container", "success");
-					},
-					error(body) {
-						alert.simple("An error has occurred. Please try again later", "danger");
-					}
-				});
+			container: {
+				/** @wip */
+				create() {
+					$.ajax({
+						url: api_url + '/Product/Container/' + cid + '/',
+						data: {
+							'api_key': api_key,
+							'name': $("div[name=name] input").val(),
+							'supplier': $("div[name=supplier]").find("option:selected").val(),
+							'supplier_ref': $("div[name=itemref] input").val(),
+							'size': $("div[name=size] input").val(),
+							'price_b': $("div[name=price_b] input").val(),
+							'quantity': $("div[name=quantity] input").val(),
+							'price_e': $("div[name=price_e] input").val(),
+							'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
+						},
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success(body) {
+							// $(location).attr('href', '/Products/Container/' + id + '/?al_ty=success&al_tx=Successfully created the container');
+							alert.simple("Successfully updated the container", "success");
+						},
+						error(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				},
+				/** @wip */
+				update(cid) {
+					$.ajax({
+						url: api_url + '/Product/Container/' + cid + '/',
+						data: {
+							'api_key': api_key,
+							'name': $("div[name=name] input").val(),
+							'supplier': $("div[name=supplier]").find("option:selected").val(),
+							'supplier_ref': $("div[name=itemref] input").val(),
+							'size': $("div[name=size] input").val(),
+							'price_b': $("div[name=price_b] input").val(),
+							'quantity': $("div[name=quantity] input").val(),
+							'price_e': $("div[name=price_e] input").val(),
+							'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
+						},
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success(body) {
+							alert.simple("Successfully updated the container", "success");
+						},
+						error(body) {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
+					});
+				},
+				/** @wip */
+				delete() {
+					// TODO: Delect container
+				},
+				/** @final */
+				calculate() {
+					price_b	= Number($("div[name=price_b] input").val());
+					quantity= Number($("div[name=quantity] input").val());
+					$('div[name=price_e] input').val((price_b / quantity).toFixed(2));
+				},
 			},
-			/** @wip */
-			update(cid) {
-				$.ajax({
-					url: api_url + '/Product/Container/' + cid + '/',
-					data: {
-						'api_key': api_key,
-						'name': $("div[name=name] input").val(),
-						'supplier': $("div[name=supplier]").find("option:selected").val(),
-						'supplier_ref': $("div[name=itemref] input").val(),
-						'size': $("div[name=size] input").val(),
-						'price_b': $("div[name=price_b] input").val(),
-						'quantity': $("div[name=quantity] input").val(),
-						'price_e': $("div[name=price_e] input").val(),
-						'active': (($("div[name=status] input[name=active]:checked").length === 0) ? 0 : 1),
-					},
-					type: 'POST',
-					xhrFields: {
-						withCredentials: true,
-					},
-					success(body) {
-						alert.simple("Successfully updated the container", "success");
-					},
-					error(body) {
-						alert.simple("An error has occurred. Please try again later", "danger");
-					}
-				});
-			},
-			/** @wip */
-			delete() {
-				// TODO: Delect container
-			},
-			/** @final */
-			calculate() {
-				price_b	= Number($("div[name=price_b] input").val());
-				quantity= Number($("div[name=quantity] input").val());
-				$('div[name=price_e] input').val((price_b / quantity).toFixed(2));
-			},
-		},
+		}
 	}
 	/** @wip */
 	supplier = {
