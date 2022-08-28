@@ -1310,7 +1310,7 @@
 			new() {
 				console.log('Creates a new permission');
 			},
-			update() {
+			save() {
 				console.log('Updates a permission');
 			}
 		},
