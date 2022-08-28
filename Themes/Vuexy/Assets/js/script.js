@@ -994,20 +994,20 @@
 		},
 		/** @final */
 		calculate() {
-			console.log(container_size	= Number($("div[name=container]").find("option:selected").attr('size')));
-			console.log(container_price	= Number($("div[name=container]").find("option:selected").attr('price')));
-			console.log(wick_price		= Number($("div[name=wick]").find("option:selected").attr('price')));
-			console.log(wickStand_price	= Number($("div[name=wick_stand]").find("option:selected").attr('price')));
-			console.log(material_price	= Number($("div[name=material]").find("option:selected").attr('price')));
-			console.log(fragrance_price	= Number($("div[name=fragrance]").find("option:selected").attr('price')));
-			console.log(colour_price	= Number($("div[name=colour]").find("option:selected").attr('price')));
-			console.log(packaging_price	= Number($("div[name=packaging]").find("option:selected").attr('price')));
-			console.log(shipping_price	= Number($("div[name=shipping]").find("option:selected").attr('price')));
-			console.log(margin			= Number($("div[name=markup] input").val()));
+			container_size	= Number($("div[name=container]").find("option:selected").attr('size'));
+			container_price	= Number($("div[name=container]").find("option:selected").attr('price'));
+			wick_price		= Number($("div[name=wick]").find("option:selected").attr('price'));
+			wickStand_price	= Number($("div[name=wick_stand]").find("option:selected").attr('price'));
+			material_price	= Number($("div[name=material]").find("option:selected").attr('price'));
+			fragrance_price	= Number($("div[name=fragrance]").find("option:selected").attr('price'));
+			colour_price	= Number($("div[name=colour]").find("option:selected").attr('price'));
+			packaging_price	= Number($("div[name=packaging]").find("option:selected").attr('price'));
+			shipping_price	= Number($("div[name=shipping]").find("option:selected").attr('price'));
+			margin			= Number($("div[name=markup] input").val());
 
 			// Calculate the final prices
-			netPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
-			grossPrice = (netPrice * (margin / 100)).toFixed(2);
+			GroddPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
+			netPrice = (netPrice + (netPrice * (margin / 100))).toFixed(2);
 			netProfit = (grossPrice - netPrice).toFixed(2);
 
 			// Round to nearest 5 0r 9
