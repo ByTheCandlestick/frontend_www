@@ -233,7 +233,7 @@
 						`Slug`,
 						`made_by_ID`
 					) VALUES (
-						%s,
+						'%s',
 						%s,
 						%s,
 						'%s',
