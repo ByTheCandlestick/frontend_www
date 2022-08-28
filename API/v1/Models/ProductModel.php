@@ -118,7 +118,7 @@
 		 * 
 		 */
 			public function validateSlug($slug) {
-				if(strlen($slug) <= 7) return false;
+				if(strlen($slug) <= 5) return false;
 				return true;
 			}
 		/** updateProduct
