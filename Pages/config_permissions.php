@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-6 col-md-3 col-lg-2">
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="floatingSelect">
+                        <select class="form-select suffix" id="floatingSelect">
                             <option value="-1" selected>Please select</option>
                             <?
                                 $query = DB_Query("SELECT * FROM `Website domains`");
