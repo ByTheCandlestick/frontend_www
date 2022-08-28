@@ -1016,7 +1016,7 @@
 			} else if(discount_type == 2) {
 				netPrice = (net - discount_amount).toFixed(2);
 			} else {
-				netPrice = (net).toFixed(2);
+				netPrice = net;
 			}
 			netProfit = (netPrice - grossPrice).toFixed(2);
 
