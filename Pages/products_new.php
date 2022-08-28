@@ -137,7 +137,7 @@
 				</div>
 				<div class="col-12 col-lg-4" name="discount_amount">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="0.00" value="0.00" disabled>
 						<label for="floatingInput">Discount</label>
 					</div>
 				</div>

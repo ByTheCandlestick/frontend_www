@@ -147,7 +147,7 @@
 					</div>
 					<div class="col-12 col-lg-4" name="discount_amount">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($prod['DiscountAmount'])?>" <?($prod['Discount']==0)?print("disabled"):print("")?>>
+							<input type="text" class="form-control" id="floatingInput" placeholder="0.00" value="<? print($prod['DiscountAmount'])?>" <?($prod['Discount']==0)?print("disabled"):print("")?>>
 							<label for="floatingInput">Discount</label>
 						</div>
 					</div>
