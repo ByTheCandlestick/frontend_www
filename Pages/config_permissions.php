@@ -88,13 +88,13 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="" placeholder="placeholder">
+                        <input type="text" class="form-control name" id="floatingInput" value="" placeholder="placeholder">
                         <label for="floatingInput">Name</label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="0" placeholder="placeholder">
+                        <input type="text" class="form-control default" id="floatingInput" value="0" placeholder="placeholder">
                         <label for="floatingInput">Default</label>
                     </div>
                 </div>
@@ -140,13 +140,13 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print(($permission[QS]['Name']=='')?'':$permission[QS]['Name'])?>">
+                        <input type="text" class="form-control newname" id="floatingInput" value="<? print(($permission[QS]['Name']=='')?'':$permission[QS]['Name'])?>">
                         <label for="floatingInput">Name</label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="<? print(($permission[QS]['Default']=='')?'':$permission[QS]['Default'])?>">
+                        <input type="text" class="form-control default" id="floatingInput" value="<? print(($permission[QS]['Default']=='')?'':$permission[QS]['Default'])?>">
                         <label for="floatingInput">Default</label>
                     </div>
                 </div>

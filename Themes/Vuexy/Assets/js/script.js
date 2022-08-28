@@ -1307,11 +1307,11 @@
 	}
 	config = {
 		permissions: {
-			new() {
-				console.log('Creates a new permission');
+			new(n=$(".name").val(), d=$(".default").val()) {
+				console.log('Created a permission: '+n+' = '+d+'');
 			},
-			save() {
-				console.log('Updates a permission');
+			save(n, o=$(".newname").val(), d=$(".default").val()) {
+				console.log('Updates a permission: '+n+' -> '+o+' = '+d+'');
 			}
 		},
 	}
