@@ -40,7 +40,7 @@
 		 */
 			function invalid_request(int $loc) {
 				exit( json_encode( array(
-					'error' => 'Valid API request, api_key or OAuth parameters missing',
+					'error' => 'No valid host, request, key or parameters.',
 					'location' => $loc
 				) ) );
 			};
