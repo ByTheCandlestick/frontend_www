@@ -1004,10 +1004,19 @@
 			packaging_price	= Number($("div[name=packaging]").find("option:selected").attr('price'));
 			shipping_price	= Number($("div[name=shipping]").find("option:selected").attr('price'));
 			margin			= Number($("div[name=markup] input").val());
+			discount_type	= $("div[name=shipping]").find("option:selected").attr('value');
+			discount_amount = Number($("div[name=discount_amount] input").val());
 
 			// Calculate the final prices
 			grossPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
-			netPrice = (Number(grossPrice) + (grossPrice * (margin / 100))).toFixed(2);
+			net = (Number(grossPrice) + (grossPrice * (margin / 100))).toFixed(2);
+			if(discount_type == 1) { // Percentage
+				netPrice = net - (net * (discount_amount / 100));
+			} else if(discount_type == 2) {
+				netPrice = net - discount_amount;
+			} else {
+				netPrice = net;
+			}
 			netProfit = (netPrice - grossPrice).toFixed(2);
 
 			// Round to nearest 5 0r 9
