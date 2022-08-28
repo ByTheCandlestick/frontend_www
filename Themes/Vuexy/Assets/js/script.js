@@ -1007,7 +1007,7 @@
 
 			// Calculate the final prices
 			grossPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
-			netPrice = (grossPrice + (grossPrice * (margin / 100))).toFixed(2);
+			netPrice = grossPrice + (grossPrice * (margin / 100));
 			netProfit = (netPrice - grossPrice).toFixed(2);
 
 			// Round to nearest 5 0r 9
