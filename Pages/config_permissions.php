@@ -144,6 +144,9 @@
                         <a href="javascript:config.permissions.save('<?=$permission[QS]['Name']?>')" class="btn btn-outline-primary m-1">
                             <i class="fa fa-save"></i>
                         </a>
+                        <a href="javascript:config.permissions.delete('<?=$permission[QS]['Name']?>')" class="btn btn-outline-primary m-1">
+                            <i class="fa fa-trash-alt"></i>
+                        </a>
                     </div>
                 </div>
             </div>
