@@ -139,8 +139,8 @@
 						<div class="form-floating mb-3">
 							<select class="form-select" id="floatingSelect" <?($prod['Discount']==0)?print("disabled"):print("")?>>
 								<option value="-1" selected>Please select</option>
-								<option>Percentage</option>
-								<option>Value</option>
+								<option value="1">Percentage</option>
+								<option value="2">Value</option>
 							</select>
 							<label for="floatingInput">Discount type</label>
 						</div>
