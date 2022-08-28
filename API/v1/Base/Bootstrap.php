@@ -95,6 +95,7 @@
 				}
 				if(isset($uri[1])) {
 					if(in_array(strtolower($uri[1]), $controllers)) {
+						print($uri[1]);
 						$active = true;
 					}
 				}
