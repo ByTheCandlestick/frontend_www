@@ -1,7 +1,7 @@
 <?php
 	confApiKey();
 	$obj_ConfigController	= new ConfigController();
-	if(isset($uri[2]) && $uri[2]=="permission"):
+	if(isset($uri[2]) && strtolower($uri[2])=="permission"):
 		$str_MethodName		= "Permission";
 		$str_MethodOptions	= array_splice($uri, 3);
 	else:
