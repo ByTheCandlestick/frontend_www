@@ -99,7 +99,7 @@
 						$active = true;
 					}
 				}
-				return (!$active)? invalid_request(3): $uri[1];
+				return ($active == false)? invalid_request(3): $uri[1];
 			};
 		/**	checkHost
 		 *	Confirm the host is accepted.
