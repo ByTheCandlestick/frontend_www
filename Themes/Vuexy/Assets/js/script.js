@@ -348,7 +348,7 @@
 				});
 			},
 		},
-		/** @wip */
+		/** @final */
 		layout: {
 			update(pid) {
 				var elementIds = [];
@@ -838,6 +838,7 @@
 	};
 	/** @wip */
 	user = {
+		/** @wip */
 		create() {
 			data = {
 				'api_key': api_key,
@@ -870,6 +871,7 @@
 				}
 			});
 		},
+		/** @wip */
 		update(uid) {
 			data = {
 				'api_key': api_key,
@@ -898,6 +900,7 @@
 				}
 			});
 		},
+		/** @wip */
 		delete(uid) {
 			data = {
 				'api_key': api_key,
@@ -920,9 +923,9 @@
 	}
 	/** @wip */
 	product = {
-		create() {
-			// TODO: Create new product
-		},
+		/** @wip TODO: Create new product */
+		create() {},
+		/** @final */
 		update(pid) {
 			$.ajax({
 				url: api_url + '/Product/' + pid + '/',
@@ -969,6 +972,7 @@
 				}
 			});
 		},
+		/** @final */
 		delete(pid) {
 			data = {
 				'api_key': api_key,
@@ -988,6 +992,7 @@
 				}
 			});
 		},
+		/** @final */
 		calculate() {
 			console.log(container_size	= Number($("div[name=container]").find("option:selected").attr('size')));
 			console.log(container_price	= Number($("div[name=container]").find("option:selected").attr('price')));
@@ -1017,7 +1022,9 @@
 			$('div[name=profit]').find('input').val(netProfit);
 			$('div[name=retail]').find('input').val(retailPrice);
 		},
+		/** @wip */
 		container: {
+			/** @wip */
 			create() {
 				$.ajax({
 					url: api_url + '/Product/Container/' + cid + '/',
@@ -1045,6 +1052,7 @@
 					}
 				});
 			},
+			/** @wip */
 			update(cid) {
 				$.ajax({
 					url: api_url + '/Product/Container/' + cid + '/',
@@ -1071,9 +1079,11 @@
 					}
 				});
 			},
+			/** @wip */
 			delete() {
 				// TODO: Delect container
 			},
+			/** @final */
 			calculate() {
 				price_b	= Number($("div[name=price_b] input").val());
 				quantity= Number($("div[name=quantity] input").val());
@@ -1294,6 +1304,16 @@
 				}
 			});
 		},
+	}
+	config = {
+		permissions = {
+			new() {
+				console.log('Creates a new permission');
+			},
+			update() {
+				console.log('Updates a permission');
+			}
+		}
 	}
 $(document).ready(() => {
 	// -----========== Dark mode toggle ==========----- // @final //
