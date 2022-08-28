@@ -37,7 +37,7 @@
                                 if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
                                     print('
                                         <tr>
-                                            <th scope="row"><a href="/Config/Permissions/'.$id.'/" class="text-monospace">'.$row['Field'].'</a></th>
+                                            <th scope="row"><a href="/Config/Permissions/'.$id.'/" class="font-monospace">'.$row['Field'].'</a></th>
                                         </tr>
                                     ');
                                     $id++;
