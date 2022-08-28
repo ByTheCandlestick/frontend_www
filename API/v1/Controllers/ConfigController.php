@@ -67,8 +67,32 @@
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
-                    elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unsupported
-                        $this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+                    elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Delete a permission
+						// Confirmations
+							try{
+								if(!isset($arr_conf_info['name']) || $arr_conf_info['name'] == "")	throw new Error("ERR-CNF-1");
+							} catch(Error $er) {
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							}
+						// Validation
+							try{
+								// Nothing to validate.
+							} catch(Error $er) {
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							}
+						// Submit application
+							try{
+								$mdl_conf = new ConfigModel();
+								$status = $mdl_conf->deletePermission($arr_conf_info['name']);
+								if($status) {	// Success
+									$str_response = json_encode(array('status'=>'success'));
+								} else {		// Error submitting
+									throw new Error("ERR-CNF-4");
+								}
+							} catch(Error $er) {
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							}
+						//
                     else:
                         $this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
                     endif;
