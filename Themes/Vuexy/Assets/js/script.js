@@ -1308,10 +1308,45 @@
 	config = {
 		permissions: {
 			new(n=$(".name").val(), d=$(".default").val()) {
-				console.log('Created a permission: '+n+' = '+d+'');
+				$.ajax({
+					url: api_url + '/Congig/Permissions/',
+					data: {
+						'api_key': api_key,
+						'name': n,
+						'default': d,
+					},
+					type: 'PUT',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully created", "success")
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			},
 			save(n, o=$(".newname").val(), d=$(".default").val()) {
-				console.log('Updates a permission: '+n+' -> '+o+' = '+d+'');
+				$.ajax({
+					url: api_url + '/Congig/Permissions/',
+					data: {
+						'api_key': api_key,
+						'newName': n,
+						'oldName': o,
+						'default': d,
+					},
+					type: 'POST',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						alert.simple("Successfully updated", "success")
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				});
 			}
 		},
 	}
