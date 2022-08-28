@@ -1309,7 +1309,7 @@
 		permissions: {
 			new(n=$(".name").val(), d=$(".default").val()) {
 				$.ajax({
-					url: api_url + '/Congig/Permissions/',
+					url: api_url + '/Config/Permissions/',
 					data: {
 						'api_key': api_key,
 						'name': n,
@@ -1329,7 +1329,7 @@
 			},
 			save(n, o=$(".newname").val(), d=$(".default").val()) {
 				$.ajax({
-					url: api_url + '/Congig/Permissions/',
+					url: api_url + '/Config/Permissions/',
 					data: {
 						'api_key': api_key,
 						'newName': n,
