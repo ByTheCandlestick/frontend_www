@@ -29,7 +29,7 @@
 								$mdl_conf = new ConfigModel();
 								$status = $mdl_conf->createPermission($arr_conf_info['name'], $arr_conf_info['default']);
 								if($status) {	// Success
-									$str_response = json_encode($status);
+									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
 									throw new Error("ERR-CNF-3");
 								}
@@ -59,7 +59,7 @@
 								$mdl_conf = new ConfigModel();
 								$status = $mdl_conf->updatePermission($arr_conf_info['oldName'], $arr_conf_info['newName'], $arr_conf_info['default']);
 								if($status) {	// Success
-									$str_response = json_encode($status);
+									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
 									throw new Error("ERR-CNF-4");
 								}

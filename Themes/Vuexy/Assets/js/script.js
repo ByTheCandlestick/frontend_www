@@ -1320,7 +1320,9 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully created", "success")
+						if(body.status == "success") {
+							alert.simple("Successfully created", "success");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1341,7 +1343,9 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully updated", "success")
+						if(body.status == "success") {
+							alert.simple("Successfully updated", "success");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
