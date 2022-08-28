@@ -93,7 +93,7 @@
                             <?
                                 $query = DB_Query("SELECT * FROM `Website domains`");
                                 while ($row = mysqli_fetch_array($query)) {
-                                    print_r('<option value="'.$row['Permission'].'" class=" font-monospace"'.$selected.'>'.$row['Permission'].'</option>');
+                                    print_r('<option value="'.$row['Permission'].'" class="font-monospace">'.$row['Permission'].'</option>');
                                 }
                             ?>
                         </select>
