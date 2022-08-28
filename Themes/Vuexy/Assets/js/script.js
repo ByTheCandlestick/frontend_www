@@ -1010,6 +1010,7 @@
 			// Calculate the final prices
 			grossPrice = (container_price + wick_price + wickStand_price + (material_price * container_size) + (fragrance_price * container_size) + (colour_price * container_size) + packaging_price + shipping_price).toFixed(2);
 			net = (Number(grossPrice) + (grossPrice * (margin / 100))).toFixed(2);
+			console.log(discount_type);
 			if(discount_type == 1) { // Percentage
 				netPrice = net - (net * (discount_amount / 100));
 			} else if(discount_type == 2) {
