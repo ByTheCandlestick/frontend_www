@@ -103,6 +103,11 @@
 							<label for="floatingInput">Permission</label>
 						</div>
 					</div>
+					<div class="col-12 col-lg-6" name="permission">
+						<div class="form-floating mb-3">
+							<a class="btn btn-outline-primary" href="/Config/Permissions/New/"><i class="fa fa-plus"></i> New permission</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
@@ -262,7 +267,7 @@
 					</div>
 					<div class="col-12 col-lg-6" name="permission">
 						<div class="form-floating mb-3">
-							<a class="btn btn-outline-primary" href="/Users/Permissions/New/"><i class="fa fa-plus"></i> New permission</a>
+							<a class="btn btn-outline-primary" href="/Config/Permissions/New/"><i class="fa fa-plus"></i> New permission</a>
 						</div>
 					</div>
 				</div>
