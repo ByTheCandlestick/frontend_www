@@ -89,17 +89,17 @@
 		 */
 			function checkController(array $uri) {
 				$controllers = [];
+				$active = false;
 				$query = DB_Query("SELECT `ID`, `Controller` FROM `API Controllers` WHERE `Active?`=1");
 				while($controller = mysqli_fetch_array($query)) {
 					$controllers[$controller['ID']] = $controller['Controller'];
 				}
 				if(isset($uri[1])) {
 					if(in_array(strtolower($uri[1]), $controllers)) {
-						print($uri[1]);
 						$active = true;
 					}
 				}
-				return (!$active)?invalid_request(3): $uri[1];
+				return (!$active)? invalid_request(3): $uri[1];
 			};
 		/**	checkHost
 		 *	Confirm the host is accepted.
