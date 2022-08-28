@@ -201,7 +201,7 @@
 		 * 
 		 */
 			public function createProduct(string $sku, array $info) {
-				return $this->Execute(sprintf("
+				$this->Execute($q=sprintf("
 				INSERT INTO
 					`products`(
 						`SKU`,
@@ -291,6 +291,7 @@
 					$info['slug'],
 					$info['made_by']
 				), 1);
+				print($q);
 			}
 	}
 ?>
