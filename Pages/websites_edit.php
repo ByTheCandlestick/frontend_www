@@ -154,6 +154,11 @@
 				<label for="floatingInput">Permission</label>
 			</div>
 		</div>
+		<div class="col-12 col-lg-6" name="permission">
+			<div class="form-floating mb-3">
+				<a class="btn btn-outline-primary" href="/Config/Permissions/New/"><i class="fa fa-plus"></i> New permission</a>
+			</div>
+		</div>
 	</section>
 <?
 	} else {
