@@ -121,7 +121,7 @@
 				if(strlen($slug) <= 7) return false;
 				return true;
 			}
-		/** validateSlug
+		/** updateProduct
 		 * 
 		 * 
 		 */
@@ -187,6 +187,109 @@
 					$info['slug'],
 					$info['made_by'],
 					$sku
+				), 1);
+			}
+		/** createSKU
+		 * 
+		 * 
+		 */
+			public function createSKU(array $info) {
+				return 'true';
+			}
+		/** createProduct
+		 * 
+		 * 
+		 */
+			public function createProduct(string $sku, array $info) {
+				return $this->Execute(sprintf("
+				INSERT INTO
+					`products`(
+						`SKU`,
+						`Discontinued`,
+						`Active`,
+						`Title`,
+						`Images`,
+						`Collection_ID`,
+						`Category_ID`,
+						`Currency`='%s',
+						`GrossProfit`,
+						`RetailPrice`,
+						`NetPrice`,
+						`GrossPrice`,
+						`ProfitMargin`,
+						`Discount`,
+						`DiscountType`,
+						`DiscountAmount`,
+						`Container_ID`,
+						`Wick_ID`,
+						`WickStand_ID`,
+						`Material_ID`,
+						`Fragrance_ID`,
+						`Colour_ID`,
+						`Packaging_ID`,
+						`Shipping_ID`,
+						`DescriptionShort`,
+						`DescriptionLong`,
+						`Slug`,
+						`made_by_ID`
+					) VALUES (
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s,
+						%s
+					)",
+					$sku,
+					$info['discontinued'],
+					$info['active'],
+					$info['title'],
+					$info['images'],
+					$info['collection'],
+					$info['category'],
+					$info['currency'],
+					$info['profit'],
+					$info['retail'],
+					$info['net'],
+					$info['gross'],
+					$info['markup'],
+					$info['discounted'],
+					$info['discount_type'],
+					$info['discount_amount'],
+					$info['container'],
+					$info['wick'],
+					$info['wick_stand'],
+					$info['material'],
+					$info['fragrance'],
+					$info['colour'],
+					$info['packaging'],
+					$info['shipping'],
+					$info['description_short'],
+					$info['description_long'],
+					$info['slug'],
+					$info['made_by']
 				), 1);
 			}
 	}
