@@ -11,13 +11,16 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             .
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             .
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            .
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             .
         </div>
     </div>
