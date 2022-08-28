@@ -13,8 +13,8 @@
 	<div class="row overflow-scroll">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <h2> General </h2>
-            <a href="/Config/default_perms/">Edit permissions default</a>
-            <a href="/Config/Permissions/">Edit permissions</a>
+            <p><a href="/Config/default_perms/">Edit permissions default</a></p>
+            <p><a href="/Config/Permissions/">Edit permissions</a></p>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <h2>  </h2>
