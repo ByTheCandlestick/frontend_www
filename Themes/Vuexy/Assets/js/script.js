@@ -1307,7 +1307,7 @@
 	}
 	config = {
 		permissions: {
-			new(n=$(".suffix option:selected").val()+'_'+$(".name").val(), d=$(".default").val()) {
+			new(n=$(".suffix option:selected").val()+'-'+$(".name").val(), d=$(".default").val()) {
 				$.ajax({
 					url: api_url + '/Config/Permission/',
 					data: {
