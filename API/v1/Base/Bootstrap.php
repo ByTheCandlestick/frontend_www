@@ -89,7 +89,7 @@
 		 */
 			function checkController(array $uri) {
 				$controllers = [];
-				$query = DB_Query("SELECT `ID`, `Controller` FROM `API Controllers` WHERE `Active?`=1 AND `Created`<now()");
+				$query = DB_Query("SELECT `ID`, `Controller` FROM `API Controllers` WHERE `Active?`=1");
 				while($controller = mysqli_fetch_array($query)) {
 					$controllers[$controller['ID']] = $controller['Controller'];
 				}
