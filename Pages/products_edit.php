@@ -72,12 +72,12 @@
 					<div class="col-12 col-lg-3" name="status">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
-								<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
-								<label class="form-check-label" for="flexCheck"> Discontinued? </label>
+								<input class="form-check-input" type="checkbox" name="discontinued" id="discoCheck" <?($prod['Discontinued']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="discoCheck"> Discontinued? </label>
 							</div>
 							<div class="form-check form-switch">
-								<input class="form-check-input" type="checkbox" name="available" id="flexCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
-								<label class="form-check-label" for="flexCheck"> Active? </label>
+								<input class="form-check-input" type="checkbox" name="available" id="activeCheck" <?($prod['Active']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="activeCheck"> Active? </label>
 							</div>
 						</div>
 					</div>
@@ -104,12 +104,12 @@
 					<div class="col-12 col-lg-3" name="pricing">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
-								<input class="form-check-input" type="checkbox" name="discounted" id="flexCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
-								<label class="form-check-label" for="flexCheck"> Discounted? </label>
+								<input class="form-check-input" type="checkbox" name="discounted" id="discountCheck" <?($prod['Discount']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="discountCheck"> Discounted? </label>
 							</div>
 							<div class="form-check form-switch">
-								<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
-								<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
+								<input class="form-check-input" type="checkbox" name="auto_calculate" id="calcCheck" <?($prod['CalculatePricing']==1)?print("checked"):print("")?>>
+								<label class="form-check-label" for="calcCheck"> Auto-calculate Pricing? </label>
 							</div>
 						</div>
 					</div>
