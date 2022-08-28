@@ -1004,7 +1004,7 @@
 			packaging_price	= Number($("div[name=packaging]").find("option:selected").attr('price'));
 			shipping_price	= Number($("div[name=shipping]").find("option:selected").attr('price'));
 			margin			= Number($("div[name=markup] input").val());
-			discount_type	= Number($("div[name=shipping]").find("option:selected").attr('value'));
+			discount_type	= Number($("div[name=discount_type]").find("option:selected").attr('value'));
 			discount_amount = Number($("div[name=discount_amount] input").val());
 
 			// Calculate the final prices
