@@ -1012,11 +1012,11 @@
 			net = (Number(grossPrice) + (grossPrice * (margin / 100))).toFixed(2);
 			console.log(discount_type);
 			if(discount_type == 1) { // Percentage
-				netPrice = net - (net * (discount_amount / 100));
+				netPrice = (net - (net * (discount_amount / 100))).toFixed(2);
 			} else if(discount_type == 2) {
-				netPrice = net - discount_amount;
+				netPrice = (net - discount_amount).toFixed(2);
 			} else {
-				netPrice = net;
+				netPrice = (net).toFixed(2);
 			}
 			netProfit = (netPrice - grossPrice).toFixed(2);
 
