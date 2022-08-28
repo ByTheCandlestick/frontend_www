@@ -89,11 +89,11 @@
                 <div class="col-6 col-md-3 col-lg-2">
                     <div class="form-floating mb-3">
                         <select class="form-select suffix" id="floatingSelect">
-                            <option value="-1" selected>Please select</option>
+                            <option value="-1" class=" font-monospace" selected>Please select</option>
                             <?
                                 $query = DB_Query("SELECT * FROM `Website domains`");
                                 while ($row = mysqli_fetch_array($query)) {
-                                    print_r('<option value="'.$row['Permission'].'"'.$selected.'>'.$row['Permission'].'</option>');
+                                    print_r('<option value="'.$row['Permission'].'" class=" font-monospace"'.$selected.'>'.$row['Permission'].'</option>');
                                 }
                             ?>
                         </select>
