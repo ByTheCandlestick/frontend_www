@@ -40,7 +40,7 @@
 		 */
 			function invalid_request(int $loc) {
 				exit( json_encode( array(
-					'error' => 'No valid host, request, key.',
+					'error' => 'No valid host, request, key or parameters.',
 					'location' => $loc
 				) ) );
 			};
