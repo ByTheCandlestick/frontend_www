@@ -1327,7 +1327,7 @@
 					}
 				});
 			},
-			save(n, o=$(".newname").val(), d=$(".default").val()) {
+			save(o, n=$(".newname").val(), d=$(".default").val()) {
 				$.ajax({
 					url: api_url + '/Config/Permission/',
 					data: {
