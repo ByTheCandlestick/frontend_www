@@ -200,13 +200,13 @@
 				$i=1;
 				foreach(str_split($manufacturer.$productCode) as $int) {
 					if($i % 2 == 0) {
-						$even += $int;
+						$even += parseint($int);
 					} else {
-						$odd += $int;
+						$odd += parseint($int);
 					}
 					$i++;
 				}
-				print('SUM:'.$even);
+				print('SUM:'.$odd);
 				$checkCode = 9;
 				print_r(' / '.$manufacturer.$productCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
