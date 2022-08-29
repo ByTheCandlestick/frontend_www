@@ -199,7 +199,7 @@
 				$productCode = ($q = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3) > 9999)? $q+1: "10001";
 				$odds = preg_split("/([0-9])[0-9]/", $manufacturer.$productCode);
 				$evens = preg_split("/[0-9]([0-9])/", $manufacturer.$productCode);
-				$checkCode = '';
+				$checkCode = 0;
 				print_r('n:'.$numberSystem);
 				print_r(' m:'.$manufacturer);
 				print_r(' p:'.$productCode);
