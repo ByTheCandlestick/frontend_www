@@ -206,7 +206,8 @@
 					}
 					$i++;
 				}
-				for($i=(($odd*3)+$even); $i<10; $i-10) {
+				print_r($c=(($odd*3)+$even));
+				for($i=$c; $i<10; $i-10) {
 					print_r($i);
 					$checkCode = 10 - $i;
 				}
