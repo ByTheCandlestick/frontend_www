@@ -199,9 +199,9 @@
 				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3)['SKU'];
 				foreach(str_split($manufacturer.$productCode) as $int) {
 					if($int % 2 == 0) {
-
+						print('Even');
 					} else {
-
+						print('Odd');
 					}
 				}
 				$checkCode = 9;
