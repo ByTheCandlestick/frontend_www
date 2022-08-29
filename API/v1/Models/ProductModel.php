@@ -207,7 +207,7 @@
 					$i++;
 				}
 				print($c = (($odd * 3) + $even));
-				while($i=$c; $i<10; $i-10) {
+				for($i=$c; $i<10; $i-10) {
 					$checkCode = 10 - $i;
 				}
 				print_r(' / '.$manufacturer.$productCode);
