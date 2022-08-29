@@ -189,6 +189,17 @@
 					$sku
 				), 1);
 			}
+		/** createSKU
+		 * 
+		 *	@return string
+			*/
+			public function createSKU() {
+				if($this->Execute($q = "SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)>0) {
+					return parseInt($this->Execute($q, 5)['SKU'])+1;
+				} else {
+					return 10001;
+				}
+			}
 		/** createUPC
 		 * 
 		 *	@return string
@@ -208,17 +219,6 @@
 				}
 				$checkCode = (($odd*3)+$even) / 100;
 				return print($UPC . $checkCode);
-			}
-		/** createUPC
-		 * 
-		 *	@return string
-		 */
-			public function createSKU() {
-				if($this->Execute($q = "SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)>0) {
-					return $this->Execute($q = "SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)['SKU'] + 1;
-				} else {
-					return 10001;
-				}
 			}
 		/** createProduct
 		 * 
