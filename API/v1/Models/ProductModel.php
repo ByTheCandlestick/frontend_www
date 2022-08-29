@@ -217,8 +217,8 @@
 					}
 					$i++;
 				}
-				$UPC .= 10 - ((($odd*3)+$even) - (floor((($odd*3)+$even) / 10) * 10));
-				return print($UPC);
+				return $UPC .= 10 - ((($odd*3)+$even) - (floor((($odd*3)+$even) / 10) * 10));
+				
 			}
 		/** createProduct
 		 * 
