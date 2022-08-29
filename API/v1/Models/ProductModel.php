@@ -206,6 +206,7 @@
 					}
 					$i++;
 				}
+				print('SUM:'.$evens)
 				$checkCode = 9;
 				print_r(' / '.$manufacturer.$productCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
