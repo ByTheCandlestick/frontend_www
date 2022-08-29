@@ -205,9 +205,7 @@
 		 *	@return string
 		 */
 			public function createUPC(string $productCode) {
-				$UPC  = 7;
-				$UPC .= print_r($this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference']);
-				$UPC .= $productCode;
+				$UPC  = '7'.$this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'].$productCode;
 				$i=1;
 				foreach(str_split($UPC) as $int) {
 					if($i % 2 == 0) {
