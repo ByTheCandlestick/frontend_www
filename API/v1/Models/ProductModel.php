@@ -218,10 +218,7 @@
 					$i++;
 				}
 				empty($i);
-				for($i=(($odd*3)+$even); $i>=10; $i-10) {
-					print($i);
-					$cc=9;
-				}
+				
 				empty($i);
 				empty($cb);
 				$UPC .= $cc;
