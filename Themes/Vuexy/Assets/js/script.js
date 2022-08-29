@@ -1473,7 +1473,7 @@ $(document).ready(() => {
 		$('.app-preloader').fadeOut();
 	// -----========== Tool tips ==========----- // @final //
 		$('[data-toggle="tooltip"]').tooltip();
-	// -----========== OXYGEN builder ==========----- // @wip //
+	// -----========== OXYGEN builder ==========----- // @final //
 		$('input[name=display_type]').change(() => {
 			if($('input[name=display_type]:checked').length === 0) {
 				$('label[for=display_type]').html('Pages');
@@ -1485,7 +1485,7 @@ $(document).ready(() => {
 				$('div[type=page]').hide();
 			}
 		});
-	// -----========== Auto-calculate product ==========----- // @wip //
+	// -----========== Auto-calculate product ==========----- // @final //
 		$('input[name=auto_calculate]').change(() => {
 			if($('input[name=auto_calculate]:checked').length === 0) {
 				$('div[name=net]').find('input').prop('disabled', false);

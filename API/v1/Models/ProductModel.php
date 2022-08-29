@@ -189,11 +189,11 @@
 					$sku
 				), 1);
 			}
-		/** createSKU
+		/** createUPC
 		 * 
 		 *	@return string
 		 */
-			public function createSKU(array $info) {
+			public function createUPC(string $sku) {
 				$numberSystem = 7;
 				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
 				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3)['SKU'];
@@ -213,6 +213,17 @@
 				}
 				print_r($checkCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
+			}
+		/** createUPC
+		 * 
+		 *	@return string
+		 */
+			public function createSKU() {
+				if($this->Execute($q = "SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)>0) {
+					return $this->Execute($q = "SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)['SKU'] + 1;
+				} else {
+					return 10001;
+				}
 			}
 		/** createProduct
 		 * 
