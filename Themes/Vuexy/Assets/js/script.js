@@ -44,7 +44,10 @@
 		},
 		setTwoDecimal(e) {
 			
-		}
+		},
+		mcebogus(str) {
+			return (str == "%3Cp%3E%3Cbr%20data-mce-bogus%3D%221%22%3E%3C%2Fp%3E")?"":str;
+		},
 		
 	}
 	/** @final */
@@ -954,8 +957,8 @@
 					'packaging': $("div[name=packaging]").find("option:selected").val(),
 					'shipping': $("div[name=shipping]").find("option:selected").val(),
 					'made_by': $("div[name=made_by]").find("option:selected").val(),
-					'description_long': encodeURIComponent($("div[name=description_long] iframe").contents().find('.mce-content-body').html()),
-					'description_short': encodeURIComponent($("div[name=description_short] iframe").contents().find('.mce-content-body').html()),
+					'description_long': mcebogus(encodeURIComponent($("div[name=description_long] iframe").contents().find('.mce-content-body').html())),
+					'description_short': mcebogus(encodeURIComponent($("div[name=description_short] iframe").contents().find('.mce-content-body').html())),
 					'slug': $("div[name=slug] input").val(),
 				},
 				type: 'PUT',
