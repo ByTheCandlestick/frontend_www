@@ -200,14 +200,7 @@
 				$odds = preg_split("/([0-9])[0-9]/", $manufacturer.$productCode);
 				$evens = preg_split("/[0-9]([0-9])/", $manufacturer.$productCode);
 				$checkCode = 0;
-				print_r(' n:');
-				print_r($numberSystem);
-				print_r(' m:');
-				print_r($manufacturer);
-				print_r(' p:');
-				print_r($productCode);
-				print_r(' c:');
-				print_r($checkCode);
+				print_r($numberSystem.$manufacturer.$productCode.$checkCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
 		/** createProduct
