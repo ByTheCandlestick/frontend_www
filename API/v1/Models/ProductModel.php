@@ -218,10 +218,9 @@
 					$i++;
 				}
 				empty($i);
-				echo $cb = (($odd*3)+$even) / 10;
-				$cc = 9;
-				$UPC .= $cc;
+				echo $cc = (($odd*3)+$even) - (floor((($odd*3)+$even) / 10) * 10);
 
+				$UPC .= $cc;
 				return $UPC;
 			}
 		/** createProduct
