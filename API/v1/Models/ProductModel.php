@@ -191,17 +191,24 @@
 			}
 		/** createSKU
 		 * 
-		 * 
+		 *	@return string
 		 */
 			public function createSKU(array $info) {
-				return 'true';
+				$numberSystem = 7;
+				$manufacturer = $this->Execute(("SELECT `Reference` FROM `partners` WHERE `Name`='%s'", $info['made_by']), 2)[0]
+				$productCode = ($q = parseInt($this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 2)[0]) > 9999)? $q+1: "10001";
+				$odds = preg_split("/([0-9])[0-9]/", $manufacturer.$productCode);
+				$evens = preg_split("/[0-9]([0-9])/", $manufacturer.$productCode);
+				print_r($odds);
+				$checkCode = '';
+				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
 		/** createProduct
 		 * 
 		 * 
 		 */
 			public function createProduct(string $sku, array $info) {
-				$this->Execute($q=sprintf("INSERT INTO `products`(`SKU`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ( '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
+				$this->Execute(sprintf("INSERT INTO `products`(`SKU`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ( '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
 					$sku,
 					$info['discontinued'],
 					$info['active'],
