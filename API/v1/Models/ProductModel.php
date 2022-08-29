@@ -206,8 +206,10 @@
 					}
 					$i++;
 				}
-				print((($odd * 3) + $even));
-				$checkCode = 9;
+				print($c = (($odd * 3) + $even));
+				while($i=$c; $i<10; $i-10) {
+					$checkCode = 10 - $i;
+				}
 				print_r(' / '.$manufacturer.$productCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
