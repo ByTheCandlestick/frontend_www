@@ -25,7 +25,7 @@
 							if(!isset($arr_product_info['retail']))				Throw new Error('ERR-PRD-9');
 							if(!isset($arr_product_info['net']))				Throw new Error('ERR-PRD-10');
 							if(!isset($arr_product_info['gross']))				Throw new Error('ERR-PRD-11');
-							if(!isset($arr_product_info['markup']))				Throw new Error('ERR-PRD-12');
+							if(!isset($arr_product_info['margin']))				Throw new Error('ERR-PRD-12');
 							if(!isset($arr_product_info['discounted']))			Throw new Error('ERR-PRD-13');
 							if(!isset($arr_product_info['auto_calculate']))		Throw new Error('ERR-PRD-14');
 							if(!isset($arr_product_info['discount_type']))		Throw new Error('ERR-PRD-15');
@@ -120,7 +120,7 @@
 							if(!isset($arr_product_info['retail']))				Throw new Error('ERR-PRD-9');
 							if(!isset($arr_product_info['net']))				Throw new Error('ERR-PRD-10');
 							if(!isset($arr_product_info['gross']))				Throw new Error('ERR-PRD-11');
-							if(!isset($arr_product_info['markup']))				Throw new Error('ERR-PRD-12');
+							if(!isset($arr_product_info['margin']))				Throw new Error('ERR-PRD-12');
 							if(!isset($arr_product_info['discounted']))			Throw new Error('ERR-PRD-13');
 							if(!isset($arr_product_info['auto_calculate']))		Throw new Error('ERR-PRD-14');
 							if(!isset($arr_product_info['discount_type']))		Throw new Error('ERR-PRD-15');

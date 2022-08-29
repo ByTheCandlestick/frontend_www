@@ -7,7 +7,7 @@
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-					<a href="javascript:product.create(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+					<a href="javascript:product.create();" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -73,21 +73,21 @@
 				</div>
 				<div class="col-12 col-lg-3" name="currency">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="GBP">
 						<label for="floatingInput">Currency</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="profit">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="0.00" disabled>
 						<label for="floatingInput" class="ps-5">Profit</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="retail">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="0.00">
 						<label for="floatingInput" class="ps-5">Retail</label>
 					</div>
 				</div>
@@ -106,22 +106,22 @@
 				<div class="col-12 col-lg-3" name="gross">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="<?print($prod['GrossPrice'])?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="0.00" disabled>
 						<label for="floatingInput" class="ps-5">Gross</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="net">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($prod['NetPrice'])?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="0.00" disabled>
 						<label for="floatingInput" class="ps-5">Net</label>
 					</div>
 				</div>
-				<div class="col-12 col-lg-3" name="markup">
+				<div class="col-12 col-lg-3" name="margin">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="<?print($prod['ProfitMargin'])?>">
-						<label for="floatingInput" class="ps-5">Markup</label>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="0.00">
+						<label for="floatingInput" class="ps-5">margin</label>
 						<span class="input-group-text" id="percentage">%</span>
 					</div>
 				</div>

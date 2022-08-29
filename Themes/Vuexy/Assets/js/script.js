@@ -940,7 +940,7 @@
 					'retail': $("div[name=retail] input").val(),
 					'net': $("div[name=net] input").val(),
 					'gross': $("div[name=gross] input").val(),
-					'markup': $("div[name=markup] input").val(),
+					'margin': $("div[name=margin] input").val(),
 					'discounted': (($("div[name=pricing] input[name=discounted]:checked").length === 0) ? 0 : 1),
 					'auto_calculate': (($("div[name=pricing] input[name=auto_calculate]:checked").length === 0) ? 0 : 1),
 					'discount_type': $("div[name=discount_type]").find("option:selected").val(),
@@ -987,7 +987,7 @@
 					'retail': $("div[name=retail] input").val(),
 					'net': $("div[name=net] input").val(),
 					'gross': $("div[name=gross] input").val(),
-					'markup': $("div[name=markup] input").val(),
+					'margin': $("div[name=margin] input").val(),
 					'discounted': (($("div[name=pricing] input[name=discounted]:checked").length === 0) ? 0 : 1),
 					'auto_calculate': (($("div[name=pricing] input[name=auto_calculate]:checked").length === 0) ? 0 : 1),
 					'discount_type': $("div[name=discount_type]").find("option:selected").val(),
@@ -1048,7 +1048,7 @@
 			colour_price	= Number($("div[name=colour]").find("option:selected").attr('price'));
 			packaging_price	= Number($("div[name=packaging]").find("option:selected").attr('price'));
 			shipping_price	= Number($("div[name=shipping]").find("option:selected").attr('price'));
-			margin			= Number($("div[name=markup] input").val());
+			margin			= Number($("div[name=margin] input").val());
 			discount_type	= Number($("div[name=discount_type]").find("option:selected").attr('value'));
 			discount_amount = Number($("div[name=discount_amount] input").val());
 
@@ -1491,12 +1491,12 @@ $(document).ready(() => {
 				$('div[name=net]').find('input').prop('disabled', false);
 				$('div[name=gross]').find('input').prop('disabled', false);
 				$('div[name=profit]').find('input').prop('disabled', false);
-				$('div[name=markup]').find('input').prop('disabled', true);
+				$('div[name=margin]').find('input').prop('disabled', true);
 			} else {
 				$('div[name=net]').find('input').prop('disabled', true);
 				$('div[name=gross]').find('input').prop('disabled', true);
 				$('div[name=profit]').find('input').prop('disabled', true);
-				$('div[name=markup]').find('input').prop('disabled', false);
+				$('div[name=margin]').find('input').prop('disabled', false);
 			}
 		});
 		$('input[name=discounted]').change(() => {
