@@ -1033,7 +1033,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully created the supplier');
+					$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully%20deleted%20the%20product');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");

@@ -260,8 +260,8 @@
 		/** deleteProduct
 		 * 
 		 */
-			public function deleteProduct() {
-
+			public function deleteProduct(string $sku) {
+				return $this->Execute(sprintf("DELETE FROM `products` WHERE `SKU`='%s'", $sku), 1);
 			}
 	}
 ?>
