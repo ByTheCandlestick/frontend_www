@@ -199,7 +199,8 @@
 				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3)['SKU'];
 				$odds = preg_split("/([0-9])[0-9]/", $manufacturer.$productCode);
 				$evens = preg_split("/[0-9]([0-9])/", $manufacturer.$productCode);
-				$checkCode = 0;
+				print_r($odds);
+				$checkCode = 9;
 				print_r($numberSystem.$manufacturer.$productCode.$checkCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
