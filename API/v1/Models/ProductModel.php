@@ -223,7 +223,8 @@
 					print($i);
 					$cc=9;
 				}
-				empty($i, $cb);
+				empty($i);
+				empty($cb);
 				$UPC .= $cc;
 
 				return $UPC;
