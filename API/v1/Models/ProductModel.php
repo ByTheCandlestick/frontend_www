@@ -207,11 +207,7 @@
 					$i++;
 				}
 				$c=(($odd*3)+$even);
-				for($i=$c; $i>=10; $i-10) {
-					print_r($i);
-					$checkCode = 10 - $i;
-				}
-				print_r($checkCode);
+				print_r($c);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
 		/** createUPC
