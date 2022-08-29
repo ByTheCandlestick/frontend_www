@@ -218,9 +218,8 @@
 					$i++;
 				}
 				empty($i);
-				
-				empty($i);
-				empty($cb);
+				echo $cb = (($odd*3)+$even) / 100;
+				$cc = 9;
 				$UPC .= $cc;
 
 				return $UPC;
