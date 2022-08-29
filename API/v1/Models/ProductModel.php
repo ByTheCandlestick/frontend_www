@@ -195,7 +195,7 @@
 			*/
 			public function createSKU() {
 				if($this->Execute($q="SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)>0) {
-					return print_r(intval($this->Execute($q, 3)['SKU']));
+					return intval($this->Execute($q, 3)['SKU']);
 				} else {
 					return 10001;
 				}
@@ -218,7 +218,7 @@
 					$i++;
 				}
 				$checkCode = (($odd*3)+$even) / 100;
-				return $UPC . $checkCode;
+				return print_r($UPC . $checkCode);
 			}
 		/** createProduct
 		 * 
