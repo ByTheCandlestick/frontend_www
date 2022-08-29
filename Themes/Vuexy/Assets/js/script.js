@@ -1004,8 +1004,8 @@
 					'packaging': $("div[name=packaging]").find("option:selected").val(),
 					'shipping': $("div[name=shipping]").find("option:selected").val(),
 					'made_by': $("div[name=made_by]").find("option:selected").val(),
-					'description_long': encodeURIComponent($("div[name=description_long] iframe").contents().find('.mce-content-body').html()),
-					'description_short': encodeURIComponent($("div[name=description_short] iframe").contents().find('.mce-content-body').html()),
+					'description_long': mcebogus(encodeURIComponent($("div[name=description_long] iframe").contents().find('.mce-content-body').html())),
+					'description_short': mcebogus(encodeURIComponent($("div[name=description_short] iframe").contents().find('.mce-content-body').html())),
 					'slug': $("div[name=slug] input").val(),
 				},
 				type: 'POST',
@@ -1026,7 +1026,7 @@
 				'api_key': api_key,
 			};
 			$.ajax({
-				url: api_url + '/Product/' + id + '/',
+				url: api_url + '/Product/' + pid + '/',
 				data: data,
 				type: 'DELETE',
 				xhrFields: {
