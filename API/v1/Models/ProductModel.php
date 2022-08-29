@@ -206,7 +206,8 @@
 					$i++;
 				}
 				$checkCode = (($odd*3)+$even) / 100;
-				return $numberSystem . $manufacturer . $productCode . $checkCode;
+
+				return print($numberSystem . $manufacturer . $productCode . $checkCode);
 			}
 		/** createUPC
 		 * 
