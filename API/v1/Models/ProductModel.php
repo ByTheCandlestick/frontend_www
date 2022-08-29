@@ -197,8 +197,8 @@
 				$numberSystem = 7;
 				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
 				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3)['SKU'];
-				$odds = preg_split("/([0-9])[0-9]/", $manufacturer.$productCode);
-				$evens = preg_split("/[0-9]([0-9])/", $manufacturer.$productCode);
+				$odds = preg_match_all("/([0-9])[0-9]/", $manufacturer.$productCode);
+				$evens = preg_match_all("/[0-9]([0-9])/", $manufacturer.$productCode);
 				print_r($odds);
 				$checkCode = 9;
 				print_r($numberSystem.$manufacturer.$productCode.$checkCode);
