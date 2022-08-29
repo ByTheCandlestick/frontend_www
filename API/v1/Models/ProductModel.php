@@ -195,8 +195,8 @@
 		 */
 			public function createSKU(array $info) {
 				$numberSystem = 7;
-				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `Name`='%s'", $info['made_by']), 2);
-				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3);
+				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `Name`='%s'", $info['made_by']), 3)['Reference'];
+				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3)['SKU'];
 				$odds = preg_split("/([0-9])[0-9]/", $manufacturer.$productCode);
 				$evens = preg_split("/[0-9]([0-9])/", $manufacturer.$productCode);
 				$checkCode = 0;
