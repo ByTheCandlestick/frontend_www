@@ -196,14 +196,18 @@
 			public function createSKU(array $info) {
 				$numberSystem = 7;
 				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `Name`='%s'", $info['made_by']), 2);
-				$productCode = ($q = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3) > 9999)? $q+1: "10001";
+				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3);
 				$odds = preg_split("/([0-9])[0-9]/", $manufacturer.$productCode);
 				$evens = preg_split("/[0-9]([0-9])/", $manufacturer.$productCode);
 				$checkCode = 0;
-				print_r('n:'.$numberSystem);
-				print_r(' m:'.$manufacturer);
-				print_r(' p:'.$productCode);
-				print_r(' c:'.$checkCode);
+				print_r(' n:');
+				print_r($numberSystem);
+				print_r(' m:');
+				print_r($manufacturer);
+				print_r(' p:');
+				print_r($productCode);
+				print_r(' c:');
+				print_r($checkCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
 		/** createProduct
