@@ -201,7 +201,7 @@
 				$evens = preg_match_all("/[0-9]([0-9])/", $manufacturer.$productCode);
 				print_r($odds);
 				$checkCode = 9;
-				print_r($numberSystem.$manufacturer.$productCode.$checkCode);
+				// print_r($numberSystem.$manufacturer.$productCode.$checkCode);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
 		/** createProduct
