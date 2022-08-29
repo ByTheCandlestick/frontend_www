@@ -198,7 +198,7 @@
 				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
 				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3)['SKU'];
 				$i=1;
-				foreach(str_split($manufacturer.$productCode) as $int) {
+				foreach(str_split($numberSystem.$manufacturer.$productCode) as $int) {
 					if($i % 2 == 0) {
 						$even += $int;
 					} else {
