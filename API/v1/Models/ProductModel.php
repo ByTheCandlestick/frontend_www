@@ -194,10 +194,9 @@
 		 *	@return string
 		 */
 			public function createUPC(string $productCode) {
-				$numberSystem = 7;
-				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
+				$UPC = 7.$this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'].$productCode;
 				$i=1;
-				foreach(str_split($numberSystem.$manufacturer.$productCode) as $int) {
+				foreach(str_split($UPC) as $int) {
 					if($i % 2 == 0) {
 						$even += $int;
 					} else {
@@ -205,9 +204,9 @@
 					}
 					$i++;
 				}
+				
 				$checkCode = (($odd*3)+$even) / 100;
-
-				return print($numberSystem . $manufacturer . $productCode . $checkCode);
+				return print($UPC . $checkCode);
 			}
 		/** createUPC
 		 * 
