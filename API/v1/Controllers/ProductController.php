@@ -67,7 +67,7 @@
 						}
 					// Submit
 						try {
-							if($mdl_product->createProduct($sku = $mdl_product->createSKU(), $mdl_product->createUPC($mdl_product->createUPC($sku)), $arr_product_info)) {	// Success
+							if($mdl_product->createProduct($sku = $mdl_product->createSKU(), $mdl_product->createUPC($sku), $arr_product_info)) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								Throw new Error('ERR-PRD-44');
