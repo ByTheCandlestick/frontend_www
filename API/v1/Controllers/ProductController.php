@@ -185,7 +185,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_page->DeleteProduct($sku)) {	// Success
+							if($mdl_page->deleteProduct($sku)) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-PRD-1");
