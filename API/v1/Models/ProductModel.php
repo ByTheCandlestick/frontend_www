@@ -195,7 +195,7 @@
 			*/
 			public function createSKU() {
 				if($this->Execute($q = "SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)>0) {
-					return print_r(intval($this->Execute($q, 5)['SKU']));
+					return print_r(intval($this->Execute($q, 4)['SKU']));
 				} else {
 					return 10001;
 				}
