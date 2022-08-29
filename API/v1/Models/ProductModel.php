@@ -206,7 +206,7 @@
 					}
 					$i++;
 				}
-				//print(($odd*3)+$even);
+				print(($even*3)+$even);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
 		/** createUPC
