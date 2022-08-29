@@ -217,7 +217,6 @@
 					}
 					$i++;
 				}
-				empty($i);
 				$UPC .= 10 - ((($odd*3)+$even) - (floor((($odd*3)+$even) / 10) * 10));
 				return print($UPC);
 			}
@@ -225,9 +224,10 @@
 		 * 
 		 * 
 		 */
-			public function createProduct(string $sku, array $info) {
-				$this->Execute(sprintf("INSERT INTO `products`(`SKU`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ( '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
+			public function createProduct(string $sku, string $upc, array $info) {
+				$this->Execute(sprintf("INSERT INTO `products`(`SKU`, `UPC`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ( '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
 					$sku,
+					$upc,
 					$info['discontinued'],
 					$info['active'],
 					$info['title'],
