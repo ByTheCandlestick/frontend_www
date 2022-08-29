@@ -218,7 +218,7 @@
 					$i++;
 				}
 				$checkCode = (($odd*3)+$even) / 100;
-				return print($UPC . $checkCode);
+				return $UPC . $checkCode;
 			}
 		/** createProduct
 		 * 
