@@ -219,7 +219,7 @@
 				}
 				empty($i);
 				$UPC .= 10 - ((($odd*3)+$even) - (floor((($odd*3)+$even) / 10) * 10));
-				return $UPC;
+				return pribt($UPC);
 			}
 		/** createProduct
 		 * 
