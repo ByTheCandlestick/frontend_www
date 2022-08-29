@@ -221,7 +221,7 @@
 				$cb = (($odd*3)+$even);
 				for($i=intval($cb); $i>=10; $i-10) {
 					print($i);
-					$cc=9
+					$cc=9;
 				}
 				empty($i, $cb);
 				$UPC .= $cc;
