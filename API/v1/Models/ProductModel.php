@@ -200,9 +200,9 @@
 				$i=1;
 				foreach(str_split($manufacturer.$productCode) as $int) {
 					if($i % 2 == 0) {
-						$even += parseInt($int);
+						$even += $int;
 					} else {
-						$odd += parseInt($int);
+						$odd += $int;
 					}
 					$i++;
 				}
