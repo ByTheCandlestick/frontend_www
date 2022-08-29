@@ -206,7 +206,7 @@
 					}
 					$i++;
 				}
-				print(($even*3)+$even);
+				print('Curr: '.($even*3)+$even);
 				return $numberSystem . $manufacturer . $productCode . $checkCode;
 			}
 		/** createUPC
