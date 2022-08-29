@@ -171,7 +171,29 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Delete product
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					// Confirmations
+						try{
+							// Nothing to confirm.
+						} catch(Error $er) {
+							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+						}
+					// Validation
+						try{
+							// Nothing to validate.
+						} catch(Error $er) {
+							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+						}
+					// Submit application
+						try{
+							if($mdl_page->DeleteProduct($sku)) {	// Success
+								$str_response = json_encode(array('status'=>'success'));
+							} else {		// Error submitting
+								throw new Error("ERR-PRD-1");
+							}
+						} catch(Error $er) {
+							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+						}
+					//
 				else:
 					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 				endif;

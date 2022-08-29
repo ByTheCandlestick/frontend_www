@@ -257,5 +257,11 @@
 					$info['made_by']
 				), 1);
 			}
+		/** deleteProduct
+		 * 
+		 */
+			public function deleteProduct() {
+
+			}
 	}
 ?>
