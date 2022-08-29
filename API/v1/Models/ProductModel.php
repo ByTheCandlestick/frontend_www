@@ -197,7 +197,7 @@
 				$numberSystem = 7;
 				$manufacturer = $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
 				$productCode = $this->Execute("SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 3)['SKU'];
-				foreach(str_split($manufacturer.$productCode) as parseInt($int)) {
+				foreach(str_split($manufacturer.$productCode) as $int) {
 					if($int % 2 == 0) {
 
 					} else {
