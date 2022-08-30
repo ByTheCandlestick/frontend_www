@@ -58,7 +58,7 @@
 			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
 		},
 		read(name) {
-			var name = name + "=";
+			var name = name;
 			var decoded = decodeURIComponent(document.cookie);
 			var arr = decoded .split('; ');
 			var res;
@@ -1453,8 +1453,7 @@
 		},
 	}
 $(document).ready(function() {
-	console.log('here');
-	// -----========== Dark mode toggle ==========----- // @wip //
+	// -----========== Dark mode toggle ==========----- // @final //
 		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); }
 		mode.modeSwitch.click(function() { mode.toggle() });
 	// -----========== Search ==========----- // @final //
