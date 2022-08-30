@@ -1458,7 +1458,9 @@
 	}
 $(document).ready(function() {
 	// -----========== Dark mode toggle ==========----- // @final //
-		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); }
+		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); } else {
+			console.log('here');
+		}
 		mode.modeSwitch.click(function() { mode.toggle() });
 	// -----========== Search ==========----- // @final //
 		$(".search-area input").focusout(function() {
