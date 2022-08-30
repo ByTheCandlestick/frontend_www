@@ -12,11 +12,10 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Create new user
+						$defaultPass = false;
 						// Confirmations
 							try{
 								if(!isset($arr_user_info['uname']) || $arr_user_info == "")	throw new Error("ERR-SUP-1");
-								if(!isset($arr_user_info['pass1']) || $arr_user_info == "")	throw new Error("ERR-SUP-2");
-								if(!isset($arr_user_info['pass2']) || $arr_user_info == "")	throw new Error("ERR-SUP-3");
 								if(!isset($arr_user_info['email']) || $arr_user_info == "")	throw new Error("ERR-SUP-4");
 								if(!isset($arr_user_info['fname']) || $arr_user_info == "")	throw new Error("ERR-SUP-5");
 								if(!isset($arr_user_info['lname']) || $arr_user_info == "")	throw new Error("ERR-SUP-6");
@@ -26,9 +25,14 @@
 						// Validation
 							try{
 								if(!$this->ValidateEmail($arr_user_info['email']))		throw new Error("ERR-SUP-7");
-								if($arr_user_info['pass1']!==$arr_user_info['pass2'])	throw new Error("ERR-SUP-8");
-								if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')	throw new Error("ERR-SUP-9");
-								if(strlen($arr_user_info['pass1']) < 8)	throw new Error("ERR-SUP-10");
+								if($arr_user_info['pass1']!="" && $arr_user_info['pass2']!="") {
+									if($arr_user_info['pass1']!==$arr_user_info['pass2'])	throw new Error("ERR-SUP-8");
+									if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')	throw new Error("ERR-SUP-9");
+									if(strlen($arr_user_info['pass1']) < 8)	throw new Error("ERR-SUP-10");
+								} else {
+									$arr_user_info['pass1'] = "Default";
+									$defaultPass = true;
+								}
 								if(strlen($arr_user_info['uname']) < 6)	throw new Error("ERR-SUP-11");
 								$arr_user_info['pass'] = hash('sha512', $arr_user_info['pass1']);
 							} catch(Error $er) {
