@@ -924,11 +924,11 @@
 			data = {
 				'api_key': api_key,
 			};
-			$.each($(".form-check").find("label, input"), function() {
-				console.log(this);
-				//data.push($(this).attr('for'));
+			$.each($(".form-check").find("label"), function() {
+				var name = $(this).attr('for'),
+					isChecked = (($("input#"+name+":checked").length === 0) ? 0 : 1);
+				data.push(name);
 			});
-			console.log($(".form-check").find("label"));
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
 				data: data,
