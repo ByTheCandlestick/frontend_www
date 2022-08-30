@@ -1,8 +1,10 @@
 <?
 	//CHECK IF THE USER IS ALLOWED TO ACCESS THE WEBSITE
+/*
 		if($userperm[$website_info['Permission']] != 1) {
 			header('Location: /Error/401/');
 		}
+*/
 	// ADD THE ANALYTICS FILE
 		require_once('./Classes/analytics.php');
 	// Determine the required row from the page requested
