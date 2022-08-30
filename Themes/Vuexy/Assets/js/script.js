@@ -5,19 +5,23 @@
 	/** @wip */
 	misc = {
 		currencies: null,
+		/** @final */
 		getQueryParams(params) {
 			let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
 			let qString = regexp.exec(window.location.href);
 			return qString ? qString[1] : null;
 		},
+		/** @final */
 		round(value, step) {
 			step || (step = 1.0);
 			var inv = 1.0 / step;
 			return Math.ceil(value * inv) / inv;
 		},
+		/** @final */
 		closestNum(goal, numbers) {
 			return numbers.reduce((prev, curr) => (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev));
 		},
+		/** @final */
 		currSymbol(str) {
 			Object.entries(misc.currencies).forEach(([key, value]) => {
 				if(value.code == str) {
@@ -25,12 +29,15 @@
 				}
 			});
 		},
+		/** @final */
 		redirect(url) {
 			window.location.href = url;
 		},
+		/** @wip */
 		limit_characters(el) {
 			// TODO: Limit characters in specific element
 		},
+		/** @final */
 		copyToClipboard(str) {
 			var $temp = $("<input>");
 			$("body").append($temp);
@@ -38,13 +45,16 @@
 			document.execCommand("copy");
 			$temp.remove();
 		},
+		/** @final */
 		openInNewTab(str) {
 			window.open(str, '_blank');
 			window.focus();
 		},
+		/** @wip */
 		setTwoDecimal(e) {
 			
 		},
+		/** @final */
 		mcebogus(str) {
 			return (str == "%3Cp%3E%3Cbr%20data-mce-bogus%3D%221%22%3E%3C%2Fp%3E")?"":str;
 		},
