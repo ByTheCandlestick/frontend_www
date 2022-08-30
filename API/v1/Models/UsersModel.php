@@ -160,6 +160,7 @@
 				$string = [];
 				for($i=0; $i<=count($keys); $i++) {
 					if($keys[$i] != "" && $vals[$keys[$i]] != "") {
+						preg_replace("/(permission_)[a-z\-\_]+/", "", $keys[$i]);
 						array_push($string, '`'.$keys[$i].'`='.$vals[$keys[$i]]);
 					}
 				}
