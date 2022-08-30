@@ -37,16 +37,12 @@
 					$query = DB_Query("SELECT * FROM `products_categories`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
+							$editable = ($userperm['adm_access-categories-edit']==1)?'<a href="/Category/Edit/'.$row['ID'].'">'.$row['SKU'].'</a>':$row['SKU'];
 							print('
 								<tr>
-									<th scope="row">'.$row['ID'].'</th>
+									<th scope="row">'.$editable.'</th>
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Active'].'</td>
-									<td>
-										<a href="/Categories/Edit/'.$row['ID'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</td>
 								</tr>
 							');
 						}
