@@ -75,13 +75,10 @@
 		 *	@final
 		 */
 			public function Register(array $userdata) {
-				$fname = $userdata['fname']; $email = $userdata['email'];
-				$sname = $userdata['lname']; $uname = $userdata['uname'];
-				$psecure = $userdata['psecure'];
-				if($this->Execute("SELECT * FROM `Users` WHERE `Username`='$uname' OR `Email`='$email'", 5) == 0) {
-					$this->Execute("INSERT INTO `Users` (`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Email_active`) VALUES ('$uname', '$email', '$fname', '$sname', '$psecure','0')", 0);
-					if($this->Execute("SELECT COUNT(*) FROM `Users` WHERE `Username`='$uname' AND `Email`='$email' AND `Fist_name`='$fname' AND `Last_name`='$sname' AND `Password`='$psecure' AND `Email_active`='0'", 3)[0] == 1) {
-						$this->ConfirmEmail($email);
+				if($this->Execute(sprintf("SELECT * FROM `Users` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 0) {
+					$this->Execute(sprintf("INSERT INTO `Users`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Change_password`, `Phone`, `Disable_analytics`, `Active`, `Email_active`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $userdata['uname'], $userdata['email'], $userdata['fname'], $userdata['lname'], $userdata['psecure'], $userdata['r_pass'], $userdata['phone'], $userdata['d_analytics'], $userdata['u_active'], $userdata['e_active']), 1);
+					if($this->Execute(sprintf("SELECT * FROM `Users` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 1) {
+						$this->ConfirmEmail($userdata['email']);
 						return true;
 					} else {
 						return false;
