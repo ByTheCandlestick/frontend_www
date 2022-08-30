@@ -926,7 +926,7 @@
 			};
 			$.each($(".form-check").find("label, input"), function() {
 				console.log(this);
-				data.push($(this).attr('for'));
+				//data.push($(this).attr('for'));
 			});
 			console.log($(".form-check").find("label"));
 			$.ajax({
