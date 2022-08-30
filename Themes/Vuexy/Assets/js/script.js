@@ -927,7 +927,7 @@
 			$.each($(".form-check").find("label"), function() {
 				var name = $(this).attr('for'),
 					isChecked = (($("input#"+name+":checked").length === 0) ? 0 : 1);
-				data.push(name);
+				console.log(typeof(data));
 			});
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
