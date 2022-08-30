@@ -153,7 +153,7 @@
 		 *	
 		 *	@todo
 		 */
-			public function updatePermissions(array $perms) {
+			public function updatePermissions(array $perms, string $uid) {
 				array_push($perms);
 				$keys = array_keys($perms);
 				$vals = $perms;
@@ -161,7 +161,7 @@
 				for($i=0; $i<=count($keys); $i++) {
 					array_push($string, '`'.$keys[$i].'`='.$vals[$keys[$i]]);
 				}
-				print(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $))
+				print(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid))
 				return false; // $this->Execute(, 1);
 			}
 	}

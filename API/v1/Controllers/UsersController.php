@@ -321,7 +321,7 @@
 						// Submit application
 							print_r($arr);
 							try{
-								if($mdl_User->updatePermissions($arr_user_info)) {	// Success
+								if($mdl_User->updatePermissions($arr_user_info, $arr[0])) {	// Success
 									$str_response = json_encode($status);
 									throw new Error("ERR-PRM-1");
 								} else {		// Error submitting
