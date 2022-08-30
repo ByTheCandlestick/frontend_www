@@ -922,8 +922,9 @@
 		},
 		savePerm(uid) {
 			$.each($(".form-check").find("label"), function() {
-				console.log($(this).attr('for'));
+				$(this).attr('for');
 			});
+			console.log($(".form-check").find("label").attr('for'));
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
 				data: {
