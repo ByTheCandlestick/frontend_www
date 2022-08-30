@@ -156,8 +156,8 @@
 			public function updatePermissions(array $perms) {
 				$keys = array_keys($perms);
 				$vals = $perms;
-				foreach($perms as $perm) {
-					print($perm);
+				for($i=0; $i<=count($keys); $i++) {
+					print($keys[$i].': '.$vals[$i].' // ');
 				}
 				return false; // $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
 			}
