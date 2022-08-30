@@ -173,5 +173,14 @@
 				}
 				return $this->Execute(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid), 1);
 			}
+		/**	deleteUser
+		 *	
+		 *	@todo
+		 */
+			public function deleteUser(string $uid) {
+				$this->Execute(sprintf("DELETE FROM `Users` WHERE `ID`='%s'", $uid), 1);
+				$this->Execute(sprintf("DELETE FROM `Users_permissions` WHERE `UID`='%s'", $uid), 1);
+				return true;
+			}
 	}
 ?>
