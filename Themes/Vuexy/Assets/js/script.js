@@ -930,7 +930,7 @@
 				data[name] = isChecked;
 			});
 			$.ajax({
-				url: api_url + '/User/Perms/' + uid + '/',
+				url: api_url + '/Users/Perms/' + uid + '/',
 				data: data,
 				type: 'POST',
 				xhrFields: {
