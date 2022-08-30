@@ -937,7 +937,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully deleted the user');
+					// $(location).attr('href', '/Users/Permissions/?al_ty=success&al_tx=Successfully updated the permissions');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
