@@ -924,7 +924,7 @@
 			$.each($(".form-check").find("label"), function() {
 				$(this).attr('for');
 			});
-			console.log($(".form-check").find("label").attr('for'));
+			console.log($(".form-check").find("label"));
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
 				data: {
