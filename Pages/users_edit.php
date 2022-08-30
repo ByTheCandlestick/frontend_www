@@ -12,7 +12,7 @@
 			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-					<a href="/Users/Permissions/<?print(QS)?>" class="btn btn-outline-primary m-1">
+					<a href="/Users/Permissions/<?print(QS)?>" class="btn  btn-outline-warning m-1">
 						<i class="fa fa-key"></i>
 					</a>
 					<a href="javascript:user.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
