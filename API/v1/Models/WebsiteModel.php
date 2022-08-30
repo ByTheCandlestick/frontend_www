@@ -1,39 +1,40 @@
 <?
 	class WebsiteModel extends BaseModel {
-		/** CreateWebsite
-		 * Create a website page
-		 * @final
-		 * @param array $info - All of the info for the update
-		 * @result boolean
+		/**	CreateWebsite
+		 *	Create a website page
+		 *	@final
+		 *	@param array $info - All of the info for the update
+		 *	@result boolean
 		 */
 			public function CreateWebsite(array $info) {
 				return $this->Execute(sprintf("INSERT INTO `Website domains`(`Name`, `Domain`, `Page_type`, `Maintenance`, `Meta_title`, `meta_keywords`, `meta_description`, `meta_colour`, `Title`, `Slogan`, `Email`, `Phone`, `Colour_primary`, `Colour_secondary`, `Logo`, `Favicon`, `Permission`) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $info['name'], $info['domain'], $info['page_type'], $info['maintenance'], $info['meta_title'], $info['meta_keywords'], $info['meta_description'], $info['meta_colour'], $info['title'], $info['slogan'], $info['email'], $info['phone'], $info['primary_colour'], $info['secondary_colour'], $info['logo'], $info['favicon'], $info['permission']), 1);
 			}
-		/** UpdateWebsite
-		 * Updates a website page
-		 * @final
-		 * @param string $sid - website ID
-		 * @param array $info - All of the info for the update
-		 * @result boolean
+		/**	UpdateWebsite
+		 *	Updates a website page
+		 *	@final
+		 *	@param string $sid - website ID
+		 *	@param array $info - All of the info for the update
+		 *	@result boolean
 		 */
 			public function UpdateWebsite(string $sid, array $info) {
-				return $this->Execute(sprintf("UPDATE `Website domains` SET `Name`='%s', `Domain`='%s', `Page_type`='%s', `Maintenance`='%s', `Meta_title`='%s', `meta_keywords`='%s', `meta_description`='%s', `meta_colour`='%s', `Title`='%s', `Slogan`='%s', `Email`='%s', `Phone`='%s', `Colour_primary`='%s', `Colour_secondary`='%s', `Logo`='%s', `Favicon`='%s', `Permission`='%s' WHERE `ID`='%s'", $info['name'], $info['domain'], $info['page_type'], $info['maintenance'], $info['meta_title'], $info['meta_keywords'], $info['meta_description'], $info['meta_colour'], $info['title'], $info['slogan'], $info['email'], $info['phone'], $info['primary_colour'], $info['secondary_colour'], $info['logo'], $info['favicon'], $info['permission'], $sid), 1);
+				$this->Execute($q = sprintf("UPDATE `Website domains` SET `Name`='%s', `Domain`='%s', `Page_type`='%s', `Maintenance`='%s', `Meta_title`='%s', `meta_keywords`='%s', `meta_description`='%s', `meta_colour`='%s', `Title`='%s', `Slogan`='%s', `Email`='%s', `Phone`='%s', `Colour_primary`='%s', `Colour_secondary`='%s', `Logo`='%s', `Favicon`='%s', `Permission`='%s' WHERE `ID`='%s'", $info['name'], $info['domain'], $info['page_type'], $info['maintenance'], $info['meta_title'], $info['meta_keywords'], $info['meta_description'], $info['meta_colour'], $info['title'], $info['slogan'], $info['email'], $info['phone'], $info['primary_colour'], $info['secondary_colour'], $info['logo'], $info['favicon'], $info['permission'], $sid), 1);
+				print($q);
 			}
 		/** DeleteWebsite
-		 * @final
-		 * Updates a website page
-		 * @param string $sid - website ID
-		 * @result boolean
+		 *	@final
+		 *	Updates a website page
+		 *	@param string $sid - website ID
+		 *	@result boolean
 		 */
 			public function DeleteWebsite(string $sid) {
 				return $this->Execute(sprintf("DELETE FROM `Website domains` WHERE `ID`='%s'", $sid), 1);
 			}
 		//
-		/** CreateStyle
-		 * @final
-		 * Create a website page style
-		 * @param array $info - All of the info for the update
-		 * @result boolean
+		/**	CreateStyle
+		 *	@final
+		 *	Create a website page style
+		 *	@param array $info - All of the info for the update
+		 *	@result boolean
 		 */
 			public function CreateStyle(array $info) {
 				return $this->Execute(sprintf("INSERT INTO `Website styles`(`Name`, `Location`, `Importance`, `Preload`, `Active`) VALUES('%s', '%s', '%s', '%s', '%s')", $info['name'], $info['location'], $info['importance'], $info['preload'], $info['active']), 1);
