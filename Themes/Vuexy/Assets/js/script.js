@@ -166,6 +166,11 @@
 		},
 		set(val) {
 			mode.root.addClass(val);
+			if(cookie.exists('cs_adm_mode')) {
+				cookie.update('cs_adm_mode', val);
+			} else {
+				cookie.create('cs_adm_mode', val)
+			}
 			if(val == "dark") {
 				mode.modeSwitch.addClass('active');
 				mode.modeSwitch.find('i').addClass('fa');
