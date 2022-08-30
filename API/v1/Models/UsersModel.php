@@ -4,6 +4,7 @@
 		 *  Lists all users from the database
 		 *  @param int $limit
 		 *  @return array
+		 *	@final
 		 */
 			public function ListUsers(int $limit) {
 				return $this->Execute("SELECT * FROM `Users` ORDER BY `ID` ASC LIMIT $limit", 4);
@@ -12,6 +13,7 @@
 		 *  Gets user by User ID
 		 *  @param int $uid
 		 *  @return array
+		 *	@final
 		 */
 			public function GetUserById(int $uid) {
 				return $this->Execute("SELECT * FROM `Users` WHERE `ID`=$uid", 4);
@@ -20,6 +22,7 @@
 		 *  Creates a list of all user sessions for a specific user
 		 *	@param	array	$arr_user_info
 		 *	@return	assoc
+		 *	@final
 		 */
 			public function ListSessions(int $limit) {
 				return $this->Execute("SELECT * FROM `Users_sessions` ORDER BY `Start_time` ASC LIMIT $limit", 1);
@@ -28,6 +31,7 @@
 		 *  Logs the user in and creates a session
 		 *  @param array $userdata
 		 *  @return
+		 *	@final
 		 */
 			public function Login(string $uname, string $pass) {
 				$uid = $this->Execute("SELECT `ID` FROM `Users` WHERE `Username`='$uname' AND `Password`='$pass'", 1);
@@ -68,6 +72,7 @@
 		 *  Registers a new user
 		 *  @param array $userdata
 		 *  @return bool
+		 *	@final
 		 */
 			public function Register(array $userdata) {
 				$fname = $userdata['fname']; $email = $userdata['email'];
@@ -89,8 +94,9 @@
 				}
 			}
 		/** Logout
-		 * Logs the user out of their account on the current device by session code
+		 *	Logs the user out of their account on the current device by session code
 		 * 
+		 *	@final
 		 */
 			public function Logout(string $session_code) {
 				$session = $this->Execute("UPDATE `Users_sessions` SET `Session_code`='$session_code', `Last accessed`=now(), `Active`='0'", 0);
@@ -104,6 +110,7 @@
 			}
 		/** UpdateUser
 		 *
+		 *	@final
 		 */
 			public function UpdateUser(int $uid, array $update, array $info) {
 				$vars = array();
@@ -121,6 +128,7 @@
 			}
 		/** ConfirmEmail
 		 *
+		 *	@todo
 		 */
 			public function ConfirmEmail(string $to) {
 				$subject = "Welcome to The Candlestick!";
@@ -136,9 +144,20 @@
 			}
 		/** ConfirmSession
 		 *
+		 *	@todo
 		 */
 			public function ConfirmSession(string $seccode) {
 				return $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1", $seccode), 1);
+			}
+		/**	updatePermissions
+		 *	
+		 *	@todo
+		 */
+			public function updatePermissions(array $perms) {
+				foreach(array_shift($perms) as $perm) {
+					print($perm);
+				}
+				return $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
 			}
 	}
 ?>
