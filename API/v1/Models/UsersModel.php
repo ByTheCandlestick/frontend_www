@@ -157,7 +157,7 @@
 				foreach(array_shift($perms) as $perm) {
 					print($perm);
 				}
-				return $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
+				// return $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
 			}
 	}
 ?>
