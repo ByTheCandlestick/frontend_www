@@ -29,7 +29,6 @@
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col">Enabled</th>
-					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -51,11 +50,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
 								<td></td>
 							</tr>
 						');
