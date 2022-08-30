@@ -1458,8 +1458,10 @@
 	}
 $(document).ready(function() {
 	// -----========== Dark mode toggle ==========----- // @final //
-		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); } else {
-			console.log('here');
+		if(cookie.exists('cs_adm_mode')) {
+			mode.set(cookie.read('cs_adm_mode'));
+		} else {
+			mode.set('light');
 		}
 		mode.modeSwitch.click(function() { mode.toggle() });
 	// -----========== Search ==========----- // @final //
