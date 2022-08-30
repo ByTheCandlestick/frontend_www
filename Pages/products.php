@@ -52,7 +52,6 @@
 					<th scope="col">Range</th>
 					<th scope="col">Price</th>
 					<th scope="col">Slug</th>
-					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -60,25 +59,15 @@
 					$query = DB_Query("SELECT * FROM `products`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
+							$editable = ($userperm['adm_access-products-edit']==1)?'<a href="/Products/Edit/'.$row['SKU'].'">'.$row['SKU'].'</a>':$row['SKU'];
 							print('
 								<tr>
-									<th scope="row">'.$row['SKU'].'</th>
+									<th scope="row">'.$editable.'</th>
 									<td>'.$row['Title'].'</td>
 									<td>'.$categories[$row['Category_ID']].'</td>
 									<td>'.$collections[$row['Collection_ID']].'</td>
 									<td>'.$row['RetailPrice'].'</td>
 									<td>'.$row['Slug'].'</td>
-									<td>
-							');
-							if($userperm['adm_access-products-edit']==1) {
-								print('
-									<a href="/Products/Edit/'.$row['SKU'].'">
-										<i class="fa fa-pencil"></i>
-									</a>
-								');
-							}
-							print('
-									</td>
 								</tr>
 							');
 						}
@@ -87,8 +76,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>

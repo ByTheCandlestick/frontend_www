@@ -17,7 +17,7 @@
 			for($i=0;$i<$cart_items_count;$i++) {
 				$cart_item = explode(',', $cart_items[$i][4]);
 				$cart_item_id = $cart_item[0];
-				if($q = mysqli_query($conn, "SELECT * FROM `candlestick_admin`.`products` WHERE `id`=$cart_item_id AND `active`=1 LIMIT 1")) {
+				if($q = mysqli_query($conn, "SELECT * FROM `products` WHERE `id`=$cart_item_id AND `active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
 						$currency = $res['currency'];
 						$cart_item_image = explode(',', $res['images'])[0];
