@@ -154,6 +154,8 @@
 		 *	@todo
 		 */
 			public function updatePermissions(array $perms) {
+				$keys = array_keys($perms);
+				$vals = $perms;
 				foreach($perms as $perm) {
 					print($perm);
 				}
