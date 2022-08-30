@@ -1452,111 +1452,113 @@
 			},
 		},
 	}
-// -----========== Dark mode toggle ==========----- // @final //
-	if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); }
-	mode.modeSwitch.click(() => { mode.toggle() });
-// -----========== Search ==========----- // @final //
-	$(".search-area input").focusout(() => {
-		if(search.suggestions.filter(":hover").length === 0) {
-			search.suggestions.hide();
-		}
-	});
-	$(".search-area input").focusin(() => {
-		search.suggestions.show();
-	});
-	$.get($('.search-wrapper').attr('rel'), (data) =>{
-		search.jsonData = data
-	})
-// -----========== MENU BTN ==========----- // @final //
-	$('.app-icon').click(() => {
-		$('.app-sidebar').toggleClass('sidebar-show');
-	})
-// -----========== BACK BTN ==========----- // @final //
-	if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
-		$('.app-back-btn').addClass('disabled')
-	}
-	$(".app-back-btn").click(() => {
-		if(!$(".app-back-btn").hasClass('disabled')) {
-			history.back();
-		}
-	});
-// -----========== Alerts on load ==========----- // @final //
-	if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) {
-		alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
-	}
-// -----========== Preloader ==========----- // @final //
-	$(window).bind('beforeunload', () => {
-		$('.app-preloader').fadeIn();
-	});
-	$('.app-preloader').fadeOut();
-// -----========== Tool tips ==========----- // @final //
-//	$('[data-toggle="tooltip"]').tooltip();
-// -----========== OXYGEN builder ==========----- // @final //
-	$('input[name=display_type]').change(() => {
-		if($('input[name=display_type]:checked').length === 0) {
-			$('label[for=display_type]').html('Pages');
-			$('div[type=sections]').hide();
-			$('div[type=page]').show();
-		} else {
-			$('label[for=display_type]').html('Sections');
-			$('div[type=sections]').show();
-			$('div[type=page]').hide();
-		}
-	});
-// -----========== Auto-calculate product ==========----- // @final //
-	$('input[name=auto_calculate]').change(() => {
-		if($('input[name=auto_calculate]:checked').length === 0) {
-			$('div[name=net]').find('input').prop('disabled', false);
-			$('div[name=gross]').find('input').prop('disabled', false);
-			$('div[name=profit]').find('input').prop('disabled', false);
-			$('div[name=margin]').find('input').prop('disabled', true);
-		} else {
-			$('div[name=net]').find('input').prop('disabled', true);
-			$('div[name=gross]').find('input').prop('disabled', true);
-			$('div[name=profit]').find('input').prop('disabled', true);
-			$('div[name=margin]').find('input').prop('disabled', false);
-		}
-	});
-	$('input[name=discounted]').change(() => {
-		if($('input[name=discounted]:checked').length === 0) {
-			$('div[name=discount_type]').find('select').prop('disabled', true);
-			$('div[name=discount_amount]').find('input').prop('disabled', true);
-			$('div[name=discount_type]').find('select').val(-1);
-			$('div[name=discount_amount]').find('input').val('0.00');
-		} else {
-			$('div[name=discount_type]').find('select').prop('disabled', false);
-			$('div[name=discount_amount]').find('input').prop('disabled', false);
-		}
-	});
-	if($('input[name=auto_calculate]:checked').length != 0) {
-		$('div.ProductInfo').find('input, select').change(() => {
-				product.calculate();
+$(document).ready(() => {
+	// -----========== Dark mode toggle ==========----- // @wip //
+		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); } else {console.log('Here');}
+		mode.modeSwitch.click(() => { mode.toggle() });
+	// -----========== Search ==========----- // @final //
+		$(".search-area input").focusout(() => {
+			if(search.suggestions.filter(":hover").length === 0) {
+				search.suggestions.hide();
+			}
 		});
-		$('div.ProductInfo').find('input, select').on('input', () => {
-				product.calculate();
+		$(".search-area input").focusin(() => {
+			search.suggestions.show();
 		});
-	}
-	if($("div[name=currency]").length != 0) {
-		$.get('/currencies.json', (data) =>{
-			misc.currencies = data
+		$.get($('.search-wrapper').attr('rel'), (data) =>{
+			search.jsonData = data
 		})
-	}
-	$('div[name=currency]').find('input').change(() => {
-		symbol = misc.currSymbol($('div[name=currency] input').val());
-		$('span.input-group-text#currSymbol').html(symbol);
-	})
-// -----========== Auto-calculate Container ==========----- // @wip //
-	$('div[name=quantity] input, div[name=price_b] input').change(() => {
-		product.container.calculate();
-	});
-	$('div[name=supplier] select').change(() => {
-		$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
-	});
-// -----========== Assistance nav ==========----- //
-	if($(".assistanceNav").length != 0) {
-		$.get('/assistance.json', (data) =>{
-			assistance.jsonData = data;
-			assistance.loadLV1();
+	// -----========== MENU BTN ==========----- // @final //
+		$('.app-icon').click(() => {
+			$('.app-sidebar').toggleClass('sidebar-show');
 		})
-	}
-// -----========== EOF ==========----- //
+	// -----========== BACK BTN ==========----- // @final //
+		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
+			$('.app-back-btn').addClass('disabled')
+		}
+		$(".app-back-btn").click(() => {
+			if(!$(".app-back-btn").hasClass('disabled')) {
+				history.back();
+			}
+		});
+	// -----========== Alerts on load ==========----- // @final //
+		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) {
+			alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
+		}
+	// -----========== Preloader ==========----- // @final //
+		$(window).bind('beforeunload', () => {
+			$('.app-preloader').fadeIn();
+		});
+		$('.app-preloader').fadeOut();
+	// -----========== Tool tips ==========----- // @final //
+		$('[data-toggle="tooltip"]').tooltip();
+	// -----========== OXYGEN builder ==========----- // @final //
+		$('input[name=display_type]').change(() => {
+			if($('input[name=display_type]:checked').length === 0) {
+				$('label[for=display_type]').html('Pages');
+				$('div[type=sections]').hide();
+				$('div[type=page]').show();
+			} else {
+				$('label[for=display_type]').html('Sections');
+				$('div[type=sections]').show();
+				$('div[type=page]').hide();
+			}
+		});
+	// -----========== Auto-calculate product ==========----- // @final //
+		$('input[name=auto_calculate]').change(() => {
+			if($('input[name=auto_calculate]:checked').length === 0) {
+				$('div[name=net]').find('input').prop('disabled', false);
+				$('div[name=gross]').find('input').prop('disabled', false);
+				$('div[name=profit]').find('input').prop('disabled', false);
+				$('div[name=margin]').find('input').prop('disabled', true);
+			} else {
+				$('div[name=net]').find('input').prop('disabled', true);
+				$('div[name=gross]').find('input').prop('disabled', true);
+				$('div[name=profit]').find('input').prop('disabled', true);
+				$('div[name=margin]').find('input').prop('disabled', false);
+			}
+		});
+		$('input[name=discounted]').change(() => {
+			if($('input[name=discounted]:checked').length === 0) {
+				$('div[name=discount_type]').find('select').prop('disabled', true);
+				$('div[name=discount_amount]').find('input').prop('disabled', true);
+				$('div[name=discount_type]').find('select').val(-1);
+				$('div[name=discount_amount]').find('input').val('0.00');
+			} else {
+				$('div[name=discount_type]').find('select').prop('disabled', false);
+				$('div[name=discount_amount]').find('input').prop('disabled', false);
+			}
+		});
+		if($('input[name=auto_calculate]:checked').length != 0) {
+			$('div.ProductInfo').find('input, select').change(() => {
+					product.calculate();
+			});
+			$('div.ProductInfo').find('input, select').on('input', () => {
+					product.calculate();
+			});
+		}
+		if($("div[name=currency]").length != 0) {
+			$.get('/currencies.json', (data) =>{
+				misc.currencies = data
+			})
+		}
+		$('div[name=currency]').find('input').change(() => {
+			symbol = misc.currSymbol($('div[name=currency] input').val());
+			$('span.input-group-text#currSymbol').html(symbol);
+		})
+	// -----========== Auto-calculate Container ==========----- // @wip //
+		$('div[name=quantity] input, div[name=price_b] input').change(() => {
+			product.container.calculate();
+		});
+		$('div[name=supplier] select').change(() => {
+			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
+		});
+	// -----========== Assistance nav ==========----- //
+		if($(".assistanceNav").length != 0) {
+			$.get('/assistance.json', (data) =>{
+				assistance.jsonData = data;
+				assistance.loadLV1();
+			})
+		}
+	// -----========== EOF ==========----- //
+});
