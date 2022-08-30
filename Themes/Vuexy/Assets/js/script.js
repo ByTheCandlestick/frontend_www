@@ -926,7 +926,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Users/?al_ty=success&al_tx=Successfully deleted the user');
+					//$(location).attr('href', '/Users/?al_ty=success&al_tx=Successfully deleted the user');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
