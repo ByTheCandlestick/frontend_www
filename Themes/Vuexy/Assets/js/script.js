@@ -171,9 +171,8 @@
 			}
 		},
 	}
-	/** @wip */
+	/** @final */
 	website = {
-		/** @final */
 		domain: {
 			create() {
 				data = {
@@ -257,7 +256,6 @@
 				});
 			},
 		},
-		/** @final */
 		page: {
 			create() {
 				var styles = [];
@@ -351,7 +349,6 @@
 				});
 			},
 		},
-		/** @final */
 		layout: {
 			update(pid) {
 				var elementIds = [];
@@ -619,7 +616,6 @@
 				});
 			}
 		},
-		/** @final */
 		style: {
 			create() {
 				data = {
@@ -693,7 +689,6 @@
 				});
 			}
 		},
-		/** @final */
 		script: {
 			create() {
 				data = {
@@ -766,7 +761,6 @@
 				});
 			}
 		},
-		/** @final */
 		theme: {
 			create() {
 				data = {
@@ -1459,8 +1453,8 @@
 		},
 	}
 $(document).ready(() => {
-	// -----========== Dark mode toggle ==========----- // @final //
-		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); }
+	// -----========== Dark mode toggle ==========----- // @wip //
+		if(cookie.exists('cs_adm')) { mode.set(cookie.read('cs_adm')); } else {console.log('Here');}
 		mode.modeSwitch.click(() => { mode.toggle() });
 	// -----========== Search ==========----- // @final //
 		$(".search-area input").focusout(() => {
