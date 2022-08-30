@@ -58,9 +58,9 @@
 			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
 		},
 		read(name) {
-			var name = name;
+			var name = name+"=";
 			var decoded = decodeURIComponent(document.cookie);
-			var arr = decoded .split('; ');
+			var arr = decoded.split('; ');
 			var res;
 			arr.forEach(val => {
 				if (val.indexOf(name) === 0) res = val.substring(name.length);
@@ -74,10 +74,7 @@
 			document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 		},
 		exists(name) {
-			if(cookie.read(name) === null) {
-				return false
-			}
-			return true;
+			return (cookie.read(name) === null)? false: true;
 		},
 	}
 	/** @final */
@@ -1305,6 +1302,7 @@
 	}
 	/** @wip */
 	orders = {
+		/** @final */
 		refunds: {
 			modal() {
 				$('#refundModal').modal('show');
@@ -1348,17 +1346,22 @@
 				});
 			},
 		},
+		/** @final */
 		displayRefunds() {
 			$('#allRefundModal').modal('show');
 		},
+		/** @wip */
 		printOrder() {
 			// TODO: Send printer the customer order
 		},
+		/** @wip */
 		printReciept() {
 			// TODO: Send reciept printer order info
 		}
 	}
+	/** @wip */
 	mail = {
+		/** @final */
 		send(f=$(".mail-from").val(),		t=$(".mail-to").val(),
 			 c=$(".mail-cc").val(),			b=$(".mail-bcc").val(),
 			 s=$(".mail-subject").val(),	m=$("iframe").contents().find('.mce-content-body').html()) {
@@ -1382,7 +1385,9 @@
 			});
 		},
 	}
+	/** @final */
 	config = {
+		/** @final */
 		permissions: {
 			new(n=$(".suffix option:selected").val()+'-'+$(".name").val(), d=$(".default").val()) {
 				$.ajax({
