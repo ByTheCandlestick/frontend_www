@@ -73,7 +73,7 @@
 			document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 		},
 		exists(name) {
-			return (cookie.read(name) === null)? false: true;
+			return (cookie.read(name) === undefined)? false: true;
 		},
 	}
 	/** @final */
