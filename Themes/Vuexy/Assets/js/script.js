@@ -932,7 +932,7 @@
 			$.ajax({
 				url: api_url + '/User/Perms/' + uid + '/',
 				data: data,
-				type: 'UPDATE',
+				type: 'POST',
 				xhrFields: {
 					withCredentials: true,
 				},
