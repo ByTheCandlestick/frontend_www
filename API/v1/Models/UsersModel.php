@@ -164,8 +164,7 @@
 						array_push($string, '`'.$key.'`='.$vals[$keys[$i]]);
 					}
 				}
-				print(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid));
-				return false;
+				return $this->Execute(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid), 1);
 			}
 	}
 ?>
