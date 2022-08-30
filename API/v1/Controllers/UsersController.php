@@ -319,7 +319,6 @@
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
 						// Submit application
-							print_r($arr);
 							try{
 								if($mdl_User->updatePermissions($arr_user_info, $arr[0])) {	// Success
 									$str_response = json_encode($status);
