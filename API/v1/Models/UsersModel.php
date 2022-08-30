@@ -157,7 +157,7 @@
 				$keys = array_keys($perms);
 				$vals = $perms;
 				for($i=0; $i<=count($keys); $i++) {
-					print($keys[$i].': '.$vals[$i].' // ');
+					print($keys[$i].': '.$vals[$keys[$i]].' // ');
 				}
 				return false; // $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
 			}
