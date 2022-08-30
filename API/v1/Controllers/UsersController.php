@@ -296,7 +296,7 @@
 		 *  @param array $arr
 		 *	@return JSON
 		 */
-			public function Session(array $arr) {
+			public function Permission(array $arr) {
 				// Vars
 					$mdl_User = new UserModel();
 					$arr_user_info = $this->getQueryStringParams();

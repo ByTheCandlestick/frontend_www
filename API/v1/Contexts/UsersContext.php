@@ -5,7 +5,7 @@
 		$str_MethodName		= "Session";
 		$str_MethodOptions	= array_splice($uri, 3);
 	elseif(isset($uri[2]) && $uri[2]!=="" && strtolower($uri[2])=="perms"):
-		$str_MethodName		= "Permissions";
+		$str_MethodName		= "Permission";
 		$str_MethodOptions	= array_splice($uri, 3);
 	elseif(isset($uri[2]) && $uri[2]!==""):
 		$str_MethodName		= "GetUser";
