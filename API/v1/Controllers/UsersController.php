@@ -189,7 +189,7 @@
 						$arr_user_info['user_id'] = $arr[0];
 						// Submit application
 							try{
-								if($mdl_User->DeleteUser($arr_user_info)) {	// Success
+								if($mdl_User->deleteUser($arr[0])) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
 									exit($error = array("status", "ERR-SUP-12"));
