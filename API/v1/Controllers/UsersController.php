@@ -289,10 +289,8 @@
 					);
 				// End of function
 			}
-		/** "/Users/Session/" Endpoint - Log user in
-		 *  @todo Add list sessions functionality
-		 *  @todo Add the ability to log in (PUT session)
-		 *  @todo Add the ability to logout (DELETE session)
+		/** "/Users/Perms/" Endpoint - Log user in
+		 *  @todo Add update functionality
 		 *  @param array $arr
 		 *	@return JSON
 		 */
@@ -322,7 +320,7 @@
 							}
 						// Submit application
 							try{
-								if($mdl_User->updatePermissions()) {	// Success
+								if($mdl_User->updatePermissions($arr)) {	// Success
 									$str_response = json_encode($status);
 								} else {		// Error submitting
 									throw new Error("ERR-SUP-11");
