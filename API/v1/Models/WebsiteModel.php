@@ -7,7 +7,7 @@
 		 * @result boolean
 		 */
 			public function CreateWebsite(array $info) {
-				return $this->Execute(sprintf("INSERT INTO `Website domains`(`Domain`, `Name`, `Page_type`, `Maintenance`) VALUES('%s', '%s', '%s', '%s')", $info['domain'], $info['name'], $info['page_type'], $info['maintenance']), 1);
+				return $this->Execute(sprintf("INSERT INTO `Website domains`(`Name`, `Domain`, `Page_type`, `Maintenance`, `Meta_title`, `meta_keywords`, `meta_description`, `meta_colour`, `Title`, `Slogan`, `Email`, `Phone`, `Colour_primary`, `Colour_secondary`, `Logo`, `Favicon`, `Permission`) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $info['name'], $info['domain'], $info['page_type'], $info['maintenance'], $info['meta_title'], $info['meta_keywords'], $info['meta_description'], $info['meta_colour'], $info['title'], $info['slogan'], $info['email'], $info['phone'], $info['primary_colour'], $info['secondary_colour'], $info['logo'], $info['favicon'], $info['permission']), 1);
 			}
 		/** UpdateWebsite
 		 * Updates a website page
@@ -17,7 +17,7 @@
 		 * @result boolean
 		 */
 			public function UpdateWebsite(string $sid, array $info) {
-				return $this->Execute(sprintf("UPDATE `Website domains` SET `Name`='%s', `Domain`='%s', `Page_type`='%s', `Maintenance`='%s', `Meta_title`='%s', `meta_keywords`='%s', `meta_description`='%s', `meta_colour`='%s', `Title`='%s', `Slogan`='%s', `Email`='%s', `Phone`='%s', `Colour_primary`='%s', `Colour_secondary`='%s', `Logo`='%s', `Favicon`='%s' WHERE `ID`='%s'", $info['name'], $info['domain'], $info['page_type'], $info['maintenance'], $info['meta_title'], $info['meta_keywords'], $info['meta_description'], $info['meta_colour'], $info['title'], $info['slogan'], $info['email'], $info['phone'], $info['primary_colour'], $info['secondary_colour'], $info['logo'], $info['favicon'], $sid), 1);
+				return $this->Execute(sprintf("UPDATE `Website domains` SET `Name`='%s', `Domain`='%s', `Page_type`='%s', `Maintenance`='%s', `Meta_title`='%s', `meta_keywords`='%s', `meta_description`='%s', `meta_colour`='%s', `Title`='%s', `Slogan`='%s', `Email`='%s', `Phone`='%s', `Colour_primary`='%s', `Colour_secondary`='%s', `Logo`='%s', `Favicon`='%s', `Permission`='%s' WHERE `ID`='%s'", $info['name'], $info['domain'], $info['page_type'], $info['maintenance'], $info['meta_title'], $info['meta_keywords'], $info['meta_description'], $info['meta_colour'], $info['title'], $info['slogan'], $info['email'], $info['phone'], $info['primary_colour'], $info['secondary_colour'], $info['logo'], $info['favicon'], $info['permission'], $sid), 1);
 			}
 		/** DeleteWebsite
 		 * @final
