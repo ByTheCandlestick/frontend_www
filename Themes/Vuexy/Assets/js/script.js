@@ -1490,7 +1490,7 @@
 	});
 	$('.app-preloader').fadeOut();
 // -----========== Tool tips ==========----- // @final //
-	$('[data-toggle="tooltip"]').tooltip();
+//	$('[data-toggle="tooltip"]').tooltip();
 // -----========== OXYGEN builder ==========----- // @final //
 	$('input[name=display_type]').change(() => {
 		if($('input[name=display_type]:checked').length === 0) {
