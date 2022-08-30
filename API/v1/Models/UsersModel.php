@@ -76,7 +76,7 @@
 		 */
 			public function Register(array $userdata) {
 				if($this->Execute(sprintf("SELECT * FROM `Users` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 0) {
-					$this->Execute(sprintf("INSERT INTO `Users`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Change_password`, `Phone`, `Disable_analytics`, `Active`, `Email_active`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $userdata['uname'], $userdata['email'], $userdata['fname'], $userdata['lname'], $userdata['psecure'], $userdata['r_pass'], $userdata['phone'], $userdata['d_analytics'], $userdata['u_active'], $userdata['e_active']), 1);
+					$this->Execute(sprintf("INSERT INTO `Users`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Change_password`, `Phone`, `Disable_analytics`, `Active`, `Email_active`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $userdata['uname'], $userdata['email'], $userdata['fname'], $userdata['lname'], $userdata['pass'], $userdata['r_pass'], $userdata['phone'], $userdata['d_analytics'], $userdata['u_active'], $userdata['e_active']), 1);
 					if($this->Execute(sprintf("SELECT * FROM `Users` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 1) {
 						$this->ConfirmEmail($userdata['email']);
 						return true;

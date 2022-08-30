@@ -29,9 +29,9 @@
 									if($arr_user_info['pass1']!==$arr_user_info['pass2'])	throw new Error("ERR-SUP-6");
 									if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')	throw new Error("ERR-SUP-7");
 									if(strlen($arr_user_info['pass1']) < 8)	throw new Error("ERR-SUP-8");
-									$arr_user_info['pass'] = hash('sha512', $arr_user_info['pass1']);
+									$arr_user_info['pass'] = hash('sha512', "salt".$arr_user_info['pass1']."pepper");
 								} else {
-									$arr_user_info['pass'] = hash('sha512', "Default");
+									$arr_user_info['pass'] = hash('sha512', "salt"."Default"."pepper");
 									$defaultPass = true;
 								}
 								if(!isset($arr_user_info['r_pass']))		$arr_user_info['r_pass'] = '0';
