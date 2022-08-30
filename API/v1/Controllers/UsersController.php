@@ -186,7 +186,6 @@
 								$this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error");
 							}
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Remove user
-						$arr_user_info['user_id'] = $arr[0];
 						// Submit application
 							try{
 								if($mdl_User->deleteUser($arr[0])) {	// Success
