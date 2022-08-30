@@ -843,21 +843,20 @@
 	user = {
 		/** @wip */
 		create() {
-			data = {
-				'api_key': api_key,
-				'uname': $("div[name=username] input").val(),
-				'fname': $("div[name=firstname] input").val(),
-				'lname': $("div[name=lastname] input").val(),
-				'email': $("div[name=email] input").val(),
-				'phone': $("div[name=phone] input").val(),
-				'r_pass': (($("div[name=misc] input[name=reset_pass]:checked").length === 0) ? 0 : 1),
-				'd_analytics': (($("div[name=misc] input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
-				'e_active': (($("div[name=misc] input[name=email_active]:checked").length === 0) ? 0 : 1),
-				'u_active': (($("div[name=misc] input[name=user_active]:checked").length === 0) ? 0 : 1),
-			};
 			$.ajax({
 				url: api_url + '/Users/',
-				data: data,
+				data: {
+					'api_key': api_key,
+					'uname': $("div[name=username] input").val(),
+					'fname': $("div[name=firstname] input").val(),
+					'lname': $("div[name=lastname] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'r_pass': (($("div[name=misc] input[name=reset_pass]:checked").length === 0) ? 0 : 1),
+					'd_analytics': (($("div[name=misc] input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
+					'e_active': (($("div[name=misc] input[name=email_active]:checked").length === 0) ? 0 : 1),
+					'u_active': (($("div[name=misc] input[name=user_active]:checked").length === 0) ? 0 : 1),
+				},
 				type: 'PUT',
 				xhrFields: {
 					withCredentials: true,
@@ -876,21 +875,20 @@
 		},
 		/** @wip */
 		update(uid) {
-			data = {
-				'api_key': api_key,
-				'uname': $("div[name=username] input").val(),
-				'fname': $("div[name=firstname] input").val(),
-				'lname': $("div[name=lastname] input").val(),
-				'email': $("div[name=email] input").val(),
-				'phone': $("div[name=phone] input").val(),
-				'r_pass': (($("div[name=misc] input[name=reset_pass]:checked").length === 0) ? 0 : 1),
-				'd_analytics': (($("div[name=misc] input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
-				'e_active': (($("div[name=misc] input[name=email_active]:checked").length === 0) ? 0 : 1),
-				'u_active': (($("div[name=misc] input[name=user_active]:checked").length === 0) ? 0 : 1),
-			};
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
-				data: data,
+				data: {
+					'api_key': api_key,
+					'uname': $("div[name=username] input").val(),
+					'fname': $("div[name=firstname] input").val(),
+					'lname': $("div[name=lastname] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'r_pass': (($("div[name=misc] input[name=reset_pass]:checked").length === 0) ? 0 : 1),
+					'd_analytics': (($("div[name=misc] input[name=disable_analytics]:checked").length === 0) ? 0 : 1),
+					'e_active': (($("div[name=misc] input[name=email_active]:checked").length === 0) ? 0 : 1),
+					'u_active': (($("div[name=misc] input[name=user_active]:checked").length === 0) ? 0 : 1),
+				},
 				type: 'POST',
 				xhrFields: {
 					withCredentials: true,
@@ -905,13 +903,33 @@
 		},
 		/** @wip */
 		delete(uid) {
-			data = {
-				'api_key': api_key,
-			};
 			$.ajax({
-				url: api_url + '/Users/' + id + '/',
-				data: data,
+				url: api_url + '/Users/' + uid + '/',
+				data: {
+					'api_key': api_key,
+				},
 				type: 'DELETE',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully deleted the user');
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
+		},
+		savePerm(uid) {
+			console.log($(".form-check").find("label").each(val, function() {
+				val.attr('for')
+			}));
+			$.ajax({
+				url: api_url + '/Users/' + uid + '/',
+				data: {
+					'api_key': api_key,
+				},
+				type: 'UPDATE',
 				xhrFields: {
 					withCredentials: true,
 				},
