@@ -154,10 +154,10 @@
 		 *	@todo
 		 */
 			public function updatePermissions(array $perms) {
-				foreach(array_shift($perms) as $perm) {
+				foreach($perms as $perm) {
 					print($perm);
 				}
-				return false // $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
+				return false; // $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
 			}
 	}
 ?>
