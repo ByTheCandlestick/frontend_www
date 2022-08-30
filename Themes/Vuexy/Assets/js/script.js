@@ -921,15 +921,17 @@
 			});
 		},
 		savePerm(uid) {
-			$.each($(".form-check").find("label"), function() {
-				$(this).attr('for');
+			data = {
+				'api_key': api_key,
+			};
+			$.each($(".form-check").find("label, input"), function() {
+				console.log(this);
+				data.push($(this).attr('for'));
 			});
 			console.log($(".form-check").find("label"));
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
-				data: {
-					'api_key': api_key,
-				},
+				data: data,
 				type: 'UPDATE',
 				xhrFields: {
 					withCredentials: true,
