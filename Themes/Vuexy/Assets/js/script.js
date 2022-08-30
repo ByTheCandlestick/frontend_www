@@ -1454,29 +1454,29 @@
 	}
 $(document).ready(function() {
 	// -----========== Dark mode toggle ==========----- // @wip //
-		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); } else {console.log('Here');}
-		mode.modeSwitch.click(() => { mode.toggle() });
+		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); }
+		mode.modeSwitch.click(function() { mode.toggle() });
 	// -----========== Search ==========----- // @final //
-		$(".search-area input").focusout(() => {
+		$(".search-area input").focusout(function() {
 			if(search.suggestions.filter(":hover").length === 0) {
 				search.suggestions.hide();
 			}
 		});
-		$(".search-area input").focusin(() => {
+		$(".search-area input").focusin(function() {
 			search.suggestions.show();
 		});
-		$.get($('.search-wrapper').attr('rel'), (data) =>{
+		$.get($('.search-wrapper').attr('rel'), function(data) {
 			search.jsonData = data
 		})
 	// -----========== MENU BTN ==========----- // @final //
-		$('.app-icon').click(() => {
+		$('.app-icon').click(function() {
 			$('.app-sidebar').toggleClass('sidebar-show');
 		})
 	// -----========== BACK BTN ==========----- // @final //
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
 			$('.app-back-btn').addClass('disabled')
 		}
-		$(".app-back-btn").click(() => {
+		$(".app-back-btn").click(function() {
 			if(!$(".app-back-btn").hasClass('disabled')) {
 				history.back();
 			}
@@ -1486,14 +1486,14 @@ $(document).ready(function() {
 			alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
 		}
 	// -----========== Preloader ==========----- // @final //
-		$(window).bind('beforeunload', () => {
+		$(window).bind('beforeunload', function() {
 			$('.app-preloader').fadeIn();
 		});
 		$('.app-preloader').fadeOut();
 	// -----========== Tool tips ==========----- // @final //
 		$('[data-toggle="tooltip"]').tooltip();
 	// -----========== OXYGEN builder ==========----- // @final //
-		$('input[name=display_type]').change(() => {
+		$('input[name=display_type]').change(function() {
 			if($('input[name=display_type]:checked').length === 0) {
 				$('label[for=display_type]').html('Pages');
 				$('div[type=sections]').hide();
@@ -1505,7 +1505,7 @@ $(document).ready(function() {
 			}
 		});
 	// -----========== Auto-calculate product ==========----- // @final //
-		$('input[name=auto_calculate]').change(() => {
+		$('input[name=auto_calculate]').change(function() {
 			if($('input[name=auto_calculate]:checked').length === 0) {
 				$('div[name=net]').find('input').prop('disabled', false);
 				$('div[name=gross]').find('input').prop('disabled', false);
@@ -1518,7 +1518,7 @@ $(document).ready(function() {
 				$('div[name=margin]').find('input').prop('disabled', false);
 			}
 		});
-		$('input[name=discounted]').change(() => {
+		$('input[name=discounted]').change(function() {
 			if($('input[name=discounted]:checked').length === 0) {
 				$('div[name=discount_type]').find('select').prop('disabled', true);
 				$('div[name=discount_amount]').find('input').prop('disabled', true);
@@ -1530,10 +1530,10 @@ $(document).ready(function() {
 			}
 		});
 		if($('input[name=auto_calculate]:checked').length != 0) {
-			$('div.ProductInfo').find('input, select').change(() => {
+			$('div.ProductInfo').find('input, select').change(function() {
 					product.calculate();
 			});
-			$('div.ProductInfo').find('input, select').on('input', () => {
+			$('div.ProductInfo').find('input, select').on('input', function() {
 					product.calculate();
 			});
 		}
@@ -1542,15 +1542,15 @@ $(document).ready(function() {
 				misc.currencies = data
 			})
 		}
-		$('div[name=currency]').find('input').change(() => {
+		$('div[name=currency]').find('input').change(function() {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
 			$('span.input-group-text#currSymbol').html(symbol);
 		})
 	// -----========== Auto-calculate Container ==========----- // @wip //
-		$('div[name=quantity] input, div[name=price_b] input').change(() => {
+		$('div[name=quantity] input, div[name=price_b] input').change(function() {
 			product.container.calculate();
 		});
-		$('div[name=supplier] select').change(() => {
+		$('div[name=supplier] select').change(function() {
 			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
 		});
 	// -----========== Assistance nav ==========----- //
