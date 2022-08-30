@@ -58,12 +58,11 @@
 			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
 		},
 		read(name) {
-			var name = name+"=";
-			var decoded = decodeURIComponent(document.cookie);
-			var arr = decoded.split('; ');
-			var res;
+			var name = name+"=",
+				arr = decodeURIComponent(document.cookie).split('; '),
+				res;
 			arr.forEach(val => {
-				if (val.indexOf(name) === 0) res = val.substring(name.length);
+				if(val.indexOf(name) === 0) res = val.substring(name.length);
 			})
 			return res;
 		},
