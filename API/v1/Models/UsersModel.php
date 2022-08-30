@@ -76,8 +76,8 @@
 		 */
 			public function Register(array $userdata) {
 				$fname = $userdata['fname']; $email = $userdata['email'];
-				$sname = $userdata['sname']; $pass1 = $userdata['pass1'];
-				$uname = $userdata['uname']; $pass2 = $userdata['pass2']; $psecure = $userdata['psecure'];
+				$sname = $userdata['sname']; $uname = $userdata['uname'];
+				$psecure = $userdata['psecure'];
 				$user_count = $this->Execute("SELECT COUNT(*) FROM `Users` WHERE `Username`='$uname' OR `Email`='$email'", 3)[0];
 				if($user_count == 0) {
 					$this->Execute("INSERT INTO `Users` (`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Email_active`) VALUES ('$uname', '$email', '$fname', '$sname', '$psecure','0')", 0);
@@ -89,8 +89,7 @@
 						return false;
 					}
 				} else {
-					return false;
-					// Username or email already taken
+					return false;	// Username or email already taken
 				}
 			}
 		/** Logout
@@ -130,10 +129,23 @@
 		 *
 		 *	@todo
 		 */
-			public function ConfirmEmail(string $to) {
-				$subject = "Welcome to The Candlestick!";
-				$txt = "<body marginheight=\"0\" topmargin=\"0\" marginwidth=\"0\" style=\"margin: 0px; background-color: #f2f3f8;\" leftmargin=\"0\"> <table cellspacing=\"0\" border=\"0\" cellpadding=\"0\" width=\"100%\" bgcolor=\"#f2f3f8\" style=\"@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;\"> <tr> <td> <table style=\"background-color: #f2f3f8; max-width:670px; margin:0 auto;\" width=\"100%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\"> <tr> <td style=\"height:80px;\">&nbsp;</td></tr><tr> <td style=\"text-align:center;\"> <a href=\"https://rakeshmandal.com\" title=\"logo\" target=\"_blank\"> <img width=\"60\" src=\"https://indev.thecandlestick.co.uk/assets/images/logos/logo.svg\" title=\"logo\" alt=\"logo\"> </a> </td></tr><tr> <td style=\"height:20px;\">&nbsp;</td></tr><tr> <td> <table width=\"95%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:670px;background:#fff; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);\"> <tr> <td style=\"height:40px;\">&nbsp;</td></tr><tr> <td style=\"padding:0 35px;\"> <h1 style=\"color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;\">Please confirm your email address</h1> <span style=\"display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;\"></span> <p style=\"color:#455056; font-size:15px;line-height:24px; margin:0;\"> Welcome to ByThe Candlestick, We are glad to have you around! Before you can do anything however, you will need to confirm your email address. (Just to make sure you're not a robot!). So click the link below and get going!</p><a href=\"javascript:void(0);\" style=\"background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;\">Confirm email address</a> </td></tr><tr> <td style=\"height:40px;\">&nbsp;</td></tr></table> </td><tr> <td style=\"height:20px;\">&nbsp;</td></tr><tr> <td style=\"text-align:center;\"> <p style=\"font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;\">&copy; <strong>By The Candlestick</strong> </p></td></tr><tr> <td style=\"height:80px;\">&nbsp;</td></tr></table> </td></tr></table></body>";
-				$headers = "From: no-reply@thecandlestick.co.uk";
+			public function ConfirmEmail(string $t) {
+				// headers
+				$h  = "From: The Candlestick <no-reply@thecandlestick.co.uk>\r\n";
+				$h .= "MIME-Version: 1.0\r\n";
+				$h .= "Content-Type: text/html; charset=UTF-8\r\n";
+				$h .= "Cc:\r\n";
+				$h .= "Bcc:\r\n";
+				$s = "Welcome to The Candlestick!";
+				$m = "<body marginheight=\"0\" topmargin=\"0\" marginwidth=\"0\" style=\"margin: 0px; background-color: #f2f3f8;\" leftmargin=\"0\"> <table cellspacing=\"0\" border=\"0\" cellpadding=\"0\" width=\"100%\" bgcolor=\"#f2f3f8\" style=\"@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;\"> <tr> <td> <table style=\"background-color: #f2f3f8; max-width:670px; margin:0 auto;\" width=\"100%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\"> <tr> <td style=\"height:80px;\">&nbsp;</td></tr><tr> <td style=\"text-align:center;\"> <a href=\"https://rakeshmandal.com\" title=\"logo\" target=\"_blank\"> <img width=\"60\" src=\"https://indev.thecandlestick.co.uk/assets/images/logos/logo.svg\" title=\"logo\" alt=\"logo\"> </a> </td></tr><tr> <td style=\"height:20px;\">&nbsp;</td></tr><tr> <td> <table width=\"95%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:670px;background:#fff; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);\"> <tr> <td style=\"height:40px;\">&nbsp;</td></tr><tr> <td style=\"padding:0 35px;\"> <h1 style=\"color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;\">Please confirm your email address</h1> <span style=\"display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;\"></span> <p style=\"color:#455056; font-size:15px;line-height:24px; margin:0;\"> Welcome to ByThe Candlestick, We are glad to have you around! Before you can do anything however, you will need to confirm your email address. (Just to make sure you're not a robot!). So click the link below and get going!</p><a href=\"javascript:void(0);\" style=\"background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;\">Confirm email address</a> </td></tr><tr> <td style=\"height:40px;\">&nbsp;</td></tr></table> </td><tr> <td style=\"height:20px;\">&nbsp;</td></tr><tr> <td style=\"text-align:center;\"> <p style=\"font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;\">&copy; <strong>By The Candlestick</strong> </p></td></tr><tr> <td style=\"height:80px;\">&nbsp;</td></tr></table> </td></tr></table></body>";
+				// Send the message
+				$sent = mail($t, $s, $m, $h);
+				if($sent) {
+					return $this->Execute("INSERT INTO `Mail`(`From`, `To`, `Cc`, `Bcc`, `Subject`, `Message`, `Archived?`, `Status`) VALUES ('$f', '$t', '$c', '$b', '$s', '$m', '0', 'Sent')", 1);
+				} else {
+					$this->Execute("INSERT INTO `Mail`(`From`, `To`, `Cc`, `Bcc`, `Subject`, `Message`, `Archived?`, `Status`) VALUES ('$f', '$t', '$c', '$b', '$s', '$m', '0', 'Error')", 1);
+					return false;
+				}
 				mail($to,$subject,$txt,$headers);
 			}
 		/** ConfirmUser

@@ -16,35 +16,34 @@
 						// Confirmations
 							try{
 								if(!isset($arr_user_info['uname']) || $arr_user_info == "")	throw new Error("ERR-SUP-1");
-								if(!isset($arr_user_info['email']) || $arr_user_info == "")	throw new Error("ERR-SUP-4");
-								if(!isset($arr_user_info['fname']) || $arr_user_info == "")	throw new Error("ERR-SUP-5");
-								if(!isset($arr_user_info['lname']) || $arr_user_info == "")	throw new Error("ERR-SUP-6");
+								if(!isset($arr_user_info['email']) || $arr_user_info == "")	throw new Error("ERR-SUP-2");
+								if(!isset($arr_user_info['fname']) || $arr_user_info == "")	throw new Error("ERR-SUP-3");
+								if(!isset($arr_user_info['lname']) || $arr_user_info == "")	throw new Error("ERR-SUP-4");
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
 						// Validation
 							try{
-								if(!$this->ValidateEmail($arr_user_info['email']))		throw new Error("ERR-SUP-7");
+								if(!$this->ValidateEmail($arr_user_info['email']))		throw new Error("ERR-SUP-5");
 								if($arr_user_info['pass1']!="" && $arr_user_info['pass2']!="") {
-									if($arr_user_info['pass1']!==$arr_user_info['pass2'])	throw new Error("ERR-SUP-8");
-									if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')	throw new Error("ERR-SUP-9");
-									if(strlen($arr_user_info['pass1']) < 8)	throw new Error("ERR-SUP-10");
+									if($arr_user_info['pass1']!==$arr_user_info['pass2'])	throw new Error("ERR-SUP-6");
+									if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')	throw new Error("ERR-SUP-7");
+									if(strlen($arr_user_info['pass1']) < 8)	throw new Error("ERR-SUP-8");
 								} else {
 									$arr_user_info['pass1'] = "Default";
 									$defaultPass = true;
 								}
-								if(strlen($arr_user_info['uname']) < 6)	throw new Error("ERR-SUP-11");
+								if(strlen($arr_user_info['uname']) < 6)	throw new Error("ERR-SUP-9");
 								$arr_user_info['pass'] = hash('sha512', $arr_user_info['pass1']);
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
 						// Submit application
 							try{
-								$status = $mdl_User->Register($arr_user_info);
-								if($status) {	// Success
+								if($mdl_User->Register($arr_user_info)) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
-									throw new Error("ERR-SUP-12");
+									throw new Error("ERR-SUP-10");
 								}
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
