@@ -29,12 +29,16 @@
 									if($arr_user_info['pass1']!==$arr_user_info['pass2'])	throw new Error("ERR-SUP-6");
 									if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')	throw new Error("ERR-SUP-7");
 									if(strlen($arr_user_info['pass1']) < 8)	throw new Error("ERR-SUP-8");
+									$arr_user_info['pass'] = hash('sha512', $arr_user_info['pass1']);
 								} else {
-									$arr_user_info['pass1'] = "Default";
+									$arr_user_info['pass'] = hash('sha512', "Default");
 									$defaultPass = true;
 								}
+								if(!isset($arr_user_info['r_pass']))		$arr_user_info['r_pass'] = '0'
+								if(!isset($arr_user_info['d_analytics']))	$arr_user_info['d_analytics'] = '0'
+								if(!isset($arr_user_info['e_active']))		$arr_user_info['e_active'] = '0'
+								if(!isset($arr_user_info['u_active']))		$arr_user_info['u_active'] = '1'
 								if(strlen($arr_user_info['uname']) < 6)	throw new Error("ERR-SUP-9");
-								$arr_user_info['pass'] = hash('sha512', $arr_user_info['pass1']);
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
