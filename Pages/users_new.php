@@ -7,7 +7,7 @@
 		<div class="col-12 col-md-6 text-md-end">
 		<div class="row">
 			<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-				<a href="javascript:user.create(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+				<a href="javascript:user.create();" class="btn btn-outline-primary m-1">
 					<i class="fa fa-save"></i>
 				</a>
 			</div>
@@ -16,34 +16,34 @@
 	</div>
 	<hr>
 	<!-- Section Body -->
-	<div class="row" sku="<?print($user['ID'])?>">
+	<div class="row">
 		<div class="col-12 col-md-6 col-lg-2" name="username">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Username'])?>">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Username</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="firstname">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['First_name'])?>">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">First name</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="lastname">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Last_name'])?>">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Last name</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="email">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Email'])?>">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Email</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="phone">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($user['Phone'])?>">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Phone no.</label>
 			</div>
 		</div>
@@ -51,22 +51,22 @@
 			<div class="form-floating mb-3">
 				<? ($user['Change_password']==1)?$checked="checked":$checked=""; ?>
 				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="reset_pass">
+					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="reset_pass">
 					<label class="form-check-label" for="flexCheckDisabled"> Reset password? </label>
 				</div>
 				<? ($user['Disable_analytics']==1)?$checked="checked":$checked=""; ?>
 				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="disable_analytics">
+					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="disable_analytics">
 					<label class="form-check-label" for="flexCheckDisabled"> Disable analytics? </label>
 				</div>
 				<? ($user['Email_active']==1)?$checked="checked":$checked=""; ?>
 				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="email_active">
+					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="email_active">
 					<label class="form-check-label" for="flexCheckDisabled"> Email activated? </label>
 				</div>
 				<? ($user['Active']==1)?$checked="checked":$checked=""; ?>
 				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?print($checked)?> name="user_active">
+					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="user_active">
 					<label class="form-check-label" for="flexCheckDisabled"> User active? </label>
 				</div>
 			</div>
