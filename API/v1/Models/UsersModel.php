@@ -160,7 +160,8 @@
 				$string = [];
 				for($i=0; $i<=count($keys); $i++) {
 					if($keys[$i] != "" && $vals[$keys[$i]] != "") {
-						array_push($string, '`'.preg_replace("/(permission_)[a-z\-\_]+/", "", $keys[$i]).'`='.$vals[$keys[$i]]);
+						$key = preg_replace("/(permission_)[a-z\-\_]+/", "", $keys[$i])
+						array_push($string, '`'.$key.'`='.$vals[$keys[$i]]);
 					}
 				}
 				print(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid));
