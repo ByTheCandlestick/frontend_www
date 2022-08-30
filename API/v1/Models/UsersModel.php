@@ -154,7 +154,7 @@
 		 *	@todo
 		 */
 			public function updatePermissions(array $perms, string $uid) {
-				array_push($perms);
+				array_shift($perms);
 				$keys = array_keys($perms);
 				$vals = $perms;
 				$string = [];
