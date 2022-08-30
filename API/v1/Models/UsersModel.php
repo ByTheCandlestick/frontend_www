@@ -76,7 +76,7 @@
 		 */
 			public function Register(array $userdata) {
 				$fname = $userdata['fname']; $email = $userdata['email'];
-				$sname = $userdata['sname']; $uname = $userdata['uname'];
+				$sname = $userdata['lname']; $uname = $userdata['uname'];
 				$psecure = $userdata['psecure'];
 				$user_count = $this->Execute("SELECT COUNT(*) FROM `Users` WHERE `Username`='$uname' OR `Email`='$email'", 3)[0];
 				if($user_count == 0) {
