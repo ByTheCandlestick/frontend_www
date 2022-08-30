@@ -1453,6 +1453,7 @@
 		},
 	}
 $(document).ready(function() {
+	console.log('here');
 	// -----========== Dark mode toggle ==========----- // @wip //
 		if(cookie.exists('cs_adm_mode')) { mode.set(cookie.read('cs_adm_mode')); }
 		mode.modeSwitch.click(function() { mode.toggle() });
