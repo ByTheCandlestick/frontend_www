@@ -873,7 +873,7 @@
 				}
 			});
 		},
-		/** @wip */
+		/** @final */
 		update(uid) {
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
@@ -901,7 +901,7 @@
 				}
 			});
 		},
-		/** @wip */
+		/** @final */
 		delete(uid) {
 			$.ajax({
 				url: api_url + '/Users/' + uid + '/',
@@ -920,6 +920,7 @@
 				}
 			});
 		},
+		/** @final */
 		savePerm(uid) {
 			data = {
 				'api_key': api_key,
