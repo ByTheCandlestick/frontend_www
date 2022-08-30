@@ -18,6 +18,9 @@
 					<a href="javascript:user.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
+					<a href="javascript:user.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+						<i class="fa fa-trash-alt"></i>
+					</a>
 				</div>
 			</div>
 			</div>

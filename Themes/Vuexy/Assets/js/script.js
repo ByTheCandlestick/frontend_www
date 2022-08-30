@@ -224,6 +224,7 @@
 					}
 				});
 			},
+			/** @final */
 			update(sid) {
 				$.ajax({
 					url: api_url + '/Website/' + sid + '/',
@@ -260,12 +261,11 @@
 				});
 			},
 			delete(sid) {
-				data = {
-					'api_key': api_key,
-				}
 				$.ajax({
 					url: api_url + '/Website/' + sid + '/',
-					data: data,
+					data: {
+						'api_key': api_key,
+					},
 					type: 'DELETE',
 					xhrFields: {
 						withCredentials: true,
