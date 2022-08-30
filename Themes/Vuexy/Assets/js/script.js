@@ -186,16 +186,28 @@
 	website = {
 		domain: {
 			create() {
-				data = {
-					'api_key': api_key,
-					'name': $("div[name=name] input").val(),
-					'domain': $("div[name=domain] input").val(),
-					'page_type': $("div[name=page_type]").find("option:selected").val(),
-					'maintenance': (($("div[name=status] input[name=maintenance]:checked").length === 0)?0:1),
-				}
 				$.ajax({
 					url: api_url + '/Website/',
-					data: data,
+					data: {
+						'api_key': api_key,
+						'name': $("div[name=name] input").val(),
+						'domain': $("div[name=domain] input").val(),
+						'page_type': $("div[name=page_type]").find("option:selected").val(),
+						'maintenance': (($("div[name=status] input[name=maintenance]:checked").length === 0)?0:1),
+						'meta_title': $("div[name=meta_title]").find("input").val(),
+						'meta_keywords': $("div[name=meta_keywords]").find("input").val(),
+						'meta_description': $("div[name=meta_description]").find("input").val(),
+						'meta_colour': $("div[name=meta_colour]").find("input").val(),
+						'title': $("div[name=title]").find("input").val(),
+						'slogan': $("div[name=slogan]").find("input").val(),
+						'email': $("div[name=email]").find("input").val(),
+						'phone': $("div[name=phone]").find("input").val(),
+						'primary_colour': $("div[name=primary_colour]").find("input").val(),
+						'secondary_colour': $("div[name=secondary_colour]").find("input").val(),
+						'logo': $("div[name=logo]").find("input").val(),
+						'favicon': $("div[name=favicon]").find("input").val(),
+						'permission': $("div[name=permission]").find("option:selected").val(),
+					},
 					type: 'PUT',
 					xhrFields: {
 						withCredentials: true,
@@ -213,28 +225,28 @@
 				});
 			},
 			update(sid) {
-				data = {
-					'api_key': api_key,
-					'name': $("div[name=name] input").val(),
-					'domain': $("div[name=domain] input").val(),
-					'page_type': $("div[name=page_type]").find("option:selected").val(),
-					'maintenance': (($("div[name=status] input[name=maintenance]:checked").length === 0)?0:1),
-					'meta_title': $("div[name=meta_title]").find("input").val(),
-					'meta_keywords': $("div[name=meta_keywords]").find("input").val(),
-					'meta_description': $("div[name=meta_description]").find("input").val(),
-					'meta_colour': $("div[name=meta_colour]").find("input").val(),
-					'title': $("div[name=title]").find("input").val(),
-					'slogan': $("div[name=slogan]").find("input").val(),
-					'email': $("div[name=email]").find("input").val(),
-					'phone': $("div[name=phone]").find("input").val(),
-					'primary_colour': $("div[name=primary_colour]").find("input").val(),
-					'secondary_colour': $("div[name=secondary_colour]").find("input").val(),
-					'logo': $("div[name=logo]").find("input").val(),
-					'favicon': $("div[name=favicon]").find("input").val(),
-				}
 				$.ajax({
 					url: api_url + '/Website/' + sid + '/',
-					data: data,
+					data: {
+						'api_key': api_key,
+						'name': $("div[name=name] input").val(),
+						'domain': $("div[name=domain] input").val(),
+						'page_type': $("div[name=page_type]").find("option:selected").val(),
+						'maintenance': (($("div[name=status] input[name=maintenance]:checked").length === 0)?0:1),
+						'meta_title': $("div[name=meta_title]").find("input").val(),
+						'meta_keywords': $("div[name=meta_keywords]").find("input").val(),
+						'meta_description': $("div[name=meta_description]").find("input").val(),
+						'meta_colour': $("div[name=meta_colour]").find("input").val(),
+						'title': $("div[name=title]").find("input").val(),
+						'slogan': $("div[name=slogan]").find("input").val(),
+						'email': $("div[name=email]").find("input").val(),
+						'phone': $("div[name=phone]").find("input").val(),
+						'primary_colour': $("div[name=primary_colour]").find("input").val(),
+						'secondary_colour': $("div[name=secondary_colour]").find("input").val(),
+						'logo': $("div[name=logo]").find("input").val(),
+						'favicon': $("div[name=favicon]").find("input").val(),
+						'permission': $("div[name=permission]").find("option:selected").val(),
+					},
 					type: 'POST',
 					xhrFields: {
 						withCredentials: true,
@@ -269,27 +281,25 @@
 		},
 		page: {
 			create() {
-				var styles = [];
-				var scripts = [];
-				$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
-				$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
-				data = {
-					'api_key': api_key,
-					'style': styles.join(","),
-					'script': scripts.join(","),
-					'name': $("div[name=name] input").val(),
-					'title': $("div[name=title] input").val(),
-					'page_url': $("div[name=page_url] input").val(),
-					'subpage_url': $("div[name=subpage_url] input").val(),
-					'domain_id': $("div[name=domain]").find("option:selected").val(),
-					'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
-					'menu_order': $("div[name=menu_order] input").val(),
-					'menu_icon': $("div[name=menu_icon] input").val(),
-					'menu_url': $("div[name=menu_url] input").val(),
-				}
+				var styles = [];	$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
+				var scripts = [];	$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
 				$.ajax({
 					url: api_url + '/Page/',
-					data: data,
+					data: {
+						'api_key': api_key,
+						'style': styles.join(","),
+						'script': scripts.join(","),
+						'name': $("div[name=name] input").val(),
+						'title': $("div[name=title] input").val(),
+						'page_url': $("div[name=page_url] input").val(),
+						'subpage_url': $("div[name=subpage_url] input").val(),
+						'domain_id': $("div[name=domain]").find("option:selected").val(),
+						'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
+						'menu_order': $("div[name=menu_order] input").val(),
+						'menu_icon': $("div[name=menu_icon] input").val(),
+						'menu_url': $("div[name=menu_url] input").val(),
+						'permission': $("div[name=permission]").find("option:selected").val(),
+					},
 					type: 'PUT',
 					xhrFields: {
 						withCredentials: true,
@@ -307,27 +317,25 @@
 				});
 			},
 			update(pid) {
-				var styles = [];
-				var scripts = [];
-				$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
-				$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
-				data = {
-					'api_key': api_key,
-					'style': styles.join(","),
-					'script': scripts.join(","),
-					'name': $("div[name=name] input").val(),
-					'title': $("div[name=title] input").val(),
-					'page_url': $("div[name=page_url] input").val(),
-					'subpage_url': $("div[name=subpage_url] input").val(),
-					'domain_id': $("div[name=domain]").find("option:selected").val(),
-					'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
-					'menu_order': $("div[name=menu_order] input").val(),
-					'menu_icon': $("div[name=menu_icon] input").val(),
-					'menu_url': $("div[name=menu_url] input").val(),
-				}
+				var styles = [];	$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
+				var scripts = [];	$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
 				$.ajax({
 					url: api_url + '/Page/' + pid + '/',
-					data: data,
+					data: {
+						'api_key': api_key,
+						'style': styles.join(","),
+						'script': scripts.join(","),
+						'name': $("div[name=name] input").val(),
+						'title': $("div[name=title] input").val(),
+						'page_url': $("div[name=page_url] input").val(),
+						'subpage_url': $("div[name=subpage_url] input").val(),
+						'domain_id': $("div[name=domain]").find("option:selected").val(),
+						'menu_item': (($("div[name=menu_item] input:checked").length === 0)?0:1),
+						'menu_order': $("div[name=menu_order] input").val(),
+						'menu_icon': $("div[name=menu_icon] input").val(),
+						'menu_url': $("div[name=menu_url] input").val(),
+						'permission': $("div[name=permission]").find("option:selected").val(),
+					},
 					type: 'POST',
 					xhrFields: {
 						withCredentials: true,
