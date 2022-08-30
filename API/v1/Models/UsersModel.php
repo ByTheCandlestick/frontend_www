@@ -154,12 +154,15 @@
 		 *	@todo
 		 */
 			public function updatePermissions(array $perms) {
+				array_push($perms);
 				$keys = array_keys($perms);
 				$vals = $perms;
+				$string = [];
 				for($i=0; $i<=count($keys); $i++) {
-					print($keys[$i].': '.$vals[$keys[$i]].' // ');
+					array_push($string, '`'.$keys[$i].'`='.$vals[$keys[$i]]);
 				}
-				return false; // $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1",), 1);
+				print(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $))
+				return false; // $this->Execute(, 1);
 			}
 	}
 ?>
