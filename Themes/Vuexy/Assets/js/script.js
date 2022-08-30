@@ -146,7 +146,7 @@
 	}
 	/** @final */
 	mode = {
-		modeSwitch: $('.mode-switch'),
+		modeSwitch: $('button.mode-switch'),
 		root: $('html'),
 		toggle() {
 			if(cookie.read('cs_adm_mode') == 'dark') {
