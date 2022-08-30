@@ -78,11 +78,9 @@
 				$fname = $userdata['fname']; $email = $userdata['email'];
 				$sname = $userdata['lname']; $uname = $userdata['uname'];
 				$psecure = $userdata['psecure'];
-				$user_count = $this->Execute("SELECT COUNT(*) FROM `Users` WHERE `Username`='$uname' OR `Email`='$email'", 3)[0];
-				if($user_count == 0) {
+				if($this->Execute("SELECT * FROM `Users` WHERE `Username`='$uname' OR `Email`='$email'", 5) == 0) {
 					$this->Execute("INSERT INTO `Users` (`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Email_active`) VALUES ('$uname', '$email', '$fname', '$sname', '$psecure','0')", 0);
-					$user_confirm = $this->Execute("SELECT COUNT(*) FROM `Users` WHERE `Username`='$uname' AND `Email`='$email' AND `Fist_name`='$fname' AND `Last_name`='$sname' AND `Password`='$psecure' AND `Email_active`='0'", 3)[0];
-					if($user_confirm == 1) {
+					if($this->Execute("SELECT COUNT(*) FROM `Users` WHERE `Username`='$uname' AND `Email`='$email' AND `Fist_name`='$fname' AND `Last_name`='$sname' AND `Password`='$psecure' AND `Email_active`='0'", 3)[0] == 1) {
 						$this->ConfirmEmail($email);
 						return true;
 					} else {
