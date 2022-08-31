@@ -146,7 +146,7 @@
 	}
 	/** @wip */
 	mode = {
-		modeSwitch: $('button.mode-switch'),
+		modeSwitch: $('.mode-switch'),
 		root: $('html'),
 		/** @final */
 		toggle() {
@@ -1417,7 +1417,7 @@
 		displayRefunds() {
 			$('#allRefundModal').modal('show');
 		},
-		/** @wip */
+		/** @final */
 		updateStatus(newStatus, invoice) {
 			$.ajax({
 				url: api_url + '/Orders/Status/',
@@ -1482,6 +1482,7 @@
 	config = {
 		/** @final */
 		permissions: {
+			/** @final */
 			new(n=$(".suffix option:selected").val()+'-'+$(".name").val(), d=$(".default").val()) {
 				$.ajax({
 					url: api_url + '/Config/Permission/',
@@ -1504,6 +1505,7 @@
 					}
 				});
 			},
+			/** @final */
 			save(o, n=$(".newname").val(), d=$(".default").val()) {
 				$.ajax({
 					url: api_url + '/Config/Permission/',
@@ -1527,6 +1529,7 @@
 					}
 				});
 			},
+			/** @final */
 			delete(n) {
 				$.ajax({
 					url: api_url + '/Config/Permission/',
