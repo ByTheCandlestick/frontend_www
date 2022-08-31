@@ -1557,7 +1557,10 @@ $(document).ready(function() {
 		} else {
 			mode.set('light');
 		}
-		mode.modeSwitch.click(function() { mode.toggle() });
+		mode.modeSwitch.click(function() {
+			mode.toggle();
+			console.log('Here');
+		});
 	// -----========== Search ==========----- // @final //
 		$(".search-area input").focusout(function() {
 			if(search.suggestions.filter(":hover").length === 0) {
