@@ -2,7 +2,7 @@
 	const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 // -----========== Nestled functions ==========----- //
-	/** @wip */
+	/** @final */
 	misc = {
 		currencies: null,
 		/** @final */
@@ -32,10 +32,6 @@
 		/** @final */
 		redirect(url) {
 			window.location.href = url;
-		},
-		/** @wip */
-		limit_characters(el) {
-			// TODO: Limit characters in specific element
 		},
 		/** @final */
 		copyToClipboard(str) {
@@ -153,7 +149,7 @@
 			}
 		},
 	}
-	/** @wip */
+	/** @final */
 	mode = {
 		modeSwitch: $('.mode-switch'),
 		root: $('html'),
@@ -1459,7 +1455,7 @@
 			// TODO: Send reciept printer order info
 		}
 	}
-	/** @wip */
+	/** @final */
 	mail = {
 		/** @final */
 		send(f=$(".mail-from").val(),		t=$(".mail-to").val(),
@@ -1563,7 +1559,7 @@
 $(document).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
 		mode.initialize();
-		/** @final */
+		console.log(mode.modeSwitch);
 		mode.modeSwitch.click(() => {
 			mode.toggle();
 			console.log('Here');
