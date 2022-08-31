@@ -7,7 +7,7 @@
 		 * @return bool	
 		 */
 			public function updateStatus(string $s, string $i) {
-				return $this->Execute(sprintf("UPDATE `Website pages` SET `Shipping status`='%s' WHERE `Invoice ID`='%s'", $s, $i), 1);
+				return $this->Execute(sprintf("UPDATE `Transactions` SET `Shipping status`='%s' WHERE `Invoice ID`='%s' AND `Type`='Order'", $s, $i), 1);
 			}
 	}
 ?>
