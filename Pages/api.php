@@ -11,6 +11,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
+		<?if($userperm['api_access-hosts']==1) {?>
         <div class="col-12 col-md-6 col-lg-4 p-2">
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
@@ -77,6 +78,7 @@
                 </div>
             </div>
         </div>
+		<?}if($userperm['api_access-keys']==1) {?>
         <div class="col-12 col-md-6 col-lg-4 p-2">
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
@@ -143,6 +145,7 @@
                 </div>
             </div>
         </div>
+		<?}if($userperm['api_access-versions']==1) {?>
         <div class="col-12 col-md-6 col-lg-4 p-2">
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
@@ -209,6 +212,7 @@
                 </div>
             </div>
         </div>
+		<?}if($userperm['api_access-controllers']==1) {?>
         <div class="col-12 col-md-6 col-lg-4 p-2">
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
@@ -273,5 +277,6 @@
                 </div>
             </div>
         </div>
+		<?}?>
     </div>
 </section>
