@@ -110,13 +110,13 @@
 					<p><?print($invoice['Invoice ID']) ?></p>
 				</div>
 				<div class="col-6 col-md-3 pb-3">
-					<h5>Estimated Delivery time: </h5>
-					<p><?print(date('d M Y', strtotime($invoice['Date'].'+ 7 days')))?></p>
+					<h5>Order date: </h5>
+					<p><?print(date('d M Y', strtotime($invoice['Date'])))?></p>
 				</div>
 				<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 				<div class="col-6 col-md-3 pb-3">
-					<h5>Status: </h5>
-					<p><?print($invoice['Status']) ?></p>
+					<h5>Estimated delivery date: </h5>
+					<p><?print(date('d M Y', strtotime($invoice['Date'].'+ 7 days')))?></p>
 				</div>
 				<div class="col-6 col-md-3 pb-3">
 					<h5>Shipped by: </h5>
