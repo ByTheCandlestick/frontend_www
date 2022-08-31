@@ -39,8 +39,7 @@
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<a href="/Suppliers/Edit/'.$row['Reference'].'"><th scope="row">'.$row['ID'].'</th></a>
-									<td>'.$row['Name'].'</td>
+									<a href="/Suppliers/Edit/'.$row['Reference'].'"><th scope="row">'.$row['Name'].'</th></a>
 									<td>'.$row['Reference'].'</td>
 									<td><a href="mailto:'.$row['Email'].'">'.$row['Email'].'</a></td>
 									<td><a href="tel:'.$row['Phone'].'">'.$row['Phone'].'</a></td>
