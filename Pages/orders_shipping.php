@@ -123,8 +123,8 @@
 					endif;
 
 					print("
-						<div class=\"step completed $s1 confirmed\">Order Confirmed</div>
-						<div class=\"step completed $s2 picked\">Picked by courier</div>
+						<div class=\"step $s1 confirmed\">Order Confirmed</div>
+						<div class=\"step $s2 picked\">Picked by courier</div>
 						<div class=\"step $s3 dispatched\">On the way</div>
 						<div class=\"step $s4 delivered\">Delivered</div>
 					");
