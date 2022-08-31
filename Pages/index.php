@@ -97,6 +97,9 @@
 						</p>
 					</div>
 					<div class="col-4">
+						<h3>
+
+						</h3>
 					</div>
 				</div>
 			</div>
@@ -131,6 +134,9 @@
 						</p>
 					</div>
 					<div class="col-4">
+						<h3>
+
+						</h3>
 					</div>
 				</div>
 			</div>
@@ -165,6 +171,9 @@
 						</p>
 					</div>
 					<div class="col-4">
+						<h3>
+
+						</h3>
 					</div>
 				</div>
 			</div>
@@ -199,6 +208,9 @@
 						</p>
 					</div>
 					<div class="col-4">
+						<h3>
+
+						</h3>
 					</div>
 				</div>
 			</div>
