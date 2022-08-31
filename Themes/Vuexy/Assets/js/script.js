@@ -1552,11 +1552,7 @@
 $(document).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
 		mode.initialize();
-		console.log(mode.switch);
-		mode.switch.click(() => {
-			mode.toggle();
-			console.log('Here');
-		});
+		mode.switch.click(() => { mode.toggle(); });
 	// -----========== Search ==========----- // @final //
 		$(".search-area input").focusout(function() {
 			if(search.suggestions.filter(":hover").length === 0) {
