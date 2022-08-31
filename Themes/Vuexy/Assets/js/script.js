@@ -1426,8 +1426,10 @@
 					withCredentials: true,
 				},
 				success(body) {
-					alert.simple("Successfully updated", "success");
-					window.location.reload();
+					if(body.status == "success") {
+						alert.simple("Successfully updated", "success");
+						window.location.reload();
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
