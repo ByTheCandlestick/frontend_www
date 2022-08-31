@@ -164,8 +164,8 @@
 				print("
 					<div class=\"step $s1 confirmed\">$s1_click</div>
 					<div class=\"step $s2 picked\">$s2_click</div>
-					<div class=\"step $s3 dispatched\">$s2_click</div>
-					<div class=\"step $s4 delivered\">$s2_click</div>
+					<div class=\"step $s3 dispatched\">$s3_click</div>
+					<div class=\"step $s4 delivered\">$s4_click</div>
 				");
 			?>
 			</div>
