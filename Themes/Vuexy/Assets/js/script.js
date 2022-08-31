@@ -55,10 +55,8 @@
 			return (str == "%3Cp%3E%3Cbr%20data-mce-bogus%3D%221%22%3E%3C%2Fp%3E")?"":str;
 		},
 		/** @final */
-		wait(sec) {
-			setTimeout(function(){
-				
-			},sec*1000);
+		wait(sec, func) {
+			setTimeout(func,sec*1000);
 		},
 		
 	}
@@ -146,10 +144,11 @@
 			}
 		},
 	}
-	/** @final */
+	/** @wip */
 	mode = {
 		modeSwitch: $('button.mode-switch'),
 		root: $('html'),
+		/** @final */
 		toggle() {
 			if(cookie.read('cs_adm_mode') == 'dark') {
 				cookie.update('cs_adm_mode', 'light')
@@ -166,8 +165,8 @@
 			}
 			mode.modeSwitch.toggleClass('active');
 		},
+		/** @wip */
 		set(val) {
-			mode.root.addClass(val);
 			if(cookie.exists('cs_adm_mode')) {
 				cookie.update('cs_adm_mode', val);
 			} else {
@@ -177,7 +176,11 @@
 				mode.modeSwitch.addClass('active');
 				mode.modeSwitch.find('i').addClass('fa');
 				mode.modeSwitch.find('i').removeClass('fal');
+				mode.root.removeClass('light');
+				mode.root.addClass('dark');
 			} else {
+				mode.root.addClass('light');
+				mode.root.removeClass('dark');
 				mode.modeSwitch.removeClass('active');
 				mode.modeSwitch.find('i').removeClass('fa');
 				mode.modeSwitch.find('i').addClass('fal');
