@@ -1,7 +1,7 @@
 <?
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Invoice ID`='%s'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
-		$q = mysqli_fetch_array(DB_Query("DESCRIBE `products_shippings`"));
+		$q = mysqli_fetch_assoc(DB_Query("DESCRIBE `products_shippings`"));
 		foreach($q as $x) {
 			print_r($x . ' / ');
 		}
