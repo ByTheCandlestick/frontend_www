@@ -91,36 +91,36 @@
 		<div class="mb-2 row p-2 border text-center">
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Order ID:</h5>
-				<p><?= ($invoice['Invoice ID']) ?></p>
+				<p><?= ($order['Invoice ID']) ?></p>
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Order date: </h5>
-				<p><?= (date('d M Y', $invoice['Date']))?></p>
+				<p><?= (date('d M Y', $order['Date']))?></p>
 			</div>
 			<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Estimated delivery date: </h5>
-				<p><?= (date('d M Y', strtotime($invoice['Date'].'+ 7 days')))?></p>
+				<p><?= (date('d M Y', strtotime($order['Date'].'+ 7 days')))?></p>
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Shipped by: </h5>
-				<p><?= ($invoice['Ship to']) ?></p>
+				<p><?= ($order['Ship to']) ?></p>
 			</div>
 		</div>
 		<div class="col-12 order-progress-stepper">
 			<?
-				/**/if($invoice['Shipping status']==0):
+				/**/if($order['Shipping status']==0):
 					$s1 = 'active';
-				elseif($invoice['Shipping status']==1):
+				elseif($order['Shipping status']==1):
 					$s1='completed';
 					$s2 = 'active';
-				elseif($invoice['Shipping status']==2):
+				elseif($order['Shipping status']==2):
 					$s1=$s2='completed';
 					$s3 = 'active';
-				elseif($invoice['Shipping status']==3):
+				elseif($order['Shipping status']==3):
 					$s1=$s2=$s3='completed';
 					$s4 = 'active';
-				elseif($invoice['Shipping status']==4):
+				elseif($order['Shipping status']==4):
 					$s1=$s2=$s3=$s4='completed';
 				endif;
 				print("
