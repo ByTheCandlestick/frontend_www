@@ -38,6 +38,8 @@
 			line-height: 35px;
 			margin: 0 auto 10px auto;
 			text-align: center;
+			position: relative;
+			z-index: 1;
 		}
 		.order-progress-stepper .step::after {
 			content: "";
@@ -45,8 +47,8 @@
 			width: 100%;
 			background-color: #ddd;
 			height: 5px;
-			top: 13px;
-			z-index: -1;
+			position: relative;
+			z-index: 0;
 		}
 	/* --=== Contents ===-- */
 		.order-progress-stepper .step.confirmed::before { content: "\f00c"; }
