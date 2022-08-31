@@ -45,7 +45,6 @@
 			width: 100%;
 			background-color: #ddd;
 			height: 5px;
-			position: absolute;
 			top: 13px;
 			z-index: -1;
 		}
