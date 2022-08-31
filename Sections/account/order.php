@@ -111,15 +111,21 @@
 			<?
 				/**/if($order['Shipping status']==0):
 					$s1 = 'active';
+					$s2_click='<a href="">';
+					$s3_click='';
+					$s4_click='';
 				elseif($order['Shipping status']==1):
 					$s1='completed';
 					$s2 = 'active';
 				elseif($order['Shipping status']==2):
 					$s1=$s2='completed';
 					$s3 = 'active';
+					$s3_click='';
+					$s4_click='';
 				elseif($order['Shipping status']==3):
 					$s1=$s2=$s3='completed';
 					$s4 = 'active';
+					$s4_click='';
 				elseif($order['Shipping status']==4):
 					$s1=$s2=$s3=$s4='completed';
 				endif;
