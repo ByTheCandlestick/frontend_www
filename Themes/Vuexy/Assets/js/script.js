@@ -172,16 +172,16 @@
 			cookie.update('cs_adm_mode', val);
 			if(val == "dark") {
 				mode.root.removeClass('light');
-				mode.switch.find('i').removeClass('fa-eclipse');
-
-				mode.root.addClass('dark');
-				mode.switch.find('i').addClass('fa-eclipse-alt');
-			} else {
-				mode.root.removeClass('dark');
 				mode.switch.find('i').removeClass('fa-eclipse-alt');
 
-				mode.root.addClass('light');
+				mode.root.addClass('dark');
 				mode.switch.find('i').addClass('fa-eclipse');
+			} else {
+				mode.root.removeClass('dark');
+				mode.switch.find('i').removeClass('fa-eclipse');
+
+				mode.root.addClass('light');
+				mode.switch.find('i').addClass('fa-eclipse-alt');
 			}
 		},
 	}

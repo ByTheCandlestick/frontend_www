@@ -142,7 +142,7 @@
 							<!-- Profile, Notifications and Dark mode -->
 							<div class="app-header-right">
 								<button class="mode-switch" title="Switch Theme">
-									<i class="fad fa-eclipse fa-lg"></i>
+									<i class="fad fa-eclipse-alt fa-lg"></i>
 								</button>
 								<button class="profile-btn">
 									<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
