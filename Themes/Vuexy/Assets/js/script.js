@@ -57,7 +57,7 @@
 		/** @final */
 		wait(sec) {
 			setTimeout(function(){
-
+				
 			},sec*1000);
 		},
 		
