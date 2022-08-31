@@ -178,6 +178,7 @@
 		},
 		/** @wip */
 		set(val) {
+			console.log('Setting: '+val);
 			cookie.update('cs_adm_mode', val);
 			if(val == "dark") {
 				mode.modeSwitch.find('i').addClass('fa');
