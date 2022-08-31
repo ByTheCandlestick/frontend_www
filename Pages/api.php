@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-4 text-end">
                         <?  if($userperm['api_access-hosts-edit']==1) {?>
-                            <a href="/API/allowed_hosts/New/" class="btn btn-outline-primary">
+                            <a href="/API/host/New/" class="btn btn-outline-primary">
                                 <i class="fa fa-plus"></i>
                             </a>
                         <?}?>
@@ -48,7 +48,7 @@
                                         ');
                                         if($userperm['api_access-hosts-edit']==1) {
                                             print('
-                                                    <a href="/API/allowed_hosts/'.$row['ID'].'">
+                                                    <a href="/API/host/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                             ');
@@ -72,7 +72,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/API/allowed_hosts/">
+                    <a href="/API/hosts/">
                         See more
                     </a>
                 </div>
