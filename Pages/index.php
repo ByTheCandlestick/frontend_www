@@ -71,7 +71,7 @@
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">SALES YoY</h5>
-					<div class="col-8">
+					<div class="col-7">
 						<p class="card-text">
 							<span>
 								<?
@@ -96,7 +96,7 @@
 							</span>
 						</p>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<h3>
 							<?=($lastYearIncome[1] == 0)?'<i class="far fa-infinity"></i>':(($currYearIncome[1] - $lastYearIncome[1]) / $lastYearIncome[1]) * 100;?>%
 						</h3>
@@ -108,7 +108,7 @@
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">INCOME YoY</h5>
-					<div class="col-8">
+					<div class="col-7">
 						<p class="card-text">
 							<span>
 								<?
@@ -133,7 +133,7 @@
 							</span>
 						</p>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<h3>
 							<?=(number_format($lastYearIncome[1] - $lastYearExpences[1], 2) == 0)?'<i class="far fa-infinity"></i>':((number_format($currYearIncome[1] - $currYearExpences[1], 2) - number_format($lastYearIncome[1] - $lastYearExpences[1], 2)) / number_format($lastYearIncome[1] - $lastYearExpences[1], 2)) * 100;?>%
 						</h3>
@@ -145,7 +145,7 @@
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">SALES MoM</h5>
-					<div class="col-8">
+					<div class="col-7">
 						<p class="card-text row">
 							<span>
 								<?
@@ -170,7 +170,7 @@
 							</span>
 						</p>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<h3>
 							<?=($lastMonthIncome[1] == 0)?'<i class="far fa-infinity"></i>':(($currMonthIncome[1] - $lastMonthIncome[1]) / $lastMonthIncome[1]) * 100;?>%
 						</h3>
@@ -182,7 +182,7 @@
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">INCOME MoM</h5>
-					<div class="col-8">
+					<div class="col-7">
 						<p class="card-text row">
 							<span>
 								<?
@@ -207,7 +207,7 @@
 							</span>
 						</p>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<h3>
 							<?=(number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2) == 0)?'<i class="far fa-infinity"></i>':((number_format($currMonthIncome[1] - $currMonthExpences[1], 2) - number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)) / number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)) * 100;?>%
 						</h3>
