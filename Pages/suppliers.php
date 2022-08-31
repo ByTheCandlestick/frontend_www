@@ -25,14 +25,12 @@
 	<div class="row overflow-scroll">
 		<table class="suppliersTable table table-striped table-hover">
 			<thead class="sticky-top">
-				<th scope="col">ID</th>
 				<th scope="col">Name</th>
 				<th scope="col">Reference</th>
 				<th scope="col">Email</th>
 				<th scope="col">Phone</th>
 				<th scope="col">Enabled</th>
 				<th scope="col">Created</th>
-				<th scope="col"></th>
 			</thead>
 			<tbody>
 				<?
@@ -41,18 +39,13 @@
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<th scope="row">'.$row['ID'].'</th>
+									<a href="/Suppliers/Edit/'.$row['Reference'].'"><th scope="row">'.$row['ID'].'</th></a>
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Reference'].'</td>
 									<td><a href="mailto:'.$row['Email'].'">'.$row['Email'].'</a></td>
 									<td><a href="tel:'.$row['Phone'].'">'.$row['Phone'].'</a></td>
 									<td>'.$row['Active'].'</td>
 									<td>'.$row['Created'].'</td>
-									<td>
-										<a href="/Suppliers/Edit/'.$row['Reference'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</td>
 								</tr>
 							');
 						}
@@ -61,8 +54,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
