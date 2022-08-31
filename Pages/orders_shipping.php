@@ -107,21 +107,20 @@
 			<div class="order-progress-stepper">
 				<?
 					$s1=$s2=$s3=$s4='';
-					if($order['Status'] > 0 && $order['Status'] <= 9):
+					/**/if($invoice['Shipping status'] = 0):
+						$s1 = 'active';
+					elseif($invoice['Shipping status'] = 1):
 						$s1='completed';
 						$s2 = 'active';
-					elseif($order['Status'] > 10 && $order['Status'] <= 19):
+					elseif($invoice['Shipping status'] = 2):
 						$s1=$s2='completed';
 						$s3 = 'active';
-					elseif($order['Status'] > 20 && $order['Status'] <= 29):
+					elseif($invoice['Shipping status'] = 3):
 						$s1=$s2=$s3='completed';
 						$s4 = 'active';
-					elseif($order['Status'] > 30 && $order['Status'] <= 39):
+					elseif($invoice['Shipping status'] = 4):
 						$s1=$s2=$s3=$s4='completed';
-					else:
-						$s1 = 'active';
 					endif;
-
 					print("
 						<div class=\"step $s1 confirmed\">Order Confirmed</div>
 						<div class=\"step $s2 picked\">Picked by courier</div>
