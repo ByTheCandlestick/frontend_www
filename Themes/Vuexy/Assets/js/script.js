@@ -50,13 +50,15 @@
 			window.open(str, '_blank');
 			window.focus();
 		},
-		/** @wip */
-		setTwoDecimal(e) {
-			
-		},
 		/** @final */
 		mcebogus(str) {
 			return (str == "%3Cp%3E%3Cbr%20data-mce-bogus%3D%221%22%3E%3C%2Fp%3E")?"":str;
+		},
+		/** @final */
+		wait(sec) {
+			setTimeout(function(){
+
+			},sec*1000);
 		},
 		
 	}
