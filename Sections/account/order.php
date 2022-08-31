@@ -100,7 +100,8 @@
 			<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Estimated delivery date: </h5>
-				<p><?= (date('d M Y', strtotime($order['Created'].'+ 7 days')))?></p>
+				<!--<p><?= (date('d M Y', strtotime($order['Created'].'+ 7 days')))?></p>-->
+				<p><?= (date('d M Y', strtotime($order['Estimated del date'])))?></p>
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Shipped by: </h5>
