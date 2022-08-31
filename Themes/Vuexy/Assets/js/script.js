@@ -1428,7 +1428,7 @@
 				success(body) {
 					if(body.status == "success") {
 						alert.simple("Successfully updated", "success");
-						window.location.reload();
+						//window.location.reload();
 					}
 				},
 				error(body) {
