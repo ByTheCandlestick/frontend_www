@@ -148,6 +148,13 @@
 	mode = {
 		modeSwitch: $('.app-header-right .mode-switch'),
 		root: $('html'),
+		initialize() {
+			if(cookie.exists('cs_adm_mode')) {
+				mode.set(cookie.read('cs_adm_mode'));
+			} else {
+				mode.set('light');
+			}
+		},
 		/** @final */
 		toggle() {
 			if(cookie.read('cs_adm_mode') == 'dark') {
@@ -1552,13 +1559,10 @@
 		},
 	}
 $(document).ready(function() {
-	// -----========== Dark mode toggle ==========----- // @final //
-		if(cookie.exists('cs_adm_mode')) {
-			mode.set(cookie.read('cs_adm_mode'));
-		} else {
-			mode.set('light');
-		}
-		mode.modeSwitch.click(function() {
+	// -----========== Dark mode toggle ==========----- //
+		mode.initialize();
+		/** @final */
+		mode.modeSwitch.click(() => {
 			mode.toggle();
 			console.log('Here');
 		});
