@@ -129,31 +129,31 @@
 			<?
 				/**/if($order['Shipping status']==0):
 					$s1 = 'active';
-					$s1_click='<a href="">Mark as Confirmed</a>';
-					$s2_click='<a href="">Mark as picked</a>';
-					$s3_click='<a href="">Mark as out for delivery</a>';
-					$s4_click='<a href="">Mark as delivered</a>';
+					$s1_click='<a href="javascript:order.updateStatus(1);">Mark as Confirmed</a>';
+					$s2_click='<a href="javascript:order.updateStatus(2);">Mark as picked</a>';
+					$s3_click='<a href="javascript:order.updateStatus(3);">Mark as out for delivery</a>';
+					$s4_click='<a href="javascript:order.updateStatus(4);">Mark as delivered</a>';
 				elseif($order['Shipping status']==1):
 					$s1='completed';
 					$s2 = 'active';
 					$s1_click='Order Confirmed';
-					$s2_click='<a href="">Mark as picked</a>';
-					$s3_click='<a href="">Mark as out for delivery</a>';
-					$s4_click='<a href="">Mark as delivered</a>';
+					$s2_click='<a href="javascript:order.updateStatus(2);">Mark as picked</a>';
+					$s3_click='<a href="javascript:order.updateStatus(3);">Mark as out for delivery</a>';
+					$s4_click='<a href="javascript:order.updateStatus(4);">Mark as delivered</a>';
 				elseif($order['Shipping status']==2):
 					$s1=$s2='completed';
 					$s3 = 'active';
 					$s1_click='Order Confirmed';
 					$s2_click='Picked up by courier';
-					$s3_click='<a href="">Mark as out for delivery</a>';
-					$s4_click='<a href="">Mark as delivered</a>';
+					$s3_click='<a href="javascript:order.updateStatus(3);">Mark as out for delivery</a>';
+					$s4_click='<a href="javascript:order.updateStatus(4);">Mark as delivered</a>';
 				elseif($order['Shipping status']==3):
 					$s1=$s2=$s3='completed';
 					$s4 = 'active';
 					$s1_click='Order Confirmed';
 					$s2_click='Picked up by courier';
 					$s3_click='out for delivery';
-					$s4_click='<a href="">Mark as delivered</a>';
+					$s4_click='<a href="javascript:order.updateStatus(4);">Mark as delivered</a>';
 				elseif($order['Shipping status']==4):
 					$s1=$s2=$s3=$s4='completed';
 					$s1_click='Order Confirmed';
