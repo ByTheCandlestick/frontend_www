@@ -72,7 +72,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/API/hosts/">
+                    <a href="/API/Hosts/">
                         See more
                     </a>
                 </div>
@@ -139,7 +139,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/API/keys/">
+                    <a href="/API/Keys/">
                         See more
                     </a>
                 </div>
