@@ -172,7 +172,7 @@
 					</div>
 					<div class="col-4">
 						<h3>
-
+							<?=($lastMonthIncome[1] == 0)?'<i class="far fa-infinity"></i>':(($currMonthIncome[1] - $lastMonthIncome[1]) / $lastMonthIncome[1]) * 100;?>%
 						</h3>
 					</div>
 				</div>
@@ -209,7 +209,7 @@
 					</div>
 					<div class="col-4">
 						<h3>
-
+							<?=(number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2) == 0)?'<i class="far fa-infinity"></i>':((number_format($currMonthIncome[1] - $currMonthExpences[1], 2) - number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)) / number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)) * 100;?>%
 						</h3>
 					</div>
 				</div>
