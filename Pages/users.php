@@ -41,7 +41,7 @@
 					$query = DB_Query("SELECT * FROM `Users`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
-							$editable = ($userperm['adm_access-users-edit']==1)?'<a href="/Websites/Pages/'.$row['ID'].'">'.$row['First_name'].' '.$row['Last_name'].'</a>':$row['First_name'].' '.$row['last_name'];
+							$editable = ($userperm['adm_access-users-edit']==1)?'<a href="/Users/Edit/'.$row['ID'].'">'.$row['First_name'].' '.$row['Last_name'].'</a>':$row['First_name'].' '.$row['last_name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
