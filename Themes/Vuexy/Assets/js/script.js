@@ -173,9 +173,13 @@
 			if(val == "dark") {
 				mode.root.removeClass('light');
 				mode.root.addClass('dark');
+				mode.modeSwitch.find('i').addClass('fal');
+				mode.modeSwitch.find('i').removeClass('fa');
 			} else {
 				mode.root.removeClass('dark');
 				mode.root.addClass('light');
+				mode.modeSwitch.find('i').addClass('fa');
+				mode.modeSwitch.find('i').removeClass('fal');
 			}
 		},
 	}
