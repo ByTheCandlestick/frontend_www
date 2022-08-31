@@ -121,7 +121,7 @@
 					</div>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Shipped by: </h5>
-						<p><?= ($invoice['Ship to']) ?></p>
+						<p><?= ($invoice['Shipped by']) ?></p>
 					</div>
 				</div>
 			</div>
