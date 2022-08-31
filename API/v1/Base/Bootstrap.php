@@ -45,12 +45,12 @@
 				exit(json_encode(array(
 					'error' => 'No valid host, request method, key or parameters.',
 					'location' => $loc,
-					'params' => {
+					'info' => array(
 						'Host' => $referrer,
 						'Request' => $_SERVER['REQUEST_METHOD'],
 						'Key' => $api_key,
 						'Parameters' => $query,
-					}
+					)
 				)));
 			};
 		/**	get_uri
