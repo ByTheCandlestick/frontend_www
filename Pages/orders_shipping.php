@@ -129,7 +129,7 @@
 			<?
 				/**/if($order['Shipping status']==0):
 					$s1 = 'active';
-					$s1_click='<a href="">Mark Order as Confirmed</a>';
+					$s1_click='<a href="">Mark as Confirmed</a>';
 					$s2_click='<a href="">Mark as picked</a>';
 					$s3_click='<a href="">Mark as out for delivery</a>';
 					$s4_click='<a href="">Mark as delivered</a>';
