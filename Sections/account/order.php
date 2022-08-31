@@ -104,7 +104,7 @@
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Shipped by: </h5>
-				<p><?= ($order['Ship to']) ?></p>
+				<p><?= ($order['Shipped by']) ?></p>
 			</div>
 		</div>
 		<div class="col-12 order-progress-stepper">
