@@ -182,17 +182,13 @@
 				mode.modeSwitch.find('i').removeClass('fal');
 			}
 		},
-		/** @wip */
+		/** @final */
 		set(val) {
 			cookie.update('cs_adm_mode', val);
 			if(val == "dark") {
-				this.modeSwitch.find('i').addClass('fa');
-				this.modeSwitch.find('i').removeClass('fal');
 				mode.root.removeClass('light');
 				mode.root.addClass('dark');
 			} else {
-				this.modeSwitch.find('i').removeClass('fa');
-				this.modeSwitch.find('i').addClass('fal');
 				mode.root.removeClass('dark');
 				mode.root.addClass('light');
 			}
@@ -1220,7 +1216,7 @@
 				},
 				/** @wip */
 				delete() {
-					// TODO: Delect container
+					// TODO: Delete container
 				},
 				/** @final */
 				calculate() {
