@@ -3,7 +3,7 @@
 		$invoice = mysqli_fetch_assoc($query);
 		$q = mysqli_fetch_array(DB_Query("DESCRIBE `products_shippings`"));
 		foreach($q as $x) {
-			print_r($x);
+			print_r($x . ' / ');
 		}
 		//$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping to'])));
 ?>
