@@ -151,10 +151,11 @@
 	}
 	/** @final */
 	mode = {
-		modeSwitch: $('.mode-switch'),
+		switch: null,
 		root: $('html'),
 		/** @final */
 		initialize() {
+			mode.switch = $('.mode-switch');
 			if(cookie.exists('cs_adm_mode')) {
 				mode.set(cookie.read('cs_adm_mode'))
 			} else {
@@ -164,19 +165,7 @@
 		},
 		/** @final */
 		toggle() {
-			if(cookie.read('cs_adm_mode') == 'dark') {
-				cookie.update('cs_adm_mode', 'light')
-				mode.root.removeClass('dark');
-				mode.root.addClass('light');
-				mode.modeSwitch.find('i').removeClass('fa');
-				mode.modeSwitch.find('i').addClass('fal');
-			} else {
-				cookie.update('cs_adm_mode', 'dark')
-				mode.root.removeClass('light');
-				mode.root.addClass('dark');
-				mode.modeSwitch.find('i').addClass('fa');
-				mode.modeSwitch.find('i').removeClass('fal');
-			}
+			(cookie.read('cs_adm_mode') == 'dark')? mode.set('light'): mode.set('dark');
 		},
 		/** @final */
 		set(val) {
@@ -1559,8 +1548,8 @@
 $(document).ready(function() {
 	// -----========== Dark mode toggle ==========----- //
 		mode.initialize();
-		console.log(mode.modeSwitch);
-		mode.modeSwitch.click(() => {
+		console.log(mode.switch);
+		mode.switch.click(() => {
 			mode.toggle();
 			console.log('Here');
 		});
