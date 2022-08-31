@@ -146,7 +146,7 @@
 	}
 	/** @wip */
 	mode = {
-		modeSwitch: $('.mode-switch'),
+		modeSwitch: $('.app-header-right .mode-switch'),
 		root: $('html'),
 		/** @final */
 		toggle() {
@@ -173,17 +173,15 @@
 				cookie.create('cs_adm_mode', val)
 			}
 			if(val == "dark") {
-				mode.modeSwitch.addClass('active');
 				mode.modeSwitch.find('i').addClass('fa');
 				mode.modeSwitch.find('i').removeClass('fal');
 				mode.root.removeClass('light');
 				mode.root.addClass('dark');
 			} else {
-				mode.root.addClass('light');
-				mode.root.removeClass('dark');
-				mode.modeSwitch.removeClass('active');
 				mode.modeSwitch.find('i').removeClass('fa');
 				mode.modeSwitch.find('i').addClass('fal');
+				mode.root.removeClass('dark');
+				mode.root.addClass('light');
 			}
 		},
 	}
