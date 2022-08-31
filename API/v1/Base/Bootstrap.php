@@ -39,13 +39,14 @@
 		 *	@return	exit	Ends the API and displays an error
 		 */
 			function invalid_request(int $loc) {
+				parse_str(QUERY_STRING, $query);
 				exit(json_encode(array(
 					'error' => 'No valid host, request method, key or parameters.',
 					'location' => $loc,
 					'Host' => $referrer,
 					'Request' => $_SERVER['REQUEST_METHOD'],
-					'Key' => QUERY_STRING['api_key'],
-					'Parameters' => QUERY_STRING,
+					'Key' => $query['api_key'],
+					'Parameters' => $query,
 				)));
 			};
 		/**	get_uri
