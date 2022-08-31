@@ -49,7 +49,7 @@
 									<td>'.$row['Transaction ID'].'</td>
 									<td>
 										<a href="/Orders/Shipping/'.$row['Invoice ID'].'">
-											<i class="fa fa-truck"></i>
+											<i class="fa fa-box-full"></i>
 										</a>
 										<a href="javascript:orders.printReciept('.$row['Invoice ID'].');">
 											<i class="fa fa-print"></i>
