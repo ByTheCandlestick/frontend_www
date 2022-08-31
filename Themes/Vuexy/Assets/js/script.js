@@ -173,13 +173,13 @@
 			if(val == "dark") {
 				mode.root.removeClass('light');
 				mode.root.addClass('dark');
-				mode.switch.find('i').addClass('fal');
-				mode.switch.find('i').removeClass('fa');
+				mode.switch.find('i').addClass('fa');
+				mode.switch.find('i').removeClass('fal');
 			} else {
 				mode.root.removeClass('dark');
 				mode.root.addClass('light');
-				mode.switch.find('i').addClass('fa');
-				mode.switch.find('i').removeClass('fal');
+				mode.switch.find('i').addClass('fal');
+				mode.switch.find('i').removeClass('fa');
 			}
 		},
 	}
