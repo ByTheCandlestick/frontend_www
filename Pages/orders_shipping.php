@@ -129,33 +129,43 @@
 			<?
 				/**/if($order['Shipping status']==0):
 					$s1 = 'active';
-					$s1_click='<a href="">';
-					$s2_click='<a href="">';
-					$s3_click='<a href="">';
-					$s4_click='<a href="">';
+					$s1_click='<a href="">Mark Order as Confirmed</a>';
+					$s2_click='<a href="">Mark as picked</a>';
+					$s3_click='<a href="">Mark as out for delivery</a>';
+					$s4_click='<a href="">Mark as delivered</a>';
 				elseif($order['Shipping status']==1):
 					$s1='completed';
 					$s2 = 'active';
-					$s2_click='<a href="">';
-					$s3_click='<a href="">';
-					$s4_click='<a href="">';
+					$s1_click='Order Confirmed';
+					$s2_click='<a href="">Mark as picked</a>';
+					$s3_click='<a href="">Mark as out for delivery</a>';
+					$s4_click='<a href="">Mark as delivered</a>';
 				elseif($order['Shipping status']==2):
 					$s1=$s2='completed';
 					$s3 = 'active';
-					$s3_click='<a href="">';
-					$s4_click='<a href="">';
+					$s1_click='Order Confirmed';
+					$s2_click='Picked up by courier';
+					$s3_click='<a href="">Mark as out for delivery</a>';
+					$s4_click='<a href="">Mark as delivered</a>';
 				elseif($order['Shipping status']==3):
 					$s1=$s2=$s3='completed';
 					$s4 = 'active';
-					$s4_click='<a href="">';
+					$s1_click='Order Confirmed';
+					$s2_click='Picked up by courier';
+					$s3_click='out for delivery';
+					$s4_click='<a href="">Mark as delivered</a>';
 				elseif($order['Shipping status']==4):
 					$s1=$s2=$s3=$s4='completed';
+					$s1_click='Order Confirmed';
+					$s2_click='Picked up by courier';
+					$s3_click='out for delivery';
+					$s4_click='Delivered';
 				endif;
 				print("
-					<div class=\"step $s1 confirmed\">$s1_click Order Confirmed</div>
-					<div class=\"step $s2 picked\">$s2_click Picked by courier</div>
-					<div class=\"step $s3 dispatched\">$s2_click On the way</div>
-					<div class=\"step $s4 delivered\">$s2_click Delivered</div>
+					<div class=\"step $s1 confirmed\">$s1_click</div>
+					<div class=\"step $s2 picked\">$s2_click</div>
+					<div class=\"step $s3 dispatched\">$s2_click</div>
+					<div class=\"step $s4 delivered\">$s2_click</div>
 				");
 			?>
 			</div>
