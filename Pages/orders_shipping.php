@@ -108,20 +108,20 @@
 				<div class="mb-2 row p-2 border text-center">
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Order ID:</h5>
-						<p><?print($invoice['Invoice ID']) ?></p>
+						<p><?= ($invoice['Invoice ID']) ?></p>
 					</div>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Order date: </h5>
-						<p><?print(date('d M Y', $invoice['Date']))?></p>
+						<p><?= (date('d M Y', $invoice['Date']))?></p>
 					</div>
 					<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Estimated delivery date: </h5>
-						<p><?print(date('d M Y', strtotime($invoice['Date'].'+ 7 days')))?></p>
+						<p><?= (date('d M Y', strtotime($invoice['Date'].'+ 7 days')))?></p>
 					</div>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Shipped by: </h5>
-						<p><?print($invoice['Ship to']) ?></p>
+						<p><?= ($invoice['Ship to']) ?></p>
 					</div>
 				</div>
 			</div>
