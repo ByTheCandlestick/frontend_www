@@ -1428,6 +1428,7 @@
 					withCredentials: true,
 				},
 				success(body) {
+					console.log(body);
 					if(body.status == "success") {
 						alert.simple("Successfully updated", "success");
 						misc.wait(2);
