@@ -135,7 +135,7 @@
 					</div>
 					<div class="col-4">
 						<h3>
-
+							<?=(number_format($lastYearIncome[1] - $lastYearExpences[1], 2) == 0)?'<i class="far fa-infinity"></i>':((number_format($currYearIncome[1] - $currYearExpences[1], 2) - number_format($lastYearIncome[1] - $lastYearExpences[1], 2)) / number_format($lastYearIncome[1] - $lastYearExpences[1], 2)) * 100;?>%
 						</h3>
 					</div>
 				</div>
