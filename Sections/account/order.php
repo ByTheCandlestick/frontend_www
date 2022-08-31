@@ -109,18 +109,18 @@
 		</div>
 		<div class="col-12 order-progress-stepper">
 			<?
-				/**/if($invoice['Shipping status']==0):
+				/**/if($order['Shipping status']==0):
 					$s1 = 'active';
-				elseif($invoice['Shipping status']==1):
+				elseif($order['Shipping status']==1):
 					$s1='completed';
 					$s2 = 'active';
-				elseif($invoice['Shipping status']==2):
+				elseif($order['Shipping status']==2):
 					$s1=$s2='completed';
 					$s3 = 'active';
-				elseif($invoice['Shipping status']==3):
+				elseif($order['Shipping status']==3):
 					$s1=$s2=$s3='completed';
 					$s4 = 'active';
-				elseif($invoice['Shipping status']==4):
+				elseif($order['Shipping status']==4):
 					$s1=$s2=$s3=$s4='completed';
 				endif;
 				print("
