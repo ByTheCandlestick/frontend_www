@@ -71,28 +71,32 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">SALES YoY</h5>
-					<p class="card-text">
-						<span>
-							<?
-								if($currYearIncome[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
-									print($fmt->format(number_format($currYearIncome[1], 2)));
-								}
-							?>
-						</span>
-						</br>
-						<span>
-							<?
-								if($lastYearIncome[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
-									print($fmt->format(number_format($lastYearIncome[1], 2)));
-								}
-							?>
-						</span>
+					<p class="card-text row">
+						<div class="col-8">
+							<span>
+								<?
+									if($currYearIncome[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
+										print($fmt->format(number_format($currYearIncome[1], 2)));
+									}
+								?>
+							</span>
+							</br>
+							<span>
+								<?
+									if($lastYearIncome[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
+										print($fmt->format(number_format($lastYearIncome[1], 2)));
+									}
+								?>
+							</span>
+						</div>
+						<div class="col-4">
+						</div>
 					</p>
 				</div>
 			</div>
@@ -101,28 +105,32 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">INCOME YoY</h5>
-					<p class="card-text">
-						<span>
-							<?
-								if($currYearIncome[1] == 0 && $currYearExpences[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
-									print($fmt->format(number_format($currYearIncome[1] - $currYearExpences[1], 2)));
-								}
-							?>
-						</span>
-						</br>
-						<span>
-							<?
-								if($lastYearIncome[1] == 0 && $lastYearExpences[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
-									print($fmt->format(number_format($lastYearIncome[1] - $lastYearExpences[1], 2)));
-								}
-							?>
-						</span>
+					<p class="card-text row">
+						<div class="col-8">
+							<span>
+								<?
+									if($currYearIncome[1] == 0 && $currYearExpences[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
+										print($fmt->format(number_format($currYearIncome[1] - $currYearExpences[1], 2)));
+									}
+								?>
+							</span>
+							</br>
+							<span>
+								<?
+									if($lastYearIncome[1] == 0 && $lastYearExpences[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
+										print($fmt->format(number_format($lastYearIncome[1] - $lastYearExpences[1], 2)));
+									}
+								?>
+							</span>
+						</div>
+						<div class="col-4">
+						</div>
 					</p>
 				</div>
 			</div>
@@ -131,28 +139,32 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">SALES MoM</h5>
-					<p class="card-text">
-						<span>
-							<?
-								if($currMonthIncome[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
-									print($fmt->format(number_format($currMonthIncome[1], 2)));
-								}
-							?>
-						</span>
-						</br>
-						<span>
-							<?
-								if($lastMonthIncome[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
-									print($fmt->format(number_format($lastMonthIncome[1], 2)));
-								}
-							?>
-						</span>
+					<p class="card-text row">
+						<div class="col-8">
+							<span>
+								<?
+									if($currMonthIncome[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
+										print($fmt->format(number_format($currMonthIncome[1], 2)));
+									}
+								?>
+							</span>
+							</br>
+							<span>
+								<?
+									if($lastMonthIncome[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
+										print($fmt->format(number_format($lastMonthIncome[1], 2)));
+									}
+								?>
+							</span>
+						</div>
+						<div class="col-4">
+						</div>
 					</p>
 				</div>
 			</div>
@@ -161,28 +173,32 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">INCOME MoM</h5>
-					<p class="card-text">
-						<span>
-							<?
-								if($currMonthIncome[1] == 0 && $currMonthExpences[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
-									print($fmt->format(number_format($currMonthIncome[1] - $currMonthExpences[1], 2)));
-								}
-							?>
-						</span>
-						</br>
-						<span>
-							<?
-								if($lastMonthIncome[1] == 0 && $lastMonthExpences[1] == 0) {
-									print('NaN');
-								} else {
-									$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
-									print($fmt->format(number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)));
-								}
-							?>
-						</span>
+					<p class="card-text row">
+						<div class="col-8">
+							<span>
+								<?
+									if($currMonthIncome[1] == 0 && $currMonthExpences[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
+										print($fmt->format(number_format($currMonthIncome[1] - $currMonthExpences[1], 2)));
+									}
+								?>
+							</span>
+							</br>
+							<span>
+								<?
+									if($lastMonthIncome[1] == 0 && $lastMonthExpences[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
+										print($fmt->format(number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)));
+									}
+								?>
+							</span>
+						</div>
+						<div class="col-4">
+						</div>
 					</p>
 				</div>
 			</div>
