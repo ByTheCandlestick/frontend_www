@@ -104,6 +104,25 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
+			<div class="mb-2 row p-2 border text-center">
+				<div class="col-6 col-md-3 pb-3">
+					<h5>Order ID:</h5>
+					<p><?print($invoice['Invoice ID']) ?></p>
+				</div>
+				<div class="col-6 col-md-3 pb-3">
+					<h5>Estimated Delivery time: </h5>
+					<p><?print(date('d M Y', strtotime($invoice['Date'].'+ 7 days')))?></p>
+				</div>
+				<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
+				<div class="col-6 col-md-3 pb-3">
+					<h5>Status: </h5>
+					<p><?print($invoice['Status']) ?></p>
+				</div>
+				<div class="col-6 col-md-3 pb-3">
+					<h5>Shipped by: </h5>
+					<p><?print($invoice['Ship to']) ?></p>
+				</div>
+			</div>
 			<div class="order-progress-stepper">
 				<?
 					/**/if($invoice['Shipping status']==0):
