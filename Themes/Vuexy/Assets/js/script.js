@@ -67,7 +67,7 @@
 			let date = new Date();
 			date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
 			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
-			return name;
+
 		},
 		/** @final */
 		read(name) {
