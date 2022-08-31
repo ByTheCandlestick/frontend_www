@@ -48,7 +48,7 @@
 			// Send output
 				$this->sendOutput(
 					$str_response,
-					$arr_http
+					array("Content-Type: application/json", "HTTP/1.1 200 OK")
 				);
 			// End of function
 		}
