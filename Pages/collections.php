@@ -37,9 +37,10 @@
 					$query = DB_Query("SELECT * FROM `products_collections`");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
+							$editable = ($userperm['adm_access-collections-edit']==1)?'<a href="/Collection/Edit/'.$row['ID'].'">'.$row['ID'].'</a>':$row['ID'];
 							print('
 								<tr>
-									<th scope="row">'.$row['ID'].'</th>
+									<th scope="row">'.$editable.'</th>
 									<td>'.$row['Name'].'</td>
 									<td>'.$row['Active'].'</td>
 									<td>

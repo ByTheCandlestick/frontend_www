@@ -38,9 +38,10 @@
 					$query = DB_Query("SELECT * FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
+							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$row['Invoice ID'].'">'.$row['Invoice ID'].'</a>':$row['Invoice ID'];
 							print('
 								<tr>
-									<th scope="row"><a href="/Orders/View/'.$row['Invoice ID'].'">'.$row['Invoice ID'].'</a></th>
+									<th scope="row">'.$editable.'</th>
 									<td>'.$row['Created'].'</td>
 									<td>'.$row['Subtotal'].'</td>
 									<td>'.$row['Tax'].'</td>
