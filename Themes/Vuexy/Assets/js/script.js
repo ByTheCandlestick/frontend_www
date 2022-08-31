@@ -184,7 +184,9 @@
 	}
 	/** @final */
 	website = {
+		/** @final */
 		domain: {
+			/** @final */
 			create() {
 				$.ajax({
 					url: api_url + '/Website/',
@@ -260,6 +262,7 @@
 					}
 				});
 			},
+			/** @final */
 			delete(sid) {
 				$.ajax({
 					url: api_url + '/Website/' + sid + '/',
@@ -279,7 +282,9 @@
 				});
 			},
 		},
+		/** @final */
 		page: {
+			/** @final */
 			create() {
 				var styles = [];	$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
 				var scripts = [];	$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
@@ -316,6 +321,7 @@
 					}
 				});
 			},
+			/** @final */
 			update(pid) {
 				var styles = [];	$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
 				var scripts = [];	$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
@@ -348,6 +354,7 @@
 					}
 				});
 			},
+			/** @final */
 			delete(pid) {
 				data = {
 					'api_key': api_key,
@@ -368,7 +375,9 @@
 				});
 			},
 		},
+		/** @final */
 		layout: {
+			/** @final */
 			update(pid) {
 				var elementIds = [];
 				var elementString = "";
@@ -425,6 +434,7 @@
 					}
 				});
 			},
+			/** @final */
 			initializeOxygen() {
 				$('.templateBase').innerHTML = "";
 				var sectionString = $('section .sections').attr('data-original-sections');
@@ -493,6 +503,7 @@
 					$('.templateBase').html("<p>Drag an element from the left hand side to start building the website!</p>");
 				}
 			},
+			/** @final */
 			rangeMovement(event, ui) {
 				// Vars
 					var parentGrid = $(event.target).parent().parent()[0],
@@ -547,6 +558,7 @@
 						$(containers[handle+1]).addClass("col-"+rColNew);
 				//
 			},
+			/** @final */
 			initializeSliders() {
 				$('.templateBase .range-2').each(function() {
 					if(!$(this).hasClass('initialized')) {
@@ -635,7 +647,9 @@
 				});
 			}
 		},
+		/** @final */
 		style: {
+			/** @final */
 			create() {
 				data = {
 					'api_key': api_key,
@@ -664,6 +678,7 @@
 					}
 				});
 			},
+			/** @final */
 			update(id) {
 				data = {
 					'api_key': api_key,
@@ -688,6 +703,7 @@
 					}
 				});
 			},
+			/** @final */
 			delete(id) {
 				data = {
 					'api_key': api_key,
@@ -708,7 +724,9 @@
 				});
 			}
 		},
+		/** @final */
 		script: {
+			/** @final */
 			create() {
 				data = {
 					'api_key': api_key,
@@ -736,6 +754,7 @@
 					}
 				});
 			},
+			/** @final */
 			update(id) {
 				data = {
 					'api_key': api_key,
@@ -760,6 +779,7 @@
 				});
 				
 			},
+			/** @final */
 			delete(id) {
 				data = {
 					'api_key': api_key,
@@ -780,7 +800,9 @@
 				});
 			}
 		},
+		/** @final */
 		theme: {
+			/** @final */
 			create() {
 				data = {
 					'api_key': api_key,
@@ -808,6 +830,7 @@
 					}
 				});
 			},
+			/** @final */
 			update(id) {
 				data = {
 					'api_key': api_key,
@@ -831,6 +854,7 @@
 					}
 				});
 			},
+			/** @final */
 			delete(id) {
 				data = {
 					'api_key': api_key,
@@ -852,9 +876,9 @@
 			}
 		},
 	};
-	/** @wip */
+	/** @final */
 	user = {
-		/** @wip */
+		/** @final */
 		create() {
 			$.ajax({
 				url: api_url + '/Users/',
@@ -1191,8 +1215,9 @@
 			},
 		}
 	}
-	/** @wip */
+	/** @final */
 	supplier = {
+		/** @final */
 		create() {
 			data = {
 				'api_key': api_key,
@@ -1223,6 +1248,7 @@
 				}
 			});
 		},
+		/** @final */
 		update(sid) {
 			data = {
 				'api_key': api_key,
@@ -1248,6 +1274,7 @@
 				}
 			});
 		},
+		/** @final */
 		delete(sid) {
 			data = {
 				'api_key': api_key,
@@ -1268,16 +1295,18 @@
 			});
 		},
 	}
-	/** @wip */
+	/** @final */
 	assistance = {
 		jsonData: {},
 		id1: null,
 		id2: null,
 		id3: null,
+		/** @final */
 		markActive(name, elem) {
 			$("div[name="+name+"]").find("li.active").removeClass('active');
 			$(elem).addClass('active');
 		},
+		/** @final */
 		loadLV1() {
 			$("div[name=lv1], div[name=lv2], div[name=lv3], div[name=lv4]").html('');
 			assistance.jsonData.forEach((data) => {
@@ -1289,6 +1318,7 @@
 				);
 			});
 		},
+		/** @final */
 		loadLV2(elem, id) {
 			this.markActive("lv1", elem)
 			this.id1 = id;
@@ -1302,6 +1332,7 @@
 				);
 			});
 		},
+		/** @final */
 		loadLV3(elem, id) {
 			this.id2 = id;
 			$("div[name=lv3], div[name=lv4]").html('');
@@ -1315,6 +1346,7 @@
 				);
 			});
 		},
+		/** @final */
 		loadLV4(elem, id) {
 			this.id3 = id
 			this.markActive("lv3", elem)
@@ -1330,9 +1362,11 @@
 	orders = {
 		/** @final */
 		refunds: {
+			/** @final */
 			modal() {
 				$('#refundModal').modal('show');
 			},
+			/** @final */
 			check() {
 				var currValue = $('input[name=refundCurrValue]'),
 					maxValue = $('input[name=refundMaxValue]');
@@ -1346,10 +1380,12 @@
 					}
 				}
 			},
+			/** @final */
 			confirm() {
 				$('#refundModal').modal('hide');
 				$('#refundConfirmModal').modal('show');
 			},
+			/** @final */
 			commit() {
 				$.ajax({
 					url: api_url + '/Stripe/Refund/',
@@ -1375,6 +1411,28 @@
 		/** @final */
 		displayRefunds() {
 			$('#allRefundModal').modal('show');
+		},
+		/** @wip */
+		updateStatus(newStatus, invoice) {
+			$.ajax({
+				url: api_url + '/Orders/Status/',
+				data: {
+					'api_key': api_key,
+					'status': newStatus,
+					'invoice': invoice,
+				},
+				type: 'POST',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					alert.simple("Successfully updated", "success");
+					window.location.reload();
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
 		},
 		/** @wip */
 		printOrder() {
