@@ -123,8 +123,12 @@
 	}
 	/** @final */
 	search = {
-		suggestions: $(".search-suggestions"),
+		suggestions: null,
 		jsonData: null,
+		/** @final */
+		initialize() {
+			search.suggestions = $(".search-suggestions");
+		},
 		/** @final */
 		process(ev) {
 			if(ev.key == 'Enter'){
@@ -1552,10 +1556,11 @@
 		},
 	}
 $(document).ready(function() {
-	// -----========== Dark mode toggle ==========----- //
+	// -----========== Dark mode toggle ==========----- // @final //
 		mode.initialize();
 		mode.switch.click(() => { mode.toggle(); });
 	// -----========== Search ==========----- // @final //
+		search.initialize();
 		$(".search-area input").focusout(function() {
 			if(search.suggestions.filter(":hover").length === 0) {
 				search.suggestions.hide();
