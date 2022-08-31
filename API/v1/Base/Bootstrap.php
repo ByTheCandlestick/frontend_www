@@ -48,7 +48,7 @@
 					'info' => array(
 						'Host' => $referrer,
 						'Request' => $_SERVER['REQUEST_METHOD'],
-						'Key' => $api_key,
+						'Api key' => $api_key,
 						'Parameters' => $query,
 					)
 				)));
