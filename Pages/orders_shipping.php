@@ -119,7 +119,7 @@
 					elseif($order['Status'] > 30 && $order['Status'] <= 39):
 						$s1=$s2=$s3=$s4='completed';
 					else:
-						$s1 = 'active'
+						$s1 = 'active';
 					endif;
 
 					print("
