@@ -98,7 +98,7 @@
 					</div>
 					<div class="col-4">
 						<h3>
-
+							<?=(($currYearIncome[1] - $lastYearIncome[1])/$lastYearIncome[1]) * 100?>
 						</h3>
 					</div>
 				</div>
