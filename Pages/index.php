@@ -50,11 +50,10 @@
 		$currYearExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY 1) as a;", $currYear)));
 		$lastYearIncome		= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastYear, $currYear)));
 		$lastYearExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastYear, $currYear)));
-		$currMonthIncome	= mysqli_fetch_row(DB_QUERY($print = sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY 1) as a;", $currMonth)));
+		$currMonthIncome	= mysqli_fetch_row(DB_QUERY( sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY 1) as a;", $currMonth)));
 		$currMonthExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY 1) as a;", $currMonth)));
 		$lastMonthIncome	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastMonth, $currMonth)));
 		$lastMonthExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastMonth, $currMonth)));
-		print_r($print);
 ?>
 <section>
 	<!-- Section Header -->
