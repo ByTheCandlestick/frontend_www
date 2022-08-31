@@ -129,6 +129,7 @@
 	search = {
 		suggestions: $(".search-suggestions"),
 		jsonData: null,
+		/** @final */
 		process(ev) {
 			if(ev.key == 'Enter'){
 				var location = $(search.suggestions.children()[0]).find("a").attr("href");
@@ -145,6 +146,7 @@
 				}));
 			}
 		},
+		/** @final */
 		dispaySuggestions(Arr) {
 			for(var i=0; i<Arr.length; i++) {
 				search.suggestions.html(search.suggestions.html() + "<li><a href='" + Arr[i].url + "'>" + Arr[i].name + " - " + Arr[i].desc + "</a></li>");
@@ -182,16 +184,15 @@
 		},
 		/** @wip */
 		set(val) {
-			console.log('Setting: '+val);
 			cookie.update('cs_adm_mode', val);
 			if(val == "dark") {
-				mode.modeSwitch.find('i').addClass('fa');
-				mode.modeSwitch.find('i').removeClass('fal');
+				this.modeSwitch.find('i').addClass('fa');
+				this.modeSwitch.find('i').removeClass('fal');
 				mode.root.removeClass('light');
 				mode.root.addClass('dark');
 			} else {
-				mode.modeSwitch.find('i').removeClass('fa');
-				mode.modeSwitch.find('i').addClass('fal');
+				this.modeSwitch.find('i').removeClass('fa');
+				this.modeSwitch.find('i').addClass('fal');
 				mode.root.removeClass('dark');
 				mode.root.addClass('light');
 			}
