@@ -106,7 +106,7 @@
 		<div class="row">
 			<div class="order-progress-stepper">
 				<?
-					$s1=$s2=$s3=$s4='';
+					print_r($invoice['Shipping status']);
 					/**/if($invoice['Shipping status'] = 0):
 						$s1 = 'active';
 					elseif($invoice['Shipping status'] = 1):
