@@ -154,7 +154,7 @@
 	}
 	/** @wip */
 	mode = {
-		modeSwitch: $('.app-header-right .mode-switch'),
+		modeSwitch: $('.mode-switch'),
 		root: $('html'),
 		/** @final */
 		initialize() {
