@@ -112,7 +112,7 @@
 					</div>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Order date: </h5>
-						<p><?print(date('d M Y', strtotime($invoice['Date'])))?></p>
+						<p><?print(date('d M Y', $invoice['Date']))?></p>
 					</div>
 					<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 					<div class="col-6 col-md-3 pb-3">
