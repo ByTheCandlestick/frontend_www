@@ -98,7 +98,7 @@
 					</div>
 					<div class="col-4">
 						<h3>
-							<?=($lastYearIncome[1] == 0)?'<i class="fad fa-infinity"></i>':(($currYearIncome[1] - $lastYearIncome[1]) / $lastYearIncome[1]) * 100;?>%
+							<?=($lastYearIncome[1] == 0)?'<i class="far fa-infinity"></i>':(($currYearIncome[1] - $lastYearIncome[1]) / $lastYearIncome[1]) * 100;?>%
 						</h3>
 					</div>
 				</div>
