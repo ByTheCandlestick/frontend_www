@@ -142,7 +142,7 @@
 					$s4_click='<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 				elseif($invoice['Shipping status']==2):
 					$s1=$s2='completed';
-					$s3 = 'active';
+					$s4 = 'active';
 					$s1_click='Order Confirmed';
 					$s2_click='Picked up by courier';
 					$s3_click='<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
