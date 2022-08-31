@@ -49,7 +49,7 @@
 			height: 5px;
 			position: relative;
 			z-index: 0;
-			top: -55px;
+			top: -70%;
 		}
 	/* --=== Contents ===-- */
 		.order-progress-stepper .step.confirmed::before { content: "\f00c"; }
