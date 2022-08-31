@@ -221,40 +221,40 @@
 			<h3>Sales this week</h3>
 			<chart class="ct-sales-day" />
 		</div>
-			<script>
-				new Chartist.Line('.ct-sales-day', {
-					labels: ['<?print(implode('\', \'', $days))?>'],
-					series: [
-						[<?print(implode(', ', $dailySales))?>]
-					]
-				}, {
-					fullWidth: true,
-					showArea: true,
-					showLine: false,
-					chartPadding: {
-						right: 40
-					}
-				});
-			</script>
+		<script>
+			new Chartist.Line('.ct-sales-day', {
+				labels: ['<?print(implode('\', \'', $days))?>'],
+				series: [
+					[<?print(implode(', ', $dailySales))?>]
+				]
+			}, {
+				fullWidth: true,
+				showArea: true,
+				showLine: false,
+				chartPadding: {
+					right: 40
+				}
+			});
+		</script>
 		<div class="col-12 col-lg-6">
 			<h3>Sales This year</h3>
 			<chart class="ct-sales-month" />
 		</div>
-			<script>
-				new Chartist.Line('.ct-sales-month', {
-					labels: ['<?print(implode('\', \'', $months))?>'],
-					series: [
-						[<?print(implode(', ', $monthlySales))?>]
-					]
-				}, {
-					fullWidth: true,
-					showArea: true,
-					showLine: false,
-					chartPadding: {
-						right: 40
-					}
-				});
-			</script>
+		<script>
+			new Chartist.Line('.ct-sales-month', {
+				labels: ['<?print(implode('\', \'', $months))?>'],
+				series: [
+					[<?print(implode(', ', $monthlySales))?>]
+				]
+			}, {
+				fullWidth: true,
+				showArea: true,
+				showLine: false,
+				chartPadding: {
+					right: 40
+				}
+			});
+		</script>
 	</div>
 	<div class="row" name="Sales / Month">
 	</div>
