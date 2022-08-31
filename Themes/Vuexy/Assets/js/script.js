@@ -62,11 +62,14 @@
 	}
 	/** @final */
 	cookie = {
+		/** @final */
 		create(name, value, expDays, path = '/') {
 			let date = new Date();
 			date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
 			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
+			return name;
 		},
+		/** @final */
 		read(name) {
 			var name = name+"=",
 				arr = decodeURIComponent(document.cookie).split('; '),
@@ -76,18 +79,22 @@
 			})
 			return res;
 		},
+		/** @final */
 		update(name, value) {
 			cookie.create(name, value, 30);
 		},
+		/** @final */
 		delete(name) {
 			document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 		},
+		/** @final */
 		exists(name) {
 			return (cookie.read(name) === undefined)? false: true;
 		},
 	}
 	/** @final */
 	alert = {
+		/** @final */
 		simple(text, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
 			$('\
 				<div class="alert alert-'+colour+'" role="alert">\
@@ -101,6 +108,7 @@
 				}, stay);
 			});
 		},
+		/** @final */
 		additional(title, content, additional, colour="info", fadeIn=500, stay=5000, fadeOut=500) {
 			$('\
 				<div class="alert alert-'+colour+'" role="alert"> \
@@ -148,12 +156,9 @@
 	mode = {
 		modeSwitch: $('.app-header-right .mode-switch'),
 		root: $('html'),
+		/** @final */
 		initialize() {
-			if(cookie.exists('cs_adm_mode')) {
-				mode.set(cookie.read('cs_adm_mode'));
-			} else {
-				mode.set('light');
-			}
+			(cookie.exists('cs_adm_mode'))? mode.set(cookie.read('cs_adm_mode')): mode.set(cookie.create('cs_adm_mode', 'light', 365));
 		},
 		/** @final */
 		toggle() {
@@ -170,15 +175,10 @@
 				mode.modeSwitch.find('i').addClass('fa');
 				mode.modeSwitch.find('i').removeClass('fal');
 			}
-			mode.modeSwitch.toggleClass('active');
 		},
 		/** @wip */
 		set(val) {
-			if(cookie.exists('cs_adm_mode')) {
-				cookie.update('cs_adm_mode', val);
-			} else {
-				cookie.create('cs_adm_mode', val)
-			}
+			cookie.update('cs_adm_mode', val);
 			if(val == "dark") {
 				mode.modeSwitch.find('i').addClass('fa');
 				mode.modeSwitch.find('i').removeClass('fal');
