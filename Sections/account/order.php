@@ -95,7 +95,7 @@
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Order date: </h5>
-				<p><?= (date('d M Y', $order['Created']))?></p>
+				<p><?= (date('d M Y', strtotime($order['Created'])))?></p>
 			</div>
 			<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 			<div class="col-6 col-md-3 pb-3">
