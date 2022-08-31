@@ -63,7 +63,7 @@
 	/** @final */
 	cookie = {
 		/** @final */
-		create(name, value, expDays, path = '/') {
+		create(name, value, expDays, path='/') {
 			let date = new Date();
 			date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
 			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
@@ -161,7 +161,7 @@
 			if(cookie.exists('cs_adm_mode')) {
 				mode.set(cookie.read('cs_adm_mode'))
 			} else {
-				mode.set(cookie.create('cs_adm_mode', 'light', 365))
+				mode.set(cookie.create("cs_adm_mode", "light", 365))
 			};
 		},
 		/** @final */
