@@ -71,7 +71,7 @@
 			<div class="card h-100">
 				<div class="card-body">
 					<h5 class="card-title">SALES YoY</h5>
-						<div class="col-8">
+					<div class="col-8">
 						<p class="card-text">
 							<span>
 								<?
@@ -94,10 +94,10 @@
 									}
 								?>
 							</span>
-						</div>
-						<div class="col-4">
-						</div>
-					</p>
+						</p>
+					</div>
+					<div class="col-4">
+					</div>
 				</div>
 			</div>
 		</div>
