@@ -1430,7 +1430,8 @@
 				success(body) {
 					if(body.status == "success") {
 						alert.simple("Successfully updated", "success");
-						//window.location.reload();
+						misc.wait(2);
+						window.location.reload();
 					}
 				},
 				error(body) {
