@@ -158,7 +158,11 @@
 		root: $('html'),
 		/** @final */
 		initialize() {
-			(cookie.exists('cs_adm_mode'))? mode.set(cookie.read('cs_adm_mode')): mode.set(cookie.create('cs_adm_mode', 'light'));
+			if(cookie.exists('cs_adm_mode')) {
+				mode.set(cookie.read('cs_adm_mode'))
+			} else {
+				mode.set(cookie.create('cs_adm_mode', 'light', 365))
+			};
 		},
 		/** @final */
 		toggle() {
