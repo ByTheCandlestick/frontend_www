@@ -44,7 +44,7 @@
 				<?
 					if(count($collections) > 0) {
 						foreach($collections as $x) {
-							$editable = ($userperm['adm_access-collections-edit']==1)?'<a href="/Collection/Edit/'.$x['Name'].'">'.$x['Name'].'</a>':$x['Name'];
+							$editable = ($userperm['adm_access-collections-edit']==1)?'<a href="/Collection/Edit/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>

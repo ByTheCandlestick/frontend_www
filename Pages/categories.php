@@ -44,7 +44,7 @@
 				<?
 					if(count($categories) > 0) {
 						foreach($categories as $x) {
-							$editable = ($userperm['adm_access-categories-edit']==1)?'<a href="/Category/Edit/'.$x['Name'].'">'.$x['Name'].'</a>':$x['Name'];
+							$editable = ($userperm['adm_access-categories-edit']==1)?'<a href="/Category/Edit/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>

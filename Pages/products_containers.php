@@ -47,28 +47,23 @@
 					<th scope="col">Size (cl)</th>
 					<th scope="col">Price (ea)</th>
 					<th scope="col">Active</th>
-					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
 				<?
 					if(count($containers) > 0) {
 						foreach($containers as $x) {
+							$editable = ($userperm['adm_access-collections-edit']==1)?'<a href="/Products/Container/'.$x['ID'].'">'.$x['ID'].'</a>':$x['ID'];
 							print('
 								<tr>
-									<th scope="row">'.$row['ID'].'</th>
-									<td>'.$row['Name'].'</td>
-									<td>'.$row['Type'].'</td>
-									<td><a href="javascript:modal.simple();">'.$suppliers[$row['Supplier']]['Name'].'<a></td>
-									<td><a href="javascript:misc.copyToClipboard(\''.$row['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$row['Supplier']]['Website'].'\');},1500);">'.$row['ItemRef'].'</a></td>
-									<td>'.$row['Size (cl)'].'</td>
-									<td>'.$row['Price (ea)'].'</td>
-									<td>'.$row['Active'].'</td>
-									<td>
-										<a href="/Products/Container/'.$row['ID'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</td>
+									<th scope="row">'.$editable.'</th>
+									<td>'.$x['Name'].'</td>
+									<td>'.$x['Type'].'</td>
+									<td><a href="javascript:modal.simple();">'.$suppliers[$x['Supplier']]['Name'].'<a></td>
+									<td><a href="javascript:misc.copyToClipboard(\''.$x['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$x['Supplier']]['Website'].'\');},1500);">'.$x['ItemRef'].'</a></td>
+									<td>'.$x['Size (cl)'].'</td>
+									<td>'.$x['Price (ea)'].'</td>
+									<td>'.$x['Active'].'</td>
 								</tr>
 							');
 						}
@@ -77,7 +72,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
