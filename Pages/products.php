@@ -126,7 +126,7 @@
 					<svg id="upcCode"></svg>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" onClick="javascript:product.downloadBarcode();">Close</button>
+					<button type="button" class="btn btn-outline-info" onClick="javascript:product.downloadBarcode();">Download</button>
 					<button type="button" class="btn btn-secondary" onClick="javascript:$('#productBarcodeModal').modal('hide');">Close</button>
 				</div>
 			</div>
