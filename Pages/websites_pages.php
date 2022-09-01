@@ -1,4 +1,5 @@
 <?
+	print(QS);
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS)));
     $pages = array();
 	$pages_per_page = 100;
