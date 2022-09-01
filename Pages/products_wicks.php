@@ -49,7 +49,7 @@
 				<?
 					if(count($wicks) > 0) {
 						foreach($wicks as $x) {
-							$editable = ($userperm['adm_access-collections-edit']==1)?'<a href="/Products/Wick/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
+							$editable = ($userperm['adm_access-product-wicks-edit']==1)?'<a href="/Products/Wick/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
