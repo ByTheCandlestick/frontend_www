@@ -1,11 +1,12 @@
 <?
+	$products = array();
+	$products_per_page = 100;
+?><?
 	$q = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $categories[$row['ID']] = $row['Name']; }
 	$q = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $collections[$row['ID']] = $row['Name']; }
 
-	$products = array();
-	$products_per_page = 100;
 	$total_products = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$products_per_page :0;
     $q = DB_Query("SELECT * FROM `products` ORDER BY `SKU` DESC LIMIT $products_per_page OFFSET $offset");

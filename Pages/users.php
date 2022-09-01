@@ -1,6 +1,7 @@
 <?
     $users = array();
 	$users_per_page = 100;
+?><?
 	$total_users = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Users`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$users_per_page :0;
     $q = DB_Query("SELECT * FROM `Users` ORDER BY `ID` DESC LIMIT $users_per_page OFFSET $offset");

@@ -1,9 +1,10 @@
 <?
+    $pages = array();
+	$pages_per_page = 100;
+?><?
 	[$domainID, $z] = QS;
 	(QS[1]==null)? $z=1: $z=QS[1];
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS[0])));
-    $pages = array();
-	$pages_per_page = 100;
 	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", QS[0])))[0];
 	$offset = ($z !== null)?(intval($z)-1)*$pages_per_page :0;
     $q = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC LIMIT %s OFFSET %s", $domainID, $pages_per_page, $offset));

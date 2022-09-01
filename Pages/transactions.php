@@ -1,6 +1,7 @@
 <?
     $transactions = array();
 	$transactions_per_page = 100;
+?><?
 	$total_transactions = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$transactions_per_page :0;
     $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT $transactions_per_page OFFSET $offset");

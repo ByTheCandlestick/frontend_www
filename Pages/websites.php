@@ -1,6 +1,7 @@
 <?
     $websites = array();
 	$websites_per_page = 100;
+?><?
 	$total_websites = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Website domains`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$websites_per_page :0;
     $q = DB_Query("SELECT * FROM `Website domains` ORDER BY `ID` DESC LIMIT $websites_per_page OFFSET $offset");
