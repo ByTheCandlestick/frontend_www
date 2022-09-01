@@ -11,6 +11,7 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Orders</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($orders)): count($orders);?>/<?=$total_orders?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
