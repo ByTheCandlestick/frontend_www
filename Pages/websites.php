@@ -54,14 +54,14 @@
 				<?
 					if(count($websites) > 0) {
 						foreach($websites as $x) {
-							$editable = ($userperm['adm_access-websites-page']==1)?'<a href="/Websites/Pages/'$x['ID'].'">'$x['Name'].'</a>':$row['ID'];
+							$editable = ($userperm['adm_access-websites-page']==1)?'<a href="/Websites/Pages/'.$x['ID'].'">'.$x['Name'].'</a>':$x['ID'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
-									<td><a href="'.((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')?'https':'http').'://'$x['Domain'].'" target="_blank">'$x['Domain'].'</a></td>
-									<td>'$x['Maintenance'].'</td>
+									<td><a href="'.((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')?'https':'http').'://'.$x['Domain'].'" target="_blank">'.$x['Domain'].'</a></td>
+									<td>'.$x['Maintenance'].'</td>
 									<td>
-										<a href="/Websites/Edit/'$x['ID'].'">
+										<a href="/Websites/Edit/'.$x['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 									</td>
