@@ -18,7 +18,7 @@
 	define('__THEME__',		getThemepage(false));
 	define('QS_PAGE',		isset($_GET['page']) ? strtolower($_GET['page']) : 'index');
 	define('QS_SUBPAGE',	isset($_GET['subpage']) ? strtolower($_GET['subpage']) : null);
-	define('QS',			isset($_GET['q']) ? strtolower($_GET['q']) : null);
+	define('QS',			isset($_GET['q']) ? explode('/', strtolower($_GET['q'])) : null);
 	define('__API__',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'api.' . removeSubdomain($_SERVER['HTTP_HOST']).'/v1');
 	define('URL_WWW',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'www.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	define('URL_BLOG',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'blog.' . removeSubdomain($_SERVER['HTTP_HOST']));
