@@ -122,7 +122,7 @@
 				<div class="modal-header">
 					<h5 class="modal-title">Product barcode</h5>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" id="barcodeContainer">
 					<svg id="upcCode"></svg>
 				</div>
 				<div class="modal-footer">

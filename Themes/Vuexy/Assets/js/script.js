@@ -1194,7 +1194,7 @@
 
 			d3.select("#upcCode").remove(); //Clear the SVG container if a new upc code has been entered
 			// Select container div and create new holder for the upc
-			var chart = d3.select("#container").append("svg:svg").attr("id", "upcCode")
+			var chart = d3.select("#barcodeContainer").append("svg:svg").attr("id", "upcCode")
 			// Set the size of the upc holder
 			var chart = d3.select("#upcCode").attr("height", "130px").attr("width", barWidth * data.length + 40);
 
