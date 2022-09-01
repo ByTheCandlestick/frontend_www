@@ -11,7 +11,7 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Transactions</h1>
-			<p>Displaying: <?=($offset > 1)? $offset.'-'.count($transactions): count($transactions);?>/<?=$total_transactions?> Rows</p>
+			<p>Displaying: <?=($offset > 1)? $offset.'-'.($offset + count($transactions)): count($transactions);?>/<?=$total_transactions?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
