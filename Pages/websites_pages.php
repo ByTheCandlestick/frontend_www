@@ -1,4 +1,5 @@
 <?
+	print_r(QS);
 	(QS[1]==null)? $z=1: $z=QS[1];
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS)));
     $pages = array();
