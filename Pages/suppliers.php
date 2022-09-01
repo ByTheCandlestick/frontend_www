@@ -3,8 +3,9 @@
 	$suppliers_per_page = 100;
 ?><?
 	$total_suppliers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Suppliers`"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$suppliers_per_page :0;
-    $q = DB_Query("SELECT * FROM `Suppliers` ORDER BY `Reference` ASC DESC LIMIT $suppliers_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)? (intval(QS_SUBPAGE)-1)*$suppliers_per_page: 0;
+    $q = DB_Query($prnt = "SELECT * FROM `Suppliers` ORDER BY `Reference` ASC DESC LIMIT $suppliers_per_page OFFSET $offset");
+	print($prnt);
 	while($supplier = mysqli_fetch_assoc($q)) { array_push($suppliers, $supplier); }
 ?>
 <section>
