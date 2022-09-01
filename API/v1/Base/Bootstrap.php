@@ -1,6 +1,12 @@
 <?
 	// Define all vars
-		(isset($_SERVER["HTTP_REFERER"]))?$referrer=$_SERVER["HTTP_REFERER"] : $referrer=$_SERVER["SERVER_NAME"];
+		/* */if(isset($_SERVER["HTTP_REFERER"])) {
+			$referrer = $_SERVER["HTTP_REFERER"];
+		}elseif(isset($_SERVER['REMOTE_ADDR'])) {
+			$referrer = $_SERVER['REMOTE_ADDR'];
+		}else {
+			$referrer = $_SERVER["SERVER_NAME"];
+		}
 		if(str_contains($referrer, "indev")) {	#	THE WESBITE IN IN DEVELOPMENT MODE
 			define('STRIPE_API',	'sk_test_51JKqfVFDFLz8LpozmlliBbv92XkspmRyy2O7G6IMk2IccfP9ZnimCZ8rJHHCVfIGupLx5FJZafa92igVC2HFWPkz00umY4pOUm');
 			define('ANALYTICS',		['db5007323454.hosting-data.io',	'dbu557431',	'CandleStick2603',	'dbs6034000']);
@@ -46,10 +52,11 @@
 					'error' => 'No valid host, request method, key or parameters.',
 					'location' => $loc,
 					'info' => array(
-						'Host' => $referrer,
-						'Request' => $_SERVER['REQUEST_METHOD'],
-						'Api key' => $api_key,
-						'Parameters' => $query,
+						'host' => $_SERVER['HTTP_REFERER'],
+						'remote' => $_SERVER['REMOTE_ADDR']
+						'request' => $_SERVER['REQUEST_METHOD'],
+						'key' => $api_key,
+						'parameters' => $query,
 					),
 					'vars' => $_SERVER,
 				)));
