@@ -46,15 +46,15 @@
 				<?
 					if(count($suppliers) > 0) {
 						foreach($suppliers as $x) {
-							$editable = ($userperm['adm_access-suppliers-edit']==1)?'<a href="/Suppliers/Edit/'.$row['ID'].'">'.$row['Name'].'</a>':$row['ID'];
+							$editable = ($userperm['adm_access-suppliers-edit']==1)?'<a href="/Suppliers/Edit/'.$x['ID'].'">'.$x['Name'].'</a>':$x['ID'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
-									<td>'.$row['Reference'].'</td>
-									<td><a href="/Mail/New/?to='.$row['Email'].'">'.$row['Email'].'</a></td>
-									<td><a href="tel:'.$row['Phone'].'">'.$row['Phone'].'</a></td>
-									<td>'.$row['Active'].'</td>
-									<td>'.$row['Created'].'</td>
+									<td>'.$x['Reference'].'</td>
+									<td><a href="/Mail/New/?to='.$x['Email'].'">'.$x['Email'].'</a></td>
+									<td><a href="tel:'.$x['Phone'].'">'.$x['Phone'].'</a></td>
+									<td>'.$x['Active'].'</td>
+									<td>'.$x['Created'].'</td>
 								</tr>
 							');
 						}
