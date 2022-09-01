@@ -29,7 +29,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT LEFT(`Key` , 20) as 'Key1', RIGHT(`Key` , 5) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT 4");
+					$query = DB_Query("SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT 4");
 					if(mysqli_num_rows($query) > 0) {
 						while ($row = mysqli_fetch_array($query)) {
 							print('
