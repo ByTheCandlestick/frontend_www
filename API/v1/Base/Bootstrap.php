@@ -1,5 +1,12 @@
 <?
 	print($_SERVER['REMOTE_ADDR']);
+	/* */if(isset($_SERVER["HTTP_REFERER"])) {
+		$referrer = $_SERVER["HTTP_REFERER"];
+	}elseif(isset($_SERVER['REMOTE_ADDR'])) {
+		$referrer = $_SERVER['REMOTE_ADDR'];
+	}else {
+		$referrer = $_SERVER["SERVER_NAME"];
+	}
 	//	Get the query string for each REST type
 		/* */if($_SERVER['REQUEST_METHOD'] == "GET") {				// 
 			$keys = array_keys($_GET);

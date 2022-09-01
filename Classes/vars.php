@@ -24,13 +24,6 @@
 	define('URL_BLOG',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'blog.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	define('URL_ADMIN',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . 'admin.' . removeSubdomain($_SERVER['HTTP_HOST']));
 	define('URL_CURR',		($_SERVER['HTTPS'] ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST']);
-	/* */if(isset($_SERVER["HTTP_REFERER"])) {
-		$referrer = $_SERVER["HTTP_REFERER"];
-	}elseif(isset($_SERVER['REMOTE_ADDR'])) {
-		$referrer = $_SERVER['REMOTE_ADDR'];
-	}else {
-		$referrer = $_SERVER["SERVER_NAME"];
-	}
 	// SET USERS IP
 		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
