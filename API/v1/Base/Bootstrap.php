@@ -58,7 +58,6 @@
 						'key' => $api_key,
 						'parameters' => $query,
 					),
-					'vars' => $_SERVER,
 				)));
 			};
 		/**	get_uri
