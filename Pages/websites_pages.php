@@ -2,10 +2,12 @@
     $pages = array();
 	$pages_per_page = 100;
 ?><?
-	print(gettype(QS) === 'string');
-//	if(gettype(QS))
-
-	[$domainID, $z] = QS;
+	if(gettype(QS) === 'string') {
+		$z=1;
+		$domainID = QS;
+	} else {
+		[$domainID, $z] = QS;
+	}
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", $domainID)));
 	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", $domainID)))[0];
 	$offset = ($z !== null)?(intval($z)-1)*$pages_per_page :0;
