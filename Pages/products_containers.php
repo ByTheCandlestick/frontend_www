@@ -51,7 +51,7 @@
 				<?
 					if(count($containers) > 0) {
 						foreach($containers as $x) {
-							$editable = ($userperm['adm_access-collections-edit']==1)?'<a href="/Products/Container/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
+							$editable = ($userperm['adm_access-products-containers-edit']==1)?'<a href="/Products/Container/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
