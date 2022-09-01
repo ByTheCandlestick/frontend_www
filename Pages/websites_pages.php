@@ -5,8 +5,8 @@
 print_r(QS);
 	[$domainID, $z] = QS;
 	if($z==null) $z=1;
-	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS[0])));
-	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", QS[0])))[0];
+	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", $domainID)));
+	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", $domainID)))[0];
 	$offset = ($z !== null)?(intval($z)-1)*$pages_per_page :0;
     $q = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC LIMIT %s OFFSET %s", $domainID, $pages_per_page, $offset));
 	while($page = mysqli_fetch_assoc($q)) { array_push($pages, $page); }
@@ -74,9 +74,9 @@ print_r(QS);
 		</table>
 		<?
 			(intval($z) > 1)? $prev_status = '': $prev_status = ' disabled';
-			($prev_status == '')? $prev_page = "/Websites/Pages/".QS[0].(intval($z) - 1).'/' : $prev_page = "";
+			($prev_status == '')? $prev_page = "/Websites/Pages/".$domainID.(intval($z) - 1).'/' : $prev_page = "";
 			(($offset + $pages_per_page) < $total_pages)? $next_status = '': $next_status = ' disabled';
-			($next_status == '')? $next_page = "/Websites/Pages/".QS[0].(intval($z) + 1).'/' : $next_page = "";
+			($next_status == '')? $next_page = "/Websites/Pages/".$domainID.(intval($z) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
 				<div class=\"row\">
