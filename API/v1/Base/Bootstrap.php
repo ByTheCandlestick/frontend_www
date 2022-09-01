@@ -53,7 +53,7 @@
 					'location' => $loc,
 					'info' => array(
 						'host' => $_SERVER['HTTP_REFERER'],
-						'remote' => $_SERVER['REMOTE_ADDR']
+						'remote' => $_SERVER['REMOTE_ADDR'],
 						'request' => $_SERVER['REQUEST_METHOD'],
 						'key' => $api_key,
 						'parameters' => $query,
