@@ -6,7 +6,8 @@
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
 	$total_containers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_containers`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$containers_per_page :0;
-    $q = DB_Query("SELECT * FROM `products_containers` ORDER BY `ID` ASC LIMIT $containers_per_page OFFSET $offset");
+    $q = DB_Query($prnt = "SELECT * FROM `products_containers` ORDER BY `ID` ASC LIMIT $containers_per_page OFFSET $offset");
+	print($prnt);
 	while($container = mysqli_fetch_assoc($q)) { array_push($containers, $container); }
 ?>
 <section>
