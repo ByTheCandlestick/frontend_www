@@ -25,13 +25,13 @@
 <?
 	} else if($query = DB_Query(sprintf("SELECT * FROM `API Controllers` WHERE `ID`=%s", QS))) {
 		if(mysqli_num_rows($query) > 0) {
-			$page = mysqli_fetch_assoc($query);
+			$controller = mysqli_fetch_assoc($query);
 ?>
 	<section>
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Edit Key</h1>
+				<h1>Edit Controller</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
@@ -49,6 +49,7 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
+			<?=$controller?>
 		</div>
 	</section>
 <?
