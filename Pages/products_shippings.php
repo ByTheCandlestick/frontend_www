@@ -41,7 +41,11 @@
 					<th scope="col">Name</th>
 					<th scope="col">Supplier</th>
 					<th scope="col">Suppplier Ref</th>
-					<th scope="col">Size (cl)</th>
+					<th scope="col">Max length</th>
+					<th scope="col">Max width</th>
+					<th scope="col">Max height</th>
+					<th scope="col">Max weight</th>
+					<th scope="col">Price (ea)</th>
 					<th scope="col">Active</th>
 				</tr>
 			</thead>
@@ -55,7 +59,11 @@
 									<th scope="row">'.$editable.'</th>
 									<td><a href="javascript:modal.simple();">'.$suppliers[$x['Supplier']]['Name'].'<a></td>
 									<td><a href="javascript:misc.copyToClipboard(\''.$x['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$x['Supplier']]['Website'].'\');},1500);">'.$x['ItemRef'].'</a></td>
-									<td>'.$x['Size (cl)'].'</td>
+									<td>'.$x['Length_limit'].'</td>
+									<td>'.$x['Width_limit'].'</td>
+									<td>'.$x['Height_limit'].'</td>
+									<td>'.$x['Weight_limit'].'</td>
+									<td>'.$x['Price (ea)'].'</td>
 									<td>'.$x['Active'].'</td>
 								</tr>
 							');

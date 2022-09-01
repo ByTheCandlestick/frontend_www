@@ -43,7 +43,7 @@
 					<th scope="col">Suppplier Ref</th>
 					<th scope="col">Size (cl)</th>
 					<th scope="col">Price (cl)</th>
-					<th scope="col">Price (pack)</th>
+					<th scope="col">Price (ea)</th>
 					<th scope="col">Active</th>
 				</tr>
 			</thead>
