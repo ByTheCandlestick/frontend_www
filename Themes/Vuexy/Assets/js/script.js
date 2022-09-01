@@ -1207,10 +1207,11 @@
 			});
 			bar.append("rect").attr("x",20).attr("height",function(d, i) { 
 				if (i==0||i==2||i==46||i==48||i==92||i==94){
-					return (d*100)
+					return (d*300)
 				} else {
-					return (d*80)};
-				}).attr("width", barWidth);
+					return (d*240)
+				};
+			}).attr("width", barWidth);
 
 			// Write human readable numbers under the barcode
 			chart.append("g")
