@@ -4,7 +4,7 @@
 	$total_orders = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$orders_per_page :0;
     $q = DB_Query("SELECT * FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC LIMIT $orders_per_page OFFSET $offset");
-	while($orders = mysqli_fetch_assoc($q)) { array_push($orders, $order); }
+	while($order = mysqli_fetch_assoc($q)) { array_push($orders, $order); }
 ?>
 <section>
 	<!-- Section Header -->
