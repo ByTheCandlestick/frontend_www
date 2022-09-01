@@ -1,10 +1,10 @@
 <?
-	print(QS);
+	[QS, $z]explode('/', QS);
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS)));
     $pages = array();
 	$pages_per_page = 100;
 	$total_pages = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Website pages`"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$pages_per_page :0;
+	$offset = ($z !== null)?(intval($z)-1)*$pages_per_page :0;
     $q = DB_Query("SELECT * FROM `Website domains` ORDER BY `ID` DESC LIMIT $pages_per_page OFFSET $offset");
 	while($page = mysqli_fetch_assoc($q)) { array_push($pages, $page); }
 ?>
