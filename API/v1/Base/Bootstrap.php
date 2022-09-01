@@ -125,7 +125,7 @@
 				return (!mysqli_fetch_array(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now() AND (`Hostname`='$origin' OR `Remote address`='$origin')"))[0])? invalid_request(4): true;
 			};
 	//	Get URI Vars
-		if((denyHost() && checkHost($referrer)) || !denyHost()) {
+		if((denyHost() && checkHost($referrer)) || denyHost()) {
 			header('Access-Control-Allow-Credentials: true');
 			header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
 			header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
