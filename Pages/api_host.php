@@ -43,7 +43,7 @@
 		</div>
 	</section>
 <?
-	} else if($query = DB_Query(sprintf("SELECT * FROM `API Hosts` WHERE `ID`=%s", QS))) {
+	} else if($query = DB_Query(sprintf("SELECT * FROM `API Allowed hosts` WHERE `ID`=%s", QS))) {
 		if(mysqli_num_rows($query) > 0) {
 			$host = mysqli_fetch_assoc($query);
 ?>
