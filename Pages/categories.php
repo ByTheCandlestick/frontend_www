@@ -67,7 +67,7 @@
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Categories/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
-			(($offset + $Categories_per_page) < $total_categories)? $next_status = '': $next_status = ' disabled';
+			(($offset + $categories_per_page) < $total_categories)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Categories/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
