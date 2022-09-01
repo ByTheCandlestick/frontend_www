@@ -122,9 +122,7 @@
 				<div class="modal-header">
 					<h5 class="modal-title">Product barcode</h5>
 				</div>
-				<div class="modal-body" id="barcodeContainer">
-					<svg id="upcCode"></svg>
-				</div>
+				<div class="modal-body" id="barcodeContainer" style="margin: 0 auto;"></div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-outline-info" onClick="javascript:product.downloadBarcode();">Download</button>
 					<button type="button" class="btn btn-secondary" onClick="javascript:$('#productBarcodeModal').modal('hide');">Close</button>
