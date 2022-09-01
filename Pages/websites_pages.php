@@ -14,7 +14,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h1>url: <?print($website['Domain'])?></h1>
+			<h1>Pages: <?print($website['Name'])?></h1>
 			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($pages)): count($pages);?>/<?=$total_pages?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
