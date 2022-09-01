@@ -1,4 +1,5 @@
 <?
+	print($_SERVER['REMOTE_ADDR']);
 	// Define all vars
 		/* */if(isset($_SERVER["HTTP_REFERER"])) {
 			$referrer = $_SERVER["HTTP_REFERER"];
