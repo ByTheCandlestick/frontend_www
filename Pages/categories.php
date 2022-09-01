@@ -2,7 +2,7 @@
     $categories = array();
 	$categories_per_page = 100;
 ?><?
-	$total_categories = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_categories'"))[0];
+	$total_categories = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_categories`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$categories_per_page :0;
     $q = DB_Query("SELECT * FROM `products_categories` ORDER BY `ID` ASC LIMIT $categories_per_page OFFSET $offset");
 	while($category = mysqli_fetch_assoc($q)) { array_push($categories, $category); }
