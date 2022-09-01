@@ -1,3 +1,12 @@
+<?
+    $categories = array();
+	$categories_per_page = 100;
+?><?
+	$total_categories = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_categories'"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$categories_per_page :0;
+    $q = DB_Query("SELECT * FROM `products_categories` ORDER BY `ID` ASC LIMIT $categories_per_page OFFSET $offset");
+	while($category = mysqli_fetch_assoc($q)) { array_push($categories, $category); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
@@ -26,22 +35,19 @@
 		<table class="categoriesTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
-					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col">Enabled</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `products_categories`");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
-							$editable = ($userperm['adm_access-categories-edit']==1)?'<a href="/Category/Edit/'.$row['ID'].'">'.$row['ID'].'</a>':$row['ID'];
+					if(count($categories) > 0) {
+						foreach($categories as $x) {
+							$editable = ($userperm['adm_access-categories-edit']==1)?'<a href="/Category/Edit/'.$x['Name'].'">'.$x['Name'].'</a>':$x['Name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
-									<td>'.$row['Name'].'</td>
-									<td>'.$row['Active'].'</td>
+									<td>'.$x['Active'].'</td>
 								</tr>
 							');
 						}
@@ -57,6 +63,21 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Categories/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $Categories_per_page) < $total_categories)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Categories/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
 <script>
