@@ -2,8 +2,8 @@
     $orders = array();
 	$orders_per_page = 100;
 	$total_orders = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$transactions_per_page :0;
-    $q = DB_Query("SELECT * FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC LIMIT $transactions_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$orders_per_page :0;
+    $q = DB_Query("SELECT * FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC LIMIT $orders_per_page OFFSET $offset");
 	while($orders = mysqli_fetch_assoc($q)) { array_push($orders, $order); }
 ?>
 <section>
@@ -83,9 +83,9 @@
 		</table>
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
-			($prev_status == '')? $prev_page = "/Transactions/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
-			(($offset + $transactions_per_page) < $total_transactions)? $next_status = '': $next_status = ' disabled';
-			($next_status == '')? $next_page = "/Transactions/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			($prev_status == '')? $prev_page = "/Orders/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $orders_per_page) < $total_orders)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Orders/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
 				<div class=\"row\">
