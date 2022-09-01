@@ -1196,7 +1196,7 @@
 			// Select container div and create new holder for the upc
 			var chart = d3.select("#barcodeContainer").append("svg:svg").attr("id", "upcCode")
 			// Set the size of the upc holder
-			var chart = d3.select("#upcCode").attr("height", "390px").attr("width", barWidth * data.length + 40);
+			var chart = d3.select("#upcCode").attr("height", "390px").attr("width", barWidth * data.length + 120);
 
 			// Draw the barcode
 			var bar = chart.selectAll("g")
