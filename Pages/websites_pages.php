@@ -2,7 +2,7 @@
     $pages = array();
 	$pages_per_page = 100;
 ?><?
-	print(gettype(QS));
+	print(gettype(QS) === 'string');
 //	if(gettype(QS))
 
 	[$domainID, $z] = QS;
