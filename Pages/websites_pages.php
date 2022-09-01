@@ -51,10 +51,10 @@
 						foreach($pages as $x) {
 							print('
 								<tr>
-									<th scope="row"><a href="/Websites/Page/'.$row['ID'].'">'.$row['page_name'].'<a/></th>
-									<td>'.$row['page_url'].'</td>
-									<td>'.$row['subpage_url'].'</td>
-									<td>'.(($row['menu_order']=='0')?null:$row['menu_order']).'</td>
+									<th scope="row"><a href="/Websites/Page/'.$x['ID'].'">'.$x['page_name'].'<a/></th>
+									<td>'.$x['page_url'].'</td>
+									<td>'.$x['subpage_url'].'</td>
+									<td>'.(($x['menu_order']=='0')?null:$x['menu_order']).'</td>
 								</tr>
 							');
 						}
