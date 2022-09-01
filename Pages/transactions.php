@@ -1,7 +1,9 @@
 <?
     $transactions = array();
+	$page = intval(QS_SUBPAGE);
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*50 :0;
     $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT 50 OFFSET $offset");
+	$count = mysqli_fetch_row(DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC"));
 	while($transaction = mysqli_fetch_assoc($q)) { array_push($transactions, $transaction); }
 ?>
 <section>
@@ -86,6 +88,21 @@
                 ?>
 			</tbody>
 		</table>
+		<?
+			($page > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Transactions/".($page - 1).'/' : $prev_page = "";
+			($prd_viewed < $count)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Transactions/".($page + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
 <script>
