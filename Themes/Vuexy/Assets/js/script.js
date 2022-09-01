@@ -1220,6 +1220,139 @@
 					$('div[name=price_e] input').val((price_b / quantity).toFixed(2));
 				},
 			},
+			/** @wip */
+			wick: {
+				/** @wip */
+				create() {
+					/** @todo */
+				},
+				/** @wip */
+				update(id) {
+					/** @todo */
+				},
+				/** @wip */
+				delete(id) {
+					/** @todo */
+				},
+				/** @wip */
+				calculate() {
+					/** @todo */
+				},
+			},
+			/** @wip */
+			wick_stand: {
+				/** @wip */
+				create() {
+					/** @todo */
+				},
+				/** @wip */
+				update(id) {
+					/** @todo */
+				},
+				/** @wip */
+				delete(id) {
+					/** @todo */
+				},
+				/** @wip */
+				calculate() {
+					/** @todo */
+				},
+			},
+			/** @wip */
+			material: {
+				/** @wip */
+				create() {
+					/** @todo */
+				},
+				/** @wip */
+				update(id) {
+					/** @todo */
+				},
+				/** @wip */
+				delete(id) {
+					/** @todo */
+				},
+				/** @wip */
+				calculate() {
+					/** @todo */
+				},
+			},
+			/** @wip */
+			fragrance: {
+				/** @wip */
+				create() {
+					/** @todo */
+				},
+				/** @wip */
+				update(id) {
+					/** @todo */
+				},
+				/** @wip */
+				delete(id) {
+					/** @todo */
+				},
+				/** @wip */
+				calculate() {
+					/** @todo */
+				},
+			},
+			/** @wip */
+			colour: {
+				/** @wip */
+				create() {
+					/** @todo */
+				},
+				/** @wip */
+				update(id) {
+					/** @todo */
+				},
+				/** @wip */
+				delete(id) {
+					/** @todo */
+				},
+				/** @wip */
+				calculate() {
+					/** @todo */
+				},
+			},
+			/** @wip */
+			packaging: {
+				/** @wip */
+				create() {
+					/** @todo */
+				},
+				/** @wip */
+				update(id) {
+					/** @todo */
+				},
+				/** @wip */
+				delete(id) {
+					/** @todo */
+				},
+				/** @wip */
+				calculate() {
+					/** @todo */
+				},
+			},
+			/** @wip */
+			shipping: {
+				/** @wip */
+				create() {
+					/** @todo */
+				},
+				/** @wip */
+				update(id) {
+					/** @todo */
+				},
+				/** @wip */
+				delete(id) {
+					/** @todo */
+				},
+				/** @wip */
+				calculate() {
+					/** @todo */
+				},
+			},
 		}
 	}
 	/** @final */
