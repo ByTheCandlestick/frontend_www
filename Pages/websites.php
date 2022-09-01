@@ -1,8 +1,17 @@
+<?
+    $websites = array();
+	$websites_per_page = 100;
+	$total_websites = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Website domains`"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$websites_per_page :0;
+    $q = DB_Query("SELECT * FROM `Website domains` ORDER BY `ID` DESC LIMIT $websites_per_page OFFSET $offset");
+	while($website = mysqli_fetch_assoc($q)) { array_push($websites, $website); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Websites</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($websites)): count($websites);?>/<?=$total_websites?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -43,9 +52,8 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `Website domains`");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
+					if(count($users) > 0) {
+						foreach($users as $x) {
 							$editable = ($userperm['adm_access-websites-page']==1)?'<a href="/Websites/Pages/'.$row['ID'].'">'.$row['Name'].'</a>':$row['ID'];
 							print('
 								<tr>
@@ -74,6 +82,21 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Websites/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $websites_per_page) < $total_websites)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Websites/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
 <script>
