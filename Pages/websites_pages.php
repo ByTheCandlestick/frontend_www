@@ -7,7 +7,8 @@
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS[0])));
 	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", QS[0])))[0];
 	$offset = ($z !== null)?(intval($z)-1)*$pages_per_page :0;
-    $q = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC LIMIT %s OFFSET %s", $domainID, $pages_per_page, $offset));
+    $q = DB_Query($prnt = sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC LIMIT %s OFFSET %s", $domainID, $pages_per_page, $offset));
+	print($prnt);
 	while($page = mysqli_fetch_assoc($q)) { array_push($pages, $page); }
 ?>
 <section>
