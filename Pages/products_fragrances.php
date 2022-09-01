@@ -41,6 +41,8 @@
 					<th scope="col">Name</th>
 					<th scope="col">Supplier</th>
 					<th scope="col">Suppplier Ref</th>
+					<th scope="col">Size (cl)</th>
+					<th scope="col">Price (cl)</th>
 					<th scope="col">Price (ea)</th>
 					<th scope="col">Active</th>
 				</tr>
@@ -55,7 +57,9 @@
 									<th scope="row">'.$editable.'</th>
 									<td><a href="javascript:modal.simple();">'.$suppliers[$x['Supplier']]['Name'].'<a></td>
 									<td><a href="javascript:misc.copyToClipboard(\''.$x['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$x['Supplier']]['Website'].'\');},1500);">'.$x['ItemRef'].'</a></td>
-									<td>'.$x['Price (ea)'].'</td>
+									<td>£'.$x['CL (Pack)'].'</td>
+									<td>£'.$x['Price (cl)'].'</td>
+									<td>£'.$x['Price (ea)'].'</td>
 									<td>'.$x['Active'].'</td>
 								</tr>
 							');
