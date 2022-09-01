@@ -6,7 +6,7 @@
 
 	$products = array();
 	$products_per_page = 100;
-	$total_products = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC"))[0];
+	$total_products = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products` ORDER BY `SKU` DESC"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$products_per_page :0;
     $q = DB_Query("SELECT * FROM `products` ORDER BY `SKU` DESC LIMIT $products_per_page OFFSET $offset");
 	while($product = mysqli_fetch_assoc($q)) { array_push($products, $product); }
