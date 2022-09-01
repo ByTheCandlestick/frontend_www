@@ -123,7 +123,7 @@
 		 *	@return	array	Ends the API and displays an error
 		 */
 			function checkHost(string $origin) {
-				return (!mysqli_fetch_array(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now() AND (`Hostname`='$origin' OR `Remote address`='$origin')"))[0])?invalid_request(4): $origin;
+				return (!mysqli_fetch_array(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now() AND (`Hostname`='$origin' OR `Remote address`='$origin')"))[0])?invalid_request(4): true;
 			};
 	//	Get URI Vars
 		if(checkHost($referrer)) {
