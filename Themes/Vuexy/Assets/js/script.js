@@ -1245,7 +1245,7 @@
 			$('#productBarcodeModal').modal('show');
 		},
 		downloadBarcode() {
-			var svg = document.getElementsByTagName("svg")[0];
+			var svg = document.querySelector("#barcodeContainer > svg")[0];
 			var svg_xml = (new XMLSerializer).serializeToString(svg);
 			var blob = new Blob([svg_xml]);
 			var url = window.URL || window.webkitURL;
