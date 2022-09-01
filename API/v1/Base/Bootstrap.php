@@ -78,7 +78,6 @@
 				if(isset($query['api_key'])) {
 					return (mysqli_fetch_array(DB_Query(sprintf("SELECT `Deny hosts?` FROM `API Keys` WHERE `Key`='%s'", $query['api_key'])))[0])? true: false;
 				}
-				if(!$active) invalid_request(1);
 			}
 		/**	checkVersion
 		 *	Confirm the Controller is accepted.
