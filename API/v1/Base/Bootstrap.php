@@ -1,5 +1,4 @@
 <?
-	print($_SERVER['REMOTE_ADDR']);
 	if(isset($_SERVER["HTTP_REFERER"])):
 		$referrer = $_SERVER["HTTP_REFERER"];
 	elseif(isset($_SERVER['REMOTE_ADDR'])):
@@ -7,6 +6,7 @@
 	else:
 		$referrer = null;
 	endif;
+	print_r($referrer);
 	//	Get the query string for each REST type
 		/* */if($_SERVER['REQUEST_METHOD'] == "GET") {				// 
 			$keys = array_keys($_GET);
