@@ -2,8 +2,8 @@
     $pages = array();
 	$pages_per_page = 100;
 ?><?
-print_r(QS);
 	[$domainID, $z] = QS;
+	print_r($domainID);
 	if($z==null) $z=1;
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", $domainID)));
 	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", $domainID)))[0];
