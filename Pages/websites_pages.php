@@ -3,7 +3,7 @@
 	$pages_per_page = 100;
 ?><?
 	[$domainID, $z] = QS;
-	if($z==null)? $z=1;
+	if($z==null) $z=1;
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS[0])));
 	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", QS[0])))[0];
 	$offset = ($z !== null)?(intval($z)-1)*$pages_per_page :0;
