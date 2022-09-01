@@ -61,6 +61,7 @@
 					<th scope="col">Range</th>
 					<th scope="col">Price</th>
 					<th scope="col">Slug</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -76,6 +77,11 @@
 									<td>'.$collections[$x['Collection_ID']].'</td>
 									<td>'.$x['RetailPrice'].'</td>
 									<td>'.$x['Slug'].'</td>
+									<td>
+										<a href="javascript:product.generateBarcode();">
+											<i class="fad fa-barcode"></i>
+										</a>
+									</td>
 								</tr>
 							');
 						}
