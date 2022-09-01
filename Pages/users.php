@@ -1,8 +1,17 @@
+<?
+    $users = array();
+	$users_per_page = 100;
+	$total_users = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Users`"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$users_per_page :0;
+    $q = DB_Query("SELECT * FROM `Users` ORDER BY `ID` DESC LIMIT $users_per_page OFFSET $offset");
+	while($user = mysqli_fetch_assoc($q)) { array_push($users, $user); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Users</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($users)): count($users);?>/<?=$total_users?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -38,20 +47,19 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `Users`");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
-							$editable = ($userperm['adm_access-users-edit']==1)?'<a href="/Users/Edit/'.$row['ID'].'">'.$row['First_name'].' '.$row['Last_name'].'</a>':$row['First_name'].' '.$row['last_name'];
+					if(count($users) > 0) {
+						foreach($users as $x) {
+							$editable = ($userperm['adm_access-users-edit']==1)?'<a href="/Users/Edit/'.$x['ID'].'">'.$x['First_name'].' '.$x['Last_name'].'</a>':$x['First_name'].' '.$x['last_name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
-									<td>'.$row['Username'].'</td>
-									<td>'.$row['Email'].'</td>
-									<td>'.$row['Phone'].'</td>
-									<td>'.$row['Active'].'</td>
-									<td>'.$row['Created'].'</td>
+									<td>'.$x['Username'].'</td>
+									<td>'.$x['Email'].'</td>
+									<td>'.$x['Phone'].'</td>
+									<td>'.$x['Active'].'</td>
+									<td>'.$x['Created'].'</td>
 									<td>
-										<a href="/Users/Cart/'.$row['ID'].'">
+										<a href="/Users/Cart/'.$x['ID'].'">
 											<i class="fa fa-shopping-cart"></i>
 										</a>
 									</td>
@@ -75,6 +83,21 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Users/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $users_per_page) < $total_users)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Users/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
 <script>
