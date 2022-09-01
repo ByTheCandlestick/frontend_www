@@ -76,6 +76,7 @@
 			function denyHost() {
 				parse_str(QUERY_STRING, $query);
 				if(isset($query['api_key'])) {
+					echo (mysqli_fetch_array(DB_Query(sprintf("SELECT `Deny hosts?` FROM `API Keys` WHERE `Key`='%s'", $query['api_key'])))[0])? 'true': 'false';
 					return (mysqli_fetch_array(DB_Query(sprintf("SELECT `Deny hosts?` FROM `API Keys` WHERE `Key`='%s'", $query['api_key'])))[0])? true: false;
 				}
 			}
