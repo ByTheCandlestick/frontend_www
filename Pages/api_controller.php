@@ -49,7 +49,7 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			<?=$controller?>
+			<?=print_r($controller)?>
 		</div>
 	</section>
 <?
