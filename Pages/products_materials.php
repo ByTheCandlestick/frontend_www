@@ -42,6 +42,8 @@
 					<th scope="col">Supplier</th>
 					<th scope="col">Suppplier Ref</th>
 					<th scope="col">Size (cl)</th>
+					<th scope="col">Price (cl)</th>
+					<th scope="col">Price (pack)</th>
 					<th scope="col">Active</th>
 				</tr>
 			</thead>
@@ -56,6 +58,8 @@
 									<td><a href="javascript:modal.simple();">'.$suppliers[$x['Supplier']]['Name'].'<a></td>
 									<td><a href="javascript:misc.copyToClipboard(\''.$x['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$x['Supplier']]['Website'].'\');},1500);">'.$x['ItemRef'].'</a></td>
 									<td>'.$x['Size (cl)'].'</td>
+									<td>'.$x['Price (cl)'].'</td>
+									<td>'.$x['Price (pack)'].'</td>
 									<td>'.$x['Active'].'</td>
 								</tr>
 							');
@@ -65,6 +69,8 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
+								<td></td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
