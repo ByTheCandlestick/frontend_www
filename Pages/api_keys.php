@@ -40,7 +40,7 @@
 							');
 							if($userperm['api_access-keys-edit']==1) {
 								print('
-										<a href="/API/keys/'.$row['ID'].'">
+										<a href="/API/key/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 								');

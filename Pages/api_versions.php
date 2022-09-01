@@ -40,7 +40,7 @@
 							');
 							if($userperm['api_access-versions-edit']==1) {
 								print('
-										<a href="/API/Versions/'.$row['ID'].'">
+										<a href="/API/Version/'.$row['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 								');
