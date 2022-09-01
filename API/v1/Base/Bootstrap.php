@@ -50,7 +50,8 @@
 						'Request' => $_SERVER['REQUEST_METHOD'],
 						'Api key' => $api_key,
 						'Parameters' => $query,
-					)
+					),
+					'vars' => $_SERVER,
 				)));
 			};
 		/**	get_uri
