@@ -1,8 +1,18 @@
+<?
+    $suppliers = array();
+	$suppliers_per_page = 100;
+?><?
+	$total_suppliers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Suppliers`"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$suppliers_per_page :0;
+    $q = DB_Query("SELECT * FROM `Suppliers` ORDER BY `Reference` ASC DESC LIMIT $suppliers_per_page OFFSET $offset");
+	while($supplier = mysqli_fetch_assoc($q)) { array_push($suppliers, $supplier); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>All suppliers</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($suppliers)): count($suppliers);?>/<?=$total_suppliers?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -34,9 +44,8 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `Suppliers`");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
+					if(count($suppliers) > 0) {
+						foreach($suppliers as $x) {
 							$editable = ($userperm['adm_access-suppliers-edit']==1)?'<a href="/Suppliers/Edit/'.$row['ID'].'">'.$row['Name'].'</a>':$row['ID'];
 							print('
 								<tr>
@@ -64,6 +73,21 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Suppliers/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $suppliers_per_page) < $suppliers)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Suppliers/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
 <script>
