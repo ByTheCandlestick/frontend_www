@@ -52,8 +52,8 @@
 			</thead>
 			<tbody>
 				<?
-					if(count($users) > 0) {
-						foreach($users as $x) {
+					if(count($websites) > 0) {
+						foreach($websites as $x) {
 							$editable = ($userperm['adm_access-websites-page']==1)?'<a href="/Websites/Pages/'.$row['ID'].'">'.$row['Name'].'</a>':$row['ID'];
 							print('
 								<tr>
