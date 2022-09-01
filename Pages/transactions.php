@@ -1,5 +1,6 @@
 <?
     $transactions = array();
+	$offset = (isset(QS_SUBPAGE))?intval(QS_SUBPAGE)*50 :50;
     $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT 50");
 	while($transaction = mysqli_fetch_assoc($q)) { array_push($transactions, $transaction); }
 ?>
