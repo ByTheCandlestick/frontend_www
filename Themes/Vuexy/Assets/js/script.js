@@ -1205,7 +1205,7 @@
 				.attr("transform", function (d, i) {
 				return "translate(" + i * barWidth + ")";
 			});
-			bar.append("rect").attr("x",20).attr("height",function(d, i) { 
+			bar.append("rect").attr("x",60).attr("height",function(d, i) { 
 				if (i==0||i==2||i==46||i==48||i==92||i==94){
 					return (d*300)
 				} else {
