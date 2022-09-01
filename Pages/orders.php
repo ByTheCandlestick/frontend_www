@@ -1,3 +1,11 @@
+<?
+    $orders = array();
+	$orders_per_page = 100;
+	$total_orders = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$transactions_per_page :0;
+    $q = DB_Query("SELECT * FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC LIMIT $transactions_per_page OFFSET $offset");
+	while($orders = mysqli_fetch_assoc($q)) { array_push($orders, $order); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
@@ -35,24 +43,23 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `Transactions` WHERE `Type`='Order' ORDER BY `Invoice ID` DESC");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
-							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$row['Invoice ID'].'">'.$row['Invoice ID'].'</a>':$row['Invoice ID'];
+					if(count($orders) > 0) {
+						foreach($orders as $o) {
+							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$o['Invoice ID'].'">'.$o['Invoice ID'].'</a>':$o['Invoice ID'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
-									<td>'.$row['Created'].'</td>
-									<td>'.$row['Subtotal'].'</td>
-									<td>'.$row['Tax'].'</td>
-									<td>'.$row['Deposit'].'</td>
-									<td>'.$row['Status'].'</td>
-									<td>'.$row['Transaction ID'].'</td>
+									<td>'.$o['Created'].'</td>
+									<td>'.$o['Subtotal'].'</td>
+									<td>'.$o['Tax'].'</td>
+									<td>'.$o['Deposit'].'</td>
+									<td>'.$o['Status'].'</td>
+									<td>'.$o['Transaction ID'].'</td>
 									<td>
-										<a href="/Orders/Shipping/'.$row['Invoice ID'].'">
+										<a href="/Orders/Shipping/'.$o['Invoice ID'].'">
 											<i class="fa fa-box-full"></i>
 										</a>
-										<a href="javascript:orders.printReciept('.$row['Invoice ID'].');">
+										<a href="javascript:orders.printReciept('.$o['Invoice ID'].');">
 											<i class="fa fa-print"></i>
 										</a>
 									</td>
@@ -74,6 +81,21 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Transactions/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $transactions_per_page) < $total_transactions)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Transactions/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
 <script>
