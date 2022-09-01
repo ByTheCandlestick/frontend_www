@@ -19,5 +19,48 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
+		<table class="keysTable table table-striped table-hover m-0">
+			<thead class="sticky-top">
+				<tr>
+					<th scope="col">Key</th>
+					<th scope="col">Last used</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?
+					$query = DB_Query("SELECT LEFT(`Key` , 7) as 'Key1', RIGHT(`Key` , 5) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT 4");
+					if(mysqli_num_rows($query) > 0) {
+						while ($row = mysqli_fetch_array($query)) {
+							print('
+								<tr>
+									<td>'.$row['Key1'].'...'.$row['Key2'].'</td>
+									<td>'.$row['Last used'].'</td>
+									<td>
+							');
+							if($userperm['api_access-keys-edit']==1) {
+								print('
+										<a href="/API/keys/'.$row['ID'].'">
+											<i class="fa fa-pencil"></i>
+										</a>
+								');
+							}
+							print('
+									</td>
+								</tr>
+							');
+						}
+					} else {
+						print('
+							<tr>
+								<th scope="row"></th>
+								<td>No data found</td>
+								<td></td>
+							</tr>
+						');
+					}
+				?>
+			</tbody>
+		</table>
 	</div>
 </section>
