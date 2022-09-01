@@ -1,12 +1,20 @@
 <?
+	$containers = array();
+	$containers_per_page = 100;
+?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
+	$total_containers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_containers`"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$containers_per_page :0;
+    $q = DB_Query("SELECT * FROM `products_containers` ORDER BY `ID` ASC LIMIT $containers_per_page OFFSET $offset");
+	while($container = mysqli_fetch_assoc($q)) { array_push($containers, $container); }
 ?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Containers</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($containers)): count($containers);?>/<?=$total_containers?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -43,9 +51,8 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `products_containers`");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
+					if(count($containers) > 0) {
+						foreach($containers as $x) {
 							print('
 								<tr>
 									<th scope="row">'.$row['ID'].'</th>
@@ -82,6 +89,21 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Containers/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $containers_per_page) < $total_containers)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Containers/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
 <script>
