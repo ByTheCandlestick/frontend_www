@@ -22,7 +22,8 @@
             <p><a href="/Config/tbl_rows/">Set max table rows</a></p>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <h2>  </h2>
+            <h2> Charts </h2>
+            <p><a href="/Config/chrt_colours/">Set chart colours</a></p>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <h2>  </h2>
