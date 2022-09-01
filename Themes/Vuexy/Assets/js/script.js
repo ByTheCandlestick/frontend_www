@@ -1193,16 +1193,10 @@
 			.range([0, height]); // height
 
 			d3.select("#upcCode").remove(); //Clear the SVG container if a new upc code has been entered
-
 			// Select container div and create new holder for the upc
-			var chart = d3.select("#container")
-				.append("svg:svg")
-				.attr("id", "upcCode")
-
+			var chart = d3.select("#container").append("svg:svg").attr("id", "upcCode")
 			// Set the size of the upc holder
-			var chart = d3.select("#upcCode")
-				.attr("height", "130px")
-				.attr("width", barWidth * data.length + 40);
+			var chart = d3.select("#upcCode").attr("height", "130px").attr("width", barWidth * data.length + 40);
 
 			// Draw the barcode
 			var bar = chart.selectAll("g")
@@ -1210,16 +1204,13 @@
 				.enter().append("g")
 				.attr("transform", function (d, i) {
 				return "translate(" + i * barWidth + ")";
-			})
-				;
-
-			bar.append("rect")
-				.attr("x",20)
-				.attr("height",function(d, i) { 
-				// Adjusts the height of the guard bars by looking at their index
-				if (i==0||i==2||i==46||i==48||i==92||i==94){return (d*100)} else {return(d*80)};
-				}) 
-				.attr("width", barWidth);
+			});
+			bar.append("rect").attr("x",20).attr("height",function(d, i) { 
+				if (i==0||i==2||i==46||i==48||i==92||i==94){
+					return (d*100)
+				} else {
+					return (d*80)};
+				}).attr("width", barWidth);
 
 			// Write human readable numbers under the barcode
 			chart.append("g")
@@ -1229,7 +1220,6 @@
 				.style("font-size", "24px")
 				.style("font-family", "sans-serif")
 				.text(ns);
-
 			chart.append("g")
 				.append("text")
 				.attr("x", "38px")
@@ -1237,7 +1227,6 @@
 				.style("font-size", "24px")
 				.style("font-family", "sans-serif")
 				.text(mc);
-
 			chart.append("g")
 				.append("text")
 				.attr("x", "128px")
@@ -1245,7 +1234,6 @@
 				.style("font-size", "24px")
 				.style("font-family", "sans-serif")
 				.text(pc);
-
 			chart.append("g")
 				.append("text")
 				.attr("x", "215px")
