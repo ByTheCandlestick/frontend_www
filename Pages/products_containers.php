@@ -7,7 +7,6 @@
 	$total_containers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_containers`"))[0];
 	$offset = (QS !== null)?(intval(QS)-1)*$containers_per_page :0;
     $q = DB_Query($prnt = "SELECT * FROM `products_containers` ORDER BY `ID` ASC LIMIT $containers_per_page OFFSET $offset");
-	print($prnt);
 	while($container = mysqli_fetch_assoc($q)) { array_push($containers, $container); }
 ?>
 <section>
