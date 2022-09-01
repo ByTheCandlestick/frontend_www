@@ -34,7 +34,7 @@
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<td>'.$row['Key1'].'...'.$row['Key2'].'</td>
+									<td>'.$row['Key1'].' . . . '.$row['Key2'].'</td>
 									<td>'.$row['Last used'].'</td>
 									<td>
 							');
