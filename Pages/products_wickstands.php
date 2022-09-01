@@ -38,13 +38,11 @@
 		<table class="wickstandsTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
-					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col">Supplier</th>
 					<th scope="col">Suppplier Ref</th>
 					<th scope="col">Size (cl)</th>
 					<th scope="col">Active</th>
-					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,11 +57,6 @@
 									<td><a href="javascript:misc.copyToClipboard(\''.$x['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$x['Supplier']]['Website'].'\');},1500);">'.$x['ItemRef'].'</a></td>
 									<td>'.$x['Price (ea)'].'</td>
 									<td>'.$x['Active'].'</td>
-									<td>
-										<a href="/Products/WickStand/'.$x['ID'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</td>
 								</tr>
 							');
 						}
@@ -72,8 +65,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
