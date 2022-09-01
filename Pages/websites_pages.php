@@ -1,7 +1,6 @@
 <?
-	print_r(QS[1]);
 	(QS[1]==null)? $z=1: $z=QS[1];
-	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS)));
+	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS[0])));
     $pages = array();
 	$pages_per_page = 100;
 	$total_pages = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Website pages`"))[0];
@@ -72,10 +71,10 @@
 			</tbody>
 		</table>
 		<?
-			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
-			($prev_status == '')? $prev_page = "/Websites/Pages/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(intval($z) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Websites/Pages/".(intval($z) - 1).'/' : $prev_page = "";
 			(($offset + $pages_per_page) < $total_pages)? $next_status = '': $next_status = ' disabled';
-			($next_status == '')? $next_page = "/Websites/Pages/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			($next_status == '')? $next_page = "/Websites/Pages/".(intval($z) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
 				<div class=\"row\">
