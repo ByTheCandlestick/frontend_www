@@ -1244,6 +1244,18 @@
 
 			$('#productBarcodeModal').modal('show');
 		},
+		downloadBarcode() {
+			var svg = document.getElementsByTagName("svg")[0];
+			var svg_xml = (new XMLSerializer).serializeToString(svg);
+			var blob = new Blob([svg_xml]);
+			var url = window.URL || window.webkitURL;
+			var blobURL = url.createObjectURL(blob);
+			var a = document.createElement('a');
+			a.download = "Barcode.svg";
+			a.href = blobURL;
+			document.body.appendChild(a);
+			a.click();
+		},
 		/** @wip */
 		comodities: {
 			/** @wip */
