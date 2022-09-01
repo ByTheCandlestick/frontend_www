@@ -130,7 +130,6 @@
 			header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
 			header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 			header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-			ini_set('display_errors', 1);
 		}
 		$uri = get_uri();
 		$version = checkVersion($uri);
