@@ -72,9 +72,9 @@
 		</table>
 		<?
 			(intval($z) > 1)? $prev_status = '': $prev_status = ' disabled';
-			($prev_status == '')? $prev_page = "/Websites/Pages/".(intval($z) - 1).'/' : $prev_page = "";
+			($prev_status == '')? $prev_page = "/Websites/Pages/".QS[0].(intval($z) - 1).'/' : $prev_page = "";
 			(($offset + $pages_per_page) < $total_pages)? $next_status = '': $next_status = ' disabled';
-			($next_status == '')? $next_page = "/Websites/Pages/".(intval($z) + 1).'/' : $next_page = "";
+			($next_status == '')? $next_page = "/Websites/Pages/".QS[0].(intval($z) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
 				<div class=\"row\">
