@@ -1253,6 +1253,8 @@
 				.style("font-size", "24px")
 				.style("font-family", "sans-serif")
 				.text(cd);
+
+			$('#productBarcodeModal').modal('show');
 		},
 		/** @wip */
 		comodities: {

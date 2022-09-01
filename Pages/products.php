@@ -116,6 +116,22 @@
 		?>
 	</div>
 </section>
+	<div class="modal" tabindex="-1" id="productBarcodeModal">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Product barcode</h5>
+				</div>
+				<div class="modal-body">
+					<svg id="upcCode"></svg>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" onClick="javascript:product.downloadBarcode();">Close</button>
+					<button type="button" class="btn btn-secondary" onClick="javascript:$('#productBarcodeModal').modal('hide');">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 <script>
 	$(document).ready(function(){
 		$(".tableFilter").on("keyup", function() {
