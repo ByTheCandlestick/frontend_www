@@ -3,7 +3,7 @@
 	$page = intval(QS_SUBPAGE);
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*50 :0;
     $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT 50 OFFSET $offset");
-	$count = mysqli_fetch_row(DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC"));
+	$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions` ORDER BY `Modified` DESC"))[0];
 	while($transaction = mysqli_fetch_assoc($q)) { array_push($transactions, $transaction); }
 ?>
 <section>
