@@ -56,8 +56,8 @@
 									<th scope="row">'.$editable.'</th>
 									<td><a href="javascript:modal.simple();">'.$suppliers[$x['Supplier']]['Name'].'<a></td>
 									<td><a href="javascript:misc.copyToClipboard(\''.$x['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$x['Supplier']]['Website'].'\');},1500);">'.$x['ItemRef'].'</a></td>
-									<td>'.$x['Price (ea)'].'</td>
-									<td>'.$x['Price_pack'].'</td>
+									<td>£'.$x['Price (ea)'].'</td>
+									<td>£'.$x['Price_pack'].'</td>
 									<td>'.$x['Active'].'</td>
 								</tr>
 							');
