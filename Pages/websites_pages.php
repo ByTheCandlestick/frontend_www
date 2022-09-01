@@ -1,6 +1,6 @@
 <?
-	$z=null;
-	[QS, $z] = explode('/', QS);
+	$z = null;
+	[$x, $z] = explode('/', QS);
 	if($z==null) $z=1;
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", QS)));
     $pages = array();
