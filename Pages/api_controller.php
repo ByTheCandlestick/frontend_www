@@ -49,7 +49,21 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
-			<?=print_r($controller)?>
+			<div class="col-12 col-md-6 col-lg-1" name="reference">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=$controller['Controller']?>?>">
+					<label for="floatingInput">Reference</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-1" name="status">
+				<div class="form-floating mb-3">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?=($controller['Active?']==1)? "checked": ""?>>
+						<label class="form-check-label" for="flexCheck"> Active? </label>
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	</section>
 <?
