@@ -38,7 +38,6 @@
 		<table class="productsTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
-					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col">Type</th>
 					<th scope="col">Supplier</th>
@@ -70,7 +69,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
