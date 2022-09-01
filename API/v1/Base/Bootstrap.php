@@ -6,7 +6,6 @@
 	else:
 		$referrer = null;
 	endif;
-	print_r($referrer);
 	//	Get the query string for each REST type
 		/* */if($_SERVER['REQUEST_METHOD'] == "GET") {				// 
 			$keys = array_keys($_GET);
