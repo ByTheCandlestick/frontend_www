@@ -1,7 +1,7 @@
 <?
 	print($_SERVER['REMOTE_ADDR']);
-	/* */if(isset($_SERVER["HTTP_REFERER"])) {
-		$referrer = $_SERVER["HTTP_REFERER"];
+	/* */if(isset($_SERVER["SERVER_NAME"])) {
+		$referrer = $_SERVER["SERVER_NAME"];
 	}elseif(isset($_SERVER['REMOTE_ADDR'])) {
 		$referrer = $_SERVER['REMOTE_ADDR'];
 	}else {
