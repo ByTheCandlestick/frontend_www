@@ -44,11 +44,11 @@
 			<tbody>
 				<?
 					if(count($transactions) > 0) {
-						foreach($transactions as $t) {
-							if($t['Type'] == 'Refund') {
+						foreach($transactions as $x) {
+							if($x['Type'] == 'Refund') {
 								$textCol = "danger";
 								$valueDirection = "-";
-							} elseif($t['Type'] == 'Order') {
+							} elseif($x['Type'] == 'Order') {
 								$textCol = "success";
 								$valueDirection = "+";
 							} else {
@@ -58,13 +58,13 @@
 							print('
 								<tr>
 									<th scope="row">
-										<a onclick="">'.$t['Transaction ID'].'</a>
+										<a onclick="">'.$x['Transaction ID'].'</a>
 									</th>
-									<td>'.$t['Type'].'</td>
-									<td>'.$t['Status'].'</td>
-									<td class="text-'.$textCol.'">'.$valueDirection.number_format($t['Subtotal'], 2).'</td>
-									<td>'.$t['Modified'].'</td>
-									<td>'.$t['Created'].'</td>
+									<td>'.$x['Type'].'</td>
+									<td>'.$x['Status'].'</td>
+									<td class="text-'.$textCol.'">'.$valueDirection.number_format($x['Subtotal'], 2).'</td>
+									<td>'.$x['Modified'].'</td>
+									<td>'.$x['Created'].'</td>
 									<td>
 										<a href="#">
 											<i class="fa fa-external-link-alt"></i>

@@ -45,22 +45,22 @@
 			<tbody>
 				<?
 					if(count($orders) > 0) {
-						foreach($orders as $o) {
-							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$o['Invoice ID'].'">'.$o['Invoice ID'].'</a>':$o['Invoice ID'];
+						foreach($orders as $x) {
+							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
-									<td>'.$o['Created'].'</td>
-									<td>'.$o['Subtotal'].'</td>
-									<td>'.$o['Tax'].'</td>
-									<td>'.$o['Deposit'].'</td>
-									<td>'.$o['Status'].'</td>
-									<td>'.$o['Transaction ID'].'</td>
+									<td>'.$x['Created'].'</td>
+									<td>'.$x['Subtotal'].'</td>
+									<td>'.$x['Tax'].'</td>
+									<td>'.$x['Deposit'].'</td>
+									<td>'.$x['Status'].'</td>
+									<td>'.$x['Transaction ID'].'</td>
 									<td>
-										<a href="/Orders/Shipping/'.$o['Invoice ID'].'">
+										<a href="/Orders/Shipping/'.$x['Invoice ID'].'">
 											<i class="fa fa-box-full"></i>
 										</a>
-										<a href="javascript:orders.printReciept('.$o['Invoice ID'].');">
+										<a href="javascript:orders.printReciept('.$x['Invoice ID'].');">
 											<i class="fa fa-print"></i>
 										</a>
 									</td>
