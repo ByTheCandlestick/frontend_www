@@ -78,7 +78,7 @@
 									<td>'.$x['RetailPrice'].'</td>
 									<td>'.$x['Slug'].'</td>
 									<td>
-										<a href="javascript:product.generateBarcode();">
+										<a href="javascript:product.generateBarcode('.$x['UPC'].');">
 											<i class="fad fa-barcode"></i>
 										</a>
 									</td>
