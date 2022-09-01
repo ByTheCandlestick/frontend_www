@@ -1,9 +1,8 @@
 <?
     $transactions = array();
-	$page = intval(QS_SUBPAGE);
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*50 :0;
-    $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT 50 OFFSET $offset");
-	$transaction_count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions` ORDER BY `Modified` DESC"))[0];
+	$transactions_per_page = 100;
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$transactions_per_page :0;
+    $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT $transactions_per_page OFFSET $offset");
 	while($transaction = mysqli_fetch_assoc($q)) { array_push($transactions, $transaction); }
 ?>
 <section>
@@ -89,9 +88,11 @@
 			</tbody>
 		</table>
 		<?
+			$page = intval(QS_SUBPAGE);
+			$transaction_count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions` ORDER BY `Modified` DESC"))[0];
 			($page > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Transactions/".($page - 1).'/' : $prev_page = "";
-			(($offset + 50) < $transaction_count)? $next_status = '': $next_status = ' disabled';
+			(($offset + $transactions_per_page) < $transaction_count)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Transactions/".($page + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
