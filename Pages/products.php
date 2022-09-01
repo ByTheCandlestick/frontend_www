@@ -16,7 +16,7 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Products</h1>
-			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($products)): count($products);?>/<?=$total_orders?> Rows</p>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($products)): count($products);?>/<?=$total_products?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
