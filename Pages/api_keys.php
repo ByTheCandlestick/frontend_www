@@ -4,7 +4,8 @@
 ?><?
 	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Keys`"))[0];
 	$offset = (QS !== null)? (intval(QS)-1)*$keys_per_page: 0;
-    $q = DB_Query("SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', * FROM `API Keys` ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
+    $q = DB_Query($p = "SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', * FROM `API Keys` ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
+	print($p);
 	while($key = mysqli_fetch_assoc($q)) { array_push($keys, $key); }
 ?>
 <section>
