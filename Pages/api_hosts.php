@@ -3,7 +3,7 @@
 	$hosts_per_page = 100;
 ?><?
 	$total_hosts = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`='1'"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$hosts_per_page : 0;
+	$offset = (QS !== null)? (intval(QS)-1)*$hosts_per_page: 0;
     $q = DB_Query($prnt = "SELECT * FROM `API Allowed hosts` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $hosts_per_page OFFSET $offset");
 	print($prnt);
 	while($host = mysqli_fetch_assoc($q)) { array_push($hosts, $host); }
@@ -62,10 +62,10 @@
 			</tbody>
 		</table>
 		<?
-			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
-			($prev_status == '')? $prev_page = "/Hosts/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Hosts/".(intval(QS) - 1).'/' : $prev_page = "";
 			(($offset + $hosts_per_page) < $total_hosts)? $next_status = '': $next_status = ' disabled';
-			($next_status == '')? $next_page = "/Hosts/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			($next_status == '')? $next_page = "/Hosts/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
 				<div class=\"row\">
