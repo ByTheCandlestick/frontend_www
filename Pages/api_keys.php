@@ -41,7 +41,7 @@
 				<?
 					if(count($keys) > 0) {
 						foreach($keys as $x) {
-							$editable = ($userperm['api_access-keys-edit']==1)?'<a href="/API/Key/'.$x['ID'].'">'.substr($x['Key'], 0, 10).' . . . '.substr($x['Key'], 0, 10).'</a>':$x['Key1'].' . . . '.$x['Key2'];
+							$editable = ($userperm['api_access-keys-edit']==1)?'<a href="/API/Key/'.$x['ID'].'">'.substr($x['Key'], 0, 30).' . . . '.substr($x['Key'], 24, 256).'</a>':substr($x['Key'], 0, 30).' . . . '.substr($x['Key'], 24, 256);
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
