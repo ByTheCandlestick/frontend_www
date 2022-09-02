@@ -127,7 +127,7 @@
 										if(isset($arr_user_info['pass2']) && $arr_user_info['pass2']!=""):
 											$update['pass'] = true;
 										else:
-											throw new Error("ERR-UUSR-2");
+											throw new Error("ERR-UUSR-1");
 										endif;
 									endif;
 								}
@@ -138,32 +138,32 @@
 							try{
 								if($update['uname']) {
 									if(strlen($arr_user_info['uname']) < 6):
-										throw new Error("ERR-UUSR-2");
+										throw new Error("ERR-SUP-2");
 									else:
 										$info['username'] = $arr_user_info['uname'];
 									endif;
 								}
 								if($update['email']) {
 									if(!$this->ValidateEmail($arr_user_info['email'])):
-										throw new Error("ERR-UUSR-3");
+										throw new Error("ERR-SUP-3");
 									else:
 										$info['email'] = $arr_user_info['email'];
 									endif;
 								}
 								if($update['phone']) {
 									if(!$this->ValidatePhone($arr_user_info['email'])):
-										throw new Error("ERR-UUSR-3");
+										throw new Error("ERR-SUP-4");
 									else:
 										$info['email'] = $arr_user_info['email'];
 									endif;
 								}
 								if($update['p']) {
 									if($arr_user_info['pass1'] != $arr_user_info['pass2'])
-										throw new Error("ERR-UUSR-4");
+										throw new Error("ERR-SUP-5");
 									if($this->ValidatePassword($arr_user_info['pass1']) != 'success')
-										throw new Error("ERR-UUSR-5");
+										throw new Error("ERR-SUP-6");
 									if(strlen($arr_user_info['pass1']) < 8)
-										throw new Error("ERR-UUSR-6");
+										throw new Error("ERR-SUP-7");
 									$info['pass'] = hash('sha512', $arr_user_info['pass1']);
 								}
 								if($update['fname']) {
@@ -180,7 +180,7 @@
 								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info)) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
-									throw new Error("ERR-UUSR-3");
+									throw new Error("ERR-SUP-8");
 								}
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
@@ -191,7 +191,7 @@
 								if($mdl_User->deleteUser($arr[0])) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
-									exit($error = array("status", "ERR-SUP-12"));
+									exit($error = array("status", "ERR-SUP-9"));
 								}
 							} catch(Exception $ex) {
 								exit($this->throwError($ex->getMessage()." - Something went wrong! Please contact support.", "HTTP/1.1 500 Internal Server Error"));
