@@ -1,8 +1,18 @@
+<?
+    $hosts = array();
+	$hosts_per_page = 100;
+?><?
+	$total_hosts = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`='1'"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$hosts_per_page :0;
+    $q = DB_Query("SELECT * FROM `API Allowed hosts` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $hosts_per_page OFFSET $offset");
+	while($host = mysqli_fetch_assoc($q)) { array_push($hosts, $host); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Hosts</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($hosts)): count($hosts);?>/<?=$total_hosts?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -29,18 +39,18 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `API Allowed hosts` WHERE `Active?`=1 LIMIT 4");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
+					if(count($hosts) > 0) {
+						foreach($hosts as $x) {
+							$editable = ($userperm['adm_access-hosts']==1)?'<a href="/Hosts/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
 							print('
 								<tr>
-									<td>'.$row['Name'].'</td>
-									<td>'.$row['Hostname'].'</td>
+									<th scope="row">'.$editable.'</th>
+									<td>'.$x['Hostname'].'</td>
 									<td>
 							');
 							if($userperm['api_access-hosts-edit']==1) {
 								print('
-										<a href="/API/host/'.$row['ID'].'">
+										<a href="/API/host/'.$x['ID'].'">
 											<i class="fa fa-pencil"></i>
 										</a>
 								');
@@ -62,5 +72,20 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Hosts/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			(($offset + $hosts_per_page) < $total_hosts)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Hosts/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
