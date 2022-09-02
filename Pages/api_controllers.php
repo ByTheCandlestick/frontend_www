@@ -33,7 +33,6 @@
             <thead class="sticky-top">
                 <tr>
                     <th scope="col">Controller</th>
-                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -52,7 +51,6 @@
                             <tr>
                                 <th scope="row"></th>
                                 <td>No data found</td>
-                                <td></td>
                             </tr>
                         ');
                     }
