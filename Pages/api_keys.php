@@ -2,9 +2,9 @@
     $keys = array();
 	$keys_per_page = 100;
 ?><?
-	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Allowed keys` WHERE `Active?`='1'"))[0];
+	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Keys`"))[0];
 	$offset = (QS !== null)? (intval(QS)-1)*$keys_per_page: 0;
-    $q = DB_Query("SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
+    $q = DB_Query("SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', * FROM `API Keys` ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
 	while($key = mysqli_fetch_assoc($q)) { array_push($keys, $key); }
 ?>
 <section>
