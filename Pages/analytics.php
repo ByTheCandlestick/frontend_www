@@ -23,7 +23,7 @@
 	<div class="row">
 		<div class="row col-12 col-md-6">
 			<h3>Pages</h3>
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-6 h-100">
 				<h5>Page referrers</h5>
 				<chart class="ct-page-referrers" />
 				<script>
@@ -44,7 +44,7 @@
 					});
 				</script>
 			</div>
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-6 h-100">
 				<h5>Interactions</h5>
 				<chart class="ct-interactions" />
 				<script>
@@ -66,7 +66,7 @@
 		</div>
 		<div class="row col-12 col-md-6">
 			<h3>Products</h3>
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-6 h-100">
 				<h5>Product sales / day</h5>
 				<chart class="ct-prod-sales-day" />
 				<script>
@@ -85,7 +85,7 @@
 					});
 				</script>
 			</div>
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-6 h-100">
 				<h5>Product popularity</h5>
 				<chart class="ct-prod-popularity" />
 				<script>
