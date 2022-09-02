@@ -9,7 +9,7 @@
 			$day = strtotime('yesterday', $day);
 		}
 		for ($i=count($days_b)-1; $i>=0; $i--) {
-			array_push($days, $days_b[$i]);
+			array_push($days, substr($days_b[$i], 0, 3));
 		}
 	// List of all Months from this month backwards 1 week
 		$months = $months_b = array();
