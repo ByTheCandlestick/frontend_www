@@ -1,8 +1,18 @@
+<?
+    $keys = array();
+	$keys_per_page = 100;
+?><?
+	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Allowed keys` WHERE `Active?`='1'"))[0];
+	$offset = (QS !== null)? (intval(QS)-1)*$keys_per_page: 0;
+    $q = DB_Query("SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
+	while($key = mysqli_fetch_assoc($q)) { array_push($keys, $key); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Keys</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($keys)): count($keys);?>/<?=$total_keys?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -29,24 +39,14 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT 4");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
+					if(count($keys) > 0) {
+						foreach($keys as $x) {
+							$editable = ($userperm['api_access-keys-edit']==1)?'<a href="/API/Key/'.$x['ID'].'">'.$row['Key1'].' . . . '.$row['Key2'].'</a>':$row['Key1'].' . . . '.$row['Key2'];
 							print('
 								<tr>
-									<td>'.$row['Key1'].' . . . '.$row['Key2'].'</td>
+									<th scope="row">'.$editable.'</th>
+									<td>'.''.'</td>
 									<td>'.$row['Last used'].'</td>
-									<td>
-							');
-							if($userperm['api_access-keys-edit']==1) {
-								print('
-										<a href="/API/key/'.$row['ID'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-								');
-							}
-							print('
-									</td>
 								</tr>
 							');
 						}
@@ -62,5 +62,20 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Keys/".(intval(QS) - 1).'/' : $prev_page = "";
+			(($offset + $keys_per_page) < $total_keys)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Keys/".(intval(QS) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
