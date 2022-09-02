@@ -174,10 +174,11 @@
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
 						// Submit application
+							$mdl_User->ConfirmEmail($info['email']);
 							try {
-								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info)) {	// Success
+								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info)) {
 									$str_response = json_encode(array('status'=>'success'));
-								} else {		// Error submitting
+								} else {
 									throw new Error("ERR-SUP-7");
 								}
 							} catch(Error $er) {
