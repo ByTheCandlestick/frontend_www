@@ -4,7 +4,7 @@
 ?><?
 	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Keys`"))[0];
 	$offset = (QS !== null)? (intval(QS)-1)*$keys_per_page: 0;
-    $q = DB_Query($p = "SELECT LEFT(`Key` , 30) as 'Key1', RIGHT(`Key` , 15) as 'Key2', * FROM `API Keys` ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
+    $q = DB_Query($p = "SELECT * FROM `API Keys` ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
 	print($p);
 	while($key = mysqli_fetch_assoc($q)) { array_push($keys, $key); }
 ?>
@@ -42,7 +42,7 @@
 				<?
 					if(count($keys) > 0) {
 						foreach($keys as $x) {
-							$editable = ($userperm['api_access-keys-edit']==1)?'<a href="/API/Key/'.$x['ID'].'">'.$row['Key1'].' . . . '.$row['Key2'].'</a>':$row['Key1'].' . . . '.$row['Key2'];
+							$editable = ($userperm['api_access-keys-edit']==1)?'<a href="/API/Key/'.$x['ID'].'">'.substr($row['Key'], 0, 10).' . . . '.substr($row['Key'], 0, 10).'</a>':$row['Key1'].' . . . '.$row['Key2'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
