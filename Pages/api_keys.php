@@ -5,7 +5,6 @@
 	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Keys`"))[0];
 	$offset = (QS !== null)? (intval(QS)-1)*$keys_per_page: 0;
     $q = DB_Query($p = "SELECT * FROM `API Keys` ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
-	print($p);
 	while($key = mysqli_fetch_assoc($q)) { array_push($keys, $key); }
 ?>
 <section>
