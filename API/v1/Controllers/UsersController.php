@@ -151,10 +151,10 @@
 									endif;
 								}
 								if($update['phone']) {
-									if(!$this->ValidatePhone($arr_user_info['email'])):
+									if(!$this->ValidatePhone($arr_user_info['phone'])):
 										throw new Error("ERR-SUP-4");
 									else:
-										$info['email'] = $arr_user_info['email'];
+										$info['phone'] = $arr_user_info['phone'];
 									endif;
 								}
 								if($update['p']) {
