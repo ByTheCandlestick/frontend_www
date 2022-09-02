@@ -1,8 +1,18 @@
+<?
+    $versions = array();
+	$versions_per_page = 100;
+?><?
+	$total_versions = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API versions` WHERE `Active?`='1'"))[0];
+	$offset = (QS !== null)? (intval(QS)-1)*$versions_per_page: 0;
+    $q = DB_Query("SELECT * FROM `API versions` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $versions_per_page OFFSET $offset");
+	while($version = mysqli_fetch_assoc($q)) { array_push($versions, $version); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Versions</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($versions)): count($versions);?>/<?=$total_versions?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -29,12 +39,12 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_Query("SELECT * FROM `API Versions` WHERE `Active?`=1 LIMIT 4");
-					if(mysqli_num_rows($query) > 0) {
-						while ($row = mysqli_fetch_array($query)) {
+					if(count($versions) > 0) {
+						foreach($versions as $x) {
+							$editable = ($userperm['api_access-versions-edit']==1)?'<a href="/API/Version/'.$x['ID'].'">'.$x['Version'].'</a>':$x['Version'];
 							print('
 								<tr>
-									<td>'.$row['Version'].'</td>
+									<th scope="row">'.$editable.'</th>
 									<td>'.$row['Public?'].'</td>
 									<td>
 							');
@@ -62,5 +72,20 @@
 				?>
 			</tbody>
 		</table>
+		<?
+			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Versions/".(intval(QS) - 1).'/' : $prev_page = "";
+			(($offset + $versions_per_page) < $total_versions)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Versions/".(intval(QS) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>
