@@ -77,10 +77,9 @@
 		 *	@param string $phone
 		 */
 		protected function ValidatePhone(string $phone) {
-			$p_num = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
-			$p_num = preg_replace('/([^0-9]+)/', '', $p_num);
+			$p_num = preg_replace('/([^0-9]+)/', '', $phone);
 			if(strlen($p_num)==11) {
-				return (preg_match('/([0-9]+)/',$var))? true: false;
+				return (preg_match('/([0-9]+)/', $var))? true: false;
 			}
 		}
 	
