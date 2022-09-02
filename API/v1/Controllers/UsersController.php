@@ -160,10 +160,8 @@
 								if($update['p']) {
 									if($arr_user_info['pass1'] != $arr_user_info['pass2'])
 										throw new Error("ERR-SUP-5");
-									if($this->ValidatePassword($arr_user_info['pass1']) != 'success')
+									if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')
 										throw new Error("ERR-SUP-6");
-									if(strlen($arr_user_info['pass1']) < 8)
-										throw new Error("ERR-SUP-7");
 									$info['pass'] = hash('sha512', $arr_user_info['pass1']);
 								}
 								if($update['fname']) {
@@ -180,7 +178,7 @@
 								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info)) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
-									throw new Error("ERR-SUP-8");
+									throw new Error("ERR-SUP-7");
 								}
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
