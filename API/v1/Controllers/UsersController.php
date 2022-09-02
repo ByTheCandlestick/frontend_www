@@ -151,6 +151,7 @@
 									endif;
 								}
 								if($update['phone']) {
+									print_r('\''.$arr_user_info['phone'].'\'');
 									if(!$this->ValidatePhone($arr_user_info['phone'])):
 										throw new Error("ERR-SUP-4");
 									else:
