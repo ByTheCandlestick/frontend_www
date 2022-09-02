@@ -169,3 +169,9 @@ select:disabled, select.disabled {
 .ct-series-o .ct-bar, .ct-series-o .ct-line, .ct-series-o .ct-point, .ct-series-o .ct-slice-donut {
   stroke: var(--chart-series-15)!important;
 }
+.ct-labels foreignObject span.ct-horizontal {
+  transform: rotate(-45deg) translate(-4px, 4px);
+  text-align: end!important;
+  position: fixed;
+  text-anchor: end;
+}
