@@ -25,7 +25,7 @@
 			<h3>Pages</h3>
 			<div class="col-12 col-md-6">
 				<h5>Page referrers</h5>
-				<chart class="ct-page-referrers" />
+				<chart class="ct-page-referrers d-block h-100" />
 				<script>
 					new Chartist.Line('.ct-page-referrers', {
 						labels: ['<?print(implode('\', \'', $days))?>'],
@@ -46,7 +46,7 @@
 			</div>
 			<div class="col-12 col-md-6">
 				<h5>Interactions</h5>
-				<chart class="ct-interactions" />
+				<chart class="ct-interactions d-block h-100" />
 				<script>
 					new Chartist.Line('.ct-interactions', {
 						labels: ['L0', 'L1', 'L2', 'L3'],
@@ -68,7 +68,7 @@
 			<h3>Products</h3>
 			<div class="col-12 col-md-6">
 				<h5>Product sales / day</h5>
-				<chart class="ct-prod-sales-day" />
+				<chart class="ct-prod-sales-day d-block h-100" />
 				<script>
 					new Chartist.Line('.ct-prod-sales-day', {
 						labels: ['L0', 'L1', 'L2', 'L3'],
@@ -87,7 +87,7 @@
 			</div>
 			<div class="col-12 col-md-6">
 				<h5>Product popularity</h5>
-				<chart class="ct-prod-popularity" />
+				<chart class="ct-prod-popularity d-block h-100" />
 				<script>
 					new Chartist.Line('.ct-prod-popularity', {
 						labels: ['L0', 'L1', 'L2', 'L3'],
