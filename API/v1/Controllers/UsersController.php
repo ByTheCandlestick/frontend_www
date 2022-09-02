@@ -173,7 +173,7 @@
 									$info['surname'] = $arr_user_info['lname'];
 								}
 							} catch(Error $er) {
-								$this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity");
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
 						// Submit application
 							try {
@@ -183,7 +183,7 @@
 									throw new Error("ERR-UUSR-3");
 								}
 							} catch(Error $er) {
-								$this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error");
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 							}
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Remove user
 						// Submit application
@@ -194,8 +194,7 @@
 									exit($error = array("status", "ERR-SUP-12"));
 								}
 							} catch(Exception $ex) {
-								$str_ErrorDesc = $ex->getMessage()." - Something went wrong! Please contact support.";
-								$str_ErrorHeader = "HTTP/1.1 500 Internal Server Error";
+								exit($this->throwError($ex->getMessage()." - Something went wrong! Please contact support.", "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
 					else:
