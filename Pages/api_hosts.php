@@ -4,8 +4,7 @@
 ?><?
 	$total_hosts = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`='1'"))[0];
 	$offset = (QS !== null)? (intval(QS)-1)*$hosts_per_page: 0;
-    $q = DB_Query($prnt = "SELECT * FROM `API Allowed hosts` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $hosts_per_page OFFSET $offset");
-	print($prnt);
+    $q = DB_Query("SELECT * FROM `API Allowed hosts` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $hosts_per_page OFFSET $offset");
 	while($host = mysqli_fetch_assoc($q)) { array_push($hosts, $host); }
 ?>
 <section>
