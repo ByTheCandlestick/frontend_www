@@ -41,22 +41,11 @@
 				<?
 					if(count($hosts) > 0) {
 						foreach($hosts as $x) {
-							$editable = ($userperm['adm_access-hosts']==1)?'<a href="/Hosts/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
+							$editable = ($userperm['adm_access-hosts-edit']==1)?'<a href="/Hosts/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
 									<td>'.$x['Hostname'].'</td>
-									<td>
-							');
-							if($userperm['api_access-hosts-edit']==1) {
-								print('
-										<a href="/API/host/'.$x['ID'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-								');
-							}
-							print('
-									</td>
 								</tr>
 							');
 						}
@@ -65,7 +54,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
 							</tr>
 						');
 					}
