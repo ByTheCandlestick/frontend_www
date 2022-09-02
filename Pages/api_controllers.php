@@ -1,8 +1,18 @@
+<?
+    $controllers = array();
+	$controllers_per_page = 100;
+?><?
+	$total_controllers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Controllers` WHERE `Active?`='1'"))[0];
+	$offset = (QS !== null)? (intval(QS)-1)*$controllers_per_page: 0;
+    $q = DB_Query("SELECT * FROM `API Controllers` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $controllers_per_page OFFSET $offset");
+	while($controller = mysqli_fetch_assoc($q)) { array_push($controllers, $controller); }
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>Controllers</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($controllers)): count($controllers);?>/<?=$total_controllers?> Rows</p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -28,23 +38,12 @@
             </thead>
             <tbody>
                 <?
-                    $query = DB_Query("SELECT * FROM `API Controllers` WHERE `Active?`=1 LIMIT 7");
-                    if(mysqli_num_rows($query) > 0) {
-                        while ($row = mysqli_fetch_array($query)) {
-                            print('
-                                <tr>
-                                    <td>'.$row['Controller'].'</td>
-                                    <td>
-                            ');
-                            if($userperm['api_access-controllers-edit']==1) {
-                                print('
-                                        <a href="/API/Controller/'.$row['ID'].'">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                ');
-                            }
-                            print('
-                                    </td>
+					if(count($controllers) > 0) {
+						foreach($controllers as $x) {
+							$editable = ($userperm['api_access-controllers-edit']==1)?'<a href="/API/Controller/'.$x['ID'].'">'.$x['Controller'].'</a>':$x['Controller'];
+							print('
+								<tr>
+									<th scope="row">'.$editable.'</th>
                                 </tr>
                             ');
                         }
@@ -60,5 +59,20 @@
                 ?>
             </tbody>
         </table>
+		<?
+			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Controllers/".(intval(QS) - 1).'/' : $prev_page = "";
+			(($offset + $controllers_per_page) < $total_controllers)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Controllers/".(intval(QS) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+					</div>
+				</div>
+			");
+		?>
 	</div>
 </section>

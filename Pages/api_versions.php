@@ -45,18 +45,7 @@
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
-									<td>'.$row['Public?'].'</td>
-									<td>
-							');
-							if($userperm['api_access-versions-edit']==1) {
-								print('
-										<a href="/API/Version/'.$row['ID'].'">
-											<i class="fa fa-pencil"></i>
-										</a>
-								');
-							}
-							print('
-									</td>
+									<td>'.$x['Public?'].'</td>
 								</tr>
 							');
 						}
@@ -65,7 +54,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
 							</tr>
 						');
 					}
