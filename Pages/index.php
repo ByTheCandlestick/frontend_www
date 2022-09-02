@@ -219,7 +219,7 @@
 	<div class="row" name="Sales / day">
 		<div class="col-12 col-lg-6">
 			<h3>Sales this week</h3>
-			<chart class="ct-sales-day d-block mb-2" />
+			<chart class="ct-sales-day d-block h-100" />
 		</div>
 		<script>
 			new Chartist.Line('.ct-sales-day', {
@@ -238,7 +238,7 @@
 		</script>
 		<div class="col-12 col-lg-6">
 			<h3>Sales This year</h3>
-			<chart class="ct-sales-month d-block mb-2" />
+			<chart class="ct-sales-month d-block h-100" />
 		</div>
 		<script>
 			new Chartist.Line('.ct-sales-month', {
