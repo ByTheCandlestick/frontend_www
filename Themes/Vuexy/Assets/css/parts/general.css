@@ -170,8 +170,9 @@ select:disabled, select.disabled {
   stroke: var(--chart-series-15)!important;
 }
 .ct-labels foreignObject span.ct-horizontal {
-  transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(0px, 0px)!important;
   text-align: end!important;
-  position: fixed;
-  text-anchor: end;
+  text-anchor: end!important;
+  width: 0%!important;
+  margin: 1rem 0px 0px -0.5rem;
 }
