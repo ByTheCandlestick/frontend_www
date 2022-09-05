@@ -19,10 +19,9 @@
 			if(!file_exists(REPOSITORY)) {
 				shell_exec("cd ".BRANCH_DIR." && git clone ".REMOTE_LINK);
 				shell_exec("cd ".REPOSITORY." && git checkout ".BRANCH);
-				shell_exec("cd ".REPOSITORY." && git remote add upstream ".REMOTE_LINK);
 				die("Cloned. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			} else {
-				shell_exec("cd ".REPOSITORY." && git pull upstream ".BRANCH);
+				shell_exec("cd ".REPOSITORY." && git pull origin ".BRANCH);
 				die("Updated. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			}
 		}
