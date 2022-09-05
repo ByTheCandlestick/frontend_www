@@ -176,3 +176,6 @@ select:disabled, select.disabled {
   width: 0%!important;
   margin: 1rem 0px 0px -0.5rem;
 }
+chart.monetary span.ct-label.ct-vertical.ct-start::before {
+  content: '£';
+}
