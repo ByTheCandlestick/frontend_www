@@ -91,7 +91,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/adm_style.css">
+				<link rel="stylesheet" href="/style.css">
 			<!-- ===== EOS =====-->
 		</head>
 		<body>
@@ -101,7 +101,7 @@
 						printScripts($layout_row['script_ids']);
 					}
 				?>
-				<script src="/adm_script.js" type="text/javascript"></script>
+				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<!-- ===== Preloader ===== -->
