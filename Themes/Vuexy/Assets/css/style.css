@@ -1,16 +1,16 @@
-@import url("/app-colours.css");
+@import url("/parts/app-colours.css");
 
-@import url("/app-alerts.css");
-@import url("/app-container.css");
-@import url("/app-header.css");
-@import url("/app-search.css");
-@import url("/app-sections.css");
-@import url("/app-sidebar.css");
-@import url("/app-scrollbar.css");
-@import url("/preloader.css");
-@import url("/general.css");
-@import url("/tables.css");
-@import url("/input.css");
-@import url("/custom-bootstrap.css");
+@import url("/parts/app-alerts.css");
+@import url("/parts/pp-container.css");
+@import url("/parts/app-header.css");
+@import url("/parts/app-search.css");
+@import url("/parts/app-sections.css");
+@import url("/parts/app-sidebar.css");
+@import url("/parts/app-scrollbar.css");
+@import url("/parts/preloader.css");
+@import url("/parts/general.css");
+@import url("/parts/tables.css");
+@import url("/parts/input.css");
+@import url("/parts/custom-bootstrap.css");
 
-@import url("/responsive.css");
+@import url("/parts/responsive.css");
