@@ -18,7 +18,8 @@
 				}
 			} else {
 				header('Content-Type: text/json');
-				print(json_encode(array("error"=>"File not found")));
+				print(json_encode(array("error"=>"File not found",
+										"Location" => $path)));
 			}
 		} else {
 			if($website_info['Maintenance']) {
