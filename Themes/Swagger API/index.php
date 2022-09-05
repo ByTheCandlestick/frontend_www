@@ -8,7 +8,7 @@
 			// API Functions
 			require_once("./API/$uri[0]/Models/$uri[1]Model.php");
 			require_once("./API/$uri[0]/Controllers/$uri[1]Controller.php");
-			require_once("./API/$uri[0]/Contexts/$uri[1]Context.php");
+			require_once("./API/$uri[0]/Core/$uri[1]Context.php");
 		} elseif(file_exists($dash = './API/'.QS_PAGE.'/dashboard.php')) {
 			// Display the swagger api dashboard
 			require_once($dash);
