@@ -7,10 +7,10 @@
 @import url("/parts_app-sections.css");
 @import url("/parts_app-sidebar.css");
 @import url("/parts_app-scrollbar.css");
-@import url("/parts_app-preloader.css");
-@import url("/parts_general.css");
-@import url("/parts_tables.css");
-@import url("/parts_input.css");
-@import url("/parts_custom-bootstrap.css");
+@import url("/adm_parts_preloader.css");
+@import url("/adm_parts_general.css");
+@import url("/adm_parts_tables.css");
+@import url("/adm_parts_input.css");
+@import url("/adm_parts_custom-bootstrap.css");
 
-@import url("/parts_responsive.css");
+@import url("/adm_parts_responsive.css");
