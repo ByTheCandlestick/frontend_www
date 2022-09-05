@@ -136,5 +136,48 @@
 				</div>
 			</div>
 		</div>
+		<div class="col-12 col-md-6">
+			<div class="row">
+				<h3>Sales</h3>
+				<div class="col-12 col-md-6">
+					<h5>Sales this week</h3>
+					<chart class="ct-sales-day d-block h-100" />
+					<script>
+						new Chartist.Line('.ct-sales-day', {
+							labels: ['<?print(implode('\', \'', $days))?>'],
+							series: [
+								[<?print(implode(', ', $dailySales))?>]
+							]
+						}, {
+							fullWidth: true,
+							showArea: true,
+							showLine: false,
+							chartPadding: {
+								right: 40
+							}
+						});
+					</script>
+				</div>
+				<div class="col-12 col-md-6">
+					<h3>Sales This year</h3>
+					<chart class="ct-sales-month d-block h-100" />
+					<script>
+						new Chartist.Line('.ct-sales-month', {
+							labels: ['<?print(implode('\', \'', $months))?>'],
+							series: [
+								[<?print(implode(', ', $monthlySales))?>]
+							]
+						}, {
+							fullWidth: true,
+							showArea: true,
+							showLine: false,
+							chartPadding: {
+								right: 40
+							}
+						});
+					</script>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
