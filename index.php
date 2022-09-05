@@ -8,7 +8,6 @@
 		}
 	// Display file if get[file] and get[ext] is set, else display theme index file for the eheme
 		if(isset($_GET['file']) && isset($_GET['ext'])) {
-			str_replace()
 			if(file_exists($path = sprintf("%s/CDN/%s/%s.%s", __ROOT__, $_GET['ext'], str_replace("_", "/", $_GET['file']), $_GET['ext']))) {
 				if($_GET['ext'] == "php") {
 					include_once($path);
