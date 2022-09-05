@@ -101,7 +101,7 @@
 						printScripts($layout_row['script_ids']);
 					}
 				?>
-				<script src="/script.js" type="text/javascript"></script>
+				<script src="/adm_script.js" type="text/javascript"></script>
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<!-- ===== Preloader ===== -->
