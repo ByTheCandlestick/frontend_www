@@ -5,9 +5,9 @@
 		 *	@return	Redirect	Redirects to HTTP/1.1 404
 		 *	@final				DO NOT OVERWRITE
 		 */
-		public function __call($name, $arguments) {
-			$this->sendOutput('', array('HTTP/1.1 404 Not Found'));
-		}
+			public function __call($name, $arguments) {
+				$this->sendOutput('', array('HTTP/1.1 404 Not Found'));
+			}
 	
 		/**
 		 *	Get URI elements.
