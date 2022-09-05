@@ -1,12 +1,59 @@
 <?
-	$days = $days_b = array();
-	for ($i = 0; $i < 7; $i++){
-		array_push($days_b, date('l', $day));
-		$day = strtotime('yesterday', $day);
-	}
-	for ($i=count($days_b)-1; $i>=0; $i--) {
-		array_push($days, substr($days_b[$i], 0, 3));
-	}
+	// Currencies
+		$fmt = new \NumberFormatter( 'en', \NumberFormatter::CURRENCY);
+		$fmt->setAttribute( $fmt::FRACTION_DIGITS, 2 );
+	// List of all days from today backwards 1 week
+		$days = $days_b = array();
+		for ($i = 0; $i < 7; $i++){
+			array_push($days_b, date('l', $day));
+			$day = strtotime('yesterday', $day);
+		}
+		for ($i=count($days_b)-1; $i>=0; $i--) {
+			array_push($days, substr($days_b[$i], 0, 3));
+		}
+	// List of all Months from this month backwards 1 week
+		$months = $months_b = array();
+		for ($i = 0; $i < 12; $i++){
+			array_push($months_b, date('M', $month));
+			$month = strtotime('last month', $month);
+		}
+		for($i=count($months_b)-1; $i>=0; $i--) {
+			array_push($months, $months_b[$i]);
+		}
+	// Gets all sales data for the last 7 days
+		$dailySales = array();
+		$dailySales_raw = mysqli_fetch_all(DB_QUERY("SELECT date_format(`Created`,'%Y-%m-%d'), SUM(`Deposit`) FROM `Transactions` GROUP BY 1 ORDER BY 1 ASC LIMIT 7"));
+		for($i=0; $i<7; $i++) {
+			if(isset($dailySales_raw[$i])) {
+				array_push($dailySales, $dailySales_raw[$i][1]);
+			} else {
+				array_unshift($dailySales, 0);
+			}
+		}
+	// Gets all sales data from the last 12 months
+		$monthlySales = array();
+		$monthlySales_raw = mysqli_fetch_all(DB_QUERY("SELECT date_format(`Created`,'%Y-%m'), SUM(`Deposit`) FROM `Transactions` GROUP BY 1 ORDER BY 1 ASC LIMIT 12"));
+		for($i=0; $i<12; $i++) {
+			if(isset($monthlySales_raw[$i])) {
+				array_push($monthlySales, $monthlySales_raw[$i][1]);
+			} else {
+				array_unshift($monthlySales, 0);
+			}
+		}
+	// Gets current and last year / month
+		$currMonth	= date("Y-d-m", mktime(0, 0, 0, 1, date('m'), date('Y')));
+		$lastMonth	= date("Y-d-m", mktime(0, 0, 0, 1, date('m')-1, date('Y')));
+		$currYear	= date("Y-d-m", mktime(0, 0, 0, 1, 1, date('Y')));
+		$lastYear	= date("Y-d-m", mktime(0, 0, 0, 1, 1, date('Y')-1));
+	// Gets all sales and refund info 
+		$currYearIncome		= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY 1) as a;", $currYear)));
+		$currYearExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY 1) as a;", $currYear)));
+		$lastYearIncome		= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastYear, $currYear)));
+		$lastYearExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastYear, $currYear)));
+		$currMonthIncome	= mysqli_fetch_row(DB_QUERY( sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' GROUP BY 1) as a;", $currMonth)));
+		$currMonthExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' GROUP BY 1) as a;", $currMonth)));
+		$lastMonthIncome	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Order' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastMonth, $currMonth)));
+		$lastMonthExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastMonth, $currMonth)));
 ?>
 <section>
 	<!-- Section Header -->
