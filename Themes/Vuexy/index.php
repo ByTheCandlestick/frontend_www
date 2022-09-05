@@ -91,7 +91,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/style.css">
+				<link rel="stylesheet" href="/adm_style.css">
 			<!-- ===== EOS =====-->
 		</head>
 		<body>
