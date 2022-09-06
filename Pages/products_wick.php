@@ -152,22 +152,37 @@
 					<label for="floatingInput">Thickness</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_b">
+			<div class="col-12 col-md-6 col-lg-2" name="price_b">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Quantity'])?>">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_e">
+			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Price (ea)'])?>" disabled>
 					<label for="floatingInput">Price (ea)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="supplier">
+				<div class="form-floating mb-3">
+					<select class="form-select" id="floatingSelect">
+						<option value="-1" selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `Product wickstands` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $wick['ReccommendedWickStand'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
+					</select>
+					<label for="floatingInput">Reccommended Wick Stand</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
