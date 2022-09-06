@@ -25,7 +25,7 @@
 		 *	@final
 		 */
 			public function ListSessions(int $limit) {
-				return $this->Execute("SELECT * FROM `Users_sessions` ORDER BY `Start_time` ASC LIMIT $limit", 1);
+				return $this->Execute("SELECT * FROM `Users sessions` ORDER BY `Start_time` ASC LIMIT $limit", 1);
 			}
 		/** login
 		 *  Logs the user in and creates a session
@@ -49,8 +49,8 @@
 					);
 
 					// Insert session and cookies
-					$this->Execute("INSERT INTO `Users_sessions` (`UID`, `Session_code`, `IP_address`, `Start_time`, `Active`) VALUES ('$uid', '$code', '$ip', now(), '1')", 0);
-					$session = $this->Execute("SELECT `Session_code` FROM `Users_sessions` WHERE `Session_code`='$code'", 3)[0];
+					$this->Execute("INSERT INTO `Users sessions` (`UID`, `Session_code`, `IP_address`, `Start_time`, `Active`) VALUES ('$uid', '$code', '$ip', now(), '1')", 0);
+					$session = $this->Execute("SELECT `Session_code` FROM `Users sessions` WHERE `Session_code`='$code'", 3)[0];
 					if(isset($session)) {
 						return array(
 							"status" => "success",
@@ -93,7 +93,7 @@
 		 *	@final
 		 */
 			public function Logout(string $session_code) {
-				$session = $this->Execute("UPDATE `Users_sessions` SET `Session_code`='$session_code', `Last accessed`=now(), `Active`='0'", 0);
+				$session = $this->Execute("UPDATE `Users sessions` SET `Session_code`='$session_code', `Last accessed`=now(), `Active`='0'", 0);
 				if(isset($session)) {
 					return array(
 						"status" => "success",
@@ -171,7 +171,7 @@
 						array_push($string, '`'.$key.'`='.$vals[$keys[$i]]);
 					}
 				}
-				return $this->Execute(sprintf("UPDATE `Users_permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid), 1);
+				return $this->Execute(sprintf("UPDATE `Users permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid), 1);
 			}
 		/**	deleteUser
 		 *	
@@ -179,7 +179,7 @@
 		 */
 			public function deleteUser(string $uid) {
 				$this->Execute(sprintf("DELETE FROM `Users` WHERE `ID`='%s'", $uid), 1);
-				$this->Execute(sprintf("DELETE FROM `Users_permissions` WHERE `UID`='%s'", $uid), 1);
+				$this->Execute(sprintf("DELETE FROM `Users permissions` WHERE `UID`='%s'", $uid), 1);
 				return true;
 			}
 	}

@@ -92,7 +92,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("DESCRIBE `Users_permissions`");
+									$query = DB_Query("DESCRIBE `Users permissions`");
 									while($row = mysqli_fetch_array($query)) {
 										if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
 											print_r('<option value="'.$row['Field'].'">'.$row['Field'].'</option>');
@@ -253,7 +253,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("DESCRIBE `Users_permissions`");
+									$query = DB_Query("DESCRIBE `Users permissions`");
 									while($row = mysqli_fetch_array($query)) {
 										if(preg_match("([a-z]+\_[a-z\-]+)", $row['Field'])) {
 											$row['Field'] == $page['Permission'] ? $selected="selected" : $selected="";

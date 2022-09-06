@@ -1,7 +1,7 @@
 <?
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Users` WHERE `ID`=%s", QS))) > 0) {
 		$user = mysqli_fetch_assoc($query);
-		$userperm = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users_permissions` WHERE `UID`=%s", QS)));
+		$userperm = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users permissions` WHERE `UID`=%s", QS)));
 ?>
 	<section>
 		<!-- Section Header -->
@@ -23,7 +23,7 @@
 		<!-- Section Body -->
 		<div class="row">
 			<?
-				$query = DB_Query("DESCRIBE `Users_permissions`");
+				$query = DB_Query("DESCRIBE `Users permissions`");
 				while($col = mysqli_fetch_array($query)[0]) {
 					if($col != "UID") {
 						($userperm[$col] == 1)? $checked = " checked" : $checked = "";

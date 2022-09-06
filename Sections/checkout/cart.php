@@ -1,7 +1,7 @@
 <?
 	$cart_total = 0;
 	$userid = $userdata['ID'];
-	if($query = DB_Query("SELECT * FROM `Users_cart` WHERE `UID`=$userid AND `Active`=1")) {
+	if($query = DB_Query("SELECT * FROM `Users cart` WHERE `UID`=$userid AND `Active`=1")) {
 		$cart_items = array();
 		while($row = mysqli_fetch_row($query)) {
 			array_push($cart_items, $row);

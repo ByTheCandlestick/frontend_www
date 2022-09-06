@@ -19,7 +19,7 @@
 					throw new error('ERR-CRT-7');
 				}
 				// Add line to cart
-				$this->Execute("INSERT INTO `Users_cart` (`UID`, `SKU`, `Quantity`, `Options`) VALUES ('$uid', '$sku', '$qty', '$opt')", 1);
+				$this->Execute("INSERT INTO `Users cart` (`UID`, `SKU`, `Quantity`, `Options`) VALUES ('$uid', '$sku', '$qty', '$opt')", 1);
 				
 				return array(
 					"status"=>"success",

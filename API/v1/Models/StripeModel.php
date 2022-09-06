@@ -67,7 +67,7 @@
 		 */
 			public function uploadAddress($uid, $number,  $address1, $address2, $town, $county, $country, $postcode) {
 				$this->Execute("INSERT INTO
-									`Users_address`(`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`)
+									`Users addresses`(`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`)
 								SELECT
 									$uid, '$number', '$address1', '$address2', '$town', '$county', '$country', '$postcode'
 								FROM
@@ -76,7 +76,7 @@
 									SELECT
 										*
 									FROM
-										`Users_address`
+										`Users addresses`
 									WHERE
 									`uid`=$uid AND
 									`number_name`=$number AND
@@ -97,7 +97,7 @@
 				return $this->Execute("SELECT
 									`id`
 								FROM
-									`Users_address`
+									`Users addresses`
 								WHERE
 									`uid`=$uid AND
 									`number_name`=$number AND
@@ -120,7 +120,7 @@
 		 * 
 		 */
 			public function emptyCart($uid) {
-				return $this->Execute("DELETE FROM `Users_cart` WHERE `uid`=$uid", 1);
+				return $this->Execute("DELETE FROM `Users cart` WHERE `uid`=$uid", 1);
 			}
 		/** uploadRefund
 		 * 
