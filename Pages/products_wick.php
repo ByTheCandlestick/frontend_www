@@ -134,19 +134,19 @@
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="width">
+			<div class="col-12 col-md-6 col-lg-2" name="width">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Width (mm)'])?>">
 					<label for="floatingInput">Width (mm)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="height">
+			<div class="col-12 col-md-6 col-lg-2" name="height">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Height (mm)'])?>">
 					<label for="floatingInput">Height (cl)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="thickness">
+			<div class="col-12 col-md-6 col-lg-2" name="thickness">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Thickness (mm)'])?>">
 					<label for="floatingInput">Thickness (mm)</label>
