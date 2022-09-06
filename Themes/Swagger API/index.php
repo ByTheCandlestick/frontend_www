@@ -13,7 +13,7 @@
 			// Display the swagger api dashboard
 			require_once($dash);
 		} else {
-
+			print('There was an issue with your request. There was also an issue with getting the backup page. Please contact the system admin to repair.');
 		}
 	} else {
 		$return = array(
