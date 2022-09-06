@@ -4,9 +4,9 @@
 ?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
-	$total_materials = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_materials`"))[0];
+	$total_materials = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product materials`"))[0];
 	$offset = (QS !== null)?(intval(QS)-1)*$materials_per_page :0;
-    $q = DB_Query($prnt = "SELECT * FROM `products_materials` ORDER BY `ID` ASC LIMIT $materials_per_page OFFSET $offset");
+    $q = DB_Query($prnt = "SELECT * FROM `Product materials` ORDER BY `ID` ASC LIMIT $materials_per_page OFFSET $offset");
 	while($material = mysqli_fetch_assoc($q)) { array_push($materials, $material); }
 ?>
 <section>

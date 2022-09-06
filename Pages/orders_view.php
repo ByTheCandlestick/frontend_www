@@ -3,7 +3,7 @@
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Invoice ID`='%s' AND `Type`='Order'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
 		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `id`=%s", $invoice['Billing address'])));
-		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping by'])));
+		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Product shippings` WHERE `id`=%s", $invoice['Shipping by'])));
 		$refunds = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Charge ID`='%s' AND `Type`='Refund' ORDER BY `Created` ASC", $invoice['Charge ID']));
 		$refundsValue = 0;
 		while($refund = mysqli_fetch_assoc($refunds)) {

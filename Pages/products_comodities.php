@@ -44,7 +44,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_containers` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product containers` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -111,7 +111,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wicks` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product wicks` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -172,7 +172,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_wickstands` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product wickstands` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -234,7 +234,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product materials` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -297,7 +297,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_fragrances` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product fragrances` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -422,7 +422,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_packagings` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product packaging` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -483,7 +483,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_materials` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product materials` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('

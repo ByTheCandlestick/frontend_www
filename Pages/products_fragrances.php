@@ -4,9 +4,9 @@
 ?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
-	$total_fragrances = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_fragrances`"))[0];
+	$total_fragrances = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product fragrances`"))[0];
 	$offset = (QS !== null)?(intval(QS)-1)*$fragrances_per_page :0;
-    $q = DB_Query($prnt = "SELECT * FROM `products_fragrances` ORDER BY `ID` ASC LIMIT $fragrances_per_page OFFSET $offset");
+    $q = DB_Query($prnt = "SELECT * FROM `Product fragrances` ORDER BY `ID` ASC LIMIT $fragrances_per_page OFFSET $offset");
 	while($fragrance = mysqli_fetch_assoc($q)) { array_push($fragrances, $fragrance); }
 ?>
 <section>

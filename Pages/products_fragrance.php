@@ -1,5 +1,5 @@
 <?
-    $query = DB_Query(sprintf("SELECT * FROM `products_fragrances` WHERE `ID`=%s", QS));
+    $query = DB_Query(sprintf("SELECT * FROM `Product fragrances` WHERE `ID`=%s", QS));
     if(strtolower(QS) == "new") {
 ?>
 

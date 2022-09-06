@@ -46,7 +46,7 @@
 		 * 
 		 */
 			public function validateContainer($cont) {
-				if($this->Execute("SELECT COUNT(*) FROM `products_containers` WHERE `ID`=".$cont, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product containers` WHERE `ID`=".$cont, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateWick
@@ -54,7 +54,7 @@
 		 * 
 		 */
 			public function validateWick($wick) {
-				if($this->Execute("SELECT COUNT(*) FROM `products_wicks` WHERE `ID`=".$wick, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product wicks` WHERE `ID`=".$wick, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateWickStand
@@ -62,7 +62,7 @@
 		 * 
 		 */
 			public function validateWickStand($stand) {
-				if($this->Execute("SELECT COUNT(*) FROM `products_wickstands` WHERE `ID`=".$stand, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product wickstands` WHERE `ID`=".$stand, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateMaterial
@@ -70,7 +70,7 @@
 		 * 
 		 */
 			public function validateMaterial($material) {
-				if($this->Execute("SELECT COUNT(*) FROM `products_materials` WHERE `ID`=".$material, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product materials` WHERE `ID`=".$material, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateFragrance
@@ -78,7 +78,7 @@
 		 * 
 		 */
 			public function validateFragrance($fragrance) {
-				if($this->Execute("SELECT COUNT(*) FROM `products_fragrances` WHERE `ID`=".$fragrance, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product fragrances` WHERE `ID`=".$fragrance, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateColour
@@ -94,7 +94,7 @@
 		 * 
 		 */
 			public function validatePackaging($packaging) {
-				if($this->Execute("SELECT COUNT(*) FROM `products_packagings` WHERE `ID`=".$packaging, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product packaging` WHERE `ID`=".$packaging, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateShipping
@@ -102,7 +102,7 @@
 		 * 
 		 */
 			public function validateShipping($shipping) {
-				if($this->Execute("SELECT COUNT(*) FROM `products_shippings` WHERE `ID`=".$shipping, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product shippings` WHERE `ID`=".$shipping, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateMadeBy

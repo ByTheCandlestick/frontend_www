@@ -156,7 +156,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `products_containers` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `Product containers` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['Container_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['ID'].'" size="'.$row['Size (cl)'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
@@ -171,7 +171,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `products_wicks` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `Product wicks` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['Wick_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
@@ -186,7 +186,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `products_wickstands` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `Product wickstands` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['WickStand_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
@@ -201,7 +201,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `products_materials` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `Product materials` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['Material_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
@@ -216,7 +216,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `products_fragrances` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `Product fragrances` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['Fragrance_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
@@ -246,7 +246,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `products_packagings` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `Product packaging` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['Packaging_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
@@ -261,7 +261,7 @@
 							<select class="form-select" id="floatingSelect">
 								<option value="-1" selected>Please select</option>
 								<?
-									$query = DB_Query("SELECT * FROM `products_shippings` WHERE `Active`=1");
+									$query = DB_Query("SELECT * FROM `Product shippings` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['id'] == $prod['Shipping_ID'])? $selected=' selected' : $selected='';
 										print_r('<option value="'.$row['id'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
