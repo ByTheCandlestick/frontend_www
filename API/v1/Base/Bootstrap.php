@@ -76,7 +76,7 @@
 			function denyHost() {
 				parse_str(QUERY_STRING, $query);
 				if(isset($query['api_key'])) {
-					return (mysqli_fetch_array(DB_Query(sprintf("SELECT `Deny hosts?` FROM `API Keys` WHERE `Key`='%s'", $query['api_key'])))[0])? true: false;
+					return(mysqli_fetch_array(DB_Query(sprintf("SELECT `Deny hosts?` FROM `API Keys` WHERE `Key`='%s'", $query['api_key'])))[0])? true: false;
 				}
 			}
 		/**	checkVersion
@@ -122,7 +122,7 @@
 		 *	@return	array	Ends the API and displays an error
 		 */
 			function checkHost(string $origin) {
-				return (!mysqli_fetch_array(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now() AND (`Hostname`='$origin' OR `Remote address`='$origin')"))[0])? invalid_request(4): true;
+				return(!mysqli_fetch_array(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`=1 AND `Created`<now() AND (`Hostname`='$origin' OR `Remote address`='$origin');"))[0])? invalid_request(4): true;
 			};
 	//	Get URI Vars
 		if((!denyHost() && checkHost($referrer)) || denyHost()) {
