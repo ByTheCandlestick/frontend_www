@@ -54,25 +54,25 @@
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max weight'])?>">
-					<label for="floatingInput">Max weight</label>
+					<label for="floatingInput">Max weight (g)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max length'])?>">
-					<label for="floatingInput">Max length</label>
+					<label for="floatingInput">Max length (mm)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max width'])?>">
-					<label for="floatingInput">Max width</label>
+					<label for="floatingInput">Max width (mm)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max height'])?>">
-					<label for="floatingInput">QuanMax heighttity</label>
+					<label for="floatingInput">Max height (mm)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
@@ -145,25 +145,25 @@
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max weight'])?>">
-					<label for="floatingInput">Max weight</label>
+					<label for="floatingInput">Max weight (g)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max length'])?>">
-					<label for="floatingInput">Max length</label>
+					<label for="floatingInput">Max length (mm)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max width'])?>">
-					<label for="floatingInput">Max width</label>
+					<label for="floatingInput">Max width (mm)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max height'])?>">
-					<label for="floatingInput">QuanMax heighttity</label>
+					<label for="floatingInput">Max height (mm)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
