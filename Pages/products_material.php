@@ -22,7 +22,7 @@
 		<div class="row materials">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -43,31 +43,37 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="">
 					<label for="floatingInput">Supplier Reference</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="size">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">size (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Quantity</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="">
+					<label for="floatingInput">Size (kg)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_e">
+			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" disabled>
+					<label for="floatingInput">Price (g)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" disabled>
+					<label for="floatingInput">Size (cl)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="price_e">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" disabled>
 					<label for="floatingInput">Price (cl)</label>
 				</div>
 			</div>
