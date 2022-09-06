@@ -12,7 +12,7 @@
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="/Suppliers/Edit/<?print(QS)?>/" class="btn btn-outline-primary m-1">
+						<a href="/Suppliers/Edit/<?=(QS)?>/" class="btn btn-outline-primary m-1">
 							<i class="fa fa-pencil"></i>
 						</a>
 					</div>
@@ -24,31 +24,31 @@
 		<div class="SupplierInfo">
 			<div class="col-12 col-md-6 col-lg-3" name="reference">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Reference'])?>" disabled>
+					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?=($supp['Reference'])?>" disabled>
 					<label for="floatingInput">Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Name'])?>" disabled>
+					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?=($supp['Name'])?>" disabled>
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="email">
 				<div class="form-floating mb-3">
-					<a href="mailto:<?print($supp['Email'])?>;" class="form-control disabled" id="floatingInput"><?print($supp['Email'])?></a>
+					<a href="mailto:<?=($supp['Email'])?>;" class="form-control disabled" id="floatingInput"><?=($supp['Email'])?></a>
 					<label for="floatingInput">Email</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="phone">
 				<div class="form-floating mb-3">
-					<a href="tel:<?print($supp['Email'])?>;" class="form-control disabled" id="floatingInput"><?print($supp['Phone'])?></a>
+					<a href="tel:<?=($supp['Email'])?>;" class="form-control disabled" id="floatingInput"><?=($supp['Phone'])?></a>
 					<label for="floatingInput">Phone</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="hours">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?print($supp['Opening Hours'])?>" disabled>
+					<input type="text" class="form-control outline-none" id="floatingInput" placeholder="" value="<?=($supp['Opening Hours'])?>" disabled>
 					<label for="floatingInput">Opening hours</label>
 				</div>
 			</div>

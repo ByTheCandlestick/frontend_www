@@ -13,7 +13,7 @@
 		</h2>
 		<div id="accordion-collapse-1" class="accordion-collapse collapse show" aria-labelledby="accordion-item-1" data-bs-parent="#product-accordian">
 			<div class="accordion-body">
-				<?print($product['DescriptionLong']);?>
+				<?=($product['DescriptionLong']);?>
 			</div>
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 		</h2>
 		<div id="accordion-collapse-2" class="accordion-collapse collapse" aria-labelledby="accordion-item-2" data-bs-parent="#product-accordian">
 			<div class="accordion-body">
-				<?print($text['CandleCare']);?>
+				<?=($text['CandleCare']);?>
 			</div>
 		</div>
 	</div>
@@ -39,7 +39,7 @@
 		</h2>
 		<div id="accordion-collapse-3" class="accordion-collapse collapse" aria-labelledby="accordion-item-3" data-bs-parent="#product-accordian">
 			<div class="accordion-body">
-				<?print($text['ShippingInfo']);?>
+				<?=($text['ShippingInfo']);?>
 			</div>
 		</div>
 	</div>

@@ -21,13 +21,13 @@
 	</ul>
 	<div class="tab-content" id="myTabContent">
 		<div class="tab-pane fade p-3 show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-			<?print($product['DescriptionLong']);?>
+			<?=($product['DescriptionLong']);?>
 		</div>
 		<div class="tab-pane fade p-3" id="candle_care" role="tabpanel" aria-labelledby="candle_care-tab">
-			<?print($text['CandleCare']);?>
+			<?=($text['CandleCare']);?>
 		</div>
 		<div class="tab-pane fade p-3" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
-			<?print($text['ShippingInfo']);?>
+			<?=($text['ShippingInfo']);?>
 		</div>
 		<div class="tab-pane fade p-3" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
 			

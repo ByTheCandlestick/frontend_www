@@ -93,10 +93,10 @@
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:product.comodities.wick.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+						<a href="javascript:product.comodities.wick.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
 							<i class="fa fa-trash-alt"></i>
 						</a>
-						<a href="javascript:product.comodities.wick.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+						<a href="javascript:product.comodities.wick.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
 					</div>
@@ -108,7 +108,7 @@
 		<div class="row wicks">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -130,43 +130,43 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['ItemRef'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['ItemRef'])?>">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="width">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Width (mm)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['Width (mm)'])?>">
 					<label for="floatingInput">Width</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="height">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Height (mm)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['Height (mm)'])?>">
 					<label for="floatingInput">Height</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="thickness">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Thickness (mm)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['Thickness (mm)'])?>">
 					<label for="floatingInput">Thickness</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Price (bulk)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Quantity'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['Quantity'])?>">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Price (ea)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?=($wick['Price (ea)'])?>" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>

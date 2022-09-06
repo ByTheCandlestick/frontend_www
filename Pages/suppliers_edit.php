@@ -12,10 +12,10 @@
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:supplier.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+						<a href="javascript:supplier.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
 							<i class="fa fa-trash-alt"></i>
 						</a>
-						<a href="javascript:supplier.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+						<a href="javascript:supplier.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
 					</div>
@@ -27,31 +27,31 @@
 		<div class="row SupplierInfo">
 			<div class="col-12 col-md-6 col-lg-1" name="reference">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Reference'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($supp['Reference'])?>">
 					<label for="floatingInput">Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($supp['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="website">
 				<div class="form-floating mb-3">
-					<input type="tel" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Website'])?>">
+					<input type="tel" class="form-control" id="floatingInput" placeholder="" value="<?=($supp['Website'])?>">
 					<label for="floatingInput">Website</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="email">
 				<div class="form-floating mb-3">
-					<input type="email" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Email'])?>">
+					<input type="email" class="form-control" id="floatingInput" placeholder="" value="<?=($supp['Email'])?>">
 					<label for="floatingInput">Email</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="phone">
 				<div class="form-floating mb-3">
-					<input type="tel" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Phone'])?>">
+					<input type="tel" class="form-control" id="floatingInput" placeholder="" value="<?=($supp['Phone'])?>">
 					<label for="floatingInput">Phone</label>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="hours">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($supp['Opening Hours'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($supp['Opening Hours'])?>">
 					<label for="floatingInput">Opening hours</label>
 				</div>
 			</div>

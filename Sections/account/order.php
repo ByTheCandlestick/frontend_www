@@ -198,7 +198,7 @@
 		?>
 		<div class="row py-3">
 			<div class="col-md-10">
-				<?print($order['notes']) ?>
+				<?=($order['notes']) ?>
 			</div>
 			<div class="offset-md-10 col-md-2 text-end">
 				<?
@@ -218,7 +218,7 @@
 						}
 					}
 				?>
-				<a href="/My/Invoice/<?print(QS)?>" class="btn"> Get a printable copy</a>
+				<a href="/My/Invoice/<?=(QS)?>" class="btn"> Get a printable copy</a>
 			</div>
 		</div>
 	</div>

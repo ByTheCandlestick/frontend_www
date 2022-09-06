@@ -10,10 +10,10 @@
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:product.fragrance.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+						<a href="javascript:product.fragrance.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
 							<i class="fa fa-trash-alt"></i>
 						</a>
-						<a href="javascript:product.fragrance.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+						<a href="javascript:product.fragrance.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
 					</div>
@@ -25,7 +25,7 @@
 		<div class="row ">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -47,31 +47,31 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['ItemRef'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['ItemRef'])?>" disabled>
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="size">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Size (cl)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Size (cl)'])?>">
 					<label for="floatingInput">size (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (bulk)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Quantity'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Quantity'])?>">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (ea)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Price (ea)'])?>" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
@@ -97,10 +97,10 @@
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:product.fragrance.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+						<a href="javascript:product.fragrance.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
 							<i class="fa fa-trash-alt"></i>
 						</a>
-						<a href="javascript:product.fragrance.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+						<a href="javascript:product.fragrance.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
 					</div>
@@ -112,7 +112,7 @@
 		<div class="row ">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -134,31 +134,31 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['ItemRef'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['ItemRef'])?>" disabled>
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="size">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Reccommended %'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Reccommended %'])?>">
 					<label for="floatingInput">Reccommended % (per cl wax)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (ea)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Price (ea)'])?>">
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Quantity (cl)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Quantity (cl)'])?>">
 					<label for="floatingInput">Quantity (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (cl)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Price (cl)'])?>" disabled>
 					<label for="floatingInput">Price (cl)</label>
 				</div>
 			</div>
@@ -172,19 +172,19 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Top notes'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Top notes'])?>">
 					<label for="floatingInput">Top notes</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Base notes'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Base notes'])?>">
 					<label for="floatingInput">Heart notes</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Heart notes'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Heart notes'])?>" disabled>
 					<label for="floatingInput">Base notes</label>
 				</div>
 			</div>

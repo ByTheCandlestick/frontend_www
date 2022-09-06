@@ -41,10 +41,10 @@
 				<meta charset="utf-8">
 				<meta content="ie=edge" http-eqiv="X-UA-Compatible">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<meta name="title" content="<?print($website_info['Meta_title'])?>">
-				<meta name="description" content="<?print($website_info['Meta_description'])?>">
-				<meta name="keywords" content="<?print($website_info['Meta_keywords'])?>">
-				<meta name="theme-color" content="<?print($website_info['Meta_colour'])?>">
+				<meta name="title" content="<?=($website_info['Meta_title'])?>">
+				<meta name="description" content="<?=($website_info['Meta_description'])?>">
+				<meta name="keywords" content="<?=($website_info['Meta_keywords'])?>">
+				<meta name="theme-color" content="<?=($website_info['Meta_colour'])?>">
 			<!-- ===== Title ===== -->
 				<title>
 					<?
@@ -54,7 +54,7 @@
 					?>
 				</title>
 			<!-- ===== Favicon ===== -->
-				<link rel="shortcut icon" href="<?print(__API__.'/Images/Fetch/'.$website_info['Favicon'].'/')?>" type="image/x-icon" />
+				<link rel="shortcut icon" href="<?=(__API__.'/Images/Fetch/'.$website_info['Favicon'].'/')?>" type="image/x-icon" />
 			<!-- ===== PWA ===== -->
 				<link rel="manifest" href="/manifest.json" />
 		  		<script>
@@ -72,22 +72,22 @@
 					}
 				</script>
 			<!-- ===== Apple ===== -->
-				<link rel="apple-touch-icon" sizes="57x57" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/57x57.png">
-				<link rel="apple-touch-icon" sizes="60x60" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/60x60.png">
-				<link rel="apple-touch-icon" sizes="72x72" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/72x72.png">
-				<link rel="apple-touch-icon" sizes="76x76" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/76x76.png">
-				<link rel="apple-touch-icon" sizes="114x114" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/114x114.png">
-				<link rel="apple-touch-icon" sizes="120x120" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/120x120.png">
-				<link rel="apple-touch-icon" sizes="144x144" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/144x144.png">
-				<link rel="apple-touch-icon" sizes="152x152" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/152x152.png">
-				<link rel="apple-touch-icon" sizes="180x180" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/180x180.png">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-icon" sizes="57x57" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/57x57.png">
+				<link rel="apple-touch-icon" sizes="60x60" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/60x60.png">
+				<link rel="apple-touch-icon" sizes="72x72" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/72x72.png">
+				<link rel="apple-touch-icon" sizes="76x76" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/76x76.png">
+				<link rel="apple-touch-icon" sizes="114x114" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/114x114.png">
+				<link rel="apple-touch-icon" sizes="120x120" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/120x120.png">
+				<link rel="apple-touch-icon" sizes="144x144" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/144x144.png">
+				<link rel="apple-touch-icon" sizes="152x152" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/152x152.png">
+				<link rel="apple-touch-icon" sizes="180x180" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/180x180.png">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 			<!-- ===== CSS ===== -->
 				<?
 					if($layout_row['style_ids'] != NULL) {
@@ -142,9 +142,9 @@
 					<div class="container d-flex align-items-center">
 						<div class="logo me-auto d-flex">
 							<a class="me-3" href="/">
-								<img src="<?print(__API__.'/Images/Fetch/'.$website_info['Logo'].'/')?>" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
+								<img src="<?=(__API__.'/Images/Fetch/'.$website_info['Logo'].'/')?>" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 							</a>
-						  <h1 class="d-none d-md-block"><a href="/"><?print($website_info['Title'])?></a></h1>
+						  <h1 class="d-none d-md-block"><a href="/"><?=($website_info['Title'])?></a></h1>
 					  </div>
 						<nav id="navbar" class="navbar">
 							<ul>
@@ -209,18 +209,18 @@
 										?>
 											<li>
 												<i class="fad fa-cogs pe-1"></i>
-												<a href="<?print(URL_ADMIN)?>?force_back=1">Open admin dashboard</a>
+												<a href="<?=(URL_ADMIN)?>?force_back=1">Open admin dashboard</a>
 											</li>
 											<li>
 												<i class="fad fa-pencil pe-1"></i>
-												<a href="<?print(URL_ADMIN.'/Websites/Page/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
+												<a href="<?=(URL_ADMIN.'/Websites/Page/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
 											</li>
 											<?
 												if(isset($product)) {
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
-													<a href="<?print(URL_ADMIN.'/Products/Edit/'.$product['SKU'].'/?force_back=1')?>">Edit this product</a>
+													<a href="<?=(URL_ADMIN.'/Products/Edit/'.$product['SKU'].'/?force_back=1')?>">Edit this product</a>
 												</li>
 											<?
 												}
@@ -228,7 +228,7 @@
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
-													<a href="<?print(URL_ADMIN.'/Partners/Edit/'.$partner['ID'].'/?force_back=1')?>">Edit this partner</a>
+													<a href="<?=(URL_ADMIN.'/Partners/Edit/'.$partner['ID'].'/?force_back=1')?>">Edit this partner</a>
 												</li>
 											<?
 												}
@@ -236,7 +236,7 @@
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
-													<a href="<?print(URL_ADMIN.'/Blog/Edit/'.$blog['ID'].'/?force_back=1')?>">Edit this blog post</a>
+													<a href="<?=(URL_ADMIN.'/Blog/Edit/'.$blog['ID'].'/?force_back=1')?>">Edit this blog post</a>
 												</li>
 											<?
 												}
@@ -256,7 +256,7 @@
 										</li>
 										<li>
 											<i class="fad fa-sign-out pe-1"></i>
-											<a onclick="account.logout('<?print($_COOKIE['session_code'])?>')">Logout</a>
+											<a onclick="account.logout('<?=($_COOKIE['session_code'])?>')">Logout</a>
 										</li>
 									<?
 										} else {
@@ -284,11 +284,11 @@
 									</ul>
 								</div>
 								<div class="text-center footer-col-3 footer-info">
-									<img src="<?print(__API__.'/Images/Fetch/'.$website_info['Logo'].'/')?>" alt="logo" width="145px" height="145px" class="img-fluid mw-40">
-									<h3 class="text-center"><?print($website_info['Title'])?></h3>
+									<img src="<?=(__API__.'/Images/Fetch/'.$website_info['Logo'].'/')?>" alt="logo" width="145px" height="145px" class="img-fluid mw-40">
+									<h3 class="text-center"><?=($website_info['Title'])?></h3>
 									<p class="text-center">
-										<strong>Phone:</strong> <a href="tel:<?print($website_info['Phone'])?>"><?print($website_info['Phone'])?></a><br>
-										<strong>Email:</strong> <a href="mailto:<?print($website_info['Email'])?>"><?print($website_info['Email'])?></a><br>
+										<strong>Phone:</strong> <a href="tel:<?=($website_info['Phone'])?>"><?=($website_info['Phone'])?></a><br>
+										<strong>Email:</strong> <a href="mailto:<?=($website_info['Email'])?>"><?=($website_info['Email'])?></a><br>
 									</p>
 									<div class="social-links mt-3 text-center">
 										<a href="https://www.pinterest.co.uk/bythecandlestick/" class="pintrest"><i class="fab fa-pinterest"></i></a>
@@ -300,7 +300,7 @@
 									<h4>Useful Links</h4>
 									<ul class="d-inline-block">
 										<li><i class="fad fa-link pe-1"></i> <a href="/About">About</a></li>
-										<li><i class="fad fa-link pe-1"></i> <a href="<?print(URL_BLOG)?>">Blog</a></li>
+										<li><i class="fad fa-link pe-1"></i> <a href="<?=(URL_BLOG)?>">Blog</a></li>
 										<li><i class="fad fa-link pe-1"></i> <a href="/Team">The team</a></li>
 										<li><i class="fad fa-link pe-1"></i> <a href="/Contact">Contact us</a></li>
 									</ul>

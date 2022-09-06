@@ -8,8 +8,8 @@
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<h1>User Cart</h1>
-                <p>UID: <?print($user['ID'])?></p>
-                <p>Name: <?print($user['First_name'].' '.$user['Last_name'])?></p>
+                <p>UID: <?=($user['ID'])?></p>
+                <p>Name: <?=($user['First_name'].' '.$user['Last_name'])?></p>
 			</div>
 		</div>
 		<hr>

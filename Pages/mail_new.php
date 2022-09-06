@@ -27,37 +27,37 @@
 	<div class="row mailNew">
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-from" id="floatingInput" value="<?print($f)?>">
+				<input type="text" class="form-control mail-from" id="floatingInput" value="<?=($f)?>">
 				<label for="floatingInput">From</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-to" id="floatingInput" value="<?print($t)?>">
+				<input type="text" class="form-control mail-to" id="floatingInput" value="<?=($t)?>">
 				<label for="floatingInput">To</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-cc" id="floatingInput" value="<?print($c)?>">
+				<input type="text" class="form-control mail-cc" id="floatingInput" value="<?=($c)?>">
 				<label for="floatingInput">Cc</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-bcc" id="floatingInput" value="<?print($b)?>">
+				<input type="text" class="form-control mail-bcc" id="floatingInput" value="<?=($b)?>">
 				<label for="floatingInput">Bcc</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-subject" id="floatingInput" value="<?print($s)?>">
+				<input type="text" class="form-control mail-subject" id="floatingInput" value="<?=($s)?>">
 				<label for="floatingInput">Subject</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<textarea class="form-control mail-message" id="floatingInput" placeholder="Write your message here" value="" style="min-height: 200px;"><?print($m)?></textarea>
+				<textarea class="form-control mail-message" id="floatingInput" placeholder="Write your message here" value="" style="min-height: 200px;"><?=($m)?></textarea>
 				<label for="floatingInput">Message</label>
 			</div>
 		</div>

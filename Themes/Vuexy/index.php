@@ -38,10 +38,10 @@
 				<meta charset="utf-8">
 				<meta content="ie=edge" http-eqiv="X-UA-Compatible">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<meta name="title" content="<?print($website_info['Meta_title'])?>">
-				<meta name="description" content="<?print($website_info['Meta_description'])?>">
-				<meta name="keywords" content="<?print($website_info['Meta_keywords'])?>">
-				<meta name="theme-color" content="<?print($website_info['Meta_colour'])?>">
+				<meta name="title" content="<?=($website_info['Meta_title'])?>">
+				<meta name="description" content="<?=($website_info['Meta_description'])?>">
+				<meta name="keywords" content="<?=($website_info['Meta_keywords'])?>">
+				<meta name="theme-color" content="<?=($website_info['Meta_colour'])?>">
 			<!-- ===== Title ===== -->
 				<title>
 					<?
@@ -51,7 +51,7 @@
 					?>
 				</title>
 			<!-- ===== Favicon ===== -->
-				<link rel="shortcut icon" href="<?print(__API__.'/Images/Fetch/'.$website_info['Favicon'].'/')?>" type="image/x-icon" />
+				<link rel="shortcut icon" href="<?=(__API__.'/Images/Fetch/'.$website_info['Favicon'].'/')?>" type="image/x-icon" />
 			<!-- ===== PWA ===== -->
 				<link rel="manifest" href="/manifest.json" />
 		  		<script>
@@ -69,22 +69,22 @@
 					}
 				</script>
 			<!-- ===== Apple =====-->
-				<link rel="apple-touch-icon" sizes="57x57" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/57x57.png">
-				<link rel="apple-touch-icon" sizes="60x60" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/60x60.png">
-				<link rel="apple-touch-icon" sizes="72x72" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/72x72.png">
-				<link rel="apple-touch-icon" sizes="76x76" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/76x76.png">
-				<link rel="apple-touch-icon" sizes="114x114" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/114x114.png">
-				<link rel="apple-touch-icon" sizes="120x120" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/120x120.png">
-				<link rel="apple-touch-icon" sizes="144x144" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/144x144.png">
-				<link rel="apple-touch-icon" sizes="152x152" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/152x152.png">
-				<link rel="apple-touch-icon" sizes="180x180" href="/Themes/<?print(__THEME__)?>/Assets/images/logos/apple-touch-icon/180x180.png">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-				<link rel="apple-touch-startup-image" href="/Themes/<?print(__THEME__)?>/app/images/splash/splash-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-icon" sizes="57x57" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/57x57.png">
+				<link rel="apple-touch-icon" sizes="60x60" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/60x60.png">
+				<link rel="apple-touch-icon" sizes="72x72" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/72x72.png">
+				<link rel="apple-touch-icon" sizes="76x76" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/76x76.png">
+				<link rel="apple-touch-icon" sizes="114x114" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/114x114.png">
+				<link rel="apple-touch-icon" sizes="120x120" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/120x120.png">
+				<link rel="apple-touch-icon" sizes="144x144" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/144x144.png">
+				<link rel="apple-touch-icon" sizes="152x152" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/152x152.png">
+				<link rel="apple-touch-icon" sizes="180x180" href="/Themes/<?=(__THEME__)?>/Assets/images/logos/apple-touch-icon/180x180.png">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+				<link rel="apple-touch-startup-image" href="/Themes/<?=(__THEME__)?>/app/images/splash/splash-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 			<!-- ===== CSS ===== -->
 				<?
 					if($layout_row['style_ids'] != NULL) {
@@ -128,7 +128,7 @@
 							<!-- Brand Info -->
 							<div class="app-header-left">
 								<span class="app-icon">
-									<img src="<?print(__API__)?>/Images/Fetch/<?print($website_info['Logo'])?>/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
+									<img src="<?=(__API__)?>/Images/Fetch/<?=($website_info['Logo'])?>/" alt="logo" width="60px" height="60px" class="img-fluid" title="The Candlestick Logo">
 								</span>
 								<p class="app-name"> <? print($website_info['Title']); if(DOMAIN_TYPE=='indev') print(' <span class="text-info">indev</span>');?></p>
 							</div>
@@ -145,7 +145,7 @@
 									<i class="fad fa-eclipse-alt fa-lg"></i>
 								</button>
 								<button class="profile-btn">
-									<span><?print($userdata['First_name'].' '.$userdata['Last_name'])?></span>
+									<span><?=($userdata['First_name'].' '.$userdata['Last_name'])?></span>
 								</button>
 							</div>
 						</div>

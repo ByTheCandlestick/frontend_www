@@ -8,7 +8,7 @@ if(QS_SUBPAGE != "") {
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-8">
-			<h1>Oxygen - '<?print($page['page_name'])?>'</h1>
+			<h1>Oxygen - '<?=($page['page_name'])?>'</h1>
 		</div>
 		<div class="col-12 col-md-4 text-md-end">
 			<div class="row">
@@ -19,7 +19,7 @@ if(QS_SUBPAGE != "") {
 							<label class="btn btn-outline-primary" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
 						</div>
 					</div>
-					<a href="javascript:website.layout.update(<?print(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">
+					<a href="javascript:website.layout.update(<?=(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
 					</a>
 				</div>
@@ -28,7 +28,7 @@ if(QS_SUBPAGE != "") {
 	</div>
 	<hr>
 	<!-- Section Type -->
-	<div class="row sections" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;" data-original-sections="<?print($page['section_ids'])?>">
+	<div class="row sections" type="sections" style="display: <?($page['display_type']==1)?print("flex"):print("none")?>;" data-original-sections="<?=($page['section_ids'])?>">
 		<style>
 			.templateBase {
 				border: 2px solid var(--main-color);

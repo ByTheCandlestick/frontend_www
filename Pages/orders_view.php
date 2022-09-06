@@ -17,18 +17,18 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Invoice: <?print(QS)?></h1>
+				<h1>Invoice: <?=(QS)?></h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="mailto:<?print($invoice['Email'])?>;" class="btn btn-outline-primary m-1">
+						<a href="mailto:<?=($invoice['Email'])?>;" class="btn btn-outline-primary m-1">
 							<i class="fa fa-envelope"></i>
 						</a>
-						<a href="javascript:orders.printOrder('<?print($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
+						<a href="javascript:orders.printOrder('<?=($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
 							<i class="fa fa-print"></i>
 						</a>
-						<a href="javascript:orders.refunds.modal('<?print($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
+						<a href="javascript:orders.refunds.modal('<?=($invoice['Invoice ID'])?>');" class="btn btn-outline-primary m-1">
 							<i class="fa fa-fax"></i>
 						</a>
 					</div>
@@ -256,14 +256,14 @@
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="number" class="form-control" id="floatingInput" value="0" min="0" max="<?print($depositAfterRefunds)?>" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check();">
+								<input type="number" class="form-control" id="floatingInput" value="0" min="0" max="<?=($depositAfterRefunds)?>" step=".01" name="refundCurrValue" onKeyUp="orders.refunds.check();">
 								<label for="floatingInput" class="ps-5">Value</label>
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-floating mb-3 input-group">
 								<span class="input-group-text" id="">£</span>
-								<input type="number" class="form-control" id="floatingInput" value="<?print($depositAfterRefunds)?>" step=".01" name="refundMaxValue" disabled>
+								<input type="number" class="form-control" id="floatingInput" value="<?=($depositAfterRefunds)?>" step=".01" name="refundMaxValue" disabled>
 								<label for="floatingInput" class="ps-5">Max</label>
 							</div>
 						</div>

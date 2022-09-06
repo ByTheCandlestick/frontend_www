@@ -76,7 +76,7 @@
 				<div class="mGrid">
 					<div class="total">
 						<p>total</p>
-						<p><?print($cart_item_curr . $cart_total) ?></p>
+						<p><?=($cart_item_curr . $cart_total) ?></p>
 					</div>
 					<div class="detail">
 						<button type="submit" class="paymentSubmit btn btn-outline-dark">
@@ -102,9 +102,9 @@
 			</div>
 		</div>
 	</div>
-	<input type="hidden" name="STRIPE_PUBLISHABLE_KEY" value="<?print(STRIPE_API[0]); ?>">
-	<input type="hidden" name="currency" value="<?print($currency) ?>">
-	<input type="hidden" name="price" value="<?print($cart_total) ?>">
-	<input type="hidden" name="uid" value="<?print($userdata['ID']) ?>">
-	<input type="hidden" name="email" value="<?print($userdata['Email']) ?>">
+	<input type="hidden" name="STRIPE_PUBLISHABLE_KEY" value="<?=(STRIPE_API[0]); ?>">
+	<input type="hidden" name="currency" value="<?=($currency) ?>">
+	<input type="hidden" name="price" value="<?=($cart_total) ?>">
+	<input type="hidden" name="uid" value="<?=($userdata['ID']) ?>">
+	<input type="hidden" name="email" value="<?=($userdata['Email']) ?>">
 </form>

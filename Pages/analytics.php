@@ -76,7 +76,7 @@
 					<chart class="ct-page-referrers" />
 					<script>
 						new Chartist.Line('.ct-page-referrers', {
-							labels: ['<?print(implode('\', \'', $days))?>'],
+							labels: ['<?=(implode('\', \'', $days))?>'],
 							series: [
 								[0,1,2,3,4,5,6],
 								[1,2,3,4,5,6,7],
@@ -191,9 +191,9 @@
 					<chart class="monetary ct-sales-day d-block h-100" />
 					<script>
 						new Chartist.Line('.ct-sales-day', {
-							labels: ['<?print(implode('\', \'', $days))?>'],
+							labels: ['<?=(implode('\', \'', $days))?>'],
 							series: [
-								[<?print(implode(', ', $dailySales))?>]
+								[<?=(implode(', ', $dailySales))?>]
 							]
 						}, {
 							fullWidth: true,
@@ -210,9 +210,9 @@
 					<chart class="monetary ct-sales-month d-block h-100" />
 					<script>
 						new Chartist.Line('.ct-sales-month', {
-							labels: ['<?print(implode('\', \'', $months))?>'],
+							labels: ['<?=(implode('\', \'', $months))?>'],
 							series: [
-								[<?print(implode(', ', $monthlySales))?>]
+								[<?=(implode(', ', $monthlySales))?>]
 							]
 						}, {
 							fullWidth: true,

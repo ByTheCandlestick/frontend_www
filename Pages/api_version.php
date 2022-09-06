@@ -36,10 +36,10 @@
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-flex justify-content-end align-items-center p-0">
-						<a href="javascript:api.version.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+						<a href="javascript:api.version.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
-						<a href="javascript:api.version.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+						<a href="javascript:api.version.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
 							<i class="fa fa-trash-alt"></i>
 						</a>
 					</div>
