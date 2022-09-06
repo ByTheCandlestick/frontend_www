@@ -1,5 +1,4 @@
 <?
-    $query = DB_Query(sprintf("SELECT * FROM `Product packagings` WHERE `ID`=%s", QS));
     if(strtolower(QS) == "new") {
 ?>
 	<section>
@@ -81,7 +80,7 @@
 			</div>
 		</div>
 	</section>
-<?  } elseif(mysqli_num_rows($query) > 0) {
+<?  } elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Product packagings` WHERE `ID`=%s", QS))) > 0) {
         $packaging = mysqli_fetch_assoc($query);
 ?>
 	<section>
