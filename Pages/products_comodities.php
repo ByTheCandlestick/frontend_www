@@ -369,7 +369,7 @@
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>'.$row['Price (cl)'].'</td>
                                                 <td>
-                                                    <a href="/Products/Material/'.$row['ID'].'">
+                                                    <a href="/Products/Colour/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </td>
@@ -430,7 +430,7 @@
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
-                                                    <a href="/Products/Material/'.$row['ID'].'">
+                                                    <a href="/Products/Packaging/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </td>
