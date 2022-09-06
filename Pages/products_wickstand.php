@@ -128,7 +128,7 @@
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3 offset-lg-3" name="price_b">
+			<div class="col-12 col-md-6 col-lg-3 offset-lg-1" name="price_b">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick_stand['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
