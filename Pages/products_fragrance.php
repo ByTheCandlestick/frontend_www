@@ -10,10 +10,7 @@
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:product.fragrance.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
-							<i class="fa fa-trash-alt"></i>
-						</a>
-						<a href="javascript:product.fragrance.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
+						<a href="javascript:product.fragrance.create();" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
 					</div>
@@ -25,7 +22,7 @@
 		<div class="row ">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -37,8 +34,7 @@
 						<?
 							$query = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
-								($row['Reference'] == $fragrance['Supplier'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['Reference'].'"'.$selected.'>'.$row['Name'].'</option>');
+								print_r('<option value="'.$row['Reference'].'">'.$row['Name'].'</option>');
 							}
 						?>
 					</select>
@@ -47,40 +43,58 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['ItemRef'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="" disabled>
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="size">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Size (cl)'])?>">
-					<label for="floatingInput">size (cl)</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Reccommended % (per cl wax)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Price (bulk)'])?>">
-					<label for="floatingInput">Price (bulk)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Quantity'])?>">
-					<label for="floatingInput">Quantity</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Quantity (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Price (ea)'])?>" disabled>
-					<label for="floatingInput">Price (ea)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+					<label for="floatingInput">Price (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($fragrance['Active']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="active" id="flexCheck">
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_b">
+				<div class="form-floating mb-3">
+					<textarea class="form-control h-100" id="floatingInput" placeholder="NULL"></textarea>
+					<label for="floatingInput">Top notes</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<textarea class="form-control h-100" id="floatingInput" placeholder="NULL"></textarea>
+					<label for="floatingInput">Heart notes</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_e">
+				<div class="form-floating mb-3">
+					<textarea class="form-control h-100" id="floatingInput" placeholder="NULL"></textarea>
+					<label for="floatingInput">Base notes</label>
 				</div>
 			</div>
 		</div>
