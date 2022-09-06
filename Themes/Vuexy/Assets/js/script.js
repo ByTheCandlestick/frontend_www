@@ -1801,17 +1801,9 @@ $(document).ready(function() {
 		mode.switch.click(() => { mode.toggle(); });
 	// -----========== Search ==========----- // @final //
 		search.initialize();
-		$(".search-area input").focusout(function() {
-			if(search.suggestions.filter(":hover").length === 0) {
-				search.suggestions.hide();
-			}
-		});
-		$(".search-area input").focusin(function() {
-			search.suggestions.show();
-		});
-		$.get($('.search-wrapper').attr('rel'), function(data) {
-			search.jsonData = data
-		})
+		$(".search-area input").focusout(() => {if(search.suggestions.filter(":hover").length === 0) search.suggestions.hide();});
+		$(".search-area input").focusin(() => {search.suggestions.show();});
+		$.get($('.search-wrapper').attr('rel'), (data) => {search.jsonData = data})
 	// -----========== MENU BTN ==========----- // @final //
 		$('.app-icon').click(function() {
 			$('.app-sidebar').toggleClass('sidebar-show');
