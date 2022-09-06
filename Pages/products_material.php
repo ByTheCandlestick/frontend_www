@@ -134,6 +134,12 @@
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (kg)'])?>">
+					<label for="floatingInput">Size (kg)</label>
+				</div>
+			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_b">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (bulk)'])?>">
@@ -142,8 +148,8 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (kg)'])?>">
-					<label for="floatingInput">Size (kg)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (cl)'])?>">
+					<label for="floatingInput">Size (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
