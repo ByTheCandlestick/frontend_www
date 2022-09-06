@@ -6,7 +6,7 @@ ErrorDocument 404 /Error/404/
 
 #
 #	Allow REST api request methods. GET POST PUT and DELETE
-	<Limit GET POST PUT DELETE HEAD OPTIONS>
+	<Limit GET POST PUT DELETE PATCH>
 		Allow from all
 	</Limit>
 #
