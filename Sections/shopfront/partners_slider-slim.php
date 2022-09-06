@@ -1,10 +1,10 @@
 <?
 	if($secext == 'all') {
 		$title = 'OUR PARTNERS';
-		$sql = "SELECT * FROM `partners` WHERE `public`=1 AND `active`=1";
+		$sql = "SELECT * FROM `Partner accounts` WHERE `public`=1 AND `active`=1";
 	} else {
 		$title = strtoupper($secext).' PARTNERS.';
-		$sql = "SELECT * FROM `partners` WHERE `categories`='$secext' AND `public`=1 AND `active`=1 LIMIT 1";
+		$sql = "SELECT * FROM `Partner accounts` WHERE `categories`='$secext' AND `public`=1 AND `active`=1 LIMIT 1";
 	}
 ?>
 <div class="container-fluid py-5">

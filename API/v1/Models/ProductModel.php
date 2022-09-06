@@ -110,7 +110,7 @@
 		 * 
 		 */
 			public function validateMadeBy($made_by) {
-				if($this->Execute("SELECT COUNT(*) FROM `partners` WHERE `ID`=".$made_by, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Partner accounts` WHERE `ID`=".$made_by, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateSlug
@@ -206,7 +206,7 @@
 		 */
 			public function createUPC(string $productCode, array $info) {
 				$UPC  = '7';
-				$UPC .= $this->Execute(sprintf("SELECT `Reference` FROM `partners` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
+				$UPC .= $this->Execute(sprintf("SELECT `Reference` FROM `Partner accounts` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
 				$UPC .= $productCode;
 				$i=1;
 				foreach(str_split($UPC) as $int) {

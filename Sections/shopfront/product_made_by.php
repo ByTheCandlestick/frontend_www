@@ -1,6 +1,6 @@
 <?
 	$partners = [];
-	$q = DB_Query("SELECT * FROM `partners` WHERE `Active`=1");
+	$q = DB_Query("SELECT * FROM `Partner accounts` WHERE `Active`=1");
 	while($partner = mysqli_fetch_assoc($q)) {
 		$partners[$partner['ID']] = $partner;
 	}

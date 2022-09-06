@@ -109,7 +109,7 @@
 				';
 			}
 		} else if(isset($secext) && $secext == 'partners') {
-			$result = DB_Query("SELECT * FROM `partners` WHERE `public`=1 AND `active`=1");
+			$result = DB_Query("SELECT * FROM `Partner accounts` WHERE `public`=1 AND `active`=1");
 			while($row = mysqli_fetch_array($result)){
 				$part_image = $row['logo_url'];
 				$part_slug = $row['slug'];
@@ -164,7 +164,7 @@
 				');
 			}
 		} else if(isset($secext) && $secext == 'partner'){
-			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `partners` WHERE `name`='%s' AND `public`=1 AND `active`=1", QS)))[0];
+			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `Partner accounts` WHERE `name`='%s' AND `public`=1 AND `active`=1", QS)))[0];
 			$query = DB_Query("SELECT * FROM `Product` WHERE `made_by_ID`='$part_ID' AND `Active`=1 AND `Discontinued`=0");
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
