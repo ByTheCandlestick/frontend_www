@@ -154,12 +154,6 @@
 					<label for="floatingInput">QuanMax heighttity</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_e">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Price (ea)'])?>" disabled>
-					<label for="floatingInput">Price (ea)</label>
-				</div>
-			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
