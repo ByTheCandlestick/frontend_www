@@ -146,20 +146,20 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (bulk)'])?>">
-					<label for="floatingInput">Price (bulk)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (ea)'])?>">
+					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Quantity'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Quantity (cl)'])?>">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (ea)'])?>" disabled>
-					<label for="floatingInput">Price (ea)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Price (cl)'])?>" disabled>
+					<label for="floatingInput">Price (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
