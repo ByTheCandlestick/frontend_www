@@ -170,6 +170,24 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_b">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Top notes'])?>">
+					<label for="floatingInput">Top notes</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Base notes'])?>">
+					<label for="floatingInput">Heart notes</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_e">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($fragrance['Heart notes'])?>" disabled>
+					<label for="floatingInput">Base notes</label>
+				</div>
+			</div>
 		</div>
 	</section>
 <?
