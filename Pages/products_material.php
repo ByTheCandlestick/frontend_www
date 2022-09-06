@@ -148,7 +148,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (cl)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (cl)'])?>" disabled>
 					<label for="floatingInput">Size (cl)</label>
 				</div>
 			</div>
