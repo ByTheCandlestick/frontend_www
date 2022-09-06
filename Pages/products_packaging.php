@@ -46,12 +46,6 @@
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="size">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Reccommended % per cl</label>
-				</div>
-			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
@@ -61,13 +55,13 @@
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Quantity (g)</label>
+					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Price (g)</label>
+					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
@@ -131,12 +125,6 @@
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="size">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($packaging['Reccommended %'])?>">
-					<label for="floatingInput">Reccommended % per cl</label>
-				</div>
-			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($packaging['Price (bulk)'])?>">
@@ -145,14 +133,14 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($packaging['Quantity (g)'])?>">
-					<label for="floatingInput">Quantity (g)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($packaging['Quantity'])?>">
+					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($packaging['Price (g)'])?>" disabled>
-					<label for="floatingInput">Price (g)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($packaging['Price (ea)'])?>" disabled>
+					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="status">
