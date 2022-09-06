@@ -1864,9 +1864,6 @@ $(document).ready(function() {
 		})
 	// -----========== Auto-calculate comodities ==========----- // @wip //
 		$('div.row.containers div[name=quantity] input, div[name=price_b] input').on('input', function() {product.comodities.container.calculate();});
-		$('div[name=supplier] select').change(function() {
-			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
-		});
 	// -----========== Assistance nav ==========----- //
 		if($(".assistanceNav").length != 0) {
 			$.get('/assistance.json', (data) =>{
