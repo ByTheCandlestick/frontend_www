@@ -53,7 +53,7 @@
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
                                         ');
-                                        if($userperm['adm_access-products-comodities-edit']==1) {
+                                        if($userperm['adm_access-products-containers-edit']==1) {
                                             print('
                                                     <a href="/Products/Container/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
