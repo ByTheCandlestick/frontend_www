@@ -15,7 +15,7 @@
 					throw new error('ERR-CRT-6');
 				}
 				// Product SKU is real / active
-				if(!$this->Execute("SELECT * FROM `products` WHERE `sku`='$sku'", 1)) {
+				if(!$this->Execute("SELECT * FROM `Products` WHERE `sku`='$sku'", 1)) {
 					throw new error('ERR-CRT-7');
 				}
 				// Add line to cart

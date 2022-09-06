@@ -128,7 +128,7 @@
 			public function updateProduct(string $sku, array $info) {
 				return $this->Execute(sprintf("
 				UPDATE
-					`products`
+					`Products`
 				SET
 					`Discontinued`=%s,
 					`Active`=%s,
@@ -194,7 +194,7 @@
 		 *	@return string
 			*/
 			public function createSKU() {
-				if($this->Execute($q="SELECT `SKU` FROM `products` ORDER BY SKU DESC LIMIT 1", 5)>0) {
+				if($this->Execute($q="SELECT `SKU` FROM `Products` ORDER BY SKU DESC LIMIT 1", 5)>0) {
 					return intval($this->Execute($q, 3)['SKU']) + 1;
 				} else {
 					return 10001;
@@ -225,7 +225,7 @@
 		 * 
 		 */
 			public function createProduct(string $sku, string $upc, array $info) {
-				return $this->Execute(sprintf("INSERT INTO `products`(`SKU`, `UPC`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ('%s', '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
+				return $this->Execute(sprintf("INSERT INTO `Products`(`SKU`, `UPC`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ('%s', '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
 					$sku,
 					$upc,
 					$info['discontinued'],
@@ -261,7 +261,7 @@
 		 * 
 		 */
 			public function deleteProduct(string $sku) {
-				return $this->Execute(sprintf("DELETE FROM `products` WHERE `SKU`='%s'", $sku), 1);
+				return $this->Execute(sprintf("DELETE FROM `Products` WHERE `SKU`='%s'", $sku), 1);
 			}
 	}
 ?>

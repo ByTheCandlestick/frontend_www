@@ -1,13 +1,13 @@
 <?
 	if(strtolower($secext)=='all'){
 		$title='ALL PRODUCTS.';
-		$sql = 'SELECT * FROM `products` WHERE `active`=1';
+		$sql = 'SELECT * FROM `Products` WHERE `active`=1';
 	} else {
 		$title = strtoupper($secext).' COLLECTION.';
 		$sql = "SELECT * FROM `pADMINroduct_collections` where `title`='$secext' AND `active`=1 LIMIT 1";
 		if($result = DB_Query($sql)){
 			$collection = mysqli_fetch_row($result);
-			$sql = "SELECT * FROM `products` WHERE `collection_id`='$secext' AND `active`=1";
+			$sql = "SELECT * FROM `Products` WHERE `collection_id`='$secext' AND `active`=1";
 		}
 	}
 ?>
