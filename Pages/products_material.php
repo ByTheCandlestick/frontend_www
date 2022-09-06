@@ -164,7 +164,7 @@
 					<label for="floatingInput">Price (cl)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="status">
+			<div class="col-12 col-md-6 col-lg-2" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($material['Active']==1)?print("checked"):print("")?>>
