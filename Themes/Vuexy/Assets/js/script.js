@@ -1854,24 +1854,16 @@ $(document).ready(function() {
 			}
 		});
 		if($('input[name=auto_calculate]:checked').length != 0) {
-			$('div.ProductInfo').find('input, select').change(function() {
-					product.calculate();
-			});
-			$('div.ProductInfo').find('input, select').on('input', function() {
-					product.calculate();
-			});
+			$('div.ProductInfo').find('input, select').change(function() { product.calculate(); });
+			$('div.ProductInfo').find('input, select').on('input', function() { product.calculate(); });
 		}
-		if($("div[name=currency]").length != 0) {
-			$.get('/currencies.json', (data) =>{
-				misc.currencies = data
-			})
-		}
+		if($("div[name=currency]").length != 0) {$.get('/currencies.json', (data) =>{ misc.currencies = data; })}
 		$('div[name=currency]').find('input').change(function() {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
 			$('span.input-group-text#currSymbol').html(symbol);
 		})
 	// -----========== Auto-calculate comodities ==========----- // @wip //
-		$('div.row.containers div[name=quantity] input, div[name=price_b] input').change(function() {product.comodities.container.calculate();});
+		$('div.row.containers div[name=quantity] input, div[name=price_b] input').on('input', function() {product.comodities.container.calculate();});
 		$('div[name=supplier] select').change(function() {
 			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
 		});
