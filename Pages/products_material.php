@@ -22,7 +22,7 @@
 		<div class="row materials">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="empty">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -43,37 +43,37 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="empty">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty">
 					<label for="floatingInput">Size (kg)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" disabled>
 					<label for="floatingInput">Price (g)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" disabled>
 					<label for="floatingInput">Size (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" disabled>
 					<label for="floatingInput">Price (cl)</label>
 				</div>
 			</div>
@@ -114,7 +114,7 @@
 		<div class="row materials">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="empty" value="<?print($material['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -136,37 +136,37 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['ItemRef'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="empty" value="<?print($material['ItemRef'])?>">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (bulk)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" value="<?print($material['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (kg)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" value="<?print($material['Size (kg)'])?>">
 					<label for="floatingInput">Size (kg)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (g)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" value="<?print($material['Price (g)'])?>" disabled>
 					<label for="floatingInput">Price (g)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (cl)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" value="<?print($material['Size (cl)'])?>" disabled>
 					<label for="floatingInput">Size (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (cl)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="empty" value="<?print($material['Price (cl)'])?>" disabled>
 					<label for="floatingInput">Price (cl)</label>
 				</div>
 			</div>
