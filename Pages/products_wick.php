@@ -81,8 +81,7 @@
 			</div>
 		</div>
 	</section>
-<?  } elseif(mysqli_num_rows($query) > 0) {
-    	$query = DB_Query(sprintf("SELECT * FROM `Product wicks` WHERE `ID`=%s", QS));
+<?  } elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Product wicks` WHERE `ID`=%s", QS));) > 0) {
         $cont = mysqli_fetch_assoc($query);
 ?>
 	<section>
