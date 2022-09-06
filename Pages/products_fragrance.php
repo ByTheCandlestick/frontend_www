@@ -2,7 +2,6 @@
     if(strtolower(QS) == "new") {
 ?>
 	<section>
-		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<h1>Edit fragrance</h1>
@@ -18,7 +17,6 @@
 			</div>
 		</div>
 		<hr>
-		<!-- Section Body -->
 		<div class="row ">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
@@ -103,7 +101,6 @@
         $fragrance = mysqli_fetch_assoc($query);
 ?>
 	<section>
-		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<h1>Edit fragrance</h1>
@@ -122,7 +119,6 @@
 			</div>
 		</div>
 		<hr>
-		<!-- Section Body -->
 		<div class="row ">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
@@ -208,7 +204,6 @@
 	} else {
 ?>
 	<section>
-		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<h1>Fragrance not found.</h1>
@@ -217,7 +212,6 @@
 			</div>
 		</div>
 		<hr>
-		<!-- Section Body -->
 		<div class="row">
 			<button class="btn btn-outline-primary col-12 col-md-3 col-lg-1" onclick="history.go(-1)">Go back</buton>
 		</div>
