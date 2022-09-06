@@ -35,10 +35,6 @@ button, a {
 .editor-toolbar.fullscreen {
   z-index: 10;
 }
-.fa {
-  font-family: "Font Awesome 5 Pro"!important;
-  font-weight: 900!important;
-}
 thead.sticky-top {
   z-index: 1!important;
 }
