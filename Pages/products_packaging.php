@@ -32,8 +32,7 @@
 						<?
 							$query = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
-								($row['Reference'] == $packaging['Supplier'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['Reference'].'"'.$selected.'>'.$row['Name'].'</option>');
+								print_r('<option value="'.$row['Reference'].'">'.$row['Name'].'</option>');
 							}
 						?>
 					</select>
