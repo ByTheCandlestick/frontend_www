@@ -2,7 +2,7 @@
 	$cart_total = 0;
 	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Invoice ID`='%s' AND `Type`='Order'", QS))) > 0) {
 		$invoice = mysqli_fetch_assoc($query);
-		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Users addresses` WHERE `id`=%s", $invoice['Billing address'])));
+		$address = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `id`=%s", $invoice['Billing address'])));
 		$delivery = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `products_shippings` WHERE `id`=%s", $invoice['Shipping by'])));
 		$refunds = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Charge ID`='%s' AND `Type`='Refund' ORDER BY `Created` ASC", $invoice['Charge ID']));
 		$refundsValue = 0;
@@ -140,7 +140,7 @@
 								list($invoiced_item_sku,
 									$invoiced_item_qty,
 									$invoiced_item_opt) = explode(",", $invoiced_item);
-								if($q = DB_Query("SELECT * FROM `Products` WHERE `SKU`=$invoiced_item_sku AND `Active`=1 LIMIT 1")) {
+								if($q = DB_Query("SELECT * FROM `Product info` WHERE `SKU`=$invoiced_item_sku AND `Active`=1 LIMIT 1")) {
 									while($res = mysqli_fetch_array($q)) {
 										$currency = $res['Currency'];
 										$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );

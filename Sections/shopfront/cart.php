@@ -1,7 +1,7 @@
 <?
 	$cart_total = 0;
 	$userid = $userdata['ID'];
-	if($query = mysqli_query($conn, "SELECT * FROM `candlestick_users`.`Users cart` WHERE `UID`=$userid AND `active`=1")) {
+	if($query = mysqli_query($conn, "SELECT * FROM `candlestick_users`.`User carts` WHERE `UID`=$userid AND `active`=1")) {
 		$cart_items = array();
 		while($row = mysqli_fetch_row($query)) {
 			array_push($cart_items, $row);
@@ -17,7 +17,7 @@
 			for($i=0;$i<$cart_items_count;$i++) {
 				$cart_item = explode(',', $cart_items[$i][4]);
 				$cart_item_id = $cart_item[0];
-				if($q = mysqli_query($conn, "SELECT * FROM `Products` WHERE `id`=$cart_item_id AND `active`=1 LIMIT 1")) {
+				if($q = mysqli_query($conn, "SELECT * FROM `Product info` WHERE `id`=$cart_item_id AND `active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
 						$currency = $res['currency'];
 						$cart_item_image = explode(',', $res['images'])[0];

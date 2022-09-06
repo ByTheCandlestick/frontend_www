@@ -2,9 +2,9 @@
     $users = array();
 	$users_per_page = 100;
 ?><?
-	$total_users = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Users`"))[0];
+	$total_users = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `User accounts`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$users_per_page :0;
-    $q = DB_Query("SELECT * FROM `Users` ORDER BY `ID` DESC LIMIT $users_per_page OFFSET $offset");
+    $q = DB_Query("SELECT * FROM `User accounts` ORDER BY `ID` DESC LIMIT $users_per_page OFFSET $offset");
 	while($user = mysqli_fetch_assoc($q)) { array_push($users, $user); }
 ?>
 <section>

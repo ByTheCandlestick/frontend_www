@@ -4,9 +4,9 @@
 ?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
-	$total_colours = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_colours`"))[0];
+	$total_colours = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product colours`"))[0];
 	$offset = (QS !== null)?(intval(QS)-1)*$colours_per_page :0;
-    $q = DB_Query($prnt = "SELECT * FROM `products_colours` ORDER BY `ID` ASC LIMIT $colours_per_page OFFSET $offset");
+    $q = DB_Query($prnt = "SELECT * FROM `Product colours` ORDER BY `ID` ASC LIMIT $colours_per_page OFFSET $offset");
 	while($colour = mysqli_fetch_assoc($q)) { array_push($colours, $colour); }
 ?>
 <section>

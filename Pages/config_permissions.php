@@ -30,7 +30,7 @@
                 </thead>
                 <tbody>
                     <?
-                        $query = DB_Query("DESCRIBE `Users permissions`");
+                        $query = DB_Query("DESCRIBE `User permissions`");
                         if(mysqli_num_rows($query) > 0) {
                             $id=0;
                             while ($row = mysqli_fetch_array($query)) {
@@ -118,7 +118,7 @@
 <?} else {?>
     <?
         $permission = [];
-        $query = DB_Query("DESCRIBE `Users permissions`");
+        $query = DB_Query("DESCRIBE `User permissions`");
         if(mysqli_num_rows($query) > 0) {
             $i=0;
             while ($row = mysqli_fetch_array($query)) {

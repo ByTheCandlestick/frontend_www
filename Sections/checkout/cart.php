@@ -1,7 +1,7 @@
 <?
 	$cart_total = 0;
 	$userid = $userdata['ID'];
-	if($query = DB_Query("SELECT * FROM `Users cart` WHERE `UID`=$userid AND `Active`=1")) {
+	if($query = DB_Query("SELECT * FROM `User carts` WHERE `UID`=$userid AND `Active`=1")) {
 		$cart_items = array();
 		while($row = mysqli_fetch_row($query)) {
 			array_push($cart_items, $row);
@@ -17,7 +17,7 @@
 			for($i=0;$i<$cart_items_count;$i++) {
 				$cart_item = $cart_items[$i];
 				$cart_item_id = $cart_item[2];
-				if($q = DB_Query("SELECT * FROM `Products` WHERE `SKU`=$cart_item_id AND `Active`=1 LIMIT 1")) {
+				if($q = DB_Query("SELECT * FROM `Product info` WHERE `SKU`=$cart_item_id AND `Active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
 						$currency = $res['Currency'];
 						$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );

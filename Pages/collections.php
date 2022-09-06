@@ -2,9 +2,9 @@
     $collections = array();
 	$collections_per_page = 100;
 ?><?
-	$total_collections = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `products_collections`"))[0];
+	$total_collections = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product collections`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$collections_per_page :0;
-    $q = DB_Query("SELECT * FROM `products_collections` ORDER BY `ID` ASC LIMIT $collections_per_page OFFSET $offset");
+    $q = DB_Query("SELECT * FROM `Product collections` ORDER BY `ID` ASC LIMIT $collections_per_page OFFSET $offset");
 	while($collection = mysqli_fetch_assoc($q)) { array_push($collections, $collection); }
 ?>
 <section>

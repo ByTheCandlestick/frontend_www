@@ -32,7 +32,7 @@
 				</thead>
 				<tbody>
 					<?
-						$query = DB_Query("SELECT * FROM `products_categories`");
+						$query = DB_Query("SELECT * FROM `Product categories`");
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
@@ -64,7 +64,7 @@
 				</thead>
 				<tbody>
 					<?
-						$query = DB_Query("SELECT * FROM `products_collections`");
+						$query = DB_Query("SELECT * FROM `Product collections`");
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>

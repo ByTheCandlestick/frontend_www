@@ -36,7 +36,7 @@
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
 							<?
-								$query = DB_Query("SELECT * FROM `products_categories` WHERE `Active`=1");
+								$query = DB_Query("SELECT * FROM `Product categories` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
 									print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
 								}
@@ -50,7 +50,7 @@
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
 							<?
-								$query = DB_Query("SELECT * FROM `products_collections` WHERE `Active`=1");
+								$query = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
 									print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
 								}
@@ -216,7 +216,7 @@
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
 							<?
-								$query = DB_Query("SELECT * FROM `products_colours` WHERE `Active`=1");
+								$query = DB_Query("SELECT * FROM `Product colours` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
 									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}

@@ -1,5 +1,5 @@
 <?
-	if($query = DB_Query(sprintf("SELECT * FROM `Users cart` WHERE `UID`=%u AND `active`=1", $userdata['ID']))) {
+	if($query = DB_Query(sprintf("SELECT * FROM `User carts` WHERE `UID`=%u AND `active`=1", $userdata['ID']))) {
 		$cart_items = array();
 		while($row = mysqli_fetch_row($query)) {
 			array_push($cart_items, $row);

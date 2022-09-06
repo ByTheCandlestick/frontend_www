@@ -360,7 +360,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `products_colours` LIMIT 7");
+                                $query = DB_Query("SELECT * FROM `Product colours` LIMIT 7");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('

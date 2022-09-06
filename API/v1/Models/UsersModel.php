@@ -7,7 +7,7 @@
 		 *	@final
 		 */
 			public function ListUsers(int $limit) {
-				return $this->Execute("SELECT * FROM `Users` ORDER BY `ID` ASC LIMIT $limit", 4);
+				return $this->Execute("SELECT * FROM `User accounts` ORDER BY `ID` ASC LIMIT $limit", 4);
 			}
 		/** GetUserByID
 		 *  Gets user by User ID
@@ -16,7 +16,7 @@
 		 *	@final
 		 */
 			public function GetUserById(int $uid) {
-				return $this->Execute("SELECT * FROM `Users` WHERE `ID`=$uid", 4);
+				return $this->Execute("SELECT * FROM `User accounts` WHERE `ID`=$uid", 4);
 			}
 		/**	ListSessions
 		 *  Creates a list of all user sessions for a specific user
@@ -25,7 +25,7 @@
 		 *	@final
 		 */
 			public function ListSessions(int $limit) {
-				return $this->Execute("SELECT * FROM `Users sessions` ORDER BY `Start_time` ASC LIMIT $limit", 1);
+				return $this->Execute("SELECT * FROM `User sessions` ORDER BY `Start_time` ASC LIMIT $limit", 1);
 			}
 		/** login
 		 *  Logs the user in and creates a session
@@ -34,7 +34,7 @@
 		 *	@final
 		 */
 			public function Login(string $uname, string $pass) {
-				$uid = $this->Execute("SELECT `ID` FROM `Users` WHERE `Username`='$uname' AND `Password`='$pass'", 1);
+				$uid = $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Username`='$uname' AND `Password`='$pass'", 1);
 				$code = bin2hex(random_bytes(32));
 				$ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR']))? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
 				$https = (isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != null)? true : false;
@@ -49,8 +49,8 @@
 					);
 
 					// Insert session and cookies
-					$this->Execute("INSERT INTO `Users sessions` (`UID`, `Session_code`, `IP_address`, `Start_time`, `Active`) VALUES ('$uid', '$code', '$ip', now(), '1')", 0);
-					$session = $this->Execute("SELECT `Session_code` FROM `Users sessions` WHERE `Session_code`='$code'", 3)[0];
+					$this->Execute("INSERT INTO `User sessions` (`UID`, `Session_code`, `IP_address`, `Start_time`, `Active`) VALUES ('$uid', '$code', '$ip', now(), '1')", 0);
+					$session = $this->Execute("SELECT `Session_code` FROM `User sessions` WHERE `Session_code`='$code'", 3)[0];
 					if(isset($session)) {
 						return array(
 							"status" => "success",
@@ -75,9 +75,9 @@
 		 *	@final
 		 */
 			public function Register(array $userdata) {
-				if($this->Execute(sprintf("SELECT * FROM `Users` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 0) {
-					$this->Execute(sprintf("INSERT INTO `Users`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Change_password`, `Phone`, `Disable_analytics`, `Active`, `Email_active`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $userdata['uname'], $userdata['email'], $userdata['fname'], $userdata['lname'], $userdata['pass'], $userdata['r_pass'], $userdata['phone'], $userdata['d_analytics'], $userdata['u_active'], $userdata['e_active']), 1);
-					if($this->Execute(sprintf("SELECT * FROM `Users` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 1) {
+				if($this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 0) {
+					$this->Execute(sprintf("INSERT INTO `User accounts`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Change_password`, `Phone`, `Disable_analytics`, `Active`, `Email_active`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $userdata['uname'], $userdata['email'], $userdata['fname'], $userdata['lname'], $userdata['pass'], $userdata['r_pass'], $userdata['phone'], $userdata['d_analytics'], $userdata['u_active'], $userdata['e_active']), 1);
+					if($this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `Username`='%s' OR `Email`='%s'", $userdata['uname'], $userdata['email']), 5) == 1) {
 						$this->ConfirmEmail($userdata['email']);
 						return true;
 					} else {
@@ -93,7 +93,7 @@
 		 *	@final
 		 */
 			public function Logout(string $session_code) {
-				$session = $this->Execute("UPDATE `Users sessions` SET `Session_code`='$session_code', `Last accessed`=now(), `Active`='0'", 0);
+				$session = $this->Execute("UPDATE `User sessions` SET `Session_code`='$session_code', `Last accessed`=now(), `Active`='0'", 0);
 				if(isset($session)) {
 					return array(
 						"status" => "success",
@@ -118,7 +118,7 @@
 				if($update['e_active']) { array_push($vars, "`Email_active`=" . $info['e_active']); }
 				if($update['u_active']) { array_push($vars, "`Active`=" . $info['u_active']); }
 				if($update['pass']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
-				return $this->Execute("UPDATE `Users` SET" . implode(', ', $vars) . " WHERE `ID`=".$uid, 1);
+				return $this->Execute("UPDATE `User accounts` SET" . implode(', ', $vars) . " WHERE `ID`=".$uid, 1);
 			}
 		/** ConfirmEmail
 		 *
@@ -154,7 +154,7 @@
 		 *	@todo
 		 */
 			public function ConfirmSession(string $seccode) {
-				return $this->Execute(sprintf("SELECT * FROM `Users` WHERE ``=%s LIMIT 1", $seccode), 1);
+				return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE ``=%s LIMIT 1", $seccode), 1);
 			}
 		/**	updatePermissions
 		 *	
@@ -171,15 +171,15 @@
 						array_push($string, '`'.$key.'`='.$vals[$keys[$i]]);
 					}
 				}
-				return $this->Execute(sprintf("UPDATE `Users permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid), 1);
+				return $this->Execute(sprintf("UPDATE `User permissions` SET ".implode(', ', $string)." WHERE `UID`=%s LIMIT 1", $uid), 1);
 			}
 		/**	deleteUser
 		 *	
 		 *	@todo
 		 */
 			public function deleteUser(string $uid) {
-				$this->Execute(sprintf("DELETE FROM `Users` WHERE `ID`='%s'", $uid), 1);
-				$this->Execute(sprintf("DELETE FROM `Users permissions` WHERE `UID`='%s'", $uid), 1);
+				$this->Execute(sprintf("DELETE FROM `User accounts` WHERE `ID`='%s'", $uid), 1);
+				$this->Execute(sprintf("DELETE FROM `User permissions` WHERE `UID`='%s'", $uid), 1);
 				return true;
 			}
 	}
