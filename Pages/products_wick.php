@@ -137,19 +137,19 @@
 			<div class="col-12 col-md-4 col-lg-1" name="width">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Width (mm)'])?>">
-					<label for="floatingInput">Width (mm)</label>
+					<label for="floatingInput">Width</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="height">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Height (mm)'])?>">
-					<label for="floatingInput">Height (cl)</label>
+					<label for="floatingInput">Height</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="thickness">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Thickness (mm)'])?>">
-					<label for="floatingInput">Thickness (mm)</label>
+					<label for="floatingInput">Thickness</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
