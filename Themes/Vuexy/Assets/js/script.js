@@ -1805,26 +1805,14 @@ $(document).ready(function() {
 		$(".search-area input").focusin(() => {search.suggestions.show();});
 		$.get($('.search-wrapper').attr('rel'), (data) => {search.jsonData = data})
 	// -----========== MENU BTN ==========----- // @final //
-		$('.app-icon').click(function() {
-			$('.app-sidebar').toggleClass('sidebar-show');
-		})
+		$('.app-icon').click(function() {$('.app-sidebar').toggleClass('sidebar-show');})
 	// -----========== BACK BTN ==========----- // @final //
-		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {
-			$('.app-back-btn').addClass('disabled')
-		}
-		$(".app-back-btn").click(function() {
-			if(!$(".app-back-btn").hasClass('disabled')) {
-				history.back();
-			}
-		});
+		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {$('.app-back-btn').addClass('disabled')}
+		$(".app-back-btn").click(function() {if(!$(".app-back-btn").hasClass('disabled'))history.back();});
 	// -----========== Alerts on load ==========----- // @final //
-		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) {
-			alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
-		}
+		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
 	// -----========== Preloader ==========----- // @final //
-		$(window).bind('beforeunload', function() {
-			$('.app-preloader').fadeIn();
-		});
+		$(window).bind('beforeunload', () => {$('.app-preloader').fadeIn();});
 		$('.app-preloader').fadeOut();
 	// -----========== Tool tips ==========----- // @final //
 		$('[data-toggle="tooltip"]').tooltip();
@@ -1882,9 +1870,8 @@ $(document).ready(function() {
 			symbol = misc.currSymbol($('div[name=currency] input').val());
 			$('span.input-group-text#currSymbol').html(symbol);
 		})
-	// -----========== Auto-calculate Container ==========----- // @wip //
+	// -----========== Auto-calculate comodities ==========----- // @wip //
 		$('div.row.containers div[name=quantity] input, div[name=price_b] input').change(function() {product.comodities.container.calculate();});
-		$('div.row.wicks div[name=quantity] input, div[name=price_b] input').change(function() {product.comodities.wicks.calculate();});
 		$('div[name=supplier] select').change(function() {
 			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
 		});
