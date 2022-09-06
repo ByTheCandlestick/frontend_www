@@ -120,20 +120,38 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['ItemRef'])?>">
-					<label for="floatingInput">Supplier Reference</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Price (ea)'])?>">
+					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Price (bulk)'])?>">
-					<label for="floatingInput">Price (bulk)</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Timescale'])?>">
+					<label for="floatingInput">Timescale</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Quantity'])?>">
-					<label for="floatingInput">Quantity</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max weight'])?>">
+					<label for="floatingInput">Max weight</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max length'])?>">
+					<label for="floatingInput">Max length</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max width'])?>">
+					<label for="floatingInput">Max width</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Max height'])?>">
+					<label for="floatingInput">QuanMax heighttity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
