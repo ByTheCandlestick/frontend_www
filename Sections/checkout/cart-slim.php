@@ -17,7 +17,7 @@
 			for($i=0;$i<$cart_items_count;$i++) {
 				$cart_item = $cart_items[$i];
 				$cart_item_id = $cart_item[2];
-				if($q = DB_Query("SELECT * FROM `Product info` WHERE `SKU`=$cart_item_id AND `Active`=1 LIMIT 1")) {
+				if($q = DB_Query("SELECT * FROM `Product` WHERE `SKU`=$cart_item_id AND `Active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
 						$currency = $res['Currency'];
 						$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );

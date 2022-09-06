@@ -140,7 +140,7 @@
 								list($invoiced_item_sku,
 									$invoiced_item_qty,
 									$invoiced_item_opt) = explode(",", $invoiced_item);
-								if($q = DB_Query("SELECT * FROM `Product info` WHERE `SKU`=$invoiced_item_sku AND `Active`=1 LIMIT 1")) {
+								if($q = DB_Query("SELECT * FROM `Product` WHERE `SKU`=$invoiced_item_sku AND `Active`=1 LIMIT 1")) {
 									while($res = mysqli_fetch_array($q)) {
 										$currency = $res['Currency'];
 										$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );

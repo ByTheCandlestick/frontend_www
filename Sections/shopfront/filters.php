@@ -8,7 +8,7 @@
 	</div>
 	<?
 		if(isset($secext) && $secext == 'products') {
-			if($query = DB_Query("SELECT `made_by`, COUNT(`made_by`) AS Frequency FROM `Product info` WHERE `Active`=1 GROUP BY `made_by` ORDER BY COUNT(`made_by`) DESC")) {
+			if($query = DB_Query("SELECT `made_by`, COUNT(`made_by`) AS Frequency FROM `Product` WHERE `Active`=1 GROUP BY `made_by` ORDER BY COUNT(`made_by`) DESC")) {
 				if(mysqli_num_rows($query) > 0) {
 					print('
 						<!-- Section: Partners -->
@@ -34,7 +34,7 @@
 					');
 				}
 			}
-			if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `Product info` WHERE `Active`=1 GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
+			if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `Product` WHERE `Active`=1 GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
 				if(mysqli_num_rows($query) > 0) {
 					print('
 						<!-- Section: Categories -->
@@ -60,7 +60,7 @@
 					');
 				}
 			}
-			if($query = DB_Query("SELECT `Range_id`, COUNT(`Range_id`) AS Frequency FROM `Product info` WHERE `Active`=1 GROUP BY `Range_id` ORDER BY COUNT(`Range_id`) DESC")) {
+			if($query = DB_Query("SELECT `Range_id`, COUNT(`Range_id`) AS Frequency FROM `Product` WHERE `Active`=1 GROUP BY `Range_id` ORDER BY COUNT(`Range_id`) DESC")) {
 				if(mysqli_num_rows($query) > 0) {
 					print('
 						<!-- Section: Ranges -->
@@ -87,7 +87,7 @@
 				}
 			}
 		} else if(isset($secext) && $secext == 'partners') {
-			if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `Product info` WHERE `Active`=1 GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
+			if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `Product` WHERE `Active`=1 GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
 				if(mysqli_num_rows($query) > 0) {
 					print('
 						<!-- Section: Category -->
@@ -115,7 +115,7 @@
 			}
 		} else if(isset($secext) && $secext == 'partner'){
 			$part_name = $partner['name'];
-			if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `Product info` WHERE `Active`=1 AND `made_by`='$part_name' GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
+			if($query = DB_Query("SELECT `Category_ID`, COUNT(`Category_ID`) AS Frequency FROM `Product` WHERE `Active`=1 AND `made_by`='$part_name' GROUP BY `Category_ID` ORDER BY COUNT(`Category_ID`) DESC")) {
 				if(mysqli_num_rows($query) > 0) {
 					print('
 						<!-- Section: Category -->
@@ -141,7 +141,7 @@
 					');
 				}
 			}
-			if($query = DB_Query("SELECT `Range_ID`, COUNT(`Range_ID`) AS Frequency FROM `Product info` WHERE `active`=1 AND `made_by`='$part_name' GROUP BY `Range_ID` ORDER BY COUNT(`Range_ID`) DESC")) {
+			if($query = DB_Query("SELECT `Range_ID`, COUNT(`Range_ID`) AS Frequency FROM `Product` WHERE `active`=1 AND `made_by`='$part_name' GROUP BY `Range_ID` ORDER BY COUNT(`Range_ID`) DESC")) {
 				if(mysqli_num_rows($query) > 0) {
 					print('
 						</div>

@@ -1,5 +1,5 @@
 <?
-	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Product info` WHERE `SKU`=%s", QS))) > 0) {
+	if(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Product` WHERE `SKU`=%s", QS))) > 0) {
 		$prod = mysqli_fetch_assoc($query);
 ?>
 	<section>

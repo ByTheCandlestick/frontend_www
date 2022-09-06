@@ -7,9 +7,9 @@
 	$q = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $collections[$row['ID']] = $row['Name']; }
 
-	$total_products = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product info`"))[0];
+	$total_products = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$products_per_page :0;
-    $q = DB_Query("SELECT * FROM `Product info` ORDER BY `SKU` DESC LIMIT $products_per_page OFFSET $offset");
+    $q = DB_Query("SELECT * FROM `Product` ORDER BY `SKU` DESC LIMIT $products_per_page OFFSET $offset");
 	while($product = mysqli_fetch_assoc($q)) { array_push($products, $product); }
 ?>
 <section>
