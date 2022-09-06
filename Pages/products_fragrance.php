@@ -43,7 +43,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
@@ -148,7 +148,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['ItemRef'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['ItemRef'])?>">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
