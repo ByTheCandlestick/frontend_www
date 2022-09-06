@@ -27,7 +27,7 @@
 		</div>
 		<hr>
 		<!-- Section Body -->
-		<div class="row ">
+		<div class="row containers">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Name'])?>">

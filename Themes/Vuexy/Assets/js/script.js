@@ -1891,9 +1891,8 @@ $(document).ready(function() {
 			$('span.input-group-text#currSymbol').html(symbol);
 		})
 	// -----========== Auto-calculate Container ==========----- // @wip //
-		$('div[name=quantity] input, div[name=price_b] input').change(function() {
-			product.container.calculate();
-		});
+		$('div.row.containers div[name=quantity] input, div[name=price_b] input').change(function() {product.comodities.container.calculate();});
+		$('div.row.wicks div[name=quantity] input, div[name=price_b] input').change(function() {product.comodities.wicks.calculate();});
 		$('div[name=supplier] select').change(function() {
 			$('div[name=supplierref] input').val($('div[name=supplier] option:selected').val());
 		});
