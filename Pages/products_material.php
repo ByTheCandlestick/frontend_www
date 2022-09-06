@@ -134,24 +134,6 @@
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-4 col-lg-1" name="width">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Width (mm)'])?>">
-					<label for="floatingInput">Width</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-4 col-lg-1" name="height">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Height (mm)'])?>">
-					<label for="floatingInput">Height</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-4 col-lg-1" name="thickness">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Thickness (mm)'])?>">
-					<label for="floatingInput">Thickness</label>
-				</div>
-			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_b">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (bulk)'])?>">
