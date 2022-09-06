@@ -1,24 +1,16 @@
 <?
-    $query = DB_Query(sprintf("SELECT * FROM `Product materials` WHERE `ID`=%s", QS));
     if(strtolower(QS) == "new") {
-?>
-
-<?  } elseif(mysqli_num_rows($query) > 0) {
-        $cont = mysqli_fetch_assoc($query);
 ?>
 	<section>
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Edit container</h1>
+				<h1>Edit Material</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
 					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:product.container.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
-							<i class="fa fa-trash-alt"></i>
-						</a>
-						<a href="javascript:product.container.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+						<a href="javascript:product.comodities.material.create();" class="btn btn-outline-primary m-1">
 							<i class="fa fa-save"></i>
 						</a>
 					</div>
@@ -27,10 +19,10 @@
 		</div>
 		<hr>
 		<!-- Section Body -->
-		<div class="row ">
+		<div class="row materials">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -42,7 +34,93 @@
 						<?
 							$query = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 							while ($row = mysqli_fetch_array($query)) {
-								($row['Reference'] == $cont['Supplier'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['Reference'].'">'.$row['Name'].'</option>');
+							}
+						?>
+					</select>
+					<label for="floatingInput">Supplier</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Supplier Reference</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="size">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">size (cl)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_b">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Price (bulk)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Quantity</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="price_e">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+					<label for="floatingInput">Price (ea)</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="status">
+				<div class="form-floating mb-3">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" name="active" id="flexCheck">
+						<label class="form-check-label" for="flexCheck"> Active? </label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<?  } elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Product materials` WHERE `ID`=%s", QS))) > 0) {
+        $material = mysqli_fetch_assoc($query);
+?>
+	<section>
+		<!-- Section Header -->
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<h1>Edit Material</h1>
+			</div>
+			<div class="col-12 col-md-6 text-md-end">
+				<div class="row">
+					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
+						<a href="javascript:product.comodities.material.delete(<?print(QS)?>);" class="btn btn-outline-danger m-1">
+							<i class="fa fa-trash-alt"></i>
+						</a>
+						<a href="javascript:product.comodities.material.update(<?print(QS)?>);" class="btn btn-outline-primary m-1">
+							<i class="fa fa-save"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<!-- Section Body -->
+		<div class="row materials">
+			<div class="col-12 col-md-6 col-lg-3" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Name'])?>">
+					<label for="floatingInput">Name</label>
+				</div>
+			</div>
+			<!-- Type -->
+			<div class="col-12 col-md-6 col-lg-3" name="supplier">
+				<div class="form-floating mb-3">
+					<select class="form-select" id="floatingSelect">
+						<option value="-1" selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['Reference'] == $material['Supplier'])? $selected=' selected' : $selected='';
 								print_r('<option value="'.$row['Reference'].'"'.$selected.'>'.$row['Name'].'</option>');
 							}
 						?>
@@ -52,38 +130,65 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['ItemRef'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['ItemRef'])?>">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="size">
+			<div class="col-12 col-md-4 col-lg-1" name="width">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Size (cl)'])?>">
-					<label for="floatingInput">size (cl)</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Width (mm)'])?>">
+					<label for="floatingInput">Width</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_b">
+			<div class="col-12 col-md-4 col-lg-1" name="height">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Price (bulk)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Height (mm)'])?>">
+					<label for="floatingInput">Height</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-4 col-lg-1" name="thickness">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Thickness (mm)'])?>">
+					<label for="floatingInput">Thickness</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="price_b">
+				<div class="form-floating mb-3">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="quantity">
+			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Quantity'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Quantity'])?>">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_e">
+			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($cont['Price (ea)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (ea)'])?>" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="status">
+			<div class="col-12 col-md-6 col-lg-3" name="supplier">
+				<div class="form-floating mb-3">
+					<select class="form-select" id="floatingSelect">
+						<option value="-1" selected>Please select</option>
+						<?
+							$query = DB_Query("SELECT * FROM `Product materialstands` WHERE `Active`=1");
+							while ($row = mysqli_fetch_array($query)) {
+								($row['ID'] == $material['ReccommendedMaterialStand'])? $selected=' selected' : $selected='';
+								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
+							}
+						?>
+					</select>
+					<label for="floatingInput">Reccommended Material Stand</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="status">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($cont['Active']==1)?print("checked"):print("")?>>
+						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($material['Active']==1)?print("checked"):print("")?>>
 						<label class="form-check-label" for="flexCheck"> Active? </label>
 					</div>
 				</div>
