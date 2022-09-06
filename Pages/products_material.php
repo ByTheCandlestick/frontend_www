@@ -160,29 +160,14 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Quantity'])?>">
-					<label for="floatingInput">Quantity</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Size (kg)'])?>">
+					<label for="floatingInput">Size (kg)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
 					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($material['Price (cl)'])?>" disabled>
 					<label for="floatingInput">Price (cl)</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="supplier">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `Product materialstands` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['ID'] == $material['ReccommendedMaterialStand'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Reccommended Material Stand</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="status">
