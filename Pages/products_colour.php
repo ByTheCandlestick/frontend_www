@@ -149,8 +149,8 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($cont['Quantity'])?>">
-					<label for="floatingInput">Quantity</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($cont['Quantity (g)'])?>">
+					<label for="floatingInput">Quantity (g)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
