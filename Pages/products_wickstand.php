@@ -22,7 +22,7 @@
 		<div class="row wickstands">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -43,25 +43,25 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
@@ -102,7 +102,7 @@
 		<div class="row ">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick_stand['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick_stand['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -124,25 +124,25 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick_stand['ItemRef'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick_stand['ItemRef'])?>">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick_stand['Price (bulk)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick_stand['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick_stand['Quantity'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick_stand['Quantity'])?>">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick_stand['Price (ea)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick_stand['Price (ea)'])?>" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>

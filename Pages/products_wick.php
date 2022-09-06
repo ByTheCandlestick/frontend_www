@@ -22,7 +22,7 @@
 		<div class="row wicks">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -43,31 +43,31 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="size">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">size (cl)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
@@ -108,7 +108,7 @@
 		<div class="row wicks">
 			<div class="col-12 col-md-6 col-lg-3" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Name'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Name'])?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
@@ -130,43 +130,43 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['ItemRef'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['ItemRef'])?>">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="width">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Width (mm)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Width (mm)'])?>">
 					<label for="floatingInput">Width</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="height">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Height (mm)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Height (mm)'])?>">
 					<label for="floatingInput">Height</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-1" name="thickness">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Thickness (mm)'])?>">
+					<input type="text" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Thickness (mm)'])?>">
 					<label for="floatingInput">Thickness</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_b">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Price (bulk)'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Price (bulk)'])?>">
 					<label for="floatingInput">Price (bulk)</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="quantity">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Quantity'])?>">
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Quantity'])?>">
 					<label for="floatingInput">Quantity</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="price_e">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?print($wick['Price (ea)'])?>" disabled>
+					<input type="number" class="form-control" id="floatingInput" placeholder="NULL" value="<?print($wick['Price (ea)'])?>" disabled>
 					<label for="floatingInput">Price (ea)</label>
 				</div>
 			</div>
