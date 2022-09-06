@@ -131,14 +131,14 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($cont['ItemRef'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($cont['ItemRef'])?>">
 					<label for="floatingInput">Supplier Reference</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="size">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($cont['Size (cl)'])?>">
-					<label for="floatingInput">size (cl)</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($cont['Reccommended %'])?>">
+					<label for="floatingInput">Reccommended % per cl</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
