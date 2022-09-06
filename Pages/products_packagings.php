@@ -1,186 +1,109 @@
 <?
-    if(strtolower(QS) == "new") {
+	$packagings = array();
+	$packagings_per_page = 100;
+?><?
+	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
+	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
+	$total_packagings = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product packaging`"))[0];
+	$offset = (QS !== null)?(intval(QS)-1)*$packagings_per_page :0;
+    $q = DB_Query($prnt = "SELECT * FROM `Product packaging` ORDER BY `ID` ASC LIMIT $packagings_per_page OFFSET $offset");
+	while($packaging = mysqli_fetch_assoc($q)) { array_push($packagings, $packaging); }
 ?>
-	<section>
-		<div class="row">
-			<div class="col-12 col-md-6">
-				<h1>Edit shipping</h1>
-			</div>
-			<div class="col-12 col-md-6 text-md-end">
-				<div class="row">
-					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:product.shipping.delete();" class="btn btn-outline-danger m-1">
-							<i class="fa fa-trash-alt"></i>
-						</a>
+<section>
+	<!-- Section Header -->
+	<div class="row">
+		<div class="col-12 col-md-6">
+			<h1>Packagings</h1>
+			<p>Displaying: <?=($offset > 1)? ($offset + 1).'-'.($offset + count($packagings)): count($packagings);?>/<?=$total_packagings?> Rows</p>
+		</div>
+		<div class="col-12 col-md-6 text-md-end">
+			<div class="row">
+				<div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
+					<a href="/Products/Packaging/New/" class="btn btn-outline-primary m-1">
+						<i class="fa fa-plus"></i>
+					</a>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="form-floating">
+						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder=" ">
+						<label for="tableSearch" class="ps-5">Search</label>
 					</div>
 				</div>
 			</div>
 		</div>
-		<hr>
-		<div class="row ">
-			<div class="col-12 col-md-6 col-lg-3" name="name">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Name</label>
-				</div>
-			</div>
-			<!-- Type -->
-			<div class="col-12 col-md-6 col-lg-3" name="supplier">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['Reference'] == $shipping['Supplier'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['Reference'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Supplier</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Supplier Reference</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="size">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Reccommended % per cl</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_b">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Price (bulk)</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="quantity">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Quantity (g)</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_e">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
-					<label for="floatingInput">Price (g)</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="status">
-				<div class="form-floating mb-3">
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="active" id="flexCheck">
-						<label class="form-check-label" for="flexCheck"> Active? </label>
+	</div>
+	<hr>
+	<!-- Section Body -->
+	<div class="row overflow-scroll">
+		<table class="packagingTable table table-striped table-hover">
+			<thead class="sticky-top">
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Supplier</th>
+					<th scope="col">Suppplier Ref</th>
+					<th scope="col">Price (Pack)</th>
+					<th scope="col">Qty</th>
+					<th scope="col">Price (ea)</th>
+					<th scope="col">Active</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?
+					if(count($packagings) > 0) {
+						foreach($packagings as $x) {
+							$editable = ($userperm['adm_access-products-packagings-edit']==1)?'<a href="/Products/Packaging/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
+							print('
+								<tr>
+									<th scope="row">'.$editable.'</th>
+									<td><a href="javascript:modal.simple();">'.$suppliers[$x['Supplier']]['Name'].'<a></td>
+									<td><a href="javascript:misc.copyToClipboard(\''.$x['ItemRef'].'\');alert.simple(\'Copied. Please search for this item in the new tab\', \'info\');setTimeout(function(){misc.openInNewTab(\''.$suppliers[$x['Supplier']]['Website'].'\');},1500);">'.$x['ItemRef'].'</a></td>
+									<td>'.$x['Price_Container'].'</td>
+									<td>'.$x['Qty_Container'].'</td>
+									<td>'.$x['Price (ea)'].'</td>
+									<td>'.$x['Active'].'</td>
+								</tr>
+							');
+						}
+					} else {
+						print('
+							<tr>
+								<th scope="row"></th>
+								<td>No data found</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						');
+					}
+				?>
+			</tbody>
+		</table>
+		<?
+			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
+			($prev_status == '')? $prev_page = "/Packagings/".(intval(QS) - 1).'/' : $prev_page = "";
+			(($offset + $packagings_per_page) < $total_packagings)? $next_status = '': $next_status = ' disabled';
+			($next_status == '')? $next_page = "/Packagings/".(intval(QS) + 1).'/' : $next_page = "";
+			// Previous/Next page button
+			print("
+				<div class=\"row\">
+					<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+						<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+						<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-<?  } elseif(mysqli_num_rows($query = DB_Query(sprintf("SELECT * FROM `Product shippings` WHERE `ID`=%s", QS))) > 0) {
-        $shipping = mysqli_fetch_assoc($query);
-?>
-	<section>
-		<div class="row">
-			<div class="col-12 col-md-6">
-				<h1>Edit shipping</h1>
-			</div>
-			<div class="col-12 col-md-6 text-md-end">
-				<div class="row">
-					<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-						<a href="javascript:product.shipping.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
-							<i class="fa fa-trash-alt"></i>
-						</a>
-						<a href="javascript:product.shipping.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
-							<i class="fa fa-save"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<hr>
-		<div class="row ">
-			<div class="col-12 col-md-6 col-lg-3" name="name">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Name'])?>">
-					<label for="floatingInput">Name</label>
-				</div>
-			</div>
-			<!-- Type -->
-			<div class="col-12 col-md-6 col-lg-3" name="supplier">
-				<div class="form-floating mb-3">
-					<select class="form-select" id="floatingSelect">
-						<option value="-1" selected>Please select</option>
-						<?
-							$query = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
-							while ($row = mysqli_fetch_array($query)) {
-								($row['Reference'] == $shipping['Supplier'])? $selected=' selected' : $selected='';
-								print_r('<option value="'.$row['Reference'].'"'.$selected.'>'.$row['Name'].'</option>');
-							}
-						?>
-					</select>
-					<label for="floatingInput">Supplier</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="supplierref">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['ItemRef'])?>">
-					<label for="floatingInput">Supplier Reference</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="size">
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Reccommended %'])?>">
-					<label for="floatingInput">Reccommended % per cl</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_b">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Price (bulk)'])?>">
-					<label for="floatingInput">Price (bulk)</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="quantity">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Quantity (g)'])?>">
-					<label for="floatingInput">Quantity (g)</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="price_e">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?=($shipping['Price (g)'])?>" disabled>
-					<label for="floatingInput">Price (g)</label>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="status">
-				<div class="form-floating mb-3">
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" name="active" id="flexCheck" <?($shipping['Active']==1)?print("checked"):print("")?>>
-						<label class="form-check-label" for="flexCheck"> Active? </label>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-<?
-	} else {
-?>
-	<section>
-		<div class="row">
-			<div class="col-12 col-md-6">
-				<h1>Shipping not found.</h1>
-			</div>
-			<div class="col-12 col-md-6 text-md-end">
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<button class="btn btn-outline-primary col-12 col-md-3 col-lg-1" onclick="history.go(-1)">Go back</buton>
-		</div>
-	</section>
-<?
-    }
-?>
+			");
+		?>
+	</div>
+</section>
+<script>
+	$(document).ready(function(){
+		$(".tableFilter").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$(".packagingTable tbody tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
