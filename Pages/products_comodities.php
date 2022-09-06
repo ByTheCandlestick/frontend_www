@@ -180,7 +180,7 @@
                                                 <td>'.$row['Name'].'</td>
                                                 <td>'.$row['Price (ea)'].'</td>
                                                 <td>
-                                                    <a href="/Product/WickStand/'.$row['ID'].'">
+                                                    <a href="/Products/WickStand/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </td>
