@@ -172,19 +172,19 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_b">
 				<div class="form-floating mb-3">
-					<textarea class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Top notes'])?>">
+					<textarea class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Top notes'])?>"></textarea>
 					<label for="floatingInput">Top notes</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="quantity">
 				<div class="form-floating mb-3">
-					<textarea class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Base notes'])?>">
+					<textarea class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Base notes'])?>"></textarea>
 					<label for="floatingInput">Heart notes</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="price_e">
 				<div class="form-floating mb-3">
-					<textarea class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Heart notes'])?>" disabled>
+					<textarea class="form-control" id="floatingInput" placeholder="" value="<?=($fragrance['Heart notes'])?>"></textarea>
 					<label for="floatingInput">Base notes</label>
 				</div>
 			</div>
