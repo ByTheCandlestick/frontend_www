@@ -1,12 +1,12 @@
 <?
-	function getDirContents($dir, &$results = array()) {
+	function getDirContents($dir, $ignore, &$results = array()) {
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path)) {
-				$results[] = $path;
+				$results[] = 'PATH: '.$path;
 			} else if ($value != "." && $value != "..") {
 				getDirContents($path, $results);
-				$results[] = $path;
+				$results[] = 'FILE: '.$path;
 			}
 		}
 
