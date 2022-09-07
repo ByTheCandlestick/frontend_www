@@ -31,7 +31,7 @@
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
 		var val = logSelector.find("option:selected").val();
-		console.log(val);
+		console.log('val: '+val);
 		if(val=="null") {
 
 		} else {
