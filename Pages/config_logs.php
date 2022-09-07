@@ -13,9 +13,9 @@
 ?>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+    <label class="input-group-text" for="LogSelect">Logs</label>
   </div>
-  <select class="custom-select" id="inputGroupSelect01">
+  <select class="" id="LogSelect">
     <option selected>Choose...</option>
 	<?
 		$logs = getDirContents(__ROOT__, '.log');
