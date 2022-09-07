@@ -11,8 +11,16 @@
 		return $results;
 	}
 ?>
-<pre>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
 	<?
-		print_r(getDirContents(__ROOT__, '.log'));
+		foreach(getDirContents(__ROOT__, '.log') as $log) {
+			print_r("<option selected value="$log[1]">$log[0]</option>");
+		}
 	?>
-</pre>
+  </select>
+</div>
