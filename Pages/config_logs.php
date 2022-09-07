@@ -24,7 +24,6 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
-		<?= date('r') ?>
 		<textarea name="logData">
 
 		</textarea>

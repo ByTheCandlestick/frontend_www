@@ -21,7 +21,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-						$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Daily\' tasks;', 'timestamp' => ''));
+						$str_response = date('r').' - successfully run \'Daily\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -32,7 +32,7 @@
 				// Send output
 					$this->sendOutput(
 						$str_response,
-						array("Content-Type: application/json", "HTTP/1.1 200 OK")
+						array("Content-Type: Text/plain", "HTTP/1.1 200 OK")
 					);
 				// End of function
 			}
@@ -57,7 +57,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Weekly\' tasks;'));
+                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Weekly\' tasks;', 'timestamp' => date('r')));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -93,7 +93,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Bi-weekly\' tasks;'));
+                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Bi-weekly\' tasks;', 'timestamp' => date('r')));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -129,7 +129,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Monthly\' tasks;'));
+                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Monthly\' tasks;', 'timestamp' => date('r')));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -165,7 +165,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Bi-annual\' tasks;'));
+                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Bi-annual\' tasks;', 'timestamp' => date('r')));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -201,7 +201,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Annual\' tasks;'));
+                    	$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Annual\' tasks;', 'timestamp' => date('r')));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
