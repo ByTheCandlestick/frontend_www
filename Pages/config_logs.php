@@ -32,9 +32,9 @@
 <script>
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
-		console.log(logSelector.find("option:selected").val());
-		$.get('file_to_read.txt', function(data) {
-			do_something_with(data)
+		path = logSelector.find("option:selected").val();
+		$.get(path, function(data) {
+			console.log(data);
 		}, 'text');
 	});
 </script>
