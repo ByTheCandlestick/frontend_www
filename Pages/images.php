@@ -1,3 +1,12 @@
+<?
+    $images = array();
+	$images_per_page = 100;
+?><?
+	$total_images = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Images`"))[0];
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$images_per_page :0;
+    $q = DB_Query("SELECT * FROM `Images` ORDER BY `ID` ASC LIMIT $images_per_page OFFSET $offset");
+	while($image = mysqli_fetch_assoc($q)) { array_push($images, $image); }
+?>
 <style>
 .imageContainer {
 	position: relative;
@@ -75,30 +84,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<div class="col-6 col-md-4 col-lg-3">
-			<div class="imageContainer">
-				<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
-				<p class="title">card title</p>
-				<div class="overlay"></div>
-				<div class="button"><a href="#"> BUTTON </a></div>
-			</div>
-		</div>
-		<div class="col-6 col-md-4 col-lg-3">
-			<div class="imageContainer">
-				<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
-				<p class="title">card title</p>
-				<div class="overlay"></div>
-				<div class="button"><a href="#"> BUTTON </a></div>
-			</div>
-		</div>
-		<div class="col-6 col-md-4 col-lg-3">
-			<div class="imageContainer">
-				<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
-				<p class="title">card title</p>
-				<div class="overlay"></div>
-				<div class="button"><a href="#"> BUTTON </a></div>
-			</div>
-		</div>
+		<?print_r($images);?>
 		<div class="col-6 col-md-4 col-lg-3">
 			<div class="imageContainer">
 				<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
