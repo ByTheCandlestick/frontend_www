@@ -8,53 +8,167 @@
 		"desc": "Analytics of all websites and apps",
 		"url": "/Analytics"
 	}, {
+		"name": "Blog",
+		"desc": "Lists all blog posts and comments",
+		"url": "/Blog"
+	}, {
 		"name": "Users",
 		"desc": "Lists all user accounts",
 		"url": "/Users"
+	}, {
+		"name": "New user",
+		"desc": "Creates a new user",
+		"url": "/Users/New"
+	}, {
+		"name": "Inbox",
+		"desc": "Lists all recieved mail",
+		"url": "/Mail/Inbox"
+	}, {
+		"name": "Sentbox",
+		"desc": "Lists all sent mail",
+		"url": "/Mail/Sent"
+	}, {
+		"name": "Draftbox",
+		"desc": "Lists all drafted mail",
+		"url": "/Mail/Drafts"
+	}, {
+		"name": "Archived mail",
+		"desc": "Lists all archived mail",
+		"url": "/Mail/Archived"
+	}, {
+		"name": "Junkbox",
+		"desc": "Lists all junk mail",
+		"url": "/Mail/Junk"
+	}, {
+		"name": "New mail",
+		"desc": "Write a new email",
+		"url": "/Mail/New"
+	}, {
+		"name": "Partners",
+		"desc": "Lists all partners",
+		"url": "/Partners"
+	}, {
+		"name": "Transactions",
+		"desc": "Lists all transactions",
+		"url": "/Transactions"
+	}, {
+		"name": "Orders",
+		"desc": "Lists all customer orders",
+		"url": "/Orders"
 	}, {
 		"name": "Products",
 		"desc": "Lists all products",
 		"url": "/Products"
 	}, {
-		"name": "Orders",
-		"desc": "Lists all Orders",
-		"url": "/Orders"
+		"name": "New product",
+		"desc": "Creates a new product",
+		"url": "/Products/New"
+	}, {
+		"name": "Product categories",
+		"desc": "Lists all product categories",
+		"url": "/Categories"
+	}, {
+		"name": "Product collections",
+		"desc": "Lists all product collections",
+		"url": "/Collections"
+	}, {
+		"name": "Product comodities",
+		"desc": "Lists all monodities",
+		"url": "/Produts/Comodities"
+	}, {
+		"name": "Containers",
+		"desc": "Lists all containers",
+		"url": "/Produts/Containers"
+	}, {
+		"name": "New container",
+		"desc": "Create a new container",
+		"url": "/Produts/Containers/New"
+	}, {
+		"name": "Wicks",
+		"desc": "Lists all wicks",
+		"url": "/Produts/Wicks"
+	}, {
+		"name": "New wick",
+		"desc": "Create a new wick",
+		"url": "/Produts/Wick/New"
+	}, {
+		"name": "Wick stands",
+		"desc": "Lists all wick stands",
+		"url": "/Produts/Wickstands"
+	}, {
+		"name": "New wick stand",
+		"desc": "Create a new wick stand",
+		"url": "/Produts/Wickstand/New"
+	}, {
+		"name": "Materials",
+		"desc": "Lists all materials",
+		"url": "/Produts/Materials"
+	}, {
+		"name": "New material",
+		"desc": "Create a new material",
+		"url": "/Produts/Material/New"
+	}, {
+		"name": "Fragrances",
+		"desc": "Lists all fragrances",
+		"url": "/Produts/Fragrances"
+	}, {
+		"name": "New fragrance",
+		"desc": "Create a new fragrance",
+		"url": "/Produts/Fragrance/New"
+	}, {
+		"name": "Product colours",
+		"desc": "Lists all colours",
+		"url": "/Produts/Colours"
+	}, {
+		"name": "New colour",
+		"desc": "Create a new colour",
+		"url": "/Produts/Colour/New"
+	}, {
+		"name": "Packagings",
+		"desc": "Lists all packagings",
+		"url": "/Produts/Packagings"
+	}, {
+		"name": "New packaging",
+		"desc": "Create a new packaging",
+		"url": "/Produts/Packaging/New"
+	}, {
+		"name": "Shipping methods",
+		"desc": "Lists all shipping methods",
+		"url": "/Produts/Shippings"
+	}, {
+		"name": "New shipping method",
+		"desc": "Create a new shipping method",
+		"url": "/Produts/Shipping/New"
 	}, {
 		"name": "Websites",
 		"desc": "A list of all websites",
 		"url": "/Websites"
 	}, {
-		"name": "Suppliers",
-		"desc": "A list of all suppliers",
-		"url": "/Suppliers"
-	}, {
-		"name": "Assistance",
-		"desc": "An overview of all candlestick softwares.",
-		"url": "/Assistance"
-	},
-
-	{
-		"name": "New user",
-		"desc": "Creates a new user",
-		"url": "/Users/New"
-	}, {
-		"name": "New product",
-		"desc": "Creates a new product",
-		"url": "/Products/New"
-	}, {
 		"name": "New website",
 		"desc": "Creates a new website",
 		"url": "/Websites/New"
 	}, {
-		"name": "New website theme",
+		"name": "Themes",
+		"desc": "Lists all website themes",
+		"url": "/Websites/Themes"
+	}, {
+		"name": "New theme",
 		"desc": "Creates a new website theme",
 		"url": "/Websites/Theme/New"
 	}, {
-		"name": "New website style",
+		"name": "Styles",
+		"desc": "Lists all website styles",
+		"url": "/Websites/Styles"
+	}, {
+		"name": "New style",
 		"desc": "Creates a new stylesheet",
 		"url": "/Websites/Style/New"
 	}, {
-		"name": "New website script",
+		"name": "Scripts",
+		"desc": "Lists all website scripts",
+		"url": "/Websites/Scripts"
+	}, {
+		"name": "New script",
 		"desc": "Creates a new script",
 		"url": "/Websites/Script/New"
 	}, {
@@ -62,8 +176,80 @@
 		"desc": "Creates a new website page",
 		"url": "/Websites/Page/New"
 	}, {
+		"name": "Suppliers",
+		"desc": "A list of all suppliers",
+		"url": "/Suppliers"
+	}, {
 		"name": "New supplier",
 		"desc": "Creates a new supplier",
 		"url": "/Suppliers/New"
+	}, {
+		"name": "API",
+		"desc": "Lists all API details",
+		"url": "/API"
+	}, {
+		"name": "API allowed hosts",
+		"desc": "Lists all API allowed hosts",
+		"url": "/API/Hosts"
+	}, {
+		"name": "Create API allowed host",
+		"desc": "Create a new API allowed host",
+		"url": "/API/Host/New"
+	}, {
+		"name": "API keys",
+		"desc": "Lists all API keys",
+		"url": "/API/Keys"
+	}, {
+		"name": "Create API key",
+		"desc": "Create a new API key",
+		"url": "/API/Key/New"
+	}, {
+		"name": "API Versions",
+		"desc": "Lists all API versions",
+		"url": "/API/Versions"
+	}, {
+		"name": "Create API version",
+		"desc": "Create a new API version",
+		"url": "/API/Version/New"
+	}, {
+		"name": "API Controllers",
+		"desc": "Lists all API controllers",
+		"url": "/API/Controllers"
+	}, {
+		"name": "Create API Controller",
+		"desc": "Create a new API controller",
+		"url": "/API/Controller/New"
+	}, {
+		"name": "Config",
+		"desc": "General config for the web hosting system",
+		"url": "/Config"
+	}, {
+		"name": "Change default timezone",
+		"desc": "Change the systems default timezone",
+		"url": "/Config/Timezone"
+	}, {
+		"name": "Edit default permissions",
+		"desc": "Change the systems default user permissions",
+		"url": "/Config/default_perms"
+	}, {
+		"name": "Permissions",
+		"desc": "Add or remove the systems permissions",
+		"url": "/Config/Permissions"
+	}, {
+		"name": "Set max table rows",
+		"desc": "Set the systems max number of rows with tables",
+		"url": "/Config/tbl_rows"
+	}, {
+		"name": "Change the chart colours",
+		"desc": "Change the systems default colours for charts",
+		"url": "/Config/chrt_colours"
+	}, {
+		"name": "Logs",
+		"desc": "View the systems logs",
+		"url": "/Config/Logs"
+	}, {
+		"name": "Help and assistance",
+		"desc": "An overview of all candlestick softwares.",
+		"url": "/Assistance"
 	}
 ]
