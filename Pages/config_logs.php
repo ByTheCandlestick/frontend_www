@@ -5,8 +5,8 @@
 			if (!is_dir($path)) {
 				($includeBase)? $results[]='FILE: '.$path: $results[]='FILE: '.$value;
 			} else if ($value != "." && $value != "..") {
-				getDirContents($path, true, $results);
 				($includeBase)? $results[]='PATH: '.$path: $results[]='PATH: '.$value;
+				getDirContents($path, true, $results);
 			}
 		}
 
