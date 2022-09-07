@@ -25,7 +25,6 @@
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
 		<?= date('r') ?>
-		<?= date('D [HH:MM:SS]') ?>
 		<textarea name="logData">
 
 		</textarea>
