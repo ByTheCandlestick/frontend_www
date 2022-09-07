@@ -36,7 +36,7 @@
 				$('div[name=logData]').html(data.replace(/\n/g, "<br />"));
 			}, 'text');
 		} else {
-				$('div[name=logData]').html(''));
+				$('div[name=logData]').html('');
 		}
 	});
 </script>
