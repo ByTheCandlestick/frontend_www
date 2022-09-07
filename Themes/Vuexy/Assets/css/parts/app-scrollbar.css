@@ -7,7 +7,8 @@
 	background: rgb(191 191 191 / 100%);
 	border-radius: 15px;
 }
-
+.search-suggestions::-webkit-scrollbar,
+.search-suggestions::-webkit-scrollbar-thumb,
 .app-sidebar::-webkit-scrollbar,
 .app-sidebar::-webkit-scrollbar-thumb {
 	display: none;
