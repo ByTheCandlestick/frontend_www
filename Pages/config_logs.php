@@ -12,6 +12,9 @@
 
 		return $results;
 	}
-
+?>
+<pre>
+<?
 	print_r(getDirContents(__ROOT__));
 ?>
+</pre>
