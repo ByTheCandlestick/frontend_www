@@ -30,8 +30,8 @@
 	</div>
 </section>
 <script>
-	$('div[name=logSelector]').find('select').change(() => {
-		console.log(this);
+	$('div[name=logSelector]').find('select').change((el) => {
+		console.log(el);
 		$.get('file_to_read.txt', function(data) {
 			do_something_with(data)
 		}, 'text');
