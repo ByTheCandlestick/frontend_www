@@ -145,7 +145,7 @@
 									<i class="fad fa-light-switch-on fa-xl"></i>
 								</button>
 								<button class="profile-btn">
-									<span><?=($userdata['First_name'].' '.$userdata['Last_name'])?></span>
+									<span class="" user-id="<?=$userdata['ID']?>"><?=($userdata['First_name'].' '.$userdata['Last_name'])?></span>
 								</button>
 							</div>
 						</div>
