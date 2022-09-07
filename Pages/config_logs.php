@@ -8,7 +8,7 @@
 				$results[]='FILE: '.$path;
 			} else if ($value != "." && $value != "..") {
 				$results[]='PATH: '.$path;
-				getDirContents($path, true, $remove, $results);
+				getDirContents($path, false, $remove, $results);
 			}
 		}
 
