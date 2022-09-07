@@ -32,9 +32,7 @@
 	logSelector.change(() => {
 		var val = logSelector.find("option:selected").val();
 		console.log('val: '+val);
-		if(val == "") {
-
-		} else {
+		if(val != "") {
 			$.get(val, function(data) {
 				$('div[name=logData]').html(data.replace(/\n/g, "<br />"));
 			}, 'text');
