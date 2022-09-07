@@ -72,11 +72,11 @@
 					);
 				// End of function
 			}
-        /** "/Tasks/Biweekly/" Endpoint - Executes all Biannual tasks
+        /** "/Tasks/Bimonthly/" Endpoint - Executes all Biannual tasks
 		 *	@final Complete
 		 *	@return JSON
 		 */
-			public function Biweekly() {
+			public function Bimonthly() {
 				// Vars
 					$mdl_tasks = new TasksModel();
 					$requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -93,7 +93,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = '\n['.date('r').'] - successfully run \'Bi-weekly\' tasks;';
+                    	$str_response = '\n['.date('r').'] - successfully run \'Bi-monthly\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
