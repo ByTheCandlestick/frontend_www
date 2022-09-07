@@ -1,6 +1,6 @@
 <?
 	function getDirContents(string $dir, bool $includeBase, string $remove="", &$results = array()) {
-		if(!$includeBase && !isset($remove)) $remove=$dir;
+		if(!$includeBase && $remove!="") $remove=$dir;
 		foreach (scandir($dir) as $key => $value) {
 			$path = str_replace($remove, "", realpath($dir . DIRECTORY_SEPARATOR . $value));
 			if (!is_dir($path)) {
