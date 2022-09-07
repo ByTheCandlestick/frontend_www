@@ -1,12 +1,12 @@
 <?
-	function getDirContents($dir, &$results = array()) {
+	function getDirContents(string $dir, bool $includeBase, &$results = array()) {
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path)) {
-				$results[] = 'PATH: '.$value;
+				($includeBase)? $results[]='PATH: '.$path: $results[]='PATH: '.$value;
 			} else if ($value != "." && $value != "..") {
-				getDirContents($path, $results);
-				$results[] = 'FILE: '.$value;
+				getDirContents($path, true, $results);
+				($includeBase)? $results[]='FILE: '.$path: $results[]='FILE: '.$value;
 			}
 		}
 
@@ -15,6 +15,6 @@
 ?>
 <pre>
 <?
-	print_r(getDirContents(__ROOT__));
+	print_r(getDirContents(__ROOT__, false));
 ?>
 </pre>
