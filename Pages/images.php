@@ -1,4 +1,8 @@
 <style>
+.imageContainer {
+	position: relative;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -9,7 +13,7 @@
   transition: background 0.5s ease;
 }
 
-.container:hover .overlay {
+.imageContainer:hover .overlay {
   display: block;
   background: rgba(0, 0, 0, .3);
 }
@@ -35,7 +39,7 @@ img {
   transition: top .5s ease;
 }
 
-.container:hover .title {
+.imageContainer:hover .title {
   top: 90px;
 }
 
@@ -58,7 +62,7 @@ img {
   z-index: 1;
 }
 
-.container:hover .button {
+.imageContainer:hover .button {
   opacity: 1;
 }
 
@@ -83,7 +87,7 @@ img {
 	<!-- Section Body -->
 	<div class="row">
 		<div class="col-6 col-md-4 col-lg-3">
-			<div class="position-relative">
+			<div class="imageContainer">
 				<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
 				<p class="title">card title</p>
 				<div class="overlay"></div>
