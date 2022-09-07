@@ -15,6 +15,6 @@
 ?>
 <pre>
 <?
-	print_r(getDirContents('/'));
+	print_r(getDirContents(__ROOT__));
 ?>
 </pre>
