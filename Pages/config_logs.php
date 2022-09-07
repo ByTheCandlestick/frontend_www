@@ -30,10 +30,9 @@
 <script>
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
-		var val = logSelector.find("option:selected").val();
-		console.log('val: '+val);
-		if(val != "") {
-			$.get(val, function(data) {
+		var path = logSelector.find("option:selected").val();
+		if(path != "") {
+			$.get(path, function(data) {
 				$('div[name=logData]').html(data.replace(/\n/g, "<br />"));
 			}, 'text');
 		}
