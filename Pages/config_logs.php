@@ -30,8 +30,7 @@
 	</div>
 </section>
 <script>
-	var logSelector = $('div[name=logSelector]').find('select');
-	logSelector.change(() => {
+	var logSelector = $('div[name=logSelector]').find('select').change(() => {
 		path = logSelector.find("option:selected").val();
 		$.get(path, function(data) {
 			console.log(data);
