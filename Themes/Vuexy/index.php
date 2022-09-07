@@ -142,7 +142,7 @@
 							<!-- Profile, Notifications and Dark mode -->
 							<div class="app-header-right">
 								<button class="mode-switch" title="Switch Theme">
-									<i class="fad fa-light-switch-on fa-xl"></i>
+									<i class="fad fa-moon-stars fa-xl"></i>
 								</button>
 								<button class="profile-btn">
 									<span class="" user-id="<?=$userdata['ID']?>"><?=($userdata['First_name'].' '.$userdata['Last_name'])?></span>
@@ -154,7 +154,7 @@
 							<!-- Sidebar -->
 							<div class="app-sidebar">
 								<a class="app-sidebar-link app-back-btn" data-toggle="tooltip" data-placement="right" title="Back">
-									<i class="fa fa-lg fa-arrow-left"></i>
+									<i class="fa fa-arrow-left"></i>
 								</a>
 								<?
 									$items = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `Active`=1 AND `menu_item`=1 AND `domain_id`=%s ORDER BY `menu_order` ASC", $website_info['ID']));
@@ -169,7 +169,7 @@
 											}
 											print(sprintf('
 												<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
-													<i class="fa fa-lg fa-%s"></i>
+													<i class="fa fa-%s"></i>
 												</a>
 												',
 												$link,
