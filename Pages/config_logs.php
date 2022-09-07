@@ -30,8 +30,14 @@
 <script>
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
-		$.get(logSelector.find("option:selected").val(), function(data) {
-			$('div[name=logData]').html(data.replace(/\n/g, "<br />"));
-		}, 'text');
+		var val = logSelector.find("option:selected").val();
+		console.log(val);
+		if(val=="null") {
+
+		} else {
+			$.get(val, function(data) {
+				$('div[name=logData]').html(data.replace(/\n/g, "<br />"));
+			}, 'text');
+		}
 	});
 </script>
