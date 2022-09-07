@@ -85,7 +85,6 @@
 	<!-- Section Body -->
 	<div class="row">
 		<?
-		print_r($images);
 			foreach($images as $image) {
 				print(sprintf('
 					<div class="col-6 col-md-4 col-lg-3">
