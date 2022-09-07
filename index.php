@@ -8,30 +8,16 @@
 		}
 	// Display file if get[file] and get[ext] is set, else display theme index file for the eheme
 		if(isset($_GET['file']) && isset($_GET['ext'])) {
-			if(str_starts_with(strtolower($_GET['file']), "/CDN/")) {
-				if(file_exists($path = sprintf("%s/CDN/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
-					if($_GET['ext'] == "php") {
-						include_once($path);
-					} else {
-						header('Content-Type: text/'.$_GET['ext']);
-						print(file_get_contents($path));
-					}
+			if(file_exists($path = sprintf("%s/Themes/%s/Assets/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
+				if($_GET['ext'] == "php") {
+					include_once($path);
 				} else {
-					header('Content-Type: text/json');
-					print(json_encode(array("error"=>"File not found")));
+					header('Content-Type: text/'.$_GET['ext']);
+					print(file_get_contents($path));
 				}
 			} else {
-				if(file_exists($path = sprintf("%s/Themes/%s/Assets/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
-					if($_GET['ext'] == "php") {
-						include_once($path);
-					} else {
-						header('Content-Type: text/'.$_GET['ext']);
-						print(file_get_contents($path));
-					}
-				} else {
-					header('Content-Type: text/json');
-					print(json_encode(array("error"=>"File not found")));
-				}
+				header('Content-Type: text/json');
+				print(json_encode(array("error"=>"File not found")));
 			}
 		} else {
 			if($website_info['Maintenance']) {
