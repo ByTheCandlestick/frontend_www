@@ -54,7 +54,7 @@
     color: white;
     z-index: 1;
     transition: top .5s ease;
-    width: 50%;
+    width: 70%;
     transform: translate(-50%, -50%);
 }
 .imageContainer:hover .title {
