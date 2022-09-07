@@ -1,5 +1,5 @@
 <?
-	function getDirContents(string $dir, string &$contains="", array &$results = array()) {
+	function getDirContents(string $dir, string $contains="", array &$results = array()) {
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path) && strpos($value, '.log')) {
