@@ -8,7 +8,7 @@
 		<div class="col-12 col-md-3">
 			<div class="form-floating" name="logSelector">
 				<select class="form-control" id="LogSelect" style="appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;">
-					<option value="">Choose...</option>
+					<option value="">Please select a log...</option>
 					<?
 						foreach(getDirContents(__ROOT__, '.log') as $log) {
 							printf('<option value="%s">%s</option>', $log['Path'], $log['File']);
