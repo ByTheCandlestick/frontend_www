@@ -6,10 +6,7 @@
 			<h1>Logs</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
-			<div class="input-group" name="logSelector">
-				<div class="input-group-prepend">
-					<label class="input-group-text" for="LogSelect">Logs</label>
-				</div>
+			<div class="form-floating" name="logSelector">
 				<select id="LogSelect">
 					<option value="">Choose...</option>
 					<?
