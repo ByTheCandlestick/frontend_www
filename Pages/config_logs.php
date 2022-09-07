@@ -4,10 +4,9 @@
 		foreach (scandir($dir) as $key => $value) {
 			$path = str_replace($remove, "", realpath($dir . DIRECTORY_SEPARATOR . $value));
 			if (!is_dir($path)) {
-				$results[]= array(	'FILE' => $value,
+				$results[]= array(	'File' => $value,
 									'Path' => $path);
 			} else if ($value != "." && $value != "..") {
-				$results[]='PATH: '.$path;
 				getDirContents($path, $includeBase, $remove, $results);
 			}
 		}
