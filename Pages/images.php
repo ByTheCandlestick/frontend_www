@@ -95,7 +95,7 @@
 							<div class="button"><a href="#"> BUTTON </a></div>
 						</div>
 					</div>
-				'), $image['location']);
+				', $image['location']));
 			}
 		?>
 	</div>
