@@ -89,11 +89,13 @@ img {
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<div class="container">
-			<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
-			<p class="title">card title</p>
-			<div class="overlay"></div>
-			<div class="button"><a href="#"> BUTTON </a></div>
+		<div class="col-6 col-md-4 col-lg-3">
+			<div class="container">
+				<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
+				<p class="title">card title</p>
+				<div class="overlay"></div>
+				<div class="button"><a href="#"> BUTTON </a></div>
+			</div>
 		</div>
 	</div>
 </section>
