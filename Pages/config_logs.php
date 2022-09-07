@@ -3,9 +3,9 @@
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path)) {
-				($includeBase)? $results[]='FILE: '.$path: $results[]='FILE: '.$value;
+				$results[]='FILE: '.$path;
 			} else if ($value != "." && $value != "..") {
-				($includeBase)? $results[]='PATH: '.$path: $results[]='PATH: '.$value;
+				$results[]='PATH: '.$path;
 				getDirContents($path, true, $results);
 			}
 		}
