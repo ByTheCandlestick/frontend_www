@@ -56,7 +56,7 @@
 									$query = DB_Query("SELECT * FROM `Website domains`");
 									while ($row = mysqli_fetch_array($query)) {
 										$row['ID'] == $domainID ? $selected="selected" : $selected="";
-										print_r('<option value="'.$row['ID'].'">'.$row['Domain'].' - '.$row['Name'].'</option>');
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
 									}
 								?>
 							</select>
