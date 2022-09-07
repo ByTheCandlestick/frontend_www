@@ -32,8 +32,7 @@
 <script>
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
-		path = logSelector.find("option:selected").val();
-		$.get(path, function(data) {
+		$.get(logSelector.find("option:selected").val(), function(data) {
 			$('textarea[name=logData]').innerHtml(data);
 		}, 'text');
 	});
