@@ -1,5 +1,5 @@
 <?
-	function getDirContents($dir, $ignore, &$results = array()) {
+	function getDirContents($dir, &$results = array()) {
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path)) {
