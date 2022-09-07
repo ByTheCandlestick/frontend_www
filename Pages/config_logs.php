@@ -15,5 +15,5 @@
 		return $results;
 	}
 
-	var_dump(getDirContents(__ROOT__));
+	print_r(getDirContents(__ROOT__));
 ?>
