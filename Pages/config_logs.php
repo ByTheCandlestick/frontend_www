@@ -6,11 +6,11 @@
 			<h1>Logs</h1>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
-			<div class="input-group mb-3">
+			<div class="input-group" name="logSelector">
 				<div class="input-group-prepend">
 					<label class="input-group-text" for="LogSelect">Logs</label>
 				</div>
-				<select class="" id="LogSelect">
+				<select id="LogSelect">
 					<option selected>Choose...</option>
 					<?
 						foreach(getDirContents(__ROOT__, '.log') as $log) {
@@ -24,5 +24,16 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
+		<textarea>
+
+		</textarea>
 	</div>
 </section>
+<script>
+	$('div[name=logSelector]').find('select').change(() => {
+		console.log(this);
+		$.get('file_to_read.txt', function(data) {
+			do_something_with(data)
+		}, 'text');
+	});
+</script>
