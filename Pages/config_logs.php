@@ -20,7 +20,8 @@
 	<?
 		print_r($logs = getDirContents(__ROOT__, '.log'));
 		foreach($logs as $log) {
-			print_r("<option selected value=\"$log['Path']\">$log['File']</option>");
+			$f=$log['File'];	$p=$log['Path'];
+			print_r("<option selected value=\"$p\">$f</option>");
 		}
 	?>
   </select>
