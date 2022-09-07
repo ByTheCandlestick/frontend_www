@@ -31,12 +31,12 @@
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
 		var path = logSelector.find("option:selected").val();
-		if(path != "") {
+		if(path!=="") {
 			$.get(path, function(data) {
 				$('div[name=logData]').html(data.replace(/\n/g, "<br />"));
 			}, 'text');
 		} else {
-				$('div[name=logData]').html('data.replace(/\n/g, "<br />"'));
+				$('div[name=logData]').html(''));
 		}
 	});
 </script>
