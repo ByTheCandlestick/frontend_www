@@ -24,7 +24,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
-		<textarea>
+		<textarea name="logData">
 
 		</textarea>
 	</div>
@@ -34,7 +34,7 @@
 	logSelector.change(() => {
 		path = logSelector.find("option:selected").val();
 		$.get(path, function(data) {
-			console.log(data);
+			$('textarea[name=logData]').innerHtml(data);
 		}, 'text');
 	});
 </script>
