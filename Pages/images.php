@@ -1,9 +1,6 @@
 <style>
 .container {
   position: relative;
-  margin-top: 50px;
-  width: 500px;
-  height: 300px;
 }
 
 .overlay {
@@ -90,7 +87,7 @@ img {
 	<!-- Section Body -->
 	<div class="row">
 		<div class="col-6 col-md-4 col-lg-3">
-			<div class="p-relative">
+			<div class="container p-relative">
 				<img src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" />
 				<p class="title">card title</p>
 				<div class="overlay"></div>
