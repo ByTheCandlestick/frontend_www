@@ -32,7 +32,7 @@
 	logSelector.change(() => {
 		var val = logSelector.find("option:selected").val();
 		console.log('val: '+val);
-		if(val=="null") {
+		if(val == "") {
 
 		} else {
 			$.get(val, function(data) {
