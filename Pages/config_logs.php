@@ -4,6 +4,9 @@
 		foreach (scandir($dir) as $key => $value) {
 			$path = str_replace($remove, "", realpath($dir . DIRECTORY_SEPARATOR . $value));
 			if (!is_dir($path)) {
+				if(strpos($value, '.log')) {
+
+				}
 				$results[]= array(	'File' => $value,
 									'Path' => $path);
 			} else if ($value != "." && $value != "..") {
