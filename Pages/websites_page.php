@@ -1,7 +1,6 @@
 <?
 	if(strToLower(QS) == "new"){
 		(isset($_GET['domainID']) && $_GET['domainID']!="")? $domainID=$_GET['domainID']:$domainID=-1;
-		print_r('domain ID: '.$domainID);
 ?>
 	<section>
 		<!-- Section Header -->
