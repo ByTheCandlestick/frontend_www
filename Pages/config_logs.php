@@ -1,8 +1,7 @@
 <?
 	function getDirContents(string $dir, array &$results = array()) {
-		if(!$includeBase && $remove!="") $remove=$dir;
 		foreach (scandir($dir) as $key => $value) {
-			$path = str_replace($remove, "", realpath($dir . DIRECTORY_SEPARATOR . $value));
+			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path) && strpos($value, '.log')) {
 				$results[]= array('File' => $value,'Path' => $path);
 			} else if ($value != "." && $value != "..") {
