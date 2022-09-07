@@ -1,12 +1,13 @@
 <?
-	function getDirContents(string $dir, bool $includeBase, &$results = array()) {
+	function getDirContents(string $dir, bool $includeBase, string $remove="", &$results = array()) {
+		if(!$includeBase) $remove = $dir
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path)) {
 				$results[]='FILE: '.$path;
 			} else if ($value != "." && $value != "..") {
 				$results[]='PATH: '.$path;
-				getDirContents($path, true, $results);
+				getDirContents($path, true, $remove, $results);
 			}
 		}
 
