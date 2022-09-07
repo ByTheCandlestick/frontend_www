@@ -7,7 +7,7 @@
     <option selected>Choose...</option>
 	<?
 		foreach(getDirContents(__ROOT__, '.log') as $log) {
-			sprintf('<option value="%s">%s</option>', $log['Path'], $log['File']);
+			printf('<option value="%s">%s</option>', $log['Path'], $log['File']);
 		}
 	?>
   </select>
