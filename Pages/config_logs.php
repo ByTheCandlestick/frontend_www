@@ -18,7 +18,7 @@
   <select class="" id="LogSelect">
     <option selected>Choose...</option>
 	<?
-		$logs = getDirContents(__ROOT__, '.log');
+		print_r($logs = getDirContents(__ROOT__, '.log'));
 		foreach($logs as $log) {
 			print_r("<option selected value=\"$log[1]\">$log[0]</option>");
 		}
