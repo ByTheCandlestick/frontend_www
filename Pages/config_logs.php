@@ -11,7 +11,7 @@
 					<label class="input-group-text" for="LogSelect">Logs</label>
 				</div>
 				<select id="LogSelect">
-					<option val="">Choose...</option>
+					<option value="">Choose...</option>
 					<?
 						foreach(getDirContents(__ROOT__, '.log') as $log) {
 							printf('<option value="%s">%s</option>', $log['Path'], $log['File']);
