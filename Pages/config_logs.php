@@ -18,7 +18,8 @@
   <select class="custom-select" id="inputGroupSelect01">
     <option selected>Choose...</option>
 	<?
-		foreach(getDirContents(__ROOT__, '.log') as $log) {
+		$logs = getDirContents(__ROOT__, '.log');
+		foreach($logs as $log) {
 			print_r("<option selected value=\"$log[1]\">$log[0]</option>");
 		}
 	?>
