@@ -185,7 +185,7 @@
 				mode.switch.find('i').removeClass('fa-moon-stars');
 
 				mode.root.addClass('light');
-				mode.switch.find('i').addClass('fa-light-sun');
+				mode.switch.find('i').addClass('fa-sun');
 			}
 		},
 	}
