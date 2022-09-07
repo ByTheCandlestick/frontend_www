@@ -24,16 +24,14 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
-		<textarea name="logData">
-
-		</textarea>
+		<div name="logData"></div>
 	</div>
 </section>
 <script>
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
 		$.get(logSelector.find("option:selected").val(), function(data) {
-			$('textarea[name=logData]').html(data);
+			$('div[name=logData]').html(data);
 		}, 'text');
 	});
 </script>
