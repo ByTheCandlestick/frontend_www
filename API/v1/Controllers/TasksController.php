@@ -57,7 +57,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = date('r').' - successfully run \'Weekly\' tasks;', 'timestamp' => date('r')));
+                    	$str_response = date('r') . ' - successfully run \'Weekly\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -93,7 +93,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = date('r').' - successfully run \'Bi-weekly\' tasks;', 'timestamp' => date('r')));
+                    	$str_response = date('r').' - successfully run \'Bi-weekly\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -129,7 +129,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = date('r').' - successfully run \'Monthly\' tasks;', 'timestamp' => date('r')));
+                    	$str_response = date('r').' - successfully run \'Monthly\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -165,7 +165,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = date('r').' - successfully run \'Bi-annual\' tasks;', 'timestamp' => date('r')));
+                    	$str_response = date('r').' - successfully run \'Bi-annual\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
@@ -201,7 +201,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-                    	$str_response = date('r').' - successfully run \'Annual\' tasks;', 'timestamp' => date('r')));
+                    	$str_response = date('r').' - successfully run \'Annual\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
