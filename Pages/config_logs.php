@@ -35,6 +35,8 @@
 			$.get(path, function(data) {
 				$('div[name=logData]').html(data.replace(/\n/g, "<br />"));
 			}, 'text');
+		} else {
+				$('div[name=logData]').html('data.replace(/\n/g, "<br />"'));
 		}
 	});
 </script>
