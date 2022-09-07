@@ -37,7 +37,7 @@
 				parse_str(QUERY_STRING, $query);
 				$api_key = $query['api_key'];
 				unset($query['api_key']);
-				exit("\n".json_encode(array(
+				exit(json_encode(array(
 					'error' => 'No valid host, request method, key or parameters.',
 					'location' => $loc,
 					'info' => array(
