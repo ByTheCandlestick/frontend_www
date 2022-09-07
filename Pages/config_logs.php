@@ -31,7 +31,7 @@
 	var logSelector = $('div[name=logSelector]').find('select');
 	logSelector.change(() => {
 		$.get(logSelector.find("option:selected").val(), function(data) {
-			$('div[name=logData]').text(data);
+			$('div[name=logData]').text(data.replace(/\n/g, "<br />"));
 		}, 'text');
 	});
 </script>
