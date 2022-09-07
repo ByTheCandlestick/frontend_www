@@ -176,16 +176,16 @@
 			cookie.update('cs_adm_mode', val);
 			if(val == "dark") {
 				mode.root.removeClass('light');
-				mode.switch.find('i').removeClass('fa-light-switch-on');
+				mode.switch.find('i').removeClass('fa-sun');
 
 				mode.root.addClass('dark');
-				mode.switch.find('i').addClass('fa-light-switch-off');
+				mode.switch.find('i').addClass('fa-moon-stars');
 			} else {
 				mode.root.removeClass('dark');
-				mode.switch.find('i').removeClass('fa-light-switch-off');
+				mode.switch.find('i').removeClass('fa-moon-stars');
 
 				mode.root.addClass('light');
-				mode.switch.find('i').addClass('fa-light-switch-on');
+				mode.switch.find('i').addClass('fa-light-sun');
 			}
 		},
 	}
