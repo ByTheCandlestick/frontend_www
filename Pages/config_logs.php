@@ -19,7 +19,7 @@
     <option selected>Choose...</option>
 	<?
 		foreach(getDirContents(__ROOT__, '.log') as $log) {
-			print_r("<option selected value="$log[1]">$log[0]</option>");
+			print_r("<option selected value=\"$log[1]\">$log[0]</option>");
 		}
 	?>
   </select>
