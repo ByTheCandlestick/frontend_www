@@ -21,7 +21,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
-						$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Daily\' tasks;'));
+						$str_response = json_encode(array('status'=>'success', 'desc'=>'successfully run \'Daily\' tasks;', 'timestamp' => ''));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
