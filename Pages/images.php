@@ -91,12 +91,14 @@
 					<div class="col-6 col-md-4 col-lg-3">
 						<div class="imageContainer">
 							<img src="%s" alt="" />
-							<p class="title">card title</p>
+							<p class="title">%s</p>
 							<div class="overlay"></div>
-							<div class="button"><a href="#"> BUTTON </a></div>
+							<div class="button">
+								<a href="#"> BUTTON </a>
+							</div>
 						</div>
 					</div>
-				', $image['location']));
+				', $image['location'], $image['alt']));
 			}
 		?>
 	</div>
