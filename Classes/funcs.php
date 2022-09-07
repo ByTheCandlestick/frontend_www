@@ -203,7 +203,7 @@
 				if (!is_dir($path) && strpos($value, $contains)) {
 					$results[]= array('File' => $value,'Path' => $path);
 				} else if ($value != "." && $value != "..") {
-					if($recursive) getDirContents($path, $contains, $results);
+					if($recursive) getDirContents($path, $contains, $recursive, $results);
 				}
 			}
 			return $results;
