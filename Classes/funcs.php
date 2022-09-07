@@ -201,7 +201,7 @@
 			foreach (scandir($directory) as $key => $value) {
 				$path = realpath($directory . DIRECTORY_SEPARATOR . $value);
 				if (!is_dir($path) && strpos($value, $contains)) {
-					$results[]= array('File' => $value,'Path' => $path);
+					$results[]= array('File' => $value,'Path' => str_replace("homepages/36/d908228976/htdocs/InDev/frontend_www/", "", $path));
 				} else if ($value != "." && $value != "..") {
 					if($recursive) getDirContents($path, $contains, $recursive, $results);
 				}
