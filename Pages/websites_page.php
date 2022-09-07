@@ -1,5 +1,7 @@
 <?
 	if(strToLower(QS) == "new"){
+		(isset($_GET['domainID']) && $_GET['domainID']!="")? $domainID=$_GET['domainID']:$domainID=-1;
+		print_r('domain ID: '.$domainID);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -54,6 +56,7 @@
 								<?
 									$query = DB_Query("SELECT * FROM `Website domains`");
 									while ($row = mysqli_fetch_array($query)) {
+										$row['ID'] == $domainID ? $selected="selected" : $selected="";
 										print_r('<option value="'.$row['ID'].'">'.$row['Domain'].' - '.$row['Name'].'</option>');
 									}
 								?>
@@ -151,8 +154,6 @@
 <?
 	} else if($query = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `ID`=%s", QS))) {
 		if(mysqli_num_rows($query) > 0) {
-			(isset($_GET['domainID']) && $_GET['domainID']!="")? $domainID=$_GET['domainID']:$domainID=-1;
-			print_r('domain ID: '.$domainID);
 			$page = mysqli_fetch_assoc($query);
 			$styles = explode(',', $page['style_ids']);
 			$scripts = explode(',', $page['script_ids']);
@@ -216,7 +217,7 @@
 								<?
 									$query = DB_Query("SELECT * FROM `Website domains`");
 									while ($row = mysqli_fetch_array($query)) {
-										$row['ID'] == $domainID ? $selected="selected" : $selected="";
+										$row['ID'] == $page['domain_id'] ? $selected="selected" : $selected="";
 										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Domain'].' - '.$row['Name'].'</option>');
 									}
 								?>
