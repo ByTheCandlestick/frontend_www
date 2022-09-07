@@ -5,7 +5,7 @@
 			if (!is_dir($path) && strpos($value, '.log')) {
 				$results[]= array('File' => $value,'Path' => $path);
 			} else if ($value != "." && $value != "..") {
-				getDirContents($path, $includeBase, $remove, $results);
+				getDirContents($path, $results);
 			}
 		}
 		return $results;
