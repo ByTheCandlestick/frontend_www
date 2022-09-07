@@ -3,6 +3,7 @@
 		if(!$includeBase) $remove=$dir;
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
+			str_replace($remove, $path, "");
 			if (!is_dir($path)) {
 				$results[]='FILE: '.$path;
 			} else if ($value != "." && $value != "..") {
