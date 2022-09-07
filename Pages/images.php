@@ -93,7 +93,7 @@
 							<p class="title">%s</p>
 							<div class="overlay"></div>
 							<div class="button">
-								<a href="#"> BUTTON </a>
+								<a href="#"> Modify </a>
 							</div>
 						</div>
 					</div>
