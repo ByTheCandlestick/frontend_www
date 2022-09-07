@@ -1,11 +1,11 @@
 <?
-	function getDirContents(string $dir, &$contains="", &$results = array()) {
+	function getDirContents(string $dir, string &$contains="", array &$results = array()) {
 		foreach (scandir($dir) as $key => $value) {
 			$path = realpath($dir . DIRECTORY_SEPARATOR . $value);
 			if (!is_dir($path) && strpos($value, '.log')) {
 				$results[]= array('File' => $value,'Path' => $path);
 			} else if ($value != "." && $value != "..") {
-				getDirContents($path, $results);
+				getDirContents($path, "", $results);
 			}
 		}
 		return $results;
