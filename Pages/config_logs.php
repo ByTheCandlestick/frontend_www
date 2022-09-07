@@ -2,12 +2,12 @@
 <section>
 	<!-- Section Header -->
 	<div class="row">
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-9">
 			<h1>Logs</h1>
 		</div>
-		<div class="col-12 col-md-6 text-md-end">
+		<div class="col-12 col-md-3">
 			<div class="form-floating" name="logSelector">
-				<select id="LogSelect">
+				<select class="form-control" id="LogSelect">
 					<option value="">Choose...</option>
 					<?
 						foreach(getDirContents(__ROOT__, '.log') as $log) {
