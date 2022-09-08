@@ -51,12 +51,12 @@
     font-size: 17px;
     text-align: center;
     text-transform: uppercase;
+	text-shadow: 0px 0px 10px black;
     color: white;
     z-index: 1;
     transition: top .5s ease;
     width: 70%;
     transform: translate(-50%, -50%);
-	text-shadow: 0px 0px 10px black;
 }
 .imageContainer:hover .title {
   top: 25%;
