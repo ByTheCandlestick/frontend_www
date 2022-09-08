@@ -76,7 +76,7 @@
 		 *	@return JSON
 		 */
 		public function fetch(array $image_vars) {
-			$i_title = $image_vars[0];
+			echo $i_title = $image_vars[0];
 			if(isset($image_vars[1])) {
 				$i_format = $image_vars[1];
 			}
