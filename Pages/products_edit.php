@@ -204,7 +204,7 @@
 									$query = DB_Query("SELECT * FROM `Product materials` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['Material_ID'])? $selected=' selected' : $selected='';
-										print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'"'.$selected.'>'.$row['Name'].'</option>');
+										print_r('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'"'.$selected.'>'.$row['Name'].'</option>');
 									}
 								?>
 							</select>
