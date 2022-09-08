@@ -112,7 +112,7 @@
 						try {
 							if($i_slug !== null):
 								// Get the image ctype
-									$filename = basename($i['location']);
+									$filename = basename($i['Location']);
 									$file_extension = strtolower(substr(strrchr($filename,"."),1));
 									switch($file_extension) {
 										case "webp":	$ctype="image/webp";	break;
@@ -124,9 +124,9 @@
 										default:
 									}
 								// Get the image
-								$str_response	= file_get_contents($i['location']);
+								$str_response	= file_get_contents(__ROOT__.$i['Location']);
 								$arr_http		= array("Content-Type: ".$ctype,
-														"Content-Length: " . filesize($i['location']),
+														"Content-Length: " . filesize(__ROOT__.$i['Location']),
 														"HTTP/1.1 200 OK");
 							else:
 								throw new Error('No image selected');
