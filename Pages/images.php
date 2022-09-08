@@ -97,7 +97,7 @@
 							</div>
 						</div>
 					</div>
-				', $image['Slug'], $image['Name'], $image['Location'], $image['Description'], $image['Alt'], $image['Active?'], $image['Location'], $image['Alt'], $image['Name']));
+				', $image['Slug'], $image['Location'], $image['Name'], $image['Description'], $image['Alt'], $image['Active?'], $image['Location'], $image['Alt'], $image['Name']));
 			}
 		?>
 	</div>
