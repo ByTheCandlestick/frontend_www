@@ -88,8 +88,8 @@
 			foreach($images as $image) {
 				print(sprintf('
 					<div class="col-6 col-md-3 col-lg-2">
-						<div class="imageContainer" data-slug="" data-location="%s" data-description="" data-alt="" data-active="">
-							<img src="%s" alt="" />
+						<div class="imageContainer" data-slug="%s" data-location="%s" data-description="%s" data-alt="%s" data-active="%s">
+							<img src="%s" alt="%s" />
 							<p class="title">%s</p>
 							<div class="overlay"></div>
 							<div class="button">
@@ -97,7 +97,7 @@
 							</div>
 						</div>
 					</div>
-				', $image['Slug'], $image['Location'], $image['Description'], $image['Alt'], $image['Active'], $image['Location'], $image['Alt']));
+				', $image['Slug'], $image['Location'], $image['Description'], $image['Alt'], $image['Active'], $image['Location'], $image['Alt'], $image['Name']));
 			}
 		?>
 	</div>
