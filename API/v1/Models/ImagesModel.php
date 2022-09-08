@@ -4,7 +4,7 @@
 		 * 
 		 */
 		public function ReadFIle(string $title) {
-			return $this->Execute("SELECT * FROM `Images` WHERE `slug`='$title' AND `active`=1", 4)[0];
+			return $this->Execute("SELECT * FROM `Images` WHERE `Slug`='$title' AND `Active?`=1", 4)[0];
 		}
 	}
 ?>
