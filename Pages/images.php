@@ -93,7 +93,7 @@
 							<p class="title">%s</p>
 							<div class="overlay"></div>
 							<div class="button">
-								<a href="#"> Modify </a>
+								<a href="javascript:$(\'#imageEditorModal\').modal(\'show\');"> Modify </a>
 							</div>
 						</div>
 					</div>
