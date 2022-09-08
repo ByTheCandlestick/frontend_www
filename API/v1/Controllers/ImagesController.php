@@ -76,7 +76,7 @@
 		 *	@return JSON
 		 */
 		public function fetch(array $image_vars) {
-			echo $i_title = $image_vars[0];
+			$i_slug = $image_vars[0];
 			if(isset($image_vars[1])) {
 				$i_format = $image_vars[1];
 			}
@@ -99,7 +99,7 @@
 					// Submit
 						$mdl_Image = new ImageModel();
 						// Get file location
-							$i = $mdl_Image->ReadFIle($i_title);
+							$i = $mdl_Image->ReadFIle($i_slug);
 						// Resize the image
 							if($change['size']) {
 								// size
@@ -110,7 +110,7 @@
 							}
 						// Submit request
 						try {
-							if($i_title !== null):
+							if($i_slug !== null):
 								// Get the image ctype
 									$filename = basename($i['location']);
 									$file_extension = strtolower(substr(strrchr($filename,"."),1));
