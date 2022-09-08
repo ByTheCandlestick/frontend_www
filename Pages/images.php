@@ -26,7 +26,7 @@
 }
 .imageContainer .button {
     position: absolute;
-    top: 50%;
+    top: 75%;
     opacity: 0;
     transition: opacity .35s ease;
     left: 50%;
