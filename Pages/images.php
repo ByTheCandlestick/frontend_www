@@ -87,7 +87,7 @@
 		<?
 			foreach($images as $image) {
 				print(sprintf('
-					<div class="col-6 col-md-3 col-lg-2">
+					<div class="col-10 offset-1 col-md-3 offset-md-0 col-lg-2">
 						<div class="imageContainer" data-slug="%s" data-location="%s" data-name="%s" data-description="%s" data-alt="%s" data-active="%s">
 							<img src="%s" alt="%s" />
 							<p class="title">%s</p>
