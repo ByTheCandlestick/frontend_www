@@ -103,7 +103,7 @@
 	</div>
 </section>
 <div class="modal" tabindex="-1" id="imageEditorModal">
-	<div class="modal-dialog" role="document">
+	<div class="modal-dialog modal-fullscreen-sm-down modal-xl" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Edit image</h5>
