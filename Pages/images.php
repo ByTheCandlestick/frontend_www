@@ -93,7 +93,7 @@
 							<p class="title">%s</p>
 							<div class="overlay"></div>
 							<div class="button">
-								<a href="javascript:$(\'#imageEditorModal\').modal(\'show\');"> Modify </a>
+								<a href="javascript:images.modify.openModal();"> Modify </a>
 							</div>
 						</div>
 					</div>
@@ -111,8 +111,8 @@
 			<div class="modal-body">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" onClick="orders.refunds.confirm();">Refund</button>
-				<button type="button" class="btn btn-secondary" onClick="$('#imageEditorModal').modal('hide');">Close</button>
+				<button type="button" class="btn btn-primary" onClick="images.modify.save();">Save</button>
+				<button type="button" class="btn btn-secondary" onClick="images.modify.closeModal();">Close</button>
 			</div>
 		</div>
 	</div>
