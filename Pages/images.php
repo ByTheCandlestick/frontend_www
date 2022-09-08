@@ -56,7 +56,7 @@
     transition: top .5s ease;
     width: 70%;
     transform: translate(-50%, -50%);
-	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
 .imageContainer:hover .title {
