@@ -17,6 +17,5 @@ window.onload = function () {
 	console.log("DOM complete in "+funcs.ms_to_hms(fw.DOMcomplete()));
 	console.log("Fulliy loaded in "+funcs.ms_to_hms(fw.Complete()));
 }
-window.onbeforeunload = function(){
-	return 'Are you sure you want to leave?'
-};
+window.onbeforeunload = function(e){
+	return e.originalEvent.returnValue = 'Please wait};
