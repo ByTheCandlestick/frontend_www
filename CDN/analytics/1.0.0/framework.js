@@ -1,6 +1,6 @@
 var fw = {};
 fw.init = () => {
-	console.log('analytics initializing');
+	//console.log('analytics initializing');
 }
 fw.funcs = {};
 fw.funcs.ms_to_hms = (ms) => {
