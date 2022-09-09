@@ -1,4 +1,4 @@
-import { fw, vars, funcs } from "./framework.js";
+import { fw, vars, funcs, analytics } from "./framework.js";
 
 fw.init()
 
@@ -11,11 +11,11 @@ window.onload = function () {
 	vars.timing.domComplete = window.performance.timing.domComplete;
 	vars.timing.complete = Date.now();
 
-	console.log("Domain lookup took "+funcs.ms_to_hms(fw.DOMlookup()));
-	console.log("DOM interactive in "+funcs.ms_to_hms(fw.DOMinteractive()));
-	console.log("DOM loaded in "+funcs.ms_to_hms(fw.DOMloaded()));
-	console.log("DOM complete in "+funcs.ms_to_hms(fw.DOMcomplete()));
-	console.log("Fulliy loaded in "+funcs.ms_to_hms(fw.Complete()));
+	console.log("Domain lookup took "+funcs.ms_to_hms(analytics.timings.DOMLookup));
+	console.log("DOM interactive in "+funcs.ms_to_hms(analytics.timings.DOMInteractive));
+	console.log("DOM loaded in "+funcs.ms_to_hms(analytics.timings.DOMLoaded));
+	console.log("DOM complete in "+funcs.ms_to_hms(analytics.timings.DOMComplete));
+	console.log("Fulliy loaded in "+funcs.ms_to_hms(analytics.timings.Loaded));
 }
 window.onbeforeunload = function(){
 	myfun();
