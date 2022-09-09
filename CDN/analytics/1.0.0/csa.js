@@ -1,4 +1,4 @@
-import fw from "./framework.js";
+import { fw } from "./framework.js";
 
 console.log(fw.init());
 
