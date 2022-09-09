@@ -17,7 +17,9 @@ fw.DOMcomplete = () => {
 fw.Complete = () => {
 	return (vars.timing.complete - vars.timing.navigationStart);
 }
-
+fw.Active = () => {
+	return (vars.timing.navigationEnd - vars.timing.navigationStart);
+}
 var funcs = {};
 funcs.ms_to_hms = (ms) => {
 	var hrs = parseInt((ms / 1000) / 3600 ),
