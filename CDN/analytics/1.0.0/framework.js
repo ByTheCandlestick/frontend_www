@@ -29,6 +29,7 @@ funcs.ms_to_hms = (ms) => {
 var vars = {};
 vars.timing = {};
 vars.timing.navigationStart = null;
+vars.timing.navigationEnd = null;
 vars.timing.domainLookupStart = null;
 vars.timing.domainLookupEnd = null;
 vars.timing.domInteractive = null;

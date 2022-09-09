@@ -22,6 +22,6 @@ window.onbeforeunload = function(){
 	return 'Are you sure you want to leave?'
 };
 function myfun(){
-	var end = window.performance.now();
-	console.log(`Execution time: ${end - start} ms`);
+	vars.timing.navigationEnd = window.performance.now();
+	console.log(`Execution time: ${vars.timing.navigationEnd - vars.timing.navigationStart} ms`);
 }
