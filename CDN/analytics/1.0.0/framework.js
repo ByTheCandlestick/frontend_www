@@ -1,5 +1,5 @@
-var fw = {};
-	fw.saveLoadMetrics = () => {
+var f = {};
+	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
 		a.timing.DOMLookup = (window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart);
 		a.timing.DOMInteractive = (window.performance.timing.domInteractive - window.performance.timing.navigationStart);
@@ -13,17 +13,10 @@ var fw = {};
 		a.domain.Origin = window.location.origin;
 		//console.log('analytics initialized');
 	}
-	fw.saveUnloadMetrics = () => {
+	f.saveUnloadMetrics = () => {
 		//console.log('analytics immobilizing');
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
-	}
-var f = {};
-	f.ms_to_hms = (ms) => {
-		var hrs = parseInt((ms / 1000) / 3600 ),
-			mns = parseInt(((ms/1000) % 3600) / 60 ),
-			scs = (ms / 1000) % 60;
-		return ((hrs>0)?(hrs < 10 ? '0' : '') + hrs + ":": "") + (mns < 10 ? '0' : '') + mns + ":" + (scs < 10 ? '0' : '') + scs;
 	}
 var a = {}
 	a.timing = {};
@@ -43,4 +36,4 @@ var a = {}
 
 	}
 
-export { fw, f, a };
+export { f, a };
