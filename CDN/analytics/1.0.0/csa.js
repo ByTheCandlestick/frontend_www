@@ -4,11 +4,7 @@ import * as fw from "./framework.js";
 fw.init();
 
 window.onload = function () {
-	var timings = window.performance.timing;
-	timings.forEach(function(item){
-		date = new Date(item);
-		console.log(date)
-	})
+	console.log(window.performance.timing);
 
 	/*
 	console.log("DOM loaded in "+(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.requestStart)+"ms");
