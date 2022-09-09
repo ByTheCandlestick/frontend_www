@@ -18,10 +18,7 @@ window.onload = function () {
 	console.log("Fulliy loaded in "+funcs.ms_to_hms(analytics.timing.Loaded));
 }
 window.onbeforeunload = function(){
-	myfun();
-	return 'Are you sure you want to leave?'
-};
-function myfun(){
 	vars.timing.navigationEnd = Date.now();
 	console.log("Stayed on page for "+funcs.ms_to_hms(analytics.timing.Total));
+	return 'Are you sure you want to leave?'
 }
