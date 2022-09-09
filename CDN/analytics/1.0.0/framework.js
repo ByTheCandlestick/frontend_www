@@ -8,7 +8,7 @@ function loadTime() {
 		console.log("Time until DOMready: ", Date.now() - pageRequested);
 	});
 	$(window).load(function() {
-		console.log("Time until everything loaded: ", Date.now()-timerStart);
+		console.log("Time until everything loaded: ", Date.now()-pageRequested);
 	});
 }
 export {
