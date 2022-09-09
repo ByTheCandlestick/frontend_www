@@ -1,5 +1,3 @@
-a = {
-	initialize() {
-		console.log('analytics initializing');
-	}
+export function initialize() {
+	console.log('analytics initializing');
 }
