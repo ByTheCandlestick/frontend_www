@@ -1,6 +1,6 @@
 import { fw } from "./framework.js";
 
-console.log(fw.init());
+fw.init()
 
 window.onload = function () {
 	fw.vars.timing.navigationStart = window.performance.timing.navigationStart;
