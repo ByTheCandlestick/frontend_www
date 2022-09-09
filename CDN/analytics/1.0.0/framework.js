@@ -3,10 +3,10 @@ function init() {
 }
 
 function convertms(ms) {
-	var hours = Math.floor(ms / 3600000),
-		minutes = ((ms % 60000) / 6000).toFixed(0),
-		seconds = ((ms % 3600000) / 1000).toFixed(0);
-	return (hours < 10 ? '0' : '') + hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+	var hrs = Math.floor(ms / 3600000),
+		mns = ((ms % 60000) / 6000).toFixed(0),
+		scs = ((ms % 3600000) / 1000).toFixed(0);
+	return ((hrs>0)?(hrs < 10 ? '0' : '') + hrs + ":": "") + ((mns>0)?(mns < 10 ? '0' : '') + mns + ":":"") + ((scs>0)(scs < 10 ? '0' : '') + scs;
   }
   
 export {
