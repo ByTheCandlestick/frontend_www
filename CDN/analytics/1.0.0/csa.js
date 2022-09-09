@@ -4,5 +4,5 @@ import * as fw from "./framework.js";
 fw.init();
 
 window.onload = function () {
-	console.log("Dom loaded in "+window.performance.timing.domContentLoadedEventEnd - window.performance.timing.connectStart+"ms");
+	console.log("Dom loaded in "+(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.connectStart)+"ms");
 }
