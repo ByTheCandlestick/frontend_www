@@ -15,7 +15,7 @@ window.onload = function () {
 	console.log("DOM interactive in "+funcs.ms_to_hms(vars.timing.domInteractive - vars.timing.navigationStart));
 	console.log("DOM loaded in "+funcs.ms_to_hms(vars.timing.domContentLoadedEventEnd - vars.timing.navigationStart));
 	console.log("DOM complete in "+funcs.ms_to_hms(vars.timing.domComplete - vars.timing.navigationStart));
-	console.log("Fulliy loaded in "+funcs.ms_to_hms(vars.timing.complete - vars.timing.navigationStart));
+	console.log("Fulliy loaded in "+funcs.ms_to_hms(fw.Complete()));
 }
 window.onbeforeunload = function(){
 	var end = window.performance.now();

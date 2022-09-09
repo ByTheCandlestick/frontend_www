@@ -2,6 +2,13 @@ var fw = {};
 fw.init = () => {
 	console.log('analytics initializing');
 }
+fw.DOMlookup = () => {}
+fw.DOMinteractive = () => {}
+fw.DOMloaded = () => {}
+fw.DOMcomplete = () => {}
+fw.Complete = () => {
+	return (vars.timing.complete - vars.timing.navigationStart);
+}
 
 var funcs = {};
 funcs.ms_to_hms = (ms) => {
