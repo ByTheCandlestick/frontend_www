@@ -1,4 +1,4 @@
-import { init, funcs } from "./framework.js";
+import { init, loadTime } from "./framework.js";
 
 init();
-funcs.loadTime()
+loadTime()
