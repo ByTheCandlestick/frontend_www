@@ -2,10 +2,18 @@ var fw = {};
 fw.init = () => {
 	console.log('analytics initializing');
 }
-fw.DOMlookup = () => {}
-fw.DOMinteractive = () => {}
-fw.DOMloaded = () => {}
-fw.DOMcomplete = () => {}
+fw.DOMlookup = () => {
+	return (vars.timing.domainLookupEnd - vars.timing.domainLookupStart);
+}
+fw.DOMinteractive = () => {
+	return (vars.timing.domInteractive - vars.timing.navigationStart);
+}
+fw.DOMloaded = () => {
+	return (vars.timing.domContentLoadedEventEnd - vars.timing.navigationStart);
+}
+fw.DOMcomplete = () => {
+	return (vars.timing.domComplete - vars.timing.navigationStart);
+}
 fw.Complete = () => {
 	return (vars.timing.complete - vars.timing.navigationStart);
 }
