@@ -1,30 +1,30 @@
 var fw = {};
 fw.initialize = () => {
 	console.log('analytics initializing');
-	vars.timing.navigationStart = window.performance.timing.navigationStart;
-	vars.timing.domainLookupStart = window.performance.timing.domainLookupStart;
-	vars.timing.domainLookupEnd = window.performance.timing.domainLookupEnd;
-	vars.timing.domInteractive = window.performance.timing.domInteractive;
-	vars.timing.domContentLoadedEventEnd = window.performance.timing.domContentLoadedEventEnd;
-	vars.timing.domComplete = window.performance.timing.domComplete;
-	vars.timing.complete = Date.now();
+	v.timing.navigationStart = window.performance.timing.navigationStart;
+	v.timing.domainLookupStart = window.performance.timing.domainLookupStart;
+	v.timing.domainLookupEnd = window.performance.timing.domainLookupEnd;
+	v.timing.domInteractive = window.performance.timing.domInteractive;
+	v.timing.domContentLoadedEventEnd = window.performance.timing.domContentLoadedEventEnd;
+	v.timing.domComplete = window.performance.timing.domComplete;
+	v.timing.complete = Date.now();
 	console.log('analytics initialized');
 }
 fw.initialize = () => {
 	console.log('analytics immobilizing');
-	vars.timing.navigationEnd = Date.now();
+	v.timing.navigationEnd = Date.now();
 	console.log('analytics immobilized');
 }
 
 fw.saveLoadMetrics = () => {
-	analytics.timing.DOMLookup = (vars.timing.domainLookupEnd - vars.timing.domainLookupStart);
-	analytics.timing.DOMInteractive = (vars.timing.domInteractive - vars.timing.navigationStart);
-	analytics.timing.DOMLoaded = (vars.timing.domContentLoadedEventEnd - vars.timing.navigationStart);
-	analytics.timing.DOMComplete = (vars.timing.domComplete - vars.timing.navigationStart);
-	analytics.timing.DOMFinished = (vars.timing.complete - vars.timing.navigationStart);
+	a.timing.DOMLookup = (v.timing.domainLookupEnd - v.timing.domainLookupStart);
+	a.timing.DOMInteractive = (v.timing.domInteractive - v.timing.navigationStart);
+	a.timing.DOMLoaded = (v.timing.domContentLoadedEventEnd - v.timing.navigationStart);
+	a.timing.DOMComplete = (v.timing.domComplete - v.timing.navigationStart);
+	a.timing.DOMFinished = (v.timing.complete - v.timing.navigationStart);
 }
 fw.saveUnloadMetrics = () => {
-	analytics.timing.TimeSpent = (vars.timing.navigationEnd - vars.timing.navigationStart);
+	a.timing.TimeSpent = (v.timing.navigationEnd - v.timing.navigationStart);
 }
 var f = {};
 f.ms_to_hms = (ms) => {
