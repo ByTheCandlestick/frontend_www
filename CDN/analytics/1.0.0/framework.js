@@ -39,6 +39,17 @@ vars.timing.domContentLoadedEventEnd = null;
 vars.timing.domComplete = null;
 vars.timing.complete = null;
 
+var analytics = {}
+analytics.timings.DOMLookup = fw.DOMlookup();
+analytics.timings.DOMInteractive = fw.DOMinteractive();
+analytics.timings.DOMLoaded = fw.DOMloaded();
+analytics.timings.DOMComplete = fw.DOMcomplete();
+analytics.timings.DOMLookup = fw.DOMlookup();
+analytics.timings.Loaded = fw.Complete();
+
+analytics.Submit = () => {
+
+}
 
 
 export {fw, funcs, vars};
