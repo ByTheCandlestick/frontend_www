@@ -1,6 +1,6 @@
 c = {
 	initialize() {
-		
+		console.log('analytics initializing');
 	}
 }
 a = {}
