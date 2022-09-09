@@ -1,4 +1,3 @@
-import * as tti from "/CDN/analytics/1.0.0/vendors/tti-polyfill.js";
 import * as fw from "./framework.js";
 
 fw.init();
