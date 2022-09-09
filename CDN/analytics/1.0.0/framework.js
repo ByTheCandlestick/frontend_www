@@ -1,5 +1,5 @@
 var fw = {};
-fw.init = () => {
+fw.initialize = () => {
 	console.log('analytics initializing');
 	vars.timing.navigationStart = window.performance.timing.navigationStart;
 	vars.timing.domainLookupStart = window.performance.timing.domainLookupStart;
@@ -10,6 +10,12 @@ fw.init = () => {
 	vars.timing.complete = Date.now();
 	console.log('analytics initialized');
 }
+fw.initialize = () => {
+	console.log('analytics immobilizing');
+	vars.timing.navigationEnd = Date.now();
+	console.log('analytics immobilized');
+}
+
 fw.saveLoadMetrics = () => {
 	analytics.timing.DOMLookup = (vars.timing.domainLookupEnd - vars.timing.domainLookupStart);
 	analytics.timing.DOMInteractive = (vars.timing.domInteractive - vars.timing.navigationStart);
