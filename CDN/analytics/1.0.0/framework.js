@@ -44,8 +44,8 @@ analytics.timings.DOMLookup = fw.DOMlookup();
 analytics.timings.DOMInteractive = fw.DOMinteractive();
 analytics.timings.DOMLoaded = fw.DOMloaded();
 analytics.timings.DOMComplete = fw.DOMcomplete();
-analytics.timings.DOMLookup = fw.DOMlookup();
 analytics.timings.Loaded = fw.Complete();
+analytics.timings.Total = fw.Active();
 
 analytics.Submit = () => {
 

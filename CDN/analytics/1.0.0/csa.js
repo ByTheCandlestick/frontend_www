@@ -23,5 +23,5 @@ window.onbeforeunload = function(){
 };
 function myfun(){
 	vars.timing.navigationEnd = Date.now();
-	console.log("Stayed on page for "+funcs.ms_to_hms(fw.Active()));
+	console.log("Stayed on page for "+funcs.ms_to_hms());
 }
