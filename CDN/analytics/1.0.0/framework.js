@@ -7,6 +7,10 @@ var fw = {};
 		a.timing.DOMComplete = (window.performance.timing.domComplete - window.performance.timing.navigationStart);
 		a.timing.DOMFinished = (Date.now() - window.performance.timing.navigationStart);
 		a.domain.URL = window.location.href;
+		a.domain.Protocol = window.location.protocol;
+		a.domain.Hostname = window.location.hostname;
+		a.domain.Path = window.location.hostname;
+		a.domain.Origin = window.location.origin;
 		console.log('analytics initialized');
 	}
 	fw.saveUnloadMetrics = () => {
@@ -32,6 +36,10 @@ var a = {}
 		a.timing.TimeSpent = null;
 	a.domain = {};
 		a.domain.URL = null;
+		a.domain.Protocol = null;
+		a.domain.Hostname = null;
+		a.domain.Path = null;
+		a.domain.Origin = null;
 	a.Submit = () => {
 
 	}
