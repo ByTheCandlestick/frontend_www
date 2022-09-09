@@ -96,6 +96,7 @@
 		</head>
 		<body>
 			<!-- ===== Javascript ===== -->
+				<script src="/CDN/analytics/1.0.0/csa.js" type="text/javascript"></script>
 				<?
 					if($layout_row['script_ids'] != NULL) {
 						printScripts($layout_row['script_ids']);
