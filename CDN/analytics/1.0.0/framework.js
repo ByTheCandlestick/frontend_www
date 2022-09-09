@@ -41,12 +41,12 @@ vars.timing.complete = null;
 
 var analytics = {}
 analytics.timing = {};
-analytics.timings.DOMLookup = fw.DOMlookup();
-analytics.timings.DOMInteractive = fw.DOMinteractive();
-analytics.timings.DOMLoaded = fw.DOMloaded();
-analytics.timings.DOMComplete = fw.DOMcomplete();
-analytics.timings.Loaded = fw.Complete();
-analytics.timings.Total = fw.Active();
+analytics.timing.DOMLookup = fw.DOMlookup();
+analytics.timing.DOMInteractive = fw.DOMinteractive();
+analytics.timing.DOMLoaded = fw.DOMloaded();
+analytics.timing.DOMComplete = fw.DOMcomplete();
+analytics.timing.Loaded = fw.Complete();
+analytics.timing.Total = fw.Active();
 analytics.Submit = () => {
 
 }
