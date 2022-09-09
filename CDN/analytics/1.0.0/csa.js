@@ -5,6 +5,7 @@ fw.init();
 
 window.onload = function () {
 	console.log(window.performance.timing);
-	console.log("Dom loaded in "+(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.requestStart)+"ms");
-	console.log("Fully loaded in "+(window.performance.timing.domComplete - window.performance.timing.requestStart)+"ms");
+	console.log("DOM loaded in "+(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.requestStart)+"ms");
+	console.log("DOM complete in "+(window.performance.timing.domComplete - window.performance.timing.requestStart)+"ms");
+	console.log("DOM complete in "+(window.performance.timing.domInteractive - window.performance.timing.requestStart)+"ms");
 }
