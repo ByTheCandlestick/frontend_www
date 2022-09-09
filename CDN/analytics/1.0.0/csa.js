@@ -17,6 +17,8 @@ window.onload = function () {
 	console.log("DOM complete in "+funcs.ms_to_hms(fw.DOMcomplete()));
 	console.log("Fulliy loaded in "+funcs.ms_to_hms(fw.Complete()));
 }
-window.onbeforeunload = function(e){
+window.onbeforeunload = function(){
+	var end = window.performance.now();
+	console.log(`Execution time: ${end - start} ms`);
 	return 'Are you sure you want to leave?'
 };
