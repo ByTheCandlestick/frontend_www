@@ -1,4 +1,4 @@
-import { fw } from "./framework.js";
+import { init, vars, funcs } from "./framework.js";
 
 fw.init()
 
