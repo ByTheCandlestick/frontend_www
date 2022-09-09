@@ -1,9 +1,15 @@
 function init() {
 	console.log('analytics initializing');
 }
-pageRequested = Date.now();
+
 function loadTime() {
-	console.log(Date.now() - pageRequested);
+	pageRequested = Date.now();
+	$(document).ready(function() {
+		console.log("Time until DOMready: ", Date.now() - pageRequested);
+	});
+	$(window).load(function() {
+		console.log(Date.now() - pageRequested);
+	});
 }
 export {
 	init,
