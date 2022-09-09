@@ -112,7 +112,7 @@
 						}
 					?>
 			<!-- ===== Javascript ===== -->
-				<script src="/CDN/analytics/1.0.0/csa.js" type="text/javascript"></script>
+				<script src="/CDN/analytics/1.0.0/csa.js" type="text/javascript" type="module"></script>
 				<?
 					if($layout_row['script_ids'] != NULL) {
 						printScripts($layout_row['script_ids']);
