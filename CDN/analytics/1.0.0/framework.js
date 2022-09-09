@@ -10,7 +10,8 @@ var fw = {};
 	}
 	fw.saveUnloadMetrics = () => {
 		console.log('analytics immobilizing');
-		a.timing.TimeSpent = (Date.now() - window.performance.timing.navigationStart);
+		var unloadTime = Date.now();
+		a.timing.TimeSpent = ( unloadTime - window.performance.timing.navigationStart);
 		console.log('analytics immobilized');
 	}
 var f = {};
