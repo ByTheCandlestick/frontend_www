@@ -1,23 +1,23 @@
 var fw = {};
 fw.init = () => {
 	console.log('analytics initializing');
+	vars.timing.navigationStart = window.performance.timing.navigationStart;
+	vars.timing.domainLookupStart = window.performance.timing.domainLookupStart;
+	vars.timing.domainLookupEnd = window.performance.timing.domainLookupEnd;
+	vars.timing.domInteractive = window.performance.timing.domInteractive;
+	vars.timing.domContentLoadedEventEnd = window.performance.timing.domContentLoadedEventEnd;
+	vars.timing.domComplete = window.performance.timing.domComplete;
+	vars.timing.complete = Date.now();
+	console.log('analytics initialized');
 }
-fw.DOMlookup = () => {
+fw.saveLoadMetrics = () => {
 	return (vars.timing.domainLookupEnd - vars.timing.domainLookupStart);
-}
-fw.DOMinteractive = () => {
 	return (vars.timing.domInteractive - vars.timing.navigationStart);
-}
-fw.DOMloaded = () => {
 	return (vars.timing.domContentLoadedEventEnd - vars.timing.navigationStart);
-}
-fw.DOMcomplete = () => {
 	return (vars.timing.domComplete - vars.timing.navigationStart);
-}	
-fw.Complete = () => {
 	return (vars.timing.complete - vars.timing.navigationStart);
 }
-fw.Active = () => {
+fw.saveUnloadMetrics = () => {
 	return (vars.timing.navigationEnd - vars.timing.navigationStart);
 }
 var funcs = {};
