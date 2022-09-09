@@ -6,5 +6,5 @@ $(document).ready(function() {
 	console.log("Time until DOMready: ", Date.now() - pageRequested);
 });
 $(window).load(function() {
-	console.log("Time until everything loaded: ", Date.now()-pageRequested);
+	console.log("Time until loaded: ", Date.now() - pageRequested);
 });
