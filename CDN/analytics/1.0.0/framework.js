@@ -11,14 +11,14 @@ fw.init = () => {
 	console.log('analytics initialized');
 }
 fw.saveLoadMetrics = () => {
-	return (vars.timing.domainLookupEnd - vars.timing.domainLookupStart);
-	return (vars.timing.domInteractive - vars.timing.navigationStart);
-	return (vars.timing.domContentLoadedEventEnd - vars.timing.navigationStart);
-	return (vars.timing.domComplete - vars.timing.navigationStart);
-	return (vars.timing.complete - vars.timing.navigationStart);
+	analytics.timing.DOMLookup = (vars.timing.domainLookupEnd - vars.timing.domainLookupStart);
+	analytics.timing.DOMInteractive = (vars.timing.domInteractive - vars.timing.navigationStart);
+	analytics.timing.DOMLoaded = (vars.timing.domContentLoadedEventEnd - vars.timing.navigationStart);
+	analytics.timing.DOMComplete = (vars.timing.domComplete - vars.timing.navigationStart);
+	analytics.timing.DOMFinished = (vars.timing.complete - vars.timing.navigationStart);
 }
 fw.saveUnloadMetrics = () => {
-	return (vars.timing.navigationEnd - vars.timing.navigationStart);
+	analytics.timing.TimeSpent = (vars.timing.navigationEnd - vars.timing.navigationStart);
 }
 var funcs = {};
 funcs.ms_to_hms = (ms) => {
@@ -41,12 +41,12 @@ vars.timing.complete = null;
 
 var analytics = {}
 analytics.timing = {};
-analytics.timing.DOMLookup = fw.DOMlookup();
-analytics.timing.DOMInteractive = fw.DOMinteractive();
-analytics.timing.DOMLoaded = fw.DOMloaded();
+analytics.timing.DOMLookup = null;
+analytics.timing.DOMInteractive = null;
+analytics.timing.DOMLoaded = null;
 analytics.timing.DOMComplete = fw.DOMcomplete();
-analytics.timing.Loaded = fw.Complete();
-analytics.timing.Total = fw.Active();
+analytics.timing.DOMFinished = fw.Complete();
+analytics.timing.TimeSpent = fw.Active();
 analytics.Submit = () => {
 
 }

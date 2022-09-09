@@ -9,11 +9,11 @@ window.onload = function () {
 	console.log("DOM interactive in "+funcs.ms_to_hms(analytics.timing.DOMInteractive));
 	console.log("DOM loaded in "+funcs.ms_to_hms(analytics.timing.DOMLoaded));
 	console.log("DOM complete in "+funcs.ms_to_hms(analytics.timing.DOMComplete));
-	console.log("Fulliy loaded in "+funcs.ms_to_hms(analytics.timing.Loaded));
+	console.log("Fulliy loaded in "+funcs.ms_to_hms(analytics.timing.DOMFinished));
 }
 window.onbeforeunload = function(){
 	vars.timing.navigationEnd = Date.now();
 	fw.saveUnloadMetrics();
-	console.log("Stayed on page for "+funcs.ms_to_hms(analytics.timing.Total));
+	console.log("Stayed on page for "+funcs.ms_to_hms(analytics.timing.TimeSpent));
 	return 'Are you sure you want to leave?'
 }
