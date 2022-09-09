@@ -1,10 +1,10 @@
 import { f, a } from "./framework.js";
 
 window.onload = function () {
-	fw.saveLoadMetrics();
+	f.saveLoadMetrics();
 }
 window.onbeforeunload = function(){
-	fw.saveUnloadMetrics();
+	f.saveUnloadMetrics();
 	a.Submit();
 	return 'Are you sure you want to leave?'
 }
