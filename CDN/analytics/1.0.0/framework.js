@@ -2,7 +2,7 @@ function init() {
 	console.log('analytics initializing');
 }
 convert = {
-	ms_to_MHS(ms) {
+	ms_to_hms(ms) {
 		var hrs = Math.floor(ms / 3600000),
 			mns = ((ms % 60000) / 6000).toFixed(0),
 			scs = ((ms % 3600000) / 1000).toFixed(0);
@@ -12,5 +12,5 @@ convert = {
   
 export {
 	init,
-	convert,
+	ms_to_hms,
 };
