@@ -3,19 +3,19 @@ import { fw, vars, funcs } from "./framework.js";
 fw.init()
 
 window.onload = function () {
-	fw.vars.timing.navigationStart = window.performance.timing.navigationStart;
-	fw.vars.timing.domainLookupStart = window.performance.timing.domainLookupStart;
-	fw.vars.timing.domainLookupEnd = window.performance.timing.domainLookupEnd;
-	fw.vars.timing.domInteractive = window.performance.timing.domInteractive;
-	fw.vars.timing.domContentLoadedEventEnd = window.performance.timing.domContentLoadedEventEnd;
-	fw.vars.timing.domComplete = window.performance.timing.domComplete;
-	fw.vars.timing.complete = Date.now();
+	vars.timing.navigationStart = window.performance.timing.navigationStart;
+	vars.timing.domainLookupStart = window.performance.timing.domainLookupStart;
+	vars.timing.domainLookupEnd = window.performance.timing.domainLookupEnd;
+	vars.timing.domInteractive = window.performance.timing.domInteractive;
+	vars.timing.domContentLoadedEventEnd = window.performance.timing.domContentLoadedEventEnd;
+	vars.timing.domComplete = window.performance.timing.domComplete;
+	vars.timing.complete = Date.now();
 
-	console.log("Domain lookup took "+fw.funcs.ms_to_hms(fw.vars.timing.domainLookupEnd - fw.vars.timing.domainLookupStart));
-	console.log("DOM interactive in "+fw.funcs.ms_to_hms(fw.vars.timing.domInteractive - fw.vars.timing.navigationStart));
-	console.log("DOM loaded in "+fw.funcs.ms_to_hms(fw.vars.timing.domContentLoadedEventEnd - fw.vars.timing.navigationStart));
-	console.log("DOM complete in "+fw.funcs.ms_to_hms(fw.vars.timing.domComplete - fw.vars.timing.navigationStart));
-	console.log("Fulliy loaded in "+fw.funcs.ms_to_hms(fw.vars.timing.complete - fw.vars.timing.navigationStart));
+	console.log("Domain lookup took "+funcs.ms_to_hms(vars.timing.domainLookupEnd - vars.timing.domainLookupStart));
+	console.log("DOM interactive in "+funcs.ms_to_hms(vars.timing.domInteractive - vars.timing.navigationStart));
+	console.log("DOM loaded in "+funcs.ms_to_hms(vars.timing.domContentLoadedEventEnd - vars.timing.navigationStart));
+	console.log("DOM complete in "+funcs.ms_to_hms(vars.timing.domComplete - vars.timing.navigationStart));
+	console.log("Fulliy loaded in "+funcs.ms_to_hms(vars.timing.complete - vars.timing.navigationStart));
 }
 window.onbeforeunload = function(){
 	var end = window.performance.now();
