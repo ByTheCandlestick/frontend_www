@@ -3,7 +3,7 @@ function init() {
 }
 
 function loadTime() {
-	pageRequested = Date.now();
+	var pageRequested = Date.now();
 	$(document).ready(function() {
 		console.log("Time until DOMready: ", Date.now() - pageRequested);
 	});
