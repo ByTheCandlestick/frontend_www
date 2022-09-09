@@ -2,6 +2,7 @@ var fw = {};
 fw.init = () => {
 	console.log('analytics initializing');
 }
+fw.funcs = {};
 fw.funcs.ms_to_hms = (ms) => {
 	var hrs = parseInt((ms / 1000) / 3600 ),
 		mns = parseInt(((ms/1000) % 3600) / 60 ),
