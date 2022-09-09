@@ -4,7 +4,7 @@ import * as fw from "./framework.js";
 fw.init();
 
 window.onload = function () {
-	timings = window.performance.timing;
+	var timings = window.performance.timing;
 	timings.forEach(function(item){
 		date = new Date(item);
 		console.log(date)
