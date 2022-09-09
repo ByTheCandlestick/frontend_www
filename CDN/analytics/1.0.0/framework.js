@@ -1,4 +1,5 @@
-function init() {
+var fw = {};
+fw.init = () => {
 	console.log('analytics initializing');
 }
 function ms_to_hms( ms ) {
@@ -9,6 +10,6 @@ function ms_to_hms( ms ) {
 }
 
 export {
-	init,
+	fw,
 	ms_to_hms,
 };
