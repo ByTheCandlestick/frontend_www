@@ -1,4 +1,4 @@
-import { c, a, n, d, l, e} from "./framework.js";
+import { a } from "./framework.js";
 
 
-c.initialize();
+a.initialize();
