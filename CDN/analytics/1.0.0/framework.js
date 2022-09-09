@@ -20,34 +20,34 @@ fw.saveLoadMetrics = () => {
 fw.saveUnloadMetrics = () => {
 	analytics.timing.TimeSpent = (vars.timing.navigationEnd - vars.timing.navigationStart);
 }
-var funcs = {};
-funcs.ms_to_hms = (ms) => {
+var f = {};
+f.ms_to_hms = (ms) => {
 	var hrs = parseInt((ms / 1000) / 3600 ),
 		mns = parseInt(((ms/1000) % 3600) / 60 ),
 		scs = (ms / 1000) % 60;
 	return ((hrs>0)?(hrs < 10 ? '0' : '') + hrs + ":": "") + (mns < 10 ? '0' : '') + mns + ":" + (scs < 10 ? '0' : '') + scs;
 }
 
-var vars = {};
-vars.timing = {};
-vars.timing.navigationStart = null;
-vars.timing.navigationEnd = null;
-vars.timing.domainLookupStart = null;
-vars.timing.domainLookupEnd = null;
-vars.timing.domInteractive = null;
-vars.timing.domContentLoadedEventEnd = null;
-vars.timing.domComplete = null;
-vars.timing.complete = null;
+var v = {};
+v.timing = {};
+v.timing.navigationStart = null;
+v.timing.navigationEnd = null;
+v.timing.domainLookupStart = null;
+v.timing.domainLookupEnd = null;
+v.timing.domInteractive = null;
+v.timing.domContentLoadedEventEnd = null;
+v.timing.domComplete = null;
+v.timing.complete = null;
 
-var analytics = {}
-analytics.timing = {};
-analytics.timing.DOMLookup = null;
-analytics.timing.DOMInteractive = null;
-analytics.timing.DOMLoaded = null;
-analytics.timing.DOMComplete = null;
-analytics.timing.DOMFinished = null;
-analytics.timing.TimeSpent = null;
-analytics.Submit = () => {
+var a = {}
+a.timing = {};
+a.timing.DOMLookup = null;
+a.timing.DOMInteractive = null;
+a.timing.DOMLoaded = null;
+a.timing.DOMComplete = null;
+a.timing.DOMFinished = null;
+a.timing.TimeSpent = null;
+a.Submit = () => {
 
 }
 
