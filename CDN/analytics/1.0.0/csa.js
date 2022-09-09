@@ -17,12 +17,11 @@ window.onload = function () {
 	console.log("DOM complete in "+funcs.ms_to_hms(fw.DOMcomplete()));
 	console.log("Fulliy loaded in "+funcs.ms_to_hms(fw.Complete()));
 }
-function myfun(){
-	var end = window.performance.now();
-	console.log(`Execution time: ${end - start} ms`);
-}
-
 window.onbeforeunload = function(){
 	myfun();
 	return 'Are you sure you want to leave?'
 };
+function myfun(){
+	var end = window.performance.now();
+	console.log(`Execution time: ${end - start} ms`);
+}
