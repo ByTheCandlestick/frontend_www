@@ -7,4 +7,4 @@ funcs = {
 		console.log(Date.now() - pageRequested);
 	}
 }
-export { init };
+export { init, funcs };
