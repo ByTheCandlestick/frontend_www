@@ -44,9 +44,9 @@ analytics.timing = {};
 analytics.timing.DOMLookup = null;
 analytics.timing.DOMInteractive = null;
 analytics.timing.DOMLoaded = null;
-analytics.timing.DOMComplete = fw.DOMcomplete();
-analytics.timing.DOMFinished = fw.Complete();
-analytics.timing.TimeSpent = fw.Active();
+analytics.timing.DOMComplete = null;
+analytics.timing.DOMFinished = null;
+analytics.timing.TimeSpent = null;
 analytics.Submit = () => {
 
 }
