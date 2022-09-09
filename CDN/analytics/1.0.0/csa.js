@@ -1,3 +1,3 @@
-import * as fw from "./framework.js";
+import { init } from "./framework.js";
 
 fw.initialize();

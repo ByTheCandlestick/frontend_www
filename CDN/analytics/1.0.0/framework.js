@@ -1,3 +1,5 @@
-export function initialize() {
+function init() {
 	console.log('analytics initializing');
 }
+
+export { init };
