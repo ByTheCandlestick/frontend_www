@@ -1,4 +1,4 @@
-fw = {};
+var fw = {};
 fw.init = () => {
 	console.log('analytics initializing');
 }
