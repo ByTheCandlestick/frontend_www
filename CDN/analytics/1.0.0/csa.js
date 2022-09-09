@@ -1,5 +1,5 @@
-import { f, a } from "./classes.js";
-import { fw, v } from "./framework.js";
+import { v, a } from "./classes.js";
+import { fw, f } from "./framework.js";
 
 
 window.onload = function () {
