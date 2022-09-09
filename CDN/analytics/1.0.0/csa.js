@@ -22,6 +22,6 @@ window.onbeforeunload = function(){
 	return 'Are you sure you want to leave?'
 };
 function myfun(){
-	vars.timing.navigationEnd = window.performance.now();
+	vars.timing.navigationEnd = Date.now();
 	console.log("Stayed on page for "+funcs.ms_to_hms(fw.Active()));
 }
