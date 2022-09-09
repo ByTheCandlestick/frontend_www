@@ -1,4 +1,3 @@
-import {  } from "./framework.js";
+import * as fw from "./framework.js";
 
-
-a.initialize();
+fw.initialize();
