@@ -1,3 +1,4 @@
+import * as tti from "./vandors/tti-polyfill.js";
 import * as fw from "./framework.js";
 
 fw.init();
