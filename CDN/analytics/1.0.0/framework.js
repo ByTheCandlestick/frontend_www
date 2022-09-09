@@ -52,4 +52,4 @@ analytics.Submit = () => {
 }
 
 
-export {fw, funcs, vars};
+export {fw, funcs, vars, analytics};
