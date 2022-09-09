@@ -57,7 +57,7 @@
 		  		<script>
 					if ('serviceWorker' in navigator) {
 						navigator.serviceWorker
-							.register('/sw.js')
+							.register('/CDN/PWA/offline-page/sw.js')
 							.then(function(registration) {
 								console.log('Registration successful, scope:', registration.scope);
 							})
