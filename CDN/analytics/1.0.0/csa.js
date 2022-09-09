@@ -6,5 +6,6 @@ window.onload = function () {
 }
 window.onbeforeunload = function(){
 	fw.saveUnloadMetrics();
+	a.Submit();
 	return 'Are you sure you want to leave?'
 }

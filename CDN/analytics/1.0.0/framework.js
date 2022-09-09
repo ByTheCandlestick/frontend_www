@@ -1,6 +1,6 @@
 var fw = {};
 	fw.saveLoadMetrics = () => {
-		console.log('analytics initializing');
+		//console.log('analytics initializing');
 		a.timing.DOMLookup = (window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart);
 		a.timing.DOMInteractive = (window.performance.timing.domInteractive - window.performance.timing.navigationStart);
 		a.timing.DOMLoaded = (window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart);
@@ -11,13 +11,12 @@ var fw = {};
 		a.domain.Hostname = window.location.hostname;
 		a.domain.Path = window.location.hostname;
 		a.domain.Origin = window.location.origin;
-		console.log('analytics initialized');
+		//console.log('analytics initialized');
 	}
 	fw.saveUnloadMetrics = () => {
-		console.log('analytics immobilizing');
-		var unloadTime = Date.now();
-		a.timing.TimeSpent = ( unloadTime - window.performance.timing.navigationStart);
-		console.log('analytics immobilized');
+		//console.log('analytics immobilizing');
+		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
+		//console.log('analytics immobilized');
 	}
 var f = {};
 	f.ms_to_hms = (ms) => {
