@@ -2,6 +2,7 @@ var fw = {};
 fw.init = () => {
 	console.log('analytics initializing');
 }
+
 funcs = {};
 funcs.ms_to_hms = (ms) => {
 	var hrs = parseInt((ms / 1000) / 3600 ),
@@ -9,6 +10,7 @@ funcs.ms_to_hms = (ms) => {
 		scs = (ms / 1000) % 60;
 	return ((hrs>0)?(hrs < 10 ? '0' : '') + hrs + ":": "") + (mns < 10 ? '0' : '') + mns + ":" + (scs < 10 ? '0' : '') + scs;
 }
+
 vars = {};
 vars.timing = {};
 vars.timing.navigationStart = null;
@@ -21,4 +23,4 @@ vars.timing.complete = null;
 
 
 
-export {fw, vars, funcs};
+export {fw, funcs, vars};
