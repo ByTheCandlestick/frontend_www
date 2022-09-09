@@ -10,5 +10,5 @@ function convertmilliseconds(millis) {
   
 export {
 	init,
-	loadTime,
+	convertmilliseconds,
 };
