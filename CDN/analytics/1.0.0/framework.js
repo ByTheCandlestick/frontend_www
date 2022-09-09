@@ -1,3 +1,14 @@
+var analytics = {}
+analytics.timings.DOMLookup = fw.DOMlookup();
+analytics.timings.DOMInteractive = fw.DOMinteractive();
+analytics.timings.DOMLoaded = fw.DOMloaded();
+analytics.timings.DOMComplete = fw.DOMcomplete();
+analytics.timings.Loaded = fw.Complete();
+analytics.timings.Total = fw.Active();
+analytics.Submit = () => {
+
+}
+
 var fw = {};
 fw.init = () => {
 	console.log('analytics initializing');
@@ -13,7 +24,7 @@ fw.DOMloaded = () => {
 }
 fw.DOMcomplete = () => {
 	return (vars.timing.domComplete - vars.timing.navigationStart);
-}
+}	
 fw.Complete = () => {
 	return (vars.timing.complete - vars.timing.navigationStart);
 }
@@ -38,18 +49,6 @@ vars.timing.domInteractive = null;
 vars.timing.domContentLoadedEventEnd = null;
 vars.timing.domComplete = null;
 vars.timing.complete = null;
-
-var analytics = {}
-analytics.timings.DOMLookup = fw.DOMlookup();
-analytics.timings.DOMInteractive = fw.DOMinteractive();
-analytics.timings.DOMLoaded = fw.DOMloaded();
-analytics.timings.DOMComplete = fw.DOMcomplete();
-analytics.timings.Loaded = fw.Complete();
-analytics.timings.Total = fw.Active();
-
-analytics.Submit = () => {
-
-}
 
 
 export {fw, funcs, vars, analytics};
