@@ -10,7 +10,7 @@ fw.initialize = () => {
 	v.timing.complete = Date.now();
 	console.log('analytics initialized');
 }
-fw.initialize = () => {
+fw.immobilize = () => {
 	console.log('analytics immobilizing');
 	v.timing.navigationEnd = Date.now();
 	console.log('analytics immobilized');
@@ -34,28 +34,5 @@ f.ms_to_hms = (ms) => {
 	return ((hrs>0)?(hrs < 10 ? '0' : '') + hrs + ":": "") + (mns < 10 ? '0' : '') + mns + ":" + (scs < 10 ? '0' : '') + scs;
 }
 
-var v = {};
-v.timing = {};
-v.timing.navigationStart = null;
-v.timing.navigationEnd = null;
-v.timing.domainLookupStart = null;
-v.timing.domainLookupEnd = null;
-v.timing.domInteractive = null;
-v.timing.domContentLoadedEventEnd = null;
-v.timing.domComplete = null;
-v.timing.complete = null;
 
-var a = {}
-a.timing = {};
-a.timing.DOMLookup = null;
-a.timing.DOMInteractive = null;
-a.timing.DOMLoaded = null;
-a.timing.DOMComplete = null;
-a.timing.DOMFinished = null;
-a.timing.TimeSpent = null;
-a.Submit = () => {
-
-}
-
-
-export {fw, funcs, vars, analytics};
+export { fw, f };

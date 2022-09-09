@@ -1,13 +1,13 @@
-import { fw, v, f, a } from "./framework.js";
+import { f, a } from "./classes.js";
+import { fw, v } from "./framework.js";
 
 
 window.onload = function () {
 	fw.initialize()
 	fw.saveLoadMetrics();
-
 }
 window.onbeforeunload = function(){
-	fw.immobilise();
+	fw.immobilize();
 	fw.saveUnloadMetrics();
 	return 'Are you sure you want to leave?'
 }
