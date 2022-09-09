@@ -18,5 +18,5 @@ window.onload = function () {
 	console.log("Fulliy loaded in "+funcs.ms_to_hms(fw.Complete()));
 }
 window.onbeforeunload = function(){
-	return alert('Are you sure you want to leave?');
+	return 'Are you sure you want to leave?'
 };
