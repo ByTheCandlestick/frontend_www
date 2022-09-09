@@ -1,10 +1,11 @@
-import { init, loadTime } from "./framework.js";
+import * as fw from "./framework.js";
 
-init();
+fw.init();
+
 var pageRequested = Date.now();
-$(document).ready(function() {
+$( document ).ready(() => {
 	console.log("Time until DOMready: ", Date.now() - pageRequested);
 });
-$(window).load(function() {
+$( window ).load(() => {
 	console.log("Time until loaded: ", Date.now() - pageRequested);
 });
