@@ -21,7 +21,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
-		<div name="logData" class="font-monospace mw-unset w-100"></div>
+		<div name="logData" class="font-monospace mw-unset w-unset"></div>
 	</div>
 </section>
 <script>
