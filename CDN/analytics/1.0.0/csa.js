@@ -1,6 +1,6 @@
 import * as fw from "./framework.js";
 
-fw.init();
+console.log(fw);
 
 window.onload = function () {
 	console.log(window.performance.timing);
