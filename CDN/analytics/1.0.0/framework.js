@@ -18,8 +18,6 @@ fw.Complete = () => {
 	return (vars.timing.complete - vars.timing.navigationStart);
 }
 fw.Active = () => {
-	console.log(vars.timing.navigationStart);
-	console.log(vars.timing.navigationEnd);
 	return (vars.timing.navigationEnd - vars.timing.navigationStart);
 }
 var funcs = {};
