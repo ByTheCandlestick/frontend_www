@@ -1,6 +1,7 @@
 import { f, a } from "./framework.js";
 
 window.onload = function () {
+	f.registerAnalyticsID();
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();

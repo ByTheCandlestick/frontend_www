@@ -1,4 +1,7 @@
 var f = {};
+	f.registerAnalyticsID = () => {
+		
+	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
 		a.timing.DOMLookup = (window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart);
@@ -100,6 +103,8 @@ var f = {};
 		//console.log('analytics immobilized');
 	}
 var a = {}
+	a.user = {};
+		a.user.analytics_id = null;
 	a.timing = {};
 		a.timing.DOMLookup = null;
 		a.timing.DOMInteractive = null;
