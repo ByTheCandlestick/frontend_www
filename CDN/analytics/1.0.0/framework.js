@@ -76,13 +76,11 @@ var f = {};
 			majorVersion = parseInt(navigator.appVersion,10);
 		}
 
-		console.log(''
-			+'Browser name  = '+browserName+'<br>'
-			+'Full version  = '+fullVersion+'<br>'
-			+'Major version = '+majorVersion+'<br>'
-			+'navigator.appName = '+navigator.appName+'<br>'
-			+'navigator.userAgent = '+navigator.userAgent+'<br>'
-		)
+		console.log('Browser name  = '+browserName)
+		console.log('Full version  = '+fullVersion)
+		console.log('Major version = '+majorVersion)
+		console.log('navigator.appName = '+navigator.appName)
+		console.log('navigator.userAgent = '+navigator.userAgent)
 	}
 var a = {}
 	a.timing = {};
