@@ -12,7 +12,7 @@ window.onbeforeunload = function(){
 	a.Submit();
 }
 window.onclick = (e) => {
-	f.registerClick(e.pageX, e.pageY);
+	f.registerClick((e.pageX - e.target.offsetLeft), (e.pageY - e.target.offsetTop));
   }
 
 function ms_to_hms(ms) {
