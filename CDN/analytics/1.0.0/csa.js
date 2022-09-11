@@ -1,4 +1,5 @@
 import { f, a } from "./framework.js";
+import "//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js";
 
 window.onload = function () {
 	f.registerAnalyticsID();

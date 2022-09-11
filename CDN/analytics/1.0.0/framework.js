@@ -1,5 +1,8 @@
 var f = {};
 	f.registerAnalyticsID = () => {
+		var currTime = getTime(),
+			randomID = Math.random(),
+			userAgent = window.navigator.userAgent;
 		
 	}
 	f.saveLoadMetrics = () => {
