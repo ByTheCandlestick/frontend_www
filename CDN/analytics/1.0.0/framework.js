@@ -83,14 +83,14 @@ var f = {};
 		}
 		if ((ix=systemFullVersion.indexOf(";"))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
 		if ((ix=systemFullVersion.indexOf(" "))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
+		systemMajorVersion = parseInt(''+systemFullVersion,10);
+		if (isNaN(systemMajorVersion)) {
+			console.log(systemFullVersion  = ''+parseFloat(navigator.appVersion)); 
+			console.log(systemMajorVersion = parseInt(navigator.appVersion,10));
+		}
 		if ((ix=systemArch.indexOf(";"))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(" "))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(")"))!=-1) systemArch=systemArch.substring(0,ix);
-		systemMajorVersion = parseInt(''+systemFullVersion,10);
-		if (isNaN(systemMajorVersion)) {
-			systemFullVersion  = ''+parseFloat(navigator.appVersion); 
-			systemMajorVersion = parseInt(navigator.appVersion,10);
-		}
 		
 		a.system.Name = systemName;
 		a.system.MajorVersion = systemMajorVersion;
