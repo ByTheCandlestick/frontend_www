@@ -60,7 +60,7 @@ var f = {};
 		a.browser.Appname = navigator.appName;
 	}
 	f.saveSystemMetrics = () => {
-		console.log(navigator.appVersion);
+		console.log(window.navigator.userAgent);
 	}
 	f.saveUnloadMetrics = () => {
 		//console.log('analytics immobilizing');
