@@ -71,16 +71,16 @@ var f = {};
 			systemArch = uAgt.substring(verOffset+24);
 		} else if((verOffset=uAgt.indexOf("X11"))!=-1) {
 			systemName = "Linux";
-			systemFullVersion = uAgt.substring(verOffset+4);
-			systemArch = uAgt.substring(verOffset+24);
+			systemFullVersion = 'Unknown';
+			systemArch = uAgt.substring(verOffset+11);
 		} else if((verOffset=uAgt.indexOf("Macintosh"))!=-1) {
-			systemName = "Mac";
+			systemName = "Mac OS";
 			systemFullVersion = uAgt.substring(verOffset+11);
-			systemArch = uAgt.substring(verOffset+24);
-		} else if((verOffset=uAgt.indexOf("iPhone"))!=-1) {
-			systemName = "IOS";
-			systemFullVersion = uAgt.substring(verOffset+11);
-			systemArch = uAgt.substring(verOffset+24);
+			systemArch = 'Unknown';
+		} else if((verOffset=uAgt.indexOf("iPhone OS"))!=-1) {
+			systemName = "iPhone OS";
+			systemFullVersion = uAgt.substring(verOffset+10).replace('_', '.');
+			systemArch = 'Unknown';
 		}
 		if ((ix=systemFullVersion.indexOf(";"))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
 		if ((ix=systemFullVersion.indexOf(" "))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
