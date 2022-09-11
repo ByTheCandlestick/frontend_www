@@ -63,11 +63,12 @@ var f = {};
 			systemName  = navigator.appName,
 			systemFullVersion  = ''+parseFloat(navigator.appVersion),
 			systemMajorVersion = parseInt(navigator.appVersion,10),
-			nameOffset, verOffset, ix, systemArch;
+			nameOffset, verOffset, ix, systemArch, systemBase;
 		if((verOffset=uAgt.indexOf("Windows NT"))!=-1) {
 			systemName = "Windows";
 			systemFullVersion = uAgt.substring(verOffset+11);
-			systemArch = uAgt.substring(verOffset+24);
+			systemBase = uAgt.substring(verOffset+24);
+			systemArch = uAgt.substring(verOffset+19);
 		} else if((verOffset=uAgt.indexOf("X11"))!=-1) {
 			systemName = "Linux";
 			systemFullVersion = uAgt.substring(verOffset+4);
@@ -91,7 +92,7 @@ var f = {};
 		console.log(a.system.Name = systemName);
 		console.log(a.system.MajorVersion = systemMajorVersion);
 		console.log(a.system.FullVersion = systemFullVersion);
-		console.log(a.system.Base = Base);
+		console.log(a.system.Base = systemBase);
 		console.log(a.system.Architecture = systemArch);
 	}
 	f.saveUnloadMetrics = () => {
