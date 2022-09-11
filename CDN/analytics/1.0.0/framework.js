@@ -20,7 +20,7 @@ var f = {};
 	}
 var a = {}
 	a.timing = {};
-		atiming.DOMLookup = null;
+		a.timing.DOMLookup = null;
 		a.timing.DOMInteractive = null;
 		a.timing.DOMLoaded = null;
 		a.timing.DOMComplete = null;
