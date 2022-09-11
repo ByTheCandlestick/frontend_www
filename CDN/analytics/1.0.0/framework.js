@@ -83,7 +83,7 @@ var f = {};
 		}
 		if ((ix=systemFullVersion.indexOf(";"))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
 		if ((ix=systemFullVersion.indexOf(" "))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
-		systemFullVersion = parseInt(''+systemFullVersion,10);
+		systemMajorVersion = parseInt(''+systemFullVersion,2);
 		if (isNaN(systemMajorVersion)) {
 			console.log(systemFullVersion  = ''+parseFloat(navigator.appVersion)); 
 			console.log(systemMajorVersion = parseInt(navigator.appVersion,10));
