@@ -63,9 +63,11 @@ var f = {};
 			verOffset, systemName, systemVersion, systemarch;
 		if((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
 			console.log(systemName = "Windows");
-			console.log(systemVersion = nAgt.substring(4, verOffset+11));
-			console.log(systemarch = nAgt.substring(verOffset+24));
+			console.log(systemVersion = nAgt.substring(verOffset+11));
+			console.log(systemArch = nAgt.substring(verOffset+24));
 		}
+		if ((ix=systemVersion.indexOf(";"))!=-1 || (ix=systemVersion.indexOf(" "))!=-1) systemVersion=systemVersion.substring(0,ix);
+		if ((ix=systemArch.indexOf(";"))!=-1 || (ix=systemArch.indexOf(" "))!=-1 || (ix=systemArch.indexOf(")"))!=-1) systemArch=systemArch.substring(0,ix);
 		
 		a.system.Name = systemName;
 		a.system.Version = systemVersion;
