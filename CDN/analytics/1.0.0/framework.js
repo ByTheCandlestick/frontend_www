@@ -1,11 +1,14 @@
-const { CryptoJS } = import("./vendor/crypto.js");
 var f = {};
 	f.registerAnalyticsID = () => {
 		var d = new Date(),
 			currTime = d.getTime(),
 			randomID = Math.random(),
-			userAgent = window.navigator.userAgent;
-		a.user.analytics_id = CryptoJS.MD5(currTime+userAgent+randomID);
+			userAgent = window.navigator.userAgent,
+			textToChars = text => text.split('').map(c => c.charCodeAt(0)),
+			byteHex = n => ("0" + Number(n).toString(16)).substr(-2),
+			applySaltToChar = code => textToChars(salt).reduce((a,b) => a ^ b, code);
+	
+		a.user.analytics_id = text => text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
