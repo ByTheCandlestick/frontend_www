@@ -1,4 +1,4 @@
-const { factory } = import("./vendor/crypto.js");
+const { CryptoJS } = import("./vendor/crypto.js");
 var f = {};
 	f.registerAnalyticsID = () => {
 		var d = new Date(),
