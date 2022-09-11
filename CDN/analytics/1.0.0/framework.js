@@ -60,7 +60,7 @@ var f = {};
 	}
 	f.saveSystemMetrics = () => {
 		var nAgt = navigator.userAgent,
-			verOffset, systemName, systemVersion, systemArch;
+			verOffset, systemName, systemVersion, systemArch, ix;
 		if((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
 			console.log(systemName = "Windows");
 			console.log(systemVersion = nAgt.substring(verOffset+11));
