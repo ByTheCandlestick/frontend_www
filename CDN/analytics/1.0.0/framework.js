@@ -67,8 +67,8 @@ var f = {};
 		if((verOffset=uAgt.indexOf("Windows NT"))!=-1) {
 			systemName = "Windows";
 			systemFullVersion = uAgt.substring(verOffset+11);
-			systemBase = uAgt.substring(verOffset+24);
-			systemArch = uAgt.substring(verOffset+19);
+			systemBase = uAgt.substring(verOffset+17);
+			systemArch = uAgt.substring(verOffset+24);
 		} else if((verOffset=uAgt.indexOf("X11"))!=-1) {
 			systemName = "Linux";
 			systemFullVersion = uAgt.substring(verOffset+4);
