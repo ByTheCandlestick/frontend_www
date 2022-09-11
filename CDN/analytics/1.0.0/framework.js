@@ -62,7 +62,7 @@ var f = {};
 		var nAgt = navigator.userAgent;
 		if ((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
 			systemName = "Firefox";
-			fullVersion = nAgt.substring(verOffset+8);
+			systemVersion = nAgt.substring(verOffset+11);
 		}
 	}
 	f.saveUnloadMetrics = () => {
