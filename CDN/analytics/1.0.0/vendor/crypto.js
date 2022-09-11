@@ -1,7 +1,7 @@
 (function (root, factory) {
 	if (typeof exports === "object") {
 		// CommonJS
-		export { factory };
+		module.exports = exports = factory();
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
