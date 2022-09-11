@@ -14,12 +14,12 @@ var f = {};
 		//console.log('analytics initialized');
 	}
 	f.saveBrowserMetrics = () => {
-		var nVer = navigator.appVersion;
-		var nAgt = navigator.userAgent;
-		var browserName  = navigator.appName;
-		var fullVersion  = ''+parseFloat(navigator.appVersion); 
-		var majorVersion = parseInt(navigator.appVersion,10);
-		var nameOffset, verOffset, ix;
+		var nVer = navigator.appVersion,
+			nAgt = navigator.userAgent,
+			browserName  = navigator.appName,
+			fullVersion  = ''+parseFloat(navigator.appVersion),
+			majorVersion = parseInt(navigator.appVersion,10),
+			nameOffset, verOffset, ix;
 		if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
 			browserName = "Opera";
 			fullVersion = nAgt.substring(verOffset+6);
@@ -31,7 +31,7 @@ var f = {};
 			browserName = "Microsoft Edge";
 			fullVersion = nAgt.substring(verOffset+4);
 		} else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {	// In Chrome, the true version is after "Chrome" 
-			browserName = "Chrome";
+			browserName = "Google Chrome";
 			fullVersion = nAgt.substring(verOffset+7);
 		} else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {	// In Safari, the true version is after "Safari" or after "Version" 
 			browserName = "Safari";
@@ -60,7 +60,8 @@ var f = {};
 		a.browser.Appname = navigator.appName;
 	}
 	f.saveSystemMetrics = () => {
-		console.log(window.navigator.userAgent);
+		console.log(navigator.appVersion);
+		console.log(navigator.userAgent);
 	}
 	f.saveUnloadMetrics = () => {
 		//console.log('analytics immobilizing');
