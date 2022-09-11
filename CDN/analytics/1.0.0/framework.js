@@ -66,6 +66,10 @@ var f = {};
 			systemVersion = nAgt.substring(verOffset+11);
 			systemarch = nAgt.substring(verOffset+24);
 		}
+		
+		a.system.Name = systemName;
+		a.system.Version = systemVersion;
+		a.system.Architecture = systemarch;
 	}
 	f.saveUnloadMetrics = () => {
 		//console.log('analytics immobilizing');
@@ -93,7 +97,9 @@ var a = {}
 		a.browser.MajorVersion = null;
 		a.browser.Appname = null;
 	a.system = {}
-		a.system.name = null;
+		a.system.Name = null;
+		a.system.Version = null;
+		a.system.Architecture = null;
 	a.Submit = () => {
 
 	}
