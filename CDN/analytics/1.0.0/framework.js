@@ -38,30 +38,23 @@ var f = {};
 			browserName = "Opera";
 			fullVersion = nAgt.substring(verOffset+6);
 			if ((verOffset=nAgt.indexOf("Version"))!=-1) fullVersion = nAgt.substring(verOffset+8);
-		}
-		// In MSIE, the true version is after "MSIE" in userAgent
-		else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+		} else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {	// In MSIE, the true version is after "MSIE" in userAgent
 			browserName = "Microsoft Internet Explorer";
 			fullVersion = nAgt.substring(verOffset+5);
-		}
-		// In Chrome, the true version is after "Chrome" 
-		else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+		} else if ((verOffset=nAgt.indexOf("Edg"))!=-1) {	// In MSIE, the true version is after "MSIE" in userAgent
+			browserName = "Microsoft Edge";
+			fullVersion = nAgt.substring(verOffset+4);
+		} else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {	// In Chrome, the true version is after "Chrome" 
 			browserName = "Chrome";
 			fullVersion = nAgt.substring(verOffset+7);
-		}
-		// In Safari, the true version is after "Safari" or after "Version" 
-		else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+		} else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {	// In Safari, the true version is after "Safari" or after "Version" 
 			browserName = "Safari";
 			fullVersion = nAgt.substring(verOffset+7);
 			if ((verOffset=nAgt.indexOf("Version"))!=-1) fullVersion = nAgt.substring(verOffset+8);
-		}
-		// In Firefox, the true version is after "Firefox" 
-		else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+		} else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {	// In Firefox, the true version is after "Firefox" 
 			browserName = "Firefox";
 			fullVersion = nAgt.substring(verOffset+8);
-		}
-		// In most other browsers, "name/version" is at the end of userAgent 
-		else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < (verOffset=nAgt.lastIndexOf('/')) ) {
+		} else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < (verOffset=nAgt.lastIndexOf('/')) ) {	// In most other browsers, "name/version" is at the end of userAgent 
 			browserName = nAgt.substring(nameOffset,verOffset);
 			fullVersion = nAgt.substring(verOffset+1);
 			if (browserName.toLowerCase()==browserName.toUpperCase()) browserName = navigator.appName;
@@ -75,7 +68,6 @@ var f = {};
 			fullVersion  = ''+parseFloat(navigator.appVersion); 
 			majorVersion = parseInt(navigator.appVersion,10);
 		}
-
 		console.log('Browser name  = '+browserName)
 		console.log('Full version  = '+fullVersion)
 		console.log('Major version = '+majorVersion)
