@@ -4,16 +4,31 @@ const cipher = salt => {
 			applySaltToChar = code => textToChars(salt).reduce((a,b) => a ^ b, code);
 	return text => text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
 }
+function getCookie(name) {
+    var cookieArr = document.cookie.split(";");
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+        if(name == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    return null;
+}
+function checkCookie(name) {
+	return(getCookie(name) != "")? true: false;
+}
 var f = {};
 	f.registerAnalyticsID = () => {
-		var d = new Date(),
-			currTime = d.getTime(),
-			randomID = Math.random(),
-			userAgent = window.navigator.userAgent,
-			crypt = cipher('salt'),
-			cypher = crypt(''+currTime+userAgent+randomID+'');
-		document.cookie = "analytics_id=" + value + "; " + "expires=" + (currTime + 31536000000).toUTCString() + ";";
-		a.user.analytics_id = cypher;
+		if( ) {
+			var d = new Date(),
+				currTime = d.getTime(),
+				randomID = Math.random(),
+				userAgent = window.navigator.userAgent,
+				crypt = cipher('salt'),
+				cypher = crypt(''+currTime+userAgent+randomID+'');
+			document.cookie = "analytics_id=" + value + "; " + "expires=" + (currTime + 31536000000).toUTCString() + ";";
+			a.user.analytics_id = cypher;
+		}
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
