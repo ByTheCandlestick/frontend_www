@@ -9,7 +9,7 @@ var f = {};
 		a.domain.href = window.location.href;
 		a.domain.Protocol = window.location.protocol;
 		a.domain.Hostname = window.location.hostname;
-		a.domain.Path = window.location.hostname;
+		a.domain.Path = window.location.pathname;
 		a.domain.Origin = window.location.origin;
 		//console.log('analytics initialized');
 	}
