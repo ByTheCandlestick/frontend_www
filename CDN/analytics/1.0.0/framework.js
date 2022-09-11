@@ -42,6 +42,9 @@ var f = {};
 			a.user.analytics_id = m.cookie.read('analytics_id');
 		}
 	}
+	f.registerClick = (x, y) => {
+		console.log(x+" "+y)
+	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
 		a.timing.DOMLookup = (window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart);
