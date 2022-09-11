@@ -15,7 +15,7 @@ var f = {};
 			currTime = d.getTime(),
 			randomID = Math.random(),
 			userAgent = window.navigator.userAgent,
-			crypt = cipher(Math.random());
+			crypt = cipher();
 	
 		a.user.analytics_id = crypt(''+currTime+userAgent+randomID);
 	}
