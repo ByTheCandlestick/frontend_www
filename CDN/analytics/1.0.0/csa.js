@@ -13,7 +13,7 @@ window.onbeforeunload = function(){
 }
 window.onclick = (e) => {
 	f.registerClick((e.pageX - e.target.offsetLeft), (e.pageY - e.target.offsetTop));
-	document.write("Coordinate(X) = " + event.screenX + "<br>Coordinate(Y) = " + event.screenY)
+	console.log("Coordinate(X) = " + event.screenX + "<br>Coordinate(Y) = " + event.screenY)
   }
 
 function ms_to_hms(ms) {
