@@ -83,14 +83,15 @@ var f = {};
 		if ((ix=systemArch.indexOf(";"))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(" "))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(")"))!=-1) systemArch=systemArch.substring(0,ix);
-		majorVersion = parseInt(''+fullVersion,10);
-		if (isNaN(majorVersion)) {
-			fullVersion  = ''+parseFloat(navigator.appVersion); 
-			majorVersion = parseInt(navigator.appVersion,10);
+		systemMajorVersion = parseInt(''+fullVersion,10);
+		if (isNaN(systemMajorVersion)) {
+			systemFullVersion  = ''+parseFloat(navigator.appVersion); 
+			systemMajorVersion = parseInt(navigator.appVersion,10);
 		}
 		
 		a.system.Name = systemName;
-		a.system.Version = systemVersion;
+		a.system.MajorVersion = systemMajorVersion;
+		a.system.FullVersion = systemFullVersion;
 		a.system.Architecture = systemArch;
 	}
 	f.saveUnloadMetrics = () => {
