@@ -89,11 +89,12 @@ var f = {};
 		if ((ix=systemBase.indexOf(" "))!=-1) systemBase=systemBase.substring(0,ix);
 		if ((ix=systemArch.indexOf(")"))!=-1) systemArch=systemArch.substring(0,ix);
 		
-		console.log(a.system.Name = systemName);
-		console.log(a.system.MajorVersion = systemMajorVersion);
-		console.log(a.system.FullVersion = systemFullVersion);
-		console.log(a.system.Base = systemBase);
-		console.log(a.system.Architecture = systemArch);
+		a.system.Name = systemName;
+		a.system.MajorVersion = systemMajorVersion;
+		a.system.FullVersion = systemFullVersion;
+		a.system.Base = systemBase;
+		a.system.Architecture = systemArch;
+		alert(systemName+'\n'+systemMajorVersion+'\n'+systemFullVersion+'\n'+systemBase+'\n'+systemArch)
 	}
 	f.saveUnloadMetrics = () => {
 		//console.log('analytics immobilizing');
