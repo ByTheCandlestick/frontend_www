@@ -18,9 +18,9 @@ var f = {};
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
 	}
-var a = {}
-	a.timing = {};
-		a.timing.DOMLookup = null;
+var d = {}
+	d.timing = {};
+		atiming.DOMLookup = null;
 		a.timing.DOMInteractive = null;
 		a.timing.DOMLoaded = null;
 		a.timing.DOMComplete = null;
