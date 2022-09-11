@@ -94,7 +94,6 @@ var f = {};
 		a.system.FullVersion = systemFullVersion;
 		a.system.Base = systemBase;
 		a.system.Architecture = systemArch;
-		document.getelementbyclass('text-info').html(''+systemName+'\n'+systemMajorVersion+'\n'+systemFullVersion+'\n'+systemBase+'\n'+systemArch)
 	}
 	f.saveUnloadMetrics = () => {
 		//console.log('analytics immobilizing');
