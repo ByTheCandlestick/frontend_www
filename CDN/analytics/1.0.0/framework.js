@@ -80,8 +80,8 @@ var f = {};
 			console.log(systemVersion = nAgt.substring(verOffset+11));
 			console.log(systemArch = nAgt.substring(verOffset+24));
 		}
-		if ((ix=fullVersion.indexOf(";"))!=-1) fullVersion=fullVersion.substring(0,ix);
-		if ((ix=fullVersion.indexOf(" "))!=-1) fullVersion=fullVersion.substring(0,ix);
+		if ((ix=systemFullVersion.indexOf(";"))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
+		if ((ix=systemFullVersion.indexOf(" "))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
 		if ((ix=systemArch.indexOf(";"))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(" "))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(")"))!=-1) systemArch=systemArch.substring(0,ix);
