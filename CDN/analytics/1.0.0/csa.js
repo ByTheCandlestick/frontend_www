@@ -11,6 +11,11 @@ window.onbeforeunload = function(){
 	f.saveUnloadMetrics();
 	a.Submit();
 }
+window.onclick = (e) => {
+	const x = e.pageX - e.target.offsetLeft;
+	const y = e.pageY - e.target.offsetTop;
+	console.log(x, y);
+  }
 
 function ms_to_hms(ms) {
 	var hrs = parseInt((ms / 1000) / 3600 ),
