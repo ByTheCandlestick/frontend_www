@@ -23,7 +23,7 @@ var f = {};
 				userAgent = window.navigator.userAgent,
 				crypt = cipher('salt'),
 				cypher = crypt(''+currTime+userAgent+randomID+'');
-			document.cookie = "analytics_id=" + value + "; " + "expires=" + (currTime + 31536000000).toUTCString() + ";";
+			document.cookie = "analytics_id=" + cypher + "; " + "expires=" + (currTime + 31536000000).toUTCString() + ";";
 			a.user.analytics_id = cypher;
 		}
 	}
