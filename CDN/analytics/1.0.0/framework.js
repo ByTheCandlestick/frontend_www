@@ -18,22 +18,13 @@ var f = {};
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
 	}
-	f.saveUserMetrics = () => {
-		a.user.agent = window.navigator.userAgent;
-		if(window.navigator.userAgent.indexOf("Win") != -1)		a.user.OS = "Windows OS";
-        if(window.navigator.userAgent.indexOf("Mac") != -1)		a.user.OS = "Macintosh";
-        if(window.navigator.userAgent.indexOf("Linux") != -1)	a.user.OS = "Linux OS";
-        if(window.navigator.userAgent.indexOf("Android") != -1)	a.user.OS = "Android OS";
-        if(window.navigator.userAgent.indexOf("like Mac") != -1)a.user.OS = "iOS";
-		
+	f.saveBrowserMetrics = () => {
 		var nVer = navigator.appVersion;
 		var nAgt = navigator.userAgent;
 		var browserName  = navigator.appName;
 		var fullVersion  = ''+parseFloat(navigator.appVersion); 
 		var majorVersion = parseInt(navigator.appVersion,10);
 		var nameOffset, verOffset, ix;
-
-		// In Opera, the true version is after "Opera" or after "Version"
 		if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
 			browserName = "Opera";
 			fullVersion = nAgt.substring(verOffset+6);
@@ -62,17 +53,16 @@ var f = {};
 		// trim the fullVersion string at semicolon/space if present
 		if ((ix=fullVersion.indexOf(";"))!=-1) fullVersion=fullVersion.substring(0,ix);
 		if ((ix=fullVersion.indexOf(" "))!=-1) fullVersion=fullVersion.substring(0,ix);
-
 		majorVersion = parseInt(''+fullVersion,10);
 		if (isNaN(majorVersion)) {
 			fullVersion  = ''+parseFloat(navigator.appVersion); 
 			majorVersion = parseInt(navigator.appVersion,10);
 		}
-		console.log('Browser name  = '+browserName)
-		console.log('Full version  = '+fullVersion)
-		console.log('Major version = '+majorVersion)
-		console.log('navigator.appName = '+navigator.appName)
-		console.log('navigator.userAgent = '+navigator.userAgent)
+		a.browser.UserAgent = navigator.userAgent;
+		a.browser.Name = browserName;
+		a.browser.FullVersion = fullVersion;
+		a.browser.MajorVersion = majorVersion;
+		a.browser.Appname = navigator.appName;
 	}
 var a = {}
 	a.timing = {};
@@ -88,9 +78,12 @@ var a = {}
 		a.domain.Hostname = null;
 		a.domain.Path = null;
 		a.domain.Origin = null;
-	a.user = {};
-		a.user.agent = null;
-		a.user.OS = null;
+	a.browser = {};
+		a.browser.UserAgent = null;
+		a.browser.Name = null;
+		a.browser.FullVersion = null;
+		a.browser.MajorVersion = null;
+		a.browser.Appname = null;
 	a.Submit = () => {
 
 	}
