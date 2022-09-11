@@ -5,7 +5,7 @@ var f = {};
 			currTime = d.getTime(),
 			randomID = Math.random(),
 			userAgent = window.navigator.userAgent;
-		
+		a.user.analytics_id = CryptoJS.MD5(currTime+userAgent+randomID);
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
