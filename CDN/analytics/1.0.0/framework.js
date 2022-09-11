@@ -10,7 +10,6 @@ var f = {};
 		a.domain.Protocol = window.location.protocol;
 		a.domain.Hostname = window.location.hostname;
 		a.domain.Path = window.location.pathname;
-		a.domain.Origin = window.location.origin;
 		//console.log('analytics initialized');
 	}
 	f.saveBrowserMetrics = () => {
@@ -113,7 +112,6 @@ var a = {}
 		a.domain.Protocol = null;
 		a.domain.Hostname = null;
 		a.domain.Path = null;
-		a.domain.Origin = null;
 	a.browser = {};
 		a.browser.UserAgent = null;
 		a.browser.Name = null;
