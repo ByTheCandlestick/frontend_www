@@ -14,9 +14,10 @@ var f = {};
 		var d = new Date(),
 			currTime = d.getTime(),
 			randomID = Math.random(),
-			userAgent = window.navigator.userAgent;
+			userAgent = window.navigator.userAgent,
+			crypt = cipher(Math.random());
 	
-		a.user.analytics_id = cipher(currTime+userAgent+randomID);
+		a.user.analytics_id = crypt(currTime+userAgent+randomID);
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
