@@ -13,7 +13,7 @@ var f = {};
 			crypt = cipher('salt'),
 			cypher = crypt(''+currTime+userAgent+randomID+'');
 		document.cookie = "analytics_id=" + value + "; " + "expires=" + (currTime + 31536000000).toUTCString() + ";";
-		a.user.analytics_id = cypher,
+		a.user.analytics_id = cypher;
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
