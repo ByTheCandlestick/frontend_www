@@ -10,9 +10,10 @@ var f = {};
 			currTime = d.getTime(),
 			randomID = Math.random(),
 			userAgent = window.navigator.userAgent,
-			crypt = cipher('salt');
-	
-		a.user.analytics_id = crypt(''+currTime+userAgent+randomID+'');
+			crypt = cipher('salt'),
+			cypher = crypt(''+currTime+userAgent+randomID+'');
+		document.cookie = "analytics_id=" + value + "; " + "expires=" + (currTime + 31536000000).toUTCString() + ";";
+		a.user.analytics_id = cypher,
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
