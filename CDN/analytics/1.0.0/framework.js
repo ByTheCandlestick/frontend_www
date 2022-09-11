@@ -14,34 +14,34 @@ var f = {};
 		//console.log('analytics initialized');
 	}
 	f.saveBrowserMetrics = () => {
-		var nAgt = navigator.userAgent,
+		var uAgt = navigator.userAgent,
 			browserName  = navigator.appName,
 			fullVersion  = ''+parseFloat(navigator.appVersion),
 			majorVersion = parseInt(navigator.appVersion,10),
 			nameOffset, verOffset, ix;
-		if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+		if ((verOffset=uAgt.indexOf("Opera"))!=-1) {
 			browserName = "Opera";
-			fullVersion = nAgt.substring(verOffset+6);
-			if ((verOffset=nAgt.indexOf("Version"))!=-1) fullVersion = nAgt.substring(verOffset+8);
-		} else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {		// In MSIE, the true version is after "MSIE" in userAgent
+			fullVersion = uAgt.substring(verOffset+6);
+			if ((verOffset=uAgt.indexOf("Version"))!=-1) fullVersion = uAgt.substring(verOffset+8);
+		} else if ((verOffset=uAgt.indexOf("MSIE"))!=-1) {		// In MSIE, the true version is after "MSIE" in userAgent
 			browserName = "Microsoft Internet Explorer";
-			fullVersion = nAgt.substring(verOffset+5);
-		} else if ((verOffset=nAgt.indexOf("Edg"))!=-1) {		// In MSIE, the true version is after "MSIE" in userAgent
+			fullVersion = uAgt.substring(verOffset+5);
+		} else if ((verOffset=uAgt.indexOf("Edg"))!=-1) {		// In MSIE, the true version is after "MSIE" in userAgent
 			browserName = "Microsoft Edge";
-			fullVersion = nAgt.substring(verOffset+4);
-		} else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {	// In Chrome, the true version is after "Chrome" 
+			fullVersion = uAgt.substring(verOffset+4);
+		} else if ((verOffset=uAgt.indexOf("Chrome"))!=-1) {	// In Chrome, the true version is after "Chrome" 
 			browserName = "Google Chrome";
-			fullVersion = nAgt.substring(verOffset+7);
-		} else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {	// In Safari, the true version is after "Safari" or after "Version" 
+			fullVersion = uAgt.substring(verOffset+7);
+		} else if ((verOffset=uAgt.indexOf("Safari"))!=-1) {	// In Safari, the true version is after "Safari" or after "Version" 
 			browserName = "Safari";
-			fullVersion = nAgt.substring(verOffset+7);
-			if ((verOffset=nAgt.indexOf("Version"))!=-1) fullVersion = nAgt.substring(verOffset+8);
-		} else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {	// In Firefox, the true version is after "Firefox"
+			fullVersion = uAgt.substring(verOffset+7);
+			if ((verOffset=uAgt.indexOf("Version"))!=-1) fullVersion = uAgt.substring(verOffset+8);
+		} else if ((verOffset=uAgt.indexOf("Firefox"))!=-1) {	// In Firefox, the true version is after "Firefox"
 			browserName = "Firefox";
-			fullVersion = nAgt.substring(verOffset+8);
-		} else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < (verOffset=nAgt.lastIndexOf('/')) ) {	// In most other browsers, "name/version" is at the end of userAgent 
-			browserName = nAgt.substring(nameOffset,verOffset);
-			fullVersion = nAgt.substring(verOffset+1);
+			fullVersion = uAgt.substring(verOffset+8);
+		} else if ( (nameOffset=uAgt.lastIndexOf(' ')+1) < (verOffset=uAgt.lastIndexOf('/')) ) {	// In most other browsers, "name/version" is at the end of userAgent 
+			browserName = uAgt.substring(nameOffset,verOffset);
+			fullVersion = uAgt.substring(verOffset+1);
 			if (browserName.toLowerCase()==browserName.toUpperCase()) browserName = navigator.appName;
 		}
 		// trim the fullVersion string at semicolon/space if present
@@ -59,27 +59,27 @@ var f = {};
 		a.browser.Appname = navigator.appName;
 	}
 	f.saveSystemMetrics = () => {
-		var nAgt = navigator.userAgent,
+		var uAgt = navigator.userAgent,
 			systemName  = navigator.appName,
 			systemFullVersion  = ''+parseFloat(navigator.appVersion),
 			systemMajorVersion = parseInt(navigator.appVersion,10),
 			nameOffset, verOffset, ix, systemArch;
-		if((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
+		if((verOffset=uAgt.indexOf("Windows NT"))!=-1) {
 			console.log(systemName = "Windows");
-			console.log(systemFullVersion = nAgt.substring(verOffset+11));
-			console.log(systemArch = nAgt.substring(verOffset+24));
-		} else if((verOffset=nAgt.indexOf("X11"))!=-1) {
+			console.log(systemFullVersion = uAgt.substring(verOffset+11));
+			console.log(systemArch = uAgt.substring(verOffset+24));
+		} else if((verOffset=uAgt.indexOf("X11"))!=-1) {
 			console.log(systemName = "Linux");
-			console.log(systemFullVersion = nAgt.substring(verOffset+4));
-			console.log(systemArch = nAgt.substring(verOffset+24));
-		} else if((verOffset=nAgt.indexOf("Macintosh"))!=-1) {
+			console.log(systemFullVersion = uAgt.substring(verOffset+4));
+			console.log(systemArch = uAgt.substring(verOffset+24));
+		} else if((verOffset=uAgt.indexOf("Macintosh"))!=-1) {
 			console.log(systemName = "Mac");
-			console.log(systemFullVersion = nAgt.substring(verOffset+11));
-			console.log(systemArch = nAgt.substring(verOffset+24));
-		} else if((verOffset=nAgt.indexOf("iPhone"))!=-1) {
+			console.log(systemFullVersion = uAgt.substring(verOffset+11));
+			console.log(systemArch = uAgt.substring(verOffset+24));
+		} else if((verOffset=uAgt.indexOf("iPhone"))!=-1) {
 			console.log(systemName = "IOS");
-			console.log(systemFullVersion = nAgt.substring(verOffset+11));
-			console.log(systemArch = nAgt.substring(verOffset+24));
+			console.log(systemFullVersion = uAgt.substring(verOffset+11));
+			console.log(systemArch = uAgt.substring(verOffset+24));
 		}
 		if ((ix=systemFullVersion.indexOf(";"))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
 		if ((ix=systemFullVersion.indexOf(" "))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
