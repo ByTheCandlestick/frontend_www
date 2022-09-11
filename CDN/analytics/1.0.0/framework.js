@@ -19,7 +19,7 @@ var f = {};
 		//console.log('analytics immobilized');
 	}
 	f.saveUserMetrics = () => {
-		a.user.agent = window.navigator.userAgent;
+		console.log(a.user.agent = window.navigator.userAgent);
 	}
 var a = {}
 	a.timing = {};
