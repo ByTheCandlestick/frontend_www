@@ -49,16 +49,19 @@ var f = {};
 		if ((ix=fullVersion.indexOf(" "))!=-1) fullVersion=fullVersion.substring(0,ix);
 		majorVersion = parseInt(''+fullVersion,10);
 		if (isNaN(majorVersion)) {
-			a.browser.fullVersion  = ''+parseFloat(navigator.appVersion); 
-			a.browser.majorVersion = parseInt(navigator.appVersion,10);
+			fullVersion  = ''+parseFloat(navigator.appVersion); 
+			majorVersion = parseInt(navigator.appVersion,10);
 		}
 		a.browser.UserAgent = navigator.userAgent;
+		a.browser.Name = browserName;
+		a.browser.FullVersion = fullVersion;
+		a.browser.MajorVersion = majorVersion;
 		a.browser.Appname = navigator.appName;
 	}
 	f.saveSystemMetrics = () => {
 		var nAgt = navigator.userAgent,
 			verOffset, systemName, systemVersion, systemarch;
-		if ((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
+		if((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
 			systemName = "Windows";
 			systemVersion = nAgt.substring(verOffset+11);
 			systemarch = nAgt.substring(verOffset+24);
