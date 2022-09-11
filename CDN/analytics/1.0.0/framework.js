@@ -23,10 +23,10 @@ var f = {};
 			browserName = "Opera";
 			fullVersion = nAgt.substring(verOffset+6);
 			if ((verOffset=nAgt.indexOf("Version"))!=-1) fullVersion = nAgt.substring(verOffset+8);
-		} else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {	// In MSIE, the true version is after "MSIE" in userAgent
+		} else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {		// In MSIE, the true version is after "MSIE" in userAgent
 			browserName = "Microsoft Internet Explorer";
 			fullVersion = nAgt.substring(verOffset+5);
-		} else if ((verOffset=nAgt.indexOf("Edg"))!=-1) {	// In MSIE, the true version is after "MSIE" in userAgent
+		} else if ((verOffset=nAgt.indexOf("Edg"))!=-1) {		// In MSIE, the true version is after "MSIE" in userAgent
 			browserName = "Microsoft Edge";
 			fullVersion = nAgt.substring(verOffset+4);
 		} else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {	// In Chrome, the true version is after "Chrome" 
@@ -65,12 +65,29 @@ var f = {};
 			console.log(systemName = "Windows");
 			console.log(systemVersion = nAgt.substring(verOffset+11));
 			console.log(systemArch = nAgt.substring(verOffset+24));
+		} else if((verOffset=nAgt.indexOf("X11"))!=-1) {
+			console.log(systemName = "Linux");
+			console.log(systemVersion = nAgt.substring(verOffset+4));
+			console.log(systemArch = nAgt.substring(verOffset+24));
+		} else if((verOffset=nAgt.indexOf("Macintosh"))!=-1) {
+			console.log(systemName = "Mac");
+			console.log(systemVersion = nAgt.substring(verOffset+11));
+			console.log(systemArch = nAgt.substring(verOffset+24));
+		} else if((verOffset=nAgt.indexOf("iPhone"))!=-1) {
+			console.log(systemName = "IOS");
+			console.log(systemVersion = nAgt.substring(verOffset+11));
+			console.log(systemArch = nAgt.substring(verOffset+24));
 		}
-		if ((ix=systemVersion.indexOf(";"))!=-1) systemVersion=systemVersion.substring(0,ix);
-		if ((ix=systemVersion.indexOf(" "))!=-1) systemVersion=systemVersion.substring(0,ix);
+		if ((ix=fullVersion.indexOf(";"))!=-1) fullVersion=fullVersion.substring(0,ix);
+		if ((ix=fullVersion.indexOf(" "))!=-1) fullVersion=fullVersion.substring(0,ix);
 		if ((ix=systemArch.indexOf(";"))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(" "))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(")"))!=-1) systemArch=systemArch.substring(0,ix);
+		majorVersion = parseInt(''+fullVersion,10);
+		if (isNaN(majorVersion)) {
+			fullVersion  = ''+parseFloat(navigator.appVersion); 
+			majorVersion = parseInt(navigator.appVersion,10);
+		}
 		
 		a.system.Name = systemName;
 		a.system.Version = systemVersion;
