@@ -65,25 +65,25 @@ var f = {};
 			systemMajorVersion = parseInt(navigator.appVersion,10),
 			nameOffset, verOffset, ix, systemArch;
 		if((verOffset=uAgt.indexOf("Windows NT"))!=-1) {
-			console.log(systemName = "Windows");
-			console.log(systemFullVersion = uAgt.substring(verOffset+11));
-			console.log(systemArch = uAgt.substring(verOffset+24));
+			systemName = "Windows";
+			systemFullVersion = uAgt.substring(verOffset+11);
+			systemArch = uAgt.substring(verOffset+24);
 		} else if((verOffset=uAgt.indexOf("X11"))!=-1) {
-			console.log(systemName = "Linux");
-			console.log(systemFullVersion = uAgt.substring(verOffset+4));
-			console.log(systemArch = uAgt.substring(verOffset+24));
+			systemName = "Linux";
+			systemFullVersion = uAgt.substring(verOffset+4);
+			systemArch = uAgt.substring(verOffset+24);
 		} else if((verOffset=uAgt.indexOf("Macintosh"))!=-1) {
-			console.log(systemName = "Mac");
-			console.log(systemFullVersion = uAgt.substring(verOffset+11));
-			console.log(systemArch = uAgt.substring(verOffset+24));
+			systemName = "Mac";
+			systemFullVersion = uAgt.substring(verOffset+11);
+			systemArch = uAgt.substring(verOffset+24);
 		} else if((verOffset=uAgt.indexOf("iPhone"))!=-1) {
-			console.log(systemName = "IOS");
-			console.log(systemFullVersion = uAgt.substring(verOffset+11));
-			console.log(systemArch = uAgt.substring(verOffset+24));
+			systemName = "IOS";
+			systemFullVersion = uAgt.substring(verOffset+11);
+			systemArch = uAgt.substring(verOffset+24);
 		}
 		if ((ix=systemFullVersion.indexOf(";"))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
 		if ((ix=systemFullVersion.indexOf(" "))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
-		systemMajorVersion = parseInt(''+systemFullVersion,10);
+		systemFullVersion = parseInt(''+systemFullVersion,10);
 		if (isNaN(systemMajorVersion)) {
 			console.log(systemFullVersion  = ''+parseFloat(navigator.appVersion)); 
 			console.log(systemMajorVersion = parseInt(navigator.appVersion,10));
