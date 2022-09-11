@@ -19,7 +19,8 @@ var f = {};
 		//console.log('analytics immobilized');
 	}
 	f.saveUserMetrics = () => {
-		console.log(a.user.agent = window.navigator.userAgent);
+		a.user.agent = window.navigator.userAgent;
+		console.log(a.user.OS = window.navigator.appVersion);
 	}
 var a = {}
 	a.timing = {};
@@ -37,6 +38,7 @@ var a = {}
 		a.domain.Origin = null;
 	a.user = {};
 		a.user.agent = null;
+		a.user.OS = null;
 	a.Submit = () => {
 
 	}
