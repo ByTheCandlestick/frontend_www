@@ -16,7 +16,7 @@ function getCookie(name) {
 }
 var f = {};
 	f.registerAnalyticsID = () => {
-		if(getCookie(name) == "") {
+		if(getCookie('analytics_id') == "") {
 			var d = new Date(),
 				currTime = d.getTime(),
 				randomID = Math.random(),
