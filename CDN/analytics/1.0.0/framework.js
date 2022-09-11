@@ -18,6 +18,9 @@ var f = {};
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
 	}
+	f.saveUserAgent = () => {
+		a.user.agent = window.navigator.userAgent;
+	}
 var a = {}
 	a.timing = {};
 		a.timing.DOMLookup = null;
@@ -32,6 +35,8 @@ var a = {}
 		a.domain.Hostname = null;
 		a.domain.Path = null;
 		a.domain.Origin = null;
+	a.user = {};
+		a.user.agent = null;
 	a.Submit = () => {
 
 	}
