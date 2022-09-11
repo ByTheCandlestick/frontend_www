@@ -34,7 +34,7 @@ var f = {};
 	f.registerAnalyticsID = () => {
 		if(!m.cookie.exists('analytics_id')) {
 			var d = new Date(),
-				crypt = cipher('salt'),
+				crypt = m.crypt.cipher('salt'),
 				cypher = crypt(''+d.getTime()+window.navigator.userAgent+Math.random()+'');
 			m.cookie.create('analytics_id', cypher, 365)
 			a.user.analytics_id = cypher;
