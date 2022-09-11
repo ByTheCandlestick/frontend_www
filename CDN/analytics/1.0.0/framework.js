@@ -18,8 +18,8 @@ var f = {};
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
 	}
-	f.saveUserAgent = () => {
-		console.log(a.user.agent = window.navigator.userAgent);
+	f.saveUserMetrics = () => {
+		a.user.agent = window.navigator.userAgent;
 	}
 var a = {}
 	a.timing = {};
