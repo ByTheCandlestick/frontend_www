@@ -1,6 +1,7 @@
 var f = {};
 	f.registerAnalyticsID = () => {
-		var currTime = getTime(),
+		var d = new Date(),
+			currTime = d.getTime(),
 			randomID = Math.random(),
 			userAgent = window.navigator.userAgent;
 		
