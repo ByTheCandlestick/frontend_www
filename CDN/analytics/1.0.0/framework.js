@@ -13,11 +13,6 @@ var f = {};
 		a.domain.Origin = window.location.origin;
 		//console.log('analytics initialized');
 	}
-	f.saveUnloadMetrics = () => {
-		//console.log('analytics immobilizing');
-		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
-		//console.log('analytics immobilized');
-	}
 	f.saveBrowserMetrics = () => {
 		var nVer = navigator.appVersion;
 		var nAgt = navigator.userAgent;
@@ -63,6 +58,14 @@ var f = {};
 		a.browser.FullVersion = fullVersion;
 		a.browser.MajorVersion = majorVersion;
 		a.browser.Appname = navigator.appName;
+	}
+	f.saveSystemMetrics = () => {
+		console.log(navigator.appVersion);
+	}
+	f.saveUnloadMetrics = () => {
+		//console.log('analytics immobilizing');
+		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
+		//console.log('analytics immobilized');
 	}
 var a = {}
 	a.timing = {};

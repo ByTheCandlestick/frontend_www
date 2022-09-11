@@ -3,6 +3,7 @@ import { f, a } from "./framework.js";
 window.onload = function () {
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
+	f.saveSystemMetrics();
 }
 window.onbeforeunload = function(){
 	f.saveUnloadMetrics();
