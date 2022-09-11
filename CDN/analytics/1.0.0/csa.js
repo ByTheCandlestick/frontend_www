@@ -1,5 +1,5 @@
 import { f, a } from "./framework.js";
-import { e as crypt } from "./vendor/crypto.js";
+import "./vendor/crypto.js";
 
 
 window.onload = function () {
