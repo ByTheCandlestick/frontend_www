@@ -1,29 +1,42 @@
-const cipher = salt => {
-	const	textToChars = text => text.split('').map(c => c.charCodeAt(0)),
-			byteHex = n => ("0" + Number(n).toString(16)).substr(-2),
-			applySaltToChar = code => textToChars(salt).reduce((a,b) => a ^ b, code);
-	return text => text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
-}
-function getCookie(name) {
-    var cookieArr = document.cookie.split(";");
-    for(var i = 0; i < cookieArr.length; i++) {
-        var cookiePair = cookieArr[i].split("=");
-        if(name == cookiePair[0].trim()) {
-            return decodeURIComponent(cookiePair[1]);
-        }
-    }
-    return null;
-}
+var m = {}
+	m.crypt = {};
+		m.crypt.cipher = salt => {
+			const	textToChars = text => text.split('').map(c => c.charCodeAt(0)),
+					byteHex = n => ("0" + Number(n).toString(16)).substr(-2),
+					applySaltToChar = code => textToChars(salt).reduce((a,b) => a ^ b, code);
+			return text => text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
+		}
+	m.cookie = {};
+		m.cookie.create = (name, value, expDays, path='/') => {
+			let date = new Date();
+			date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+			document.cookie = name + "=" + value + "; " + "expires=" + date.toUTCString() + "; path="+path;
+		},
+		m.cookie.read = (name) => {
+			var name = name+"=",
+				arr = decodeURIComponent(document.cookie).split('; '),
+				res;
+			arr.forEach(val => {
+				if(val.indexOf(name) === 0) res = val.substring(name.length);
+			})
+			return res;
+		},
+		m.cookie.update = (name, value) => {
+			m.cookie.create(name, value, 30);
+		},
+		m.cookie.delete = (name) => {
+			document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+		},
+		m.cookie.exists = (name) => {
+			return (m.cookie.read(name) === undefined)? false: true;
+		}
 var f = {};
 	f.registerAnalyticsID = () => {
-		if(getCookie('analytics_id') == "") {
+		if(!m.cookie.exists('analytics_id')) {
 			var d = new Date(),
-				currTime = d.getTime(),
-				randomID = Math.random(),
-				userAgent = window.navigator.userAgent,
 				crypt = cipher('salt'),
-				cypher = crypt(''+currTime+userAgent+randomID+'');
-			document.cookie = "analytics_id=" + cypher + "; " + "expires=" + (currTime + 31536000000).toUTCString() + ";";
+				cypher = crypt(''+d.getTime()+window.navigator.userAgent+Math.random()+'');
+			m.cookie.create('analytics_id', cypher, 365)
 			a.user.analytics_id = cypher;
 		}
 	}
