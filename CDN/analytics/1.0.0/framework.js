@@ -86,7 +86,7 @@ var f = {};
 		if ((ix=systemArch.indexOf(";"))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(" "))!=-1) systemArch=systemArch.substring(0,ix);
 		if ((ix=systemArch.indexOf(")"))!=-1) systemArch=systemArch.substring(0,ix);
-		systemMajorVersion = parseInt(''+fullVersion,10);
+		systemMajorVersion = parseInt(''+systemFullVersion,10);
 		if (isNaN(systemMajorVersion)) {
 			systemFullVersion  = ''+parseFloat(navigator.appVersion); 
 			systemMajorVersion = parseInt(navigator.appVersion,10);
