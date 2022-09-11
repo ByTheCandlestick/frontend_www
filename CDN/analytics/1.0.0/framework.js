@@ -1,3 +1,4 @@
+require("./vendor/crypto.js");
 var f = {};
 	f.registerAnalyticsID = () => {
 		var d = new Date(),
