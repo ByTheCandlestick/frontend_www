@@ -20,7 +20,12 @@ var f = {};
 	}
 	f.saveUserMetrics = () => {
 		a.user.agent = window.navigator.userAgent;
-		console.log(a.user.OS = window.navigator.appVersion);
+		if(window.navigator.userAgent.indexOf("Win") != -1)		a.user.OS = "Windows OS";
+        if(window.navigator.userAgent.indexOf("Mac") != -1)		a.user.OS = "Macintosh";
+        if(window.navigator.userAgent.indexOf("Linux") != -1)	a.user.OS = "Linux OS";
+        if(window.navigator.userAgent.indexOf("Android") != -1)	a.user.OS = "Android OS";
+        if(window.navigator.userAgent.indexOf("like Mac") != -1)a.user.OS = "iOS";
+		
 	}
 var a = {}
 	a.timing = {};
