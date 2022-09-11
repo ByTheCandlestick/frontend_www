@@ -1,14 +1,22 @@
+const cipher = salt => {
+    const textToChars = text => text.split('').map(c => c.charCodeAt(0));
+    const byteHex = n => ("0" + Number(n).toString(16)).substr(-2);
+    const applySaltToChar = code => textToChars(salt).reduce((a,b) => a ^ b, code);
+
+    return text => text.split('')
+      .map(textToChars)
+      .map(applySaltToChar)
+      .map(byteHex)
+      .join('');
+}
 var f = {};
 	f.registerAnalyticsID = () => {
 		var d = new Date(),
 			currTime = d.getTime(),
 			randomID = Math.random(),
-			userAgent = window.navigator.userAgent,
-			textToChars = text => text.split('').map(c => c.charCodeAt(0)),
-			byteHex = n => ("0" + Number(n).toString(16)).substr(-2),
-			applySaltToChar = code => textToChars(salt).reduce((a,b) => a ^ b, code);
+			userAgent = window.navigator.userAgent;
 	
-		a.user.analytics_id = text => text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
+		a.user.analytics_id = cipher(currTime+userAgent+randomID);
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
