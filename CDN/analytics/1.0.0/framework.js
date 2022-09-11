@@ -60,24 +60,25 @@ var f = {};
 	}
 	f.saveSystemMetrics = () => {
 		var nAgt = navigator.userAgent,
+			systemName  = navigator.appName,
 			systemFullVersion  = ''+parseFloat(navigator.appVersion),
-			systemFullVersion = parseInt(navigator.appVersion,10),
-			verOffset, systemName, systemVersion, systemArch, ix;
+			systemMajorVersion = parseInt(navigator.appVersion,10),
+			nameOffset, verOffset, ix, systemArch;
 		if((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
 			console.log(systemName = "Windows");
-			console.log(systemVersion = nAgt.substring(verOffset+11));
+			console.log(systemFullVersion = nAgt.substring(verOffset+11));
 			console.log(systemArch = nAgt.substring(verOffset+24));
 		} else if((verOffset=nAgt.indexOf("X11"))!=-1) {
 			console.log(systemName = "Linux");
-			console.log(systemVersion = nAgt.substring(verOffset+4));
+			console.log(systemFullVersion = nAgt.substring(verOffset+4));
 			console.log(systemArch = nAgt.substring(verOffset+24));
 		} else if((verOffset=nAgt.indexOf("Macintosh"))!=-1) {
 			console.log(systemName = "Mac");
-			console.log(systemVersion = nAgt.substring(verOffset+11));
+			console.log(systemFullVersion = nAgt.substring(verOffset+11));
 			console.log(systemArch = nAgt.substring(verOffset+24));
 		} else if((verOffset=nAgt.indexOf("iPhone"))!=-1) {
 			console.log(systemName = "IOS");
-			console.log(systemVersion = nAgt.substring(verOffset+11));
+			console.log(systemFullVersion = nAgt.substring(verOffset+11));
 			console.log(systemArch = nAgt.substring(verOffset+24));
 		}
 		if ((ix=systemFullVersion.indexOf(";"))!=-1) systemFullVersion=systemFullVersion.substring(0,ix);
