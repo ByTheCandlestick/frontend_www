@@ -49,17 +49,15 @@ var f = {};
 		if ((ix=fullVersion.indexOf(" "))!=-1) fullVersion=fullVersion.substring(0,ix);
 		majorVersion = parseInt(''+fullVersion,10);
 		if (isNaN(majorVersion)) {
-			fullVersion  = ''+parseFloat(navigator.appVersion); 
-			majorVersion = parseInt(navigator.appVersion,10);
+			a.browser.fullVersion  = ''+parseFloat(navigator.appVersion); 
+			a.browser.majorVersion = parseInt(navigator.appVersion,10);
 		}
 		a.browser.UserAgent = navigator.userAgent;
-		a.browser.Name = browserName;
-		a.browser.FullVersion = fullVersion;
-		a.browser.MajorVersion = majorVersion;
 		a.browser.Appname = navigator.appName;
 	}
 	f.saveSystemMetrics = () => {
-		var nAgt = navigator.userAgent;
+		var nAgt = navigator.userAgent,
+			verOffset;
 		if ((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
 			systemName = "Firefox";
 			systemVersion = nAgt.substring(verOffset+11);
