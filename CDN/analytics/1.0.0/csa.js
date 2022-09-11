@@ -6,7 +6,6 @@ window.onload = function () {
 window.onbeforeunload = function(){
 	f.saveUnloadMetrics();
 	a.Submit();
-	return 'Are you sure you want to leave?'
 }
 
 function ms_to_hms(ms) {
