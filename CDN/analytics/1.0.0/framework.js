@@ -74,7 +74,7 @@ var f = {};
 		
 		a.system.Name = systemName;
 		a.system.Version = systemVersion;
-		a.system.Architecture = systemarch;
+		a.system.Architecture = systemArch;
 	}
 	f.saveUnloadMetrics = () => {
 		//console.log('analytics immobilizing');
