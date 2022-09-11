@@ -38,6 +38,8 @@ var f = {};
 				cypher = crypt(''+d.getTime()+window.navigator.userAgent+Math.random()+'');
 			m.cookie.create('analytics_id', cypher, 365)
 			a.user.analytics_id = cypher;
+		} else {
+			a.user.analytics_id = m.cookie.read('analytics_id');
 		}
 	}
 	f.saveLoadMetrics = () => {
