@@ -4,6 +4,7 @@ window.onload = function () {
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();
+	console.log(a);
 }
 window.onbeforeunload = function(){
 	f.saveUnloadMetrics();
