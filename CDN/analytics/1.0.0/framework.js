@@ -17,7 +17,7 @@ var f = {};
 			userAgent = window.navigator.userAgent,
 			crypt = cipher(Math.random());
 	
-		a.user.analytics_id = crypt(currTime+userAgent+randomID);
+		a.user.analytics_id = crypt(''+currTime+userAgent+randomID);
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
