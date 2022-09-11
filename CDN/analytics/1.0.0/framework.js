@@ -1,4 +1,4 @@
-require("./vendor/crypto.js");
+const { factory } = import("./vendor/crypto.js");
 var f = {};
 	f.registerAnalyticsID = () => {
 		var d = new Date(),
