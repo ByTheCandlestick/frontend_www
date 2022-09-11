@@ -1,5 +1,5 @@
 import { f, a } from "./framework.js";
-import { factory } from "./vendor/crypto.js";
+const { factory } = require("./vendor/crypto.js");
 
 
 window.onload = function () {
