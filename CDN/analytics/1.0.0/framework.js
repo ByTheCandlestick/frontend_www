@@ -57,9 +57,9 @@ var f = {};
 	}
 	f.saveSystemMetrics = () => {
 		var nAgt = navigator.userAgent,
-			verOffset;
+			verOffset, systemName, systemVersion, systemarch;
 		if ((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
-			systemName = "Firefox";
+			systemName = "Windows";
 			systemVersion = nAgt.substring(verOffset+11);
 			systemarch = nAgt.substring(verOffset+24);
 		}
