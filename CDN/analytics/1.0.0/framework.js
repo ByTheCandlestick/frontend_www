@@ -14,12 +14,9 @@ function getCookie(name) {
     }
     return null;
 }
-function checkCookie(name) {
-	return(getCookie(name) != "")? true: false;
-}
 var f = {};
 	f.registerAnalyticsID = () => {
-		if( ) {
+		if(getCookie(name) == "") {
 			var d = new Date(),
 				currTime = d.getTime(),
 				randomID = Math.random(),
