@@ -91,6 +91,7 @@ var f = {};
 		console.log(a.system.Name = systemName);
 		console.log(a.system.MajorVersion = systemMajorVersion);
 		console.log(a.system.FullVersion = systemFullVersion);
+		console.log(a.system.Base = Base);
 		console.log(a.system.Architecture = systemArch);
 	}
 	f.saveUnloadMetrics = () => {
@@ -120,7 +121,9 @@ var a = {}
 		a.browser.Appname = null;
 	a.system = {}
 		a.system.Name = null;
-		a.system.Version = null;
+		a.system.MajorVersion = null;
+		a.system.FullVersion = null;
+		a.system.Base = null;
 		a.system.Architecture = null;
 	a.Submit = () => {
 
