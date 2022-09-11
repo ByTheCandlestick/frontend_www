@@ -62,9 +62,9 @@ var f = {};
 		var nAgt = navigator.userAgent,
 			verOffset, systemName, systemVersion, systemarch;
 		if((verOffset=nAgt.indexOf("Windows NT"))!=-1) {
-			systemName = "Windows";
-			systemVersion = nAgt.substring(verOffset+11);
-			systemarch = nAgt.substring(verOffset+24);
+			console.log(systemName = "Windows");
+			console.log(systemVersion = nAgt.substring(verOffset+11));
+			console.log(systemarch = nAgt.substring(verOffset+24));
 		}
 		
 		a.system.Name = systemName;
