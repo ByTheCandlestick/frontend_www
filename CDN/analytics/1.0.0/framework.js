@@ -25,7 +25,7 @@ var f = {};
         if(window.navigator.userAgent.indexOf("Linux") != -1)	a.user.OS = "Linux OS";
         if(window.navigator.userAgent.indexOf("Android") != -1)	a.user.OS = "Android OS";
         if(window.navigator.userAgent.indexOf("like Mac") != -1)a.user.OS = "iOS";
-		
+		console.log(a.user.OS)
 	}
 var a = {}
 	a.timing = {};
