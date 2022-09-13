@@ -1,4 +1,5 @@
 var m = {}
+	m.api_key = null;
 	m.crypt = {};
 		m.crypt.cipher = (salt) => {
 			var	textToChars = text => text.split('').map(c => c.charCodeAt(0)),
@@ -177,7 +178,7 @@ var a = {};
 	a.clicks = {};
 	a.Submit = () => {
 		let xmlHttpReq = new XMLHttpRequest();
-		xmlHttpReq.open("GET", "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+api_key+"&analytics="+JSON.stringify(a), false);
+		xmlHttpReq.open("GET", "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a), false);
 		xmlHttpReq.send(null);
 		return xmlHttpReq.responseText;
 	}
