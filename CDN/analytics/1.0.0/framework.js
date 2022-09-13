@@ -42,9 +42,10 @@ var f = {};
 			a.user.analytics_id = m.cookie.read('analytics_id');
 		}
 	}
-	f.registerClick = (x = (event.screenX + window.scrollX), y = (event.screenY + window.scrollY)) => {
-		a.clicks[a.clicks.length] =  []
-		a.clicks[a.clicks.length]["X"] = x;
+	f.registerClick = () => {
+		a.clicks[a.clicks.length] = array;
+		a.clicks[a.clicks.length]["X"] = event.screenX + window.scrollX;
+		a.clicks[a.clicks.length]["Y"] = event.screenY + window.scrollY;
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
