@@ -14,7 +14,7 @@ window.onclick = (e) => {
 	console.log(a.Submit());
 }
 
-g.addEventListener('statechange', function(event) {
+w.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
 		var url = "https://example.com/foo";
 		var data = "bar";
