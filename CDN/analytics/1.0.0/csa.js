@@ -1,5 +1,6 @@
 import { f, a } from "./framework.js";
-import * as lifecycle from "../../lifecycle/0.1.1/lifecycle.native.js";
+import { w } from "../../lifecycle/0.1.1/lifecycle.js";
+import { g } from "../../lifecycle/0.1.1/lifecycle.native.js";
 
 window.onload = () => {
 	f.registerAnalyticsID();
@@ -13,7 +14,7 @@ window.onclick = (e) => {
 	console.log(a.Submit());
 }
 
-lifecycle.addEventListener('statechange', function(event) {
+g.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
 		var url = "https://example.com/foo";
 		var data = "bar";
