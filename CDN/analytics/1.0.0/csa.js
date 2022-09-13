@@ -1,6 +1,5 @@
 import { f, a } from "./framework.js";
 import { w } from "../../lifecycle/0.1.1/lifecycle.js";
-//import { g } from "../../lifecycle/0.1.1/lifecycle.native.js";
 
 window.onload = () => {
 	f.registerAnalyticsID();
@@ -16,10 +15,8 @@ window.onclick = (e) => {
 
 w.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
-		var url = "https://example.com/foo";
-		var data = "bar";
-
-		navigator.sendBeacon(url, data);
+		var url = "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a);
+		navigator.sendBeacon(url);
 	}
 });
 window.onunload = () => {
