@@ -140,5 +140,4 @@ class m extends s {
         }
     }
 }
-var w = new m();
-export default w;
+export default w = new m();
