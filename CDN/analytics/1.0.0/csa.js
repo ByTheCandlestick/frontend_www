@@ -8,8 +8,8 @@ window.onload = () => {
 }
 window.onclick = (e) => {
 	f.registerClick();
+	console.log(a.Submit());
 }
 window.onbeforeunload = () => {
-	//console.log(a.Submit());
 	f.saveUnloadMetrics();
 }
