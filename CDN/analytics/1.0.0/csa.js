@@ -13,9 +13,8 @@ window.onbeforeunload = function(){
 	a.Submit();
 }
 window.onclick = (e) => {
-	f.registerClick((e.pageX - e.target.offsetLeft), (e.pageY - e.target.offsetTop));
-	console.log("Coordinate(X) = " + (event.screenX + window.scrollX) + "<br>Coordinate(Y) = " + (event.screenY + window.scrollY))
-  }
+	f.registerClick();
+}
 
 function ms_to_hms(ms) {
 	var hrs = parseInt((ms / 1000) / 3600 ),

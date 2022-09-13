@@ -42,7 +42,7 @@ var f = {};
 			a.user.analytics_id = m.cookie.read('analytics_id');
 		}
 	}
-	f.registerClick = (x, y) => {
+	f.registerClick = (x = (event.screenX + window.scrollX), y = (event.screenY + window.scrollY)) => {
 		console.log(x+" "+y)
 	}
 	f.saveLoadMetrics = () => {
