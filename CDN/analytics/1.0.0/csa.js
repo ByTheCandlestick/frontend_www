@@ -1,4 +1,4 @@
-import { f } from "./framework.js";
+import { f, a } from "./framework.js";
 
 window.onload = function () {
 	f.registerAnalyticsID();
