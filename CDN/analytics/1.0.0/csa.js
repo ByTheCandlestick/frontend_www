@@ -6,11 +6,13 @@ window.onload = () => {
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();
+	console.log(lifecycle);
 }
 window.onclick = (e) => {
 	f.registerClick();
 	console.log(a.Submit());
 }
+
 lifecycle.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
 		var url = "https://example.com/foo";
