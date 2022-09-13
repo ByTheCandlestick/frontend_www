@@ -147,34 +147,34 @@ var f = {};
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
 	}
-var a = []
-	a.user = [];
+var a = {};
+	a.user = {};
 		a.user.analytics_id = null;
-	a.timing = [];
+	a.timing = {};
 		a.timing.DOMLookup = null;
 		a.timing.DOMInteractive = null;
 		a.timing.DOMLoaded = null;
 		a.timing.DOMComplete = null;
 		a.timing.DOMFinished = null;
 		a.timing.TimeSpent = null;
-	a.domain = [];
+	a.domain = {};
 		a.domain.href = null;
 		a.domain.Protocol = null;
 		a.domain.Hostname = null;
 		a.domain.Path = null;
-	a.browser = [];
+	a.browser = {};
 		a.browser.UserAgent = null;
 		a.browser.Name = null;
 		a.browser.FullVersion = null;
 		a.browser.MajorVersion = null;
 		a.browser.Appname = null;
-	a.system = [];
+	a.system = {};
 		a.system.Name = null;
 		a.system.MajorVersion = null;
 		a.system.FullVersion = null;
 		a.system.Base = null;
 		a.system.Architecture = null;
-	a.clicks = []
+	a.clicks = {};
 	a.Submit = () => {
 
 	}
