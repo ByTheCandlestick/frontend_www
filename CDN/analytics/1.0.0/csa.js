@@ -7,7 +7,7 @@ window.onload = () => {
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();
-	console.log(lifecycle);
+	console.log(w);
 }
 window.onclick = (e) => {
 	f.registerClick();
