@@ -43,7 +43,8 @@ var f = {};
 		}
 	}
 	f.registerClick = (x = (event.screenX + window.scrollX), y = (event.screenY + window.scrollY)) => {
-		console.log(x+" "+y)
+		a.clicks[a.clicks.length]["X"] = x;
+		a.clicks[a.clicks.length]["Y"] = y;
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
@@ -172,6 +173,7 @@ var a = {}
 		a.system.FullVersion = null;
 		a.system.Base = null;
 		a.system.Architecture = null;
+	a.clicks = {}
 	a.Submit = () => {
 
 	}
