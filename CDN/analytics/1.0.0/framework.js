@@ -44,8 +44,8 @@ var f = {};
 	}
 	f.registerClick = () => {
 		a.clicks[Object.keys(a.clicks).length] = {};
-		a.clicks[Object.keys(a.clicks).length]["X"] = event.screenX + window.scrollX;
-		a.clicks[Object.keys(a.clicks).length]["Y"] = event.screenY + window.scrollY;
+		a.clicks[Object.keys(a.clicks).length - 1]["X"] = event.screenX + window.scrollX;
+		a.clicks[Object.keys(a.clicks).length - 1]["Y"] = event.screenY + window.scrollY;
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
