@@ -10,6 +10,6 @@ window.onclick = (e) => {
 	f.registerClick();
 }
 window.onbeforeunload = () => {
-	console.log(a.Submit());
+	//console.log(a.Submit());
 	f.saveUnloadMetrics();
 }
