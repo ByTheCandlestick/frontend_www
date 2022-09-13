@@ -43,7 +43,7 @@ var f = {};
 		}
 	}
 	f.registerClick = (x = (event.screenX + window.scrollX), y = (event.screenY + window.scrollY)) => {
-		a.clicks[a.clicks.length].push("X"=x);
+		a.clicks[a.clicks.length]["X"] = x;
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
