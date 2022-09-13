@@ -4,7 +4,7 @@ window.onload = function () {
 	f.registerAnalyticsID();
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
-	f.saveSystemMetrics();S
+	f.saveSystemMetrics();
 	console.log(a);
 }
 window.onbeforeunload = function(){
