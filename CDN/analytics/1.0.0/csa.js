@@ -1,10 +1,11 @@
-import { f, a } from "./framework.js";
+import { f } from "./framework.js";
 
 window.onload = function () {
 	f.registerAnalyticsID();
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();
+
 	console.log(a);
 }
 window.onbeforeunload = function(){
@@ -13,7 +14,7 @@ window.onbeforeunload = function(){
 }
 window.onclick = (e) => {
 	f.registerClick((e.pageX - e.target.offsetLeft), (e.pageY - e.target.offsetTop));
-	console.log("Coordinate(X) = " + (event.screenX + window.scrollY) + "<br>Coordinate(Y) = " + (event.screenY + window.scrollY))
+	console.log("Coordinate(X) = " + (event.screenX + window.scrollX) + "<br>Coordinate(Y) = " + (event.screenY + window.scrollY))
   }
 
 function ms_to_hms(ms) {
