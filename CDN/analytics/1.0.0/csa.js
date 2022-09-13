@@ -10,11 +10,11 @@ window.onload = () => {
 }
 window.onclick = (e) => {
 	f.registerClick();
-	console.log(a.Submit());
 }
 
 w.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
+		console.log(a);
 		var url = "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a);
 		navigator.sendBeacon(url);
 	}
