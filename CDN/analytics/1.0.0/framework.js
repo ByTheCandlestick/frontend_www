@@ -43,6 +43,7 @@ var f = {};
 		}
 	}
 	f.registerClick = (x = (event.screenX + window.scrollX), y = (event.screenY + window.scrollY)) => {
+		a.clicks.push(a.clicks.length);
 		a.clicks[a.clicks.length]["X"] = x;
 		a.clicks[a.clicks.length]["Y"] = y;
 	}
