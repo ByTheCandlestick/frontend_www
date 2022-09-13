@@ -6,7 +6,6 @@ window.onload = () => {
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();
-	console.log(w);
 }
 window.onclick = (e) => {
 	f.registerClick();
@@ -14,7 +13,6 @@ window.onclick = (e) => {
 
 w.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
-		console.log(a);
 		var url = "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a);
 		navigator.sendBeacon(url);
 	}
