@@ -176,7 +176,10 @@ var a = {};
 		a.system.Architecture = null;
 	a.clicks = {};
 	a.Submit = () => {
-
+		let xmlHttpReq = new XMLHttpRequest();
+		xmlHttpReq.open("GET", "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+api_key+"&analytics="+JSON.stringify(a), false);
+		xmlHttpReq.send(null);
+		return xmlHttpReq.responseText;
 	}
 
 export { f, a };
