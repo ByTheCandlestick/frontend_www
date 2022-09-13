@@ -10,7 +10,7 @@ window.onload = function () {
 }
 window.onbeforeunload = function(){
 	f.saveUnloadMetrics();
-	a.Submit();
+	alert(a.Submit());
 }
 window.onclick = (e) => {
 	f.registerClick();
