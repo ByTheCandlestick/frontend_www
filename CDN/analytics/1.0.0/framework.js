@@ -43,9 +43,9 @@ var f = {};
 		}
 	}
 	f.registerClick = () => {
-		a.clicks[a.clicks.length] = [];
-		a.clicks[a.clicks.length]["X"] = event.screenX + window.scrollX;
-		a.clicks[a.clicks.length]["Y"] = event.screenY + window.scrollY;
+		a.clicks[Object.keys(a.clicks).length] = [];
+		a.clicks[Object.keys(a.clicks)]["X"] = event.screenX + window.scrollX;
+		a.clicks[Object.keys(a.clicks)]["Y"] = event.screenY + window.scrollY;
 	}
 	f.saveLoadMetrics = () => {
 		//console.log('analytics initializing');
