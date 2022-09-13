@@ -1,6 +1,6 @@
 import { f, a } from "./framework.js";
 import { w } from "../../lifecycle/0.1.1/lifecycle.js";
-import { g } from "../../lifecycle/0.1.1/lifecycle.native.js";
+//import { g } from "../../lifecycle/0.1.1/lifecycle.native.js";
 
 window.onload = () => {
 	f.registerAnalyticsID();
