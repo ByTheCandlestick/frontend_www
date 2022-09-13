@@ -1,5 +1,5 @@
 import { f, a } from "./framework.js";
-import "../../lifecycle/0.1.1/lifecycle.native.js";
+import "../../lifecycle/0.1.1/lifecycle.native.mjs";
 
 window.onload = () => {
 	f.registerAnalyticsID();

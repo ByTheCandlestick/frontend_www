@@ -112,6 +112,7 @@
 						}
 					?>
 			<!-- ===== Javascript ===== -->
+				<!--<script src="/CDN/lifecycle/0.1.1/lifecycle.mjs"></script>-->
 				<script src="/CDN/analytics/1.0.0/csa.js" type="module"></script>
 				<?
 					if($layout_row['script_ids'] != NULL) {
