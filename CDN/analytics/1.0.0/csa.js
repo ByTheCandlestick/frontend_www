@@ -6,11 +6,10 @@ window.onload = function () {
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();
 }
-window.onbeforeunload = function(){
-	f.saveUnloadMetrics();
-	alert(a.Submit());
-}
 window.onclick = (e) => {
 	f.registerClick();
-	console.log(a.clicks);
+}
+window.onbeforeunload = () => {
+	alert(a.Submit());
+	f.saveUnloadMetrics();
 }
