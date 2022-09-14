@@ -10,11 +10,7 @@ window.onload = () => {
 window.onclick = (e) => {
 	f.registerClick();
 }
-
-w.addEventListener('statechange', function(event) {
-	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
-		f.saveUnloadMetrics();
-		console.log('xxxx');
-		navigator.sendBeacon( "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a));
-	}
-});
+window.onunload = () => {
+	f.saveUnloadMetrics();
+	navigator.sendBeacon( "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a));
+}
