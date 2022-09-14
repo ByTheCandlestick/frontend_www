@@ -13,10 +13,8 @@ window.onclick = (e) => {
 
 w.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
-		var url = "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a);
-		navigator.sendBeacon(url);
+		f.saveUnloadMetrics();
+		alert('');
+		navigator.sendBeacon( "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a));
 	}
 });
-window.onunload = () => {
-	f.saveUnloadMetrics();
-}
