@@ -14,7 +14,7 @@ window.onclick = (e) => {
 w.addEventListener('statechange', function(event) {
 	if (event.originalEvent == 'visibilitychange' && event.newState == 'hidden') {
 		f.saveUnloadMetrics();
-		alert('');
+		console.log('xxxx');
 		navigator.sendBeacon( "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a));
 	}
 });
