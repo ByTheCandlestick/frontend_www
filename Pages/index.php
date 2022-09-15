@@ -56,15 +56,6 @@
 		$lastMonthExpences	= mysqli_fetch_row(DB_QUERY(sprintf("SELECT a.Curr AS 'Currency', SUM(a.Depo) AS 'Value' FROM (SELECT `Currency` AS Curr, SUM(`Deposit`) AS Depo FROM `Transactions` WHERE `Type`='Refund' AND `Created`>='%s' AND `Created`<'%s' GROUP BY 1) as a;", $lastMonth, $currMonth)));
 ?>
 <section>
-	<!-- Section Header -->
-	<div class="row">
-		<div class="col-12 col-md-6">
-			<h1>Dashboard</h1>
-		</div>
-		<div class="col-12 col-md-6 text-md-end">
-		</div>
-	</div>
-	<hr>
 	<!-- Section Body -->
 	<div class="row" name="Sales snippets">
 		<div class="col-12 col-md-6 col-lg-3 p-2">
