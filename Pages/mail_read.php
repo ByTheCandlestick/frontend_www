@@ -11,15 +11,7 @@
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h1>New mail</h1>
-		</div>
-		<div class="col-12 col-md-6 text-md-end">
-			<a href="javascript:mail.saveDraft()" class="btn btn-outline-primary m-1">
-				<i class="fa fa-inbox-in"></i>
-			</a>
-			<a href="javascript:mail.send()" class="btn btn-outline-primary m-1">
-				<i class="fa fa-paper-plane"></i>
-			</a>
+			<h1>Read mail</h1>
 		</div>
 	</div>
 	<hr>
