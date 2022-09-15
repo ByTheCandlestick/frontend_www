@@ -62,16 +62,4 @@
 			</div>
 		</div>
 	</div>
-	<script>
-      tinymce.init({
-        selector: '.mail-message',
-        toolbar: 'undo redo |'+
-				 'formatpainter casechange blocks |'+
-				 'bold italic backcolor | '+
-          		 'alignleft aligncenter alignright alignjustify | ' +
-        		 'bullist numlist checklist outdent indent |'+
-				 'removeformat |'+
-				 'code table help'
-      });
-    </script>
 </section>
