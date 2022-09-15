@@ -27,37 +27,37 @@
 	<div class="row mailNew">
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-from" id="floatingInput" value="<?=($f)?>">
+				<input type="text" class="form-control mail-from" id="floatingInput" value="<?=($f)?>" disabled>
 				<label for="floatingInput">From</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-to" id="floatingInput" value="<?=($t)?>">
+				<input type="text" class="form-control mail-to" id="floatingInput" value="<?=($t)?>" disabled>
 				<label for="floatingInput">To</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-cc" id="floatingInput" value="<?=($c)?>">
+				<input type="text" class="form-control mail-cc" id="floatingInput" value="<?=($c)?>" disabled>
 				<label for="floatingInput">Cc</label>
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-bcc" id="floatingInput" value="<?=($b)?>">
+				<input type="text" class="form-control mail-bcc" id="floatingInput" value="<?=($b)?>" disabled>
 				<label for="floatingInput">Bcc</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control mail-subject" id="floatingInput" value="<?=($s)?>">
+				<input type="text" class="form-control mail-subject" id="floatingInput" value="<?=($s)?>" disabled>
 				<label for="floatingInput">Subject</label>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="form-floating mb-3">
-				<textarea class="form-control mail-message" id="floatingInput" placeholder="Write your message here" value="" style="min-height: 200px;"><?=($m)?></textarea>
+				<textarea class="form-control mail-message" id="floatingInput" placeholder="Write your message here" value="" style="min-height: 200px;" disabled><?=($m)?></textarea>
 				<label for="floatingInput">Message</label>
 			</div>
 		</div>
