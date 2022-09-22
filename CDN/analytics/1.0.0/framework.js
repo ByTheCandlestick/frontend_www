@@ -155,8 +155,8 @@ var f = {};
 		//console.log('analytics immobilized');
 	}
 	f.isProduct = () => {
-		let p = a.domain.Path.split("/");
-		if(p[0] == "Boutique" && p[1] == "Product") return m.removeEmpty(p);
+		let p = m.removeEmpty(a.domain.Path.split("/"));
+		if(p[0] == "Boutique" && p[1] == "Product") return p;
 		return false;
 	}
 	f.saveProductMetrics = () => {
