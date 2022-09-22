@@ -32,11 +32,9 @@ var m = {}
 			return (m.cookie.read(name) === undefined)? false: true;
 		}
 	m.removeEmpty = (arr) => {
-		let r;
-		const arrFiltered = arr.filter(el => {
-			console.log(el != null && el != '');
+		return arr.filter(el => {
+			return el != null && el != '';
 		});
-		return r
 	}
 var f = {};
 	f.registerAnalyticsID = () => {
