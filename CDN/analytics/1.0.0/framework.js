@@ -172,8 +172,7 @@ var f = {};
 	f.savePartnerMetrics = () => {
 		let p = f.isPartner();
 		if(p != false) {
-			p.shift().shift()
-			console.log(p);
+			console.log(p[3]);
 		}
 	}
 var a = {};
