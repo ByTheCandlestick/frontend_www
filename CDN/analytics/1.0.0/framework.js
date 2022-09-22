@@ -31,7 +31,7 @@ var m = {}
 		m.cookie.exists = (name) => {
 			return (m.cookie.read(name) === undefined)? false: true;
 		}
-	m.removeNullFromArray = (arr) => {
+	m.removeEmpty = (arr) => {
 		const arrFiltered = arr.filter(el => {
 			return el != null && el != '';
 		});
@@ -155,8 +155,7 @@ var f = {};
 	}
 	f.isProduct = () => {
 		let p = a.domain.Path.split("/");
-		console.log(p);
-		if(p[0] == "Boutique" && p[1] == "Product") return true;
+		if(p[0] == "Boutique" && p[1] == "Product") return m.removeEmpty(p);
 		return false;
 	}
 	f.saveProductMetrics = () => {
