@@ -149,7 +149,7 @@ var f = {};
 		//console.log('analytics immobilized');
 	}
 	f.isProduct = (str = a.domain.path) => {
-		p = str.split("/\//")
+		p = str.split("/")
 		console.log(p);
 		if(p[0] == "Boutique" && p[1] == "Product") return true;
 		return false;
