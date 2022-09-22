@@ -170,7 +170,7 @@ var f = {};
 		return false;
 	}
 	f.savePartnerMetrics = () => {
-		let p = f.isProduct();
+		let p = f.isPartner();
 		if(p != false) {
 			console.log(p);
 		}
