@@ -160,7 +160,7 @@ var f = {};
 		return false;
 	}
 	f.saveProductMetrics = () => {
-		p = f.isProduct();
+		let p = f.isProduct();
 		if(p != false) {
 			console.log(p);
 		}
