@@ -31,6 +31,11 @@ var m = {}
 		m.cookie.exists = (name) => {
 			return (m.cookie.read(name) === undefined)? false: true;
 		}
+	m.removeNullFromArray = (arr) => {
+		const arrFiltered = arr.filter(el => {
+			return el != null && el != '';
+		});
+	}
 var f = {};
 	f.registerAnalyticsID = () => {
 		if(!m.cookie.exists('analytics_id')) {
