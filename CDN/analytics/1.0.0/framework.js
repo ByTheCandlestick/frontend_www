@@ -157,6 +157,7 @@ var f = {};
 	}
 	f.isProduct = () => {
 		let p = m.removeEmpty(a.domain.Path.split("/"));
+		console.log(p);
 		if(p[0] == "Boutique" && p[1] == "Product") return p;
 		return false;
 	}
