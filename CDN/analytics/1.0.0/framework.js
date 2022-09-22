@@ -164,6 +164,17 @@ var f = {};
 			console.log(p);
 		}
 	}
+	f.isPartner = () => {
+		let p = m.removeEmpty(a.domain.Path.split("/"));
+		if(p[0] == "Boutique" && p[1] == "Partner") return p;
+		return false;
+	}
+	f.saveProductMetrics = () => {
+		let p = f.isProduct();
+		if(p != false) {
+			console.log(p);
+		}
+	}
 var a = {};
 	a.user = {};
 		a.user.analytics_id = null;	// A randomly generated string
