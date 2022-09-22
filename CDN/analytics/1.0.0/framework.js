@@ -161,7 +161,7 @@ var f = {};
 	f.saveProductMetrics = () => {
 		let p = f.isProduct();
 		if(p != false) {
-			console.log(p);
+			console.log(p[2]);
 		}
 	}
 	f.isPartner = () => {
@@ -172,7 +172,7 @@ var f = {};
 	f.savePartnerMetrics = () => {
 		let p = f.isPartner();
 		if(p != false) {
-			console.log(p[3]);
+			console.log(p[2]);
 		}
 	}
 var a = {};
