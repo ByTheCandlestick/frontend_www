@@ -32,6 +32,7 @@ var m = {}
 			return (m.cookie.read(name) === undefined)? false: true;
 		}
 	m.removeEmpty = (arr) => {
+		let r;
 		const arrFiltered = arr.filter(el => {
 			r = el != null && el != '';
 		});
