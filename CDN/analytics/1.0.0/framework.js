@@ -56,9 +56,9 @@ var f = {};
 		a.timing.DOMComplete = (window.performance.timing.domComplete - window.performance.timing.navigationStart);
 		a.timing.DOMFinished = (Date.now() - window.performance.timing.navigationStart);
 		console.log(a.domain.href = window.location.href);
-		a.domain.Protocol = window.location.protocol;
-		a.domain.Hostname = window.location.hostname;
-		a.domain.Path = window.location.pathname;
+		console.log(a.domain.Protocol = window.location.protocol);
+		console.log(a.domain.Hostname = window.location.hostname);
+			console.log(a.domain.Path = window.location.pathname);
 		//console.log('analytics initialized');
 	}
 	f.saveBrowserMetrics = () => {
