@@ -148,33 +148,41 @@ var f = {};
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
 	}
+	f.isProduct = () => {
+		p = a.domain.path.split(/\//)
+		if(p[0] == "Boutique" && p[1] == "Product") return true;
+		return false;
+	}
+	f.saveProductMetrics = () => {
+		str.split(/\.|\,/)
+	}
 var a = {};
 	a.user = {};
-		a.user.analytics_id = null;
+		a.user.analytics_id = null;	// A randomly generated string
 	a.timing = {};
-		a.timing.DOMLookup = null;
-		a.timing.DOMInteractive = null;
-		a.timing.DOMLoaded = null;
-		a.timing.DOMComplete = null;
-		a.timing.DOMFinished = null;
-		a.timing.TimeSpent = null;
+		a.timing.DOMLookup = null;		// time in MS
+		a.timing.DOMInteractive = null;	// time in MS
+		a.timing.DOMLoaded = null;		// time in MS
+		a.timing.DOMComplete = null;	// time in MS
+		a.timing.DOMFinished = null;	// time in MS
+		a.timing.TimeSpent = null;		// time in MS
 	a.domain = {};
-		a.domain.href = null;
-		a.domain.Protocol = null;
-		a.domain.Hostname = null;
-		a.domain.Path = null;
+		a.domain.href = null;		// Full url
+		a.domain.Protocol = null;	// http / https
+		a.domain.Hostname = null;	// domain
+		a.domain.Path = null;		// path
 	a.browser = {};
-		a.browser.UserAgent = null;
-		a.browser.Name = null;
-		a.browser.FullVersion = null;
-		a.browser.MajorVersion = null;
-		a.browser.Appname = null;
+		a.browser.UserAgent = null;		// Browser user agent
+		a.browser.Name = null;			// Browser version
+		a.browser.FullVersion = null;	// Browser full version
+		a.browser.MajorVersion = null;	// Browser version
+		a.browser.Appname = null;		// Browser App name
 	a.system = {};
-		a.system.Name = null;
-		a.system.MajorVersion = null;
-		a.system.FullVersion = null;
-		a.system.Base = null;
-		a.system.Architecture = null;
+		a.system.Name = null;			// OS name
+		a.system.MajorVersion = null;	// OS version
+		a.system.FullVersion = null;	// OS full version
+		a.system.Base = null;			// OS base
+		a.system.Architecture = null;	// OS architecture
 	a.clicks = {};
 
 export { f, a };
