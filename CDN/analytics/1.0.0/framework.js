@@ -33,8 +33,9 @@ var m = {}
 		}
 	m.removeEmpty = (arr) => {
 		const arrFiltered = arr.filter(el => {
-			return el != null && el != '';
+			r = el != null && el != '';
 		});
+		return r
 	}
 var f = {};
 	f.registerAnalyticsID = () => {
