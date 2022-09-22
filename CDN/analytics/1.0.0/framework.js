@@ -169,7 +169,7 @@ var f = {};
 		if(p[0] == "Boutique" && p[1] == "Partner") return p;
 		return false;
 	}
-	f.saveProductMetrics = () => {
+	f.savePartnerMetrics = () => {
 		let p = f.isProduct();
 		if(p != false) {
 			console.log(p);
