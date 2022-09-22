@@ -148,8 +148,9 @@ var f = {};
 		a.timing.TimeSpent = ( Date.now() - window.performance.timing.navigationStart);
 		//console.log('analytics immobilized');
 	}
-	f.isProduct = (str = a.domain.path) => {
-		p = str.split("/")
+	f.isProduct = () => {
+		let str = a.domain.path;
+		let p = str.split("/");
 		console.log(p);
 		if(p[0] == "Boutique" && p[1] == "Product") return true;
 		return false;
