@@ -149,8 +149,7 @@ var f = {};
 		//console.log('analytics immobilized');
 	}
 	f.isProduct = () => {
-		let str = a.domain.path;
-		let p = str.split("/");
+		let p = a.domain.Path.split("/");
 		console.log(p);
 		if(p[0] == "Boutique" && p[1] == "Product") return true;
 		return false;
