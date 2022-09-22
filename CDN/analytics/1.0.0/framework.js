@@ -159,8 +159,9 @@ var f = {};
 		return false;
 	}
 	f.saveProductMetrics = () => {
-		if(f.isProduct()) {
-			console.log(' Is product')
+		p = f.isProduct();
+		if(p != false) {
+			console.log(p);
 		}
 	}
 var a = {};
