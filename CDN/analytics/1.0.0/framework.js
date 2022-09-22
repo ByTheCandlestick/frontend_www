@@ -34,7 +34,7 @@ var m = {}
 	m.removeEmpty = (arr) => {
 		let r;
 		const arrFiltered = arr.filter(el => {
-			r += el != null && el != '';
+			console.log(el != null && el != '');
 		});
 		return r
 	}
