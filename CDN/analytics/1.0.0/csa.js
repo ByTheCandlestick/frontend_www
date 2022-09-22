@@ -6,6 +6,8 @@ window.onload = () => {
 	f.saveLoadMetrics();
 	f.saveBrowserMetrics();
 	f.saveSystemMetrics();
+
+	f.saveProductMetrics();
 }
 window.onclick = (e) => {
 	f.registerClick();
