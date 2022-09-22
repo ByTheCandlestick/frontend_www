@@ -158,8 +158,7 @@ var f = {};
 		if(p[0] == "Boutique" && p[1] == "Product") return p;
 		return false;
 	}
-	f.saveProductMetrics = () => {
-		let p = f.isProduct();
+	f.saveProductMetrics = (p = f.isProduct()) => {
 		if(p != false) {
 			console.log(p[2]);
 		}
@@ -169,7 +168,7 @@ var f = {};
 		if(p[0] == "Boutique" && p[1] == "Partner") return p;
 		return false;
 	}
-	f.savePartnerMetrics = (p = f.isPartner()[2]) => {
+	f.savePartnerMetrics = (p = f.isPartner()) => {
 		if(p != false) {
 			console.log(p[2]);
 		}
