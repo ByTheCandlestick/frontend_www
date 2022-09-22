@@ -150,6 +150,7 @@ var f = {};
 	}
 	f.isProduct = () => {
 		p = a.domain.path.split(/\//)
+		console.log(p);
 		if(p[0] == "Boutique" && p[1] == "Product") return true;
 		return false;
 	}
