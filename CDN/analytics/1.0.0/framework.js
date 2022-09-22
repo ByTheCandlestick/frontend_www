@@ -154,7 +154,9 @@ var f = {};
 		return false;
 	}
 	f.saveProductMetrics = () => {
-		str.split(/\.|\,/)
+		if(f.isProduct()) {
+			console.log(' Is product')
+		}
 	}
 var a = {};
 	a.user = {};
