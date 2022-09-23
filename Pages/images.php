@@ -8,63 +8,62 @@
 	while($image = mysqli_fetch_assoc($q)) { array_push($images, $image); }
 ?>
 <style>
-.imageContainer {
-	position: relative;
-}
-.imageContainer .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0);
-    transition: background 0.5s ease;
-}
-.imageContainer:hover .overlay {
-    display: block;
-    background: rgba(0, 0, 0, .3);
-}
-.imageContainer .button {
-    position: absolute;
-    top: 75%;
-    opacity: 0;
-    transition: opacity .35s ease;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.imageContainer .button a {
-    width: 200px;
-    padding: 12px 48px;
-    text-align: center;
-    color: white;
-    border: solid 2px white;
-    z-index: 1;
-}
-.imageContainer:hover .button {
-	opacity: 1;
-}
-.imageContainer .title {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    font-weight: 700;
-    font-size: 17px;
-    text-align: center;
-    text-transform: uppercase;
-	text-shadow: 0px 0px 10px black;
-    color: white;
-    z-index: 1;
-    transition: top .5s ease;
-    width: 70%;
-    transform: translate(-50%, -50%);
-}
-.imageContainer:hover .title {
-  top: 25%;
-}
-.imageContainer img {
-  width: 100%;
-}
-
+	.imageContainer {
+		position: relative;
+	}
+	.imageContainer .overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0);
+		transition: background 0.5s ease;
+	}
+	.imageContainer:hover .overlay {
+		display: block;
+		background: rgba(0, 0, 0, .3);
+	}
+	.imageContainer .button {
+		position: absolute;
+		top: 75%;
+		opacity: 0;
+		transition: opacity .35s ease;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.imageContainer .button a {
+		width: 200px;
+		padding: 12px 48px;
+		text-align: center;
+		color: white;
+		border: solid 2px white;
+		z-index: 1;
+	}
+	.imageContainer:hover .button {
+		opacity: 1;
+	}
+	.imageContainer .title {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		font-weight: 700;
+		font-size: 17px;
+		text-align: center;
+		text-transform: uppercase;
+		text-shadow: 0px 0px 10px black;
+		color: white;
+		z-index: 1;
+		transition: top .5s ease;
+		width: 70%;
+		transform: translate(-50%, -50%);
+	}
+	.imageContainer:hover .title {
+		top: 25%;
+	}
+	.imageContainer img {
+		width: 100%;
+	}
 </style>
 <section>
 	<!-- Section Header -->
