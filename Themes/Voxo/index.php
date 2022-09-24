@@ -211,20 +211,20 @@
 												<i class="fad fa-cogs pe-1"></i>
 												<a href="<?=(URL_ADMIN)?>?force_back=1">Open admin dashboard</a>
 											</li>
-											<li>
-												<i class="fad fa-pencil pe-1"></i>
-												<a href="<?=(URL_ADMIN.'/Websites/Page/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
-											</li>
 											<?
 												if($userperm['adm_addess-websites-edit'] == 1) {
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
-													<a href="<?=(URL_ADMIN.'/Products/Edit/'.$product['SKU'].'/?force_back=1')?>">Edit this product</a>
+													<a href="<?=(URL_ADMIN.'/Oxygen/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
+												</li>
+												<li>
+													<i class="fad fa-pencil pe-1"></i>
+													<a href="<?=(URL_ADMIN.'/Websites/Page/'.$layout_row['ID'].'/?force_back=1')?>">Edit this pages info</a>
 												</li>
 											<?
 												}
-												if(isset($product)) {
+												if(isset($product) && $userperm['adm_addess-products-edit'] == 1) {
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
@@ -232,7 +232,7 @@
 												</li>
 											<?
 												}
-												if(isset($partner)) {
+												if(isset($partner) && $userperm['adm_addess-partners-edit'] == 1) {
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
@@ -240,7 +240,7 @@
 												</li>
 											<?
 												}
-												if(isset($blog)) {
+												if(isset($blog) && $userperm['adm_addess-blog-edit'] == 1) {
 											?>
 												<li>
 													<i class="fad fa-pencil pe-1"></i>
