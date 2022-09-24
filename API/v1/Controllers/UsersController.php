@@ -238,7 +238,7 @@
 								}
 								$arr_user_info['psecure'] = hash('sha512', 'salt'.$arr_user_info['password'].'pepper');
 								if(!$this->ValidatePaswd($arr_user_info['password'])) throw new Error("ERR-SIN-5"); // Check if password is valid
-								if(!$mdl_User->ConfirmPassword($arr_user_info['password'])) throw error('ERR-SIN-6');
+								if(!$mdl_User->ConfirmPassword($arr_user_info['psecure'])) throw error('ERR-SIN-6');
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
