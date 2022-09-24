@@ -153,7 +153,7 @@
 								<?
 									$items = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `Active`=1 AND `menu_item`=1 AND `domain_id`=%s ORDER BY `menu_order` ASC", $website_info['ID']));
 									foreach($items as $item) {
-										if($userperm[$item['Permission']] == 1) {
+										if($userperm[$item['Permission']] == 1 || $item['Public?'] == 1) {
 											if($item['page_url'] == QS_PAGE && $item['subpage_url'] == QS_SUBPAGE) {
 												$link = '#';
 												$active = 'active';
