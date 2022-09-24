@@ -267,12 +267,12 @@
 							<label for="floatingInput">Permission</label>
 						</div>
 					</div>
-					<div class="col-12 col-lg-4" name="permission">
-						<div class="form-floating mb-3">
+					<div class="col-12 col-lg-3" name="permission">
+						<div class="form-floating mb-3 p-2">
 							<a class="btn btn-outline-primary" href="/Config/Permissions/New/"><i class="fa fa-plus"></i> New permission</a>
 						</div>
 					</div>
-					<div class="col-12 col-lg-2" name="permission">
+					<div class="col-12 col-lg-3" name="permission">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 							<label class="form-check-label" for="flexCheckDefault">
