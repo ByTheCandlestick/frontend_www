@@ -205,7 +205,7 @@
 											<a href="/My/">My Account</a>
 										</li>
 										<?
-											if($userperm['Access_admin'] == 1) {
+											if($userperm['adm_access'] == 1) {
 										?>
 											<li>
 												<i class="fad fa-cogs pe-1"></i>
@@ -216,6 +216,14 @@
 												<a href="<?=(URL_ADMIN.'/Websites/Page/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
 											</li>
 											<?
+												if($userperm['adm_addess-websites-edit'] == 1) {
+											?>
+												<li>
+													<i class="fad fa-pencil pe-1"></i>
+													<a href="<?=(URL_ADMIN.'/Products/Edit/'.$product['SKU'].'/?force_back=1')?>">Edit this product</a>
+												</li>
+											<?
+												}
 												if(isset($product)) {
 											?>
 												<li>
