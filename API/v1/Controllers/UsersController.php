@@ -238,7 +238,7 @@
 								}
 								$arr_user_info['psecure'] = hash('sha512', 'salt'.$arr_user_info['password'].'pepper');
 								if(!$this->ValidatePaswd($arr_user_info['password'])) throw new Error("ERR-SIN-5"); // Check if password is valid
-								if(!$mdl_User->ConfirmPassword($arr_user_info['psecure'])) throw new Error('ERR-SIN-6'); // check if password matched
+								if(!$mdl_User->ConfirmPassword($arr_user_info['username'], $arr_user_info['psecure'])) throw new Error('ERR-SIN-6'); // check if password matched
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 							}
@@ -248,7 +248,7 @@
 								if($status) {	// Success
 									$str_response = json_encode($status);
 								} else {		// Error submitting
-									throw new Error("ERR-SUP-11");
+									throw new Error("ERR-SIN-7");
 								}
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
