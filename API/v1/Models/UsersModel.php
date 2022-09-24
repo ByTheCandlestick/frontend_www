@@ -34,7 +34,7 @@
 		 *	@final
 		 */
 			public function Login(string $uname, string $pass) {
-				print_r($uid = $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Username`='$uname' AND `Password`='$pass'", 2)[0]);
+				$uid = $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Username`='$uname' AND `Password`='$pass'", 2)[0];
 				$code = bin2hex(random_bytes(32));
 				$ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR']))? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
 				$https = (isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != null)? true : false;
@@ -161,7 +161,7 @@
 		 * @todo
 		 */
 			public function ConfirmPassword(string $pass) {
-				return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `Password`='%s' LIMIT 1", $pass), 1);
+				return print_r($this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `Password`='%s' LIMIT 1", $pass), 1));
 			}
 		/**	updatePermissions
 		 *	
