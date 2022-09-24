@@ -161,7 +161,8 @@
 		 * @todo
 		 */
 			public function ConfirmPassword(string $user, string $pass) {
-				return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `Username`=%s AND `Password`='%s' LIMIT 1", $user, $pass), 1);
+				echo $sql = sprintf("SELECT * FROM `User accounts` WHERE `Username`=%s AND `Password`='%s' LIMIT 1", $user, $pass);
+				return $this->Execute($sql, 1);
 			}
 		/**	updatePermissions
 		 *	
