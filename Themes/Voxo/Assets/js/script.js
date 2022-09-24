@@ -449,7 +449,7 @@ $(document).ready(function() {
 										window.location = window.location.protocol+'//' + $('rw').attr('data');
 									}
 								}
-								location.reload();
+								//location.reload();
 							} else {
 								console.log(body.status);
 							}
