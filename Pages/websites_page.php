@@ -268,8 +268,10 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="permission">
-						<div class="form-floating mb-3 p-2">
-							<a class="btn btn-outline-primary" href="/Config/Permissions/New/"><i class="fa fa-plus"></i> New permission</a>
+						<div class="form-floating mb-3">
+							<a class="btn btn-outline-primary p-2" href="/Config/Permissions/New/">
+								<i class="fa fa-plus"></i> New permission
+							</a>
 						</div>
 					</div>
 					<div class="col-12 col-lg-3" name="permission">
