@@ -274,11 +274,11 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-12 col-lg-3" name="permission">
+					<div class="col-12 col-lg-3" name="public">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 							<label class="form-check-label" for="flexCheckDefault">
-								Default checkbox
+								Public page?
 							</label>
 						</div>
 					</div>
