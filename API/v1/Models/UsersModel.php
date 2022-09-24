@@ -38,9 +38,6 @@
 				$code = bin2hex(random_bytes(32));
 				$ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR']))? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
 				$https = (isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != null)? true : false;
-				if() {
-
-				}
 				try {
 					$arr_cookie_options = array (
 						"expires"	=>  date('D, d M Y H:i:s', strtotime('+1 year')),	// Epiry date in string
