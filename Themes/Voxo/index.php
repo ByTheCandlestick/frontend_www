@@ -212,10 +212,10 @@
 												<a href="<?=(URL_ADMIN)?>?force_back=1">Open admin dashboard</a>
 											</li>
 											<?
-												if($userperm['adm_addess-websites-edit'] == 1) {
+												if($userperm['adm_access-websites-edit'] == 1) {
 											?>
 												<li>
-													<i class="fad fa-pencil pe-1"></i>
+													<i class="fad fa-circle pe-1"></i>
 													<a href="<?=(URL_ADMIN.'/Oxygen/'.$layout_row['ID'].'/?force_back=1')?>">Edit this page</a>
 												</li>
 												<li>
