@@ -130,7 +130,7 @@
 							// The view mode of the cropper
 							viewMode: 0, // 0, 1, 2, 3
 							// The dragging mode of the cropper
-							dragMode: DRAG_MODE_CROP, // 'crop', 'move' or 'none'
+							//dragMode: DRAG_MODE_CROP, // 'crop', 'move' or 'none'
 							// The initial aspect ratio of the crop box
 							initialAspectRatio: NaN,
 							// The aspect ratio of the crop box
