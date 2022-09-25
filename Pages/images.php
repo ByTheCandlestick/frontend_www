@@ -117,12 +117,12 @@
 				</button>
 			</div>
 			<div class="modal-body row">
-				<div class="col-12 col-md-8">
+				<div class="col-12 col-md-8 bg-primary">
 					<div>
 						<img id="cropperImage">
 					</div>
 				</div>
-				<div class="col-12 col-md-4">
+				<div class="col-12 col-md-4 bg-secondary">
 
 				</div>
 				<script>
