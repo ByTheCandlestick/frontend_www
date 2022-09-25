@@ -205,6 +205,14 @@
 			return (cookie.read(name) === undefined)? false: true;
 		},
 	}
+	/** @wip */
+	images = {
+		modify = {
+			openModal() {
+				$('#imageEditorModal').modal('show');	
+			}
+		}
+	}
 	/** @final */
 	mail = {
 		/** @final */
