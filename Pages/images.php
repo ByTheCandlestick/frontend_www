@@ -93,7 +93,7 @@
 							<p class="title">%s</p>
 							<div class="overlay"></div>
 							<div class="button">
-								<a href="javascript:images.modify.openModal(%s);"> Modify </a>
+								<a href="javascript:images.modify.openModal("%s");"> Modify </a>
 							</div>
 						</div>
 					</div>
@@ -112,7 +112,6 @@
 				</button>
 			</div>
 			<div class="modal-body row">
-				<info slug="" location="" nam="" description="" alt="" active="">
 				<div class="col-12 col-md-8">
 					<div>
 						<img id="cropperImage" src="">
