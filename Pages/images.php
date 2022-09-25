@@ -112,9 +112,13 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<p>Modal body text goes here.</p>
-				<div>
-					<img id="cropperImage" src="">
+				<div class="col-12 col-md-8">
+					<div>
+						<img id="cropperImage" src="">
+					</div>
+				</div>
+				<div class="col-12 col-md-4">
+
 				</div>
 				<script>
 					const image = document.getElementById('cropperImage');
