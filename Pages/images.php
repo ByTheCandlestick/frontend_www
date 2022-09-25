@@ -64,6 +64,11 @@
 	.imageContainer img {
 		width: 100%;
 	}
+	#cropperImage img {
+		height: 50vh;
+		transform: translatex(calc(-50%));
+		margin-left: 50%;
+	}
 </style>
 <section>
 	<!-- Section Header -->
