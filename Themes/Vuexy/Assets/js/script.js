@@ -212,7 +212,7 @@
 			/** @wip */
 			openModal(slug) {
 				$('#imageEditorModal').modal('show');
-				console.log($('div.imageContainer[data-slug=' + slug + ']'));
+				infoDiv = $('div.imageContainer[data-slug=' + slug + ']');
 			},
 			/** @wip */
 			closeModal() {
