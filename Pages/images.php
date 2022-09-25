@@ -121,8 +121,7 @@
 
 				</div>
 				<script>
-					const image = document.getElementById('cropperImage');
-					const cropper = new Cropper(image, {
+					const cropper = new Cropper(document.getElementById('cropperImage'), {
 						aspectRatio: 16/9,
 						crop(event) {
 							console.log(event.detail.x);
