@@ -25,7 +25,6 @@
 	<div class="row overflow-scroll">
 		<table class="stylesTable table table-striped table-hover">
 			<thead class="sticky-top">
-				<th scope="col">ID</th>
 				<th scope="col">Name</th>
 				<th scope="col">Location</th>
 				<th scope="col">Preload?</th>
@@ -40,8 +39,7 @@
 						while ($row = mysqli_fetch_array($query)) {
 							print('
 								<tr>
-									<th scope="row">'.$row['ID'].'</th>
-									<td>'.$row['Name'].'</td>
+									<th scope="row">'.$row['Name'].'</th>
 									<td>'.$row['Location'].'</td>
 									<td>'.$row['Preload'].'</td>
 									<td>'.$row['Importance'].'</td>
@@ -59,7 +57,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
