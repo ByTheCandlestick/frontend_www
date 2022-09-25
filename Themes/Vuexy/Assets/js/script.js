@@ -213,6 +213,7 @@
 			openModal(slug) {
 				$('#imageEditorModal').modal('show');
 				infoDiv = $('div.imageContainer[data-slug=' + slug + ']');
+				$('img.cropperImage').attr('src', infoDiv.attr('data-location'))
 			},
 			/** @wip */
 			closeModal() {
