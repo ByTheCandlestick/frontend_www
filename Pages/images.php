@@ -118,9 +118,7 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
-					<div>
-						<img id="cropperImage" src="images/partners/fizzlux/logo.jpeg">
-					</div>
+					<img id="cropperImage" src="images/partners/fizzlux/logo.jpeg">
 				</div>
 				<div class="col-12 col-md-4 bg-secondary">
 
@@ -158,6 +156,7 @@
 								console.log(e.type, e.detail.ratio);
 							}
 						};
+						console.log(image);
 						new Cropper(image, options);
 					});
 				</script>
