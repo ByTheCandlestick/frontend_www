@@ -207,16 +207,20 @@
 	}
 	/** @wip */
 	images = {
+		/** @wip */
 		modify: {
+			/** @wip */
 			openModal() {
 				$('#imageEditorModal').modal('show');
 			},
+			/** @wip */
 			closeModal() {
 				$('#imageEditorModal').modal('hide');
 			},
+			/** @wip */
 			save() {
 				
-			}
+			},
 		}
 	}
 	/** @final */
