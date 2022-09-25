@@ -112,6 +112,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
+				<p>Modal body text goes here.</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" onClick="images.modify.save();">Save</button>
