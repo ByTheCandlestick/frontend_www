@@ -112,6 +112,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
+				<info slug="" location="" nam="" description="" alt="" active="">
 				<div class="col-12 col-md-8">
 					<div>
 						<img id="cropperImage" src="">
