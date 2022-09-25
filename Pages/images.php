@@ -64,7 +64,7 @@
 	.imageContainer img {
 		width: 100%;
 	}
-	#cropperImage img {
+	img#cropperImage {
 		height: 50vh;
 		transform: translatex(calc(-50%));
 		margin-left: 50%;
