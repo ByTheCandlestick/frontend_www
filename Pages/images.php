@@ -126,7 +126,7 @@
 
 				</div>
 				<script>
-					var image = container.getElementById('cropperImage');
+					var image = window.getElementById('cropperImage');
 					var options = {
 						aspectRatio: 16 / 9,
 						preview: '.img-preview',
