@@ -207,7 +207,7 @@
 	}
 	/** @wip */
 	images = {
-		modify = {
+		modify: {
 			openModal() {
 				$('#imageEditorModal').modal('show');
 			},
