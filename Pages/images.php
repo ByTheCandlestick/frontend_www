@@ -119,7 +119,7 @@
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
 					<div>
-						<img id="cropperImage">
+						<img id="cropperImage" src="images/partners/fizzlux/logo.jpeg">
 					</div>
 				</div>
 				<div class="col-12 col-md-4 bg-secondary">
