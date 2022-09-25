@@ -114,14 +114,14 @@
 			<div class="modal-body row">
 				<div class="col-12 col-md-8">
 					<div>
-						<img id="cropperImage" src="">
+						<img id="cropperImage">
 					</div>
 				</div>
 				<div class="col-12 col-md-4">
 
 				</div>
 				<script>
-					const cropper = new Cropper(document.getElementById('cropperImage'));
+					const cropper = new Cropper($('img#cropperImage'));
 				</script>
 			</div>
 			<div class="modal-footer">
