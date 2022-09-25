@@ -114,10 +114,10 @@
 			<div class="modal-body">
 				<p>Modal body text goes here.</p>
 				<div>
-					<img id="image" src="">
+					<img id="cropperImage" src="">
 				</div>
 				<script>
-					const image = document.getElementById('image');
+					const image = document.getElementById('cropperImage');
 					const cropper = new Cropper(image, {
 						aspectRatio: 16/9,
 						crop(event) {
