@@ -126,6 +126,7 @@
 
 				</div>
 				<script>
+					import Cropper from 'cropperjs';
 					const cropper = new Cropper($('img#cropperImage'));
 				</script>
 			</div>
