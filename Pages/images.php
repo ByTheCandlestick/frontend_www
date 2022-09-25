@@ -107,12 +107,14 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Edit image</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 			</div>
 			<div class="modal-body">
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" onClick="images.modify.save();">Save</button>
-				<button type="button" class="btn btn-secondary" onClick="images.modify.closeModal();">Close</button>
 			</div>
 		</div>
 	</div>
