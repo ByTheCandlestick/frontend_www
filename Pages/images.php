@@ -111,7 +111,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body row">
 				<info slug="" location="" nam="" description="" alt="" active="">
 				<div class="col-12 col-md-8">
 					<div>
