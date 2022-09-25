@@ -93,11 +93,11 @@
 							<p class="title">%s</p>
 							<div class="overlay"></div>
 							<div class="button">
-								<a href="javascript:images.modify.openModal();"> Modify </a>
+								<a href="javascript:images.modify.openModal(%s);"> Modify </a>
 							</div>
 						</div>
 					</div>
-				', $image['Slug'], $image['Location'], $image['Name'], $image['Description'], $image['Alt'], $image['Active?'], $image['Location'], $image['Alt'], $image['Name']));
+				', $image['Slug'], $image['Location'], $image['Name'], $image['Description'], $image['Alt'], $image['Active?'], $image['Location'], $image['Alt'], $image['Name'], $image['Slug']));
 			}
 		?>
 	</div>

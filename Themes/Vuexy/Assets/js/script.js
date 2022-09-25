@@ -210,8 +210,9 @@
 		/** @wip */
 		modify: {
 			/** @wip */
-			openModal() {
+			openModal(slug) {
 				$('#imageEditorModal').modal('show');
+				console.log($('.imageContainer[data-slug='+slug+']'));
 			},
 			/** @wip */
 			closeModal() {
