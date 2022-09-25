@@ -209,7 +209,13 @@
 	images = {
 		modify = {
 			openModal() {
-				$('#imageEditorModal').modal('show');	
+				$('#imageEditorModal').modal('show');
+			},
+			closeModal() {
+				$('#imageEditorModal').modal('hide');
+			},
+			save() {
+				
 			}
 		}
 	}
