@@ -126,7 +126,9 @@
 
 				</div>
 				<script>
-					images.modify.imageEditor = new tui.component.ImageEditor('#image-editor canvas');
+					$( doucment).ready({
+						images.modify.imageEditor = new tui.component.ImageEditor('#image-editor canvas');
+					})
 				</script>
 			</div>
 			<div class="modal-footer">
