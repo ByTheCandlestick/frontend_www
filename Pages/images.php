@@ -126,7 +126,7 @@
 
 				</div>
 				<script>
-					$( document ).ready(() => {
+					$( document ).ready(function() {
 						images.modify.imageEditor = new tui.component.ImageEditor('#image-editor canvas');
 					})
 				</script>
