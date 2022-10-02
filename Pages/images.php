@@ -126,7 +126,7 @@
 
 				</div>
 				<script>
-					$(window).load(function() {
+					$(document).ready(function() {
 						alert('hello');
 						images.modify.imageEditor = new tui.ImageEditor('#image-editor canvas', {
 							cssMaxWidth: 1000, // Component default value: 1000
