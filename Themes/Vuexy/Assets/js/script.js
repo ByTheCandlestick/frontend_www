@@ -213,6 +213,7 @@
 			imageEditor: null,
 			openModal(slug) {
 				infoDiv = $('div.imageContainer[data-slug=' + slug + ']');
+				
 				images.modify.imageEditor.loadImageFromURL(infoDiv.attr('data-location'), infoDiv.attr('data-alt'));
 				
 				$('#imageEditorModal').modal('show');	
