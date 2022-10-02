@@ -119,7 +119,7 @@
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
 					<div id="image-editor">
-						<canvas>
+						<canvas></canvas>
 					</div>
 				</div>
 				<div class="col-12 col-md-4 bg-secondary">
@@ -127,7 +127,10 @@
 				</div>
 				<script>
 					$( document ).ready(function() {
-						images.modify.imageEditor = new tui.ImageEditor('#image-editor canvas');
+						images.modify.imageEditor = new tui.ImageEditor('#image-editor canvas', {
+							cssMaxWidth: 1000, // Component default value: 1000
+							cssMaxHeight: 800, // Component default value: 800
+						});
 					})
 				</script>
 			</div>
