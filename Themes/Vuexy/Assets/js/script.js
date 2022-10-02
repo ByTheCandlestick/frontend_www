@@ -1,6 +1,4 @@
-
-$(document).ready(function() {
-	// -----========== CONSTANTS ==========----- //
+// -----========== CONSTANTS ==========----- //
 	const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(6) + '/v1';
 	const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 // -----========== Nestled functions ==========----- //
@@ -212,7 +210,7 @@ $(document).ready(function() {
 		/** @wip */
 		modify: {
 			/** @wip */
-			imageEditor: new tui.component.ImageEditor('#image-editor canvas'),
+			imageEditor: ,
 			openModal(slug) {
 				infoDiv = $('div.imageContainer[data-slug=' + slug + ']');
 				images.modify.imageEditor.loadImageFromURL(infoDiv.attr('data-location'), infoDiv.attr('data-alt'));
@@ -1818,6 +1816,7 @@ $(document).ready(function() {
 			}
 		},
 	};
+$(document).ready(function() {
 	// -----========== Dark mode toggle ==========----- // @final //
 		mode.initialize();
 		mode.switch.click(() => { mode.toggle(); });
