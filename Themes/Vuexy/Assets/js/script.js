@@ -210,9 +210,10 @@
 		/** @wip */
 		modify: {
 			/** @wip */
+			imageEditor = null,
 			openModal(slug) {
 				infoDiv = $('div.imageContainer[data-slug=' + slug + ']');
-				$('img#cropperImage').attr('src', infoDiv.attr('data-location'))
+				images.modify.imageEditor.loadImageFromURL(infoDiv.attr('data-location'), infoDiv.attr('data-alt'));
 				
 				$('#imageEditorModal').modal('show');	
 			},

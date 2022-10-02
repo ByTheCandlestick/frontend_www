@@ -126,13 +126,7 @@
 
 				</div>
 				<script>
-					var imageEditor = new tui.component.ImageEditor('#image-editor canvas', {
-						cssMaxWidth: 1000,
-						cssMaxHeight: 1000,
-					});
-					function loadImage() {
-						imageEditor.loadImageFromURL('img/sampleImage.jpg', 'My sample image');
-					}
+					images.modify.imageEditor = new tui.component.ImageEditor('#image-editor canvas');
 				</script>
 			</div>
 			<div class="modal-footer">
