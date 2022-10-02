@@ -131,6 +131,17 @@
 						images.modify.imageEditor = new tui.ImageEditor('#image-editor canvas', {
 							cssMaxWidth: 1000, // Component default value: 1000
 							cssMaxHeight: 800, // Component default value: 800
+							includeUI: {
+						         theme: {
+									'menu.normalIcon.color': '#8a8a8a',
+									'menu.activeIcon.color': '#555555',
+									'menu.disabledIcon.color': '#434343',
+									'menu.hoverIcon.color': '#e9e9e9',
+									'submenu.normalIcon.color': '#8a8a8a',
+									'submenu.activeIcon.color': '#e9e9e9',
+								},
+							},
+
 						});
 					})
 				</script>
