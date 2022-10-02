@@ -119,7 +119,7 @@
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
 					<div id="image-editor">
-						<canvas></canvas>
+						<canvas>
 					</div>
 				</div>
 				<div class="col-12 col-md-4 bg-secondary">
