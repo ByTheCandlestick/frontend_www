@@ -125,9 +125,6 @@
 				<div class="col-12 col-md-4 bg-secondary">
 
 				</div>
-				<script>
-					images.modify.imageEditor = new tui.component.ImageEditor('#image-editor canvas');
-				</script>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" onClick="images.modify.save();">Save</button>
