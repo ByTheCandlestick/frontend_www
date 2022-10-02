@@ -210,7 +210,7 @@
 		/** @wip */
 		modify: {
 			/** @wip */
-			imageEditor: "",
+			imageEditor: new tui.component.ImageEditor('#image-editor canvas'),
 			openModal(slug) {
 				infoDiv = $('div.imageContainer[data-slug=' + slug + ']');
 				images.modify.imageEditor.loadImageFromURL(infoDiv.attr('data-location'), infoDiv.attr('data-alt'));
