@@ -54,7 +54,7 @@
 			}
 		/* --=== Contents ===-- */
 			.order-progress-stepper .step.confirmed::before { content: "\f00c"; }
-			.order-progress-stepper .step.picked::before { content: "\f007"; }
+			.order-progress-stepper .step.awaDelivery::before { content: "\f007"; }
 			.order-progress-stepper .step.dispatched::before { content: "\f0d1"; }
 			.order-progress-stepper .step.delivered::before { content: "\f466"; }
 			.order-progress-stepper .step.completed::before { content: "\f00c"; }
@@ -126,7 +126,7 @@
 				endif;
 				print("
 					<div class=\"step $s1 confirmed\">Order Confirmed</div>
-					<div class=\"step $s2 picked\">Picked by courier</div>
+					<div class=\"step $s2 awaDelivery\">Awaiting delivery</div>
 					<div class=\"step $s3 dispatched\">On the way</div>
 					<div class=\"step $s4 delivered\">Delivered</div>
 				");
