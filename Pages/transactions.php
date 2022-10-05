@@ -94,7 +94,7 @@
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Transactions/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
 			(($offset + $transactions_per_page) < $total_transactions)? $next_status = '': $next_status = ' disabled';
-			($next_status == '')? $next_page = "/Transactions/".((intval(QS_SUBPAGE)>0)?intval(QS_SUBPAGE)+1:intval(QS_SUBPAGE)+2;).'/' : $next_page = "";
+			($next_status == '')? $next_page = "/Transactions/".((intval(QS_SUBPAGE)>0)?intval(QS_SUBPAGE)+1:intval(QS_SUBPAGE)+2).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
 				<div class=\"row\">
