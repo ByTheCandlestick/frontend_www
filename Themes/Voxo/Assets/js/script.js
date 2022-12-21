@@ -235,6 +235,14 @@ $(document).ready(function() {
 			cookie.accept();
 			$('#gdpr-cookie-message').hide();
 		})
+	/**
+	* Form Enter key
+	*/
+		$(".main-form__body--input").keypress(function(event) {
+			if (event.which == 13) {
+				account.login();
+			}
+		});
 	// Modals
 		modal = {
 			create: function(type, open) {
