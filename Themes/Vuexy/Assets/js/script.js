@@ -246,7 +246,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					alert.simple("Email sent successfully", "success")
+					$(location).attr('href', '/Products/?al_ty=success&al_tx=Email%20sent%20successfully');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
