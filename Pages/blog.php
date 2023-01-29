@@ -46,7 +46,6 @@
                                                 <td>'.$row['ID'].'</td>
                                                 <td>'.$row['Title'].'</td>
                                                 <td>'.$users[$row['UID']]['Username'].'</td>
-                                                <td>'.$row['Title'].'</td>
                                                 <td>
                                         ');
                                         if($userperm['api_access-hosts-edit']==1) {
