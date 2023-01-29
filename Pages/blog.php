@@ -38,7 +38,7 @@
                         </thead>
                         <tbody>
                             <?
-                                PRINT_R($users[1]);
+                                print_r($users);
                                 $query = DB_Query("SELECT * FROM `Blog posts` WHERE `Active?`=1 LIMIT 4");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
