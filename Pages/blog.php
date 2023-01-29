@@ -81,7 +81,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="/API/Hosts/">
+                    <a href="/Blog/Posts/">
                         See more
                     </a>
                 </div>
