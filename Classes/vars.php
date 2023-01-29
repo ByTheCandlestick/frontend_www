@@ -72,6 +72,8 @@
 			$users = [];
 			$query = DB_Query("SELECT * FROM `User accounts` WHERE `Active`='1'");
 			while($u = mysqli_fetch_assoc($query)) { $users[$u['ID']] = $u; }
+
+			print_r($users);
 		//
 			
 			unset($query, $u, $numrows);
