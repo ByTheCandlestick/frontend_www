@@ -68,4 +68,6 @@
 					$notifications['count'] = mysqli_fetch_array(DB_Query("SELECT count(*) FROM `User notifications` WHERE `UID`='$log_id' LIMIT 1"))[0];
 				//
 			}
+		// GET ALL USERS
+			while($key = mysqli_fetch_array(DB_Query("SELECT * FROM `Users` WHERE `Active`='1'"))) { $users[$u['ID']] = $u; }
 ?>

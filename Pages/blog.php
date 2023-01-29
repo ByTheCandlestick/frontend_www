@@ -16,11 +16,11 @@
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>Allowed Hosts</h4>
+                        <h4>All Posts</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <?  if($userperm['api_access-hosts-edit']==1) {?>
-                            <a href="/API/host/New/" class="btn btn-outline-primary">
+                        <?  if($userperm['adm_access-blog-posts-edit']==1) {?>
+                            <a href="/Blog/Post/New/" class="btn btn-outline-primary">
                                 <i class="fa fa-plus"></i>
                             </a>
                         <?}?>
@@ -37,18 +37,20 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `API Allowed hosts` WHERE `Active?`=1 LIMIT 4");
+                                $query = DB_Query("SELECT * FROM `Blog posts` WHERE `Active?`=1 LIMIT 4");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <td>'.$row['Name'].'</td>
-                                                <td>'.$row['Hostname'].'</td>
+                                                <td>'.$row['ID'].'</td>
+                                                <td>'.$row['Title'].'</td>
+                                                <td>'.$users[$row['UID']].'</td>
+                                                <td>'.$row['Title'].'</td>
                                                 <td>
                                         ');
                                         if($userperm['api_access-hosts-edit']==1) {
                                             print('
-                                                    <a href="/API/host/'.$row['ID'].'">
+                                                    <a href="/Blog/Post/'.$row['ID'].'">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                             ');
