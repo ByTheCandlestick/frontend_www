@@ -44,7 +44,7 @@
                                             <tr>
                                                 <td>'.$row['ID'].'</td>
                                                 <td>'.$row['Title'].'</td>
-                                                <td>'.$users[$row['UID']].'</td>
+                                                <td>'.$users[$row['UID']]['Username'].'</td>
                                                 <td>'.$row['Title'].'</td>
                                                 <td>
                                         ');
