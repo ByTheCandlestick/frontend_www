@@ -38,7 +38,6 @@
                         </thead>
                         <tbody>
                             <?
-                                print_r($users);
                                 $query = DB_Query("SELECT * FROM `Blog posts` WHERE `Active?`=1 LIMIT 4");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
@@ -48,7 +47,7 @@
                                                 <td>'.$row['Title'].'</td>
                                                 <td>
                                                     <a href="">
-                                                        '.'
+                                                        '.$users[$row['ID']]['Username'].'
                                                     </a>
                                                 </td>
                                                 <td>
