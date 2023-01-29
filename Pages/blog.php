@@ -30,9 +30,9 @@
                     <table class="containersTable table table-striped table-hover m-0">
                         <thead class="sticky-top">
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">User</th>
+                                <th scope="col">Timestamp</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -43,13 +43,13 @@
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
                                             <tr>
-                                                <td>'.$row['ID'].'</td>
                                                 <td>'.$row['Title'].'</td>
                                                 <td>
                                                     <a href="/Users/View/'.$row['UID'].'/">
                                                         '.$users[$row['UID']]['Username'].'
                                                     </a>
                                                 </td>
+                                                <td>'.$row['Tmestamp'].'</td>
                                                 <td>
                                         ');
                                         if($userperm['api_access-hosts-edit']==1) {
