@@ -69,7 +69,7 @@
 				//
 			}
 		// GET ALL USERS
-			GLOBAL $users = [];
+			$users = [];
 			$query = DB_Query("SELECT * FROM `User accounts` WHERE `Active`='1'");
 			while($u = mysqli_fetch_assoc($query)) { $users[$u['ID']] = $u; }
 		//
