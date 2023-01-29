@@ -46,7 +46,7 @@
                                                 <td>'.$row['ID'].'</td>
                                                 <td>'.$row['Title'].'</td>
                                                 <td>
-                                                    <a href="/Users/Edit/'.$row['UID'].'/">
+                                                    <a href="/Users/View/'.$row['UID'].'/">
                                                         '.$users[$row['UID']]['Username'].'
                                                     </a>
                                                 </td>
