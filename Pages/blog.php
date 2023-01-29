@@ -46,7 +46,7 @@
                                                 <td>'.$row['ID'].'</td>
                                                 <td>'.$row['Title'].'</td>
                                                 <td>
-                                                    <a href="">
+                                                    <a href="/User/'.$row['ID'].'/">
                                                         '.$users[$row['ID']]['Username'].'
                                                     </a>
                                                 </td>
