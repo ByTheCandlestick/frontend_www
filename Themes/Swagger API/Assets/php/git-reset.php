@@ -24,7 +24,7 @@
 				die("Cloned. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			} else {
 				shell_exec("cd ".REPOSITORY." && git rese origin/".BRANCH);
-				die("Updated. ".date(DateTime::ISO8601, strtotime('-2 hour')));
+				die("Reset. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			}
 		}
 	}
