@@ -70,6 +70,9 @@
 			}
 		// GET ALL USERS
 			$users = [];
-			$tmp = DB_Query("SELECT * FROM `User accounts` WHERE `Active`='1'");
-			while($u = mysqli_fetch_assoc($tmp)) { $users[$u['ID']] = $u; }
+			$query = DB_Query("SELECT * FROM `User accounts` WHERE `Active`='1'");
+			while($u = mysqli_fetch_assoc($query)) { $users[$u['ID']] = $u; }
+		//
+			
+			empty($query, $u, $numrows);
 ?>
