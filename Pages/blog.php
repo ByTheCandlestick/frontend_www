@@ -87,6 +87,7 @@
                 </div>
             </div>
         </div>
+        <!--
 		<?}if($userperm['adm_access-blog-interactions']==1) {?>
         <div class="col-12 col-md-6 col-lg-4 p-2">
             <div class="card h-auto h-md-100">
@@ -286,6 +287,7 @@
                 </div>
             </div>
         </div>
+        -->
 		<?}?>
     </div>
 </section>
