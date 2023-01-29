@@ -52,7 +52,7 @@
                                                     </a>
                                                 </td>
                                                 <td>'.$row['Timestamp'].'</td>
-                                                <td><input type="checkbox"'.$scheduled.'></td>
+                                                <td><input type="checkbox" disabled '.$scheduled.'></td>
                                                 <td>
                                         ');
                                         if($userperm['adm_access-blog-posts-edit']==1) {
