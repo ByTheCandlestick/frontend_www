@@ -23,7 +23,7 @@
 				shell_exec("cd ".REPOSITORY." && git checkout ".BRANCH);
 				die("Cloned. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			} else {
-				shell_exec("cd ".REPOSITORY." && git rese origin/".BRANCH);
+				shell_exec("cd ".REPOSITORY." && git reset origin/".BRANCH);
 				die("Reset. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			}
 		}
