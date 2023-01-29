@@ -33,6 +33,7 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">User</th>
                                 <th scope="col">Timestamp</th>
+                                <th scope="col">Scheduled</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
