@@ -42,7 +42,7 @@
                                 $query = DB_Query("SELECT * FROM `Blog posts` WHERE `Active?`=1 LIMIT 4");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
-                                        ($row['Timestamp'] == $row['Scheduled_for'])? $scheduled='checked' : $scheduled='' ;
+                                        ($row['Timestamp'] != $row['Scheduled_for'])? $scheduled='checked' : $scheduled='' ;
                                         print('
                                             <tr>
                                                 <td>'.$row['Title'].'</td>
