@@ -14,20 +14,23 @@
 			define("REPOSITORY",	ROOT."/".BRANCH."/".REPO);
 			define("BRANCH_DIR",	ROOT."/".BRANCH);
 
+            echo "1";
 			if(!file_exists(ROOT)) die("ERROR: ROOT does not exist.");
 
-            
 			if(!file_exists(BRANCH_DIR)) shell_exec("cd ".ROOT." && mkdir ".BRANCH);
 			if(!file_exists(REPOSITORY)) {
 				shell_exec("cd ".BRANCH_DIR." && git clone ".REMOTE_LINK);
 				shell_exec("cd ".REPOSITORY." && git checkout ".BRANCH);
 				die("Cloned. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			} else {
-				shell_exec("cd ".REPOSITORY." && git reset origin/".BRANCH);
+				shell_exec("cd ".REPOSITORY." && git reset origin ".BRANCH);
 				die("Reset. ".date(DateTime::ISO8601, strtotime('-2 hour')));
 			}
+            echo "2";
 		}
+        echo "3";
 	}
+    echo "4";
 	header("HTTP/1.0 404 Not Found");
 	die();
 ?>
