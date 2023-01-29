@@ -74,5 +74,5 @@
 			while($u = mysqli_fetch_assoc($query)) { $users[$u['ID']] = $u; }
 		//
 			
-			empty($query, $u, $numrows);
+			empty($query $u $numrows);
 ?>
