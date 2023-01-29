@@ -30,8 +30,9 @@
                     <table class="containersTable table table-striped table-hover m-0">
                         <thead class="sticky-top">
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Hostname</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">User</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
