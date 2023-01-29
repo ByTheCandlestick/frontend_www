@@ -89,7 +89,7 @@
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>Private Keys</h4>
+                        <h4>Recent Comments</h4>
                     </div>
                     <div class="col-4 text-end">
                         <?  if($userperm['api_access-Keys-edit']==1) {?>
@@ -156,7 +156,7 @@
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>Versions</h4>
+                        <h4>Recent reactions</h4>
                     </div>
                     <div class="col-4 text-end">
                         <?  if($userperm['api_access-versions-edit']==1) {?>
@@ -223,7 +223,7 @@
             <div class="card h-auto h-md-100">
                 <div class="card-header row m-0">
                     <div class="col-8">
-                        <h4>Controllers</h4>
+                        <h4>Recent Flags</h4>
                     </div>
                     <div class="col-4 text-end">
                         <?  if($userperm['api_access-controllers-edit']==1) {?>
