@@ -38,6 +38,7 @@
                         </thead>
                         <tbody>
                             <?
+                            PRINT_R($users[1]);
                                 $query = DB_Query("SELECT * FROM `Blog posts` WHERE `Active?`=1 LIMIT 4");
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
@@ -45,7 +46,11 @@
                                             <tr>
                                                 <td>'.$row['ID'].'</td>
                                                 <td>'.$row['Title'].'</td>
-                                                <td>'.$users[1]['Username'].'</td>
+                                                <td>
+                                                    <a href="">
+                                                        '.'
+                                                    </a>
+                                                </td>
                                                 <td>
                                         ');
                                         if($userperm['api_access-hosts-edit']==1) {
