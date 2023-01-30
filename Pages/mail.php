@@ -3,11 +3,10 @@
 	if(strtolower(QS_SUBPAGE) == "inbox") {
 	?>
 		<script>
-			
+			window.open('https://accounts.zoho.eu/oauth/v2/token?code=<?print($userdata['Zoho Mail Auth Code'])?>&grant_type=authorization_code&client_id=<?print($config['Zoho Client ID'])?>&client_secret=<?print($config['Zoho Client Secret'])?>&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php&scope=ZohoMail.messages.READ', 'Zoho OAuth', 'scrollbars=no,resizable=yes,status=no,location=no,toolbar=no,menubar=no,width=0,height=0,left=0,top=0');
 			var OAuth_Access;
             $.ajax({
-                url: 'https://accounts.zoho.eu/oauth/v2/token',
-                data: 'code=<?print($userdata['Zoho Mail Auth Code'])?>&grant_type=authorization_code&client_id=<?print($config['Zoho Client ID'])?>&client_secret=<?print($config['Zoho Client Secret'])?>&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php&scope=ZohoMail.messages.READ',
+                url: 'https://accounts.zoho.eu/oauth/v2/token?code=<?print($userdata['Zoho Mail Auth Code'])?>&grant_type=authorization_code&client_id=<?print($config['Zoho Client ID'])?>&client_secret=<?print($config['Zoho Client Secret'])?>&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php&scope=ZohoMail.messages.READ',
                 type: 'POST',
                 xhrFields: {
                     withCredentials: true
