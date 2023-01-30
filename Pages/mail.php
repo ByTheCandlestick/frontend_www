@@ -14,9 +14,6 @@
 						&client_secret=<?print($config['Zoho Client Secret'])?>\
 						&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php',
                 type: 'POST',
-                xhrFields: {
-                    withCredentials: true
-                },
                 success: function(body) {
 					console.log(body);
                 },
