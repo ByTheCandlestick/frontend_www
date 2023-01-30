@@ -9,7 +9,7 @@
     <body>
         <script>
 		const api_url = window.location.protocol+'//api.'+window.location.hostname.slice(4) + '/v1';
-		const api_key = 's999MUtbgk44pSsXClHLmlT7M0MV6zXZr8CXRJzRP1uU75CnyKUJwiAdK3vwcCDsOIfTEMGuDFqCegQd8ySZ7qIuZyOhEEsbqvo1lejs2qOU8J3bleZV9PG6GQoJsp6nv45c4CQINEswrkLvLUjafTBCkti8migCD94azeA9uWkH7PwlVjLjXprYQ1AbGbQwX54PLezf3XsqwVQVZccZUUeasavhlwK8nwCDuSjLUrdMefTjS0ZH09SO5qeKBn3s';
+		const api_key = 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
 		const api_key_data = 'api_key=' + api_key;
             const xhr = new XMLHttpRequest()
             // configure a `POST` request
