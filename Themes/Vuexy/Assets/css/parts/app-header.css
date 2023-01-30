@@ -47,7 +47,7 @@
   background: red;
   width: 1em;
   height: 1em;
-  top: 70%;
+  top: 75%;
   transform: rotate(45deg);
 }
 .zoho-status.error::before {
@@ -55,7 +55,7 @@
   position: absolute;
   background: red;
   width: 10vw;
-  top: 80%;
+  top: 85%;
   border-radius: 5px;
   z-index: 1;
 }
