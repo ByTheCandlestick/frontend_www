@@ -3,7 +3,8 @@
     </head>
     <body>
         <script>
-            <?print_r($userdata)
+            <?
+                print_r($userdata);
                 if($userdata['Zoho Mail Access Code'] == null) {
             ?>
 
