@@ -11,7 +11,7 @@
 						&grant_type=authorization_code\
 						&client_id=<?print($config['Zoho Client ID'])?>\
 						&client_secret=<?print($config['Zoho Client Secret'])?>\
-						&scope=ZohoMail.messages.CREATE,ZohoMail.messages.READ,ZohoMail.messages.UPDATE,ZohoMail.messages.DELETE',
+						&scope=ZohoMail.messages.READ',
                 type: 'POST',
                 xhrFields: {
                     withCredentials: true
