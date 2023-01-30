@@ -50,6 +50,7 @@
   top: 80%;
   border-radius: 3px;
   z-index: 0;
+  opacity: 70%;
   transform: rotate(45deg);
 }
 .zoho-status.error::before {
@@ -60,6 +61,12 @@
   top: 90%;
   border-radius: 5px;
   z-index: 1;
+  opacity: 70%;
+}
+
+.zoho-status:hover.error::before,
+.zoho-status:hover.error::after {
+opacity: 100%;
 }
 
 .mode-switch {
