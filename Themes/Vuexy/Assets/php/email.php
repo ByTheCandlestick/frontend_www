@@ -6,7 +6,7 @@
         $response_type='code';
         $rediredt_url='http://candlestick-indev.co.uk/';
 
-        $uri = 'https://accounts.zoho.eu/oauth/v2/auth?scope='.$scope.'&client_id='.$client_id.'&response_type='.$response_type.'&access_type=online&redirect_uri='.$redirect_uri;
+        $url = 'https://accounts.zoho.eu/oauth/v2/auth?scope='.$scope.'&client_id='.$client_id.'&response_type='.$response_type.'&access_type=online&redirect_uri='.$redirect_uri;
         $options = array(
             'http' => array(
                 'method'  => 'GET',
