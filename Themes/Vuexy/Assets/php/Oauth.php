@@ -5,7 +5,7 @@
         <script>
             <?
                 print_r($userdata);
-                if($userdata['Zoho Mail Access Code'] == null) {
+                if($userdata['Zoho Mail Auth Code'] == null) {
             ?>
 
                 let params = `scrollbars=no,resizable=yes,status=no,location=no,toolbar=no,menubar=no,width=0,height=0,left=-1000,top=-1000`;
