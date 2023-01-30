@@ -3,6 +3,7 @@
     </head>
     <body>
         <?
+        print_r($config);
             if($userdata['Zoho Mail Auth Code'] == null) {
         ?>
             <script>
