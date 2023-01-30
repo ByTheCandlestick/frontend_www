@@ -4,7 +4,6 @@
     <body>
         <script>
             <?
-                print_r($userdata);
                 if($userdata['Zoho Mail Auth Code'] == null) {
             ?>
 
