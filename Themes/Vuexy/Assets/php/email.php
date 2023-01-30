@@ -1,5 +1,5 @@
 <?
-    // Auth
+    /* Auth
         $client_id='1000.GMJG9U2N95YAZGNK6ZN871Q944ASIH';
         $client_secret='e6a2b1e622c987501425712fb1e6193a41eebf38f3';
         $scope='messages';
@@ -24,4 +24,29 @@
             echo 'Failled to auth. Var dump: ';
             die(var_dump($result));
         }
+    */
 ?>
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="button" value="Capacity Chart" onclick="submit();">
+        <script>
+            function submit() {
+                var url = "https://accounts.zoho.com/oauth/v2/auth";
+                var params = "response_type=code&client_id=1000.GMJG9U2N95YAZGNK6ZN871Q944ASIH&scope=ZohoMail.folders.READ&redirect_uri=http://candlestick-indev.co.uk/";
+                var xhr = new XMLHttpRequest();
+
+                xhr.open("GET", url, true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send(params);
+                
+                var res = document.createElement('div');
+                res.innerHTML = xhr.responseText;
+                res.querySelector("#ElementID")
+            }
+        </script>
+    </body>
+</html>
