@@ -7,6 +7,7 @@
 			var OAuth_Access;
             $.ajax({
                 url: 'https://accounts.zoho.eu/oauth/v2/token',
+				dataType:'json',
                 data: 'code=<?print($userdata['Zoho Mail Auth Code'])?>\
 						&grant_type=authorization_code\
 						&client_id=<?print($config['Zoho Client ID'])?>\
