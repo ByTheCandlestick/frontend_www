@@ -26,7 +26,7 @@
                     withCredentials: true
                 },
                 success: function(body) {
-                   OAuth_Access = 
+					console.log(body);
                 },
                 error: function(body) {
                     alert('Error authorizing.')
