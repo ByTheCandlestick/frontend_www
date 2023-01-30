@@ -1,7 +1,39 @@
 <?
 	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		$query = DB_Query("SELECT * FROM `Mail` WHERE `Direction`='Inbound' AND `Status`='Inbox'");
+		/**
+		 * https://accounts.zoho.eu/oauth/v2/token
+		 * ?code=1000.****************************f160
+		 * &grant_type=authorization_code
+		 * &client_id=1000.R2Z0W*********************Q5EN
+		 * &client_secret=39c**********************************921b
+		 * &redirect_uri=https://zylkerapps.com/oauth2callback
+		 * &scope=ZohoMail.folders.READ
+		 */
+	?>
+		<script>
+            data  = 'code=<?print($userdata['Zoho Mail Access Code'])?>';
+            data += '&grant_type=authorization_code';
+            data += '&client_id=<?print($config['Zoho Client ID'])?>';
+            data += '&client_secret=<?print($config['Zoho Client Secret'])?>';
+            data += '&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php';
+            data += '&scope=ZohoMail.messages.CREATE,ZohoMail.messages.READ,ZohoMail.messages.UPDATE,ZohoMail.messages.DELETE';
+            $.ajax({
+                url: '<?print(__API__)?>/Users/OAccess/',
+                data: data,
+                type: 'POST',
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(body) {
+                    close();
+                },
+                error: function(body) {
+                    alert('Error authorizing.')
+                }
+            });
+		</script>
+	<?
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
 		$query = DB_Query("SELECT * FROM `Mail` WHERE `Direction`='Outbound' AND `Status`='Sent'");
 	} elseif(strtolower(QS_SUBPAGE) == "junk") {
