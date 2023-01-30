@@ -51,13 +51,13 @@
   transform: rotate(45deg);
 }
 .zoho-status.error::before {
-  content: "Reconnect OAuth";
+  content: "Click to reconnect OAuth";
   position: absolute;
   background: red;
-  width: 10em;
-  height: 1.5em;
+  width: 10vw;
   top: 80%;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .mode-switch {
