@@ -10,7 +10,8 @@
         <script>
             let xhr = new XMLHttpRequest();
             xhr.open("POST", '<?print(__API__)?>/Users/OAuth/');
-
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 console.log(xhr.status);
