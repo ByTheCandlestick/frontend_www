@@ -8,7 +8,7 @@
 		$str_MethodName		= "List";
 		$str_MethodOptions	= array_splice($uri, 3);
 	else:
-		exit(invalid_request(3));
+		exit(invalid_request(4));
 	endif;
 	$obj_CartController		-> {$str_MethodName}($str_MethodOptions);
 ?>

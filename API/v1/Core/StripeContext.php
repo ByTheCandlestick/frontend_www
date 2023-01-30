@@ -8,7 +8,7 @@
 		$str_MethodName		= "SecureRefund";
 		$str_MethodOptions	= array_splice($uri, 3);
 	else:
-		exit(invalid_request(3));
+		exit(invalid_request(4));
 	endif;
 	$obj_StripeController		-> {$str_MethodName}($str_MethodOptions);
 ?>

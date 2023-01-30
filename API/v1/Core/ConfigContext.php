@@ -5,7 +5,7 @@
 		$str_MethodName		= "Permission";
 		$str_MethodOptions	= array_splice($uri, 3);
 	else:
-		exit(invalid_request(3));
+		exit(invalid_request(4));
 	endif;
 	$obj_ConfigController		-> {$str_MethodName}($str_MethodOptions);
 ?>
