@@ -12,7 +12,7 @@
 						&client_id=<?print($config['Zoho Client ID'])?>\
 						&client_secret=<?print($config['Zoho Client Secret'])?>\
 						&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php\
-						state=5001\
+						&state=5001\
 						&scope=ZohoMail.messages.READ',
                 type: 'POST',
                 xhrFields: {
