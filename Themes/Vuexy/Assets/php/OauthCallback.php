@@ -10,7 +10,7 @@
         <script>
             const xhr = new XMLHttpRequest()
             // configure a `POST` request
-            xhr.open('POST', <?print(__API__)?>'/Users/Oauth/')
+            xhr.open('POST', '<?print(__API__)?>/Users/Oauth/')
             // create a JSON object
             const params = {
                 oauth: $userdata['Zoho Mail Access Code'],
