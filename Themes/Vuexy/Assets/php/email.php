@@ -32,7 +32,7 @@
 
     </head>
     <body>
-        <input type="button" value="Capacity Chart" onclick="submit();">
+        <input type="button" value="Send Email" onclick="submit();">
         <script>
             function submit() {
                 var url = "https://accounts.zoho.com/oauth/v2/auth";
