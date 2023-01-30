@@ -17,11 +17,6 @@
 		);
 		$context  = stream_context_create($options);
 		$result = file_get_contents($url, false, $context);
-
-		$fp = fopen($url, false, $context);
-		fpassthru($fp);
-		fclose($fp);
-		
 		if ($result === FALSE) { /* Handle error */ }
 
 		var_dump($result);
