@@ -133,58 +133,6 @@
 		</div>
 		<div class="" style="width: calc(100% - 4rem);">
 			<table class="categoriesTable table table-striped table-hover">
-					<?
-						if(mysqli_num_rows($query) > 0) {
-							print('
-								<thead class="sticky-top">
-									<tr>
-										<th scope="col">'.((strtolower(QS_SUBPAGE) == "sent")?'To':'From').'</th>
-										<th scope="col">Subject</th>
-										<th scope="col">Time</th>
-										<th scope="col"></th>
-									</tr>
-								</thead>
-								<tbody>
-							');
-							while ($row = mysqli_fetch_array($query)) {
-								print('
-									<tr class="'.(($row['Read?'] && strtolower(QS_SUBPAGE)!="sent")?'':'unread').'">
-										<td>'.(($row['Direction']=='Inbound')?$row['From']:$row['To']).'</td>
-										<td><a href="/Mail/Read/'.$row['ID'].'">'.$row['Subject'].'</a></td>
-										<td>'.$row['Timestamp'].'</td>
-										<td>
-											<a onclick="mail.archive('.$row['ID'].')">
-												<i class="fa fa-archive"></i>
-											</a>
-										</td>
-									</tr>
-								');
-							}
-							print('
-								</tbody>
-							');
-						} else {
-							print('
-								<thead class="sticky-top">
-									<tr>
-										<th scope="col"></th>
-										<th scope="col">'.((strtolower(QS_SUBPAGE) == "sent")?'To':'From').'</th>
-										<th scope="col">Subject</th>
-										<th scope="col">Timestamp</th>
-										<th scope="col"></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<th scope="row"></th>
-										<td>Your mailbox is empty!</td>
-										<td></td>
-										<td></td>
-									</tr>
-								</tbody>
-							');
-						}
-					?>
 			</table>
 		</div>
 	</div>
