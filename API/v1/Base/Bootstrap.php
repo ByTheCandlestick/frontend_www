@@ -36,7 +36,6 @@
 			function invalid_request(int $loc) {
 				parse_str(QUERY_STRING, $query);
 				$api_key = $query['api_key'];
-				unset($query['api_key']);
 				exit(json_encode(array(
 					'error' => 'No valid host, request method, key or parameters.',
 					'location' => $loc,
@@ -44,7 +43,7 @@
 						'host' => $_SERVER['HTTP_REFERER'],
 						'remote' => $_SERVER['REMOTE_ADDR'],
 						'request' => $_SERVER['REQUEST_METHOD'],
-						'key' => $api_key,
+						'key' => $query['api_key'],
 						'parameters' => $query,
 					),
 				)));
