@@ -13,8 +13,8 @@
             xhr.open('POST', '<?print(__API__)?>/Users/Oauth/')
             // create a JSON object
             const params = {
-                oauth: <?print($userdata['Zoho Mail Access Code'])?>,
-                uid: <?print($userdata['UID'])?>
+                oauth: '<?print($userdata['Zoho Mail Access Code'])?>',
+                uid: '<?print($userdata['UID'])?>'
             }
             // set `Content-Type` header
             xhr.setRequestHeader('Content-Type', 'application/json')
