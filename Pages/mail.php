@@ -1,15 +1,6 @@
 <?
 	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		/**
-		 * https://accounts.zoho.eu/oauth/v2/token
-		 * ?code=1000.****************************f160
-		 * &grant_type=authorization_code
-		 * &client_id=1000.R2Z0W*********************Q5EN
-		 * &client_secret=39c**********************************921b
-		 * &redirect_uri=https://zylkerapps.com/oauth2callback
-		 * &scope=ZohoMail.folders.READ
-		 */
 	?>
 		<script>
 			var OAuth_Access;
@@ -19,7 +10,7 @@
             data += '&client_secret=<?print($config['Zoho Client Secret'])?>';
             data += '&scope=ZohoMail.messages.CREATE,ZohoMail.messages.READ,ZohoMail.messages.UPDATE,ZohoMail.messages.DELETE';
             $.ajax({
-                url: '<?print(__API__)?>/Users/OAccess/',
+                url: 'https://accounts.zoho.eu/oauth/v2/token',
                 data: data,
                 type: 'POST',
                 xhrFields: {
