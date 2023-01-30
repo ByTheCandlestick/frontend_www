@@ -3,9 +3,17 @@
 	if(strtolower(QS_SUBPAGE) == "inbox") {
 	?>
 		<script>
+			
 			var OAuth_Access;
             $.ajax({
-                url: 'https://accounts.zoho.eu/oauth/v2/token?code=<?print($userdata['Zoho Mail Auth Code'])?>&grant_type=authorization_code&client_id=<?print($config['Zoho Client ID'])?>&client_secret=<?print($config['Zoho Client Secret'])?>&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php&scope=ZohoMail.messages.READ',
+                url: 'https://accounts.zoho.eu/oauth/v2/token',
+                data: 'code=<?print($userdata['Zoho Mail Auth Code'])?>\
+						&grant_type=authorization_code\
+						&client_id=<?print($config['Zoho Client ID'])?>\
+						&client_secret=<?print($config['Zoho Client Secret'])?>\
+						&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php\
+						state=5001\
+						&scope=ZohoMail.messages.READ',
                 type: 'POST',
                 xhrFields: {
                     withCredentials: true
