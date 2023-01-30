@@ -4,14 +4,14 @@
 	?>
 		<script>
 			var OAuth_Access;
-            data  = 'code=<?print($userdata['Zoho Mail Access Code'])?>';
-            data += '&grant_type=authorization_code';
-            data += '&client_id=<?print($config['Zoho Client ID'])?>';
-            data += '&client_secret=<?print($config['Zoho Client Secret'])?>';
-            data += '&scope=ZohoMail.messages.CREATE,ZohoMail.messages.READ,ZohoMail.messages.UPDATE,ZohoMail.messages.DELETE';
             $.ajax({
                 url: 'https://accounts.zoho.eu/oauth/v2/token',
-                data: data,
+                data: 'code=<?print($userdata['Zoho Mail Access Code'])?>\
+						&grant_type=authorization_code\
+						&client_id=<?print($config['Zoho Client ID'])?>\
+						&client_secret=<?print($config['Zoho Client Secret'])?>\
+						&redirect_uri=http://admin.candlestick-indev.co.uk/\
+						&scope=ZohoMail.messages.CREATE,ZohoMail.messages.READ,ZohoMail.messages.UPDATE,ZohoMail.messages.DELETE',
                 type: 'POST',
                 xhrFields: {
                     withCredentials: true
