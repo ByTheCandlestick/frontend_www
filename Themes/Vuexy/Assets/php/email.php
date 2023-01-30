@@ -35,12 +35,7 @@
         <input type="button" value="Send Email" onclick="submit();">
         <script>
             function submit() {
-                var url = "https://accounts.zoho.com/oauth/v2/auth?\
-                    scope=ZohoMail.folders.READ&\
-                    client_id=1000.GMJG9U2N95YAZGNK6ZN871Q944ASIH&\
-                    response_type=code&\
-                    access_type=offline&\
-                    redirect_uri=http://candlestick-indev.co.uk/";
+                var url = "https://accounts.zoho.com/oauth/v2/auth?scope=ZohoMail.folders.READ&client_id=1000.GMJG9U2N95YAZGNK6ZN871Q944ASIH&response_type=code&access_type=offline&redirect_uri=http://candlestick-indev.co.uk/";
                 var xhr = new XMLHttpRequest();
 
                 xhr.open("GET", url, true);
