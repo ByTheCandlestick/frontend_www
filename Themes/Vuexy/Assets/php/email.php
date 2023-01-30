@@ -10,13 +10,13 @@
         $options = array(
             'http' => array(
                 'content' => 'application/x-www-form-urlencoded',
-                'method'  => 'POST',
+                'method'  => 'GET',
             )
         );
         $context  = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
         if ($result === FALSE) { 
-            echo 'Email failled to get auth. Var dump: ';
+            echo 'Failled to auth. Var dump: ';
             die(var_dump($result));
         }
     // Get user account
