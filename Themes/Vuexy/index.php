@@ -142,7 +142,7 @@
 							</div>
 							<!-- Zoho Oauth, Profile, Notifications and Dark mode -->
 							<div class="app-header-right">
-								<button class="mode-switch" title="zoho oauth connection status">
+								<button class="" title="zoho oauth connection status">
 									<i class="fad fa-cloud-slash fa-xl"></i>
 									<i class="fad fa-cloud fa-xl"></i>
 								</button>
