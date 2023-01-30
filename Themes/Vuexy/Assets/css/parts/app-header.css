@@ -41,6 +41,23 @@
   justify-content: center;
   align-items: center;
 }
+.zoho-status.error::after {
+  content: "";
+  background: red;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 70%;
+  transform: rotate(45deg);
+}
+.zoho-status.error::before {
+  content: "Reconnect OAuth";
+  background: red;
+  width: 10em;
+  height: 2em;
+  position: absolute;
+  top: 80%;
+}
 
 .mode-switch {
   background-color: transparent;
