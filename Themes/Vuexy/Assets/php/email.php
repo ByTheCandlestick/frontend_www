@@ -10,7 +10,7 @@
         $options = array(
             'http' => array(
                 'content' => 'application/x-www-form-urlencoded',
-                'method'  => 'GET',
+                'method'  => 'POST',
             )
         );
         $context  = stream_context_create($options);
