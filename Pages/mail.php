@@ -11,7 +11,7 @@
 						&grant_type=authorization_code\
 						&client_id=<?print($config['Zoho Client ID'])?>\
 						&client_secret=<?print($config['Zoho Client Secret'])?>\
-						&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php\',
+						&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php',
                 type: 'POST',
                 xhrFields: {
                     withCredentials: true
