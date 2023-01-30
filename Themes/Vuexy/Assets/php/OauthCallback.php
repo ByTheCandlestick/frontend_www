@@ -17,7 +17,7 @@
             // set `Content-Type` header
             xhr.setRequestHeader('Content-Type', 'application/json')
             // pass `params` to `send()` method
-            xhr.send(JSON.stringify(params))
+            xhr.send(params)
             // listen for `load` event
             xhr.onload = () => {
                 console.log(xhr.responseText)
