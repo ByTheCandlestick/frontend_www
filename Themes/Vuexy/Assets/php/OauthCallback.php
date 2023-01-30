@@ -23,7 +23,7 @@
                 "uid": "<?print($userdata['ID'])?>"
             };
 
-            xhr.send(data);
+            xhr.send(JSON.Stringify(data));
         </script>
     </body>
 </html>
