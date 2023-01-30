@@ -13,7 +13,7 @@
             data += '&uid=<?print($userdata['ID'])?>';
             data += '&oauth=<?print($userdata['Zoho Mail Access Code'])?>';
             $.ajax({
-                url: <?print(__API__)?> + '/Users/OAuth/',
+                url: '<?print(__API__)?>/Users/OAuth/',
                 data: data,
                 type: 'POST',
                 xhrFields: {
