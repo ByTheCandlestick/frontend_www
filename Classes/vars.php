@@ -72,7 +72,11 @@
 			$users = [];
 			$query = DB_Query("SELECT * FROM `User accounts` WHERE `Active`='1'");
 			while($u = mysqli_fetch_assoc($query)) { $users[$u['ID']] = $u; }
+		// GET SERVER CONFIGURATION
+			$users = [];
+			$query = DB_Query("SELECT * FROM `Config`");
+			while($c = mysqli_fetch_assoc($query)) { $config[$c['Key']] = $c['Value']; }
 		//
 			
-			unset($query, $u, $numrows);
+			unset($query, $c, $u, $numrows);
 ?>
