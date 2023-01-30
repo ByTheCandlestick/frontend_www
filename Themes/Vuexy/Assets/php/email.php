@@ -36,7 +36,12 @@
         <script>
             function submit() {
                 var url = "https://accounts.zoho.com/oauth/v2/auth";
-                var params = "response_type=code&client_id=1000.GMJG9U2N95YAZGNK6ZN871Q944ASIH&scope=ZohoMail.folders.READ&redirect_uri=http://candlestick-indev.co.uk/";
+                var params = "\
+                    scope=ZohoMail.folders.READ&\
+                    client_id=1000.GMJG9U2N95YAZGNK6ZN871Q944ASIH&\
+                    response_type=code&\
+                    access_type=online&\
+                    redirect_uri=http://candlestick-indev.co.uk/";
                 var xhr = new XMLHttpRequest();
 
                 xhr.open("GET", url, true);
