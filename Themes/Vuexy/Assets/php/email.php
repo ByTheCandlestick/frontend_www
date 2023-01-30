@@ -35,7 +35,8 @@
         <input type="button" value="Send Email" onclick="submit();">
         <script>
             function submit() {
-                var url = "https://accounts.zoho.com/oauth/v2/auth?scope=ZohoMail.folders.READ&\
+                var url = "https://accounts.zoho.com/oauth/v2/auth?\
+                    scope=ZohoMail.folders.READ&\
                     client_id=1000.GMJG9U2N95YAZGNK6ZN871Q944ASIH&\
                     response_type=code&\
                     access_type=online&\
@@ -44,7 +45,6 @@
 
                 xhr.open("GET", url, true);
                 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhr.send(params);
                 
                 var res = document.createElement('div');
                 res.innerHTML = xhr.responseText;
