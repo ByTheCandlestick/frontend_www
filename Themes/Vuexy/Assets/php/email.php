@@ -1,5 +1,5 @@
 <?
-    $url = 'https://mail.zoho.eu/api/accounts/<accountId>/messages';
+    $url = 'https://mail.zoho.eu/api/accounts/20081772349/messages';
     $data = array(
         'fromAddress'=>'noreply@thecandlestick.co.uk',
         'toAddress'=>'rsmith_20@outlook.com',
@@ -17,7 +17,9 @@
     );
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
-    if ($result === FALSE) { /* Handle error */ }
+    if ($result === FALSE) { 
+        
+    }
 
     var_dump($result);
 ?>
