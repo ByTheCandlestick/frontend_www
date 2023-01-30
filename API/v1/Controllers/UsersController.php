@@ -341,5 +341,58 @@
 					);
 				// End of function
 			}
+		/** "/Users/OAuth/" Endpoint - Submitts auth code
+		 *  @todo Make
+		 *  @param array $arr
+		 *	@return JSON
+		 */
+			public function Permission(array $arr) {
+				// Vars
+					$mdl_User = new UserModel();
+					$arr_user_info = $this->getQueryStringParams();
+					$requestMethod = $_SERVER['REQUEST_METHOD'];
+					$str_response = "";
+				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
+					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE		-- 🗹 --	Unknown
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+					elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+					elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Unknown
+						// Confirmations
+							try{
+								if(!isset($arr_user_info['oauth']) || $arr_user_info['oauth'] == "")	throw new Error("ERR-OAU-1");
+								if(!isset($arr_user_info['username']) || $arr_user_info['username'] == "")	throw new Error("ERR-OAU-2");
+							} catch(Error $er) {
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							}
+						// Validation
+							try{
+								// Nothing to validate
+							} catch(Error $er) {
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							}
+						// Submit application
+							try{
+								if($mdl_User->updateOauth($arr_user_info['username'], $arr_user_info['oauth'])) {	// Success
+									$str_response = json_encode(array("status" => "success"));
+								} else {		// Error submitting
+									throw new Error("ERR-OAU-3");
+								}
+							} catch(Error $er) {
+								exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							}
+						//
+					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗹 --	Unknown
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+					else:
+						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity"));
+					endif;
+				// Send output
+					$this->sendOutput(
+						$str_response,
+						array("Content-Type: application/json", "HTTP/1.1 200 OK")
+					);
+				// End of function
+			}
 	}
 ?>

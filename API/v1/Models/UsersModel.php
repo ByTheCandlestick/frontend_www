@@ -189,5 +189,13 @@
 				$this->Execute(sprintf("DELETE FROM `User permissions` WHERE `UID`='%s'", $uid), 1);
 				return true;
 			}
+		/**	updateOauth
+		 *	
+		 *	@todo
+		 */
+			public function updateOauth(string $uid, string $oauth) {
+				$this->Execute(sprintf("UPDATE `User accounts` SET `Zoho Mail Auth Code`='%s' WHERE `ID`=%s", $oauth, $uid), 1);
+				return true;
+			}
 	}
 ?>

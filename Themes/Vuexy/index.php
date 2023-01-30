@@ -142,6 +142,9 @@
 							</div>
 							<!-- Zoho Oauth, Profile, Notifications and Dark mode -->
 							<div class="app-header-right">
+								<button class="mode-switch" title="Switch Theme">
+									<i class="fad fa-moon fa-xl"></i>
+								</button>
 								<button class="zoho-status <?if($userdata['Zoho Mail Auth Code'] == null)print('error');?>" title="zoho oauth connection status" cid="<?print($config['Zoho Client ID'])?>">
 									<?
 										if($userdata['Zoho Mail Auth Code'] == null) {
@@ -154,9 +157,6 @@
 									<?
 										}
 									?>
-								</button>
-								<button class="mode-switch" title="Switch Theme">
-									<i class="fad fa-moon fa-xl"></i>
 								</button>
 								<button class="profile-btn">
 									<span class="" user-id="<?=$userdata['ID']?>"><?=($userdata['First_name'].' '.$userdata['Last_name'])?></span>
