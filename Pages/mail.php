@@ -9,8 +9,6 @@
 			'client_id' => $config['Zoho Client ID'],
 			'client_secret' => $config['Zoho Client Secret'],
 			'redirect_uri' => 'http://admin.candlestick-indev.co.uk/OauthCallback.php');
-
-		// use key 'http' even if you send the request to https://...
 		$options = array(
 			'http' => array(
 				'method'  => 'POST',
@@ -19,6 +17,11 @@
 		);
 		$context  = stream_context_create($options);
 		$result = file_get_contents($url, false, $context);
+
+		$fp = fopen($url, 'r', false, $context);
+		fpassthru($fp);
+		fclose($fp);
+		
 		if ($result === FALSE) { /* Handle error */ }
 
 		var_dump($result);
