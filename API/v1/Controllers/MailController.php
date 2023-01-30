@@ -10,7 +10,7 @@
 				$requestMethod = $_SERVER['REQUEST_METHOD'];
 				$str_response = "";
 			// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
-				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Unsupported
+				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Send email
 					// Confirmations
 						try{
 							if(!isset($arr_mail_info['f']) || $arr_mail_info['f'] == "")	throw new Error("ERR-MAL-1");

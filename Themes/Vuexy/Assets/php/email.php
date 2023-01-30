@@ -1,20 +1,23 @@
 <?
-    //mail customer
-    $from = 'donotreply@'.$website_info['Domain'];
-    $to = "rsmith_20@outlook.com";
-    $subject = 'Your message has been received.';
+    $url = 'https://mail.zoho.eu/api/accounts/<accountId>/messages';
+    $data = array(
+        'fromAddress'=>'noreply@thecandlestick.co.uk',
+        'toAddress'=>'rsmith_20@outlook.com',
+        'subject'=>'subject',
+        'content'=>'content',
+        'askReceipt'=>'yes');
 
-    $headers = "MIME-Version: 1.0\r\n"; 
-    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $headers .= "From: The Sending Name <$from>\r\n";
+    // use key 'http' even if you send the request to https://...
+    $options = array(
+        'http' => array(
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data)
+        )
+    );
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    if ($result === FALSE) { /* Handle error */ }
 
-    $msg = '<html>
-                <head>
-                    <link href="http://linktocss/.../etc" rel="stylesheet" type="text/css" />
-                </head>
-                <body>
-                    formatted message...
-                </body>
-            </html>';
-    mail($to, $subject, $msg, $headers)or die("mail error");
+    var_dump($result);
 ?>
