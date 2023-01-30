@@ -10,7 +10,7 @@
             response_type=code&
             client_id='.$client_id.'&
             scope=ZohoMail.folders.READ&
-            redirect_uri=http://candlestick-indev.co.uk/&
+            redirect_uri=http://candlestick-indev.co.uk/
         ';
         $options = array(
             'http' => array(
