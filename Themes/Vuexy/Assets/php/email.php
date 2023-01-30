@@ -9,6 +9,7 @@
         $url = 'https://accounts.zoho.eu/oauth/v2/auth?scope='.$scope.'&client_id='.$client_id.'&response_type='.$response_type.'&access_type=online&redirect_uri='.$redirect_uri;
         $options = array(
             'http' => array(
+                'content' => 'application/x-www-form-urlencoded',
                 'method'  => 'POST',
             )
         );
