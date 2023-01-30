@@ -3,6 +3,7 @@
 	if(strtolower(QS_SUBPAGE) == "inbox") {
 	?>
 		<script>
+			<?print_r($userdata);?>
 			var OAuth_Access;
             $.ajax({
                 url: 'https://accounts.zoho.eu/oauth/v2/token',
