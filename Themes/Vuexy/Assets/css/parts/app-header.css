@@ -44,14 +44,16 @@
 .zoho-status.error::after {
   content: "";
   position: absolute;
-  background: red;
-  width: 1em;
-  height: 1em;
-  top: 80%;
-  border-radius: 3px;
+  background: transparent;
+  top: 79%;
+  border-radius: 3px 0px 0px 0px;
   z-index: 0;
   opacity: 70%;
   transform: rotate(45deg);
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.5em solid red;
+  border-top: 0.5em solid red;
+  border-right: 0.5em solid transparent
 }
 .zoho-status.error::before {
   content: "Click to reconnect OAuth";
