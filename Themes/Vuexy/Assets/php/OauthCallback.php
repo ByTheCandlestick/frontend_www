@@ -23,7 +23,6 @@
                     console.log(body)
                 },
                 error: function(body) {
-                    alerts.icon('times', body.error, 'danger');
                 }
             });
         </script>
