@@ -1824,7 +1824,7 @@ $(document).ready(function() {
 		var timer = setInterval(function() {   
 			if(win.closed) {  
 				clearInterval(timer);  
-				alert('closed');  
+				window.reload()
 			}  
 		}, 1000); 
 	})
