@@ -16,7 +16,7 @@
             const params = {
                 api_key: 'iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3',
                 oauth: '<?print($userdata['Zoho Mail Access Code'])?>',
-                uid: '<?print($userdata['Uid'])?>'
+                uid: '<?print($userdata['ID'])?>'
             }
             // set `Content-Type` header
             xhr.setRequestHeader('Content-Type', 'application/json')
