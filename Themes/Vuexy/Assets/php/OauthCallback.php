@@ -20,9 +20,10 @@
                     withCredentials: true
                 },
                 success: function(body) {
-                    console.log(body)
+                    close();
                 },
                 error: function(body) {
+                    alert('Error authorizing.')
                 }
             });
         </script>
