@@ -9,13 +9,13 @@
         $url = 'https://accounts.zoho.eu/oauth/v2/auth?scope='.$scope.'&client_id='.$client_id.'&response_type='.$response_type.'&access_type=online&redirect_uri='.$redirect_uri;
         $options = array(
             'http' => array(
-                'method'  => 'GET',
+                'method'  => 'POST',
             )
         );
         $context  = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
         if ($result === FALSE) { 
-            echo 'Email failled to get account. Var dump: ';
+            echo 'Email failled to get auth. Var dump: ';
             die(var_dump($result));
         }
     // Get user account
