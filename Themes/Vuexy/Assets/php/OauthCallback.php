@@ -24,9 +24,6 @@
             };
 
             xhr.send(data);
-            xhr.onload = () => {
-                console.log(xhr.responseText)
-            }
         </script>
     </body>
 </html>
