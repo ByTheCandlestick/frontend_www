@@ -9,23 +9,23 @@
     <body>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", '<?print(__API__)?>/Users/OAuth/');
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                console.log(xhr.status);
-                console.log(xhr.responseText);
-            }};
-
-            let data = `{
-                "api_key": 's999MUtbgk44pSsXClHLmlT7M0MV6zXZr8CXRJzRP1uU75CnyKUJwiAdK3vwcCDsOIfTEMGuDFqCegQd8ySZ7qIuZyOhEEsbqvo1lejs2qOU8J3bleZV9PG6GQoJsp6nv45c4CQINEswrkLvLUjafTBCkti8migCD94azeA9uWkH7PwlVjLjXprYQ1AbGbQwX54PLezf3XsqwVQVZccZUUeasavhlwK8nwCDuSjLUrdMefTjS0ZH09SO5qeKBn3s',
-                "oauth": "<?print($userdata['Zoho Mail Access Code'])?>",
-                "uid": "<?print($userdata['ID'])?>"
-            }`;
-
-            xhr.send(data);
+            data  = 'api_key=iwdk5xYYMyUbyKuHMB8UuA5R2pbqgYLvjzzKQFCeJzKbAkg2qAJGWunzJPZFxvaCvue5xHJEwrhG3b9Ye5mn3UYBT7ZE46crHkgenvY4LaUSgb3Jcj8T67tUuyVtD6nRTQxvurPZ6E96WiQKep7G8kUjJhxHchEZk6KrWqZ2Tf2B9ZgtErZ4UMNNSJWE9DV8gM3YMkzmraACBxd9nPBteJKPx3SFdBMHQGBAL5bzSmJtCfezQJ7Ed3hk4CBnhda3';
+            data += '&uid=<?print($userdata['ID'])?>';
+            data += '&oauth=<?print($userdata['Zoho Mail Access Code'])?>';
+            $.ajax({
+                url: <?print(__API__)?> + '/Users/OAuth/',
+                data: data,
+                type: 'POST',
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(body) {
+                    console.log(body)
+                },
+                error: function(body) {
+                    alerts.icon('times', body.error, 'danger');
+                }
+            });
         </script>
     </body>
 </html>
