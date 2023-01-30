@@ -142,7 +142,7 @@
 							</div>
 							<!-- Zoho Oauth, Profile, Notifications and Dark mode -->
 							<div class="app-header-right">
-								<button class="zoho-status" title="zoho oauth connection status <?if($userdata['Zoho Mail Auth Code'] == null)print('error');?>">
+								<button class="zoho-status <?if($userdata['Zoho Mail Auth Code'] == null)print('error');?>" title="zoho oauth connection status">
 									<?
 										if($userdata['Zoho Mail Auth Code'] == null) {
 									?>
