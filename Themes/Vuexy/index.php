@@ -140,8 +140,11 @@
 								</div>
 								<div class="search-suggestions"> </div>
 							</div>
-							<!-- Profile, Notifications and Dark mode -->
+							<!-- Zoho Oauth, Profile, Notifications and Dark mode -->
 							<div class="app-header-right">
+								<button class="mode-switch" title="Switch Theme">
+									<i class="fad fa-moon fa-xl"></i>
+								</button>
 								<button class="mode-switch" title="Switch Theme">
 									<i class="fad fa-moon fa-xl"></i>
 								</button>
