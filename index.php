@@ -13,6 +13,7 @@
 					include_once($path);
 				} else {
 					header('Content-Type: text/'.$_GET['ext']);
+					empty($_GET);
 					print(file_get_contents($path));
 				}
 			} else {
