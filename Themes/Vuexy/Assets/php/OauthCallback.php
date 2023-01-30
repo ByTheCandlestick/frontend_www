@@ -17,13 +17,13 @@
                 console.log(xhr.responseText);
             }};
 
-            let data = {
+            let data = `{
                 "api_key": 's999MUtbgk44pSsXClHLmlT7M0MV6zXZr8CXRJzRP1uU75CnyKUJwiAdK3vwcCDsOIfTEMGuDFqCegQd8ySZ7qIuZyOhEEsbqvo1lejs2qOU8J3bleZV9PG6GQoJsp6nv45c4CQINEswrkLvLUjafTBCkti8migCD94azeA9uWkH7PwlVjLjXprYQ1AbGbQwX54PLezf3XsqwVQVZccZUUeasavhlwK8nwCDuSjLUrdMefTjS0ZH09SO5qeKBn3s',
                 "oauth": "<?print($userdata['Zoho Mail Access Code'])?>",
                 "uid": "<?print($userdata['ID'])?>"
-            };
+            }`;
 
-            xhr.send(JSON.Stringify(data));
+            xhr.send(data);
         </script>
     </body>
 </html>
