@@ -7,6 +7,7 @@
 
     </head>
     <body>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
             let xhr = new XMLHttpRequest();
             xhr.open("POST", '<?print(__API__)?>/Users/OAuth/');
