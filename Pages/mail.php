@@ -2,7 +2,7 @@
 	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
 
-		$url = 'https://accounts.zoho.eu/oauth/v2/token/';
+		$url = 'https://accounts.zoho.com/oauth/v2/token/';
 		$data = array(
 			'code'=>$userdata['Zoho Mail Auth Code'],
 			'grant_type' => 'authorization_code',
