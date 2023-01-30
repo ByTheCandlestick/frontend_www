@@ -1,12 +1,32 @@
 <?
 	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
+
+		$url = 'https://accounts.zoho.eu/oauth/v2/token/';
+		$data = array(
+			'code'=>$userdata['Zoho Mail Auth Code'],
+			'grant_type' => 'authorization_code',
+			'client_id' => $config['Zoho Client ID'],
+			'client_secret' => $config['Zoho Client Secret'],
+			'redirect_uri' => 'http://admin.candlestick-indev.co.uk/OauthCallback.php');
+		$options = array(
+			'http' => array(
+				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+				'method'  => 'POST',
+				'content' => http_build_query($data)
+			)
+		);
+		$context  = stream_context_create($options);
+		$result = file_get_contents($url, false, $context);
+		if ($result === FALSE) { /* Handle error */ }
+
+		var_dump($result);
 	?>
 		<script>
 			
 			var OAuth_Access;
             $.ajax({
-                url: 'https://accounts.zoho.com/oauth/v2/token/',
+                url: 'https://accounts.zoho.eu/oauth/v2/token/',
                 data: 'code=<?print($userdata['Zoho Mail Auth Code'])?>\
 						&grant_type=authorization_code\
 						&client_id=<?print($config['Zoho Client ID'])?>\
