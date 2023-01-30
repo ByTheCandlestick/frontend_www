@@ -20,7 +20,7 @@
 					console.log(body);
                 },
                 error: function(body) {
-                    alert('Error authorizing.')
+                    alert.simple('Error authorizing.')
                 }
             });
 		</script>
