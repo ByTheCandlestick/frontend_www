@@ -17,8 +17,10 @@
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     if ($result === FALSE) { 
-        
+        echo 'Email failled to send. Var dump:';
+        var_dump($result);
+    } else {
+        echo 'Email sent successfully';
     }
 
-    var_dump($result);
 ?>
