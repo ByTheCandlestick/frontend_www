@@ -14,7 +14,6 @@
             xhr.open('POST', api_url)
             // create a JSON object
             const params = {
-                api_key: '',
                 oauth: '<?print($userdata['Zoho Mail Access Code'])?>',
                 uid: '<?print($userdata['ID'])?>'
             }
