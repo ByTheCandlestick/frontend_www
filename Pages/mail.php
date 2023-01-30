@@ -12,11 +12,11 @@
 		 */
 	?>
 		<script>
+			var OAuth_Access;
             data  = 'code=<?print($userdata['Zoho Mail Access Code'])?>';
             data += '&grant_type=authorization_code';
             data += '&client_id=<?print($config['Zoho Client ID'])?>';
             data += '&client_secret=<?print($config['Zoho Client Secret'])?>';
-            data += '&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php';
             data += '&scope=ZohoMail.messages.CREATE,ZohoMail.messages.READ,ZohoMail.messages.UPDATE,ZohoMail.messages.DELETE';
             $.ajax({
                 url: '<?print(__API__)?>/Users/OAccess/',
@@ -26,7 +26,7 @@
                     withCredentials: true
                 },
                 success: function(body) {
-                    close();
+                   OAuth_Access = 
                 },
                 error: function(body) {
                     alert('Error authorizing.')
