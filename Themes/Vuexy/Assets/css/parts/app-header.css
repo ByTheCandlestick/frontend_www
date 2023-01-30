@@ -32,7 +32,15 @@
 	margin: 0 32px;
 }
 
-
+.zoho-status {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .mode-switch {
   background-color: transparent;
