@@ -11,6 +11,8 @@
                 open('https://accounts.zoho.eu/oauth/v2/auth?scope=ZohoMail.messages.READ&client_id=1000.ZEBYRMB00DAYHRIA8QBR37IQ1OPQ2D&response_type=code&access_type=online&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php', 'test', params);
 
             <?
+                } else {
+                    print_r('Auth Code: '.$userdata['Zoho Mail Auth Code']);
                 }
             ?>
         </script>
