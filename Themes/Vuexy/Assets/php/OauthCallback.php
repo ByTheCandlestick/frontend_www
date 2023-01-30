@@ -8,7 +8,7 @@
     </head>
     <body>
         <script>
-		    const api_url = '<?print(__API__)?>Users/OAuth/';
+		    const api_url = '<?print(__API__)?>/Users/OAuth/';
             const xhr = new XMLHttpRequest()
             // configure a `POST` request
             xhr.open('POST', api_url)
