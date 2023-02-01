@@ -37,7 +37,6 @@
 		echo $result
 
 	?>
-		<!--
 		<script>
 			var OAuth_Access;
             $.ajax({
@@ -56,7 +55,6 @@
                 }
             });
 		</script>
-		-->
 	<?
 	} elseif(strtolower(QS_SUBPAGE) == "sent") {
 		$query = DB_Query("SELECT * FROM `Mail` WHERE `Direction`='Outbound' AND `Status`='Sent'");
