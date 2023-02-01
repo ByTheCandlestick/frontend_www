@@ -1,7 +1,7 @@
 <?
 	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		$uri = "https://accounts.zoho.eu/oauth/v2/token/";
+		$uri = "https://accounts.zoho.com/oauth/v2/token/";
 		$data = http_build_query([
 			'code' => $userdata['Zoho Mail Auth Code'],
 			'grant_type' => 'authorization_code',
