@@ -1,8 +1,8 @@
 <?
 	$query = "";
 	if(strtolower(QS_SUBPAGE) == "inbox") {
-		$url = "https://accounts.zoho.eu/oauth/v2/token/";
-		$fields_string = http_build_query([
+		$uri = "https://accounts.zoho.eu/oauth/v2/token/";
+		$data = http_build_query([
 			'code' => $userdata['Zoho Mail Auth Code'],
 			'grant_type' => 'authorization_code',
 			'client_id' => $config['Zoho Client ID'],
@@ -11,13 +11,12 @@
 		]);
 		
 		$conn = curl_init();
-		curl_setopt($conn, CURLOPT_URL,				$url);
+		curl_setopt($conn, CURLOPT_URL,				$uri);
 		curl_setopt($conn, CURLOPT_POST,			true);
-		curl_setopt($conn, CURLOPT_POSTFIELDS,		$fields_string);
+		curl_setopt($conn, CURLOPT_POSTFIELDS,		$data);
 		curl_setopt($conn, CURLOPT_RETURNTRANSFER,	true); 
-		$result = curl_exec($conn);
+		echo $result = curl_exec($conn);
 
-		echo $result;
 	?>
 		<!--
 		<script>
