@@ -1820,7 +1820,7 @@
 $(document).ready(function() {
 	// -----========== Re-auth Zoho ==========----- // @wip //
 	$('.zoho-status.error').click(()=>{
-		var win = window.open('https://accounts.zoho.eu/oauth/v2/auth?scope=ZohoMail.messages.ALL,ZohoMail.attahments.ALL,ZohoMail.tags.ALL,ZohoMail.folders.ALL&client_id='+$('.zoho-status').attr('cid')+'&response_type=code&access_type=offline&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php', 'Zoho OAuth', 'scrollbars=no,resizable=yes,status=no,location=no,toolbar=no,menubar=no,width=0,height=0,left=0,top=0');
+		var win = window.open('https://accounts.zoho.eu/oauth/v2/auth?scope=ZohoMail.messages.ALL,ZohoMail.attachments.ALL,ZohoMail.tags.ALL,ZohoMail.folders.ALL&client_id='+$('.zoho-status').attr('cid')+'&response_type=code&access_type=offline&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php', 'Zoho OAuth', 'scrollbars=no,resizable=yes,status=no,location=no,toolbar=no,menubar=no,width=0,height=0,left=0,top=0');
 		var timer = setInterval(function() {
 			if(win.closed) {  
 				clearInterval(timer);  
