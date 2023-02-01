@@ -9,12 +9,6 @@
 			'redirect_uri' => 'http://admin.candlestick-indev.co.uk/OauthCallback.php',
 			'grant_type' => 'authorization_code',
 		]);
-		print_r($data);
-		//code=1000.2101c2933917fec3039d9f0af2fd025d.2d4954458a3d296c9b33d423936fa22c&
-		//client_id=1000.ZEBYRMB00DAYHRIA8QBR37IQ1OPQ2D&
-		//client_secret=1123edb85d2e89fdbc90fbac285fc9f9eb644a2781&
-		//redirect_uri=http%3A%2F%2Fadmin.candlestick-indev.co.uk%2FOauthCallback.php&
-		//grant_type=authorization_code
 		
 		$conn = curl_init();
 		curl_setopt($conn, CURLOPT_URL,				$uri);
