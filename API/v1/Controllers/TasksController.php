@@ -53,6 +53,7 @@
 						// Functions
 						try {
 							if(!$mdl_tasks->resetDudPages()) throw new Error("ERR-TKW-1");
+							if(!$mdl_tasks->refundOldOrders()) throw new Error("ERR-TKW-2");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}

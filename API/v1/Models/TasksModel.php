@@ -12,5 +12,11 @@
 			public function resetDudPages() {
 				return $this->Execute("DELETE FROM `Website pages` WHERE `domain_id`='-1';", 1);
 			}
+		/** refundOldOrders
+		 *  Refunds all orders of a certain age that hasnt been accepted.
+		 */
+			public function refundOldOrders() {
+				
+			}
 	}
 ?>
