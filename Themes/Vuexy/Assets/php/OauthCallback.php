@@ -1,8 +1,8 @@
 <?
     $userdata['Zoho Mail Access Code'] = $_GET['code'];
 	print_r($_GET);
+	print_r($_POST);
 ?>
-<!--
 <html>
     <head>
 
@@ -30,4 +30,3 @@
         </script>
     </body>
 </html>
--->
