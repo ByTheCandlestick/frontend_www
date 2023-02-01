@@ -32,7 +32,7 @@
 			)
 		);
 		$context = stream_context_create($opts);
-		$result = file_get_contents($url, false, $context);
+		$result = file_get_contents($uri, false, $context);
 		echo $result
 
 	?>
