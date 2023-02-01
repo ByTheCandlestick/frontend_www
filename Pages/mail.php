@@ -4,10 +4,12 @@
 		$uri = "https://accounts.zoho.com/oauth/v2/token/";
 		$data = http_build_query([
 			'code' => $userdata['Zoho Mail Auth Code'],
-			'grant_type' => 'authorization_code',
 			'client_id' => $config['Zoho Client ID'],
 			'client_secret' => $config['Zoho Client Secret'],
-			'redirect_uri' => 'http://admin.candlestick-indev.co.uk/OauthCallback.php'
+			'redirect_uri' => 'http://admin.candlestick-indev.co.uk/OauthCallback.php',
+			'scope' => 'ZohoMail.messages.ALL',
+			//'state' => '',
+			'grant_type' => 'authorization_code',
 		]);
 		
 		$conn = curl_init();
