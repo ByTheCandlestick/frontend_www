@@ -78,7 +78,7 @@
 			while($c = mysqli_fetch_assoc($query)) { $config[$c['Key']] = $c['Value']; }
 		// GET SERVER CONFIGURATION
 			$users = [];
-			$query = DB_Query(sprintf("SELECT * FROM `User Oauths` WHERE `UID`=`%s`", $userdata['ID']));
+			$query = DB_Query("SELECT * FROM `User Oauths` WHERE `UID`=`".$userdata['ID']"`");
 			$oauths = mysqli_fetch_assoc($query);
 			print_r($oauths);
 		// 
