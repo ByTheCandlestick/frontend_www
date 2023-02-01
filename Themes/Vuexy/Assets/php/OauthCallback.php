@@ -1,6 +1,7 @@
 <?
     $userdata['Zoho Mail Authorisation Code'] = $_GET['code'];
     $userdata['Zoho Mail Refresh Code'] = $_GET['refresh_token'];
+	print_r($_GET);
 ?>
 <html>
     <head>
