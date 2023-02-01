@@ -17,13 +17,22 @@
 		//curl_setopt($conn, CURLOPT_RETURNTRANSFER,	true); 
 		//$result = curl_exec($conn);
 		// Pecl_html
-		$result = http_post_data($uri, $data);
+		//$result = http_post_data($uri, $data);
 		// Object-Oriented (OO) Interface of Pecl_HTTP
 		//$conn = new HTTPRequest($uri, HTTP_METH_POST);
 		//$conn->setRawPostData($data);
 		//$conn->send();
 		//$result = $conn->getResponseBody();
-
+		//cURL-less
+		$opts = array('http' =>
+			array(
+				'method' => 'POST',
+				'header' => 'Content-type: application/x-www-form-urlencoded',
+				'content' => $data
+			)
+		);
+		$context = stream_context_create($opts);
+		$result = file_get_contents($url, false, $context);
 		echo $result
 
 	?>
