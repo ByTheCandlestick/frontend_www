@@ -79,7 +79,7 @@
 		// GET SERVER CONFIGURATION
 			$users = [];
 			$query = DB_Query(sprintf("SELECT * FROM `User Oauths` WHERE `UID`=`%s`", $userdata['ID']));
-			$oauths = mysqli_fetch_assoc($query)
+			$oauths = mysqli_fetch_assoc($query);
 			print_r($oauths);
 		// 
 			unset($query, $c, $u, $numrows);
