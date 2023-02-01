@@ -9,13 +9,22 @@
 			'redirect_uri' => 'http://admin.candlestick-indev.co.uk/OauthCallback.php',
 			'grant_type' => 'authorization_code',
 		]);
-		
-		$conn = curl_init();
-		curl_setopt($conn, CURLOPT_URL,				$uri);
-		curl_setopt($conn, CURLOPT_POST,			true);
-		curl_setopt($conn, CURLOPT_POSTFIELDS,		$data);
-		curl_setopt($conn, CURLOPT_RETURNTRANSFER,	true); 
-		echo $result = curl_exec($conn);
+		// cURL
+		//$conn = curl_init();
+		//curl_setopt($conn, CURLOPT_URL,				$uri);
+		//curl_setopt($conn, CURLOPT_POST,			true);
+		//curl_setopt($conn, CURLOPT_POSTFIELDS,		$data);
+		//curl_setopt($conn, CURLOPT_RETURNTRANSFER,	true); 
+		//$result = curl_exec($conn);
+		// Pecl_html
+		//$result = http_post_data($uri, $data);
+		// Object-Oriented (OO) Interface of Pecl_HTTP
+		$conn = new HTTPRequest($uri, HTTP_METH_POST);
+		$conn->setRawPostData($data);
+		$conn->send();
+		$result = $conn->getResponseBody();
+
+		echo $result
 
 	?>
 		<!--
