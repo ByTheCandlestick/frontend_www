@@ -193,8 +193,8 @@
 		 *	
 		 *	@todo
 		 */
-			public function updateOauth(string $uid, string $oauth) {
-				$this->Execute(sprintf("UPDATE `User accounts` SET `Zoho Mail Auth Code`='%s' WHERE `ID`=%s", $oauth, $uid), 1);
+			public function updateOauth(string $uid, string $oauth, string $refresh) {
+				$this->Execute(sprintf("UPDATE `User accounts` SET `Zoho Mail Auth Code`='%s' AND `Zoho Mail Refresh Code`='%s' WHERE `ID`=%s", $oauth, $refresh, $uid), 1);
 				return true;
 			}
 	}

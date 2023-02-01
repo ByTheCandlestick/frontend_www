@@ -361,6 +361,7 @@
 						// Confirmations
 							try{
 								if(!isset($arr_user_info['oauth']) || $arr_user_info['oauth'] == "")	throw new Error("ERR-OAU-1");
+								if(!isset($arr_user_info['uid']) || $arr_user_info['refresh'] == "")	throw new Error("ERR-OAU-2");
 								if(!isset($arr_user_info['uid']) || $arr_user_info['uid'] == "")	throw new Error("ERR-OAU-2");
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
@@ -373,7 +374,7 @@
 							}
 						// Submit application
 							try{
-								if($mdl_User->updateOauth($arr_user_info['uid'], $arr_user_info['oauth'])) {	// Success
+								if($mdl_User->updateOauth($arr_user_info['uid'], $arr_user_info['oauth'], $arr_user_info['refresh'])) {	// Success
 									$str_response = json_encode(array("status" => "success"));
 								} else {		// Error submitting
 									throw new Error("ERR-OAU-3");
