@@ -11,6 +11,7 @@
 			//'state' => '',
 			'grant_type' => 'authorization_code',
 		]);
+		print_r($data);
 		
 		$conn = curl_init();
 		curl_setopt($conn, CURLOPT_URL,				$uri);
