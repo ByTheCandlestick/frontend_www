@@ -1833,7 +1833,6 @@
 					'voucher': $("div[name=voucher]").find("input").val(),
 					'active': (($("div[name=misc] input[name=active]:checked").length === 0)?0:1),
 					'type': (($("div[name=misc] input[name=voucher]:checked").length === 0)?0:1),
-					
 					'categories': categories.join(","),
 					'collections': collections.join(","),
 				},
@@ -1846,7 +1845,7 @@
 					 * @todo Redirect once created
 					 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
 					 */
-					alert.simple("Successfully created the domain", "success");
+					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully created the promotion');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -1854,7 +1853,34 @@
 			});
 		},
 		update() {
-
+			var categories = [];	$("div[name=categories]").children().find("input[type=checkbox]:checked").each((index, element) => { categories.push($(element).val()); });
+			var collections = [];	$("div[name=collections]").children().find("input[type=checkbox]:checked").each((index, element) => { collections.push($(element).val()); });
+			$.ajax({
+				url: api_url + '/Promotion/',
+				data: {
+					'api_key': api_key,
+					'name': $("div[name=name] input").val(),
+					'description': $("div[name=description] textarea").val(),
+					'percentage': $("div[name=percentage] input").val(),
+					'start': $("div[name=start]").find("input").val(),
+					'end': $("div[name=end]").find("input").val(),
+					'voucher': $("div[name=voucher]").find("input").val(),
+					'active': (($("div[name=misc] input[name=active]:checked").length === 0)?0:1),
+					'type': (($("div[name=misc] input[name=voucher]:checked").length === 0)?0:1),
+					'categories': categories.join(","),
+					'collections': collections.join(","),
+				},
+				type: 'POST',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updates the promotion');
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
 		},
 		delete() {
 
