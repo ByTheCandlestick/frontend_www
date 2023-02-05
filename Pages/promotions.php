@@ -50,7 +50,7 @@
 							print_r(date("Y-m-d"));
 							print_r($x['Scheduled start']);
 							print_r($x['Scheduled end']);
-							$active = (date("d/m/Y") > getDate(strtotime($x['Scheduled start'])) && date("d/m/Y") < getDate(strtotime($x['Scheduled end'])))? 'ACTIVE' : 'NOTACTIVE' ;
+							$active = (date("Y-m-d") > $x['Scheduled start'] && date("Y-m-d") < $x['Scheduled end'])? 'ACTIVE' : 'NOTACTIVE' ;
 							$editable = ($userperm['adm_access-promotion-edit']==1)?'<a href="/Promotions/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
 							print('
 								<tr>
