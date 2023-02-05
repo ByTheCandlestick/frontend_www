@@ -42,7 +42,7 @@ function(data, status) {
                         }
                     });
     }
-}, "json")
+}, "jsonp")
         </script>
     </body>
 </html>
