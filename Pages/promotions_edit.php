@@ -2,8 +2,8 @@
 	$query = DB_Query(sprintf("SELECT * FROM `Promotions` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$promotion = mysqli_fetch_assoc($query);
-		$categories = explode(',', $page['style_ids']);
-		$collections = explode(',', $page['script_ids']);
+		$categories = explode(',', $promotion['Category IDs']);
+		$collections = explode(',', $promotion['Collection IDs']);
 ?>
 	<section>
 		<!-- Section Header -->
