@@ -12,14 +12,9 @@
 			try {
 				// Add line to Promotion
 				$this->Execute("INSERT INTO `Promotions` (`Name`, `Description`, `Percentage discount`, `Voucher`, `Type`, `Scheduled start`, `Sceduled end`, `Active`) VALUES ('$name', '$description', '$percentage', '$voucher', '$type', '$start', '$end', '$active')", 1);
-				
-				return array(
-					"status"=>"success",
-				);
+				return true;
 			} catch(Error $er) {
-				return array(
-					"status"=>$er->getMessage(),
-				);
+				return false;
 			}
 		}
 	}
