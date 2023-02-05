@@ -1819,6 +1819,8 @@
 	};
 	promotion = {
 		create() {
+			var categories = [];	$("div[name=categories]").children().find("input[type=checkbox]:checked").each((index, element) => { categories.push($(element).val()); });
+			var collections = [];	$("div[name=collections]").children().find("input[type=checkbox]:checked").each((index, element) => { collections.push($(element).val()); });
 			$.ajax({
 				url: api_url + '/Promotion/',
 				data: {
@@ -1831,6 +1833,9 @@
 					'voucher': $("div[name=voucher]").find("input").val(),
 					'active': (($("div[name=misc] input[name=active]:checked").length === 0)?0:1),
 					'type': (($("div[name=misc] input[name=voucher]:checked").length === 0)?0:1),
+					
+					'categories': categories.join(","),
+					'collections': collections.join(","),
 				},
 				type: 'PUT',
 				xhrFields: {
