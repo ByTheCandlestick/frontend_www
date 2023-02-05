@@ -50,7 +50,8 @@
 							print('
 								<tr>
 									<th scope="row">
-									'.$x['Name'].'</th>
+										<a href="/Promotions/View/'.$x['ID'].'">'.$x['Name'].'</a>
+									</th>
 									<td>'.$x['Description'].'</td>
 									<td>'.$x['Percentage discount'].'</td>
 									<td>'.$x['Scheduled start'].'</td>
