@@ -66,6 +66,11 @@
 				// NOTIFICATIONS
 					$notifications = mysqli_fetch_array(DB_Query("SELECT * FROM `User notifications` WHERE `UID`='$log_id' LIMIT 1"));
 					$notifications['count'] = mysqli_fetch_array(DB_Query("SELECT count(*) FROM `User notifications` WHERE `UID`='$log_id' LIMIT 1"))[0];
+				// GET SERVER CONFIGURATION
+					$oauths = [];
+					$query = DB_Query("SELECT * FROM `User oauths` WHERE `UID`=".$userdata['ID']);
+					$oauths = mysqli_fetch_assoc($query);
+					print_r($oauths);
 				//
 			}
 		// GET ALL USERS
@@ -76,11 +81,6 @@
 			$users = [];
 			$query = DB_Query("SELECT * FROM `Config`");
 			while($c = mysqli_fetch_assoc($query)) { $config[$c['Key']] = $c['Value']; }
-		// GET SERVER CONFIGURATION
-			$users = [];
-			$query = DB_Query("SELECT * FROM `User oauths` WHERE `UID`=".$userdata['ID']);
-			$oauths = mysqli_fetch_assoc($query);
-			print_r($oauths);
 		// 
 			unset($query, $c, $u, $numrows);
 ?>
