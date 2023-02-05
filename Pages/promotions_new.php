@@ -54,8 +54,8 @@
 					<label class="form-check-label" for="flexCheckDisabled"> active? </label>
 				</div>
 				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active">
-					<label class="form-check-label" for="flexCheckDisabled"> Code? </label>
+					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="voucher">
+					<label class="form-check-label" for="flexCheckDisabled"> Voucher? </label>
 				</div>
 			</div>
 		</div>
