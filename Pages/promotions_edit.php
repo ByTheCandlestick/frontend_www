@@ -1,7 +1,7 @@
 <?
 	$query = DB_Query(sprintf("SELECT * FROM `Promotions` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
-		$promo = mysqli_fetch_assoc($query);
+		$promotion = mysqli_fetch_assoc($query);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -24,31 +24,31 @@
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-2" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $promotion['Name']?>">
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="percentage">
 				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="<?= $promotion['Percentage discount']?>">
 					<label for="floatingInput">Percentage</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="start">
 				<div class="form-floating mb-3">
-					<input type="date" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="date" class="form-control" id="floatingInput" placeholder="" value="<?= $promotion['Scheduled start']?>">
 					<label for="floatingInput">Start</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="end">
 				<div class="form-floating mb-3">
-					<input type="date" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="date" class="form-control" id="floatingInput" placeholder="" value="<?= $promotion['Scheduled end']?>">
 					<label for="floatingInput">End</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-2" name="voucher">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $promotion['Voucher']?>">
 					<label for="floatingInput">Voucher</label>
 				</div>
 			</div>
@@ -66,7 +66,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-4" name="description">
 				<div class="form-floating mb-3">
-					<textarea class="form-control" id="floatingInput" style="height: 132px;" placeholder="" value=""></textarea>
+					<textarea class="form-control" id="floatingInput" style="height: 132px;" placeholder=""><?= $promotion['Description']?></textarea>
 					<label for="floatingInput">Description</label>
 				</div>
 			</div>
