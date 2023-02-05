@@ -1,5 +1,5 @@
 <?
-	require_once(__ROOT__.'/Vendor/parsedown/parsesdown.php');
+	require_once(__ROOT__.'/Vendor/parsedown/parsedown.php');
 	require_once(__ROOT__.'/Vendor/parsedown/parsedownExtra.php');
 	$Parsedown = new ParsedownExtra();
 	if($secext != "") {
