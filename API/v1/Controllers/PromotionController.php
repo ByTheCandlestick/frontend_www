@@ -71,7 +71,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_promotion->Create($arr_promotion_info['id'], $arr_promotion_info['name'], $arr_promotion_info['percentage'], $arr_promotion_info['start'], $arr_promotion_info['end'], $arr_promotion_info['voucher'], $arr_promotion_info['active'], $arr_promotion_info['type'], $arr_promotion_info['description'], $arr_promotion_info['categories'], $arr_promotion_info['collections'])) {	// Success
+							if($mdl_promotion->Update($arr_promotion_info['id'], $arr_promotion_info['name'], $arr_promotion_info['percentage'], $arr_promotion_info['start'], $arr_promotion_info['end'], $arr_promotion_info['voucher'], $arr_promotion_info['active'], $arr_promotion_info['type'], $arr_promotion_info['description'], $arr_promotion_info['categories'], $arr_promotion_info['collections'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-PRM-12");
