@@ -1818,6 +1818,7 @@
 		},
 	};
 	promotion = {
+		/** @todo: Redirect after success */
 		create() {
 			var categories = [];	$("div[name=categories]").children().find("input[type=checkbox]:checked").each((index, element) => { categories.push($(element).val()); });
 			var collections = [];	$("div[name=collections]").children().find("input[type=checkbox]:checked").each((index, element) => { collections.push($(element).val()); });
@@ -1852,6 +1853,7 @@
 				}
 			});
 		},
+		/** @final */
 		update(id) {
 			var categories = [];	$("div[name=categories]").children().find("input[type=checkbox]:checked").each((index, element) => { categories.push($(element).val()); });
 			var collections = [];	$("div[name=collections]").children().find("input[type=checkbox]:checked").each((index, element) => { collections.push($(element).val()); });
@@ -1883,6 +1885,7 @@
 				}
 			});
 		},
+		/** @todo: make */
 		delete() {
 
 		}
