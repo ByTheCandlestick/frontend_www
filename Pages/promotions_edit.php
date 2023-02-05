@@ -7,16 +7,13 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1>Edit promo</h1>
+				<h1>Edit Promotion</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 d-block d-md-flex justify-content-end align-items-center p-0">
-					<a href="javascript:promo.update(<?=(QS)?>);" class="btn btn-outline-primary m-1">
+					<a href="javascript:promotion.update();" class="btn btn-outline-primary m-1">
 						<i class="fa fa-save"></i>
-					</a>
-					<a href="javascript:promo.delete(<?=(QS)?>);" class="btn btn-outline-danger m-1">
-						<i class="fa fa-trash-alt"></i>
 					</a>
 				</div>
 			</div>
@@ -24,60 +21,87 @@
 		</div>
 		<hr>
 		<!-- Section Body -->
-		<div class="row" sku="<?=($promo['ID'])?>">
-			<div class="col-12 col-md-6 col-lg-2" name="promoname">
+		<div class="row">
+			<div class="col-12 col-md-6 col-lg-2" name="name">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($promo['Promoname'])?>">
-					<label for="floatingInput">Promoname</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Name</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="firstname">
+			<div class="col-12 col-md-6 col-lg-2" name="percentage">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($promo['First_name'])?>">
-					<label for="floatingInput">First name</label>
+					<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Percentage</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="lastname">
+			<div class="col-12 col-md-6 col-lg-2" name="start">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($promo['Last_name'])?>">
-					<label for="floatingInput">Last name</label>
+					<input type="date" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Start</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="email">
+			<div class="col-12 col-md-6 col-lg-2" name="end">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($promo['Email'])?>">
-					<label for="floatingInput">Email</label>
+					<input type="date" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">End</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-2" name="phone">
+			<div class="col-12 col-md-6 col-lg-2" name="voucher">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<? print($promo['Phone'])?>">
-					<label for="floatingInput">Phone no.</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Voucher</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-3 col-lg-2" name="misc">
 				<div class="form-floating mb-3">
-					<? ($promo['Change_password']==1)?$checked="checked":$checked=""; ?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?=($checked)?> name="reset_pass">
-						<label class="form-check-label" for="flexCheckDisabled"> Reset password? </label>
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active">
+						<label class="form-check-label" for="flexCheckDisabled"> active? </label>
 					</div>
-					<? ($promo['Disable_analytics']==1)?$checked="checked":$checked=""; ?>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?=($checked)?> name="disable_analytics">
-						<label class="form-check-label" for="flexCheckDisabled"> Disable analytics? </label>
-					</div>
-					<? ($promo['Email_active']==1)?$checked="checked":$checked=""; ?>
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?=($checked)?> name="email_active">
-						<label class="form-check-label" for="flexCheckDisabled"> Email activated? </label>
-					</div>
-					<? ($promo['Active']==1)?$checked="checked":$checked=""; ?>
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" <?=($checked)?> name="promo_active">
-						<label class="form-check-label" for="flexCheckDisabled"> Promo active? </label>
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="voucher">
+						<label class="form-check-label" for="flexCheckDisabled"> Voucher? </label>
 					</div>
 				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4" name="description">
+				<div class="form-floating mb-3">
+					<textarea class="form-control" id="floatingInput" style="height: 132px;" placeholder="" value=""></textarea>
+					<label for="floatingInput">Description</label>
+				</div>
+			</div>
+			
+			<div class="col-12 col-md-6 col-lg-2" name="categories">
+				<h5>Categories</h5>
+				<?
+					$query = DB_Query("SELECT * FROM `Product categories` WHERE `Active`=1");
+					while($row = mysqli_fetch_array($query)) {
+						print('
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+								<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+									' . $row['Name'] . '
+								</label>
+							</div>
+						');
+					}
+				?>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="collections">
+				<h5>Collections</h5>
+				<?
+					$query = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1");
+					while($row = mysqli_fetch_array($query)) {
+						print('
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+								<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+									' . $row['Name'] . '
+								</label>
+							</div>
+						');
+					}
+				?>
 			</div>
 		</div>
 	</section>
