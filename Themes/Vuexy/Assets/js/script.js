@@ -1830,7 +1830,7 @@
 					'end': $("div[name=end]").find("input").val(),
 					'voucher': $("div[name=voucher]").find("input").val(),
 					'active': (($("div[name=misc] input[name=active]:checked").length === 0)?0:1),
-					'voucher': (($("div[name=misc] input[name=voucher]:checked").length === 0)?0:1),
+					'type': (($("div[name=misc] input[name=voucher]:checked").length === 0)?0:1),
 				},
 				type: 'PUT',
 				xhrFields: {
