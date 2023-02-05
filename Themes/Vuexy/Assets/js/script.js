@@ -1878,7 +1878,12 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
+					json = JSON.parse(body);
+					if(json['status'] == 'success') {
+						$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
+					} else {
+						alert.simple('An error has occurred', 'warning')
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
