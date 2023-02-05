@@ -26,6 +26,10 @@
             <p><a href="/Config/chrt_colours/">Set chart colours</a></p>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+            <h2> Integrations </h2>
+            <p><a href="/Config/Integrations/">All Integrations</a></p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
             <h2> Admin </h2>
             <p><a href="/Config/logs/">Open logs</a></p>
         </div>
