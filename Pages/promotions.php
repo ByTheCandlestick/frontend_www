@@ -47,7 +47,7 @@
 				<?
 					if(count($promos) > 0) {
 						foreach($promos as $x) {
-							$active = (date("d/m/Y") < getDate(strtotime($x['Scheduled start'])))? 'ACTIVE' : 'NOTACTIVE' ;
+							$active = (date("d/m/Y") < getDate(strtotime($x['Scheduled start'])) && date("d/m/Y") > getDate(strtotime($x['Scheduled end'])))? 'ACTIVE' : 'NOTACTIVE' ;
 							$editable = ($userperm['adm_access-promotion-edit']==1)?'<a href="/Promotions/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
 							print('
 								<tr>
