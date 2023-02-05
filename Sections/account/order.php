@@ -139,7 +139,6 @@
 				$order_item_id = $item_info[0];
 				$order_item_qty = $item_info[1];
 				$order_item_opt = explode(',', $item_info[2]);
-				print_r($order_item_id);
 				if($q = DB_Query("SELECT * FROM `Product` WHERE `SKU`=$order_item_id AND `active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
 						$order_item_image = explode(',', $res['Images'])[0];
