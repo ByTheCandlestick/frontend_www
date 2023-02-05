@@ -1878,7 +1878,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					//$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updates the promotion');
+					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updates the promotion');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -1919,7 +1919,7 @@ $(document).ready(function() {
 		if(document.referrer.indexOf(location.protocol + "//" + location.host) !== 0 && misc.getQueryParams('force_back') === null) {$('.app-back-btn').addClass('disabled')}
 		$(".app-back-btn").click(function() {if(!$(".app-back-btn").hasClass('disabled'))history.back();});
 	// -----========== Alerts on load ==========----- // @final //
-		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) alert.simple(misc.getQueryParams('al_tx'), misc.getQueryParams('al_ty'));
+		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) alert.simple(decodeURIComponent(misc.getQueryParams('al_tx')), decodeURIComponent(misc.getQueryParams('al_ty')));
 	// -----========== Preloader ==========----- // @final //
 		$(window).bind('beforeunload', () => {$('.app-preloader').fadeIn();});
 		$('.app-preloader').fadeOut();
