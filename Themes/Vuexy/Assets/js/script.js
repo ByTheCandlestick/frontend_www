@@ -1878,7 +1878,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updates the promotion');
+					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
