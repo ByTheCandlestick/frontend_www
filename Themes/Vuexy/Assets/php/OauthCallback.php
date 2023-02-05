@@ -14,7 +14,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script title="Save Authorisation/Access/Refresh codes">
             $.ajax({
-                url: "'https://accounts.zoho.eu/oauth/v2/token?code=<?=$_GET['code']?>&grant_type=authorization_code&client_id=<?=$config['Zoho Client ID']?>&client_secret=<?=$config['Zoho Client Secret']?>&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php&scope=ZohoMail.messages.ALL,ZohoMail.attachments.ALL,ZohoMail.tags.ALL,ZohoMail.folders.ALL",
+                url: "https://accounts.zoho.eu/oauth/v2/token?code=<?=$_GET['code']?>&grant_type=authorization_code&client_id=<?=$config['Zoho Client ID']?>&client_secret=<?=$config['Zoho Client Secret']?>&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php&scope=ZohoMail.messages.ALL,ZohoMail.attachments.ALL,ZohoMail.tags.ALL,ZohoMail.folders.ALL",
                 type: 'POST',
                 dataType: 'jsonp',
                 cors: true,
