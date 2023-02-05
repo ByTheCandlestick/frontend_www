@@ -47,7 +47,7 @@
 				<?
 					if(count($promos) > 0) {
 						foreach($promos as $x) {
-							print_r(date("d/m/Y"));
+							print_r(date("d-m-Y"));
 							print_r($x['Scheduled start']);
 							print_r($x['Scheduled end']);
 							$active = (date("d/m/Y") > getDate(strtotime($x['Scheduled start'])) && date("d/m/Y") < getDate(strtotime($x['Scheduled end'])))? 'ACTIVE' : 'NOTACTIVE' ;
