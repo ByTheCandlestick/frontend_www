@@ -57,11 +57,13 @@
 			<div class="col-12 col-md-3 col-lg-2" name="misc">
 				<div class="form-floating mb-3">
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active">
-						<label class="form-check-label" for="flexCheckDisabled"> active? </label>
+						<? ($user['Active']==1)?$checked="checked":$checked=""; ?>
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active" <?=($checked)?>>
+						<label class="form-check-label" for="flexCheckDisabled"> Active? </label>
 					</div>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="voucher">
+						<? ($user['Type']==1)?$checked="checked":$checked=""; ?>
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="voucher" <?=($checked)?>>
 						<label class="form-check-label" for="flexCheckDisabled"> Voucher? </label>
 					</div>
 				</div>
