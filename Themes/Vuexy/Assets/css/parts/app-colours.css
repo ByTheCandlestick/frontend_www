@@ -22,6 +22,8 @@
 	--star:						rgb(255, 217,  44, 100%);
 	--message-btn:				rgb(255, 255, 255, 100%);
 
+	--invert:	invert(0);
+
 	--chart-series-1: red;
 	--chart-series-2: orange;
 	--chart-series-3: yellow;
@@ -61,6 +63,8 @@
 	--text-area-border:			rgb(  0,   0,   0,  12%);
 	--star:						rgb(255, 217,  44, 100%);
 	--message-btn:				rgb(195, 207, 244,  10%);
+
+	--invert:	invert(1);
 
 	--chart-series-1: red;
 	--chart-series-2: orange;
