@@ -47,7 +47,7 @@
 				<?
 					if(count($promos) > 0) {
 						foreach($promos as $x) {
-							$active = (date("Y-m-d") > $x['Scheduled start'] && date("Y-m-d") < $x['Scheduled end'])? '<i class="fa-duotone fa-check"></i>' : '<i class="fa-duotone fa-xmark"></i>' ;
+							$active = (date("Y-m-d") > $x['Scheduled start'] && date("Y-m-d") < $x['Scheduled end'])? '<i style="color: green;" class="fa-duotone fa-check"></i>' : '<i style="color: red;" class="fa-duotone fa-xmark"></i>' ;
 							$editable = ($userperm['adm_access-promotion-edit']==1)?'<a href="/Promotions/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
 							print('
 								<tr>
