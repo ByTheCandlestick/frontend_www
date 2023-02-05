@@ -145,6 +145,7 @@
 						$order_item_image = explode(',', $res['Images'])[0];
 						$order_item_slug = $res['Slug'];
 						$order_item_title = $res['Title'];
+						print_r($order_item_title);
 						$titles=$options=array();
 
 						$x = explode(';', $res['Variants']);
