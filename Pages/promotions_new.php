@@ -23,9 +23,9 @@
 				<label for="floatingInput">Name</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-2" name="description">
+		<div class="col-12 col-md-9 col-lg-4" name="description">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+				<textarea class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Description</label>
 			</div>
 		</div>
