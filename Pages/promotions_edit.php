@@ -2,6 +2,8 @@
 	$query = DB_Query(sprintf("SELECT * FROM `Promotions` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$promotion = mysqli_fetch_assoc($query);
+		$categories = explode(',', $page['style_ids']);
+		$collections = explode(',', $page['script_ids']);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -76,9 +78,10 @@
 				<?
 					$query = DB_Query("SELECT * FROM `Product categories` WHERE `Active`=1");
 					while($row = mysqli_fetch_array($query)) {
+						(in_array($row['ID'], $categories))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'" '.$checked.'>
 								<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
 									' . $row['Name'] . '
 								</label>
@@ -92,9 +95,10 @@
 				<?
 					$query = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1");
 					while($row = mysqli_fetch_array($query)) {
+						(in_array($row['ID'], $collections))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'" '.$checked.'>
 								<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
 									' . $row['Name'] . '
 								</label>
