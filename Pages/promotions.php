@@ -40,7 +40,7 @@
 				<th scope="col">Percentage</th>
 				<th scope="col">Start</th>
 				<th scope="col">End</th>
-				<th scope="col"></th>
+				<th scope="col">Live</th>
 				<th scope="col"></th>
 			</thead>
 			<tbody>
