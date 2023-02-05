@@ -15,7 +15,7 @@
         <script title="Save Authorisation/Access/Refresh codes">
             var url = "https://accounts.zoho.eu/oauth/v2/token?code=<?=$_GET['code']?>&grant_type=authorization_code&client_id=<?=$config['Zoho Client ID']?>&client_secret=<?=$config['Zoho Client Secret']?>&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php&scope=ZohoMail.messages.ALL,ZohoMail.attachments.ALL,ZohoMail.tags.ALL,ZohoMail.folders.ALL";
             console.log(url);
-            $.ajax({
+            $.post({
                 url: url,
                 type: 'POST',
                 dataType: 'jsonp',
