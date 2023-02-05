@@ -66,7 +66,7 @@
 			</div>
 		</div>
 		
-		<div class="col-12 col-md-6 col-lg-4" name="categories">
+		<div class="col-12 col-md-6 col-lg-3" name="categories">
 			<h5>Categories</h5>
 			<?
 				$query = DB_Query("SELECT * FROM `Product categories` WHERE `Active`=1");
@@ -82,8 +82,8 @@
 				}
 			?>
 		</div>
-		<div class="col-12 col-md-6 col-lg-4" name="Collections">
-			<h5>Styles</h5>
+		<div class="col-12 col-md-6 col-lg-3" name="collections">
+			<h5>Collections</h5>
 			<?
 				$query = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1");
 				while($row = mysqli_fetch_array($query)) {
