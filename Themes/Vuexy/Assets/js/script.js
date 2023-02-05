@@ -1878,14 +1878,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					console.log(body);
-					response = JSON.parse(''+body+'');
-					console.log(response);
-					//if(response.status == 'success') {
-					//	$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
-					//} else {
-					//	alert.simple('An error has occurred', 'warning')
-					//}
+					if(body.status == 'success') {
+						$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
+					} else {
+						alert.simple('An error has occurred', 'warning')
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
