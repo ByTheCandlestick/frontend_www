@@ -1878,8 +1878,8 @@
 					withCredentials: true,
 				},
 				success(body) {
-					json = JSON.parse(body);
-					if(json['status'] == 'success') {
+					response = JSON.parse(body);
+					if(response.status == 'success') {
 						$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
 					} else {
 						alert.simple('An error has occurred', 'warning')
