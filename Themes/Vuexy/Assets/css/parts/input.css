@@ -13,3 +13,6 @@
 [type="number"] {
     background: var(--text-area-bg)!important;
 }
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
