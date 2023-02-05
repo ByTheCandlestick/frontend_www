@@ -1824,8 +1824,8 @@
 				data: {
 					'api_key': api_key,
 					'name': $("div[name=name] input").val(),
-					'description': $("div[name=description] input").val(),
-					'percentage': $("div[name=percentage]").find("option:selected").val(),
+					'description': $("div[name=description] textarea").val(),
+					'percentage': $("div[name=percentage] input").val(),
 					'start': $("div[name=start]").find("input").val(),
 					'end': $("div[name=end]").find("input").val(),
 					'voucher': $("div[name=voucher]").find("input").val(),

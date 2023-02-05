@@ -17,7 +17,7 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row">
-		<div class="col-12 col-md-6 col-lg-2" name="Name">
+		<div class="col-12 col-md-6 col-lg-2" name="name">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Name</label>
