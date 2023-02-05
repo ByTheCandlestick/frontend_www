@@ -46,16 +46,16 @@
 				<?
 					if(count($promos) > 0) {
 						foreach($promos as $x) {
-							$editable = ($promoperm['adm_access-promotion-edit']==1)?'<a href="/Promotions/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
+							$editable = ($userperm['adm_access-promotion-edit']==1)?'<a href="/Promotions/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
 							print('
 								<tr>
-									<th scope="row">'.$x['Name'].'</th>
+									<th scope="row">
+									'.$x['Name'].'</th>
 									<td>'.$x['Description'].'</td>
 									<td>'.$x['Percentage discount'].'</td>
 									<td>'.$x['Scheduled start'].'</td>
 									<td>'.$x['Scheduled end'].'</td>
-									<td>'.$editable.'
-									</td>
+									<td>'.$editable.'</td>
 								</tr>
 							');
 						}
