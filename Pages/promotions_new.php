@@ -23,12 +23,6 @@
 				<label for="floatingInput">Name</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-9 col-lg-4" name="description">
-			<div class="form-floating mb-3">
-				<textarea class="form-control" id="floatingInput" placeholder="" value=""></textarea>
-				<label for="floatingInput">Description</label>
-			</div>
-		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="percentage">
 			<div class="form-floating mb-3">
 				<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
@@ -63,6 +57,12 @@
 					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active">
 					<label class="form-check-label" for="flexCheckDisabled"> Code? </label>
 				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-9 col-lg-4" name="description">
+			<div class="form-floating mb-3">
+				<textarea class="form-control" id="floatingInput" placeholder="" value=""></textarea>
+				<label for="floatingInput">Description</label>
 			</div>
 		</div>
 	</div>
