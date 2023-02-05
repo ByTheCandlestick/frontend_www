@@ -69,7 +69,7 @@
 		<div class="col-12 col-md-6 col-lg-4" name="categories">
 			<h5>Categories</h5>
 			<?
-				$query = DB_Query("SELECT * FROM `Product Categories` WHERE `Active`=1 ORDER BY `importance` ASC");
+				$query = DB_Query("SELECT * FROM `Product Categories` WHERE `Active`=1");
 				while($row = mysqli_fetch_array($query)) {
 					print('
 						<div class="form-check">
@@ -85,7 +85,7 @@
 		<div class="col-12 col-md-6 col-lg-4" name="Collections">
 			<h5>Styles</h5>
 			<?
-				$query = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1 ORDER BY `importance` ASC");
+				$query = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1");
 				while($row = mysqli_fetch_array($query)) {
 					print('
 						<div class="form-check">
