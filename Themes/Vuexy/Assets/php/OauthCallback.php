@@ -18,7 +18,7 @@
             $.ajax({
                 url: url,
                 type: 'POST',
-                dataType: 'json',
+                dataType: 'jsonp',
                 cors: true,
                 contentType:'application/json',
                 secure: true,
