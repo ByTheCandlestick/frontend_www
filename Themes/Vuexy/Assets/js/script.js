@@ -1859,7 +1859,7 @@
 				url: api_url + '/Promotion/',
 				data: {
 					'api_key': api_key,
-					'api_key': '',
+					'id': id,
 					'name': $("div[name=name] input").val(),
 					'description': $("div[name=description] textarea").val(),
 					'percentage': $("div[name=percentage] input").val(),
