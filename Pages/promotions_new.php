@@ -29,21 +29,21 @@
 				<label for="floatingInput">Description</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-2" name="lastname">
+		<div class="col-12 col-md-6 col-lg-2" name="percentage">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+				<input type="number" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Percentage</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-2" name="email">
+		<div class="col-12 col-md-6 col-lg-2" name="start">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+				<input type="date" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">Start</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-2" name="phone">
+		<div class="col-12 col-md-6 col-lg-2" name="end">
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+				<input type="date" class="form-control" id="floatingInput" placeholder="" value="">
 				<label for="floatingInput">End</label>
 			</div>
 		</div>
