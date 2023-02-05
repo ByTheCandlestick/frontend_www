@@ -1852,13 +1852,14 @@
 				}
 			});
 		},
-		update() {
+		update(id) {
 			var categories = [];	$("div[name=categories]").children().find("input[type=checkbox]:checked").each((index, element) => { categories.push($(element).val()); });
 			var collections = [];	$("div[name=collections]").children().find("input[type=checkbox]:checked").each((index, element) => { collections.push($(element).val()); });
 			$.ajax({
 				url: api_url + '/Promotion/',
 				data: {
 					'api_key': api_key,
+					'api_key': '',
 					'name': $("div[name=name] input").val(),
 					'description': $("div[name=description] textarea").val(),
 					'percentage': $("div[name=percentage] input").val(),
