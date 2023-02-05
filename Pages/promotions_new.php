@@ -59,11 +59,44 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-9 col-lg-4" name="description">
+		<div class="col-12 col-md-6 col-lg-4" name="description">
 			<div class="form-floating mb-3">
 				<textarea class="form-control" id="floatingInput" placeholder="" value=""></textarea>
 				<label for="floatingInput">Description</label>
 			</div>
+		</div>
+		
+		<div class="col-12 col-md-6 col-lg-4" name="categories">
+			<h5>Categories</h5>
+			<?
+				$query = DB_Query("SELECT * FROM `Product Categories` WHERE `Active`=1 ORDER BY `importance` ASC");
+				while($row = mysqli_fetch_array($query)) {
+					print('
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+							<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+								' . $row['Name'] . '
+							</label>
+						</div>
+					');
+				}
+			?>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4" name="Collections">
+			<h5>Styles</h5>
+			<?
+				$query = DB_Query("SELECT * FROM `Product collections` WHERE `Active`=1 ORDER BY `importance` ASC");
+				while($row = mysqli_fetch_array($query)) {
+					print('
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+							<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+								' . $row['Name'] . '
+							</label>
+						</div>
+					');
+				}
+			?>
 		</div>
 	</div>
 </section>
