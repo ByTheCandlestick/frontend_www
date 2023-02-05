@@ -17,7 +17,7 @@
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
 				<div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
-					<a href="/Promos/New/" class="btn btn-outline-primary m-1">
+					<a href="/Promotions/New/" class="btn btn-outline-primary m-1">
 						<i class="fa fa-plus"></i>
 					</a>
 				</div>
@@ -46,7 +46,7 @@
 				<?
 					if(count($promos) > 0) {
 						foreach($promos as $x) {
-							$editable = ($promoperm['adm_access-promos-edit']==1)?'<a href="/Promos/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
+							$editable = ($promoperm['adm_access-promos-edit']==1)?'<a href="/Promotions/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
 							print('
 								<tr>
 									<th scope="row">'.$x['Name'].'</th>
@@ -78,9 +78,9 @@
 		</table>
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
-			($prev_status == '')? $prev_page = "/Promos/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
+			($prev_status == '')? $prev_page = "/Promotions/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
 			(($offset + $promos_per_page) < $total_promos)? $next_status = '': $next_status = ' disabled';
-			($next_status == '')? $next_page = "/Promos/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
+			($next_status == '')? $next_page = "/Promotions/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
 				<div class=\"row\">
