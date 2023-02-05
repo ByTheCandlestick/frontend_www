@@ -61,7 +61,7 @@
 		</div>
 		<div class="col-12 col-md-6 col-lg-4" name="description">
 			<div class="form-floating mb-3">
-				<textarea class="form-control" id="floatingInput" placeholder="" value=""></textarea>
+				<textarea class="form-control" id="floatingInput" style="height: 132px;" placeholder="" value=""></textarea>
 				<label for="floatingInput">Description</label>
 			</div>
 		</div>
