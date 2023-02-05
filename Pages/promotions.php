@@ -41,11 +41,13 @@
 				<th scope="col">Start</th>
 				<th scope="col">End</th>
 				<th scope="col"></th>
+				<th scope="col"></th>
 			</thead>
 			<tbody>
 				<?
 					if(count($promos) > 0) {
 						foreach($promos as $x) {
+							$active = (date("d/m/Y") < getDate(strtotime($x['Scheduled start'])))? 'ACTIVE' : 'NOTACTIVE' ;
 							$editable = ($userperm['adm_access-promotion-edit']==1)?'<a href="/Promotions/Edit/'.$x['ID'].'"><i class="fad fa-pencil"></i></a>':$x['Name'];
 							print('
 								<tr>
@@ -56,6 +58,7 @@
 									<td>'.$x['Percentage discount'].'</td>
 									<td>'.$x['Scheduled start'].'</td>
 									<td>'.$x['Scheduled end'].'</td>
+									<td>'.$active.'</td>
 									<td>'.$editable.'</td>
 								</tr>
 							');
@@ -65,7 +68,6 @@
 							<tr>
 								<th scope="row"></th>
 								<td>No data found</td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
