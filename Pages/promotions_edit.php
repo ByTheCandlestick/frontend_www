@@ -83,8 +83,8 @@
 						(in_array($row['ID'], $categories))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'" '.$checked.'>
-								<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="CategoryCheckboxes-'.$row['ID'].'" '.$checked.'>
+								<label class="form-check-label" for="CategoryCheckboxes-'.$row['ID'].'">
 									' . $row['Name'] . '
 								</label>
 							</div>
@@ -100,8 +100,8 @@
 						(in_array($row['ID'], $collections))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'" '.$checked.'>
-								<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="CollectionCheckboxes-'.$row['ID'].'" '.$checked.'>
+								<label class="form-check-label" for="CollectionCheckboxes-'.$row['ID'].'">
 									' . $row['Name'] . '
 								</label>
 							</div>
