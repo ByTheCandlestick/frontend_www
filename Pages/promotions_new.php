@@ -20,50 +20,38 @@
 		<div class="col-12 col-md-6 col-lg-2" name="Name">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-				<label for="floatingInput">Promoname</label>
+				<label for="floatingInput">Name</label>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-2" name="firstname">
+		<div class="col-12 col-md-6 col-lg-2" name="description">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-				<label for="floatingInput">First name</label>
+				<label for="floatingInput">Description</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="lastname">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-				<label for="floatingInput">Last name</label>
+				<label for="floatingInput">Percentage</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="email">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-				<label for="floatingInput">Email</label>
+				<label for="floatingInput">Start</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-6 col-lg-2" name="phone">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-				<label for="floatingInput">Phone no.</label>
+				<label for="floatingInput">End</label>
 			</div>
 		</div>
 		<div class="col-12 col-md-3 col-lg-2" name="misc">
 			<div class="form-floating mb-3">
 				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="reset_pass">
-					<label class="form-check-label" for="flexCheckDisabled"> Reset password? </label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="disable_analytics">
-					<label class="form-check-label" for="flexCheckDisabled"> Disable analytics? </label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled"  name="email_active">
-					<label class="form-check-label" for="flexCheckDisabled"> Email activated? </label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="promo_active">
-					<label class="form-check-label" for="flexCheckDisabled"> Promo active? </label>
+					<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active">
+					<label class="form-check-label" for="flexCheckDisabled"> active? </label>
 				</div>
 			</div>
 		</div>
