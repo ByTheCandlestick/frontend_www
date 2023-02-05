@@ -1879,6 +1879,7 @@
 				},
 				success(body) {
 					response = JSON.parse(body);
+					console.log(response);
 					if(response.status == 'success') {
 						$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
 					} else {
