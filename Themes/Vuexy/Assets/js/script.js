@@ -1817,6 +1817,44 @@
 			}
 		},
 	};
+	promotion = {
+		create() {
+			$.ajax({
+				url: api_url + '/Promotion/',
+				data: {
+					'api_key': api_key,
+					'name': $("div[name=name] input").val(),
+					'description': $("div[name=description] input").val(),
+					'percentage': $("div[name=percentage]").find("option:selected").val(),
+					'start': $("div[name=start]").find("input").val(),
+					'end': $("div[name=end]").find("input").val(),
+					'voucher': $("div[name=voucher]").find("input").val(),
+					'active': (($("div[name=misc] input[name=active]:checked").length === 0)?0:1),
+					'voucher': (($("div[name=misc] input[name=voucher]:checked").length === 0)?0:1),
+				},
+				type: 'PUT',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					/**
+					 * @todo Redirect once created
+					 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+					 */
+					alert.simple("Successfully created the domain", "success");
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
+		},
+		update() {
+
+		},
+		delete() {
+
+		}
+	}
 $(document).ready(function() {
 	// -----========== Re-auth Zoho ==========----- // @wip //
 		$('.zoho-status.error').click(()=>{
