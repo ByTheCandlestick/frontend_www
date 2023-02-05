@@ -70,7 +70,6 @@
 					$oauths = [];
 					$query = DB_Query("SELECT * FROM `User oauths` WHERE `UID`=".$userdata['ID']);
 					$oauths = mysqli_fetch_assoc($query);
-					print_r($oauths);
 				//
 			}
 		// GET ALL USERS
