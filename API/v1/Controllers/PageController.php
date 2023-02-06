@@ -38,7 +38,7 @@
 						try{
 							if($mdl_page->CreatePage($arr_page_info)) {	// Success
 								$resp = array('status'=>'success');
-								$arr_page_info['id'] = $mdl_page->ReadPage($arr_page_info);
+								$arr_page_info['id'] = $mdl_page->ReadPage($arr_page_info)['ID'];
 								print_r($arr_page_info['id']);
 								$resp['info'] = $arr_page_info;
 								$str_response = json_encode($resp);
