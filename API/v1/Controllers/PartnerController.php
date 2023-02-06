@@ -29,7 +29,7 @@
 						}
 					// Validation
 						try{
-							// Norhting to validate
+							// Nothing to validate
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 						}
