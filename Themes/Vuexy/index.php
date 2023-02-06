@@ -183,8 +183,8 @@
 												$link = $item['menu_url'];
 												$active = '';
 											}
-											$count = 0;
 											if($item['Counter']) {
+												$count = 0;
 												print(sprintf('
 													<span class="fa-layers fa-fw" style="background:MistyRose">
 														<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
