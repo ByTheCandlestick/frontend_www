@@ -55,7 +55,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6" name="link">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Shop lonk']?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Shop link']?>">
 							<label for="floatingInput">Shop link</label>
 						</div>
 					</div>
