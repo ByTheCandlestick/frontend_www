@@ -126,7 +126,7 @@
 		 * 
 		 */
 			public function updateProduct(string $sku, array $info) {
-				return $this->Execute(print(sprintf("
+				return $this->Execute(sprintf("
 				UPDATE
 					`Product`
 				SET
@@ -187,7 +187,7 @@
 					$info['slug'],
 					$info['made_by'],
 					$sku
-				)), 1);
+				), 1);
 			}
 		/** createSKU
 		 * 

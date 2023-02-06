@@ -158,7 +158,7 @@
 						}
 					// Submit
 						try {
-							if($mdl_product->updateProduct($sku, $arr_product_info)) {	// Success
+							if($mdl_product->updateProduct($arr_product_info['id'], $arr_product_info)) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								Throw new Error('ERR-PRD-45');
