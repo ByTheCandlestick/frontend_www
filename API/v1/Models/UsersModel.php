@@ -18,6 +18,15 @@
 			public function GetUserById(int $uid) {
 				return $this->Execute("SELECT * FROM `User accounts` WHERE `ID`=$uid", 4);
 			}
+		/** GetUserID
+		 *  Gets user by User ID
+		 *  @param int $uid
+		 *  @return array
+		 *	@final
+		 */
+		public function GetUserId(string $emailid) {
+			return $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Email`='$email'", 4)[0];
+		}
 		/**	ListSessions
 		 *  Creates a list of all user sessions for a specific user
 		 *	@param	array	$arr_user_info

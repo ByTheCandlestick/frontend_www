@@ -101,7 +101,9 @@
 					// Submit application
 						try{
 							if($mdl_page->UpdatePage($arr[0], $arr_page_info)) {	// Success
-								$str_response = json_encode(array('status'=>'success'));
+								$resp = array('status'=>'success');
+								$resp['info'] = $arr_page_info;
+								$str_response = json_encode($resp);
 							} else {		// Error submitting
 								throw new Error("ERR-PAG-7");
 							}

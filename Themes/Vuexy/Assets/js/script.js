@@ -522,7 +522,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					alert.simple("Successfully updated the product", "success");
+					if(body.status == "success") {
+						$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully updated the product');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -542,7 +546,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully%20deleted%20the%20product');
+					if(body.status == "success") {
+						$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully deleted the product');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -588,6 +596,7 @@
 			$('div[name=profit]').find('input').val(netProfit);
 			$('div[name=retail]').find('input').val(retailPrice);
 		},
+		/** @final */
 		generateBarcode(u) {
 			var upc = u.split('');
 			var ns = u.substring(0, 1); //Number System
@@ -683,6 +692,7 @@
 
 			$('#productBarcodeModal').modal('show');
 		},
+		/** @final */
 		downloadBarcode() {
 			var svg = document.querySelector("#barcodeContainer > svg");
 			var svg_xml = (new XMLSerializer).serializeToString(svg);
@@ -719,8 +729,11 @@
 							withCredentials: true,
 						},
 						success(body) {
-							// $(location).attr('href', '/Products/Container/' + id + '/?al_ty=success&al_tx=Successfully created the container');
-							alert.simple("Successfully updated the container", "success");
+							if(body.status == "success") {
+								$(location).attr('href', '/Products/Containers/?al_ty=success&al_tx=Successfully created the container');
+							} else {
+								alert.simple("An error has occurred. Please try again later", "danger");
+							}
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -747,7 +760,11 @@
 							withCredentials: true,
 						},
 						success(body) {
-							alert.simple("Successfully updated the container", "success");
+							if(body.status == "success") {
+								$(location).attr('href', '/Products/Containers/?al_ty=success&al_tx=Successfully updated the container');
+							} else {
+								alert.simple("An error has occurred. Please try again later", "danger");
+							}
 						},
 						error(body) {
 							alert.simple("An error has occurred. Please try again later", "danger");
@@ -936,29 +953,28 @@
 	supplier = {
 		/** @final */
 		create() {
-			data = {
-				'api_key': api_key,
-				'reference': $("div[name=reference] input").val(),
-				'name': $("div[name=name] input").val(),
-				'website': $("div[name=website] input").val(),
-				'email': $("div[name=email] input").val(),
-				'phone': $("div[name=phone] input").val(),
-				'hours': $("div[name=hours] input").val(),
-				'active': (($("div[name=misc] input[name=active]:checked").length === 0) ? 0 : 1),
-			};
 			$.ajax({
 				url: api_url + '/Supplier/',
-				data: data,
+				data: {
+					'api_key': api_key,
+					'reference': $("div[name=reference] input").val(),
+					'name': $("div[name=name] input").val(),
+					'website': $("div[name=website] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'hours': $("div[name=hours] input").val(),
+					'active': (($("div[name=misc] input[name=active]:checked").length === 0) ? 0 : 1),
+				},
 				type: 'PUT',
 				xhrFields: {
 					withCredentials: true,
 				},
 				success(body) {
-					/**
-					 * @todo Redirect once created
-					 * $(location).attr('href', '/Suppliers/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-					 */
-					alert.simple("Successfully created the supplier", "success");
+					if(body.status == "success") {
+						$(location).attr('href', '/Suppliers/?al_ty=success&al_tx=Successfully created the supplier');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -967,24 +983,27 @@
 		},
 		/** @final */
 		update(sid) {
-			data = {
-				'api_key': api_key,
-				'reference': $("div[name=reference] input").val(),
-				'name': $("div[name=name] input").val(),
-				'email': $("div[name=email] input").val(),
-				'phone': $("div[name=phone] input").val(),
-				'hours': $("div[name=hours] input").val(),
-				'active': (($("div[name=misc] input[name=active]:checked").length === 0) ? 0 : 1),
-			};
 			$.ajax({
 				url: api_url + '/Supplier/' + sid + '/',
-				data: data,
+				data: {
+					'api_key': api_key,
+					'reference': $("div[name=reference] input").val(),
+					'name': $("div[name=name] input").val(),
+					'email': $("div[name=email] input").val(),
+					'phone': $("div[name=phone] input").val(),
+					'hours': $("div[name=hours] input").val(),
+					'active': (($("div[name=misc] input[name=active]:checked").length === 0) ? 0 : 1),
+				},
 				type: 'POST',
 				xhrFields: {
 					withCredentials: true,
 				},
 				success(body) {
-					alert.simple("Successfully update the supplier", "success");
+					if(body.status == "success") {
+						$(location).attr('href', '/Suppliers/?al_ty=success&al_tx=Successfully updated the supplier information');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -993,18 +1012,21 @@
 		},
 		/** @final */
 		delete(sid) {
-			data = {
-				'api_key': api_key,
-			};
 			$.ajax({
 				url: api_url + '/Supplier/' + sid + '/',
-				data: data,
+				data: {
+					'api_key': api_key,
+				},
 				type: 'DELETE',
 				xhrFields: {
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Suppliers/?al_ty=success&al_tx=Successfully created the supplier');
+					if(body.status == "success") {
+						$(location).attr('href', '/Users/?al_ty=success&al_tx=Successfully deleted the supplier');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -1035,11 +1057,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					/**
-					 * @todo Redirect once created
-					 * $(location).attr('href', '/Users/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-					 */
-					alert.simple("Successfully created the user", "success");
+					if(body.status == "success") {
+						$(location).attr('href', '/Users/Edit'+body.info.id+'/?al_ty=success&al_tx=Successfully created the user');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -1067,7 +1089,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					alert.simple("Successfully updated the user", "success");
+					if(body.status == "success") {
+						$(location).attr('href', '/Users/?al_ty=success&al_tx=Successfully updated the user');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -1086,7 +1112,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					if(body.status == 'success') {
+					if(body.status == "success") {
 						$(location).attr('href', '/Users/?al_ty=success&al_tx=Successfully deleted the user');
 					} else {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1115,7 +1141,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					// $(location).attr('href', '/Users/Permissions/?al_ty=success&al_tx=Successfully updated the permissions');
+					if(body.status == "success") {
+						$(location).attr('href', '/Users/Edit/'+uid+'?al_ty=success&al_tx=Successfully updated the users permissions');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -1157,7 +1187,7 @@
 					},
 					success(body) {
 						if(body.status == "success") {
-							$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully created the domain');
+							$(location).attr('href', '/Websites/?al_ty=success&al_tx=Successfully created the website');
 						} else {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
@@ -1197,7 +1227,7 @@
 					},
 					success(body) {
 						if(body.status == "success") {
-							$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully updated the domain');
+							$(location).attr('href', '/Websites/?al_ty=success&al_tx=Successfully updated the website');
 						} else {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
@@ -1220,7 +1250,7 @@
 					},
 					success(body) {
 						if(body.status == "success") {
-							$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully deleted the domain');
+							$(location).attr('href', '/Websites/?al_ty=success&al_tx=Successfully deleted the website');
 						} else {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
@@ -1260,7 +1290,7 @@
 					},
 					success(body) {
 						if(body.status == "success") {
-							$(location).attr('href', '/Websites/Page/'+body.info.id+'/?al_ty=success&al_tx=Successfully created the website');
+							$(location).attr('href', '/Websites/Page/'+body.info.id+'/?al_ty=success&al_tx=Successfully created the webpage');
 						} else {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
@@ -1296,7 +1326,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully updated the page", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/Pages/'+body.info.domain_id+/'?al_ty=success&al_tx=Successfully updated the webpage');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1316,7 +1350,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/?al_ty=success&al_tx=Successfully deleted the webpage');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1376,7 +1414,7 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully updated the layout", "success");
+						alert.simple("Successfully updated the page layout", "success");
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1616,11 +1654,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						/**
-						 * @todo Redirect once created
-						 * $(location).attr('href', '/Websites/Style/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-						 */
-						alert.simple("Successfully created the style", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/styles/?al_ty=success&al_tx=Successfully created the stylesheet');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1645,7 +1683,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully updated the style", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/styles/?al_ty=success&al_tx=Successfully updated the stylesheet');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1665,7 +1707,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/styles/?al_ty=success&al_tx=Successfully deleted the stylesheet');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1692,11 +1738,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						/**
-						 * @todo Redirect once created
-						 * $(location).attr('href', '/Websites/Script/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-						 */
-						alert.simple("Successfully created the script", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/scripts/?al_ty=success&al_tx=Successfully created the script');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1720,7 +1766,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully updated the script", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/scripts/?al_ty=success&al_tx=Successfully updated the script');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1741,7 +1791,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/scripts/?al_ty=success&al_tx=Successfully deleted the script');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1768,11 +1822,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						/**
-						 * @todo Redirect once created
-						 * $(location).attr('href', '/Websites/Theme/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-						 */
-						alert.simple("Successfully created the theme", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/themes/?al_ty=success&al_tx=Successfully created the theme');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1796,7 +1850,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully updated the theme", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/themes/?al_ty=success&al_tx=Successfully updated the theme');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1816,7 +1874,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						$(location).attr('href', '/Websites/Themes/?al_ty=success&al_tx=Successfully created the supplier');
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/themes/?al_ty=success&al_tx=Successfully deleted the theme');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");

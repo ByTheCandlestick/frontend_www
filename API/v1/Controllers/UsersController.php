@@ -45,7 +45,10 @@
 						// Submit application
 							try{
 								if($mdl_User->Register($arr_user_info)) {	// Success
-									$str_response = json_encode(array('status'=>'success'));
+									$resp = array('status'=>'success');
+									$arr_user_info['id'] = $mdl_page->GetUserId($arr_user_info['email'])['ID'];
+									$resp['info'] = $arr_user_info;
+									$str_response = json_encode($resp);
 								} else {		// Error submitting
 									throw new Error("ERR-SUP-10");
 								}
