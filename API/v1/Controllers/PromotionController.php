@@ -41,7 +41,7 @@
 								throw new Error("ERR-PRM-11");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
@@ -77,7 +77,7 @@
 								throw new Error("ERR-PRM-12");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unsupported

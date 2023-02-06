@@ -18,7 +18,7 @@
 						try {
 							if(!$mdl_tasks->resetTransactions()) throw new Error("ERR-TKD-1");
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
 						$str_response = '\n['.date('r').'] - successfully run \'Daily\' tasks;';
@@ -55,7 +55,7 @@
 							if(!$mdl_tasks->resetDudPages()) throw new Error("ERR-TKW-1");
 							if(!$mdl_tasks->refundOldOrders()) throw new Error("ERR-TKW-2");
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
                     	$str_response = '\n['.date('r').'] successfully run \'Weekly\' tasks;';
@@ -91,7 +91,7 @@
 						try {
 
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Bi-monthly\' tasks;';
@@ -127,7 +127,7 @@
 						try {
 
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Monthly\' tasks;';
@@ -163,7 +163,7 @@
 						try {
 
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Bi-annual\' tasks;';
@@ -199,7 +199,7 @@
 						try {
 
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Annual\' tasks;';

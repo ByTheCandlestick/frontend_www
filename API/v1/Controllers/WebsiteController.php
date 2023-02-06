@@ -35,7 +35,7 @@
 								throw new Error("ERR-WEB-5");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
@@ -105,7 +105,7 @@
 								throw new Error("ERR-WEB-17");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Delete the domain from the website
@@ -129,7 +129,7 @@
 								throw new Error("ERR-STY-6");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				else:
@@ -178,7 +178,7 @@
 								throw new Error("ERR-STY-6");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
@@ -237,7 +237,7 @@
 								throw new Error("ERR-STY-6");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Delete styles from BD
@@ -261,7 +261,7 @@
 								throw new Error("ERR-STY-6");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				else:
@@ -309,7 +309,7 @@
 								throw new Error("ERR-SCR-5");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
@@ -367,7 +367,7 @@
 								throw new Error("ERR-SCR-5");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Delete styles from BD
@@ -391,7 +391,7 @@
 								throw new Error("ERR-STY-6");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				else:
@@ -439,7 +439,7 @@
 								throw new Error("ERR-THM-5");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
@@ -497,7 +497,7 @@
 								throw new Error("ERR-THM-5");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Delete styles from BD
@@ -521,7 +521,7 @@
 								throw new Error("ERR-STY-6");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				else:

@@ -38,7 +38,7 @@
 								throw new Error("ERR-CRT-5");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported

@@ -38,7 +38,7 @@
 								throw new Error("ERR-SUP-9");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
@@ -99,7 +99,7 @@
 								throw new Error("ERR-SUP-9");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗹 --	Delete a page
@@ -123,7 +123,7 @@
 								throw new Error("ERR-SUP-1");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				else:											// (U)nsupported-- 🗹 --	The method is unsupported
