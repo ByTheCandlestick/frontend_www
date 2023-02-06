@@ -184,7 +184,7 @@
 												$active = '';
 											}
 											if($item['Counter ID'] > 0) {
-												print_r(DB_Query(sprintf("SELECT * FROM `Item counters` WHERE `Active`=1 AND `ID`=%s", $item['Counter ID']));
+												print_r(DB_Query(sprintf("SELECT * FROM `Item counters` WHERE `Active`=1 AND `ID`=%s", $item['Counter ID'])));
 												$count = 0;
 												print(sprintf('
 													<span class="fa-layers fa-fw" style="background:MistyRose">
