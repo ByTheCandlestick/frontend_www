@@ -14,16 +14,16 @@
 				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Create a new partner
 					// Confirmations
 						try{
-							if(!isset($arr_partner_info['name']) || $arr_partner_info == "")		throw new Error("ERR-PRM-1");
-							if(!isset($arr_partner_info['percentage']) || $arr_partner_info == "")	throw new Error("ERR-PRM-2");
-							if(!isset($arr_partner_info['start']) || $arr_partner_info == "")		throw new Error("ERR-PRM-3");
-							if(!isset($arr_partner_info['end']) || $arr_partner_info == "")			throw new Error("ERR-PRM-4");
-							if(!isset($arr_partner_info['voucher']) || $arr_partner_info == "")		throw new Error("ERR-PRM-5");
-							if(!isset($arr_partner_info['active']) || $arr_partner_info == "")		throw new Error("ERR-PRM-6");
-							if(!isset($arr_partner_info['type']) || $arr_partner_info == "")		throw new Error("ERR-PRM-7");
-							if(!isset($arr_partner_info['description']) || $arr_partner_info == "")	throw new Error("ERR-PRM-8");
-							if(!isset($arr_partner_info['categories']) || $arr_partner_info == "")	throw new Error("ERR-PRM-9");
-							if(!isset($arr_partner_info['collections']) || $arr_partner_info == "")	throw new Error("ERR-PRM-10");
+							if(!isset($arr_partner_info['name']) || $arr_partner_info == "")	throw new Error("ERR-PRT-1");
+							if(!isset($arr_partner_info['public']) || $arr_partner_info == "")	throw new Error("ERR-PRT-2");
+							if(!isset($arr_partner_info['desc_s']) || $arr_partner_info == "")	throw new Error("ERR-PRT-3");
+							if(!isset($arr_partner_info['desc_l']) || $arr_partner_info == "")	throw new Error("ERR-PRT-4");
+							//if(!isset($arr_partner_info['logo']) || $arr_partner_info == "")	throw new Error("ERR-PRT-5");
+							if(!isset($arr_partner_info['link']) || $arr_partner_info == "")	throw new Error("ERR-PRT-6");
+							if(!isset($arr_partner_info['email']) || $arr_partner_info == "")	throw new Error("ERR-PRT-7");
+							if(!isset($arr_partner_info['phone']) || $arr_partner_info == "")	throw new Error("ERR-PRT-8");
+							if(!isset($arr_partner_info['slug']) || $arr_partner_info == "")	throw new Error("ERR-PRT-9");
+							if(!isset($arr_partner_info['active']) || $arr_partner_info == "")	throw new Error("ERR-PRT-10");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 						}
@@ -35,10 +35,11 @@
 						}
 					// Submit application
 						try{
-							if($mdl_partner->Create($arr_partner_info['name'], $arr_partner_info['percentage'], $arr_partner_info['start'], $arr_partner_info['end'], $arr_partner_info['voucher'], $arr_partner_info['active'], $arr_partner_info['type'], $arr_partner_info['description'], $arr_partner_info['categories'], $arr_partner_info['collections'])) {	// Success
+							$arr_partner_info['logo'] = '';
+							if($mdl_partner->Create($arr_partner_info['name'], $arr_partner_info['public'], $arr_partner_info['desc_s'], $arr_partner_info['desc_l'], $arr_partner_info['logo'], $arr_partner_info['link'], $arr_partner_info['email'], $arr_partner_info['phone'], $arr_partner_info['slug'], $arr_partner_info['active'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
-								throw new Error("ERR-PRM-11");
+								throw new Error("ERR-PRT-11");
 							}
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
@@ -49,17 +50,16 @@
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- ☐ --	Unsupported
 					// Confirmations
 						try{
-							if(!isset($arr_partner_info['id']) || $arr_partner_info['id'] == "")					throw new Error("ERR-PRM-1");
-							if(!isset($arr_partner_info['name']) || $arr_partner_info['name'] == "")				throw new Error("ERR-PRM-2");
-							if(!isset($arr_partner_info['percentage']) || $arr_partner_info['percentage'] == "")	throw new Error("ERR-PRM-3");
-							if(!isset($arr_partner_info['start']) || $arr_partner_info['start'] == "")				throw new Error("ERR-PRM-4");
-							if(!isset($arr_partner_info['end']) || $arr_partner_info['end'] == "")					throw new Error("ERR-PRM-5");
-							if(!isset($arr_partner_info['voucher']) || $arr_partner_info['voucher'] == "")			throw new Error("ERR-PRM-6");
-							if(!isset($arr_partner_info['active']) || $arr_partner_info['active'] == "")			throw new Error("ERR-PRM-7");
-							if(!isset($arr_partner_info['type']) || $arr_partner_info['type'] == "")				throw new Error("ERR-PRM-8");
-							if(!isset($arr_partner_info['description']) || $arr_partner_info['description'] == "")	throw new Error("ERR-PRM-9");
-							if(!isset($arr_partner_info['categories']) || $arr_partner_info['categories'] == "")	throw new Error("ERR-PRM-10");
-							if(!isset($arr_partner_info['collections']) || $arr_partner_info['collections'] == "")	throw new Error("ERR-PRM-11");
+							if(!isset($arr_partner_info['id']) || $arr_partner_info == "")		throw new Error("ERR-PRT-1");
+							if(!isset($arr_partner_info['name']) || $arr_partner_info == "")	throw new Error("ERR-PRT-2");
+							if(!isset($arr_partner_info['desc_s']) || $arr_partner_info == "")	throw new Error("ERR-PRT-3");
+							if(!isset($arr_partner_info['desc_l']) || $arr_partner_info == "")	throw new Error("ERR-PRT-4");
+							if(!isset($arr_partner_info['logo']) || $arr_partner_info == "")	throw new Error("ERR-PRT-5");
+							if(!isset($arr_partner_info['link']) || $arr_partner_info == "")	throw new Error("ERR-PRT-6");
+							if(!isset($arr_partner_info['email']) || $arr_partner_info == "")	throw new Error("ERR-PRT-7");
+							if(!isset($arr_partner_info['phone']) || $arr_partner_info == "")	throw new Error("ERR-PRT-8");
+							if(!isset($arr_partner_info['slug']) || $arr_partner_info == "")	throw new Error("ERR-PRT-9");
+							if(!isset($arr_partner_info['active']) || $arr_partner_info == "")	throw new Error("ERR-PRT-10");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 						}
@@ -74,7 +74,7 @@
 							if($mdl_partner->Update($arr_partner_info['id'], $arr_partner_info['name'], $arr_partner_info['percentage'], $arr_partner_info['start'], $arr_partner_info['end'], $arr_partner_info['voucher'], $arr_partner_info['active'], $arr_partner_info['type'], $arr_partner_info['description'], $arr_partner_info['categories'], $arr_partner_info['collections'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
-								throw new Error("ERR-PRM-12");
+								throw new Error("ERR-PRT-10");
 							}
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
