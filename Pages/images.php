@@ -141,24 +141,45 @@
 				<div class="col-12 col-md-8 bg-primary">
 					<img class="cropper-image" src="" style="max-width: 100%;">
 				</div>
-				<div class="col-12 col-md-4 bg-secondary"></div>
+				<div class="col-12 col-md-4 bg-secondary">
+					<div class="form-floating mb-3" name="name">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<label for="floatingInput">Name</label>
+					</div>
+					<div class="form-floating mb-3" name="description">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<label for="floatingInput">Description</label>
+					</div>
+					<div class="form-floating mb-3" name="alt">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<label for="floatingInput">Alt</label>
+					</div>
+					<div class="form-floating mb-3" name="slug">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<label for="floatingInput">Slug</label>
+					</div>
+					<div class="form-check form-switch" name="misc">
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active">
+						<label class="form-check-label" for="flexCheckDisabled"> Active? </label>
+					</div>
+				</div>
 				<script>
-var $image = $('img.cropper-image');
+					var $image = $('img.cropper-image');
 
-$image.cropper({
-  aspectRatio: 16 / 9,
-  crop: function(event) {
-    console.log(event.detail.x);
-    console.log(event.detail.y);
-    console.log(event.detail.width);
-    console.log(event.detail.height);
-    console.log(event.detail.rotate);
-    console.log(event.detail.scaleX);
-    console.log(event.detail.scaleY);
-  }
-});
+					$image.cropper({
+					aspectRatio: 16 / 9,
+					crop: function(event) {
+						console.log(event.detail.x);
+						console.log(event.detail.y);
+						console.log(event.detail.width);
+						console.log(event.detail.height);
+						console.log(event.detail.rotate);
+						console.log(event.detail.scaleX);
+						console.log(event.detail.scaleY);
+					}
+					});
 
-var cropper = $image.data('cropper');
+					var cropper = $image.data('cropper');
 				</script>
 			</div>
 			<div class="modal-footer">
