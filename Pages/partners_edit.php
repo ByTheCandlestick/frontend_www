@@ -33,14 +33,12 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-4" name="description_short">
 				<div class="form-floating mb-3">
-					<textarea type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About short']?></textarea>
-					<label for="floatingInput">Short description</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About short']?>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4" name="description_long">
 				<div class="form-floating mb-3">
-					<textarea type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About long']?></textarea>
-					<label for="floatingInput">Long description</label>
+					<input type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About long']?>
 				</div>
 			</div>
 			<div class="col-12 col-md-3 col-lg-2" name="misc">
