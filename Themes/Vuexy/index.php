@@ -197,7 +197,7 @@
 													$active,
 													$item['page_name'],
 													$item['menu_icon'],
-													$count[num_rows]
+													$count['num_rows']
 												));
 											} else {
 												print(sprintf('
