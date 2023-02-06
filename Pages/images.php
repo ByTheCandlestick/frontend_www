@@ -3,7 +3,7 @@
 ?><?
 	$total_images = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Images`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
-    $q = DB_Query(sprintf("SELECT * FROM `Images` ORDER BY `ID` ASC LIMIT %s OFFSET %s", $config['Maximum list size'] OFFSET $offset));
+    $q = DB_Query(sprintf("SELECT * FROM `Images` ORDER BY `ID` ASC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($image = mysqli_fetch_assoc($q)) { array_push($images, $image); }
 ?>
 <style>

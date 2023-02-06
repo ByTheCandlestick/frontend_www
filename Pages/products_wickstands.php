@@ -5,7 +5,7 @@
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
 	$total_wickstands = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product wickstands`"))[0];
 	$offset = (QS !== null)?(intval(QS)-1)*$config['Maximum list size'] :0;
-    $q = DB_Query($prnt = sprintf("SELECT * FROM `Product wickstands` ORDER BY `ID` ASC LIMIT %s OFFSET %s", $config['Maximum list size'] OFFSET $offset));
+    $q = DB_Query($prnt = sprintf("SELECT * FROM `Product wickstands` ORDER BY `ID` ASC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($wickstand = mysqli_fetch_assoc($q)) { array_push($wickstands, $wickstand); }
 ?>
 <section>
