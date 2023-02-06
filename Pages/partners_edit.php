@@ -1,7 +1,7 @@
 <?
 	$query = DB_Query(sprintf("SELECT * FROM `Partner accounts` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
-		$part = mysqli_fetch_assoc($query);
+		$partner = mysqli_fetch_assoc($query);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -25,6 +25,42 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row PartnerInfo">
+			<div class="col-12 col-md-6 col-lg-2" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Name']?>">
+					<label for="floatingInput">Name</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['About short']?>">
+					<label for="floatingInput">Short description</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['About long']?>">
+					<label for="floatingInput">About us</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Shop lonk']?>">
+					<label for="floatingInput">Shop link</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Email']?>">
+					<label for="floatingInput">Name</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-2" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Phone']?>">
+					<label for="floatingInput">Name</label>
+				</div>
+			</div>
 		</div>
 	</section>
 <?
