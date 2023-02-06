@@ -47,6 +47,12 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-12 col-md-6 col-lg-6" name="slug">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Slug']?>">
+							<label for="floatingInput">Slug</label>
+						</div>
+					</div>
 					<div class="col-12 col-md-6 col-lg-6" name="link">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Shop lonk']?>">
@@ -63,12 +69,6 @@
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Phone']?>">
 							<label for="floatingInput">Phone</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6" name="slug">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Slug']?>">
-							<label for="floatingInput">Slug</label>
 						</div>
 					</div>
 				</div>
