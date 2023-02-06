@@ -83,7 +83,7 @@
 						(in_array($row['ID'], $categories))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="CategoryCheckboxes-'.$row['ID'].'" '.$checked.'>
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="CategoryCheckboxes-'.$row['ID'].'" '.$checked.' disabled>
 								<label class="form-check-label" for="CategoryCheckboxes-'.$row['ID'].'">
 									' . $row['Name'] . '
 								</label>
