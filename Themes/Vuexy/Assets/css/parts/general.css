@@ -39,13 +39,11 @@ thead.sticky-top {
   z-index: 1!important;
 }
 
-input[type=text],
-input[type=number],
+input,
 textarea {
   background: var(--text-area-bg)!important;
 }
-input[type=text]:disabled, input[type=text].disabled,
-input[type=number]:disabled, input[type=number].disabled,
+input:disabled, input.disabled,
 textarea:disabled, textarea.disabled,
 select:disabled, select.disabled {
   background: var(--text-area-bg-disabled)!important;
