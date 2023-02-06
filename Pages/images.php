@@ -139,20 +139,11 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
-<div id="image-cropper">
-<!-- This is where the preview image is displayed -->
-<div class="cropit-preview"></div>
-
-<!-- This range input controls zoom -->
-<!-- You can add additional elements here, e.g. the image icons -->
-<input type="range" class="cropit-image-zoom-input" />
-
-<!-- This is where user selects new image -->
-<input type="file" class="cropit-image-input" />
-
-<!-- The cropit- classes above are needed
-so cropit can identify these elements -->
-</div>
+					<div id="image-cropper">
+					<div class="cropit-preview"></div>
+					<input type="range" class="cropit-image-zoom-input" />
+					<input type="file" class="cropit-image-input" />
+					</div>
 				</div>
 				<div class="col-12 col-md-4 bg-secondary">
 
