@@ -52,14 +52,15 @@
 						try{
 							if(!isset($arr_partner_info['id']) || $arr_partner_info == "")		throw new Error("ERR-PRT-1");
 							if(!isset($arr_partner_info['name']) || $arr_partner_info == "")	throw new Error("ERR-PRT-2");
-							if(!isset($arr_partner_info['desc_s']) || $arr_partner_info == "")	throw new Error("ERR-PRT-3");
-							if(!isset($arr_partner_info['desc_l']) || $arr_partner_info == "")	throw new Error("ERR-PRT-4");
-							//if(!isset($arr_partner_info['logo']) || $arr_partner_info == "")	throw new Error("ERR-PRT-5");
-							if(!isset($arr_partner_info['link']) || $arr_partner_info == "")	throw new Error("ERR-PRT-6");
-							if(!isset($arr_partner_info['email']) || $arr_partner_info == "")	throw new Error("ERR-PRT-7");
-							if(!isset($arr_partner_info['phone']) || $arr_partner_info == "")	throw new Error("ERR-PRT-8");
-							if(!isset($arr_partner_info['slug']) || $arr_partner_info == "")	throw new Error("ERR-PRT-9");
-							if(!isset($arr_partner_info['active']) || $arr_partner_info == "")	throw new Error("ERR-PRT-10");
+							if(!isset($arr_partner_info['public']) || $arr_partner_info == "")	throw new Error("ERR-PRT-3");
+							if(!isset($arr_partner_info['desc_s']) || $arr_partner_info == "")	throw new Error("ERR-PRT-4");
+							if(!isset($arr_partner_info['desc_l']) || $arr_partner_info == "")	throw new Error("ERR-PRT-5");
+							//if(!isset($arr_partner_info['logo']) || $arr_partner_info == "")	throw new Error("ERR-PRT-6");
+							if(!isset($arr_partner_info['link']) || $arr_partner_info == "")	throw new Error("ERR-PRT-7");
+							if(!isset($arr_partner_info['email']) || $arr_partner_info == "")	throw new Error("ERR-PRT-8");
+							if(!isset($arr_partner_info['phone']) || $arr_partner_info == "")	throw new Error("ERR-PRT-9");
+							if(!isset($arr_partner_info['slug']) || $arr_partner_info == "")	throw new Error("ERR-PRT-10");
+							if(!isset($arr_partner_info['active']) || $arr_partner_info == "")	throw new Error("ERR-PRT-11");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
 						}
@@ -75,7 +76,7 @@
 							if($mdl_partner->Update($arr_partner_info['id'], $arr_partner_info['name'], $arr_partner_info['percentage'], $arr_partner_info['start'], $arr_partner_info['end'], $arr_partner_info['voucher'], $arr_partner_info['active'], $arr_partner_info['type'], $arr_partner_info['description'], $arr_partner_info['categories'], $arr_partner_info['collections'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
-								throw new Error("ERR-PRT-10");
+								throw new Error("ERR-PRT-12");
 							}
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
