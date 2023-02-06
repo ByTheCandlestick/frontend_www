@@ -33,6 +33,12 @@
 							<label for="floatingInput">Name</label>
 						</div>
 					</div>
+					<div class="col-12 col-md-6 col-lg-6" name="slug">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Slug']?>">
+							<label for="floatingInput">Slug</label>
+						</div>
+					</div>
 					<div class="col-12 col-md-3 col-lg-6" name="misc">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
@@ -45,12 +51,6 @@
 								<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="public" <?=($checked)?>>
 								<label class="form-check-label" for="flexCheckDisabled"> Public? </label>
 							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6" name="slug">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Slug']?>">
-							<label for="floatingInput">Slug</label>
 						</div>
 					</div>
 					<div class="col-12 col-md-6 col-lg-6" name="link">
