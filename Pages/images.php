@@ -143,19 +143,19 @@
 				</div>
 				<div class="col-12 col-md-4 p-2">
 					<div class="form-floating mb-3" name="name">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null">
 						<label for="floatingInput">Name</label>
 					</div>
 					<div class="form-floating mb-3" name="description">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null">
 						<label for="floatingInput">Description</label>
 					</div>
 					<div class="form-floating mb-3" name="alt">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null">
 						<label for="floatingInput">Alt</label>
 					</div>
 					<div class="form-floating mb-3" name="slug">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null">
 						<label for="floatingInput">Slug</label>
 					</div>
 					<div class="form-check form-switch" name="misc">
