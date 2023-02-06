@@ -1955,7 +1955,7 @@
 			});
 		},
 		/** @final */
-		delete() {
+		delete(id) {
 			$.ajax({
 				url: api_url + '/Partner/',
 				data: {
