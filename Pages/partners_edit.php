@@ -31,16 +31,16 @@
 					<label for="floatingInput">Name</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4" name="name">
+			<div class="col-12 col-md-6 col-lg-4" name="description_short">
 				<div class="form-floating mb-3">
 					<textarea type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About short']?></textarea>
 					<label for="floatingInput">Short description</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4" name="name">
+			<div class="col-12 col-md-6 col-lg-4" name="description_long">
 				<div class="form-floating mb-3">
 					<textarea type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About long']?></textarea>
-					<label for="floatingInput">About us</label>
+					<label for="floatingInput">Long description</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-3 col-lg-2" name="misc">
@@ -83,6 +83,18 @@
 			</div>
 		</div>
 	</section>
+	<script>
+		tinymce.init({
+			selector: 'div[name=description_long] input, div[name=description_short] input',
+			toolbar: 'undo redo |'+
+					 'formatpainter casechange blocks |'+
+					 'bold italic backcolor | '+
+					 'alignleft aligncenter alignright alignjustify | ' +
+					 'bullist numlist checklist outdent indent |'+
+					 'removeformat |'+
+					 'code table help'
+		});
+	</script>
 <?
 	}
 ?>
