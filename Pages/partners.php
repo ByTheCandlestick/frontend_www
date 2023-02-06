@@ -2,7 +2,7 @@
     $partners = array();
 	$partners_per_page = 100;
 ?><?
-	$total_partners = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Partners`"))[0];
+	$total_partners = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Partner accounts`"))[0];
 	$offset = (QS_SUBPAGE !== null)? (intval(QS_SUBPAGE)-1)*$partners_per_page: 0;
     $q = DB_Query($prnt = "SELECT * FROM `Partners` ORDER BY `Reference` ASC LIMIT $partners_per_page OFFSET $offset");
 	while($partner = mysqli_fetch_assoc($q)) { array_push($partners, $partner); }
