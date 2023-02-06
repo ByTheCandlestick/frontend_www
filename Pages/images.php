@@ -139,7 +139,7 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8" style="background: var(--app-container); border-radius: 10px;">
-					<img class="cropper-image" src="" style="max-width: 100%;">
+					<img class="cropper-image" src="" style="max-width: 100%; left: 50%; position: relative; transform: translatex(-50%);">
 				</div>
 				<div class="col-12 col-md-4 p-2">
 					<div class="form-floating mb-3" name="name">
