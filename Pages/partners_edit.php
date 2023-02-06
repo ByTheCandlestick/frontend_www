@@ -61,6 +61,26 @@
 					<label for="floatingInput">Phone</label>
 				</div>
 			</div>
+			<div class="col-12 col-md-6 col-lg-3" name="name">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Slug']?>">
+					<label for="floatingInput">Slug</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-3 col-lg-2" name="misc">
+				<div class="form-floating mb-3">
+					<div class="form-check form-switch">
+						<? ($partner['Active']==1)?$checked="checked":$checked=""; ?>
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="active" <?=($checked)?>>
+						<label class="form-check-label" for="flexCheckDisabled"> Active? </label>
+					</div>
+					<div class="form-check form-switch">
+						<? ($partner['Public']==1)?$checked="checked":$checked=""; ?>
+						<input class="form-check-input" type="checkbox" value="1" id="flexCheckDisabled" name="public" <?=($checked)?>>
+						<label class="form-check-label" for="flexCheckDisabled"> Public? </label>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 <?
