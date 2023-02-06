@@ -1327,7 +1327,7 @@
 					},
 					success(body) {
 						if(body.status == "success") {
-							$(location).attr('href', '/Websites/Pages/'+body.info.domain_id+/'?al_ty=success&al_tx=Successfully updated the webpage');
+							$(location).attr('href', '/Websites/Pages/'+body.info.domain_id+'/?al_ty=success&al_tx=Successfully updated the webpage');
 						} else {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
