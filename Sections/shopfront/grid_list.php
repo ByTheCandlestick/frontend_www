@@ -1,12 +1,8 @@
 <div class="row boutique">
 	<?
+		(isset($_GET['p']))? $page = $_GET['p']: $page = 1;
 		if(isset($secext) && $secext == 'products') {
 			//
-				if(isset($_GET['p'])){
-					$page = $_GET['p'];
-				} else {
-					$page = 1;
-				}
 				$start = ($page - 1) * $config['Shopfront products per page'];
 				$prd_viewed = $page * $config['Shopfront products per page'];
 				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product` WHERE `Active`=1 AND `Discontinued`=0"))[0];
@@ -110,11 +106,6 @@
 			}
 		} else if(isset($secext) && $secext == 'partners') {
 			//
-				if(isset($_GET['p'])){
-					$page = $_GET['p'];
-				} else {
-					$page = 1;
-				}
 				$start = ($page - 1) * $config['Shopfront products per page'];
 				$prd_viewed = $page * $config['Shopfront products per page'];
 				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Partner accounts` WHERE `Active`=1"))[0];
@@ -176,11 +167,6 @@
 		} else if(isset($secext) && $secext == 'partner'){
 			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `Partner accounts` WHERE `name`='%s' AND `public`=1 AND `active`=1", QS)))[0];
 			//
-				if(isset($_GET['p'])){
-					$page = $_GET['p'];
-				} else {
-					$page = 1;
-				}
 				$start = ($page - 1) * $config['Shopfront products per page'];
 				$prd_viewed = $page * $config['Shopfront products per page'];
 				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product` WHERE `made_by_ID`=$part_ID AND `Active`=1 AND `Discontinued`=0"))[0];
