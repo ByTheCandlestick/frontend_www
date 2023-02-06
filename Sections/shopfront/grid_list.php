@@ -7,11 +7,11 @@
 				} else {
 					$page = 1;
 				}
-				$start = ($page - 1) * 16;
-				$prd_viewed = $page * 16;
-				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product` WHERE `made_by_ID`=1 AND `Active`=1 AND `Discontinued`=0"))[0];
+				$start = ($page - 1) * $config['Shopfront products per page'];
+				$prd_viewed = $page * $config['Shopfront products per page'];
+				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product` WHERE `Active`=1 AND `Discontinued`=0"))[0];
 			//
-			$query = DB_Query("SELECT * FROM `Product` WHERE `made_by_ID`=1 AND `Active`=1 AND `Discontinued`=0 LIMIT $start, 16");
+			$query = DB_Query("SELECT * FROM `Product` WHERE `Active`=1 AND `Discontinued`=0 LIMIT $start, $config['Shopfront products per page']");
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
 					$prod_price = $row['RetailPrice'];
@@ -109,8 +109,18 @@
 				';
 			}
 		} else if(isset($secext) && $secext == 'partners') {
-			$result = DB_Query("SELECT * FROM `Partner accounts` WHERE `Public`=1 AND `Active`=1");
-			while($row = mysqli_fetch_array($result)){
+			//
+				if(isset($_GET['p'])){
+					$page = $_GET['p'];
+				} else {
+					$page = 1;
+				}
+				$start = ($page - 1) * $config['Shopfront products per page'];
+				$prd_viewed = $page * $config['Shopfront products per page'];
+				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Partner accounts` WHERE `Active`=1"))[0];
+			//
+			$query = DB_Query("SELECT * FROM `Partner accounts` WHERE `Public`=1 AND `Active`=1 LIMIT $start, $config['Shopfront products per page']");
+			while($row = mysqli_fetch_array($query)){
 				$part_image = $row['Logo image'];
 				$part_slug = $row['Slug'];
 				$part_name = $row['Name'];
@@ -165,7 +175,17 @@
 			}
 		} else if(isset($secext) && $secext == 'partner'){
 			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `Partner accounts` WHERE `name`='%s' AND `public`=1 AND `active`=1", QS)))[0];
-			$query = DB_Query("SELECT * FROM `Product` WHERE `made_by_ID`='$part_ID' AND `Active`=1 AND `Discontinued`=0");
+			//
+				if(isset($_GET['p'])){
+					$page = $_GET['p'];
+				} else {
+					$page = 1;
+				}
+				$start = ($page - 1) * $config['Shopfront products per page'];
+				$prd_viewed = $page * $config['Shopfront products per page'];
+				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product` WHERE `made_by_ID`=$part_ID AND `Active`=1 AND `Discontinued`=0"))[0];
+			//
+			$query = DB_Query("SELECT * FROM `Product` WHERE `made_by_ID`=$part_ID AND `Active`=1 AND `Discontinued`=0 LIMIT $start, $config['Shopfront products per page']");
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
 					$prod_price = $row['RetailPrice'];
