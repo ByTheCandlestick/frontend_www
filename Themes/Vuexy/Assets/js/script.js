@@ -1817,6 +1817,7 @@
 			}
 		},
 	};
+	/** @final */
 	promotion = {
 		/** @todo: Redirect after success */
 		create() {
@@ -1894,11 +1895,12 @@
 
 		}
 	}
+	/** @final */
 	partner = {
-		/** @todo: Redirect after success */
+		/** @todo: make */
 		create() {
 			$.ajax({
-				url: api_url + '/Promotion/',
+				url: api_url + '/Partner/',
 				data: {
 					'api_key': api_key,
 					'name': $("div[name=name] input").val(),
@@ -1927,36 +1929,33 @@
 				}
 			});
 		},
-		/** @final */
+		/** @todo: make */
 		update(id) {
-			var categories = [];	$("div[name=categories]").children().find("input[type=checkbox]:checked").each((index, element) => { categories.push($(element).val()); });
-			var collections = [];	$("div[name=collections]").children().find("input[type=checkbox]:checked").each((index, element) => { collections.push($(element).val()); });
 			$.ajax({
-				url: api_url + '/Promotion/',
+				url: api_url + '/Partner/',
 				data: {
 					'api_key': api_key,
 					'id': id,
 					'name': $("div[name=name] input").val(),
-					'description': $("div[name=description] textarea").val(),
-					'percentage': $("div[name=percentage] input").val(),
-					'start': $("div[name=start]").find("input").val(),
-					'end': $("div[name=end]").find("input").val(),
-					'voucher': $("div[name=voucher]").find("input").val(),
+					'slug': $("div[name=slug]").find("input").val(),
+					'link': $("div[name=phone]").find("input").val(),
+					'phone': $("div[name=phone]").find("input").val(),
+					'email': $("div[name=email]").find("input").val(),
+					'description_long': misc.mcebogus(encodeURIComponent($("div[name=description_long] iframe").contents().find('.mce-content-body').html())),
+					'description_short': misc.mcebogus(encodeURIComponent($("div[name=description_short] iframe").contents().find('.mce-content-body').html())),
 					'active': (($("div[name=misc] input[name=active]:checked").length === 0)?0:1),
-					'type': (($("div[name=misc] input[name=voucher]:checked").length === 0)?0:1),
-					'categories': categories.join(","),
-					'collections': collections.join(","),
+					'public': (($("div[name=misc] input[name=public]:checked").length === 0)?0:1),
 				},
-				type: 'POST',
+				type: 'PUT',
 				xhrFields: {
 					withCredentials: true,
 				},
 				success(body) {
-					if(body.status == 'success') {
-						$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
-					} else {
-						alert.simple('An error has occurred', 'warning')
-					}
+					/**
+					 * @todo Redirect once created
+					 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
+					 */
+					//$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully created the partner');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
