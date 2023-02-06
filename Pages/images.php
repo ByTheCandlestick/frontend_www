@@ -139,7 +139,7 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
-					<img class="cropper-image" src="">
+					<img class="cropper-image" src="" style="max-width: 100%;">
 				</div>
 				<div class="col-12 col-md-4 bg-secondary"></div>
 				<script>
@@ -158,7 +158,6 @@ $image.cropper({
   }
 });
 
-// Get the Cropper.js instance after initialized
 var cropper = $image.data('cropper');
 				</script>
 			</div>
