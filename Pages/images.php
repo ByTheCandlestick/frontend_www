@@ -139,7 +139,7 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
-					<div id="image-editor">
+					<div id="tui-image-editor">
 						<canvas></canvas>
 					</div>
 				</div>
@@ -147,16 +147,16 @@
 
 				</div>
 				<script>
-					$(document).ready(function() {
-						images.modify.imageEditor = new tui.ImageEditor('#image-editor canvas', {
-							cssMaxWidth: 1000, // Component default value: 1000
-							cssMaxHeight: 800, // Component default value: 800
-							selectionStyle: {
-								cornerSize: 20,
-								rotatingPointOffset: 70,
-							},
-						});
-					})
+const ImageEditor = require('tui-image-editor');
+const instance = new ImageEditor(document.querySelector('#tui-image-editor'), {
+  cssMaxWidth: 700,
+  cssMaxHeight: 500,
+  selectionStyle: {
+    cornerSize: 20,
+    rotatingPointOffset: 70,
+  },
+});
+
 				</script>
 			</div>
 			<div class="modal-footer">
