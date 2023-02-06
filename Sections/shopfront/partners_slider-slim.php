@@ -15,7 +15,7 @@
 			<?
 				if($result = DB_Query($sql)){
 					while($row = mysqli_fetch_array($result)){
-						$part_image = $row['Shop link'];
+						$part_image = $row['Logo image'];
 						$part_slug = $row['Slug'];
 						$part_name = $row['Name'];
 						$part_rating = $row['Rating'];
