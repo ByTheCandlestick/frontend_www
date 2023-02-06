@@ -143,7 +143,7 @@
 				</div>
 				<div class="col-12 col-md-4 bg-secondary"></div>
 				<script>
-var $image = $('.cropper-image');
+var $image = $('img.cropper-image');
 
 $image.cropper({
   aspectRatio: 16 / 9,
