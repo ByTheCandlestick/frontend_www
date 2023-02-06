@@ -1,7 +1,7 @@
 <?php
-	class PromotionModel extends BaseModel {
+	class PartnerModel extends BaseModel {
         /** Create
-         *  Creates a new promotion
+         *  Creates a new partner
          *  @param int $uid
          *  @param int $sku
          *  @param int $qty
@@ -10,15 +10,15 @@
          */
 		public function Create(string $name, string $percentage, string $start, string $end, string $voucher, string $active, string $type, string $description, string $categories, string $collections) {
 			try {
-				// Add line to Promotion
-				$this->Execute("INSERT INTO `Promotions` (`Name`, `Description`, `Percentage discount`, `Voucher`, `Type`, `Category IDs`, `Collection IDs`, `Scheduled start`, `Scheduled end`, `Active`) VALUES ('$name', '$description', '$percentage', '$voucher', '$type', '$categories', '$collections', '$start', '$end', '$active')", 1);
+				// Add line to Partner
+				$this->Execute("INSERT INTO `Partners` (`Name`, `Description`, `Percentage discount`, `Voucher`, `Type`, `Category IDs`, `Collection IDs`, `Scheduled start`, `Scheduled end`, `Active`) VALUES ('$name', '$description', '$percentage', '$voucher', '$type', '$categories', '$collections', '$start', '$end', '$active')", 1);
 				return true;
 			} catch(Error $er) {
 				return false;
 			}
 		}
         /** Update
-         *  Updates a promotion
+         *  Updates a partner
          *  @param int $uid
          *  @param int $sku
          *  @param int $qty
@@ -27,8 +27,8 @@
          */
 		public function Update(string $id, string $name, string $percentage, string $start, string $end, string $voucher, string $active, string $type, string $description, string $categories, string $collections) {
 			try {
-				// Update Promotion line
-				$this->Execute("UPDATE `Promotions` SET `Name`='$name', `Description`='$description', `Voucher`='$voucher',`Type`='$type',`Category IDs`='$categories',`Collection IDs`='$collections',`Percentage discount`='$percentage',`Scheduled start`='$start',`Scheduled end`='$end',`Active`='$active' WHERE `ID`=$id", 1);
+				// Update Partners line
+				$this->Execute("UPDATE `Partners` SET `Name`='$name', `Description`='$description', `Voucher`='$voucher',`Type`='$type',`Category IDs`='$categories',`Collection IDs`='$collections',`Percentage discount`='$percentage',`Scheduled start`='$start',`Scheduled end`='$end',`Active`='$active' WHERE `ID`=$id", 1);
 				return true;
 			} catch(Error $er) {
 				return false;
