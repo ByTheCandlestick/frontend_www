@@ -16,7 +16,7 @@ if(QS_SUBPAGE != "") {
 					<div class="form-floating m-1">
 						<div class="form-check form-switch">
 							<input type="checkbox" class="btn-check" id="display_type" name="display_type" autocomplete="off" <?($page['display_type']==1)?print("checked"):print("")?>>
-							<label class="btn btn-outline-primary" for="display_type"> <?($page['display_type']==1)?print("Sections"):print("Pages")?> </label>
+							<label class="btn btn-outline-primary" for="display_type"> <?($page['display_type']==1)?print("Page?"):print("Sections?")?> </label>
 						</div>
 					</div>
 					<a href="javascript:website.layout.update(<?=(QS_SUBPAGE)?>);" class="btn btn-outline-primary m-1">

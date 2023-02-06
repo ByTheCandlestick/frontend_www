@@ -1932,11 +1932,11 @@ $(document).ready(function() {
 	// -----========== OXYGEN builder ==========----- // @final //
 		$('input[name=display_type]').change(function() {
 			if($('input[name=display_type]:checked').length === 0) {
-				$('label[for=display_type]').html('Pages');
+				$('label[for=display_type]').html('Sections?');
 				$('div[type=sections]').hide();
 				$('div[type=page]').show();
 			} else {
-				$('label[for=display_type]').html('Sections');
+				$('label[for=display_type]').html('Page?');
 				$('div[type=sections]').show();
 				$('div[type=page]').hide();
 			}
