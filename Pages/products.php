@@ -8,7 +8,7 @@
 
 	$total_products = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
-    $q = DB_Query("SELECT * FROM `Product` ORDER BY `SKU` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
+    $q = DB_Query(sprintf("SELECT * FROM `Product` ORDER BY `SKU` DESC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($product = mysqli_fetch_assoc($q)) { array_push($products, $product); }
 ?>
 <section>

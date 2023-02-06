@@ -3,7 +3,7 @@
 ?><?
 	$total_transactions = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Transactions`"))[0];
 	$offset = QS_SUBPAGE!==null ? (intval(QS_SUBPAGE)-1)*$config['Maximum list size'] : 1;
-    $q = DB_Query("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
+    $q = DB_Query(sprintf("SELECT * FROM `Transactions` ORDER BY `Modified` DESC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($transaction = mysqli_fetch_assoc($q)) { array_push($transactions, $transaction); }
 ?>
 <section>
