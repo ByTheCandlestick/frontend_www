@@ -139,11 +139,11 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
-					<img id="image" src="picture.jpg">
+					<img class="cropper-image" src="">
 				</div>
 				<div class="col-12 col-md-4 bg-secondary"></div>
 				<script>
-var $image = $('#image');
+var $image = $('.cropper-image');
 
 $image.cropper({
   aspectRatio: 16 / 9,

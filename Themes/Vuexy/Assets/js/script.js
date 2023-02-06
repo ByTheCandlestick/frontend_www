@@ -212,7 +212,7 @@
 			/** @wip */
 			openModal(slug) {
 				infoDiv = $('#image-cropper[data-slug=' + slug + ']');
-				
+				$('.cropper-image').attr('src', 'slug')
 				$('#imageEditorModal').modal('show');	
 			},
 			/** @wip */
