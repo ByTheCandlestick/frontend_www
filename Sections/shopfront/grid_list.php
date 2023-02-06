@@ -111,7 +111,7 @@
 		} else if(isset($secext) && $secext == 'partners') {
 			$result = DB_Query("SELECT * FROM `Partner accounts` WHERE `Public`=1 AND `Active`=1");
 			while($row = mysqli_fetch_array($result)){
-				$part_image = $row['Logo_url'];
+				$part_image = $row['Logo image'];
 				$part_slug = $row['Slug'];
 				$part_name = $row['Name'];
 				$part_rating = $row['Rating'];
