@@ -25,27 +25,15 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row PartnerInfo">
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-4">
 				<div class="row">
-					<div class="col-12 col-md-6 col-lg-4" name="name">
+					<div class="col-12 col-md-6 col-lg-6" name="name">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Name']?>">
 							<label for="floatingInput">Name</label>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4" name="link">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Shop lonk']?>">
-							<label for="floatingInput">Shop link</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4" name="email">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Email']?>">
-							<label for="floatingInput">Email</label>
-						</div>
-					</div>
-					<div class="col-12 col-md-3 col-lg-4" name="misc">
+					<div class="col-12 col-md-3 col-lg-6" name="misc">
 						<div class="form-floating mb-3">
 							<div class="form-check form-switch">
 								<? ($partner['Active']==1)?$checked="checked":$checked=""; ?>
@@ -59,13 +47,25 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4" name="phone">
+					<div class="col-12 col-md-6 col-lg-6" name="link">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Shop lonk']?>">
+							<label for="floatingInput">Shop link</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6" name="email">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Email']?>">
+							<label for="floatingInput">Email</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6" name="phone">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Phone']?>">
 							<label for="floatingInput">Phone</label>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4" name="slug">
+					<div class="col-12 col-md-6 col-lg-6" name="slug">
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Slug']?>">
 							<label for="floatingInput">Slug</label>
@@ -73,7 +73,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-8">
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-6" name="description_short">
 						<div class="form-floating mb-3">
