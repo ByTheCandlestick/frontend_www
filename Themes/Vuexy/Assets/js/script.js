@@ -211,7 +211,7 @@
 		modify: {
 			/** @wip */
 			openModal(slug) {
-				infoDiv = $('div.imageContainer[data-slug=' + slug + ']');
+				infoDiv = $('#image-cropper[data-slug=' + slug + ']');
 				
 				$('#imageEditorModal').modal('show');	
 			},
