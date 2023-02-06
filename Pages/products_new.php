@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="col-12 col-md-6">
 			<h1>New product</h1>
+			<p></p>
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
@@ -21,13 +22,13 @@
 			<div class="row">
 				<div class="col-12 col-lg-6" name="title">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null" value="">
 						<label for="floatingInput">Title</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-6" name="images">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null" value="">
 						<label for="floatingInput">IMAGES</label>
 					</div>
 				</div>
@@ -62,65 +63,65 @@
 				<div class="col-12 col-lg-3" name="status">
 					<div class="form-floating mb-3">
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="discontinued" id="flexCheck">
-							<label class="form-check-label" for="flexCheck"> Discontinued? </label>
+							<input class="form-check-input" type="checkbox" name="discontinued" id="discoCheck">
+							<label class="form-check-label" for="discoCheck"> Discontinued? </label>
 						</div>
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="available" id="flexCheck">
-							<label class="form-check-label" for="flexCheck"> Active? </label>
+							<input class="form-check-input" type="checkbox" name="available" id="activeCheck">
+							<label class="form-check-label" for="activeCheck"> Active? </label>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="currency">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="GBP">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null" value="">
 						<label for="floatingInput">Currency</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="profit">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="0.00" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="	" value="" disabled>
 						<label for="floatingInput" class="ps-5">Profit</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="retail">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="0.00">
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
 						<label for="floatingInput" class="ps-5">Retail</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="pricing">
 					<div class="form-floating mb-3">
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="discounted" id="flexCheck">
-							<label class="form-check-label" for="flexCheck"> Discounted? </label>
+							<input class="form-check-input" type="checkbox" name="discounted" id="discountCheck">
+							<label class="form-check-label" for="discountCheck"> Discounted? </label>
 						</div>
 						<div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" name="auto_calculate" id="flexCheck" checked>
-							<label class="form-check-label" for="flexCheck"> Auto-calculate Pricing? </label>
+							<input class="form-check-input" type="checkbox" name="auto_calculate" id="calcCheck" checked>
+							<label class="form-check-label" for="calcCheck"> Auto-calculate Pricing? </label>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="gross">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="0.00" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="GBP" value="" disabled>
 						<label for="floatingInput" class="ps-5">Gross</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="net">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="0.00" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="" value="" disabled>
 						<label for="floatingInput" class="ps-5">Net</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-3" name="margin">
 					<div class="form-floating mb-3 input-group">
 						<span class="input-group-text" id="GBP"><??>£</span>
-						<input type="text" class="form-control" id="floatingInput" placeholder="" aria-describedby="percentage" value="0.00">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null" aria-describedby="percentage" value="">
 						<label for="floatingInput" class="ps-5">margin</label>
 						<span class="input-group-text" id="percentage">%</span>
 					</div>
@@ -129,15 +130,15 @@
 					<div class="form-floating mb-3">
 						<select class="form-select" id="floatingSelect" disabled>
 							<option value="-1" selected>Please select</option>
-							<option value="1">Percentage</option>
-							<option value="2">Value</option>
+							<option value="1" <?= (($prod['DiscountType'] == 1)? "selected":"")?>>Percentage</option>
+							<option value="2" <?= (($prod['DiscountType'] == 2)? "selected":"")?>>Value</option>
 						</select>
 						<label for="floatingInput">Discount type</label>
 					</div>
 				</div>
 				<div class="col-12 col-lg-4" name="discount_amount">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="0.00" value="0.00" disabled>
+						<input type="text" class="form-control" id="floatingInput" placeholder="0.00" value="" disabled>
 						<label for="floatingInput">Discount</label>
 					</div>
 				</div>
@@ -190,7 +191,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `Product materials` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (cl)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -218,7 +219,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `Product colours` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (g)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -230,7 +231,7 @@
 						<select class="form-select" id="floatingSelect">
 							<option value="-1" selected>Please select</option>
 							<?
-								$query = DB_Query("SELECT * FROM `Product packaging` WHERE `Active`=1");
+								$query = DB_Query("SELECT * FROM `Product packagings` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
 									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
@@ -246,7 +247,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `Product shippings` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print_r('<option value="'.$row['id'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
+									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -260,7 +261,7 @@
 							<?
 								$query = DB_Query("SELECT * FROM `Partner accounts` WHERE `Active`=1");
 								while ($row = mysqli_fetch_array($query)) {
-									print_r('<option value="'.$row['ID'].'" price="'.$row['Price (ea)'].'">'.$row['name'].'</option>');
+									print_r('<option value="'.$row['ID'].'">'.$row['Name'].'</option>');
 								}
 							?>
 						</select>
@@ -269,7 +270,7 @@
 				</div>
 				<div class="col-12 col-lg-4" name="slug">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+						<input type="text" class="form-control" id="floatingInput" placeholder="null" value="">
 						<label for="floatingInput">Slug</label>
 					</div>
 				</div>
@@ -278,10 +279,10 @@
 		<div class="col-12 col-md-6 col-lg-5">
 			<div class="row">
 				<div class="col-12" name="description_short">
-					<input type="text" class="form-control description_short" id="floatingInput" placeholder="Short description" value="">
+					<input type="text" class="form-control description_short" id="floatingInput" placeholder="Short description" value="Short description">
 				</div>
 				<div class="col-12" name="description_long">
-					<input type="text" class="form-control description_long" id="floatingInput" placeholder="Long description" value="">
+					<input type="text" class="form-control description_long" id="floatingInput" placeholder="Long description" value="Long description">
 				</div>
 			</div>
 		</div>
