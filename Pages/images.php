@@ -139,17 +139,11 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
-					<div id="image-cropper">
-					<div class="cropit-preview"></div>
-					<input type="range" class="cropit-image-zoom-input" />
-					<input type="file" class="cropit-image-input" />
-					</div>
-				</div>
-				<div class="col-12 col-md-4 bg-secondary">
 
 				</div>
+				<div class="col-12 col-md-4 bg-secondary"></div>
 				<script>
-$('#image-cropper').cropit();
+					
 				</script>
 			</div>
 			<div class="modal-footer">
