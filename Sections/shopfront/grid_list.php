@@ -11,7 +11,7 @@
 				$prd_viewed = $page * $config['Shopfront products per page'];
 				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product` WHERE `Active`=1 AND `Discontinued`=0"))[0];
 			//
-			$query = DB_Query(sprintf("SELECT * FROM `Product` WHERE `Active`=1 AND `Discontinued`=0 LIMIT %s, %s" $start, $config['Shopfront products per page']));
+			$query = DB_Query(sprintf("SELECT * FROM `Product` WHERE `Active`=1 AND `Discontinued`=0 LIMIT %s, %s", \$start, $config['Shopfront products per page']));
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
 					$prod_price = $row['RetailPrice'];
@@ -119,7 +119,7 @@
 				$prd_viewed = $page * $config['Shopfront products per page'];
 				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Partner accounts` WHERE `Active`=1"))[0];
 			//
-			$query = DB_Query(sprintf("SELECT * FROM `Partner accounts` WHERE `Public`=1 AND `Active`=1 LIMIT %s, %s" $start, $config['Shopfront products per page']));
+			$query = DB_Query(sprintf("SELECT * FROM `Partner accounts` WHERE `Public`=1 AND `Active`=1 LIMIT %s, %s", \$start, $config['Shopfront products per page']));
 			while($row = mysqli_fetch_array($query)){
 				$part_image = $row['Logo image'];
 				$part_slug = $row['Slug'];
@@ -185,7 +185,7 @@
 				$prd_viewed = $page * $config['Shopfront products per page'];
 				$count = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product` WHERE `made_by_ID`=$part_ID AND `Active`=1 AND `Discontinued`=0"))[0];
 			//
-			$query = DB_Query(sprintf("SELECT * FROM `Product` WHERE `made_by_ID`=$part_ID AND `Active`=1 AND `Discontinued`=0 LIMIT %s, %s" $start, $config['Shopfront products per page']));
+			$query = DB_Query(sprintf("SELECT * FROM `Product` WHERE `made_by_ID`=$part_ID AND `Active`=1 AND `Discontinued`=0 LIMIT %s, %s", \$start, $config['Shopfront products per page']));
 			if(mysqli_num_rows($query) > 0){
 				while($row = mysqli_fetch_array($query)) {
 					$prod_price = $row['RetailPrice'];
