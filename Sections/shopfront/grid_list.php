@@ -1,6 +1,6 @@
 <div class="row boutique">
 	<?
-	print_r($config['Shopfront products per page']);
+		print_r($config);
 		(isset($_GET['p']))? $page = $_GET['p']: $page = 1;
 		if(isset($secext) && $secext == 'products') {
 			//
