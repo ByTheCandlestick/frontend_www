@@ -159,16 +159,6 @@ so cropit can identify these elements -->
 				</div>
 				<script>
 $('#image-cropper').cropit();
-
-// In the demos I'm passing in an imageState option
-// so it renders an image by default:
-// $('#image-cropper').cropit({ imageState: { src: { imageSrc } } });
-
-// Exporting cropped image
-$('.download-btn').click(function() {
-  var imageData = $('#image-cropper').cropit('export');
-  window.open(imageData);
-});
 				</script>
 			</div>
 			<div class="modal-footer">
