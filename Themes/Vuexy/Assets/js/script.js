@@ -1260,7 +1260,7 @@
 					},
 					success(body) {
 						if(body.status == "success") {
-							$(location).attr('href', '/Websites/Page/'+body.info.id+'/?al_ty=success&al_tx=Successfully created the website');
+							//$(location).attr('href', '/Websites/Page/'+body.info.id+'/?al_ty=success&al_tx=Successfully created the website');
 						} else {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
