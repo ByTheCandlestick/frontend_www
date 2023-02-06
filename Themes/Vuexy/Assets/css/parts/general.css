@@ -39,11 +39,11 @@ thead.sticky-top {
   z-index: 1!important;
 }
 
-input,
+input:not([type=checkbox]),
 textarea {
   background: var(--text-area-bg)!important;
 }
-input:disabled, input.disabled,
+input:not([type=checkbox]):disabled, input:not([type=checkbox]).disabled,
 textarea:disabled, textarea.disabled,
 select:disabled, select.disabled {
   background: var(--text-area-bg-disabled)!important;
