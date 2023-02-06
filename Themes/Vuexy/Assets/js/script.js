@@ -210,9 +210,9 @@
 		/** @wip */
 		modify: {
 			/** @wip */
-			openModal(slug) {
+			openModal(slug, location) {
 				infoDiv = $('#image-cropper[data-slug=' + slug + ']');
-				$('.cropper-image').attr('src', slug)
+				$('.cropper-image').attr('src', location)
 				$('#imageEditorModal').modal('show');	
 			},
 			/** @wip */
