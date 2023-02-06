@@ -225,7 +225,7 @@
 		 * 
 		 */
 			public function createProduct(string $sku, string $upc, array $info) {
-				return $this->Execute(sprintf("INSERT INTO `Product`(`SKU`, `UPC`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ('%s', '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
+				return $this->Execute(print(sprintf("INSERT INTO `Product`(`SKU`, `UPC`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ('%s', '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
 					$sku,
 					$upc,
 					$info['discontinued'],
@@ -255,7 +255,7 @@
 					$info['description_long'],
 					$info['slug'],
 					$info['made_by']
-				), 1);
+				)), 1);
 			}
 		/** deleteProduct
 		 * 
