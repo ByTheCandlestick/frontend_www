@@ -1,24 +1,24 @@
 <?
 	if($secext == 'all') {
 		$title = 'OUR PARTNERS';
-		$sql = "SELECT * FROM `Partner accounts` WHERE `public`=1 AND `active`=1";
+		$sql = "SELECT * FROM `Partner accounts` WHERE `Public`=1 AND `Active`=1";
 	} else {
 		$title = strtoupper($secext).' PARTNERS.';
-		$sql = "SELECT * FROM `Partner accounts` WHERE `categories`='$secext' AND `public`=1 AND `active`=1 LIMIT 1";
+		$sql = "SELECT * FROM `Partner accounts` WHERE `Categories`='$secext' AND `Public`=1 AND `Active`=1 LIMIT 1";
 	}
 ?>
 <div class="container-fluid py-5">
 	<div class="row justify-content-center">
-		<h5 class="text-center"><?echo $title ?></h5>
+		<h5 class="text-center"><?=$title?></h5>
 		<!-- :: PARTNERS SLIDER SLIM :: -->
 		<div class="row boutique partners-slider-slim">
 			<?
 				if($result = DB_Query($sql)){
 					while($row = mysqli_fetch_array($result)){
-						$part_image = $row['logo_url'];
-						$part_slug = $row['slug'];
-						$part_name = $row['name'];
-						$part_rating = $row['rating'];
+						$part_image = $row['Shop link'];
+						$part_slug = $row['Slug'];
+						$part_name = $row['Name'];
+						$part_rating = $row['Rating'];
 						print('
 							<li class="partner-list-item">
 								<article class="partner">
