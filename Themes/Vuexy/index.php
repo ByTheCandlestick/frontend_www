@@ -188,7 +188,7 @@
 												print(sprintf('
 													<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
 														<i class="fa fa-%s"></i>
-														<span class="fa-layers-counter" style="font-size: 2rem;">%s  <span class="badge badge-light">%s</span></span>
+														<span class="badge badge-light">%s</span>
 													</a>
 													',
 													$link,
