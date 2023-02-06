@@ -521,7 +521,7 @@
 				},
 				success(body) {
 					if(body.status == "success") {
-						$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully updated the product');
+						//$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully updated the product');
 					} else {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
