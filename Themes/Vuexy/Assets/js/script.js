@@ -472,7 +472,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					alert.simple("Successfully creted the product", "success");
+					if(body.status == "success") {
+						$(location).attr('href', '/Products/Edit/'+body.info.sku+'/?al_ty=success&al_tx=Successfully updated the product');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -521,7 +525,7 @@
 				},
 				success(body) {
 					if(body.status == "success") {
-						//$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully updated the product');
+						$(location).attr('href', '/Products/?al_ty=success&al_tx=Successfully updated the product');
 					} else {
 						alert.simple("An error has occurred. Please try again later", "danger");
 					}
