@@ -109,12 +109,12 @@
 				';
 			}
 		} else if(isset($secext) && $secext == 'partners') {
-			$result = DB_Query("SELECT * FROM `Partner accounts` WHERE `public`=1 AND `active`=1");
+			$result = DB_Query("SELECT * FROM `Partner accounts` WHERE `Public`=1 AND `Active`=1");
 			while($row = mysqli_fetch_array($result)){
-				$part_image = $row['logo_url'];
-				$part_slug = $row['slug'];
-				$part_name = $row['name'];
-				$part_rating = $row['rating'];
+				$part_image = $row['Logo_url'];
+				$part_slug = $row['Slug'];
+				$part_name = $row['Name'];
+				$part_rating = $row['Rating'];
 				print('
 					<li class="partner-list-item col-6 col-md-4 col-xl-3">
 						<article class="partner">
