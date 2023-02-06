@@ -55,25 +55,25 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="name">
+			<div class="col-12 col-md-6 col-lg-3" name="link">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Shop lonk']?>">
 					<label for="floatingInput">Shop link</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="name">
+			<div class="col-12 col-md-6 col-lg-3" name="email">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Email']?>">
 					<label for="floatingInput">Email</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="name">
+			<div class="col-12 col-md-6 col-lg-3" name="phone">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Phone']?>">
 					<label for="floatingInput">Phone</label>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3" name="name">
+			<div class="col-12 col-md-6 col-lg-3" name="slug">
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['Slug']?>">
 					<label for="floatingInput">Slug</label>
