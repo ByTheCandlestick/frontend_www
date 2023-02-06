@@ -3,7 +3,7 @@
 ?><?
 	$total_users = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `User accounts`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
-    $q = DB_Query("SELECT * FROM `User accounts` ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
+    $q = DB_Query(sprintf("SELECT * FROM `User accounts` ORDER BY `ID` DESC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($user = mysqli_fetch_assoc($q)) { array_push($users, $user); }
 ?>
 <section>

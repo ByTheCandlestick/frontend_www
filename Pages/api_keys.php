@@ -3,7 +3,7 @@
 ?><?
 	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Keys`"))[0];
 	$offset = (QS !== null)? (intval(QS)-1)*$config['Maximum list size']: 0;
-    $q = DB_Query($p = "SELECT * FROM `API Keys` ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
+    $q = DB_Query($p = sprintf("SELECT * FROM `API Keys` ORDER BY `ID` DESC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($key = mysqli_fetch_assoc($q)) { array_push($keys, $key); }
 ?>
 <section>

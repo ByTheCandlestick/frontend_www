@@ -3,7 +3,7 @@
 ?><?
 	$total_websites = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Website domains`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
-    $q = DB_Query("SELECT * FROM `Website domains` ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
+    $q = DB_Query(sprintf("SELECT * FROM `Website domains` ORDER BY `ID` DESC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($website = mysqli_fetch_assoc($q)) { array_push($websites, $website); }
 ?>
 <section>

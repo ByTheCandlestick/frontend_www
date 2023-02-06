@@ -3,7 +3,7 @@
 ?><?
 	$total_hosts = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Allowed hosts` WHERE `Active?`='1'"))[0];
 	$offset = (QS !== null)? (intval(QS)-1)*$config['Maximum list size']: 0;
-    $q = DB_Query("SELECT * FROM `API Allowed hosts` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
+    $q = DB_Query(sprintf("SELECT * FROM `API Allowed hosts` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT %s OFFSET %s", $config['Maximum list size'], $offset));
 	while($host = mysqli_fetch_assoc($q)) { array_push($hosts, $host); }
 ?>
 <section>
