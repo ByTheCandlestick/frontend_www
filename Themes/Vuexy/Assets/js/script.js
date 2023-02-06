@@ -1946,7 +1946,7 @@
 					'active': (($("div[name=misc] input[name=active]:checked").length === 0)?0:1),
 					'public': (($("div[name=misc] input[name=public]:checked").length === 0)?0:1),
 				},
-				type: 'PUT',
+				type: 'POST',
 				xhrFields: {
 					withCredentials: true,
 				},
