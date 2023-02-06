@@ -1897,7 +1897,7 @@
 	}
 	/** @final */
 	partner = {
-		/** @todo: make */
+		/** @final */
 		create() {
 			$.ajax({
 				url: api_url + '/Partner/',
@@ -1918,18 +1918,14 @@
 					withCredentials: true,
 				},
 				success(body) {
-					/**
-					 * @todo Redirect once created
-					 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-					 */
-					//$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully created the partner');
+					$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully created the partner');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
 				}
 			});
 		},
-		/** @todo: make */
+		/** @final */
 		update(id) {
 			$.ajax({
 				url: api_url + '/Partner/',
@@ -1951,20 +1947,32 @@
 					withCredentials: true,
 				},
 				success(body) {
-					/**
-					 * @todo Redirect once created
-					 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-					 */
-					//$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully created the partner');
+					$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully updated the partner');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
 				}
 			});
 		},
-		/** @todo: make */
+		/** @final */
 		delete() {
-
+			$.ajax({
+				url: api_url + '/Partner/',
+				data: {
+					'api_key': api_key,
+					'id': id,
+				},
+				type: 'DELETE',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully deleted the partner');
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
 		}
 	}
 $(document).ready(function() {

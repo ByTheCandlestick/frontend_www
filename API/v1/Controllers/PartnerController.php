@@ -47,7 +47,7 @@
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
 					$this->throwError("TODO: List partners", "HTTP/1.1 404 Not Found");
-				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- ☐ --	Unsupported
+				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗹 --	Updates the partner
 					// Confirmations
 						try{
 							if(!isset($arr_partner_info['id']) || $arr_partner_info == "")		throw new Error("ERR-PRT-1");
@@ -82,8 +82,30 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
-				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Deletes a partner
+					// Confirmations
+						try{
+							if(!isset($arr_partner_info['id']) || $arr_partner_info == "")		throw new Error("ERR-PRT-1");
+						} catch(Error $er) {
+							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+						}
+					// Validation
+						try{
+							// Norhting to validate
+						} catch(Error $er) {
+							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+						}
+					// Submit application
+						try{
+							if($mdl_partner->Delete($arr_partner_info['id'])) {	// Success
+								$str_response = json_encode(array('status'=>'success'));
+							} else {		// Error submitting
+								throw new Error("ERR-PRT-2");
+							}
+						} catch(Error $er) {
+							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
+						}
+					//
 				else:
 					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
 				endif;
