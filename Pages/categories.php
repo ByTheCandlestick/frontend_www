@@ -3,7 +3,7 @@
 ?><?
 	$total_categories = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product categories`"))[0];
 	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
-    $q = DB_Query("SELECT * FROM `Product categories` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
+    $q = DB_Query(sprintf("SELECT * FROM `Product categories` ORDER BY `ID` ASC LIMIT %s OFFSET %s", $config['Maximum list size'] OFFSET $offset));
 	while($category = mysqli_fetch_assoc($q)) { array_push($categories, $category); }
 ?>
 <section>
