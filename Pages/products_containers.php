@@ -1,12 +1,11 @@
 <?
 	$containers = array();
-	$containers_per_page = 100;
 ?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
 	$total_containers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product containers`"))[0];
-	$offset = (QS !== null)?(intval(QS)-1)*$containers_per_page :0;
-    $q = DB_Query($prnt = "SELECT * FROM `Product containers` ORDER BY `ID` ASC LIMIT $containers_per_page OFFSET $offset");
+	$offset = (QS !== null)?(intval(QS)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query($prnt = "SELECT * FROM `Product containers` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($container = mysqli_fetch_assoc($q)) { array_push($containers, $container); }
 ?>
 <section>
@@ -83,7 +82,7 @@
 		<?
 			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Containers/".(intval(QS) - 1).'/' : $prev_page = "";
-			(($offset + $containers_per_page) < $total_containers)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_containers)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Containers/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

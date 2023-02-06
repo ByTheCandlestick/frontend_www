@@ -1,12 +1,11 @@
 <?
 	$colours = array();
-	$colours_per_page = 100;
 ?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
 	$total_colours = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product colours`"))[0];
-	$offset = (QS !== null)?(intval(QS)-1)*$colours_per_page :0;
-    $q = DB_Query($prnt = "SELECT * FROM `Product colours` ORDER BY `ID` ASC LIMIT $colours_per_page OFFSET $offset");
+	$offset = (QS !== null)?(intval(QS)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query($prnt = "SELECT * FROM `Product colours` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($colour = mysqli_fetch_assoc($q)) { array_push($colours, $colour); }
 ?>
 <section>
@@ -81,7 +80,7 @@
 		<?
 			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Colours/".(intval(QS) - 1).'/' : $prev_page = "";
-			(($offset + $colours_per_page) < $total_colours)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_colours)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Colours/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

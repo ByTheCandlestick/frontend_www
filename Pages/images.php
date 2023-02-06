@@ -1,10 +1,9 @@
 <?
     $images = array();
-	$images_per_page = 100;
 ?><?
 	$total_images = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Images`"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$images_per_page :0;
-    $q = DB_Query("SELECT * FROM `Images` ORDER BY `ID` ASC LIMIT $images_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query("SELECT * FROM `Images` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($image = mysqli_fetch_assoc($q)) { array_push($images, $image); }
 ?>
 <style>

@@ -1,10 +1,9 @@
 <?
     $collections = array();
-	$collections_per_page = 100;
 ?><?
 	$total_collections = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product collections`"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$collections_per_page :0;
-    $q = DB_Query("SELECT * FROM `Product collections` ORDER BY `ID` ASC LIMIT $collections_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query("SELECT * FROM `Product collections` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($collection = mysqli_fetch_assoc($q)) { array_push($collections, $collection); }
 ?>
 <section>
@@ -67,7 +66,7 @@
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Collections/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
-			(($offset + $collections_per_page) < $total_collections)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_collections)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Collections/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

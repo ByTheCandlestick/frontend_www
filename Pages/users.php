@@ -1,10 +1,9 @@
 <?
     $users = array();
-	$users_per_page = 100;
 ?><?
 	$total_users = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `User accounts`"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$users_per_page :0;
-    $q = DB_Query("SELECT * FROM `User accounts` ORDER BY `ID` DESC LIMIT $users_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query("SELECT * FROM `User accounts` ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($user = mysqli_fetch_assoc($q)) { array_push($users, $user); }
 ?>
 <section>
@@ -87,7 +86,7 @@
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Users/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
-			(($offset + $users_per_page) < $total_users)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_users)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Users/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

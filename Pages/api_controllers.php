@@ -1,10 +1,9 @@
 <?
     $controllers = array();
-	$controllers_per_page = 100;
 ?><?
 	$total_controllers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Controllers` WHERE `Active?`='1'"))[0];
-	$offset = (QS !== null)? (intval(QS)-1)*$controllers_per_page: 0;
-    $q = DB_Query("SELECT * FROM `API Controllers` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $controllers_per_page OFFSET $offset");
+	$offset = (QS !== null)? (intval(QS)-1)*$config['Maximum list size']: 0;
+    $q = DB_Query("SELECT * FROM `API Controllers` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($controller = mysqli_fetch_assoc($q)) { array_push($controllers, $controller); }
 ?>
 <section>
@@ -60,7 +59,7 @@
 		<?
 			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Controllers/".(intval(QS) - 1).'/' : $prev_page = "";
-			(($offset + $controllers_per_page) < $total_controllers)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_controllers)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Controllers/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

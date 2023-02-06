@@ -1,10 +1,9 @@
 <?
     $suppliers = array();
-	$suppliers_per_page = 100;
 ?><?
 	$total_suppliers = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Suppliers`"))[0];
-	$offset = (QS_SUBPAGE !== null)? (intval(QS_SUBPAGE)-1)*$suppliers_per_page: 0;
-    $q = DB_Query($prnt = "SELECT * FROM `Suppliers` ORDER BY `Reference` ASC LIMIT $suppliers_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)? (intval(QS_SUBPAGE)-1)*$config['Maximum list size']: 0;
+    $q = DB_Query($prnt = "SELECT * FROM `Suppliers` ORDER BY `Reference` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($supplier = mysqli_fetch_assoc($q)) { array_push($suppliers, $supplier); }
 ?>
 <section>
@@ -76,7 +75,7 @@
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Suppliers/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
-			(($offset + $suppliers_per_page) < $suppliers)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $suppliers)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Suppliers/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

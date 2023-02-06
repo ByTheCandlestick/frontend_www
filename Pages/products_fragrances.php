@@ -1,12 +1,11 @@
 <?
 	$fragrances = array();
-	$fragrances_per_page = 100;
 ?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
 	$total_fragrances = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product fragrances`"))[0];
-	$offset = (QS !== null)?(intval(QS)-1)*$fragrances_per_page :0;
-    $q = DB_Query($prnt = "SELECT * FROM `Product fragrances` ORDER BY `ID` ASC LIMIT $fragrances_per_page OFFSET $offset");
+	$offset = (QS !== null)?(intval(QS)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query($prnt = "SELECT * FROM `Product fragrances` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($fragrance = mysqli_fetch_assoc($q)) { array_push($fragrances, $fragrance); }
 ?>
 <section>
@@ -83,7 +82,7 @@
 		<?
 			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Fragrances/".(intval(QS) - 1).'/' : $prev_page = "";
-			(($offset + $fragrances_per_page) < $total_fragrances)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_fragrances)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Fragrances/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

@@ -1,10 +1,9 @@
 <?
     $keys = array();
-	$keys_per_page = 100;
 ?><?
 	$total_keys = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Keys`"))[0];
-	$offset = (QS !== null)? (intval(QS)-1)*$keys_per_page: 0;
-    $q = DB_Query($p = "SELECT * FROM `API Keys` ORDER BY `ID` DESC LIMIT $keys_per_page OFFSET $offset");
+	$offset = (QS !== null)? (intval(QS)-1)*$config['Maximum list size']: 0;
+    $q = DB_Query($p = "SELECT * FROM `API Keys` ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($key = mysqli_fetch_assoc($q)) { array_push($keys, $key); }
 ?>
 <section>
@@ -65,7 +64,7 @@
 		<?
 			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Keys/".(intval(QS) - 1).'/' : $prev_page = "";
-			(($offset + $keys_per_page) < $total_keys)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_keys)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Keys/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

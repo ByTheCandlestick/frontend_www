@@ -1,12 +1,11 @@
 <?
 	$wickstands = array();
-	$wickstands_per_page = 100;
 ?><?
 	$q = DB_Query("SELECT * FROM `Suppliers` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $suppliers[$row['Reference']] = $row; }
 	$total_wickstands = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product wickstands`"))[0];
-	$offset = (QS !== null)?(intval(QS)-1)*$wickstands_per_page :0;
-    $q = DB_Query($prnt = "SELECT * FROM `Product wickstands` ORDER BY `ID` ASC LIMIT $wickstands_per_page OFFSET $offset");
+	$offset = (QS !== null)?(intval(QS)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query($prnt = "SELECT * FROM `Product wickstands` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($wickstand = mysqli_fetch_assoc($q)) { array_push($wickstands, $wickstand); }
 ?>
 <section>
@@ -80,7 +79,7 @@
 		<?
 			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/WickStands/".(intval(QS) - 1).'/' : $prev_page = "";
-			(($offset + $wickstands_per_page) < $total_wickstands)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_wickstands)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/WickStands/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

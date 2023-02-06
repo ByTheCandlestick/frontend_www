@@ -1,10 +1,9 @@
 <?
     $versions = array();
-	$versions_per_page = 100;
 ?><?
 	$total_versions = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `API Versions` WHERE `Active?`='1'"))[0];
-	$offset = (QS !== null)? (intval(QS)-1)*$versions_per_page: 0;
-    $q = DB_Query("SELECT * FROM `API Versions` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $versions_per_page OFFSET $offset");
+	$offset = (QS !== null)? (intval(QS)-1)*$config['Maximum list size']: 0;
+    $q = DB_Query("SELECT * FROM `API Versions` WHERE `Active?`='1' ORDER BY `ID` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($version = mysqli_fetch_assoc($q)) { array_push($versions, $version); }
 ?>
 <section>
@@ -63,7 +62,7 @@
 		<?
 			(intval(QS) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Versions/".(intval(QS) - 1).'/' : $prev_page = "";
-			(($offset + $versions_per_page) < $total_versions)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_versions)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Versions/".(intval(QS) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

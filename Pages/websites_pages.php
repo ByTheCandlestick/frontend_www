@@ -1,6 +1,5 @@
 <?
     $pages = array();
-	$pages_per_page = 100;
 ?><?
 	if(gettype(QS) === 'string') {
 		$z=1;
@@ -10,8 +9,8 @@
 	}
 	$website = mysqli_fetch_assoc(DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", $domainID)));
 	$total_pages = mysqli_fetch_row(DB_Query(sprintf("SELECT COUNT(*) FROM `Website pages` WHERE `domain_id`='%s'", $domainID)))[0];
-	$offset = ($z !== null)?(intval($z)-1)*$pages_per_page :0;
-    $q = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC LIMIT %s OFFSET %s", $domainID, $pages_per_page, $offset));
+	$offset = ($z !== null)?(intval($z)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query(sprintf("SELECT * FROM `Website pages` WHERE `domain_id`=%s ORDER BY CASE WHEN `menu_order`=0 THEN 99+`ID` ELSE `menu_order` END, `ID` ASC LIMIT %s OFFSET %s", $domainID, $config['Maximum list size'], $offset));
 	while($page = mysqli_fetch_assoc($q)) { array_push($pages, $page); }
 ?>
 <section>
@@ -78,7 +77,7 @@
 		<?
 			(intval($z) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Websites/Pages/".$domainID.(intval($z) - 1).'/' : $prev_page = "";
-			(($offset + $pages_per_page) < $total_pages)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_pages)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Websites/Pages/".$domainID.(intval($z) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

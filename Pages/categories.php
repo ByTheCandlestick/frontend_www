@@ -1,10 +1,9 @@
 <?
     $categories = array();
-	$categories_per_page = 100;
 ?><?
 	$total_categories = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product categories`"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$categories_per_page :0;
-    $q = DB_Query("SELECT * FROM `Product categories` ORDER BY `ID` ASC LIMIT $categories_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query("SELECT * FROM `Product categories` ORDER BY `ID` ASC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($category = mysqli_fetch_assoc($q)) { array_push($categories, $category); }
 ?>
 <section>
@@ -67,7 +66,7 @@
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Categories/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
-			(($offset + $categories_per_page) < $total_categories)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_categories)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Categories/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("

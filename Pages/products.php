@@ -1,6 +1,5 @@
 <?
 	$products = array();
-	$products_per_page = 100;
 ?><?
 	$q = DB_Query("SELECT * FROM `Product categories` WHERE `Active`=1");
 	while($row = mysqli_fetch_array($q)) { $categories[$row['ID']] = $row['Name']; }
@@ -8,8 +7,8 @@
 	while($row = mysqli_fetch_array($q)) { $collections[$row['ID']] = $row['Name']; }
 
 	$total_products = mysqli_fetch_row(DB_Query("SELECT COUNT(*) FROM `Product`"))[0];
-	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$products_per_page :0;
-    $q = DB_Query("SELECT * FROM `Product` ORDER BY `SKU` DESC LIMIT $products_per_page OFFSET $offset");
+	$offset = (QS_SUBPAGE !== null)?(intval(QS_SUBPAGE)-1)*$config['Maximum list size'] :0;
+    $q = DB_Query("SELECT * FROM `Product` ORDER BY `SKU` DESC LIMIT $config['Maximum list size'] OFFSET $offset");
 	while($product = mysqli_fetch_assoc($q)) { array_push($products, $product); }
 ?>
 <section>
@@ -102,7 +101,7 @@
 		<?
 			(intval(QS_SUBPAGE) > 1)? $prev_status = '': $prev_status = ' disabled';
 			($prev_status == '')? $prev_page = "/Products/".(intval(QS_SUBPAGE) - 1).'/' : $prev_page = "";
-			(($offset + $products_per_page) < $total_products)? $next_status = '': $next_status = ' disabled';
+			(($offset + $config['Maximum list size']) < $total_products)? $next_status = '': $next_status = ' disabled';
 			($next_status == '')? $next_page = "/Products/".(intval(QS_SUBPAGE) + 1).'/' : $next_page = "";
 			// Previous/Next page button
 			print("
