@@ -2103,12 +2103,15 @@ $(document).ready(function() {
 		});
 	// -----========== Auto-calculate product ==========----- // @final //
 		$('input[name=auto_calculate]').change(function() {
+			console.log("here 1");
 			if($('input[name=auto_calculate]:checked').length === 0) {
+				console.log("here 2");
 				$('div[name=net]').find('input').prop('disabled', false);
 				$('div[name=gross]').find('input').prop('disabled', false);
 				$('div[name=profit]').find('input').prop('disabled', false);
 				$('div[name=margin]').find('input').prop('disabled', true);
 			} else {
+				console.log("here 3");
 				$('div[name=net]').find('input').prop('disabled', true);
 				$('div[name=gross]').find('input').prop('disabled', true);
 				$('div[name=profit]').find('input').prop('disabled', true);
