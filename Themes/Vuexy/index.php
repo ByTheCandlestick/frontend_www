@@ -183,7 +183,7 @@
 												$link = $item['menu_url'];
 												$active = '';
 											}
-											$count = 0
+											$count = 0;
 											if($item['Counter']) {
 												print(sprintf('
 													<span class="fa-layers fa-fw" style="background:MistyRose">
