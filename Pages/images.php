@@ -141,7 +141,7 @@
 				<div class="col-12 col-md-8 bg-primary">
 					<img class="cropper-image" src="" style="max-width: 100%;">
 				</div>
-				<div class="col-12 col-md-4 p-2">
+				<div class="col-12 col-md-4 p-2" style="background: var(--app-container); border-radius: 10px;">
 					<div class="form-floating mb-3" name="name">
 						<input type="text" class="form-control" id="floatingInput" placeholder="null">
 						<label for="floatingInput">Name</label>
