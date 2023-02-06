@@ -279,7 +279,7 @@
 									$query = DB_Query("SELECT * FROM `Partner accounts` WHERE `Active`=1");
 									while ($row = mysqli_fetch_array($query)) {
 										($row['ID'] == $prod['made_by_ID'])? $selected=' selected' : $selected='';
-										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['name'].'</option>');
+										print_r('<option value="'.$row['ID'].'"'.$selected.'>'.$row['Name'].'</option>');
 									}
 								?>
 							</select>
