@@ -295,8 +295,12 @@
 									<img src="<?=(__API__.'/Images/Fetch/'.$website_info['Logo'].'/')?>" alt="logo" width="145px" height="145px" class="img-fluid mw-40">
 									<h3 class="text-center"><?=($website_info['Title'])?></h3>
 									<p class="text-center">
+										<? if($website_info['Phone'] != "") {?>
 										<strong>Phone:</strong> <a href="tel:<?=($website_info['Phone'])?>"><?=($website_info['Phone'])?></a><br>
+										<?}if($website_info['Email'] != "") {?>
 										<strong>Email:</strong> <a href="mailto:<?=($website_info['Email'])?>"><?=($website_info['Email'])?></a><br>
+										<?}if($website_info['Address'] != "") {?>
+										<?}?>
 									</p>
 									<div class="social-links mt-3 text-center">
 										<a href="https://www.pinterest.co.uk/bythecandlestick/" class="pintrest"><i class="fab fa-pinterest"></i></a>
