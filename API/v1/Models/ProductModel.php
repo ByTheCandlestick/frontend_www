@@ -94,7 +94,7 @@
 		 * 
 		 */
 			public function validatePackaging($packaging) {
-				if($this->Execute("SELECT COUNT(*) FROM `Product packaging` WHERE `ID`=".$packaging, 3)[0] != 1) return false;
+				if($this->Execute("SELECT COUNT(*) FROM `Product packagings` WHERE `ID`=".$packaging, 3)[0] != 1) return false;
 				return true;
 			}
 		/** validateShipping
