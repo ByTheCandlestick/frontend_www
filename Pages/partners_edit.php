@@ -82,7 +82,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6" name="description_long">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder=""value="<?= $partner['About long']?>">
+							<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['About long']?>">
 						</div>
 					</div>
 				</div>
