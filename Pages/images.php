@@ -128,12 +128,12 @@
 		?>
 	</div>
 </section>
-<div class="modal" tabindex="-1" id="imageEditorModal">
+<div class="modal fade" id="imageEditorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-fullscreen-sm-down modal-xl" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Edit image</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" OnClick="images.modify.closeModal()">
+				<h5 class="modal-title" id="imageEditorModalLabel">Edit Images</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
