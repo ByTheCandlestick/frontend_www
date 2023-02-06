@@ -46,7 +46,7 @@
 				<?
 					if(count($partners) > 0) {
 						foreach($partners as $x) {
-							$editable = ($userperm['adm_access-partners-edit']==1)?'<a href="/Partners/Edit/'.$x['ID'].'">'.$x['Name'].'</a>':$x['ID'];
+							$editable = ($userperm['adm_access-partners-edit']==1)?'<a href="/Partners/Edit/'.$x['ID'].'">'.$x['Name'].'</a>':$x['Name'];
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
