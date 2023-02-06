@@ -139,23 +139,36 @@
 			</div>
 			<div class="modal-body row">
 				<div class="col-12 col-md-8 bg-primary">
-					<div id="tui-image-editor">
-						<canvas></canvas>
-					</div>
+<div id="image-cropper">
+<!-- This is where the preview image is displayed -->
+<div class="cropit-preview"></div>
+
+<!-- This range input controls zoom -->
+<!-- You can add additional elements here, e.g. the image icons -->
+<input type="range" class="cropit-image-zoom-input" />
+
+<!-- This is where user selects new image -->
+<input type="file" class="cropit-image-input" />
+
+<!-- The cropit- classes above are needed
+so cropit can identify these elements -->
+</div>
 				</div>
 				<div class="col-12 col-md-4 bg-secondary">
 
 				</div>
 				<script>
-const instance = new ImageEditor(document.querySelector('#tui-image-editor'), {
-  cssMaxWidth: 700,
-  cssMaxHeight: 500,
-  selectionStyle: {
-    cornerSize: 20,
-    rotatingPointOffset: 70,
-  },
-});
+$('#image-cropper').cropit();
 
+// In the demos I'm passing in an imageState option
+// so it renders an image by default:
+// $('#image-cropper').cropit({ imageState: { src: { imageSrc } } });
+
+// Exporting cropped image
+$('.download-btn').click(function() {
+  var imageData = $('#image-cropper').cropit('export');
+  window.open(imageData);
+});
 				</script>
 			</div>
 			<div class="modal-footer">
