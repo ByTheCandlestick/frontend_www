@@ -163,6 +163,19 @@
 						</article>
 					</li>
 				');
+				($page > 1)? $prev_status = '': $prev_status = ' disabled';
+				($prev_status == '')? $prev_page = "/Boutique/?p=".($page - 1) : $prev_page = "";
+				($prd_viewed < $count)? $next_status = '': $next_status = ' disabled';
+				($next_status == '')? $next_page = "/Boutique/?p=".($page + 1) : $next_page = "";
+				// Previous/Next page button
+				print("
+					<div class=\"row\">
+						<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+							<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+							<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+						</div>
+					</div>
+				");
 			}
 		} else if(isset($secext) && $secext == 'partner'){
 			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `Partner accounts` WHERE `name`='%s' AND `public`=1 AND `active`=1", QS)))[0];
@@ -232,6 +245,19 @@
 						</li>
 					';
 				}
+				($page > 1)? $prev_status = '': $prev_status = ' disabled';
+				($prev_status == '')? $prev_page = "/Boutique/?p=".($page - 1) : $prev_page = "";
+				($prd_viewed < $count)? $next_status = '': $next_status = ' disabled';
+				($next_status == '')? $next_page = "/Boutique/?p=".($page + 1) : $next_page = "";
+				// Previous/Next page button
+				print("
+					<div class=\"row\">
+						<div class=\"col-12 col-md-4 offset-md-4 d-flex\">
+							<a class=\"col-4 offset-1 col-md-5 offset-md-0 mt-2 mb-3 d-block btn btn-secondary$prev_status\" href=\"$prev_page\" role=\"button\">Previous</a>
+							<a class=\"col-4 offset-2 col-md-5 offset-md-2 mt-2 mb-3 d-block btn btn-secondary$next_status\" href=\"$next_page\" role=\"button\">Next</a>
+						</div>
+					</div>
+				");
 			} else {
 				echo '
 					<li class="product-list-item col-6 col-md-4 col-xl-3">
