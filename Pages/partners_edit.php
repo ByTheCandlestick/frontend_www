@@ -33,12 +33,12 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-4" name="description_short">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About short']?>
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="<?= $partner['About short']?>">
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4" name="description_long">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder=""><?= $partner['About long']?>
+					<input type="text" class="form-control" id="floatingInput" placeholder=""value="<?= $partner['About long']?>">
 				</div>
 			</div>
 			<div class="col-12 col-md-3 col-lg-2" name="misc">
