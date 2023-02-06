@@ -186,12 +186,12 @@
 											if($item['Counter ID'] > 0) {
 												$count = mysqli_num_rows(DB_Query(sprintf("SELECT * FROM `Item counters` WHERE `Active`=1 AND `ID`=%s", $item['Counter ID'])));
 												print(sprintf('
-													<span class="fa-layers fa-fw" style="background:MistyRose">
-														<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
+													<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
+														<span class="fa-layers fa-fw" style="background:MistyRose">
 															<i class="fa fa-%s"></i>
 															<span class="fa-layers-counter" style="background:Tomato">%s</span>
-														</a>
-													</span>
+														</span>
+													</a>
 													',
 													$link,
 													$active,
