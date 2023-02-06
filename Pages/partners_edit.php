@@ -1,5 +1,5 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `Partners` WHERE `Reference`=%s", QS));
+	$query = DB_Query(sprintf("SELECT * FROM `Partner accounts` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$part = mysqli_fetch_assoc($query);
 ?>
