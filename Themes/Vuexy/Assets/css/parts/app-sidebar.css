@@ -21,6 +21,13 @@
 	text-decoration: none;
 	position: relative;
 }
+.app-sidebar-link .counter{
+	position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    border-radius: 10px;
+}
 .app-back-btn.disabled {
     background: var(--link-color-disabled-bg);
     color: var(--link-color-disabled);
