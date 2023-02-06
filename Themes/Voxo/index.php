@@ -356,7 +356,7 @@
 
 										</br>
 
-										<div class="trustpilot-widget" data-locale="en-GB" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="63e147d32ba9106ee583df67" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="10" data-without-reviews-preferred-string-id="1" data-style-alignment="center">
+										<div class="trustpilot-widget" data-locale="en-GB" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="63e147d32ba9106ee583df67" data-style-height="40px" data-style-width="100%" data-theme="dark" data-min-review-count="10" data-without-reviews-preferred-string-id="1" data-style-alignment="center">
 											<a href="https://uk.trustpilot.com/review/thecandlestick.co.uk" target="_blank" rel="noopener">Trustpilot</a>
 										</div>
 									</ul>
