@@ -482,9 +482,10 @@
 		/** @final */
 		update(pid) {
 			$.ajax({
-				url: api_url + '/Product/' + pid + '/',
+				url: api_url + '/Product/',
 				data: {
 					'api_key': api_key,
+					'id': pid,
 					'title': $("div[name=title] input").val(),
 					'collection': $("div[name=range]").find("option:selected").val(),
 					'images': $("div[name=images] input").val(),
@@ -532,12 +533,12 @@
 		},
 		/** @final */
 		delete(pid) {
-			data = {
-				'api_key': api_key,
-			};
 			$.ajax({
-				url: api_url + '/Product/' + pid + '/',
-				data: data,
+				url: api_url + '/Product/',
+				data: {
+					'api_key': api_key,
+					'id': pid,
+				},
 				type: 'DELETE',
 				xhrFields: {
 					withCredentials: true,
