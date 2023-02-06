@@ -1967,7 +1967,7 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully deleted the partner');
+					$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully deleted the partner');
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
