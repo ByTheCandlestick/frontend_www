@@ -7,7 +7,8 @@
 		 * @result boolean
 		 */
 			public function CreatePage(array $info) {
-				return $this->Execute(sprintf("INSERT INTO `Website pages`(`page_url`, `page_name`, `subpage_url`, `page_title`, `style_ids`,`script_ids`, `domain_id`, `menu_item`, `menu_icon`, `menu_order`, `menu_url`, `Permission`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $info['menu_url'], $info['permission']), 1);
+				$this->Execute(sprintf("INSERT INTO `Website pages`(`page_url`, `page_name`, `subpage_url`, `page_title`, `style_ids`,`script_ids`, `domain_id`, `menu_item`, `menu_icon`, `menu_order`, `menu_url`, `Permission`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $info['menu_url'], $info['permission']), 1);
+				return print_r($this->Execute(sprintf("SELECT `` FROM `Website pages` WHERE `page_url`='%s' AND `page_name`='%s' AND `subpage_url`='%s' AND `page_title`='%s' AND `style_ids`='%s' AND `script_ids`='%s' AND `domain_id`='%s' AND `menu_item`='%s' AND `menu_icon`='%s' AND `menu_order`='%s' AND `menu_url`='%s' AND `Permission`='%s'", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $info['menu_url'], $info['permission']), 2));
 			}
 		/** UpdatePage
 		 * Updates a website page

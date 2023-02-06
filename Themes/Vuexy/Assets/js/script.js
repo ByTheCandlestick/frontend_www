@@ -1156,11 +1156,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						/**
-						 * @todo Redirect once created
-						 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-						 */
-						alert.simple("Successfully created the domain", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully created the domain');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1196,7 +1196,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						alert.simple("Successfully updated the domain", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully updated the domain');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1215,7 +1219,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						$(location).attr('href', '/Websites/?al_ty=success&al_tx=Successfully created the supplier');
+						if(body.status == "success") {
+							$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully deleted the domain');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1251,11 +1259,11 @@
 						withCredentials: true,
 					},
 					success(body) {
-						/**
-						 * @todo Redirect once created
-						 * $(location).attr('href', '/Websites/Page/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-						 */
-						alert.simple("Successfully created the page", "success");
+						if(body.status == "success") {
+							$(location).attr('href', '/Websites/Page/'+body.info.id+'/?al_ty=success&al_tx=Successfully created the website');
+						} else {
+							alert.simple("An error has occurred. Please try again later", "danger");
+						}
 					},
 					error(body) {
 						alert.simple("An error has occurred. Please try again later", "danger");
@@ -1843,11 +1851,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					/**
-					 * @todo Redirect once created
-					 * $(location).attr('href', '/Websites/Edit/' + id + '/?al_ty=success&al_tx=Successfully created the supplier');
-					 */
-					$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully created the promotion');
+					if(body.status == "success") {
+						$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully created the promotion');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
