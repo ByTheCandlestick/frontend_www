@@ -16,7 +16,7 @@
 		 * @result boolean
 		 */
 			public function ReadPage(array $info) {
-				return $this->Execute(echo sprintf("SELECT `ID` FROM `Website pages` WHERE `page_url`='%s' AND `page_name`='%s' AND `subpage_url`='%s' AND `page_title`='%s' AND `style_ids`='%s' AND `script_ids`='%s' AND `domain_id`='%s' AND `menu_item`='%s' AND `menu_icon`='%s' AND `menu_order`='%s' AND `menu_url`='%s' AND `Permission`='%s' LIMIT 1", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $info['menu_url'], $info['permission']), 4);
+				return $this->Execute(print(sprintf("SELECT `ID` FROM `Website pages` WHERE `page_url`='%s' AND `page_name`='%s' AND `subpage_url`='%s' AND `page_title`='%s' AND `style_ids`='%s' AND `script_ids`='%s' AND `domain_id`='%s' AND `menu_item`='%s' AND `menu_icon`='%s' AND `menu_order`='%s' AND `menu_url`='%s' AND `Permission`='%s' LIMIT 1", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $info['menu_url'], $info['permission'])), 4);
 			}
 		/** UpdatePage
 		 * Updates a website page
