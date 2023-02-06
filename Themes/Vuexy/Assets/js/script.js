@@ -1918,7 +1918,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully created the partner');
+					if(body.status == "success") {
+						$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully created the partner');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
@@ -1947,10 +1951,13 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully updated the partner');
+					if(body.status == "success") {
+						$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully updated the partner');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
-					alert.simple("An error has occurred. Please try again later", "danger");
 				}
 			});
 		},
@@ -1967,7 +1974,11 @@
 					withCredentials: true,
 				},
 				success(body) {
-					$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully deleted the partner');
+					if(body.status == "success") {
+						$(location).attr('href', '/Partners/?al_ty=success&al_tx=Successfully deleted the partner');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
 				},
 				error(body) {
 					alert.simple("An error has occurred. Please try again later", "danger");
