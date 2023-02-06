@@ -143,7 +143,7 @@
 	 *	customizable approach. E.g. `#9;0000,#3;0000:Example,0000,#12;0000:!My Awesome Example Text`
 	 **/
 		function printSections(string $string) {
-			global $userdata, $userperm, $info, $user_ok, $product, $partner;
+			global $userdata, $userperm, $website_info, $user_ok, $product, $partner, $users, $config;
 			$columns = explode("#", $string);
 			$seccode = $secext = NULL;
 			print('<main><div class="row">');
