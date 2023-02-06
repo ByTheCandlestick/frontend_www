@@ -183,16 +183,34 @@
 												$link = $item['menu_url'];
 												$active = '';
 											}
-											print(sprintf('
-												<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
-													<i class="fa fa-%s"></i>
-												</a>
-												',
-												$link,
-												$active,
-												$item['page_name'],
-												$item['menu_icon']
-											));
+											$count = 0
+											if($item['Counter']) {
+												print(sprintf('
+													<span class="fa-layers fa-fw" style="background:MistyRose">
+														<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
+															<i class="fa fa-%s"></i>
+															<span class="fa-layers-counter" style="background:Tomato">%s</span>
+														</a>
+													</span>
+													',
+													$link,
+													$active,
+													$item['page_name'],
+													$item['menu_icon'],
+													$count
+												));
+											} else {
+												print(sprintf('
+													<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
+														<i class="fa fa-%s"></i>
+													</a>
+													',
+													$link,
+													$active,
+													$item['page_name'],
+													$item['menu_icon']
+												));
+											}
 										}
 									}
 								?>
