@@ -70,7 +70,7 @@
 							if($mdl_product->createProduct($arr_product_info['sku'] = $mdl_product->createSKU(), $mdl_product->createUPC($sku, $arr_product_info), $arr_product_info)) {	// Success
 								$resp = array('status'=>'success');
 								$resp['info'] = $arr_product_info
-								$str_response = json_encode();
+								$str_response = json_encode($resp);
 							} else {		// Error submitting
 								Throw new Error('ERR-PRD-44');
 							}
