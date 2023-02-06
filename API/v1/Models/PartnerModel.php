@@ -10,8 +10,9 @@
          */
 		public function Create(string $name, string $public, string $desc_s, string $desc_l, string $logo, string $link, string $email, string $phone, string $slug, string $active) {
 			try {
+				print($sql = "INSERT INTO `Partner accounts` (`Name`, `Public`, `About short`, `About long`, `Logo image`, `Shop link`, `Email`, `Phone`, `Slug`, `Active`) VALUES ('$name', '$public', '$desc_s', '$desc_l', '$logo', '$link', '$email', '$phone', '$slug', '$active')");
 				// Add line to Partner
-				$this->Execute("INSERT INTO `Partner accounts` (`Name`, `Public`, `About short`, `About long`, `Logo image`, `Shop link`, `Email`, `Phone`, `Slug`, `Active`) VALUES ('$name', '$public', '$desc_s', '$desc_l', '$logo', '$link', '$email', '$phone', '$slug', '$active')", 1);
+				$this->Execute($sql, 1);
 				return true;
 			} catch(Error $er) {
 				return false;
