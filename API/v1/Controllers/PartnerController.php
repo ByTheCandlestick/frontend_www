@@ -82,7 +82,7 @@
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
-				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Deletes a partner
+				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Deletes a partnerT
 					// Confirmations
 						try{
 							if(!isset($arr_partner_info['id']) || $arr_partner_info == "")		throw new Error("ERR-PRT-1");

@@ -40,9 +40,8 @@
          */
 			public function Update(string $id, string $name, string $public, string $desc_s, string $desc_l, string $logo, string $link, string $email, string $phone, string $slug, string $active) {
 				try {
-					print($sql = "UPDATE `Partner accounts` SET `Name`='$name', `public`='$public', `About short`='$desc_s',`About long`='$desc_l',`Logo image`='$logo',`Shop link`='$link',`Email`='$email',`Phone`='$phone',`Slug`='$slug',`Active`='$active' WHERE `ID`=$id");
 					// Update Partners line
-					$this->Execute($sql, 1);
+					$this->Execute("UPDATE `Partner accounts` SET `Name`='$name', `public`='$public', `About short`='$desc_s',`About long`='$desc_l',`Logo image`='$logo',`Shop link`='$link',`Email`='$email',`Phone`='$phone',`Slug`='$slug',`Active`='$active' WHERE `ID`=$id", 1);
 					return true;
 				} catch(Error $er) {
 					return false;
@@ -54,11 +53,10 @@
          *  @param string $opt
          *  @return
          */
-			public function Update(string $id) {
+			public function Delete(string $id) {
 				try {
-					print($sql = "DELETE FROM  `Partner accounts` WHERE `ID`=$id");
 					// Update Partners line
-					$this->Execute($sql, 1);
+					$this->Execute("DELETE FROM  `Partner accounts` WHERE `ID`=$id", 1);
 					return true;
 				} catch(Error $er) {
 					return false;
