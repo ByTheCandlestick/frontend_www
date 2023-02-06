@@ -36,12 +36,13 @@
 						}
 					// Submit application
 						try{
-							if($arr_page_info['id'] = $mdl_page->CreatePage($arr_page_info)) {	// Success
+							if($mdl_page->CreatePage($arr_page_info)) {	// Success
 								$resp = array('status'=>'success');
+								$arr_page_info['id'] = $mdl_page->GetPageId($arr_page_info);
 								$resp['info'] = $arr_page_info;
 								$str_response = json_encode($resp);
 							} else {		// Error submitting
-								throw new Error("ERR-PAG-7");
+								throw new Error("ERR-PAG-12");
 							}
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error"));
