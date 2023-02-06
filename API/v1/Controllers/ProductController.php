@@ -43,7 +43,7 @@
 							if(!isset($arr_product_info['description_short']))	Throw new Error('ERR-PRD-27');
 							if(!isset($arr_product_info['slug']))				Throw new Error('ERR-PRD-28');
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Validations
 						try {
@@ -63,7 +63,7 @@
 							if(!$mdl_product->validateMadeBy($arr_product_info['made_by']))			Throw new Error('ERR-PRD-42');
 							if(!$mdl_product->validateSlug($arr_product_info['slug']))				Throw new Error('ERR-PRD-43');
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Submit
 						try {
@@ -73,7 +73,7 @@
 								Throw new Error('ERR-PRD-44');
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	product
 					// Confirmations
@@ -98,7 +98,7 @@
 								throw new Error("ERR-PRD-1");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Update propduct info
@@ -134,7 +134,7 @@
 							if(!isset($arr_product_info['description_short']))	Throw new Error('ERR-PRD-28');
 							if(!isset($arr_product_info['slug']))				Throw new Error('ERR-PRD-29');
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Validations
 						try {
@@ -154,7 +154,7 @@
 							if(!$mdl_product->validateMadeBy($arr_product_info['made_by']))			Throw new Error('ERR-PRD-43');
 							if(!$mdl_product->validateSlug($arr_product_info['slug']))				Throw new Error('ERR-PRD-44');
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Submit
 						try {
@@ -164,7 +164,7 @@
 								Throw new Error('ERR-PRD-45');
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Delete product
 					// Confirmations
@@ -187,7 +187,7 @@
 								throw new Error("ERR-PRD-1");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				else:

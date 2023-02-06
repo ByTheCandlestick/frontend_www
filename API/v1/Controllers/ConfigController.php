@@ -34,7 +34,7 @@
 									throw new Error("ERR-CNF-3");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
                     elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
@@ -64,7 +64,7 @@
 									throw new Error("ERR-CNF-4");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
                     elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Delete a permission
@@ -90,7 +90,7 @@
 									throw new Error("ERR-CNF-4");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
                     else:

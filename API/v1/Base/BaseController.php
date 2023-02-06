@@ -37,13 +37,14 @@
 		 *  @param string $str_ErrorHeader
 		 *  @return null
 		 */
-		protected function throwError($str_ErrorDesc, $line, $file, $str_ErrorHeader) {
+		protected function throwError($str_ErrorDesc, $line, $file, $trace, $str_ErrorHeader) {
 			$this->sendOutput(
 				json_encode(
 					array(
 						"error" => $str_ErrorDesc,
 						"line" => $line,
-						"file" => $file
+						"file" => $file,
+						"trace" => $trace,
 					)
 				),
 				array("Content-Type: application/json", $str_ErrorHeader)

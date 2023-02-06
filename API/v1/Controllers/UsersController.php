@@ -53,7 +53,7 @@
 									throw new Error("ERR-SUP-10");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Read all users
@@ -185,7 +185,7 @@
 									throw new Error("ERR-SUP-7");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Remove user
 						// Submit application
@@ -250,7 +250,7 @@
 									throw new Error("ERR-SIN-7");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Lists all sessions
@@ -279,7 +279,7 @@
 									throw new Error("ERR-SUP-11");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
 					else:
@@ -329,7 +329,7 @@
 									throw new Error("ERR-PRM-11");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗹 --	Unknown
@@ -383,7 +383,7 @@
 									throw new Error("ERR-OAU-3");
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						//
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗹 --	Unknown

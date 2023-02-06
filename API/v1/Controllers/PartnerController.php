@@ -42,7 +42,7 @@
 								throw new Error("ERR-PRT-11");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
@@ -79,7 +79,7 @@
 								throw new Error("ERR-PRT-12");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Deletes a partnerT
@@ -103,7 +103,7 @@
 								throw new Error("ERR-PRT-2");
 							}
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), "HTTP/1.1 500 Internal Server Error"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					//
 				else:
