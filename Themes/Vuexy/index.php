@@ -187,7 +187,7 @@
 												$count = mysqli_num_rows(DB_Query(sprintf("SELECT * FROM `Item counters` WHERE `Active`=1 AND `ID`=%s", $item['Counter ID'])));
 												print(sprintf('
 													<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
-														<span class="fa-fw">
+														<span class="fa-layers fa-fw">
 															<i class="fa fa-%s"></i>
 															<span class="fa-layers-counter" style="font-size: 2rem;">%s</span>
 														</span>
