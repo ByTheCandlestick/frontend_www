@@ -1,6 +1,18 @@
 <?php
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
+	class PDF extends FPDF {
+		function Header() {	// Page header
+			$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
+			$this->SetFont('Arial','B',15);
+			$this->Ln(20);
+		}
+		function Footer() {	// Page footer
+			$this->SetY(-15);
+			$this->SetFont('Arial', 'I', 8);
+			$this->Cell(0, 10, 'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
+		}
+	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
 		 *	
@@ -31,18 +43,13 @@
 					// Submit application
 						try{
 							// Initialize
-							$pdf = new FPDF();
+							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', 16);
 							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
 							// Add content
 								// header
-								
-								// footer
-								$pdf->SetY(-15);
-								$pdf->SetFont('Arial', 'I', 8);
-								$pdf->Cell(0, 10, 'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
