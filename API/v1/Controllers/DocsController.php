@@ -41,7 +41,7 @@
 					// Submit application
 						try{
 							// Vars
-							$pdf->tx_company = $config['Company name'];
+							$pdf->tx_company = 'here';
 							// Initialize
 							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', $pdf->fs_h1);
