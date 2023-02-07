@@ -178,7 +178,7 @@
 				");
 			}
 		} else if(isset($secext) && $secext == 'partner'){
-			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `Partner accounts` WHERE `name`='%s' AND `public`=1 AND `active`=1", QS)))[0];
+			$part_ID = mysqli_fetch_row(DB_Query(sprintf("SELECT `ID` FROM `Partner accounts` WHERE `Name`='%s' AND `Public`=1 AND `Active`=1", QS)))[0];
 			//
 				$start = ($page - 1) * $config['Shopfront products per page'];
 				$prd_viewed = $page * $config['Shopfront products per page'];
@@ -190,7 +190,7 @@
 					$prod_price = $row['RetailPrice'];
 					$prod_slug = $row['Slug'];
 					$prod_title = $row['Title'];
-					$prod_image = explode(',',$row['images'])[0];
+					$prod_image = explode(',',$row['Images'])[0];
 					$fmt = new NumberFormatter( locale_get_default()."@currency=".$row['Currency'], NumberFormatter::CURRENCY );
 					$prod_currency = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
 					echo '
