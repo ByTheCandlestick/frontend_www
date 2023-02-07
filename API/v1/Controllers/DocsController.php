@@ -75,7 +75,8 @@
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, 0, 0, "L");
 
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
-								$left = $pdf->GetPageWidth() - ($tx_elems_strlen + 10);
+
+								$left = $pdf->GetPageWidth()-$tx_elems_strlen;
 								$pdf->SetXY($left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
