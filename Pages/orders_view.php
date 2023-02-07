@@ -10,7 +10,7 @@
 			$refundsValue += $refund['Subtotal'];
 		}
 		$income = ($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax'];
-		$incomeAfterRefunds = (($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['tax']) - $refundsValue;
+		$incomeAfterRefunds = (($invoice['Deposit'] - $invoice['Processing Fees']) - $invoice['Tax']) - $refundsValue;
 		$depositAfterRefunds = $invoice['Deposit'] - $refundsValue;
 ?>
 	<style>
