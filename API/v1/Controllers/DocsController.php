@@ -2,16 +2,14 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		function __contruct() {
-			$company = "The Candlestick";
-			$fs_h1 = 32;
-			$fs_h2 = 24;
-			$fs_h3 = 20.8;
-			$fs_h4 = 16;
-			$fs_h5 = 12.8;
-			$h6 = 11.2;
-			$fs_p = 16;
-		}
+		protected $company = "The Candlestick";
+		protected $fs_h1 = 32;
+		protected $fs_h2 = 24;
+		protected $fs_h3 = 20.8;
+		protected $fs_h4 = 16;
+		protected $fs_h5 = 12.8;
+		protected $h6 = 11.2;
+		protected $fs_p = 16;
 	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
