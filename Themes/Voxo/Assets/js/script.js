@@ -269,6 +269,27 @@ $(document).ready(function() {
 						];
 						$(structure.join('')).appendTo($('modals'));
 					}
+				} elseif(type == 'addedToCart') {
+					var structure = [
+						'<div class="modal modal-added-to-cart" style="background:#00000066;" onClick="modal.close(\'added-to-cart\')">',
+						'<div class="modal-dialog">',
+						'<div class="modal-content">',
+						'<div class="modal-header">',
+						'<h5 class="modal-title">Added to cart</h5>',
+						'<button type="button" class="btn-close" onClick="modal.close(\'added-to-cart\')"></button>',
+						'</div>',
+						'<div class="modal-body">',
+						'<p> The item has successfully been added to your cart </p>',
+						'</div>',
+						'<div class="modal-footer">',
+						'<button type="button" class="btn btn-secondary" onClick="modal.close(\'added-to-cart\')">Continue shopping</button>',
+						'<a href="/Cart" class="btn btn-primary">Go to cart</a>',
+						'</div>',
+						'</div>',
+						'</div>',
+						'</div>'
+					];
+					$(structure.join('')).appendTo($('modals'));
 				}
 				if (open) {
 					modal.open(type)
@@ -601,7 +622,9 @@ $(document).ready(function() {
 						},
 						success: function(body) {
 							if(body.status == 'success') {
-								alerts.icon('info-circle', 'Item has been added to cart')
+								modals.create('addedToCart', 'open')
+							} else {
+								alerts.simple('warning', 'An error has occurred')
 							}
 						},
 						error: function(result) {
