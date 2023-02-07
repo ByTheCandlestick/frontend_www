@@ -1,12 +1,14 @@
 <?
 	$query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Transaction ID`='%s'", urldecode(QS)));
 	if(mysqli_num_rows($query) > 0) {
+		$transaction = mysqli_fetch_assoc($query);
 ?>
 	<section>
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<h1>Transaction</h1>
+				<p>ID: <?=$transaction['Transaction ID']?> Type: <?=$transaction['Type']?></p>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
