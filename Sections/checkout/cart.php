@@ -72,7 +72,7 @@
 						$item_options = explode(':', $cart_item[2]);
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
-					$minus = '<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#xf068;">';
+					$minus = '<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#x2d;">';
 					if($cart_item_quantity == 1) {
 						$minus = '<input type="button" onclick="cart.delete()" class="input-group-text fas" value="&#xf1f8;">';
 					}
