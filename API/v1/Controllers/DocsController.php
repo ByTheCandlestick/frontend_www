@@ -35,6 +35,8 @@
 						}
 					// Submit application
 						try{
+							// Vars
+							$company = "The Candlestick"
 							// Initialize
 							$pdf = new FPDF();
 							$pdf->SetFont('Arial', 'B', 16);
@@ -46,7 +48,7 @@
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 								$pdf->SetFont('Arial','B',15);
 								$pdf->Cell(35);
-								$pdf->Cell(36, 0, "By The Candlestick", 1, 0, "C");
+								$pdf->Cell($pdf->strLen($company), 0, $company, 1, 0, "C");
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
