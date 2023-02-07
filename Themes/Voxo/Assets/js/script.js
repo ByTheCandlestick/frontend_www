@@ -624,7 +624,7 @@ $(document).ready(function() {
 								console.log(currency	= $("p.h4.subtotal").text().charAt(0));
 								console.log(quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val()));
 								console.log(pricePer	= parseFloat (($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1)));
-								console.log(newPrice	= quantity * pricePer);
+								console.log(newPrice	= (quantity * pricePer).toFixed(2));
 								console.log(currTotal	= parseFloat (($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
 								console.log(difference	= newPrice - currTotal);
 
