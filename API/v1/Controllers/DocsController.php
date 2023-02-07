@@ -5,9 +5,6 @@
 		function Header() {	// Page header
 		}
 		function Footer() {	// Page footer
-			$this->SetY(-15);
-			$this->SetFont('Arial', 'I', 8);
-			$this->Cell(0, 10, 'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
 		}
 	}
 	class DocsController extends BaseController {
@@ -49,6 +46,10 @@
 								// header
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 								$pdf->SetFont('Arial','B',15);
+								// footer
+									$pdf->SetY(-15);
+									$pdf->SetFont('Arial', 'I', 8);
+									$pdf->Cell(0, 10, 'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
