@@ -401,32 +401,29 @@
 		},
 		/** @final */
 		updateStatus(newStatus, invoice) {
-			console.log('here');
-			if(false) {
-				$.ajax({
-					url: api_url + '/Orders/Status/',
-					data: {
-						'api_key': api_key,
-						'status': newStatus,
-						'invoice': invoice,
-					},
-					type: 'POST',
-					xhrFields: {
-						withCredentials: true,
-					},
-					success(body) {
-						console.log(body);
-						if(body.status == "success") {
-							alert.simple("Successfully updated", "success");
-							misc.wait(2);
-							window.location.reload();
-						}
-					},
-					error(body) {
-						alert.simple("An error has occurred. Please try again later", "danger");
+			$.ajax({
+				url: api_url + '/Orders/Status/',
+				data: {
+					'api_key': api_key,
+					'status': newStatus,
+					'invoice': invoice,
+				},
+				type: 'POST',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					console.log(body);
+					if(body.status == "success") {
+						alert.simple("Successfully updated", "success");
+						misc.wait(2);
+						window.location.reload();
 					}
-				});
-			}
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
 		},
 		/** @wip */
 		printOrder() {
