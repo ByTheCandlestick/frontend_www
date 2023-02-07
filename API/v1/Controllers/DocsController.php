@@ -3,9 +3,6 @@
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF extends FPDF {
 		function Header() {	// Page header
-			$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
-			$this->SetFont('Arial','B',15);
-			$this->Ln(20);
 		}
 		function Footer() {	// Page footer
 			$this->SetY(-15);
@@ -50,6 +47,8 @@
 							$pdf->AddPage();
 							// Add content
 								// header
+								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
+								$pdf->SetFont('Arial','B',15);
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
