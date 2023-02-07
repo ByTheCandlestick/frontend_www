@@ -630,7 +630,7 @@ $(document).ready(function() {
 								difference	= (newTotal - currTotal).toFixed(2);
 								newSubtotal	= (currSubtotal - difference).toFixed(2);
 
-								$("cart-item[prod-sku="+sku+"] .priceTotal").text(currency + newTotal);
+								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
 								$("p.subtotal.h4").text(currency + newSubtotal);
 							} else {
 								modal.create('addedToCart', true);
