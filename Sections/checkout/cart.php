@@ -19,7 +19,6 @@
 				$cart_item_id = $cart_item[2];
 				if($q = DB_Query("SELECT * FROM `Product` WHERE `SKU`=$cart_item_id AND `Active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
-						print_r($cart_item);
 						$currency = $res['Currency'];
 						$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );
 						$cart_item_curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
@@ -74,7 +73,7 @@
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
 					$minus = '<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#xf068;">';
-					if($cart_item_quantity = 1) {
+					if($cart_item_quantity == 1) {
 						$minus = '<input type="button" onclick="cart.delete()" class="input-group-text fas" value="&#xf1f8;">';
 					}
 					print('
