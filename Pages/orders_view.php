@@ -145,33 +145,33 @@
 					<?
 						/**/if($invoice['Shipping status']==0):
 							$s1 = 'active';
-							$t1 = 'Confirm order';
-							$t2 = 'Awaiting Processing';
-							$t3 = 'Awaiting Dispatch';
-							$t4 = 'Awaiting Delivery';
+							$t1 = '<a href="javascript:orders.updateStatus(1, \''.$invoice['Invoice ID'].'\');">Mark as confirmed</a>';
+							$t2 = '<a href="javascript:orders.updateStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as assembled</a>';
+							$t3 = '<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
+							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==1):
-							$s1='completed';
+							$s1 = 'completed';
 							$t1 = 'Confirmed';
 							$s2 = 'active';
-							$t2 = 'Mark as assembled';
-							$t3 = 'Awaiting dispatch';
-							$t4 = 'Awaiting delivery';
+							$t2 = '<a href="javascript:orders.updateStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as assembled</a>';
+							$t3 = '<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
+							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==2):
-							$s1=$s2='completed';
+							$s1 = $s2 = 'completed';
 							$t1 = 'Confirmed';
 							$t2 = 'Assembled';
 							$s3 = 'active';
-							$t3 = 'Mark dispatched';
-							$t4 = 'Awaiting delivery';
+							$t3 = '<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
+							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==3):
-							$s1=$s2=$s3='completed';
+							$s1 = $s2 = $s3 = 'completed';
 							$t1 = 'Confirmed';
 							$t2 = 'Assembled';
 							$t3 = 'Dispatched';
 							$s4 = 'active';
-							$t4 = 'Mark delivered';
+							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==4):
-							$s1=$s2=$s3=$s4='completed';
+							$s1 = $s2 = $s3 = $s4 = 'completed';
 							$t1 = 'Confirmed';
 							$t2 = 'Assembled';
 							$t3 = 'Dispatched';
