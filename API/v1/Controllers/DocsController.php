@@ -39,7 +39,7 @@
 							$pdf = new PDF();
 							if(file_exists(__ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php")) {
 								$pdf->AddFont("Raleway", "Regular", __ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php");
-								$pdf->SetFont('Raleway', 16);
+								//$pdf->SetFont('Raleway', 16);
 							} else {
 								$pdf->SetFont('Arial', 16);
 							}
