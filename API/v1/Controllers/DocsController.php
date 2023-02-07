@@ -79,7 +79,7 @@
 								$pdf->SetXY($left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems_str, 0, 0, "R");
+								$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems_str, 1, 0, "R");
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
