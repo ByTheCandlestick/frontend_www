@@ -39,7 +39,7 @@
 							$pricePennies = $pounds.($pennies<10?'0'.$pennies:$pennies);
 							$name = $fname . ' ' . $lname;
 						// Require Stripe PHP library and set the API key 
-							require_once(__ROOT__ . '/vendor/StripeSecure/init.php');
+							require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
 							$stripe = new \Stripe\StripeClient(STRIPE_API);
 						// Select or create customer
 							$customer = $mdl_stripe->searchCustomer($stripe, $email, $uid);
@@ -152,7 +152,7 @@
 					// Retrieve stripe token and user info from the submitted form 
 						$amount = 
 					// Require Stripe PHP library and set the API key 
-						require_once(__ROOT__ . '/vendor/StripeSecure/init.php');
+						require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
 						$stripe = new \Stripe\StripeClient(STRIPE_API);
 					// Create intent for the refund
 						$paymentIntent = $stripe->paymentIntents->create([
@@ -193,7 +193,7 @@
 						$value		= $arr_stripe_info['value'];
 						$ch_id		= $arr_stripe_info['ch_id'];
 					// Require Stripe PHP library and set the API key 
-						require_once(__ROOT__ . '/vendor/StripeSecure/init.php');
+						require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
 						$stripe = new \Stripe\StripeClient(STRIPE_API);
 					// Check if the value is in pennies, If not convert to pennies
 						if(preg_match("/[0-9]+[\.]{0}[0-9]{0}/", $value)) {
