@@ -58,12 +58,12 @@
 								// header
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
-								$pdf->SetXY(0, 10);
+								$pdf->SetXY(5, 10);
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetPageWidth()-10, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 1, "R");
 
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
-								$pdf->SetXY(0, 25);
+								$pdf->SetXY(5, 25);
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 0, "L");
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 0, "R");
