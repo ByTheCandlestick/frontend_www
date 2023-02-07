@@ -57,7 +57,7 @@
 							print('
 								<tr>
 									<th scope="row">
-										<a href="/Transactions/View/'.$x['Transaction ID'].'/">'.$x['Transaction ID'].'</a>
+										<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Transaction ID'].'</a>
 									</th>
 									<td>'.$x['Type'].'</td>
 									<td>'.$x['Status'].'</td>
