@@ -60,7 +60,7 @@
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetXY(35, 10);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 0, "C");
+								$pdf->Cell($pdf->w, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 0, "C");
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 							// Output document
 							$pdf->Output();
