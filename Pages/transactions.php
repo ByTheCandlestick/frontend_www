@@ -54,10 +54,11 @@
 								$textCol = "muted";
 								$valueDirection = "±";
 							}
+							$link = ($x['Type']== "Order" || $x['Type']== "Refund")? '<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Transaction ID'].'</a>': $x['Transaction ID'];
 							print('
 								<tr>
 									<th scope="row">
-										<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Transaction ID'].'</a>
+										
 									</th>
 									<td>'.$x['Type'].'</td>
 									<td>'.$x['Status'].'</td>
