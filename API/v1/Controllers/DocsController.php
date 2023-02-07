@@ -1,12 +1,26 @@
 <?php
+	// Require fpdf PHP library
+	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
+	class PDF extends FPDF {
+		function Header() {	// Page header
+			$this->Image('/images/partners/candlestick/logo.png',10,6,30);
+			$this->SetFont('Arial','B',15);
+			$this->Cell(80);
+			$this->Cell(30,10,'Title',1,0,'C');
+			$this->Ln(20);
+		}
+		function Footer() {	// Page footer
+			$this->SetY(-15);
+			$this->SetFont('Arial','I',8);
+			$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+		}
+	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
 		 *	
 		 *	@return JSON
 		 */
 		public function Invoice() {
-			// Require fpdf PHP library
-				require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 			// Vars
 				$mdl_docs = new DocsModel();
 				$requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -30,20 +44,6 @@
 						}
 					// Submit application
 						try{
-							class PDF extends FPDF {
-								function Header() {	// Page header
-									$this->Image('/images/partners/candlestick/logo.png',10,6,30);
-									$this->SetFont('Arial','B',15);
-									$this->Cell(80);
-									$this->Cell(30,10,'Title',1,0,'C');
-									$this->Ln(20);
-								}
-								function Footer() {	// Page footer
-									$this->SetY(-15);
-									$this->SetFont('Arial','I',8);
-									$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-								}
-							}
 							// Initialize
 							$pdf = new FPDF();
 							$pdf->SetFont('Arial', 'B', 16);
