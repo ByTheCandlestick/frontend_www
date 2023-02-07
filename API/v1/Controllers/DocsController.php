@@ -48,6 +48,8 @@
 
 							// Initialize
 							$pdf = new PDF();
+							$pdf->AddFont('Raleway','','Raleway.php');
+
 							$pdf->SetFont('Arial', '', $pdf->fs_h1);
 							$pdf->AliasNbPages();
 							// Create first page
