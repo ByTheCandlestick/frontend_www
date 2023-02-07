@@ -36,7 +36,7 @@
 					// Submit application
 						try{
 							// Vars
-							$company = "The Candlestick";
+							$company = "How long is this incredibly long string?";
 							// Initialize
 							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', 16);
