@@ -40,8 +40,8 @@
 							// Initialize
 							$pdf = new PDF();
 							$pdf->AddFont("Raleway", "", __ROOT__."/CDN/Fonts/Raleway/MakeFont/Raleway-Regular.php");
+
 							$pdf->SetFont('Raleway', 'B', 16);
-							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
 							// Add content
