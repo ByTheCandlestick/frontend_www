@@ -565,6 +565,7 @@ $(document).ready(function() {
 	// Cart
 		cart = {
 			add: function(uid, sku) {
+				event.preventDefault();
 				options_Arr = [];
 				if($("options").children('div').children('input').length) {
 					quantity_Raw = $("options").children('div').children('input');
