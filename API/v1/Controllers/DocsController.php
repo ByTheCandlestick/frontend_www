@@ -38,9 +38,7 @@
 							$pdf->AddPage();
 							// Add content
 								// header
-								$pdf->$company = 'By the candlestick';
-								$pdf->$invoice = 'INV000001';
-								$pdf->$date = '00/00/0000';
+								
 								// footer
 								$pdf->SetY(-15);
 								$pdf->SetFont('Arial', 'I', 8);
