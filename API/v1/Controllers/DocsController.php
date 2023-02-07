@@ -38,7 +38,7 @@
 							// Vars
 							$company = "The Candlestick";
 							// Initialize
-							$pdf = new FPDF();
+							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', 16);
 							$pdf->AliasNbPages();
 							// Create first page
