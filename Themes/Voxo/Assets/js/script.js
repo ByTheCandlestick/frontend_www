@@ -227,7 +227,7 @@ $(document).ready(function() {
 		$('.btn_logout').click(function() {
 			account.logout(cookie.read('session_code'));
 		})
-
+	
 	/**
 	 * GDPR cookie message controller
 	 */
