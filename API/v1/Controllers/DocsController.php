@@ -3,7 +3,7 @@
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF extends FPDF {
 		function Header() {	// Page header
-			$this->Image('../../../images/partners/candlestick/logo.png',10,6,30);
+			$this->Image('../../images/partners/candlestick/logo.png',10,6,30);
 			$this->SetFont('Arial','B',15);
 			$this->Cell(80);
 			$this->Cell(30,10,'Title',1,0,'C');
