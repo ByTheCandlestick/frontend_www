@@ -50,7 +50,7 @@
 						case 1:
 							return true;
 						case 2:
-							return mysqli_fetch_assoc($res)[0];
+							return mysqli_fetch_row($res);
 						case 3:
 							return mysqli_fetch_array($res);
 						case 4:
