@@ -54,7 +54,7 @@
 			}
 		/* --=== Contents ===-- */
 			.order-progress-stepper .step.confirmed::before { content: "\f00c"; }
-			.order-progress-stepper .step.awaDelivery::before { content: "\f007"; }
+			.order-progress-stepper .step.processed::before { content: "\f007"; }
 			.order-progress-stepper .step.dispatched::before { content: "\f0d1"; }
 			.order-progress-stepper .step.delivered::before { content: "\f466"; }
 			.order-progress-stepper .step.completed::before { content: "\f00c"; }
@@ -112,23 +112,43 @@
 			<?
 				/**/if($order['Shipping status']==0):
 					$s1 = 'active';
+					$t1 = 'Awaiting Confirmation';
+					$t2 = 'Awaiting Processing';
+					$t3 = 'Awaiting Dispatch';
+					$t4 = 'Awaiting Delivery';
 				elseif($order['Shipping status']==1):
 					$s1='completed';
+					$t1 = 'Confirmed';
 					$s2 = 'active';
+					$t2 = 'Processing';
+					$t3 = 'Awaiting Dispatch';
+					$t4 = 'Awaiting Delivery';
 				elseif($order['Shipping status']==2):
 					$s1=$s2='completed';
+					$t1 = 'Confirmed';
+					$t2 = 'Processed';
 					$s3 = 'active';
+					$t3 = 'Ready for Dispatch';
+					$t4 = 'Awaiting Delivery';
 				elseif($order['Shipping status']==3):
 					$s1=$s2=$s3='completed';
+					$t1 = 'Confirmed';
+					$t2 = 'Processed';
+					$t3 = 'Dispatched';
 					$s4 = 'active';
+					$t4 = 'Out for Delivery';
 				elseif($order['Shipping status']==4):
 					$s1=$s2=$s3=$s4='completed';
+					$t1 = 'Confirmed';
+					$t2 = 'Processed';
+					$t3 = 'Dispatched';
+					$t4 = 'Delivered';
 				endif;
 				print("
-					<div class=\"step $s1 confirmed\">Order Confirmed</div>
-					<div class=\"step $s2 awaDelivery\">Awaiting delivery</div>
-					<div class=\"step $s3 dispatched\">On the way</div>
-					<div class=\"step $s4 delivered\">Delivered</div>
+					<div class=\"step $s1 confirmed\">$t1</div>
+					<div class=\"step $s2 processed\">$t2</div>
+					<div class=\"step $s3 dispatched\">$t3</div>
+					<div class=\"step $s4 delivered\">$t4</div>
 				");
 			?>
 		</div>
