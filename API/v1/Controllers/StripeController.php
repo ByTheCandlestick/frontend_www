@@ -2,6 +2,7 @@
 	// Require Stripe PHP library and set the API key 
 		require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
 	class StripeController extends BaseController {
+		const $stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 		/** "/Stripe/" Endpoint
 		 *	@final
 		 *	@return JSON
