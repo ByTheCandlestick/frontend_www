@@ -72,6 +72,10 @@
 						$item_options = explode(':', $cart_item[2]);
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
+					$minus = '<input type="button" onclick="" class="input-group-text fa" value="&#xf068;">';
+					if() {
+						$minus = '<input type="button" onclick="" class="input-group-text fad" value="&#xf1f8;">';
+					}
 					print('
 											</p>
 										</div>
@@ -87,8 +91,7 @@
 									<div class="col-12 col-lg-6">
 										<div class="form-floating input-group">
 											<div class="input-group-prepend">
-												<input type="button" onclick="" class="input-group-text fa" value="&#xf068;">
-												<input type="button" onclick="" class="input-group-text fa" value="&#xf1f8;">
+												'.$minus.'
 											</div>
 											<input class="text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'">
 											<label for="floatingTextarea">Quantity</label>
