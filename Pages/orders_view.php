@@ -135,7 +135,7 @@
 		</div>
 		<div class="col-6 col-md-3 pb-3">
 			<h5>Shipped:</h5>
-			<p><?= ?></p>
+			<p></p>
 		</div>
 		<div class="col-6 col-md-3 pb-3">
 			<h5>Shipped by: </h5>
