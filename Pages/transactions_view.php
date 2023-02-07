@@ -3,8 +3,7 @@
 	if(mysqli_num_rows($query) > 0) {
 		require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
 		$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
-		$x = explode('_', QS)
-		if($x[0] == 're') {
+		if(explode('_', QS)[0] == 're') {
 			$stripe->refunds->retrieve(
 				QS,
 				[]
