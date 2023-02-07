@@ -619,7 +619,7 @@ $(document).ready(function() {
 					},
 					success: function(body) {
 						if(body.status == 'success') {
-							if($('.cart')) {
+							if($('.cart').length) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())+1)
 								currency	= $("p.h4.subtotal").text().charAt(0);
 								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
@@ -644,9 +644,6 @@ $(document).ready(function() {
 					}
 				});
 			},
-			update: () => {
-				
-			},
 			delete: (uid, sku, qty=1) => {
 				event.preventDefault();
 				$.ajax({
@@ -664,7 +661,7 @@ $(document).ready(function() {
 					},
 					success: function(body) {
 						if(body.status == 'success') {
-							if($('.cart')) {
+							if($('.cart').length) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())-1)
 								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
 								if(quantity == 0) {
