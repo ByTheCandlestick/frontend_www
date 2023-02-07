@@ -661,6 +661,7 @@ $(document).ready(function() {
 					},
 					success: function(body) {
 						if(body.status == 'success') {
+							console.log($(".cart").length)
 							if($('.cart').length != 0) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())-1)
 								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
