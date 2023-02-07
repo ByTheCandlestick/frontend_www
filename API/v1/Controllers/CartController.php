@@ -64,7 +64,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_Cart->remove($uid, $sku, $qty, $opt)) {	// Success
+							if($mdl_Cart->remove($arr_cart_info['uid'], $arr_cart_info['sku'], $arr_cart_info['opt'], $arr_cart_info['qty'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-CRT-7");
