@@ -42,7 +42,7 @@
 		 * @return
 		 */
 		public function remove(int $uid, int $sku, string $opt, int $qty) {
-			return $this->Execute(sprintf("UPDATE `User carts` SET `Quantity`=(`Quantity`-%s) WHERE `UID`=%s AND `Options`='%s' AND `SKU`='%s'", $qty, $uid, $opt, $sku), 1)
+			return $this->Execute(sprintf("UPDATE `User carts` SET `Quantity`=(`Quantity`-%s) WHERE `UID`=%s AND `Options`='%s' AND `SKU`='%s'", $qty, $uid, $opt, $sku), 1);
 		}
 	}
 ?>
