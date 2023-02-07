@@ -33,7 +33,7 @@
 				font-weight: bold;
 			}
 			.order-progress-stepper .step::before {
-				font-family: "Font Awesome 5 Pro";
+				font-family: "Font Awesome 6 Pro";
 				content: "\f128";
 				font-weight: 900;
 			}
