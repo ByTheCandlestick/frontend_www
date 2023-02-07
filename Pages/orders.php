@@ -68,8 +68,8 @@
 									<th scope="row">'.$editable.'</th>
 									<td>'.$x['Created'].'</td>
 									<td>'.$x['Subtotal'].'</td>
+									<td>'.$x['Processing fees'].'</td>
 									<td>'.$x['Tax'].'</td>
-									<td>'.$x['Income'].'</td>
 									<td>'.$status.'</td>
 									<td>'.$x['Transaction ID'].'</td>
 									<td>
