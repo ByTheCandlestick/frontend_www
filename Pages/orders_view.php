@@ -59,7 +59,7 @@
 						<label for="floatingInput">Tax</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<a class="form-control" id="floatingInput"value="<? print($refundsValue)?>" onclick="orders.displayRefunds()" disabled><? print($refundsValue)?></a>
+						<a class="form-control disabled" id="floatingInput"value="<? print($refundsValue)?>" onclick="orders.displayRefunds()" disabled><? print($refundsValue)?></a>
 						<label for="floatingInput">Refunds</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -81,7 +81,7 @@
 						<label for="floatingInput">Transaction ID</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<a name="charge_id" class="form-control" id="floatingInput" href="https://dashboard.stripe.com<?(DOMAIN_TYPE=='indev')?print('/test'):print('');?>/payments/<? print($invoice['Charge ID'])?>" target="_blank" rel="noreferrer noopener" disabled><? print($invoice['Charge ID'])?></a>
+						<a name="charge_id" class="form-control disabled" id="floatingInput" href="https://dashboard.stripe.com<?(DOMAIN_TYPE=='indev')?print('/test'):print('');?>/payments/<? print($invoice['Charge ID'])?>" target="_blank" rel="noreferrer noopener" disabled><? print($invoice['Charge ID'])?></a>
 						<label for="floatingInput">Charge ID</label>
 					</div>
 				</div>
