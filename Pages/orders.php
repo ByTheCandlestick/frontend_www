@@ -47,6 +47,22 @@
 					if(count($orders) > 0) {
 						foreach($orders as $x) {
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
+							if($x['Shipping status']<1) {
+								// To be accepted
+								$status = '<i class="text-primary fa-duotone fa-circle-exclamation"></i>';
+							} elseif($x['Shipping status']<2) {
+								// To be Made
+								$status = '<i class="text-warning fa-duotone fa-industry-windows"></i>';
+							} elseif($x['Shipping status']<3) {
+								// To be Sent to delivery company
+								$status = '<i class="text-warning fa-duotone fa-user"></i>';
+							} elseif($x['Shipping status']<4) {
+								// To be Delivered
+								$status = '<i class="text-warning fa-duotone fa-box"></i>';
+							} else {
+								// Complete and Delivered
+								$status = '<i class="text-success fa-solid fa-check"></i>';
+							}
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
@@ -54,7 +70,7 @@
 									<td>'.$x['Subtotal'].'</td>
 									<td>'.$x['Tax'].'</td>
 									<td>'.$x['Deposit'].'</td>
-									<td>'.$x['Status'].'</td>
+									<td>'.$status.'</td>
 									<td>'.$x['Transaction ID'].'</td>
 									<td>
 										<a href="/Orders/Shipping/'.$x['Invoice ID'].'">
