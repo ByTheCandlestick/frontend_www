@@ -25,8 +25,8 @@
 						}
 					// Validation
 						try{
-							if($mdl_Cart->checkUser($arr_cart_info['uid']))	throw new Error("ERR-CRT-5");
-							if($mdl_Cart->checkItem($arr_cart_info['sku']))	throw new Error("ERR-CRT-6");
+							if(!$mdl_Cart->checkUser($arr_cart_info['uid']))	throw new Error("ERR-CRT-5");
+							if(!$mdl_Cart->checkItem($arr_cart_info['sku']))	throw new Error("ERR-CRT-6");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
