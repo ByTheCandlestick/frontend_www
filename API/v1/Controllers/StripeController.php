@@ -1,5 +1,8 @@
 <?php
 	class StripeController extends BaseController {
+		// Require Stripe PHP library and set the API key 
+			require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
+			$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 		/** "/Stripe/" Endpoint
 		 *	@final
 		 *	@return JSON
@@ -38,9 +41,6 @@
 							list($pounds, $pennies) = explode('.',$price);
 							$pricePennies = $pounds.($pennies<10?'0'.$pennies:$pennies);
 							$name = $fname . ' ' . $lname;
-						// Require Stripe PHP library and set the API key 
-							require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
-							$stripe = new \Stripe\StripeClient(STRIPE_API);
 						// Select or create customer
 							$customer = $mdl_stripe->searchCustomer($stripe, $email, $uid);
 							if(!$customer) {
@@ -151,9 +151,6 @@
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Refund a transaction
 					// Retrieve stripe token and user info from the submitted form 
 						$amount = 
-					// Require Stripe PHP library and set the API key 
-						require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
-						$stripe = new \Stripe\StripeClient(STRIPE_API);
 					// Create intent for the refund
 						$paymentIntent = $stripe->paymentIntents->create([
 							'amount' => $amount,
@@ -192,9 +189,6 @@
 					// Retrieve stripe token and user info from the submitted form 
 						$value		= $arr_stripe_info['value'];
 						$ch_id		= $arr_stripe_info['ch_id'];
-					// Require Stripe PHP library and set the API key 
-						require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
-						$stripe = new \Stripe\StripeClient(STRIPE_API);
 					// Check if the value is in pennies, If not convert to pennies
 						if(preg_match("/[0-9]+[\.]{0}[0-9]{0}/", $value)) {
 							str_replace('.', '', $value);
