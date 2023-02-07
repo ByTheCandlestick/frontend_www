@@ -3,16 +3,16 @@
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF extends FPDF {
 		function Header() {	// Page header
-			$this->Image(__ROOT__.'/images/partners/candlestick/logo.png',10,6,30);
+			$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 			$this->SetFont('Arial','B',15);
 			$this->Cell(50);
-			$this->Cell(30,10,'By The Candlestick',0,0,'C');
+			$this->Cell(30, 10, 'By The Candlestick', 1, 0, 'C');
 			$this->Ln(20);
 		}
 		function Footer() {	// Page footer
 			$this->SetY(-15);
-			$this->SetFont('Arial','I',8);
-			$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+			$this->SetFont('Arial', 'I', 8);
+			$this->Cell(0, 10, 'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
 		}
 	}
 	class DocsController extends BaseController {
