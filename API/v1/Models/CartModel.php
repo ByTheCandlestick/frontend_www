@@ -1,10 +1,10 @@
 <?php
 	class CartModel extends BaseModel {
 		public function checkUser(int $uid) {
-			return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `UID`=%s", $uid), 1);
+			return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `ID`=%s", $uid), 1);
 		}
 		public function checkItem(int $sku) {
-			return $this->Execute(sprintf("SELECT * FROM `Product` WHERE `sku`='%s'", $sku), 1);
+			return $this->Execute(sprintf("SELECT * FROM `Product` WHERE `SKU`='%s'", $sku), 1);
 		}
         /** add
          *  Adds the item SKU and options to a users cart
