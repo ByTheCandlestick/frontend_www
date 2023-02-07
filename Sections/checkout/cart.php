@@ -95,7 +95,7 @@
 											<input class="quantity text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'">
 											<label for="floatingTextarea" class="ms-2">Quantity</label>
 											<div class="input-group-append">
-												<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#x2b;">
+												<input type="button" onclick="cart.create('.$userdata['ID'].', '.$cart_item_id.')" class="input-group-text fas" value="&#x2b;">
 											</div>
 										</div>
 									</div>
