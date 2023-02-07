@@ -1,13 +1,13 @@
 <?php
-	// Require Stripe PHP library and set the API key 
-		require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
-		const $stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 	class StripeController extends BaseController {
 		/** "/Stripe/" Endpoint
 		 *	@final
 		 *	@return JSON
 		 */
 		public function SecurePayment() {
+			// Require Stripe PHP library and set the API key 
+				require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
+				$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 			// Vars
 				$mdl_stripe = new StripeModel();
 				$requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -179,6 +179,9 @@
 		 *	@return JSON
 		 */
 		public function SecureRefund() {
+			// Require Stripe PHP library and set the API key 
+				require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
+				$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 			// Vars
 				$mdl_stripe = new StripeModel();
 				$requestMethod = $_SERVER['REQUEST_METHOD'];
