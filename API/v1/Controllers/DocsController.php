@@ -31,7 +31,7 @@
 					// Submit application
 						try{
 							// Initialize
-							$pdf = new PDF();
+							$pdf = new FPDF();
 							$pdf->SetFont('Arial', 'B', 16);
 							$pdf->AliasNbPages();
 							// Create first page
