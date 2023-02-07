@@ -53,7 +53,6 @@
 								"Scrubs",
 								"Bath Bombs"
 							];
-							$tx_slogan2_len = $pdf->GetStringWidth("");
 
 							// Initialize
 							$pdf = new PDF();
@@ -74,6 +73,8 @@
 								$pdf->SetXY(5, 25);
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_slogan, 0, 0, "L");
+								
+								$tx_slogan2_len = $pdf->GetStringWidth(join(" | ", $tx_slogan_elems));
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 0, "R");
 							// Output document
 							$pdf->Output();
