@@ -63,7 +63,7 @@
 			<script>
 				alert.simple(\'danger\', \'An error occurred\');
 				console.log(\''.$ex->getMessage.'\');
-			<script>
+			</script>
 		');
 	}
 ?>
