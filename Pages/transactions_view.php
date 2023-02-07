@@ -62,8 +62,8 @@
 		print('
 			<script>
 				$(document).ready(function() {
-					console.log(\''.$ex->getMessage().'\');
-					alert.simple(\'An error occurred\', \'danger\');
+					console.log("'.$ex->getMessage().'");
+					alert.simple("An error occurred", "danger");
 				});
 			</script>
 		');
