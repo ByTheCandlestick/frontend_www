@@ -634,31 +634,11 @@ $(document).ready(function() {
 			},
 			delete: (uid, sku, qty=1, options=[]) => {
 				event.preventDefault();
+				if((qty = $("cart-item[prod-sku="+sku+"]").attr("prod-qty") - $("cart-item input.qty").val()) = 0) {
+					qty = 1;
+				}
+				console.log(qty);
 				
-				$.ajax({
-					url: api_url + '/Cart/',
-					data: {
-						'api_key': api_key,
-						'uid': uid,
-						'sku': sku,
-						'qty': qty,
-						'opt': JSON.stringify(options),
-					},
-					type: 'DELETE',
-					xhrFields: {
-						withCredentials: true,
-					},
-					success: function(body) {
-						if(body.status == 'success') {
-							
-						} else {
-							alerts.simple('An error has occurred', 'warning');
-						}
-					},
-					error: function(result) {
-						alert("Error: " + result);
-					}
-				});
 			}	
 		}
 	// Cookies
