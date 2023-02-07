@@ -2,13 +2,13 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF extends FPDF {
-		function Header() {	// Page header
+		function Header($company, $invoice, $date) {	// Page header
 			$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 			$this->SetFont('Arial','B',15);
 			$this->Cell(35);
-			$this->Cell(50, 10, 'By The Candlestick', 0, 0, 'C');
-			$this->Cell(50, 10, 'By The Candlestick', 0, 0, 'C');
-			$this->Cell(50, 10, 'By The Candlestick', 0, 0, 'C');
+			$this->Cell(50, 10, $company, 0, 0, 'C');
+			$this->Cell(50, 10, $invoice, 0, 0, 'C');
+			$this->Cell(50, 10, $date, 0, 0, 'C');
 			$this->Ln(20);
 		}
 		function Footer() {	// Page footer
@@ -53,7 +53,8 @@
 							// Create first page
 							$pdf->AddPage();
 							// Add content
-
+								// header
+								$pdf->Header('By the candlestick', 'INV000001', '00/00/0000');
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
