@@ -48,7 +48,7 @@
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 								$pdf->SetFont('Arial','B',15);
 								$pdf->Cell(35);
-								$pdf->Cell($pdf->strLen($company), 0, $company, 1, 0, "C");
+								$pdf->Cell(pdf.get_string_width($company), 0, $company, 1, 0, "C");
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
