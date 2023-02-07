@@ -61,11 +61,9 @@
 	} catch(Exception $ex) {
 		print('
 			<script>
-				(function($) {
-					$(document).ready(function() {
-						alert.simple(\'danger\', \'An error occurred\');
-						console.log(\''.$ex->getMessage.'\');
-					});
+				$(document).ready(function() {
+					console.log(\''.$ex->getMessage().'\');
+					alert.simple(\'An error occurred\', \'danger\');
 				});
 			</script>
 		');
