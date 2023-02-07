@@ -8,7 +8,6 @@
 			$charge,
 			[]
 		);
-		print_r($charge_info);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -26,6 +25,9 @@
 		<hr>
 		<!-- Section Body -->
 		<div class="row">
+			<pre>
+				<?=print_r($charge_info)?>
+			</pre>
 		</div>
 	</section>
 <?
