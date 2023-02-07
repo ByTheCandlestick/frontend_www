@@ -73,7 +73,7 @@
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
 					$minus = '<input type="button" onclick="" class="input-group-text fa" value="&#xf068;">';
-					if() {
+					if($cart_item_quantity = 1) {
 						$minus = '<input type="button" onclick="" class="input-group-text fad" value="&#xf1f8;">';
 					}
 					print('
