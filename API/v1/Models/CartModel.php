@@ -44,7 +44,7 @@
 		public function remove(int $uid, int $sku, string $opt, string $qty) {
 			$new_qty = $this->Execute(sprintf("SELECT `Quantity` FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 2)[0] - $qty;
 			if($new_qty == 0) {
-				return $this->Execute(sprintf("DELETE FROM `User carts` WHERE `UID`=%s AND `Options`='%s' AND `SKU`=%s", $qty, $uid, $opt, $sku), 1);
+				return $this->Execute(sprintf("DELETE FROM `User carts` WHERE `UID`=%s AND `Options`='%s' AND `SKU`=%s", $uid, $opt, $sku), 1);
 			} else {
 				return $this->Execute(sprintf("UPDATE `User carts` SET `Quantity`=(`Quantity`-%s) WHERE `UID`=%s AND `Options`='%s' AND `SKU`=%s", $qty, $uid, $opt, $sku), 1);
 			}
