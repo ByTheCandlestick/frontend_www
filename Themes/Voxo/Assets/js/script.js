@@ -269,7 +269,7 @@ $(document).ready(function() {
 						];
 						$(structure.join('')).appendTo($('modals'));
 					}
-				} elseif(type == 'addedToCart') {
+				} else if(type == 'addedToCart') {
 					var structure = [
 						'<div class="modal modal-added-to-cart" style="background:#00000066;" onClick="modal.close(\'added-to-cart\')">',
 						'<div class="modal-dialog">',
