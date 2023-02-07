@@ -184,6 +184,7 @@
 												$active = '';
 											}
 											if($item['Counter ID'] > 0 && $count = mysqli_num_rows(DB_Query(mysqli_fetch_row(DB_Query(sprintf("SELECT `SQL String` FROM `Item counters` WHERE `Active`=1 AND `ID`=%s", $item['Counter ID'])))[0])) > 0) {
+												print_r($count)
 												print(sprintf('
 													<a href="%s" class="app-sidebar-link %s" data-toggle="tooltip" data-placement="right" title="%s">
 														<i class="fa fa-%s"></i>
