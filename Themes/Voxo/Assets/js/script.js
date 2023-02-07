@@ -587,7 +587,7 @@ $(document).ready(function() {
 		}
 	// Cart
 		cart = {
-			create: (uid, sku, qty=1, options=[]) => {
+			add: (uid, sku, qty=1, options=[]) => {
 				event.preventDefault();
 				if($("options")) {
 					options_count = count = 1;
@@ -645,7 +645,7 @@ $(document).ready(function() {
 					}
 				});
 			},
-			delete: (uid, sku, qty=1) => {
+			remove: (uid, sku, qty=1) => {
 				event.preventDefault();
 				$.ajax({
 					url: api_url + '/Cart/',

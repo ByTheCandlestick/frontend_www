@@ -90,12 +90,12 @@
 									<div class="col-12 col-lg-6">
 										<div class="form-floating input-group">
 											<div class="input-group-prepend">
-											<input type="button" onclick="cart.delete('.$userdata['ID'].', '.$cart_item_id.')" class="cartSubtract input-group-text fas" value="&#x'.$subIcon.';">
+											<input type="button" onclick="cart.remove('.$userdata['ID'].', '.$cart_item_id.')" class="cartSubtract input-group-text fas" value="&#x'.$subIcon.';">
 											</div>
 											<input class="quantity text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'" disabled>
 											<label for="floatingTextarea" class="ms-2">Quantity</label>
 											<div class="input-group-append">
-												<input type="button" onclick="cart.create('.$userdata['ID'].', '.$cart_item_id.')" class="input-group-text fas" value="&#x2b;">
+												<input type="button" onclick="cart.add('.$userdata['ID'].', '.$cart_item_id.')" class="input-group-text fas" value="&#x2b;">
 											</div>
 										</div>
 									</div>

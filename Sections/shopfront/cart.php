@@ -68,7 +68,7 @@
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
 					print("					</p>
-											<button type=\"button\" class=\"btn btn-outline-dark\" onClick=\"cart.delete(". $userdata['ID'].", '".$cart_items[$i][4] ."')\">Remove</button>
+											<button type=\"button\" class=\"btn btn-outline-dark\" onClick=\"cart.remove(". $userdata['ID'].", '".$cart_items[$i][4] ."')\">Remove</button>
 										</div>
 									</div>
 								</div>

@@ -71,7 +71,7 @@
 												</a>
 												<button class="product-btn product-btn--add" onClick="';
 												if($user_ok){
-													print('cart.create('.$userdata['ID'].', '.$prod_sku.')');
+													print('cart.add('.$userdata['ID'].', '.$prod_sku.')');
 												} else {
 													print('modal.create(\'login-cart\', true)');
 												}
