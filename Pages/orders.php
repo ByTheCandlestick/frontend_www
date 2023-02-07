@@ -36,7 +36,7 @@
 					<th scope="col">Date</th>
 					<th scope="col">Subtotal</th>
 					<th scope="col">Tax</th>
-					<th scope="col">Deposit</th>
+					<th scope="col">Income</th>
 					<th scope="col">Status</th>
 					<th scope="col">txn ID</th>
 					<th scope="col"></th>
@@ -69,7 +69,7 @@
 									<td>'.$x['Created'].'</td>
 									<td>'.$x['Subtotal'].'</td>
 									<td>'.$x['Tax'].'</td>
-									<td>'.$x['Deposit'].'</td>
+									<td>'.$x['Income'].'</td>
 									<td>'.$status.'</td>
 									<td>'.$x['Transaction ID'].'</td>
 									<td>
