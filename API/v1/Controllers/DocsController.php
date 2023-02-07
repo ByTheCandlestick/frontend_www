@@ -30,7 +30,7 @@
 						}
 					// Submit application
 						try{
-							if() {	// Success
+							if(false) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-PRM-11");
