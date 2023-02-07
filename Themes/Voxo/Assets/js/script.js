@@ -622,10 +622,10 @@ $(document).ready(function() {
 							if($('.cart')) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())+1)
 
-								newPrice = $("cart-item[prod-sku="+sku+"] .pricePer").val() * $("cart-item[prod-sku="+sku+"] .quantity").val();
-								difference = newPrice - $("cart-item[prod-sku="+sku+"] .priceTotal").val();
+								console.log(newPrice = $("cart-item[prod-sku="+sku+"] .pricePer").val() * $("cart-item[prod-sku="+sku+"] .quantity").val());
+								console.log(difference = newPrice - $("cart-item[prod-sku="+sku+"] .priceTotal").val());
 
-								$("p.subtotal.h4").html($("subtotal.h4").text().charAt(0) + (parseInt($("subtotal.h4").text().substring(1)) + difference).toString());
+								//$("p.subtotal.h4").html($("subtotal.h4").text().charAt(0) + (parseInt($("subtotal.h4").text().substring(1)) + difference).toString());
 							} else {
 								modal.create('addedToCart', true);
 							}
