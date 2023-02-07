@@ -4,7 +4,7 @@
 			return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `UID`=%s", $uid), 1);
 		}
 		public function checkItem(int $sku) {
-			return $this->Execute("SELECT * FROM `Product` WHERE `sku`='$sku'", 1);
+			return $this->Execute(sprintf("SELECT * FROM `Product` WHERE `sku`='%s'", $sku), 1);
 		}
         /** add
          *  Adds the item SKU and options to a users cart
