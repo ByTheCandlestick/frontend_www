@@ -6,7 +6,7 @@
 		 */
 		public function Invoice() {
 			// Require fpdf PHP library
-				require_once(__ROOT__ . '/Vendor/fpdf/init.php');
+				require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 			// Vars
 				$mdl_docs = new DocsModel();
 				$requestMethod = $_SERVER['REQUEST_METHOD'];
