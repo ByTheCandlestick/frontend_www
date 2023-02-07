@@ -587,7 +587,7 @@ $(document).ready(function() {
 		}
 	// Cart
 		cart = {
-			create: (uid, sku, showModal=true, calculate=false, qty=1, options=[]) => {
+			create: (uid, sku, qty=1, options=[]) => {
 				event.preventDefault();
 				if($("options")) {
 					options_count = count = 1;
@@ -619,11 +619,10 @@ $(document).ready(function() {
 					},
 					success: function(body) {
 						if(body.status == 'success') {
-							if(showModal) {
+							if($('.cart')) {
+
+							} else {
 								modal.create('addedToCart', true);
-							}
-							if(calculate) {
-								
 							}
 						} else {
 							alerts.simple('warning', 'An error has occurred')
