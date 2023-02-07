@@ -622,9 +622,9 @@ $(document).ready(function() {
 							if($('.cart')) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())+1)
 								console.log(quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val()));
-								console.log(pricePer	= parseInt(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1)));
+								console.log(pricePer	= parseFloat (($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1)));
 								console.log(newPrice	= quantity * pricePer);
-								console.log(currTotal	= parseInt(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
+								console.log(currTotal	= parseFloat (($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
 								console.log(difference	= newPrice - currTotal);
 
 								//$("p.subtotal.h4").html($("subtotal.h4").text().charAt(0) + (parseInt($("subtotal.h4").text().substring(1)) + difference).toString());
