@@ -628,7 +628,8 @@ $(document).ready(function() {
 								console.log(currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
 								console.log(difference	= (newPrice - currTotal).toFixed(2));
 
-								//$("p.subtotal.h4").html($("subtotal.h4").text().charAt(0) + (parseInt($("subtotal.h4").text().substring(1)) + difference).toString());
+								$("p.priceTotal").html(currency + newPrice);
+								$("p.subtotal.h4").html(currency);
 							} else {
 								modal.create('addedToCart', true);
 							}
