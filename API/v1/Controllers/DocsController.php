@@ -5,7 +5,7 @@
 		function Header() {	// Page header
 			$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 			$this->SetFont('Arial','B',15);
-			$this->Cell(50);
+			$this->Cell(35);
 			$this->Cell(50, 10, 'By The Candlestick', 1, 0, 'C');
 			$this->Ln(20);
 		}
