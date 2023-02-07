@@ -36,7 +36,7 @@
 					// Submit application
 						try{
 							// Vars
-							$company = "How long is this incredibly long string?";
+							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', 16);
@@ -48,7 +48,7 @@
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 								$pdf->SetFont('Arial','B',15);
 								$pdf->Cell(35);
-								$pdf->Cell($pdf->GetStringWidth($company), 0, $company, 1, 0, "C");
+								$pdf->Cell($pdf->GetStringWidth($company), $pdf->GetStringHeight($company), $company, 1, 0, "C");
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
