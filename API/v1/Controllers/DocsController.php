@@ -2,7 +2,7 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		$this->AddFont("Raleway", "", __ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php");
+		
 	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
@@ -37,6 +37,7 @@
 							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
+							$pdf->AddFont("Raleway", "", __ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php");
 
 							$pdf->SetFont('Raleway', 'B', 16);
 							// Create first page
