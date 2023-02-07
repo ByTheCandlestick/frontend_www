@@ -19,6 +19,7 @@
 				$cart_item_id = $cart_item[2];
 				if($q = DB_Query("SELECT * FROM `Product` WHERE `SKU`=$cart_item_id AND `Active`=1 LIMIT 1")) {
 					while($res = mysqli_fetch_array($q)) {
+						print_r($cart_item);
 						$currency = $res['Currency'];
 						$fmt = new NumberFormatter( locale_get_default()."@currency=$currency", NumberFormatter::CURRENCY );
 						$cart_item_curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
