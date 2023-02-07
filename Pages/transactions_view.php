@@ -1,19 +1,20 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Transaction ID`='%s'", urldecode(QS)));
+	$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
+	if(explode('_', QS)[0] == 're') {
+		$query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Refund ID`='%s'", urldecode(QS)));
+		$stripe->refunds->retrieve(
+			QS,
+			[]
+		);
+	} else {
+		$query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Charge ID`='%s'", urldecode(QS)));
+		$stripe->charges->retrieve(
+			QS,
+			[]
+		);
+	}
 	if(mysqli_num_rows($query) > 0) {
 		require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
-		$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
-		if(explode('_', QS)[0] == 're') {
-			$stripe->refunds->retrieve(
-				QS,
-				[]
-			);
-		} else {
-			$stripe->charges->retrieve(
-				QS,
-				[]
-			);
-		}
 ?>
 	<section>
 		<!-- Section Header -->
