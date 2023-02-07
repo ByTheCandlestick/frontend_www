@@ -46,6 +46,14 @@
 							// Vars
 							$tx_company = "The Candlestick";
 							$tx_slogan = "Liven your soul with remarkable vegan candles delivered in days";
+							$tx_slogan_elems = [
+								"Candles",
+								"Wax melts",
+								"Soaps",
+								"Scrubs",
+								"Bath Bombs"
+							];
+							$tx_slogan2_len = $pdf->GetStringLength(join(" | ", $tx_slogan_elems));
 
 							// Initialize
 							$pdf = new PDF();
