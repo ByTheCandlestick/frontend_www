@@ -3,7 +3,7 @@
 	if(mysqli_num_rows($query) > 0) {
 		require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
 		$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
-		$stripe->treasury->transactions->retrieve(
+		$stripe->balanceTransactions->retrieve(
 			QS,
 			[]
 		);
