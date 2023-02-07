@@ -48,7 +48,7 @@
 
 							// Initialize
 							$pdf = new PDF();
-							$pdf->SetFont('Arial', 'R', $pdf->fs_h1);
+							$pdf->SetFont('Arial', '', $pdf->fs_h1);
 							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
