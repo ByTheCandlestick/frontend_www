@@ -73,9 +73,6 @@
 									<td>'.$status.'</td>
 									<td>'.$x['Transaction ID'].'</td>
 									<td>
-										<a href="/Orders/Shipping/'.$x['Invoice ID'].'">
-											<i class="fa fa-box-full"></i>
-										</a>
 										<a href="javascript:orders.printReciept('.$x['Invoice ID'].');">
 											<i class="fa fa-print"></i>
 										</a>
