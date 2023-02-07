@@ -39,7 +39,7 @@
 							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
-							$pdf->MakeFont(__ROOT__."/CDN/Fonts/Raleway/static/Raleway-Regular.ttf")
+							$pdf->MakeFont(__ROOT__."/CDN/Fonts/Raleway/static/Raleway-Regular.ttf");
 							$pdf->SetFont('Raleway', 'B', 16);
 							$pdf->AliasNbPages();
 							// Create first page
