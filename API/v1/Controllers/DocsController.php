@@ -40,6 +40,7 @@
 					// Submit application
 						try{
 							// Vars
+							print_r($config);
 							$tx_company = $config['Company name'];
 							// Initialize
 							$pdf = new PDF();
