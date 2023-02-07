@@ -53,7 +53,7 @@
 								"Scrubs",
 								"Bath Bombs"
 							];
-							$tx_slogan2_len = $pdf->GetStringWidth(join(" | ", $tx_slogan_elems));
+							$tx_slogan2_len = $pdf->GetStringWidth("");
 
 							// Initialize
 							$pdf = new PDF();
