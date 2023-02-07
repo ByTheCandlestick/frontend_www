@@ -72,9 +72,9 @@
 						$item_options = explode(':', $cart_item[2]);
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
-					$minus = '<input type="button" onclick="cart.edit.minus()" class="input-group-text fas" value="&#xf068;">';
+					$minus = '<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#xf068;">';
 					if($cart_item_quantity = 1) {
-						$minus = '<input type="button" onclick="cart.edit.remove()" class="input-group-text fas" value="&#xf1f8;">';
+						$minus = '<input type="button" onclick="cart.delete()" class="input-group-text fas" value="&#xf1f8;">';
 					}
 					print('
 											</p>
@@ -96,7 +96,7 @@
 											<input class="text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'">
 											<label for="floatingTextarea">Quantity</label>
 											<div class="input-group-append">
-												<input type="button" onclick="cart.edit.add()" class="input-group-text fas" value="&#x2b;">
+												<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#x2b;">
 											</div>
 										</div>
 									</div>

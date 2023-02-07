@@ -70,7 +70,7 @@
 	<a class="w-100 btn btn-outline-primary" onClick="
 		<?
 			if($user_ok){
-				print('cart.add('.$userdata['ID'].', '.$prod_sku.')');
+				print('cart.create('.$userdata['ID'].', '.$prod_sku.')');
 			} else {
 				print('modal.create(\'login-cart\', true)');
 			}

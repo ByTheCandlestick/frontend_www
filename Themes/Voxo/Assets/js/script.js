@@ -587,7 +587,7 @@ $(document).ready(function() {
 		}
 	// Cart
 		cart = {
-			add: function(uid, sku) {
+			create: (uid, sku) => {
 				event.preventDefault();
 				options_Arr = [];
 				if($("options").children('div').children('input').length) {
@@ -635,7 +635,55 @@ $(document).ready(function() {
 					});
 				}
 			},
-			remove: function(uid, sku) {
+			update: () => {
+				event.preventDefault();
+				options_Arr = [];
+				if($("options").children('div').children('input').length) {
+					quantity_Raw = $("options").children('div').children('input');
+					qty = quantity_Raw.val();
+				} else {
+					qty = 1;
+				}
+				options_Raw = $("options").children('div').children('select');
+				options_count = count = 1;
+				options_Raw.each(function() {
+					count++;
+					if (this.value == 0) {
+						$(this).addClass('is-invalid');
+					} else {
+						options_count++;
+						options_Arr.push(this.value);
+					}
+				})
+				opt = JSON.stringify(options_Arr);
+				if (options_count == count) {
+					$.ajax({
+						url: api_url + '/Cart/',
+						data: {
+							'api_key': api_key,
+							'uid': uid,
+							'sku': sku,
+							'qty': qty,
+							'opt': opt
+						},
+						type: 'POST',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							if(body.status == 'success') {
+								modal.create('addedToCart', true)
+							} else {
+								alerts.simple('warning', 'An error has occurred')
+							}
+						},
+						error: function(result) {
+							alert("Error: " + result);
+						}
+					});
+				}
+			},
+			delete: (uid, sku) => {
 				$.ajax({
 					url: api_url,
 					data: '$=cart_del&uid=' + user_id + '&pid=' + item,
@@ -652,7 +700,7 @@ $(document).ready(function() {
 						alert("Error: " + result);
 					}
 				});
-			}
+			},
 		}
 	// Cookies
 		cookie = {
