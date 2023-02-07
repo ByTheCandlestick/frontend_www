@@ -55,7 +55,9 @@
 							$pdf->AddPage();
 							// Add content
 								// header
-								$pdf->Header('By the candlestick', 'INV000001', '00/00/0000');
+								$pdf->$company = 'By the candlestick';
+								$pdf->$invoice = 'INV000001';
+								$pdf->$date = '00/00/0000';
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
