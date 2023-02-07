@@ -625,7 +625,7 @@ $(document).ready(function() {
 								newPrice = $("cart-item[prod-sku="+sku+"] .pricePer").val() * $("cart-item[prod-sku="+sku+"] .quantity").val();
 								difference = newPrice - $("cart-item[prod-sku="+sku+"] .priceTotal").val();
 
-								$("p.subtotal.h4").html(parseInt($("subtotal.h4").text().substring(1)) + difference);
+								$("p.subtotal.h4").html('£'+parseInt($("subtotal.h4").text().substring(1)) + difference);
 							} else {
 								modal.create('addedToCart', true);
 							}
