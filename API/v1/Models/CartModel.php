@@ -18,8 +18,9 @@
 			// check if line already exists,
 			if($this->Execute(sprintf("SELECT * FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 5) > 0) {
 				// Get qty on existing line
-				print_r( $this->Execute(sprintf("SELECT `Quantity` FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 2) );
+				$new_qty = $this->Execute(sprintf("SELECT `Quantity` FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 2)[0] + $qty;
 				// Add quantities and update line
+				$this->Execute(sprintf("UPDATE `User carts` SET`Quantity`=%s WHERE `Options`=%s,`SKU`=%s WHERE 1", $new_qty, $opt, $sku));
 			} else {
 				// Create a new line
 				return $this->Execute("INSERT INTO `User carts` (`UID`, `SKU`, `Quantity`, `Options`) VALUES ('$uid', '$sku', '$qty', '$opt')", 1);
