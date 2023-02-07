@@ -63,7 +63,7 @@
 							$pdf->AddPage();
 							// Add content
 								// header
-								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo - transparent.png', 10, 5, 20);
+								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetXY(5, 10);
 								$pdf->SetTextColor(28, 92, 147);
