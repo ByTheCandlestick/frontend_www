@@ -679,7 +679,7 @@ $(document).ready(function() {
 										$(this).hide(500)
 									});
 								}
-
+								(quantity == 1)? : ;
 								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
 								$("p.subtotal.h4").text(currency + newSubtotal);
 							}

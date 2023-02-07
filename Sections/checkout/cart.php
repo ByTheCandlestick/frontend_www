@@ -71,9 +71,9 @@
 						$item_options = explode(':', $cart_item[2]);
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
-					$minus = '<input type="button" onclick="cart.delete('.$userdata['ID'].', '.$cart_item_id.')" class="input-group-text fas" value="&#x2d;">';
+					$subIcon = '2d';
 					if($cart_item_quantity == 1) {
-						$minus = '<input type="button" onclick="cart.delete('.$userdata['ID'].', '.$cart_item_id.')" class="input-group-text fas" value="&#xf1f8;">';
+						$subIcon = 'f1f8';
 					}
 					print('
 											</p>
@@ -90,7 +90,7 @@
 									<div class="col-12 col-lg-6">
 										<div class="form-floating input-group">
 											<div class="input-group-prepend">
-												'.$minus.'
+											<input type="button" onclick="cart.delete('.$userdata['ID'].', '.$cart_item_id.')" class="cartSubtract input-group-text fas" value="&#x'.$subIcon.';">
 											</div>
 											<input class="quantity text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'" disabled>
 											<label for="floatingTextarea" class="ms-2">Quantity</label>
