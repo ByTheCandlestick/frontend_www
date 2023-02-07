@@ -36,7 +36,7 @@
 					// Submit application
 						try{
 							// Vars
-							$company = "The Candlestick"
+							$company = "The Candlestick";
 							// Initialize
 							$pdf = new FPDF();
 							$pdf->SetFont('Arial', 'B', 16);
