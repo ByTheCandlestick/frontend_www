@@ -402,7 +402,7 @@
 		/** @final */
 		updateStatus(newStatus, invoice) {
 			
-			if(1 = 0) {
+			if(false) {
 				$.ajax({
 					url: api_url + '/Orders/Status/',
 					data: {
