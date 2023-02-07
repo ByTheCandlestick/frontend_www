@@ -634,7 +634,7 @@ $(document).ready(function() {
 			},
 			delete: (uid, sku, qty=1, options=[]) => {
 				event.preventDefault();
-				if((qty = $("cart-item[prod-sku="+sku+"]").attr("prod-qty") - $("cart-item input.quantity").val()) = 0) {
+				if((qty = $("cart-item[prod-sku="+sku+"]").attr("prod-qty") - $("cart-item input.quantity").val()) == 0) {
 					qty = 1;
 				}
 				console.log(qty);
