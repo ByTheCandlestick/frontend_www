@@ -395,31 +395,38 @@
 		displayRefunds() {
 			$('#allRefundModal').modal('show');
 		},
+		confirmStatus(newStatus, invoice) {
+			$('#orderStatusChangeModal').modal('show');
+			$('#orderStatusChangeModal').find('button.confirmStausChange').attr('onClick', 'javascript:orders.confirmStatus('+newStatus+','+invoice+');');
+		},
 		/** @final */
 		updateStatus(newStatus, invoice) {
-			$.ajax({
-				url: api_url + '/Orders/Status/',
-				data: {
-					'api_key': api_key,
-					'status': newStatus,
-					'invoice': invoice,
-				},
-				type: 'POST',
-				xhrFields: {
-					withCredentials: true,
-				},
-				success(body) {
-					console.log(body);
-					if(body.status == "success") {
-						alert.simple("Successfully updated", "success");
-						misc.wait(2);
-						window.location.reload();
+			
+			if(1 = 0) {
+				$.ajax({
+					url: api_url + '/Orders/Status/',
+					data: {
+						'api_key': api_key,
+						'status': newStatus,
+						'invoice': invoice,
+					},
+					type: 'POST',
+					xhrFields: {
+						withCredentials: true,
+					},
+					success(body) {
+						console.log(body);
+						if(body.status == "success") {
+							alert.simple("Successfully updated", "success");
+							misc.wait(2);
+							window.location.reload();
+						}
+					},
+					error(body) {
+						alert.simple("An error has occurred. Please try again later", "danger");
 					}
-				},
-				error(body) {
-					alert.simple("An error has occurred. Please try again later", "danger");
-				}
-			});
+				});
+			}
 		},
 		/** @wip */
 		printOrder() {

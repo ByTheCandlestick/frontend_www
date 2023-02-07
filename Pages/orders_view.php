@@ -121,12 +121,12 @@
 		<!-- Section Body -->
 		<div class="row">
 
-		<div class="col-12">
-			<div class="mb-2 row p-2 border text-center">
-				<div class="col-6 col-md-3 pb-3">
-					<h5>Order date: </h5>
-					<p><?=(date('d M Y', strtotime($invoice['Created'])))?></p>
-				</div>
+			<div class="col-12">
+				<div class="mb-2 row p-2 border text-center">
+					<div class="col-6 col-md-3 pb-3">
+						<h5>Order date: </h5>
+						<p><?=(date('d M Y', strtotime($invoice['Created'])))?></p>
+					</div>
 					<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Estimated delivery date: </h5>
@@ -145,31 +145,31 @@
 					<?
 						/**/if($invoice['Shipping status']==0):
 							$s1 = 'active';
-							$t1 = '<a href="javascript:orders.updateStatus(1, \''.$invoice['Invoice ID'].'\');">Mark as confirmed</a>';
-							$t2 = '<a href="javascript:orders.updateStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as assembled</a>';
-							$t3 = '<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
-							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t1 = '<a href="javascript:orders.confirmStatus(1, \''.$invoice['Invoice ID'].'\');">Mark as confirmed</a>';
+							$t2 = '<a href="javascript:orders.confirmStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as assembled</a>';
+							$t3 = '<a href="javascript:orders.confirmStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
+							$t4 = '<a href="javascript:orders.confirmStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==1):
 							$s1 = 'completed';
 							$t1 = 'Confirmed';
 							$s2 = 'active';
-							$t2 = '<a href="javascript:orders.updateStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as assembled</a>';
-							$t3 = '<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
-							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t2 = '<a href="javascript:orders.confirmStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as assembled</a>';
+							$t3 = '<a href="javascript:orders.confirmStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
+							$t4 = '<a href="javascript:orders.confirmStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==2):
 							$s1 = $s2 = 'completed';
 							$t1 = 'Confirmed';
 							$t2 = 'Assembled';
 							$s3 = 'active';
-							$t3 = '<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
-							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t3 = '<a href="javascript:orders.confirmStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
+							$t4 = '<a href="javascript:orders.confirmStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==3):
 							$s1 = $s2 = $s3 = 'completed';
 							$t1 = 'Confirmed';
 							$t2 = 'Assembled';
 							$t3 = 'Dispatched';
 							$s4 = 'active';
-							$t4 = '<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t4 = '<a href="javascript:orders.confirmStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
 						elseif($invoice['Shipping status']==4):
 							$s1 = $s2 = $s3 = $s4 = 'completed';
 							$t1 = 'Confirmed';
@@ -483,6 +483,23 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" onClick="javascript:$('#allRefundModal').modal('hide');">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" tabindex="-1" id="orderStatusChangeModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Change status?</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to change the status of this order?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning confirmStausChange" onClick="">Confirm changes</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 				</div>
 			</div>
 		</div>
