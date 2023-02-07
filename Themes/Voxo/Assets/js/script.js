@@ -627,7 +627,7 @@ $(document).ready(function() {
 								currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1));
 								currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1));
 								newTotal	= (quantity * pricePer).toFixed(2);
-								difference	= (newTotal - currTotal).toFixed(2);
+								difference	= (newTotal - currTotal);
 								newSubtotal	= (currSubtotal + difference).toFixed(2);
 
 								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
