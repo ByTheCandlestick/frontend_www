@@ -47,14 +47,16 @@
 							if($x['Type'] == 'Refund') {
 								$textCol = "danger";
 								$valueDirection = "-";
+								$link = '<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Refund ID'].'</a>';
 							} elseif($x['Type'] == 'Order') {
 								$textCol = "success";
 								$valueDirection = "+";
+								$link = '<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Charge ID'].'</a>';
 							} else {
 								$textCol = "muted";
 								$valueDirection = "±";
+								$link = $x['Transaction ID'];
 							}
-							$link = ($x['Type']== "Order" || $x['Type']== "Refund")? '<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Transaction ID'].'</a>': $x['Transaction ID'];
 							print('
 								<tr>
 									<th scope="row">
