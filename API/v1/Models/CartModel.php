@@ -1,7 +1,7 @@
 <?php
 	class CartModel extends BaseModel {
 		public function checkUser(int $uid) {
-			return $this->Execute("SELECT * FROM `User accounts` WHERE `UID`='$uid'", 1);
+			return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `UID`=%s", $uid), 1);
 		}
 		public function checkItem(int $sku) {
 			return $this->Execute("SELECT * FROM `Product` WHERE `sku`='$sku'", 1);
