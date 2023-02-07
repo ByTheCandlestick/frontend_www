@@ -3,7 +3,7 @@
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF extends FPDF {
 		function Header() {	// Page header
-			$this->Image('http://api.candlestick-indev.co.uk/v1/Images/fetch/candlestickLogo_20220530162542/?api_key=s999MUtbgk44pSsXClHLmlT7M0MV6zXZr8CXRJzRP1uU75CnyKUJwiAdK3vwcCDsOIfTEMGuDFqCegQd8ySZ7qIuZyOhEEsbqvo1lejs2qOU8J3bleZV9PG6GQoJsp6nv45c4CQINEswrkLvLUjafTBCkti8migCD94azeA9uWkH7PwlVjLjXprYQ1AbGbQwX54PLezf3XsqwVQVZccZUUeasavhlwK8nwCDuSjLUrdMefTjS0ZH09SO5qeKBn3s',10,6,30);
+			$this->Image('../../../../images/partners/candlestick/logo.png',10,6,30);
 			$this->SetFont('Arial','B',15);
 			$this->Cell(80);
 			$this->Cell(30,10,'Title',1,0,'C');
