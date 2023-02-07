@@ -647,11 +647,8 @@ $(document).ready(function() {
 			update: () => {
 				
 			},
-			delete: (uid, sku) => {
+			delete: (uid, sku, qty=1) => {
 				event.preventDefault();
-				if((qty = $("cart-item[prod-sku="+sku+"]").attr("prod-qty") - $("cart-item input.quantity").val()) == 0) {
-					qty = 1;
-				}
 				$.ajax({
 					url: api_url + '/Cart/',
 					data: {
@@ -669,17 +666,21 @@ $(document).ready(function() {
 						if(body.status == 'success') {
 							if($('.cart')) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())-1)
-								currency	= $("p.h4.subtotal").text().charAt(0);
 								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
-								pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1));
-								currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1));
-								currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1));
-								newTotal	= (quantity * pricePer).toFixed(2);
-								difference	= (newTotal - currTotal);
-								newSubtotal	= (currSubtotal + difference).toFixed(2);
+								if(quantity == 0) {
+									$("cart-item[product-sku="+sku+"]").hide("",500);
+								} else {
+									currency	= $("p.h4.subtotal").text().charAt(0);
+									pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1));
+									currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1));
+									currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1));
+									newTotal	= (quantity * pricePer).toFixed(2);
+									difference	= (newTotal - currTotal);
+									newSubtotal	= (currSubtotal + difference).toFixed(2);
 
-								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
-								$("p.subtotal.h4").text(currency + newSubtotal);
+									$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
+									$("p.subtotal.h4").text(currency + newSubtotal);
+								}
 							}
 						} else {
 							alerts.simple('An error has occurred', 'warning');
