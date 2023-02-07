@@ -39,7 +39,7 @@
 							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
-							$pdf->SetFont('Arial', 'B', 30);
+							$pdf->SetFont('Arial', 'B', 32);
 							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
@@ -48,7 +48,7 @@
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
 								$pdf->Cell(35);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($pdf->GetStringWidth($company), 10, $company, 1, 0, "C");
+								$pdf->Cell($pdf->GetStringWidth($company), 10.6, $company, 1, 0, "C");
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
