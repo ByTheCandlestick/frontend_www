@@ -82,13 +82,13 @@
 						try{
 							if(!isset($arr_product_info['id']))	Throw new Error('ERR-PRD-1');
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Validation
 						try{
 							// Nothing to validate.
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Submit application
 						try{
@@ -173,13 +173,13 @@
 						try{
 							if(!isset($arr_product_info['id']))	Throw new Error('ERR-PRD-1');
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Validation
 						try{
 							// Nothing to validate.
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Submit application
 						try{

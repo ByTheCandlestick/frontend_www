@@ -20,7 +20,7 @@
 								if(!isset($arr_user_info['fname']) || $arr_user_info == "")	throw new Error("ERR-SUP-3");
 								if(!isset($arr_user_info['lname']) || $arr_user_info == "")	throw new Error("ERR-SUP-4");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
@@ -40,7 +40,7 @@
 								if(!isset($arr_user_info['u_active']))		$arr_user_info['u_active'] = '1';
 								if(strlen($arr_user_info['uname']) < 6)	throw new Error("ERR-SUP-9");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{
@@ -135,7 +135,7 @@
 									endif;
 								}
 							} catch (Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
@@ -174,7 +174,7 @@
 									$info['surname'] = $arr_user_info['lname'];
 								}
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							$mdl_User->ConfirmEmail($info['email']);
@@ -229,7 +229,7 @@
 								if(!isset($arr_user_info['username']) || $arr_user_info['username'] == "")	throw new Error("ERR-SIN-1");
 								if(!isset($arr_user_info['password']) || $arr_user_info['password'] == "")	throw new Error("ERR-SIN-2");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							$type = $this->ConfirmUser($arr_user_info['username']);
@@ -239,7 +239,7 @@
 								$arr_user_info['psecure'] = hash('sha512', 'salt'.$arr_user_info['password'].'pepper'); // Hash the password
 								if(!$mdl_User->ConfirmPassword($arr_user_info['username'], $arr_user_info['psecure'])) throw new Error('ERR-SIN-6'); // Check if password matched
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{
@@ -262,13 +262,13 @@
 							try{
 								if(!isset($arr_user_info['session_code']) || $arr_user_info['session_code'] == "")	throw new Error("ERR-SOU-1");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
 								if(!$mdl_User->ConfirmSession($arr_user_info['session_code'])) throw new Exception("Session code used was not valid");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{
@@ -313,13 +313,13 @@
 							try{
 								// Nothing to confirm
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
 								// Nothing to validate
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{
@@ -367,13 +367,13 @@
 								if(!isset($arr_user_info['uid']) || $arr_user_info['refresh'] == "")	throw new Error("ERR-OAU-2");
 								if(!isset($arr_user_info['uid']) || $arr_user_info['uid'] == "")	throw new Error("ERR-OAU-2");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
 								// Nothing to validate
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{

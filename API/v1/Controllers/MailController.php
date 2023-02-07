@@ -20,13 +20,13 @@
 							if(!isset($arr_mail_info['s']) || $arr_mail_info['s'] == "")	throw new Error("ERR-MAL-5");
 							if(!isset($arr_mail_info['m']) || $arr_mail_info['m'] == "")	throw new Error("ERR-MAL-6");
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Validation
 						try{
                             if(!$this->ValidateEmail($arr_mail_info['t'])) throw new Error("ERR-MAL-7");
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Submit application
 						try{

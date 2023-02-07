@@ -16,13 +16,13 @@
 								if(!isset($arr_conf_info['name'])	 || $arr_conf_info['name'] == "")		throw new Error("ERR-CNF-1");
 								if(!isset($arr_conf_info['default']) || $arr_conf_info['default'] == "")	throw new Error("ERR-CNF-2");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
 								// Nothing to validate.
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{
@@ -46,13 +46,13 @@
 								if(!isset($arr_conf_info['newName']) || $arr_conf_info['newName'] == "")	throw new Error("ERR-CNF-2");
 								if(!isset($arr_conf_info['default']) || $arr_conf_info['default'] == "")	throw new Error("ERR-CNF-3");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
 								// Nothing to validate.
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{
@@ -72,13 +72,13 @@
 							try{
 								if(!isset($arr_conf_info['name']) || $arr_conf_info['name'] == "")	throw new Error("ERR-CNF-1");
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Validation
 							try{
 								// Nothing to validate.
 							} catch(Error $er) {
-								exit($this->throwError($er->getMessage(), "HTTP/1.1 422 Unprocessable Entity"));
+								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
 							try{
