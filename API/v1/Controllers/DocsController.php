@@ -45,7 +45,7 @@
 							$pdf->AddPage();
 							// Add content
 								// header
-								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
+								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 10, 30);
 								$pdf->Cell(35);
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetStringWidth($company), 30, $company, 1, 0, "C");
