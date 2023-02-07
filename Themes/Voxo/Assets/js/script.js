@@ -635,7 +635,7 @@ $(document).ready(function() {
 			delete: (uid, sku, qty=1, options=[]) => {
 				event.preventDefault();
 				console.log($("cart-item[prod-sku="+sku+"]").attr("prod-qty"));
-				console.log($("cart-item input.qty").val());
+				console.log($("cart-item input.quantity").val());
 
 				
 				console.log(qty);

@@ -92,7 +92,7 @@
 											<div class="input-group-prepend">
 												'.$minus.'
 											</div>
-											<input class="text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'">
+											<input class="quantity text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'">
 											<label for="floatingTextarea" class="ms-2">Quantity</label>
 											<div class="input-group-append">
 												<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#x2b;">
