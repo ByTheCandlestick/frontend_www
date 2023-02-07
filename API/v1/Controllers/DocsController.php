@@ -2,7 +2,9 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		
+		public function strLen(string $string) {
+			return strlen($string) * 2.7;
+		}
 	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
@@ -37,7 +39,8 @@
 							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
-								$pdf->SetFont('Arial', 16);
+							$pdf->SetFont('Arial', 'B', 16);
+							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
 							// Add content
