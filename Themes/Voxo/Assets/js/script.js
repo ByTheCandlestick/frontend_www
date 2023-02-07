@@ -628,7 +628,7 @@ $(document).ready(function() {
 								console.log(currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1)));
 								console.log(newTotal	= (quantity * pricePer).toFixed(2));
 								console.log(difference	= (newTotal - currTotal).toFixed(2));
-								console.log(newSubtotal	= (currSubtotal + difference).toFixed(2));
+								console.log(newSubtotal	= (currSubtotal - difference).toFixed(2));
 
 								$(".priceTotal").text(currency + newPrice);
 								$("p.subtotal.h4").text(currency + newSubtotal);
