@@ -3,7 +3,7 @@
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
 		public function strLen(string $string) {
-			return strlen($string) * 2.5;
+			return strlen($string) * 2.6;
 		}
 	}
 	class DocsController extends BaseController {
