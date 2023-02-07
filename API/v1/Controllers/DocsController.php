@@ -30,15 +30,15 @@
 						}
 					// Submit application
 						try{
-							if(true) {	// Success
-								$pdf = new FPDF();
-								$pdf->AddPage();
-								$pdf->SetFont('Arial','B',16);
-								$pdf->Cell(40,10,'Hello World!');
-								$pdf->Output();
-							} else {		// Error submitting
-								throw new Error("ERR-DCS-11");
-							}
+							// Initialize
+							$pdf = new FPDF();
+							// Create first page
+							$pdf->AddPage();
+							$pdf->SetFont('Arial','B',16);
+							// Add content
+							
+							// Output document
+							$pdf->Output();
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
