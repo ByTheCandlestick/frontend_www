@@ -249,18 +249,18 @@ $(document).ready(function() {
 				if (type == 'login-cart') {
 					if ($('modals>.modal-' + type).length == 0) {
 						var structure = [
-							'<div class="modal modal-login-cart" style="background:#00000066;" onClick="modal.close(\'login-cart\')">',
+							'<div class="modal modal-'+type+'" style="background:#00000066;" onClick="modal.close(\''+type+'\')">',
 							'<div class="modal-dialog">',
 							'<div class="modal-content">',
 							'<div class="modal-header">',
 							'<h5 class="modal-title">Account required</h5>',
-							'<button type="button" class="btn-close" onClick="modal.close(\'login-cart\')"></button>',
+							'<button type="button" class="btn-close" onClick="modal.close(\''+type+'\')"></button>',
 							'</div>',
 							'<div class="modal-body">',
 							'<p> You have to login to add things to your cart </p>',
 							'</div>',
 							'<div class="modal-footer">',
-							'<button type="button" class="btn btn-secondary" onClick="modal.close(\'login-cart\')">Close</button>',
+							'<button type="button" class="btn btn-secondary" onClick="modal.close(\''+type+'\')">Close</button>',
 							'<a href="/login" class="btn btn-primary">Login</a>',
 							'</div>',
 							'</div>',
@@ -272,18 +272,18 @@ $(document).ready(function() {
 				} else if(type == 'addedToCart') {
 					if ($('modals>.modal-' + type).length == 0) {
 						var structure = [
-							'<div class="modal modal-added-to-cart" style="background:#00000066;" onClick="modal.close(\'added-to-cart\')">',
+							'<div class="modal modal-'+type+'" style="background:#00000066;" onClick="modal.close(\''+type+'\')">',
 							'<div class="modal-dialog">',
 							'<div class="modal-content">',
 							'<div class="modal-header">',
 							'<h5 class="modal-title">Added to cart</h5>',
-							'<button type="button" class="btn-close" onClick="modal.close(\'added-to-cart\')"></button>',
+							'<button type="button" class="btn-close" onClick="modal.close(\''+type+'\')"></button>',
 							'</div>',
 							'<div class="modal-body">',
 							'<p> The item has successfully been added to your cart </p>',
 							'</div>',
 							'<div class="modal-footer">',
-							'<button type="button" class="btn btn-secondary" onClick="modal.close(\'added-to-cart\')">Continue shopping</button>',
+							'<button type="button" class="btn btn-secondary" onClick="modal.close(\''+type+'\')">Continue shopping</button>',
 							'<a href="/Cart" class="btn btn-primary">Go to cart</a>',
 							'</div>',
 							'</div>',
