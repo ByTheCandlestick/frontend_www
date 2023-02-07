@@ -397,11 +397,11 @@
 		},
 		confirmStatus(newStatus, invoice) {
 			$('#orderStatusChangeModal').modal('show');
-			$('#orderStatusChangeModal').find('button.confirmStausChange').attr('onClick', 'javascript:orders.confirmStatus('+newStatus+',\''+invoice+'\');');
+			$('#orderStatusChangeModal').find('button.confirmStausChange').attr('onClick', 'javascript:orders.updateStatus('+newStatus+',\''+invoice+'\');');
 		},
 		/** @final */
 		updateStatus(newStatus, invoice) {
-			
+			console.log('here');
 			if(false) {
 				$.ajax({
 					url: api_url + '/Orders/Status/',
