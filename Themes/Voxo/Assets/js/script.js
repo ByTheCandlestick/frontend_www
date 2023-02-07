@@ -662,27 +662,26 @@ $(document).ready(function() {
 					success: function(body) {
 						if(body.status == 'success') {
 							if($('.cart').length) {
-								console.log('here');
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())-1)
 								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
 								if(quantity == 0) {
+									console.ll
 									$("cart-item[prod-sku=10001]").animate({
 										'height': '0px'
 									}, 500, function() {
 										$(this).hide(500)
 									});
-								} else {
-									currency	= $("p.h4.subtotal").text().charAt(0);
-									pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1));
-									currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1));
-									currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1));
-									newTotal	= (quantity * pricePer).toFixed(2);
-									difference	= (newTotal - currTotal);
-									newSubtotal	= (currSubtotal + difference).toFixed(2);
-
-									$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
-									$("p.subtotal.h4").text(currency + newSubtotal);
 								}
+								currency	= $("p.h4.subtotal").text().charAt(0);
+								pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1));
+								currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1));
+								currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1));
+								newTotal	= (quantity * pricePer).toFixed(2);
+								difference	= (newTotal - currTotal);
+								newSubtotal	= (currSubtotal + difference).toFixed(2);
+
+								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
+								$("p.subtotal.h4").text(currency + newSubtotal);
 							}
 						} else {
 							alerts.simple('An error has occurred', 'warning');
