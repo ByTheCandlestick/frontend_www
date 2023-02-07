@@ -74,7 +74,7 @@
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, 0, 0, "L");
 								
-								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
+								$tx_elems_strlen = $pdf->GetStringWidth(($tx_elems_str = join(" | ", $tx_elems)));
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $$tx_elems_str, 0, 0, "R");
 							// Output document
 							$pdf->Output();
