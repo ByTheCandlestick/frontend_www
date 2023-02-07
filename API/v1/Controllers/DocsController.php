@@ -34,9 +34,10 @@
 							$pdf = new FPDF();
 							// Create first page
 							$pdf->AddPage();
+							$pdf->AddPage();
 							$pdf->SetFont('Arial','B',16);
 							// Add content
-							
+
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
