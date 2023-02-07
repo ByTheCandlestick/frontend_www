@@ -13,7 +13,7 @@
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<h1>Transaction</h1>
-				<p><?=$charge_info->balance_transaction?></p>
+				<p><?=$transaction->id?></p>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
