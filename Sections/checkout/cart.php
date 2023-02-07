@@ -74,7 +74,7 @@
 					}
 					$minus = '<input type="button" onclick="" class="input-group-text fa" value="&#xf068;">';
 					if($cart_item_quantity = 1) {
-						$minus = '<input type="button" onclick="" class="input-group-text fad" value="&#xf1f8\xf1f8;">';
+						$minus = '<input type="button" onclick="" class="input-group-text fad" value="&#xf1f8 xf1f8;">';
 					}
 					print('
 											</p>
