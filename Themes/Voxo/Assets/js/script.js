@@ -638,7 +638,32 @@ $(document).ready(function() {
 					qty = 1;
 				}
 				console.log(qty);
-				
+				/**
+					$.ajax({
+						url: api_url + '/Cart/',
+						data: {
+							'api_key': api_key,
+							'uid': uid,
+							'sku': sku,
+							'qty': qty,
+							'opt': JSON.stringify(options),
+						},
+						type: 'DELETE',
+						xhrFields: {
+							withCredentials: true,
+						},
+						success: function(body) {
+							if(body.status == 'success') {
+								
+							} else {
+								alerts.simple('An error has occurred', 'warning');
+							}
+						},
+						error: function(result) {
+							alert("Error: " + result);
+						}
+					});
+				 */
 			}	
 		}
 	// Cookies

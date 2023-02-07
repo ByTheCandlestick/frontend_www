@@ -1,7 +1,6 @@
 <?
 	$cart_total = 0;
-	$userid = $userdata['ID'];
-	if($query = DB_Query("SELECT * FROM `User carts` WHERE `UID`=$userid AND `Active`=1")) {
+	if($query = DB_Query(sprintf("SELECT * FROM `User carts` WHERE `UID`=%s AND `Active`=1", $userdata['ID']))) {
 		$cart_items = array();
 		while($row = mysqli_fetch_row($query)) {
 			array_push($cart_items, $row);
@@ -72,9 +71,9 @@
 						$item_options = explode(':', $cart_item[2]);
 						print($titles[$n].': '.$options[$n][$item_options[$n]-1].'&nbsp;&nbsp;&nbsp;');
 					}
-					$minus = '<input type="button" onclick="cart.update()" class="input-group-text fas" value="&#x2d;">';
+					$minus = '<input type="button" onclick="cart.delete('.$userdata['ID'].', '.$cart_item_id.')" class="input-group-text fas" value="&#x2d;">';
 					if($cart_item_quantity == 1) {
-						$minus = '<input type="button" onclick="cart.delete()" class="input-group-text fas" value="&#xf1f8;">';
+						$minus = '<input type="button" onclick="cart.delete('.$userdata['ID'].', '.$cart_item_id.')" class="input-group-text fas" value="&#xf1f8;">';
 					}
 					print('
 											</p>
