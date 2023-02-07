@@ -22,7 +22,7 @@
 					<h4>Subtotal</h4>
 				</div>
 				<div class="col-6 text-center">
-					<p class="h4"><?print_r($cart_item_curr.$cart_total); ?></p>
+					<p class="h4 subtotal"><?print_r($cart_item_curr.$cart_total); ?></p>
 				</div>
 			</div>
 			<div class="row">
