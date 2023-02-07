@@ -622,7 +622,7 @@ $(document).ready(function() {
 						},
 						success: function(body) {
 							if(body.status == 'success') {
-								modals.create('addedToCart', 'open')
+								modal.create('addedToCart', 'open')
 							} else {
 								alerts.simple('warning', 'An error has occurred')
 							}
