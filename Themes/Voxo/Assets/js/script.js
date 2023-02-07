@@ -626,9 +626,9 @@ $(document).ready(function() {
 								console.log(pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1)));
 								console.log(currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
 								console.log(currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1)));
-								console.log(newSubtotal	= (currSubtotal + difference).toFixed(2));
 								console.log(newTotal	= (quantity * pricePer).toFixed(2));
-								console.log(difference	= (newPrice - currTotal).toFixed(2));
+								console.log(difference	= (newTotal - currTotal).toFixed(2));
+								console.log(newSubtotal	= (currSubtotal + difference).toFixed(2));
 
 								$(".priceTotal").text(currency + newPrice);
 								$("p.subtotal.h4").text(currency + newSubtotal);
