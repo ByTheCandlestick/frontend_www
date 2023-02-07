@@ -4,9 +4,9 @@
 	while($partner = mysqli_fetch_assoc($q)) {
 		$partners[$partner['ID']] = $partner;
 	}
-	$partner_image = __API__.'/Images/fetch/'.$partners[$product['made_by_ID']]['logo_url'];
-	$partner_title = $partners[$product['made_by_ID']]['name'];
-	$partner_shop_link = $partners[$product['made_by_ID']]['shop_link'];
+	$partner_image = __API__.'/Images/fetch/'.$partners[$product['made_by_ID']]['Logo image'];
+	$partner_title = $partners[$product['made_by_ID']]['Name'];
+	$partner_shop_link = $partners[$product['made_by_ID']]['Shop link'];
 
 	print_r("
 		<div class=\"row\">
