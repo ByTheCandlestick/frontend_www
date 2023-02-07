@@ -1,10 +1,12 @@
 <?
 	$query = DB_Query(sprintf("SELECT `Charge_ID` FROM `Transactions` WHERE `Transaction ID`='%s'", urldecode(QS)));
 	if(mysqli_num_rows($query) > 0) {
-		print(mysqli_fetch_row($query))
+		print_r(mysqli_fetch_row($query))
+		require_once(__ROOT__ . '/vendor/StripeSecure/init.php');
+		$stripe = new \Stripe\StripeClient(STRIPE_API);
 		$stripe = new \Stripe\StripeClient(STRIPE_API);
 		$stripe->charges->retrieve(
-			'ch_3MYoVX2eZvKYlo2C0jJygcgm',
+			$charge,
 			[]
 		);		  
 ?>
