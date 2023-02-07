@@ -87,12 +87,12 @@
 									<div class="col-12 col-lg-6">
 										<div class="form-floating input-group">
 											<div class="input-group-prepend">
-												<input type="button" onclick="" class="input-group-text" value="&#xf068;">
+												<input type="button" onclick="" class="input-group-text fad" value="&#xf068;">
 											</div>
 											<input class="text-center form-control border-1 bg-transparent" placeholder="1" id="floatingTextarea" value="'.$cart_item_quantity.'">
 											<label for="floatingTextarea">Quantity</label>
 											<div class="input-group-append">
-												<input type="button" onclick="" class="input-group-text" value="&#x2b;">
+												<input type="button" onclick="" class="input-group-text fad" value="&#x2b;">
 											</div>
 										</div>
 									</div>
