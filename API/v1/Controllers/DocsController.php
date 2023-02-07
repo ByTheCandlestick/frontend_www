@@ -1,23 +1,6 @@
 <?php
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
-	class PDF extends FPDF {
-		public $comapny, $invoice, $date;
-		function Header() {	// Page header
-			$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 6, 30);
-			$this->SetFont('Arial','B',15);
-			$this->Cell(35);
-			$this->Cell(50, 10, $company, 0, 0, 'C');
-			$this->Cell(50, 10, $invoice, 0, 0, 'C');
-			$this->Cell(50, 10, $date, 0, 0, 'C');
-			$this->Ln(20);
-		}
-		function Footer() {	// Page footer
-			$this->SetY(-15);
-			$this->SetFont('Arial', 'I', 8);
-			$this->Cell(0, 10, 'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
-		}
-	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
 		 *	
@@ -58,6 +41,10 @@
 								$pdf->$company = 'By the candlestick';
 								$pdf->$invoice = 'INV000001';
 								$pdf->$date = '00/00/0000';
+								// footer
+								$pdf->SetY(-15);
+								$pdf->SetFont('Arial', 'I', 8);
+								$pdf->Cell(0, 10, 'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
