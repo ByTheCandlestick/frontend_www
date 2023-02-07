@@ -663,15 +663,7 @@ $(document).ready(function() {
 						if(body.status == 'success') {
 							if($('.cart').length) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val()) - 1)
-								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
-								if(quantity == 0) {
-									console.ll
-									$("cart-item[prod-sku=10001]").animate({
-										'height': '0px'
-									}, 500, function() {
-										$(this).hide(500)
-									});
-								}
+								quantity = parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
 								currency	= $("p.h4.subtotal").text().charAt(0);
 								pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1));
 								currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1));
@@ -679,6 +671,15 @@ $(document).ready(function() {
 								newTotal	= (quantity * pricePer).toFixed(2);
 								difference	= (newTotal - currTotal);
 								newSubtotal	= (currSubtotal + difference).toFixed(2);
+
+								if(quantity == 0) {
+									console.ll
+									$("cart-item[prod-sku="+sku+"]").animate({
+										'height': '0px'
+									}, 500, function() {
+										$(this).hide(500)
+									});
+								}
 
 								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
 								$("p.subtotal.h4").text(currency + newSubtotal);
