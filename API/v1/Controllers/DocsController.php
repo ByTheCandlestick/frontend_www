@@ -76,7 +76,7 @@
 
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 
-								$left = $pdf->GetPageWidth()-$tx_elems_strlen;
+								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
 								$pdf->SetXY($left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
