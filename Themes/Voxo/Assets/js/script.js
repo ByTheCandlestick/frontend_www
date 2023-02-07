@@ -621,16 +621,16 @@ $(document).ready(function() {
 						if(body.status == 'success') {
 							if($('.cart')) {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())+1)
-								console.log(currency	= $("p.h4.subtotal").text().charAt(0));
-								console.log(quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val()));
-								console.log(pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1)));
-								console.log(currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
-								console.log(currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1)));
-								console.log(newTotal	= (quantity * pricePer).toFixed(2));
-								console.log(difference	= (newTotal - currTotal).toFixed(2));
-								console.log(newSubtotal	= (currSubtotal - difference).toFixed(2));
+								currency	= $("p.h4.subtotal").text().charAt(0);
+								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
+								pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1));
+								currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1));
+								currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1));
+								newTotal	= (quantity * pricePer).toFixed(2);
+								difference	= (newTotal - currTotal).toFixed(2);
+								newSubtotal	= (currSubtotal - difference).toFixed(2);
 
-								$(".priceTotal").text(currency + newTotal);
+								$("cart-item[prod-sku="+sku+"] .priceTotal").text(currency + newTotal);
 								$("p.subtotal.h4").text(currency + newSubtotal);
 							} else {
 								modal.create('addedToCart', true);
