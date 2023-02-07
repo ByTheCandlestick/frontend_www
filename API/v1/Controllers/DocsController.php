@@ -41,7 +41,7 @@
 						try{
 							// Vars
 							$tx_company = "The Candlestick";
-							
+
 							// Initialize
 							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', $pdf->fs_h1);
@@ -55,7 +55,7 @@
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetStringWidth($tx_company), 10, $tx_company, 1, 0, "C");
 							// Output document
-							//$pdf->Output();
+							$pdf->Output();
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
