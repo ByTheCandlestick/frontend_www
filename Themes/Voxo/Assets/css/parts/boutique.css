@@ -107,6 +107,7 @@
 }
 .boutique .product-list-item .product .product-content .product-info .product-btn--add {
 	color: var(--text-secondary);
+	margin: 0 0 0 auto;
 }
 
 .nav::-webkit-scrollbar {
