@@ -2,8 +2,15 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		public function strLen(string $string) {
-			return strlen($string) * 2.7;
+		function __contruct() {
+			$company = "The Candlestick";
+			$fs_h1 = 32;
+			$fs_h2 = 24;
+			$fs_h3 = 20.8;
+			$fs_h4 = 16;
+			$fs_h5 = 12.8;
+			$h6 = 11.2;
+			$fs_p = 16;
 		}
 	}
 	class DocsController extends BaseController {
@@ -36,10 +43,10 @@
 					// Submit application
 						try{
 							// Vars
-							$company = "The Candlestick";
+
 							// Initialize
 							$pdf = new PDF();
-							$pdf->SetFont('Arial', 'B', 32);
+							$pdf->SetFont('Arial', 'B', $pdf->$fs_h1);
 							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
