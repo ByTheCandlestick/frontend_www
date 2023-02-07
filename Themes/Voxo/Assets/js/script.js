@@ -620,7 +620,8 @@ $(document).ready(function() {
 					success: function(body) {
 						if(body.status == 'success') {
 							if($('.cart')) {
-
+								$("cart-item[prod-sku="+sku+"] .quantity").val($("cart-item[prod-sku="+sku+"] .quantity").val()+1)
+								newPrice = $("cart-item[prod-sku="+sku+"] .pricePer").val() * $("cart-item[prod-sku="+sku+"] .quantity").val();
 							} else {
 								modal.create('addedToCart', true);
 							}

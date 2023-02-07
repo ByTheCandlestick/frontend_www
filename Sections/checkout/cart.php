@@ -83,7 +83,7 @@
 								<div class="row align-items-center col-12 col-lg-4">
 									<div class="col-3">
 										<div class="form-floating">
-											<input class="text-center form-control border-0 bg-transparent" placeholder="£--" id="floatingTextarea" value="'.$cart_item_curr.$cart_item_price.'" disabled>
+											<input class="pricePer text-center form-control border-0 bg-transparent" placeholder="£--" id="floatingTextarea" value="'.$cart_item_curr.$cart_item_price.'" disabled>
 											<label for="floatingTextarea">Price</label>
 										</div>
 									</div>
@@ -101,7 +101,7 @@
 									</div>
 									<div class="col-3">
 										<div class="form-floating">
-											<input class="text-center form-control border-0 bg-transparent" placeholder="£--" id="floatingTextarea" value="'.$cart_item_curr.$cart_item_total.'" disabled>
+											<input class="priceTotal text-center form-control border-0 bg-transparent" placeholder="£--" id="floatingTextarea" value="'.$cart_item_curr.$cart_item_total.'" disabled>
 											<label for="floatingTextarea">Total</label>
 										</div>
 									</div>
