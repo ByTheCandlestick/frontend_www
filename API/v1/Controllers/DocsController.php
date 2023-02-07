@@ -39,7 +39,7 @@
 							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
-							$pdf->SetFont('Arial', 'B', 16);
+							$pdf->SetFont('Arial', 'B', 32);
 							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
