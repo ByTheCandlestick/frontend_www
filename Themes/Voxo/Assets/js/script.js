@@ -673,7 +673,6 @@ $(document).ready(function() {
 								newSubtotal	= (currSubtotal + difference).toFixed(2);
 
 								if(quantity == 0) {
-									console.ll
 									$("cart-item[prod-sku="+sku+"]").animate({
 										'height': '0px'
 									}, 500, function() {
