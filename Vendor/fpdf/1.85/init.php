@@ -74,6 +74,7 @@ protected $PDFVersion;         // PDF version number
 
 function __construct($orientation='P', $unit='mm', $size='A4')
 {
+	define('FPDF_FONTPATH', __ROOT__.'/ByTheCandlestick/frontend_www/API/Controllers/');
 	// Initialization of properties
 	$this->state = 0;
 	$this->page = 0;
