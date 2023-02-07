@@ -49,7 +49,7 @@
 
 							// Initialize
 							$pdf = new PDF();
-							$pdf->AddFont('Raleway', '', '/kunden/homepages/36/d908228976/htdocs/InDev/frontend_www/CDN/Fonts/Raleway/makefont/Raleway-Regular.php');
+							$pdf->AddFont('Raleway', '', FPDF_FONTPATH.'Raleway-Regular.php');
 
 							$pdf->SetFont('Arial', '', $pdf->fs_h1);
 							$pdf->AliasNbPages();
