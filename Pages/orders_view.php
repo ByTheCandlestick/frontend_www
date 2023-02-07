@@ -77,11 +77,11 @@
 				<h5>Stripe</h5>
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Transaction ID'])?>" name="transaction_id" disabled>
+						<a name="charge_id" class="form-control disabled" id="floatingInput" href="/Transactions/View/<? print($invoice['Transaction ID'])?>"><? print($invoice['Charge ID'])?></a>
 						<label for="floatingInput">Transaction ID</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-						<a name="charge_id" class="form-control disabled" id="floatingInput" href="https://dashboard.stripe.com<?(DOMAIN_TYPE=='indev')?print('/test'):print('');?>/payments/<? print($invoice['Charge ID'])?>" target="_blank" rel="noreferrer noopener" disabled><? print($invoice['Charge ID'])?></a>
+						<input type="text" class="form-control" id="floatingInput" value="<?=$invoice['Charge ID']?>" name="transaction_id" disabled>
 						<label for="floatingInput">Charge ID</label>
 					</div>
 				</div>
