@@ -628,7 +628,7 @@ $(document).ready(function() {
 								console.log(currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
 								console.log(difference	= (newPrice - currTotal).toFixed(2));
 
-								$("p.priceTotal").text(currency + newPrice);
+								$("p.priceTotal").text(currency+""+newPrice);
 								$("p.subtotal.h4").text(currency);
 							} else {
 								modal.create('addedToCart', true);
