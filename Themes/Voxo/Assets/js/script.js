@@ -620,9 +620,11 @@ $(document).ready(function() {
 					success: function(body) {
 						if(body.status == 'success') {
 							if($('.cart')) {
-								$("cart-item[prod-sku="+sku+"] .quantity").val($("cart-item[prod-sku="+sku+"] .quantity").val()+1)
+								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())+1)
+
 								newPrice = $("cart-item[prod-sku="+sku+"] .pricePer").val() * $("cart-item[prod-sku="+sku+"] .quantity").val();
 								difference = newPrice - $("cart-item[prod-sku="+sku+"] .priceTotal").val();
+
 								$("p.subtotal.h4").html(parseInt($("subtotal.h4").html().substring(1)) + difference);
 							} else {
 								modal.create('addedToCart', true);
