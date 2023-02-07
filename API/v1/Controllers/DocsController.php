@@ -37,13 +37,12 @@
 							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
-							if (file_exists(__ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php")) {
-								$pdf->AddFont("Raleway", "", __ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php");
-	
+							if(file_exists(__ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php")) {
+								$pdf->AddFont("Raleway", __ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php");
 								$pdf->SetFont('Raleway', 16);
-								} else {
-									$pdf->SetFont('Arial', 'B', 16);
-								}
+							} else {
+								$pdf->SetFont('Arial', 16);
+							}
 							// Create first page
 							$pdf->AddPage();
 							// Add content
