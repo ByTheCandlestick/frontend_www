@@ -47,11 +47,11 @@
 							if($x['Type'] == 'Refund') {
 								$textCol = "danger";
 								$valueDirection = "-";
-								$link = '<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Refund ID'].'</a>';
+								$link = '<a href="/Transactions/View/'.urlencode($x['Refund ID']).'/">'.$x['Transaction ID'].'</a>';
 							} elseif($x['Type'] == 'Order') {
 								$textCol = "success";
 								$valueDirection = "+";
-								$link = '<a href="/Transactions/View/'.urlencode($x['Transaction ID']).'/">'.$x['Charge ID'].'</a>';
+								$link = '<a href="/Transactions/View/'.urlencode($x['Charge ID']).'/">'.$x['Transaction ID'].'</a>';
 							} else {
 								$textCol = "muted";
 								$valueDirection = "±";
