@@ -58,7 +58,7 @@
 							print('
 								<tr>
 									<th scope="row">
-										
+										'.$link.'
 									</th>
 									<td>'.$x['Type'].'</td>
 									<td>'.$x['Status'].'</td>
