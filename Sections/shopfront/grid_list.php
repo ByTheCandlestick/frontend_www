@@ -59,6 +59,9 @@
 										<div class="product-info row">
 											<span class="product-price col-12 col-lg-6">' . $prod_currency . $prod_price .'</span>
 											<div class="product-btn-group col-12 col-lg-6">
+												<a href="" class="product-btn product-btn--add">
+													<i class="fad fa-cart-plus"></i>
+												</a>
 											</div>
 										</div>
 									</div>
