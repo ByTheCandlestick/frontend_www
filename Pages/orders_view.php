@@ -62,7 +62,7 @@
 			}
 		/* --=== Contents ===-- */
 			.order-progress-stepper .step.confirmed::before { content: "\f00c"; }
-			.order-progress-stepper .step.awaDelivery::before { content: "\f007"; }
+			.order-progress-stepper .step.processed::before { content: "\f007"; }
 			.order-progress-stepper .step.dispatched::before { content: "\f0d1"; }
 			.order-progress-stepper .step.delivered::before { content: "\f466"; }
 			.order-progress-stepper .step.completed::before { content: "\f00c"; }
@@ -145,43 +145,43 @@
 					<?
 						/**/if($invoice['Shipping status']==0):
 							$s1 = 'active';
-							$s1_click='<a href="javascript:orders.updateStatus(1, \''.$invoice['Invoice ID'].'\');">Mark as Confirmed</a>';
-							$s2_click='<a href="javascript:orders.updateStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as Assembled</a>';
-							$s3_click='<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
-							$s4_click='<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t1 = 'Confirm order';
+							$t2 = 'Awaiting Processing';
+							$t3 = 'Awaiting Dispatch';
+							$t4 = 'Awaiting Delivery';
 						elseif($invoice['Shipping status']==1):
 							$s1='completed';
+							$t1 = 'Confirmed';
 							$s2 = 'active';
-							$s1_click='Order Confirmed';
-							$s2_click='<a href="javascript:orders.updateStatus(2, \''.$invoice['Invoice ID'].'\');">Mark as Assembled</a>';
-							$s3_click='<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
-							$s4_click='<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t2 = 'Mark as processed';
+							$t3 = 'Awaiting Dispatch';
+							$t4 = 'Awaiting Delivery';
 						elseif($invoice['Shipping status']==2):
 							$s1=$s2='completed';
+							$t1 = 'Confirmed';
+							$t2 = 'Processed';
 							$s3 = 'active';
-							$s1_click='Order Confirmed';
-							$s2_click='Awaiting delivery';
-							$s3_click='<a href="javascript:orders.updateStatus(3, \''.$invoice['Invoice ID'].'\');">Mark as out for delivery</a>';
-							$s4_click='<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t3 = 'Mark Dispatched';
+							$t4 = 'Awaiting Delivery';
 						elseif($invoice['Shipping status']==3):
 							$s1=$s2=$s3='completed';
+							$t1 = 'Confirmed';
+							$t2 = 'Processed';
+							$t3 = 'Dispatched';
 							$s4 = 'active';
-							$s1_click='Order Confirmed';
-							$s2_click='Awaiting delivery';
-							$s3_click='out for delivery';
-							$s4_click='<a href="javascript:orders.updateStatus(4, \''.$invoice['Invoice ID'].'\');">Mark as delivered</a>';
+							$t4 = 'Mark delivered';
 						elseif($invoice['Shipping status']==4):
 							$s1=$s2=$s3=$s4='completed';
-							$s1_click='Order Confirmed';
-							$s2_click='Awaiting delivery';
-							$s3_click='out for delivery';
-							$s4_click='Delivered';
+							$t1 = 'Confirmed';
+							$t2 = 'Processed';
+							$t3 = 'Dispatched';
+							$t4 = 'Delivered';
 						endif;
 						print("
-							<div class=\"step $s1 confirmed\">$s1_click</div>
-							<div class=\"step $s2 awaDelivery\">$s2_click</div>
-							<div class=\"step $s3 dispatched\">$s3_click</div>
-							<div class=\"step $s4 delivered\">$s4_click</div>
+							<div class=\"step $s1 confirmed\">$t1</div>
+							<div class=\"step $s2 processed\">$t2</div>
+							<div class=\"step $s3 dispatched\">$t3</div>
+							<div class=\"step $s4 delivered\">$t4</div>
 						");
 					?>
 				</div>
