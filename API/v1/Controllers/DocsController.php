@@ -58,7 +58,7 @@
 								// header
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
-								$pdf->SetXY(0, 10);
+								$pdf->SetXY(0, 0);
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetPageWidth(), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 1, "R");
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
