@@ -69,13 +69,17 @@
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetPageWidth()-10, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 1, "R");
 
-								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetXY(5, 25);
+								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, 0, 0, "L");
-								$tx_elems_str = join(" | ", $tx_elems);
+
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str);
-								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems_str, 0, 0, "R");
+								$left = $pdf->GetPageWidth() - ($tx_elems_strlen + 10)
+								$pdf->SetXY($left, 25);
+								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
+								$pdf->SetTextColor(255, 127, 0);
+								$pdf->Cell(, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems_str, 0, 0, "R");
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
