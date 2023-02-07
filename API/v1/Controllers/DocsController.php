@@ -7,7 +7,7 @@
 		public $fs_h3 = 20.8;
 		public $fs_h4 = 16;
 		public $fs_h5 = 12.8;
-		public $h6 = 11.2;
+		public $fs_h6 = 11.2;
 		public $fs_p = 16;
 
 		public function GetStringHeight(int $fs) {
