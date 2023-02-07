@@ -397,7 +397,7 @@
 		},
 		confirmStatus(newStatus, invoice) {
 			$('#orderStatusChangeModal').modal('show');
-			$('#orderStatusChangeModal').find('button.confirmStausChange').attr('onClick', 'javascript:orders.confirmStatus(\''+newStatus+'\',\''+invoice+'\');');
+			$('#orderStatusChangeModal').find('button.confirmStausChange').attr('onClick', 'javascript:orders.confirmStatus('+newStatus+',\''+invoice+'\');');
 		},
 		/** @final */
 		updateStatus(newStatus, invoice) {
