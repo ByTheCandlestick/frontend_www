@@ -1,6 +1,6 @@
 <?
 	try {
-		require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
+		require_once(__ROOT__ . '/Vendor/stripesecure/init.php');
 		$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 		if(explode('_', QS)[0] == 're') {
 			$query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Refund ID`='%s'", urldecode(QS)));

@@ -66,7 +66,7 @@
 						}
 					// Validation
 						try{
-							// Norhting to validate
+							// Nothing to validate
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
@@ -91,7 +91,7 @@
 						}
 					// Validation
 						try{
-							// Norhting to validate
+							// Nothing to validate
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}

@@ -6,7 +6,7 @@
 		 */
 		public function SecurePayment() {
 			// Require Stripe PHP library and set the API key 
-				require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
+				require_once(__ROOT__ . '/Vendor/stripesecure/init.php');
 				$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 			// Vars
 				$mdl_stripe = new StripeModel();
@@ -180,7 +180,7 @@
 		 */
 		public function SecureRefund() {
 			// Require Stripe PHP library and set the API key 
-				require_once(__ROOT__ . '/Vendor/StripeSecure/init.php');
+				require_once(__ROOT__ . '/Vendor/stripesecure/init.php');
 				$stripe = new \Stripe\StripeClient(STRIPE_API[1]);
 			// Vars
 				$mdl_stripe = new StripeModel();
