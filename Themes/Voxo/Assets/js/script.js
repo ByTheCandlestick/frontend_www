@@ -632,13 +632,11 @@ $(document).ready(function() {
 			update: () => {
 				
 			},
-			delete: (uid, sku, qty=1, options=[]) => {
+			delete: (uid, sku) => {
 				event.preventDefault();
 				if((qty = $("cart-item[prod-sku="+sku+"]").attr("prod-qty") - $("cart-item input.quantity").val()) == 0) {
 					qty = 1;
 				}
-				console.log(qty);
-				/**
 					$.ajax({
 						url: api_url + '/Cart/',
 						data: {
@@ -646,7 +644,7 @@ $(document).ready(function() {
 							'uid': uid,
 							'sku': sku,
 							'qty': qty,
-							'opt': JSON.stringify(options),
+							'opt': $("cart-item[prod-sku="+sku+"]").attr("prod-opt"),
 						},
 						type: 'DELETE',
 						xhrFields: {
@@ -663,7 +661,6 @@ $(document).ready(function() {
 							alert("Error: " + result);
 						}
 					});
-				 */
 			}	
 		}
 	// Cookies
