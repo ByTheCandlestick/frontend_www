@@ -31,9 +31,13 @@
 					// Submit application
 						try{
 							if(true) {	// Success
-								$str_response = json_encode(array('status'=>'success'));
+								$pdf = new FPDF();
+								$pdf->AddPage();
+								$pdf->SetFont('Arial','B',16);
+								$pdf->Cell(40,10,'Hello World!');
+								$pdf->Output();
 							} else {		// Error submitting
-								throw new Error("ERR-PRM-11");
+								throw new Error("ERR-DCS-11");
 							}
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
