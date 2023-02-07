@@ -8,8 +8,7 @@
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<h1>Transaction</h1>
-				<p>ID: <?=$transaction['Transaction ID']?></p>
-				<p>Type: <?=$transaction['Type']?></p>
+				<p><?=$transaction['Transaction ID']?></p>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
