@@ -632,24 +632,34 @@ $(document).ready(function() {
 			update: () => {
 				
 			},
-			delete: (uid, sku) => {
+			delete: (uid, sku, qty=1, options=[]) => {
+				event.preventDefault();
+				
 				$.ajax({
-					url: api_url,
-					data: '$=cart_del&uid=' + user_id + '&pid=' + item,
-					type: 'POST',
+					url: api_url + '/Cart/',
+					data: {
+						'api_key': api_key,
+						'uid': uid,
+						'sku': sku,
+						'qty': qty,
+						'opt': JSON.stringify(options),
+					},
+					type: 'DELETE',
 					xhrFields: {
 						withCredentials: true,
 					},
 					success: function(body) {
-						if (body.status == 'success') {
-							alerts.icon('info-circle', 'Item has been removed from cart')
+						if(body.status == 'success') {
+							
+						} else {
+							alerts.simple('An error has occurred', 'warning');
 						}
 					},
 					error: function(result) {
 						alert("Error: " + result);
 					}
 				});
-			},
+			}	
 		}
 	// Cookies
 		cookie = {
