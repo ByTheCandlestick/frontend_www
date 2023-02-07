@@ -1,7 +1,7 @@
 <?php
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
-	define('FPDF_FONTPATH', __ROOT__.'/ByTheCandlestick/frontend_www/CDN/Fonts/makefonts/');
+	//define('FPDF_FONTPATH', __ROOT__.'/ByTheCandlestick/frontend_www/CDN/Fonts/makefonts/');
 	class PDF Extends FPDF {
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
