@@ -40,8 +40,8 @@
 					// Submit application
 						try{
 							// Vars
-							print_r($config);
-							$tx_company = $config['Company name'];
+							$tx_company = "The Candlestick";
+							
 							// Initialize
 							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', $pdf->fs_h1);
