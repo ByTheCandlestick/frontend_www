@@ -636,9 +636,8 @@ $(document).ready(function() {
 				event.preventDefault();
 				console.log($("cart-item[prod-sku="+sku+"]").attr("prod-qty"));
 				console.log($("cart-item input.qty").val());
-				if((qty = $("cart-item[prod-sku="+sku+"]").attr("prod-qty") - $("cart-item input.qty").val()) = 0) {
-					qty = 1;
-				}
+
+				
 				console.log(qty);
 				/**
 					$.ajax({
