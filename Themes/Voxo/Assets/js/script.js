@@ -624,12 +624,14 @@ $(document).ready(function() {
 								console.log(currency	= $("p.h4.subtotal").text().charAt(0));
 								console.log(quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val()));
 								console.log(pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1)));
-								console.log(newPrice	= (quantity * pricePer).toFixed(2));
 								console.log(currTotal	= parseFloat(($("cart-item[prod-sku="+sku+"] .priceTotal").val()).substring(1)));
+								console.log(currSubtotal= parseFloat(($("p.h4.subtotal").text()).substring(1)));
+								console.log(newSubtotal	= (currSubtotal + difference).toFixed(2));
+								console.log(newTotal	= (quantity * pricePer).toFixed(2));
 								console.log(difference	= (newPrice - currTotal).toFixed(2));
 
-								$("p.priceTotal").text(currency+""+newPrice);
-								$("p.subtotal.h4").text(currency);
+								$(".priceTotal").text(currency + newPrice);
+								$("p.subtotal.h4").text(currency + newSubtotal);
 							} else {
 								modal.create('addedToCart', true);
 							}
