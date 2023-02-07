@@ -37,7 +37,7 @@
 							$company = "The Candlestick";
 							// Initialize
 							$pdf = new PDF();
-							if(file_exists(__ROOT__."/CDN/Fonts/Raleway/makefont/Raleway-Regular.php")) {
+							if(false) {
 								$pdf->AddFont("Raleway", "Regular", 'Raleway-Regular.php');
 								//$pdf->SetFont('Raleway', 16);
 							} else {
