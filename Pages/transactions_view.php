@@ -1,5 +1,5 @@
 <?
-	$query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Transaction ID`=%s", urldecode(QS)));
+	$query = DB_Query(sprintf("SELECT * FROM `Transactions` WHERE `Transaction ID`='%s'", urldecode(QS)));
 	if(mysqli_num_rows($query) > 0) {
 ?>
 	<section>
