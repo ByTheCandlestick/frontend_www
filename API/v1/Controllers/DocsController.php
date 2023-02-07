@@ -45,8 +45,8 @@
 						try{
 							// Vars
 							$tx_company = "The Candlestick";
-							$tx_slogan = "Liven your soul with remarkable vegan candles delivered in days";
-							$tx_slogan_elems = [
+							$tx_website = "www.thecandlestick.co.uk";
+							$tx_elems = [
 								"Candles",
 								"Wax melts",
 								"Soaps",
@@ -72,9 +72,9 @@
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetXY(5, 25);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_slogan, 0, 0, "L");
+								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, 0, 0, "L");
 								
-								$tx_slogan2_len = $pdf->GetStringWidth(join(" | ", $tx_slogan_elems));
+								$tx_elems_strlen = $pdf->GetStringWidth(join(" | ", $tx_elems));
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 0, "R");
 							// Output document
 							$pdf->Output();
