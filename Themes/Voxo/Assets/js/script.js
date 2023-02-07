@@ -668,7 +668,7 @@ $(document).ready(function() {
 								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())-1)
 								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
 								if(quantity == 0) {
-									$("cart-item[product-sku="+sku+"]").hide(500);
+									$("cart-item[prod-sku="+sku+"]").hide(500);
 								} else {
 									currency	= $("p.h4.subtotal").text().charAt(0);
 									pricePer	= parseFloat(($("cart-item[prod-sku="+sku+"] .pricePer").val()).substring(1));
