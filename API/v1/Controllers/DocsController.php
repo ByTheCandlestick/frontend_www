@@ -2,7 +2,6 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		public $tx_company = $config['Company name'];
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
 		public $fs_h3 = 20.8;
@@ -41,6 +40,7 @@
 					// Submit application
 						try{
 							// Vars
+							$tx_company = $config['Company name'];
 							// Initialize
 							$pdf = new PDF();
 							$pdf->SetFont('Arial', 'B', $pdf->fs_h1);
@@ -52,7 +52,7 @@
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 10, 30);
 								$pdf->SetXY(50, 10);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($pdf->GetStringWidth($pdf->tx_company), 10, $pdf->tx_company, 1, 0, "C");
+								$pdf->Cell($pdf->GetStringWidth($tx_company), 10, $tx_company, 1, 0, "C");
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
