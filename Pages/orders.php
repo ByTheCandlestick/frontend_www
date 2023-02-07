@@ -36,7 +36,7 @@
 					<th scope="col">Date</th>
 					<th scope="col">Subtotal</th>
 					<th scope="col">Tax</th>
-					<th scope="col">Income</th>
+					<th scope="col">Fees</th>
 					<th scope="col">Status</th>
 					<th scope="col">txn ID</th>
 					<th scope="col"></th>
