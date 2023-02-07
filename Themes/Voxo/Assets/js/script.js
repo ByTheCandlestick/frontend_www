@@ -662,7 +662,7 @@ $(document).ready(function() {
 					success: function(body) {
 						if(body.status == 'success') {
 							if($('.cart').length) {
-								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val())-1)
+								$("cart-item[prod-sku="+sku+"] .quantity").val(parseInt($("cart-item[prod-sku="+sku+"] .quantity").val()) - 1)
 								quantity	= parseInt($("cart-item[prod-sku="+sku+"] .quantity").val());
 								if(quantity == 0) {
 									console.ll
