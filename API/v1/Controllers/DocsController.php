@@ -64,7 +64,7 @@
 							$pdf->AddPage();
 							// Add content
 								// Logo
-								//$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
+								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->SetFont('Raleway', '', ($fs = $pdf->fs_h1));
