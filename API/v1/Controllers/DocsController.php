@@ -91,7 +91,7 @@
 										}
 									}
 								// Divider
-								$pdf->Line(5, 34, $pdf->GetPageWidth()-5, 34);
+								$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 								// Invoice ID
 								// Invoice Date
 							// Output document
