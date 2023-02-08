@@ -46,6 +46,10 @@
 			$this->SetXY($posx, $posy=$posy + 6);
 			$this->Cell(array_sum($w),0,'','T');
 		}
+		function __construct() {
+			
+			$this->AddFont('Raleway', '', 'raleway.php', 1);
+		}
 	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
@@ -95,7 +99,6 @@
 							$textColor = array(28, 92, 147);
 							// Initialize
 							$pdf = new PDF();
-							$pdf->AddFont('Raleway', '', 'raleway.php', 1);
 							$pdf->SetDisplayMode('default', 'two');
 							$pdf->AliasNbPages();
 							// Create first page
