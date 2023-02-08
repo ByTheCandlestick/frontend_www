@@ -70,8 +70,8 @@
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->SetFont('Raleway', '', ($fs = $pdf->fs_h1));
 								$wid = $pdf->GetStringWidth($str);
-								$x = 0;
-								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5), 10);
+								$posx = 0;
+								$pdf->SetXY($pdf->GetPageWidth()-($wid+5), 10);
 								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
 								/*
 								// Website
