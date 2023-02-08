@@ -76,7 +76,7 @@
 								$str=$wid=$posx=null;
 								// Website
 								$str = $tx_website;
-								$fs = $pdf->h6;
+								$fs = $pdf->fs_h6;
 								$wid = $pdf->GetStringWidth($str);
 								$posx = $pdf->GetPageWidth()-($wid+5);
 								$pdf->SetTextColor(255, 127, 0);
