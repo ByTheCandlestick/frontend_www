@@ -16,16 +16,16 @@
 		}
 		function InvoiceTable($header, $w, $data, $posx, $posy) {
 			// Header
-			$this->SetLineWidth(1);
+			$this->SetLineWidth(0.5);
 			$this->SetXY($posx, $posy);
 			for($i=0;$i<count($header);$i++)
 				$this->Cell($w[$i],7,$header[$i],'B',0,'C');
-			$this->SetLineWidth(0.5);
+			$this->SetLineWidth(0.25);
 			// Data
 			$posy++;
 			foreach($data as $row) {
 				$this->SetXY($posx, $posy=$posy + 6);
-				$this->Cell($w[0],6,$row[0],'B');
+				$this->Cell($w[0],6,$row[0],'BR');
 				$this->Cell($w[1],6,$row[1],'BR');
 				$this->Cell($w[2],6,number_format($row[2]),'BR',0,'R');
 				$this->Cell($w[3],6,number_format($row[3]),'B',0,'R');
