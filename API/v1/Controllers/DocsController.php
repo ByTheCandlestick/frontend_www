@@ -16,7 +16,7 @@
 		}
 		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0)) {
 			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
-			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2])
+			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2]);
 			// Header
 			$this->SetLineWidth(0.5);
 			$this->SetXY($posx, $posy);
