@@ -118,7 +118,13 @@
 								// Invoice ID
 								// Invoice Date
 								// invoice Table
-									$pdf->InvoiceTable(array('Name', 'Quantity', 'Price ea', 'Subtotal'), array(130, 20, 20, 30), array(array('1','2','3','4'),array('5','6','7','8')),5, 50);
+									$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
+									$widths = array(130, 20, 20, 30);
+									$items = array(
+										array('1','2','3','4'),
+										array('5','6','7','8')
+									);
+									$pdf->InvoiceTable($headers, $widths, ,5, 50);
 							// Footer
 							// Output document
 							$pdf->Output();
