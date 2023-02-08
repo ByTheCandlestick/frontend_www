@@ -66,7 +66,7 @@
 								// Company Name
 									$str = $tx_company;
 									$wid = $pdf->GetStringWidth($tx_company);
-									$al_right = $pdf->GetPageWidth()-($wid+5);
+									$al_right = $pdf->GetPageWidth()-($wid + 5);
 									$pdf->SetXY($al_right, 10);
 									$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 									$pdf->SetTextColor(28, 92, 147);
