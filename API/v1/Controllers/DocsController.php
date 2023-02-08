@@ -22,7 +22,7 @@
 			$this->Ln();
 			// Data
 			foreach($data as $row) {
-				$this->SetXY($posx, $posy=$posy + 10);
+				$this->SetXY($posx, $posy=$posy + 6);
 				$this->Cell($w[0],6,$row[0],'LR');
 				$this->Cell($w[1],6,$row[1],'LR');
 				$this->Cell($w[2],6,number_format($row[2]),'LR',0,'R');
