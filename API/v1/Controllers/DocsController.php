@@ -16,21 +16,20 @@
 		}
 		function InvoiceTable($header, $w, $data, $posx, $posy) {
 			// Header
+			$this->SetLineWidth(1);
 			$this->SetXY($posx, $posy);
 			for($i=0;$i<count($header);$i++)
-				$this->Cell($w[$i],7,$header[$i],0,0,'C');
-			// Draw seperator Line
-			$this->SetLineWidth(2);
-			$this->Line($posx, $posy, $this->GetPageWidth()-5, $posy);
+				$this->Cell($w[$i],7,$header[$i],'B',0,'C');
+			$this->SetLineWidth(0.5);
 			// Data
-			$posy+2;
+			$posy++;
 			foreach($data as $row) {
-				$this->SetXY($posx, $posy=$posy + 6);
-				$this->Cell($w[0],6,$row[0],'LR');
-				$this->Cell($w[1],6,$row[1],'LR');
-				$this->Cell($w[2],6,number_format($row[2]),'LR',0,'R');
-				$this->Cell($w[3],6,number_format($row[3]),'LR',0,'R');
+				$this->Cell($w[0],6,$row[0],'B');
+				$this->Cell($w[1],6,$row[1],'BR');
+				$this->Cell($w[2],6,number_format($row[2]),'BR',0,'R');
+				$this->Cell($w[3],6,number_format($row[3]),'B',0,'R');
 				$this->Ln();
+				$this->SetXY($posx, $posy=$posy + 6);
 			}
 			// Closing line
 			$this->SetXY($posx, $posy=$posy + 6);
