@@ -14,6 +14,15 @@
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
+		public function writeString($str='', $fs=$this->fs_p, $al='L') {
+			$wid = $pdf->GetStringWidth($str);
+			$posx = $pdf->GetPageWidth()-($wid+5);
+			$pdf->SetTextColor(28, 92, 147);
+			$pdf->SetFont('Raleway', '', $fs);
+			$pdf->SetXY($posx, 10);
+			$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
+			$str=$fs=$wid=$posx=0;
+		}
 	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
@@ -66,15 +75,7 @@
 								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$str = $tx_company;
-								$fs = $pdf->fs_h1;
-								$wid = $pdf->GetStringWidth($str);
-								$posx = $pdf->GetPageWidth()-($wid+5);
-								$pdf->SetTextColor(28, 92, 147);
-								$pdf->SetFont('Raleway', '', $fs);
-								$pdf->SetXY($posx, 10);
-								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
-								$str=$fs=$wid=$posx=0;
+								$pdf->writeString($tx_company, $pdf->fs_h1, 'R');
 								// Website
 								$str = $tx_website;
 								$fs = $pdf->fs_h6;
