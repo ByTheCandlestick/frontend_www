@@ -15,12 +15,12 @@
 			return $fs / 3;
 		}
 		public function writeString($str, $fs, $posy=5, $posx=5, $al='L') {
-			$wid = $pdf->GetStringWidth($str);
-			$posx = $pdf->GetPageWidth()-($wid+5);
-			$pdf->SetTextColor(28, 92, 147);
-			$pdf->SetFont('Raleway', '', $fs);
-			$pdf->SetXY($posx, 10);
-			$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
+			$wid = $this->GetStringWidth($str);
+			$posx = $this->GetPageWidth()-($wid+5);
+			$this->SetTextColor(28, 92, 147);
+			$this->SetFont('Raleway', '', $fs);
+			$this->SetXY($posx, 10);
+			$this->Cell($wid, $this->GetStringHeight($fs), $str, $this->dev_outline, 0, "C");
 		}
 	}
 	class DocsController extends BaseController {
