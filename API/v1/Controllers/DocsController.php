@@ -75,14 +75,14 @@
 								// Website
 								$str = $tx_website;
 								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
-								$pdf->SetXY($al_left, 25);
+								$pdf->SetXY($al_left, 30);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h6), $str, $pdf->dev_outline, 0, "L");
 								// Sale items
 								$str = $tx_elems_str = join(" | ", $tx_elems);
 								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
-								$pdf->SetXY($al_right, 25);
+								$pdf->SetXY($al_right, 30);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$c = count($tx_elems);
 								for($i=0; $i<$c; $i++) {
