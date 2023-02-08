@@ -1,6 +1,6 @@
 <?php
 	$type = 'TrueType';
-	$name = 'Raleway-Regular';
+	$name = 'Raleway';
 	$desc = array('Ascent'=>940,'Descent'=>-234,'CapHeight'=>710,'Flags'=>32,'FontBBox'=>'[-227 -223 1306 1151]','ItalicAngle'=>0,'StemV'=>70,'MissingWidth'=>608);
 	$up = -100;
 	$ut = 50;

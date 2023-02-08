@@ -1,6 +1,6 @@
 <?php
 $type = 'TrueType';
-$name = 'Raleway-ThinItalic';
+$name = 'Raleway-Thin-Italic';
 $desc = array('Ascent'=>940,'Descent'=>-234,'CapHeight'=>710,'Flags'=>96,'FontBBox'=>'[-275 -224 1334 1151]','ItalicAngle'=>-12,'StemV'=>70,'MissingWidth'=>608);
 $up = -100;
 $ut = 50;
