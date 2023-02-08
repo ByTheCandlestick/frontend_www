@@ -74,6 +74,7 @@
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
 								$str=$al_right='';
+								/*
 								// Website
 								$str = $tx_website;
 								$al_right = $pdf->GetPageWidth() - $pdf->GetStringWidth($str);
@@ -97,6 +98,7 @@
 									}
 								}
 								$str=$al_right='';
+								*/
 								//
 							// Output document
 							$pdf->Output();
