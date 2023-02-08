@@ -14,12 +14,14 @@
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
-		public function writeString($str, $fs, $posy=5, $posx=5, $al='L') {
+		public function writeString($str, $fs, $posy=5, $al='L', $posx=5) {
 			$wid = $this->GetStringWidth($str);
-			$posx = $this->GetPageWidth()-($wid+5);
 			$this->SetTextColor(28, 92, 147);
 			$this->SetFont('Raleway', '', $fs);
-			$this->SetXY($posx, 10);
+			if($al = 'R') {
+				$posx = $this->GetPageWidth()-($wid+5);
+			}
+			$this->SetXY($posx, $posy);
 			$this->Cell($wid, $this->GetStringHeight($fs), $str, $this->dev_outline, 0, "C");
 		}
 	}
@@ -74,7 +76,7 @@
 								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$pdf->writeString($tx_company, $pdf->fs_h1, 'R');
+								$pdf->writeString($tx_company, $pdf->fs_h1, 10, 'R');
 								// Website
 								$str = $tx_website;
 								$fs = $pdf->fs_h6;
