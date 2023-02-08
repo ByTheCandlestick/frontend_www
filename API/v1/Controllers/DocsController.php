@@ -21,7 +21,6 @@
 			$pdf->SetFont('Raleway', '', $fs);
 			$pdf->SetXY($posx, 10);
 			$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
-			$str=$fs=$wid=$posx=0;
 		}
 	}
 	class DocsController extends BaseController {
