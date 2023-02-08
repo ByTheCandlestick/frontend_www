@@ -12,7 +12,6 @@
 		public $fs_p = 16;
 
 		public function __construct() {
-			$this->AddFont('Raleway', '', 'Raleway-Regular.php');
 			/*
 				$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
 				$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
@@ -111,6 +110,8 @@
 							//
 							// Initialize
 							$pdf = new PDF();
+							
+							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
 							$pdf->SetDisplayMode('default', 'two');
 							$pdf->AliasNbPages();
 							// Create first page
