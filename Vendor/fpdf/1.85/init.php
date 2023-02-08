@@ -103,6 +103,7 @@ function __construct($orientation='P', $unit='mm', $size='A4')
 	$this->iconv = function_exists('iconv');
 	// Font path
 	if(defined('FPDF_FONTPATH')) {
+		header ("HTTP/1.0 404 Not Found");
 		$this->fontpath = FPDF_FONTPATH;
 		if(substr($this->fontpath,-1)!='/' && substr($this->fontpath,-1)!='\\')
 			$this->fontpath .= '/';
