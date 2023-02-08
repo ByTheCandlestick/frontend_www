@@ -39,9 +39,9 @@
 					$this->SetFont('Raleway', '', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, $row[0], 'B', 0, 'L');
-					$this->Cell($w[1], 6, $row[1], 'B', 0, 'C');
-					$this->Cell($w[2], 6, $row[2], 'B', 0, 'R');
-					$this->Cell($w[3], 6, $row[3], 'B', 0, 'R');
+					$this->Cell($w[1], 6, floatval($row[1]), 'B', 0, 'C');
+					$this->Cell($w[2], 6, floatval($row[2]), 'B', 0, 'R');
+					$this->Cell($w[3], 6, floatval($row[3]), 'B', 0, 'R');
 				}
 			}
 			// Closing line
