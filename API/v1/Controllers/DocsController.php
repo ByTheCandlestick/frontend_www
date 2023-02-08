@@ -14,8 +14,6 @@
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
-		public function writeString($str, $fs, $posy=5, $al='L', $posx=5) {
-		}
 	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
@@ -73,13 +71,13 @@
 								// Company Name
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
-								$pdf->SetXY($this->GetPageWidth()-($this->GetStringWidth($tx_company)+5), 10);
-								$pdf->Cell($this->GetStringWidth($tx_company), $this->GetStringHeight($pdf->fs_h1), $tx_company, $this->dev_outline, 0, "C");
+								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5), 10);
+								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 0, "C");
 								// Website
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
-								$pdf->SetXY($this->GetPageWidth()-($this->GetStringWidth($tx_website)+5), 30);
-								$pdf->Cell($this->GetStringWidth($tx_website), $this->GetStringHeight($pdf->fs_h6), $tx_website, $this->dev_outline, 0, "C");
+								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_website)+5), 30);
+								$pdf->Cell($pdf->GetStringWidth($tx_website), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
