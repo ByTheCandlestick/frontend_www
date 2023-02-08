@@ -73,12 +73,17 @@
 								$posx = $pdf->GetPageWidth()-($wid+5);
 								$pdf->SetXY($posx, 10);
 								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
-								/*
+								$str=$wid=$posx=null;
 								// Website
-								$pdf->SetXY(5, 25);
-								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
+								$str = $tx_website;
+								$fs = $pdf->h6;
+								$wid = $pdf->GetStringWidth($str);
+								$posx = $pdf->GetPageWidth()-($wid+5);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, $pdf->dev_outline, 0, "C");
+								$pdf->SetFont('Raleway', '', $fs);
+								$pdf->SetXY($posx, 30);
+								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
+								$str=$wid=$posx=null;
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
@@ -93,7 +98,6 @@
 										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h6), " | ", $pdf->dev_outline, 0, "C");
 									}
 								}
-								*/
 								//
 							// Output document
 							$pdf->Output();
