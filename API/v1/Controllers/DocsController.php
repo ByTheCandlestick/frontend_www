@@ -14,6 +14,25 @@
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
+		function ImprovedTable($header, $data) {
+			// Column widths
+			$w = array(40, 35, 40, 45);
+			// Header
+			for($i=0;$i<count($header);$i++)
+			$this->Cell($w[$i],7,$header[$i],1,0,'C');
+			$this->Ln();
+			// Data
+			foreach($data as $row)
+			{
+			$this->Cell($w[0],6,$row[0],'LR');
+			$this->Cell($w[1],6,$row[1],'LR');
+			$this->Cell($w[2],6,number_format($row[2]),'LR',0,'R');
+			$this->Cell($w[3],6,number_format($row[3]),'LR',0,'R');
+			$this->Ln();
+		}
+// Closing line
+$this->Cell(array_sum($w),0,'','T');
+}
 	}
 	class DocsController extends BaseController {
 		/** "/Docs/Invoice/" Endpoint - Get list of Products
@@ -91,9 +110,11 @@
 										}
 									}
 								// Divider
-								$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
+									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
+							// Content
 								// Invoice ID
 								// Invoice Date
+							// Footer
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
