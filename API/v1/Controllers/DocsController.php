@@ -57,24 +57,21 @@
 							];
 
 							// Initialize
-							$pdf = new PDF();
-							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
-
-							$pdf->AliasNbPages();
-							// Create first page
-							$pdf->AddPage();
-							// Add content
+								$pdf = new PDF();
+								$pdf->AddFont('Raleway', '', 'Raleway-Regular.php');
+								$pdf->AddPage();
+							// Header
 								// Logo
-								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
+									$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$str = $tx_company;
-								$wid = $pdf->GetStringWidth($tx_company);
-								$al_right = $pdf->GetPageWidth()-($wid+5);
-								$pdf->SetXY($al_right, 10);
-								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
-								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($wid, $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
-								$str=$wid=$al_right='';
+									$str = $tx_company;
+									$wid = $pdf->GetStringWidth($tx_company);
+									$al_right = $pdf->GetPageWidth()-($wid+5);
+									$pdf->SetXY($al_right, 10);
+									$pdf->SetFont('Raleway', '', $pdf->fs_h1);
+									$pdf->SetTextColor(28, 92, 147);
+									$pdf->Cell($wid, $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
+									$str=$wid=$al_right='';
 								/*
 								// Website
 								$str = $tx_website;
