@@ -81,7 +81,7 @@
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, $pdf->dev_outline, 0, "L");
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
-								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
+								$align_right = $pdf->GetPageWidth()-($tx_elems_strlen+5);
 								$pdf->SetXY($align_right, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$c = count($tx_elems);
