@@ -2,7 +2,7 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		public $dev_outline = 1;
+		public $dev_outline = 0;
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
 		public $fs_h3 = 20.8;
@@ -81,7 +81,7 @@
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
-								$pdf->SetXY($left, 25);
+								$pdf->SetXY($left, 30);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$c = count($tx_elems);
 								for($i=0; $i<$c; $i++) {
