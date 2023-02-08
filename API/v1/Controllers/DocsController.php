@@ -132,7 +132,7 @@
 									$pdf->InvoiceTable($headers, $widths, $items,5, 50, $tableColour, $textColor);
 							// Footer
 							// Output document
-							$pdf->Output();
+							//$pdf->Output();
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
