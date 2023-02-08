@@ -73,13 +73,15 @@
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 1, "R");
 								// Website
-								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_website)+5);
+								$str = $tx_website;
+								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
 								$pdf->SetXY($al_left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, $pdf->dev_outline, 0, "L");
+								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "L");
 								// Sale items
-								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems))+5);
+								$str = $tx_elems_str = join(" | ", $tx_elems);
+								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
 								$pdf->SetXY($al_right, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$c = count($tx_elems);
