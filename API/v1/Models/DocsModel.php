@@ -10,7 +10,7 @@
 		 * 
 		 */
 			public function getItemInfo(string $itemStr) {
-				$i=0
+				$i=0;
 				foreach(explode($itemStr) as $itemInfo){
 					$item = explode($itemInfo);
 					$inf = $this->Execute(sprintf("SELECT `Title`, `RetailPrice` FROM `Product` WHERE `SKU`=%s"), 3);
