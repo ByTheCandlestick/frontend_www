@@ -69,8 +69,10 @@
 								$str = $tx_company;
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->SetFont('Raleway', '', ($fs = $pdf->fs_h1));
+								$wid = $pdf->GetStringWidth($str);
+								$left = ;
 								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5), 10);
-								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
+								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
 								/*
 								// Website
 								$pdf->SetXY(5, 25);
