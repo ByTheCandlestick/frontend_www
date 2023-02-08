@@ -107,10 +107,9 @@ function __construct($orientation='P', $unit='mm', $size='A4')
 		if(substr($this->fontpath,-1)!='/' && substr($this->fontpath,-1)!='\\')
 			$this->fontpath .= '/';
 	} elseif(is_dir(dirname(__FILE__).'/font')) {
-		header ("HTTP/1.0 404 Not Found");
 		$this->fontpath = dirname(__FILE__).'/font/';
-	} else {
-		$this->fontpath = './';
+	} else {header ("HTTP/1.0 404 Not Found");
+		$this->fontpath = '';
 	}
 	// Core fonts
 	$this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
