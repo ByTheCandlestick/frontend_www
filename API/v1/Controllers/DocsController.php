@@ -124,7 +124,7 @@
 										array('1','2','3','4'),
 										array('5','6','7','8')
 									);
-									$pdf->InvoiceTable($headers, $widths, ,5, 50);
+									$pdf->InvoiceTable($headers, $widths, $items,5, 50);
 							// Footer
 							// Output document
 							$pdf->Output();
