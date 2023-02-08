@@ -81,6 +81,7 @@
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "L");
 								// Sale items
+								/*
 								$str = $tx_elems_str = join(" | ", $tx_elems);
 								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
 								$pdf->SetXY($al_right, 25);
@@ -94,6 +95,7 @@
 										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h1), " | ", $pdf->dev_outline, 0, "C");
 									}
 								}
+								*/
 								//
 							// Output document
 							$pdf->Output();
