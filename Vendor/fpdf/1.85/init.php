@@ -102,15 +102,16 @@ function __construct($orientation='P', $unit='mm', $size='A4')
 	$this->ws = 0;
 	$this->iconv = function_exists('iconv');
 	// Font path
-	if(defined('FPDF_FONTPATH')) {
+	if(defined('FPDF_FONTPATH'))
+	{
 		$this->fontpath = FPDF_FONTPATH;
 		if(substr($this->fontpath,-1)!='/' && substr($this->fontpath,-1)!='\\')
 			$this->fontpath .= '/';
-	} elseif(is_dir(dirname(__FILE__).'/font')) {
-		$this->fontpath = dirname(__FILE__).'/font/';
-	} else {
-		$this->fontpath = '';
 	}
+	elseif(is_dir(dirname(__FILE__).'/font'))
+		$this->fontpath = dirname(__FILE__).'/font/';
+	else
+		$this->fontpath = '';
 	// Core fonts
 	$this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
 	// Scale factor
@@ -1133,10 +1134,9 @@ protected function _loadfont($font)
 	// Load a font definition file from the font directory
 	if(strpos($font,'/')!==false || strpos($font,"\\")!==false)
 		$this->Error('Incorrect font definition file name: \''.$font.'\'');
-	include(dirname(__FILE__).'/font/'.$font);
-	if(!isset($name)) {
+	include($this->fontpath.$font);
+	if(!isset($name))
 		$this->Error('Could not include font definition file: \''.$this->fontpath.$font.'\'');
-	}
 	if(isset($enc))
 		$enc = strtolower($enc);
 	if(!isset($subsetted))

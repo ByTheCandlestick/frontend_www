@@ -12,7 +12,6 @@
 		public $fs_p = 16;
 
 		public function __construct() {
-			define("FPDF_FONTPATH", "fonts");
 			/*
 				$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
 				$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
