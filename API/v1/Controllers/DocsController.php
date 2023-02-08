@@ -2,6 +2,11 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
+		$this->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
+		$this->AddFont('Raleway', 'B', 'Raleway-Regular-Bold.php', 1);
+		$this->AddFont('Raleway', 'I', 'Raleway-Regular-Italics.php', 1);
+		$this->AddFont('Raleway-Thin', '', 'Raleway-Thin.php', 1);
+		$this->AddFont('Raleway-Thin', 'I', 'Raleway-Thin-Italics.php', 1);
 		public $dev_outline = 0;
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
@@ -98,7 +103,6 @@
 							$textColor = array(28, 92, 147);
 							// Initialize
 							$pdf = new PDF();
-							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
 							$pdf->SetDisplayMode('default', 'two');
 							$pdf->AliasNbPages();
 							// Create first page
