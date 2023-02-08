@@ -82,10 +82,10 @@
 								$c = count($tx_elems);
 								for($i=0; $i<$c; $i++) {
 									$pdf->SetTextColor(255, 127, 0);
-									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 0, 0, "C");
+									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 1, 0, "C");
 									if($i != $c) {
 										$pdf->SetTextColor(28, 92, 147);
-										$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), " | ", 0, 0, "C");
+										$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), " | ", 1, 0, "C");
 									}
 								}
 								//
