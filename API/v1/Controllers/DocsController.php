@@ -12,7 +12,7 @@
 		public $fs_p = 16;
 
 		public function __construct() {
-			$this->AddFont('Raleway', '', 'Raleway.php');
+			$this->AddFont('Raleway', '', '/Raleway.php');
 			/*
 			$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
 			$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
