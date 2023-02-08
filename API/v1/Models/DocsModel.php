@@ -10,14 +10,14 @@
 		 * 
 		 */
 			public function getItemInfo(string $itemStr) {
-				$i=0;
+				$i=$t=0;
 				foreach(array_filter(explode(';', $itemStr)) as $itemInfo){
 					$item = explode(',', $itemInfo);
 					$inf = $this->Execute(sprintf("SELECT `Title`, `RetailPrice` FROM `Product` WHERE `SKU`='%s'", $item[0]), 3);
-					$arr[$i] = array($inf[0], $inf[$item[1]], $inf[1], $inf[$item[1]]*$inf[1]);
+					$arr[$i] = array($inf[0], $inf[$item[1]], $inf[1], $t=+$inf[$item[1]]*$inf[1]);
 					$i++;
 				}
-
+				$arr[$i] = array('', '', "Total:", $t);
 				return $arr;
 			}
 	}
