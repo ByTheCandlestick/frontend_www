@@ -69,7 +69,6 @@
 					// Submit application
 						try{
 							// Vars
-							print_r($mdl_docs->getOrderInfo($arr_docs_info['inv']));
 							$tx_company = "The Candlestick";
 							$tx_website = "www.thecandlestick.co.uk";
 							$tx_elems = [
@@ -80,15 +79,10 @@
 								"Bath Bombs"
 							];
 
-							$invoice_id = 'INV00000004';
-							$invoice_date = '26 Jul 2022';
-
+							$invoice = $mdl_docs->getOrderInfo($arr_docs_info['inv']);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(130, 20, 20, 30);
-							$items = array(
-								array('1','2','3','4'),
-								array('5','6','7','8')
-							);
+							$items = $mdl_docs->getItemInfo($arr_docs_info['Items']);
 							$tableColour = array(28, 92, 147);
 							$textColor = array(28, 92, 147);
 							// Initialize
@@ -111,7 +105,8 @@
 									$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 									$pdf->SetXY(5, 30);
 									$pdf->Cell($pdf->GetStringWidth($tx_website), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
-								// Sale items
+								// Customer details
+								// Items
 									$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems))+5), 30);
 									$c = count($tx_elems);
@@ -132,7 +127,7 @@
 									$pdf->InvoiceTable($headers, $widths, $items,5, 50, $tableColour, $textColor);
 							// Footer
 							// Output document
-							//$pdf->Output();
+							$pdf->Output();
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
