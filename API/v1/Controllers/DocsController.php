@@ -14,7 +14,9 @@
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
-		function InvoiceTable($header, $w, $data, $posx, $posy) {
+		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0)) {
+			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
+			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2])
 			// Header
 			$this->SetLineWidth(0.5);
 			$this->SetXY($posx, $posy);
@@ -86,6 +88,8 @@
 								array('1','2','3','4'),
 								array('5','6','7','8')
 							);
+							$tableColour = array(28, 92, 147);
+							$textColor = array();
 							// Initialize
 							$pdf = new PDF();
 							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
@@ -124,7 +128,7 @@
 								// Invoice ID
 								// Invoice Date
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items,5, 50);
+									$pdf->InvoiceTable($headers, $widths, $items,5, 50, $tableColour, $textColor);
 							// Footer
 							// Output document
 							$pdf->Output();
