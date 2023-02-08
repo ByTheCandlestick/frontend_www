@@ -30,6 +30,7 @@
 				$this->Ln();
 			}
 			// Closing line
+			$this->SetXY($posx, $posy=$posy + 6);
 			$this->Cell(array_sum($w),0,'','T');
 		}
 	}
