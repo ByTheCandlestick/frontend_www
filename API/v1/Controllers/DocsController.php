@@ -68,12 +68,13 @@
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
 								$str = $tx_company;
-								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
+								$wid = $pdf->GetStringWidth($str)
+								$al_right = $pdf->GetPageWidth()-($wid+5);
 								$pdf->SetXY($al_right, 10);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
-								$str=$al_right='';
+								$pdf->Cell($wid, $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
+								$str=$wid=$al_right='';
 								/*
 								// Website
 								$str = $tx_website;
