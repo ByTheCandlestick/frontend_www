@@ -2,7 +2,7 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		public $dev_outline = 1;
+		public $dev_outline = 0;
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
 		public $fs_h3 = 20.8;
@@ -67,35 +67,30 @@
 								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$str = $tx_company;
-								$al_right = $pdf->GetPageWidth() - ($pdf->GetStringWidth($tx_company) + 5);
-								$pdf->SetXY($pdf->GetPageWidth() - ($pdf->GetStringWidth($tx_company) + 5), 10);
+								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5);
+								$pdf->SetXY($al_right, 10);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
+								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 1, "R");
 								// Website
-								$str = $tx_website;
-								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
+								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_website)+5);
 								$pdf->SetXY($al_left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h6), $str, $pdf->dev_outline, 0, "C");
+								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, $pdf->dev_outline, 0, "L");
 								// Sale items
-								/*
-								$str = $tx_elems_str = join(" | ", $tx_elems);
-								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
+								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems))+5);
 								$pdf->SetXY($al_right, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$c = count($tx_elems);
 								for($i=0; $i<$c; $i++) {
 									$pdf->SetTextColor(255, 127, 0);
-									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h6), $tx_elems[$i], $pdf->dev_outline, 0, "C");
+									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], $pdf->dev_outline, 0, "C");
 									if($i != ($c-1)) {
 										$pdf->SetTextColor(28, 92, 147);
-										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h6), " | ", $pdf->dev_outline, 0, "C");
+										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h1), " | ", $pdf->dev_outline, 0, "C");
 									}
 								}
-								*/
 								//
 							// Output document
 							$pdf->Output();
