@@ -58,7 +58,7 @@
 							// Initialize
 							$pdf = new PDF();
 							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
-							$pdf->tx_company_strlen('default', 'two');
+							$pdf->SetDisplayMode('default', 'two');
 							$pdf->AliasNbPages();
 							// Create first page
 							$pdf->AddPage();
