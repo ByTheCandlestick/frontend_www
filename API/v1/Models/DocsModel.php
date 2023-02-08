@@ -13,8 +13,8 @@
 				$i=0;
 				foreach(array_filter(explode(';', $itemStr)) as $itemInfo){
 					$item = explode(',', $itemInfo);
-					$inf = $this->Execute(sprintf("SELECT `Title`, `RetailPrice` FROM `Product` WHERE `SKU`='%s'", $item[0]), 3);
-					$arr[$i] = array('1', $inf[$item[1]], $inf[1], $inf[$item[1]]*$inf[1]);
+					$inf = $this->Execute($st = sprintf("SELECT `Title`, `RetailPrice` FROM `Product` WHERE `SKU`='%s'", $item[0]), 3);
+					$arr[$i] = array($st, $inf[$item[1]], $inf[1], $inf[$item[1]]*$inf[1]);
 					$i++;
 				}
 
