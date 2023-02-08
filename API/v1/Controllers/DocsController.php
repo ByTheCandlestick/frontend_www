@@ -12,7 +12,6 @@
 		public $fs_p = 16;
 
 		public function __construct() {
-			$this->AddFont('Raleway', '', 'Raleway.php', 1);
 			/*
 			$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
 			$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
@@ -109,17 +108,6 @@
 							$tableColour = array(28, 92, 147);
 							$textColor = array(28, 92, 147);
 							//
-							
-							$pdf->AddFont('Raleway', '', 'Raleway.php');
-							/*
-							$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
-							$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
-							$this->AddFont('Raleway', 'BI', 'Raleway-Bold-Italic.php');
-							$this->AddFont('Raleway-Thin', '', 'Raleway-Thin.php');
-							$this->AddFont('Raleway-Thin', 'B', 'Raleway-Thin-Bold.php');
-							$this->AddFont('Raleway-Thin', 'I', 'Raleway-Thin-Italic.php');
-							$this->AddFont('Raleway-Thin', 'BI', 'Raleway-Thin-Bold-Italic.php');
-							*/
 							// Initialize
 							$pdf = new PDF();
 							$pdf->SetDisplayMode('default', 'two');
