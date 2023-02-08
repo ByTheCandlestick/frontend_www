@@ -78,7 +78,7 @@
 								// Website
 								$str = $tx_website;
 								$fs = $pdf->fs_h6;
-								$wid = $pdf->GetStringWidth($str);
+								$wid = 30//$pdf->GetStringWidth($str);
 								$posx = $pdf->GetPageWidth()-($wid+5);
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->SetFont('Raleway', '', $fs);
