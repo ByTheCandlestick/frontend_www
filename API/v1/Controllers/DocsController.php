@@ -66,8 +66,7 @@
 								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$left = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5);
-								$pdf->SetXY($left, 10);
+								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5), 10);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 1, "R");
