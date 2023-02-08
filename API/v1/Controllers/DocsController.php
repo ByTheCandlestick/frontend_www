@@ -82,7 +82,7 @@
 							$invoice = $mdl_docs->getOrderInfo($arr_docs_info['inv']);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(130, 20, 20, 30);
-							$items = $mdl_docs->getItemInfo($arr_docs_info['Items']);
+							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$tableColour = array(28, 92, 147);
 							$textColor = array(28, 92, 147);
 							// Initialize
