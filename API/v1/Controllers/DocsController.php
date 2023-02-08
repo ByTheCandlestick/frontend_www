@@ -2,7 +2,7 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
-		public $dev_outline = 0;
+		public $dev_outline = 1;
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
 		public $fs_h3 = 20.8;
@@ -74,8 +74,8 @@
 								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 1, "R");
 								// Website
 								$str = $tx_website;
-								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
-								$pdf->SetXY($al_right, 30);
+								$al_right = $pdf->GetPageWidth();//-($pdf->GetStringWidth($str)+5);
+								$pdf->SetXY($al_left, 30);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h6), $str, $pdf->dev_outline, 0, "L");
