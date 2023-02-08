@@ -56,7 +56,7 @@
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Get the users invoice
 					// Confirmations
 						try{
-
+							if(!isset($arr_docs_info['inv']) || $arr_docs_info['inv']=="") throw new Error("ERR-DCS-1");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
@@ -69,6 +69,7 @@
 					// Submit application
 						try{
 							// Vars
+							print_r($mdl_docs->getOrderInfo($arr_docs_info['inv']));
 							$tx_company = "The Candlestick";
 							$tx_website = "www.thecandlestick.co.uk";
 							$tx_elems = [
