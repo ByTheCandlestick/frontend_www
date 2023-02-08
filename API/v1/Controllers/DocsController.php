@@ -95,7 +95,7 @@
 							$textColor = array(28, 92, 147);
 							// Initialize
 							$pdf = new PDF();
-							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
+							$pdf->AddFont('Raleway', '', 'raleway.php', 1);
 							$pdf->SetDisplayMode('default', 'two');
 							$pdf->AliasNbPages();
 							// Create first page
