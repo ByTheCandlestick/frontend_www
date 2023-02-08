@@ -18,7 +18,7 @@
 			$wid = $this->GetStringWidth($str);
 			$this->SetTextColor(28, 92, 147);
 			$this->SetFont('Raleway', '', $fs);
-			if($al = 'R') {
+			if($al == 'R') {
 				$posx = $this->GetPageWidth()-($wid+5);
 			}
 			$this->SetXY($posx, $posy);
@@ -78,7 +78,7 @@
 								// Company Name
 								$pdf->writeString($tx_company, $pdf->fs_h1, 10, 'R');
 								// Website
-								$pdf->writeString($tx_website, $pdf->fs_h6, 30, 'L');
+								$pdf->writeString($tx_website, $pdf->fs_h6, 30,);
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
