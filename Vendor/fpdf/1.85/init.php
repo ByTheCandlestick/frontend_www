@@ -460,8 +460,7 @@ function AddFont($family, $style='', $file='')
 		return;
 	$info = $this->_loadfont($file);
 	$info['i'] = count($this->fonts)+1;
-	if(!empty($info['file']))
-	{
+	if(!empty($info['file'])) {
 		// Embedded font
 		if($info['type']=='TrueType')
 			$this->FontFiles[$info['file']] = array('length1'=>$info['originalsize']);
