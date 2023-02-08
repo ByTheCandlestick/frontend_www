@@ -98,7 +98,7 @@
 							$textColor = array(28, 92, 147);
 							//
 							
-							$pdf->AddFont('Raleway', '', 'Raleway.php');
+							$pdf->AddFont('Raleway', '', 'Raleway.php', 1);
 							/*
 							$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
 							$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
