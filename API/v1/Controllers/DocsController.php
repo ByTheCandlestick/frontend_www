@@ -79,7 +79,7 @@
 								$pdf->SetXY($al_right, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
+								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h6), $str, $pdf->dev_outline, 0, "C");
 								// Sale items
 								/*
 								$str = $tx_elems_str = join(" | ", $tx_elems);
@@ -89,10 +89,10 @@
 								$c = count($tx_elems);
 								for($i=0; $i<$c; $i++) {
 									$pdf->SetTextColor(255, 127, 0);
-									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], $pdf->dev_outline, 0, "C");
+									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h6), $tx_elems[$i], $pdf->dev_outline, 0, "C");
 									if($i != ($c-1)) {
 										$pdf->SetTextColor(28, 92, 147);
-										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h1), " | ", $pdf->dev_outline, 0, "C");
+										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h6), " | ", $pdf->dev_outline, 0, "C");
 									}
 								}
 								*/
