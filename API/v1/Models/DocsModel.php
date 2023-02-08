@@ -14,7 +14,7 @@
 				foreach(array_filter(explode(';', $itemStr)) as $itemInfo){
 					$item = explode(',', $itemInfo);
 					$inf = $this->Execute(sprintf("SELECT `Title`, `RetailPrice` FROM `Product` WHERE `SKU`='%s'", $item[0]), 3);
-					$arr[$i] = array($inf[0], $inf[$item[1]], $inf[1], $inf[1]*$item[1]);
+					$arr[$i] = array($inf[0], $inf[$item[1]], $inf[1], parseDouble($inf[1])*parseDouble($item[1]));
 					$i++;
 				}
 
