@@ -15,13 +15,6 @@
 			return $fs / 3;
 		}
 		public function writeString($str, $fs, $posy=5, $al='L', $posx=5) {
-			$this->SetTextColor(28, 92, 147);
-			$this->SetFont('Raleway', '', $fs);
-			if($al == 'R') {
-				$posx = $this->GetPageWidth()-($this->GetStringWidth($str)+5);
-			}
-			$this->SetXY($posx, $posy);
-			$this->Cell($this->GetStringWidth($str), $this->GetStringHeight($fs), $str, $this->dev_outline, 0, "C");
 		}
 	}
 	class DocsController extends BaseController {
@@ -64,6 +57,9 @@
 								"Bath Bombs"
 							];
 
+							$invoice_id = 'INV00000004';
+							$invoice_date = '26 Jul 2022';
+
 							// Initialize
 							$pdf = new PDF();
 							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
@@ -75,9 +71,15 @@
 								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$pdf->writeString($tx_company, $pdf->fs_h1, 10, 'R');
+								$pdf->SetTextColor(28, 92, 147);
+								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
+								$pdf->SetXY($this->GetPageWidth()-($this->GetStringWidth($tx_company)+5), 10);
+								$pdf->Cell($this->GetStringWidth($tx_company), $this->GetStringHeight($pdf->fs_h1), $tx_company, $this->dev_outline, 0, "C");
 								// Website
-								$pdf->writeString($tx_website, $pdf->fs_h6, 30,);
+								$pdf->SetTextColor(255, 127, 0);
+								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
+								$pdf->SetXY($this->GetPageWidth()-($this->GetStringWidth($tx_website)+5), 30);
+								$pdf->Cell($this->GetStringWidth($tx_website), $this->GetStringHeight($pdf->fs_h6), $tx_website, $this->dev_outline, 0, "C");
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
