@@ -76,7 +76,7 @@
 								// Website
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
-								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_website)+5), 30);
+								$pdf->SetXY(5, 30);
 								$pdf->Cell($pdf->GetStringWidth($tx_website), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
