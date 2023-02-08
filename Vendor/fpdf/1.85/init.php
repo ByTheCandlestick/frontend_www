@@ -1133,11 +1133,10 @@ protected function _loadfont($font)
 {
 	// Load a font definition file from the font directory
 	if(strpos($font,'/')!==false || strpos($font,"\\")!==false)
-		$this->Error('Incorrect font definition file name: '.$font);
-	dirname($this->fontpath.$font);
+		$this->Error('Incorrect font definition file name: \''.$font.'\'');
 	include($this->fontpath.$font);
 	if(!isset($name))
-		$this->Error('Could not include font definition file');
+		$this->Error('Could not include font definition file: \''.$this->fontpath.$font.'\'');
 	if(isset($enc))
 		$enc = strtolower($enc);
 	if(!isset($subsetted))
