@@ -18,10 +18,12 @@
 			// Header
 			$this->SetXY($posx, $posy);
 			for($i=0;$i<count($header);$i++)
-				$this->Cell($w[$i],7,$header[$i],1,0,'C');
-			$this->Ln();
-			$posy++;
+				$this->Cell($w[$i],7,$header[$i],0,0,'C');
+			// Draw seperator Line
+			$this->SetLineWidth(2);
+			$this->Line($posx, $posy, $this->GetPageWidth()-5, $posy);
 			// Data
+			$posy+2;
 			foreach($data as $row) {
 				$this->SetXY($posx, $posy=$posy + 6);
 				$this->Cell($w[0],6,$row[0],'LR');
