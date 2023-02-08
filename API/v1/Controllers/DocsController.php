@@ -24,17 +24,19 @@
 			$this->Cell($w[1],7,$header[1],'B',0,'C');
 			$this->Cell($w[2],7,$header[2],'B',0,'R');
 			$this->Cell($w[3],7,$header[3],'B',0,'R');
-			$this->SetLineWidth(0.25);
+			$this->SetLineWidth(0.2);
 			// Data
 			$posy++;
 			foreach($data as $row) {
 				if($row[0] == "totalRow") {
+					$this->SetFont('Raleway', '', $this->fs_h6);
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, '', 'B', 0, 'L');
 					$this->Cell($w[1], 6, '', 'B', 0, 'C');
 					$this->Cell($w[2], 6, 'Total:', 'B', 0, 'R');
 					$this->Cell($w[3], 6, $row[1], 'B', 0, 'R');
 				} else {
+					$this->SetFont('Raleway', 'B', $this->fs_h6)
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, $row[0], 'B', 0, 'L');
 					$this->Cell($w[1], 6, $row[1], 'B', 0, 'C');
