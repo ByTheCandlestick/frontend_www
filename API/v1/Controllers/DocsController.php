@@ -11,22 +11,10 @@
 		public $fs_h6 = 11.2;
 		public $fs_p = 16;
 
-		public function __construct() {
-			/*
-				$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
-				$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
-				$this->AddFont('Raleway', 'BI', 'Raleway-Bold-Italic.php');
-				$this->AddFont('Raleway-Thin', '', 'Raleway-Thin.php');
-				$this->AddFont('Raleway-Thin', 'B', 'Raleway-Thin-Bold.php');
-				$this->AddFont('Raleway-Thin', 'I', 'Raleway-Thin-Italic.php');
-				$this->AddFont('Raleway-Thin', 'BI', 'Raleway-Thin-Bold-Italic.php');
-			*/
-		}
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
 		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0)) {
-			$this->SetFont('Raleway', '');
 			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
 			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2]);
 			// Header
@@ -41,19 +29,17 @@
 			$posy++;
 			foreach($data as $row) {
 				if($row[0] == "totalRow") {
-					$this->SetFont('Raleway', 'B');
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, $row[0], 'B', 0, 'L');
 					$this->Cell($w[1], 6, $row[1], 'B', 0, 'C');
 					$this->Cell($w[2], 6, $row[2], 'B', 0, 'R');
 					$this->Cell($w[3], 6, $row[3], 'B', 0, 'R');
 				} else {
-					$this->SetFont('Raleway', '');
 					$this->SetXY($posx, $posy=$posy + 6);
-					$this->Cell($w[0], 6, '', 'B', 0, 'L');
-					$this->Cell($w[1], 6, '', 'B', 0, 'C');
-					$this->Cell($w[2], 6, 'Totals', 'B', 0, 'R');
-					$this->Cell($w[3], 6, $row[1], 'B', 0, 'R');
+					$this->Cell($w[0], 6, $row[0], 'B', 0, 'L');
+					$this->Cell($w[1], 6, $row[1], 'B', 0, 'C');
+					$this->Cell($w[2], 6, $row[2], 'B', 0, 'R');
+					$this->Cell($w[3], 6, $row[3], 'B', 0, 'R');
 				}
 			}
 			// Closing line
@@ -107,12 +93,9 @@
 							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$tableColour = array(28, 92, 147);
 							$textColor = array(28, 92, 147);
-							//
 							// Initialize
 							$pdf = new PDF();
-							
-							$pdf->AddFont('raleway', '', 'raleway.php');
-
+							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
 							$pdf->SetDisplayMode('default', 'two');
 							$pdf->AliasNbPages();
 							// Create first page
