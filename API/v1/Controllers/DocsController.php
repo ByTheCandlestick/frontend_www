@@ -70,7 +70,7 @@
 								$pdf->SetXY($left, 10);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($tx_company_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 1, "R");
+								$pdf->Cell($wid, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 1, "R");
 								// Website
 								$pdf->SetXY(5, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
