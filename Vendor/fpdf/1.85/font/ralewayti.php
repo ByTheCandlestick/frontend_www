@@ -1,6 +1,6 @@
 <?php
 $type = 'TrueType';
-$name = 'Raleway-Thin-Italic';
+$name = 'ralewayti';
 $desc = array('Ascent'=>940,'Descent'=>-234,'CapHeight'=>710,'Flags'=>96,'FontBBox'=>'[-275 -224 1334 1151]','ItalicAngle'=>-12,'StemV'=>70,'MissingWidth'=>608);
 $up = -100;
 $ut = 50;
@@ -19,7 +19,7 @@ $cw = array(
 	chr(242)=>561,chr(243)=>561,chr(244)=>561,chr(245)=>561,chr(246)=>561,chr(247)=>548,chr(248)=>561,chr(249)=>551,chr(250)=>551,chr(251)=>551,chr(252)=>551,chr(253)=>446,chr(254)=>577,chr(255)=>446);
 $enc = 'cp1252';
 $uv = array(0=>array(0,128),128=>8364,130=>8218,131=>402,132=>8222,133=>8230,134=>array(8224,2),136=>710,137=>8240,138=>352,139=>8249,140=>338,142=>381,145=>array(8216,2),147=>array(8220,2),149=>8226,150=>array(8211,2),152=>732,153=>8482,154=>353,155=>8250,156=>339,158=>382,159=>376,160=>array(160,96));
-$file = 'Raleway-Thin-Italic.z';
+$file = 'ralewayti.z';
 $originalsize = 30488;
 $subsetted = true;
 ?>

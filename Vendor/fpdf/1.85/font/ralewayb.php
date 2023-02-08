@@ -1,6 +1,6 @@
 <?php
 $type = 'TrueType';
-$name = 'Raleway-Bold';
+$name = 'ralewayb';
 $desc = array('Ascent'=>940,'Descent'=>-234,'CapHeight'=>710,'Flags'=>32,'FontBBox'=>'[-227 -223 1306 1151]','ItalicAngle'=>0,'StemV'=>120,'MissingWidth'=>608);
 $up = -100;
 $ut = 50;
@@ -19,7 +19,7 @@ $cw = array(
 	chr(242)=>606,chr(243)=>606,chr(244)=>606,chr(245)=>606,chr(246)=>606,chr(247)=>511,chr(248)=>606,chr(249)=>618,chr(250)=>618,chr(251)=>618,chr(252)=>618,chr(253)=>550,chr(254)=>601,chr(255)=>550);
 $enc = 'cp1252';
 $uv = array(0=>array(0,128),128=>8364,130=>8218,131=>402,132=>8222,133=>8230,134=>array(8224,2),136=>710,137=>8240,138=>352,139=>8249,140=>338,142=>381,145=>array(8216,2),147=>array(8220,2),149=>8226,150=>array(8211,2),152=>732,153=>8482,154=>353,155=>8250,156=>339,158=>382,159=>376,160=>array(160,96));
-$file = 'Raleway-Bold.z';
+$file = 'ralewayb.z';
 $originalsize = 29464;
 $subsetted = true;
 ?>
