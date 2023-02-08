@@ -1134,9 +1134,9 @@ protected function _loadfont($font)
 	if(strpos($font,'/')!==false || strpos($font,"\\")!==false)
 		$this->Error('Incorrect font definition file name: \''.$font.'\'');
 	include($this->fontpath.$font);
-	if(!isset($name))
-		header("HTTP/1.0 404 Not Found");
+	if(!isset($name)) {
 		$this->Error('Could not include font definition file: \''.$this->fontpath.$font.'\'');
+	}
 	if(isset($enc))
 		$enc = strtolower($enc);
 	if(!isset($subsetted))
