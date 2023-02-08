@@ -25,10 +25,10 @@
 			$posy++;
 			foreach($data as $row) {
 				$this->SetXY($posx, $posy=$posy + 6);
-				$this->Cell($w[0],6,$row[0],'BR');
-				$this->Cell($w[1],6,$row[1],'BR');
-				$this->Cell($w[2],6,number_format($row[2]),'BR',0,'R');
-				$this->Cell($w[3],6,number_format($row[3]),'B',0,'R');
+				$this->Cell($w[0], 6, $row[0], 'BR', 0, 'L');
+				$this->Cell($w[1], 6, $row[1], 'BR', 0, 'C');
+				$this->Cell($w[2], 6, number_format($row[2]), 'BR', 0, 'R');
+				$this->Cell($w[3], 6, number_format($row[3]), 'B', 0, 'R');
 			}
 			// Closing line
 			$this->SetXY($posx, $posy=$posy + 6);
