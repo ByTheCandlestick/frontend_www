@@ -74,7 +74,7 @@
 								$pdf->SetFont('Raleway', '', $fs);
 								$pdf->SetXY($posx, 10);
 								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
-								unset($str, $fs, $wid, $posx);
+								$str=$fs=$wid=$posx=0;
 								// Website
 								$str = $tx_website;
 								$fs = $pdf->fs_h6;
@@ -84,7 +84,7 @@
 								$pdf->SetFont('Raleway', '', $fs);
 								$pdf->SetXY($posx, 30);
 								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
-								unset($str, $fs, $wid, $posx);
+								$str=$fs=$wid=$posx=null;
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
