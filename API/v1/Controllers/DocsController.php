@@ -18,8 +18,10 @@
 			// Header
 			$this->SetLineWidth(0.5);
 			$this->SetXY($posx, $posy);
-			for($i=0;$i<count($header);$i++)
-				$this->Cell($w[$i],7,$header[$i],'B',0,'C');
+			$this->Cell($w[0],7,$header[0],'B',0,'C');
+			$this->Cell($w[1],7,$header[1],'B',0,'C');
+			$this->Cell($w[2],7,$header[2],'B',0,'C');
+			$this->Cell($w[3],7,$header[3],'B',0,'C');
 			$this->SetLineWidth(0.25);
 			// Data
 			$posy++;
