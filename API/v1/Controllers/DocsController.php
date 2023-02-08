@@ -79,8 +79,15 @@
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
 								$pdf->SetXY($left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
-								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems_str, 0, 0, "R");
+								$c = count($tx_elems);
+								while($i=0; $i<$c; $i++) {
+									$pdf->SetTextColor(255, 127, 0);
+									$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 0, 0, "R");
+									if($i != $c) {
+										$pdf->SetTextColor(28, 92, 147);
+										$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 0, 0, "R");
+									}
+								}
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
