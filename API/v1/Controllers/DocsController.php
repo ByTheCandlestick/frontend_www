@@ -80,6 +80,12 @@
 							$invoice_id = 'INV00000004';
 							$invoice_date = '26 Jul 2022';
 
+							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
+							$widths = array(130, 20, 20, 30);
+							$items = array(
+								array('1','2','3','4'),
+								array('5','6','7','8')
+							);
 							// Initialize
 							$pdf = new PDF();
 							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
@@ -118,12 +124,6 @@
 								// Invoice ID
 								// Invoice Date
 								// invoice Table
-									$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
-									$widths = array(130, 20, 20, 30);
-									$items = array(
-										array('1','2','3','4'),
-										array('5','6','7','8')
-									);
 									$pdf->InvoiceTable($headers, $widths, $items,5, 50);
 							// Footer
 							// Output document
