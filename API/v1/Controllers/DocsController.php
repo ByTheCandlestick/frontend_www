@@ -89,7 +89,7 @@
 								array('5','6','7','8')
 							);
 							$tableColour = array(28, 92, 147);
-							$textColor = array();
+							$textColor = array(28, 92, 147);
 							// Initialize
 							$pdf = new PDF();
 							$pdf->AddFont('Raleway', '', 'Raleway-Regular.php', 1);
