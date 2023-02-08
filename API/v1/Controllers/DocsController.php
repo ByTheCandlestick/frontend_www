@@ -11,8 +11,6 @@
 		public $fs_h6 = 11.2;
 		public $fs_p = 16;
 
-		public function __construct() {
-		}
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
