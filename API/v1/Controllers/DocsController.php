@@ -34,7 +34,7 @@
 					$this->Cell($w[0], 6, '', 'B', 0, 'L');
 					$this->Cell($w[1], 6, '', 'B', 0, 'C');
 					$this->Cell($w[2], 6, 'Total:', 'B', 0, 'R');
-					$this->Cell($w[3], 6,  number_format(floatval($row[1]), 'B', 0, 'R');
+					$this->Cell($w[3], 6,  number_format(floatval($row[1])), 'B', 0, 'R');
 				} else {
 					$this->SetFont('Raleway', '', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
