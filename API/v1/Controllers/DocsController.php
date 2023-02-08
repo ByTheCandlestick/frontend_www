@@ -20,6 +20,7 @@
 			for($i=0;$i<count($header);$i++)
 				$this->Cell($w[$i],7,$header[$i],1,0,'C');
 			$this->Ln();
+			$posy++;
 			// Data
 			foreach($data as $row) {
 				$this->SetXY($posx, $posy=$posy + 6);
