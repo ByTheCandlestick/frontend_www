@@ -80,7 +80,7 @@
 								$pdf->SetXY($left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$c = count($tx_elems);
-								while($i=0; $i<$c; $i++) {
+								for($i=0; $i<$c; $i++) {
 									$pdf->SetTextColor(255, 127, 0);
 									$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 0, 0, "C");
 									if($i != $c) {
