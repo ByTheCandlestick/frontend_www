@@ -17,7 +17,7 @@
 					$arr[$i] = array($inf[0], $inf[$item[1]], $inf[1], $t=+$inf[$item[1]]*$inf[1]);
 					$i++;
 				}
-				$arr[$i] = array('', '', "Total:", $t);
+				$arr[$i] = array('totalRow', $t, '', '');
 				return $arr;
 			}
 	}
