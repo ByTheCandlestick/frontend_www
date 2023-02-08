@@ -62,20 +62,20 @@
 							// Create first page
 							$pdf->AddPage();
 							// Add content
-								// header
+								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
+								// Company Name
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetXY(5, 10);
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->Cell($pdf->GetPageWidth()-10, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 1, "R");
-
+								// Website
 								$pdf->SetXY(5, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
 								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, 0, 0, "L");
-
+								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
-
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
 								$pdf->SetXY($left, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
@@ -88,6 +88,7 @@
 										$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), " | ", 0, 0, "C");
 									}
 								}
+								//
 							// Output document
 							$pdf->Output();
 						} catch(Error $er) {
