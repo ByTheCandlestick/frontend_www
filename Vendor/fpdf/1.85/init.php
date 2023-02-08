@@ -108,7 +108,7 @@ function __construct($orientation='P', $unit='mm', $size='A4')
 			$this->fontpath .= '/';
 	} elseif(is_dir(dirname(__FILE__).'/font')) {
 		$this->fontpath = dirname(__FILE__).'/font/';
-	} else {header ("HTTP/1.0 404 Not Found");
+	} else {
 		$this->fontpath = '';
 	}
 	// Core fonts
@@ -1135,6 +1135,7 @@ protected function _loadfont($font)
 		$this->Error('Incorrect font definition file name: \''.$font.'\'');
 	include($this->fontpath.$font);
 	if(!isset($name))
+		header("HTTP/1.0 404 Not Found");
 		$this->Error('Could not include font definition file: \''.$this->fontpath.$font.'\'');
 	if(isset($enc))
 		$enc = strtolower($enc);
