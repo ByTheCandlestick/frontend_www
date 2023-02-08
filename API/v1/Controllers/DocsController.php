@@ -85,7 +85,7 @@
 									$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 0, 0, "R");
 									if($i != $c) {
 										$pdf->SetTextColor(28, 92, 147);
-										$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 0, 0, "R");
+										$pdf->Cell($tx_elems_strlen, $pdf->GetStringHeight($pdf->fs_h1), " | ", 0, 0, "R");
 									}
 								}
 							// Output document
