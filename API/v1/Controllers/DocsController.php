@@ -2,6 +2,7 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
+		define("FPDF_FONTPATH", "fonts/")
 		public $dev_outline = 0;
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
