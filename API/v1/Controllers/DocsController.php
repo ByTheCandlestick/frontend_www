@@ -15,7 +15,7 @@
 			return $fs / 3;
 		}
 		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0)) {
-			$this->SetFont('Raleway', 0);
+			$this->SetFont('Raleway', '');
 			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
 			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2]);
 			// Header
@@ -37,7 +37,7 @@
 					$this->Cell($w[2], 6, $row[2], 'B', 0, 'R');
 					$this->Cell($w[3], 6, $row[3], 'B', 0, 'R');
 				} else {
-					$this->SetFont('Raleway', 0);
+					$this->SetFont('Raleway', '');
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, $row[0], 'B', 0, 'L');
 					$this->Cell($w[1], 6, $row[1], 'B', 0, 'C');
