@@ -65,7 +65,7 @@
 							$pdf->AddPage();
 							// Add content
 								// Logo
-								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
+								//$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
 								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5);
 								$pdf->SetXY($al_right, 10);
