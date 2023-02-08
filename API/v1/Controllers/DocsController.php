@@ -111,7 +111,7 @@
 							// Initialize
 							$pdf = new PDF();
 							
-							$pdf->AddFont('Raleway', '', 'Raleway.php', 1);
+							$pdf->AddFont('Raleway', '');
 
 							$pdf->SetDisplayMode('default', 'two');
 							$pdf->AliasNbPages();
