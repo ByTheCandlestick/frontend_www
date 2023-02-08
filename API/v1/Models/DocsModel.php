@@ -9,11 +9,16 @@
 		/** getItemInfo
 		 * 
 		 */
-			public function getItemInfo() {
-				return array(
-					array('1','2','3','4'),
-					array('5','6','7','8')
-				);
+			public function getItemInfo(string $itemStr) {
+				$i=0
+				foreach(explode($itemStr) as $itemInfo){
+					$item = explode($itemInfo);
+					$inf = $this->Execute(sprintf("SELECT `Title`, `RetailPrice` FROM `Product` WHERE `SKU`=%s"), 3);
+					$arr[$i] = array($inf[0], $inf[$item[1]], $inf[1], $inf[1]*$item[1]);
+					$i++;
+				}
+
+				return $arr;
 			}
 	}
 ?>
