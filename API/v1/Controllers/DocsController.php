@@ -71,7 +71,7 @@
 								// Company Name
 								$pdf->SetTextColor(28, 92, 147);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
-								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5), 10);
+								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5), 13);
 								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 0, "C");
 								// Website
 								$pdf->SetTextColor(255, 127, 0);
@@ -79,10 +79,8 @@
 								$pdf->SetXY(5, 30);
 								$pdf->Cell($pdf->GetStringWidth($tx_website), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
 								// Sale items
-								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
-								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
-								$pdf->SetXY($left, 30);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
+								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems))+5), 30);
 								$c = count($tx_elems);
 								for($i=0; $i<$c; $i++) {
 									$pdf->SetTextColor(255, 127, 0);
