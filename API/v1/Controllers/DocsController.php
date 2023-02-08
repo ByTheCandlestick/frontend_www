@@ -78,15 +78,7 @@
 								// Company Name
 								$pdf->writeString($tx_company, $pdf->fs_h1, 10, 'R');
 								// Website
-								$str = $tx_website;
-								$fs = $pdf->fs_h6;
-								$wid = $pdf->GetStringWidth($str);
-								$posx = 5;//$pdf->GetPageWidth()-($wid+5);
-								$pdf->SetTextColor(255, 127, 0);
-								$pdf->SetFont('Raleway', '', $fs);
-								$pdf->SetXY($posx, 30);
-								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
-								$str=$fs=$wid=$posx=null;
+								$pdf->writeString($tx_website, $pdf->fs_h6, 30, 'L');
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
