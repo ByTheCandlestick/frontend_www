@@ -99,6 +99,13 @@
 							$pdf->AliasNbPages();
 							// Fonts
 							$pdf->AddFont('Raleway', '', 'raleway.php', 1);
+							$pdf->AddFont('Ralewayb', 'B', 'ralewayb.php', 1);
+							$pdf->AddFont('Ralewayi', 'I', 'ralewayi.php', 1);
+							$pdf->AddFont('Ralewaybi', 'BI', 'ralewaybi.php', 1);
+							$pdf->AddFont('RalewayThin', '', 'ralewayt.php', 1);
+							$pdf->AddFont('RalewayThinb', 'B', 'ralewaytb.php', 1);
+							$pdf->AddFont('RalewayThini', 'I', 'ralewayti.php', 1);
+							$pdf->AddFont('RalewayThinbi', 'BI', 'ralewaytbi.php', 1);
 							// Create first page
 							$pdf->AddPage();
 							// Header
