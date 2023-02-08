@@ -13,6 +13,7 @@
 
 		public function __construct() {
 			$this->AddFont('Raleway', '', 'Raleway.php');
+			/*
 			$this->AddFont('Raleway', 'B', 'Raleway-Bold.php');
 			$this->AddFont('Raleway', 'I', 'Raleway-Italics.php');
 			$this->AddFont('Raleway', 'BI', 'Raleway-Bold-Italic.php');
@@ -20,6 +21,7 @@
 			$this->AddFont('Raleway-Thin', 'B', 'Raleway-Thin-Bold.php');
 			$this->AddFont('Raleway-Thin', 'I', 'Raleway-Thin-Italic.php');
 			$this->AddFont('Raleway-Thin', 'BI', 'Raleway-Thin-Bold-Italic.php');
+			*/
 		}
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
