@@ -79,7 +79,7 @@
 								$pdf->SetXY($al_right, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "L");
+								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
 								// Sale items
 								/*
 								$str = $tx_elems_str = join(" | ", $tx_elems);
