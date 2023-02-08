@@ -67,18 +67,19 @@
 								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5);
+								$str = $tx_company;
+								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
 								$pdf->SetXY($al_right, 10);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 1, "R");
+								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h1), $str, $pdf->dev_outline, 0, "C");
 								// Website
 								$str = $tx_website;
 								$al_right = $pdf->GetPageWidth();//-($pdf->GetStringWidth($str)+5);
 								$pdf->SetXY($al_left, 30);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h6), $str, $pdf->dev_outline, 0, "L");
+								$pdf->Cell($pdf->GetStringWidth($str), $pdf->GetStringHeight($pdf->fs_h6), $str, $pdf->dev_outline, 0, "C");
 								// Sale items
 								$str = $tx_elems_str = join(" | ", $tx_elems);
 								$al_right = $pdf->GetPageWidth()-($pdf->GetStringWidth($str)+5);
