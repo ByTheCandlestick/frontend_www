@@ -2,6 +2,7 @@
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	class PDF Extends FPDF {
+		public $dev_outline = 1;
 		public $fs_h1 = 32;
 		public $fs_h2 = 24;
 		public $fs_h3 = 20.8;
@@ -68,12 +69,12 @@
 								$pdf->SetFont('Raleway', '', $pdf->fs_h1);
 								$pdf->SetXY(5, 10);
 								$pdf->SetTextColor(28, 92, 147);
-								$pdf->Cell($pdf->GetPageWidth()-10, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, 0, 1, "R");
+								$pdf->Cell($pdf->GetPageWidth()-10, $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->$dev_outline, 1, "R");
 								// Website
 								$pdf->SetXY(5, 25);
 								$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 								$pdf->SetTextColor(255, 127, 0);
-								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, 0, 0, "L");
+								$pdf->Cell(($pdf->GetPageWidth()-10)/2, $pdf->GetStringHeight($pdf->fs_h1), $tx_website, $pdf->$dev_outline, 0, "L");
 								// Sale items
 								$tx_elems_strlen = $pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems));
 								$left = $pdf->GetPageWidth()-($tx_elems_strlen+5);
@@ -82,10 +83,10 @@
 								$c = count($tx_elems);
 								for($i=0; $i<$c; $i++) {
 									$pdf->SetTextColor(255, 127, 0);
-									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], 1, 0, "C");
+									$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h1), $tx_elems[$i], $pdf->$dev_outline, 0, "C");
 									if($i != ($c-1)) {
 										$pdf->SetTextColor(28, 92, 147);
-										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h1), " | ", 1, 0, "C");
+										$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h1), " | ", $pdf->$dev_outline, 0, "C");
 									}
 								}
 								//
