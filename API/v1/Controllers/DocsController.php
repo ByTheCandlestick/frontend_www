@@ -67,7 +67,7 @@
 								// Logo
 								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$str = $tx_company;
+								string $str = $tx_company;
 								$wid = $pdf->GetStringWidth($str);
 								$al_right = $pdf->GetPageWidth()-($wid+5);
 								$pdf->SetXY($al_right, 10);
