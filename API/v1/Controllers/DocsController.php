@@ -14,7 +14,7 @@
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
-		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0)) {
+		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0), $fontSize) {
 			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
 			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2]);
 			// Header
@@ -29,14 +29,14 @@
 			$posy++;
 			foreach($data as $row) {
 				if($row[0] == "totalRow") {
-					$this->SetFont('Raleway', '', $this->fs_h6);
+					$this->SetFont('Raleway', '', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, '', 'B', 0, 'L');
 					$this->Cell($w[1], 6, '', 'B', 0, 'C');
 					$this->Cell($w[2], 6, 'Total:', 'B', 0, 'R');
 					$this->Cell($w[3], 6, $row[1], 'B', 0, 'R');
 				} else {
-					$this->SetFont('Raleway', 'B', $this->fs_h6)
+					$this->SetFont('Raleway', 'B', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, $row[0], 'B', 0, 'L');
 					$this->Cell($w[1], 6, $row[1], 'B', 0, 'C');
@@ -142,7 +142,7 @@
 								// Invoice ID
 								// Invoice Date
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items,5, 50, $tableColour, $textColor);
+									$pdf->InvoiceTable($headers, $widths, $items,5, 50, $tableColour, $textColor, $this->fs_h6);
 							// Footer
 							// Output document
 							$pdf->Output();
