@@ -14,7 +14,7 @@
 		public function GetStringHeight(int $fs) {
 			return $fs / 3;
 		}
-		public function writeString($str, $fs, $posx, $posx?, $al='L') {
+		public function writeString($str, $fs, $posy=5, $posx=5, $al='L') {
 			$wid = $pdf->GetStringWidth($str);
 			$posx = $pdf->GetPageWidth()-($wid+5);
 			$pdf->SetTextColor(28, 92, 147);
