@@ -74,7 +74,7 @@
 								$pdf->SetFont('Raleway', '', $fs);
 								$pdf->SetXY($posx, 10);
 								$pdf->Cell($wid, $pdf->GetStringHeight($fs), $str, $pdf->dev_outline, 0, "C");
-								$str=$fs=$wid=$posx=null;
+								$str=$fs=$wid=$posx=0;
 								// Website
 								$str = $tx_website;
 								$fs = $pdf->fs_h6;
