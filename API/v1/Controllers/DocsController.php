@@ -64,11 +64,11 @@
 							$pdf->AddPage();
 							// Add content
 								// Logo
-								$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
+								//$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
 								// Company Name
-								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5), 10);
-								$pdf->SetFont('Raleway', '', ($fs = $pdf->fs_h1));
 								$pdf->SetTextColor(28, 92, 147);
+								$pdf->SetFont('Raleway', '', ($fs = $pdf->fs_h1));
+								$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5), 10);
 								$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($fs), $tx_company, $pdf->dev_outline, 0, "C");
 								/*
 								// Website
