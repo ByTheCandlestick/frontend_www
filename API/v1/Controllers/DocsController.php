@@ -1,6 +1,7 @@
 <?php
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
+//	require_once(__ROOT__ . '/Vendor/symfony/6.2.5/init.php');
 	class PDF Extends FPDF {
 		public $dev_outline = 0;
 		public $fs_h1 = 32;
@@ -98,8 +99,7 @@
 							$invoice = $mdl_docs->getOrderInfo($arr_docs_info['inv']);
 							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
-							$fmt = new NumberFormatter( "en-gb@currency=".$invoice['Currency'], NumberFormatter::CURRENCY);
-							$curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+							$curr = Symfony\Component\Intl\Intl::getCurrencyBundle()->getCurrencySymbol($invoice['Currency']);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(120, 20, 20, 30);
 							$tableColour = array(51, 51, 51);
