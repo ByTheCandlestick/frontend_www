@@ -108,7 +108,7 @@
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Meta_colour']=='')?'No domain was set':'')?>" value="<? print(($domain['Meta_colour']=='')?'':$domain['Meta_colour'])?>">
 					<label for="floatingInput">Meta colour</label>
-					<div class="colorPreview" style="height: 60%; position: absolute; top: 20%; right: 10px; width: auto; aspect-ratio: 1 / 1; background: <? print(($domain['Meta_colour']=='')?'':$domain['Meta_colour'])?>; "></dic>
+					<div class="colorPreview" style="height: 60%; position: absolute; top: 20%; right: 10px; width: auto; aspect-ratio: 1 / 1; background: <? print(($domain['Meta_colour']=='')?'':$domain['Meta_colour'])?>; "></div>
 				</div>
 			</div>
 			
@@ -116,7 +116,7 @@
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Colour_primary']=='')?'No domain was set':'')?>" value="<? print(($domain['Colour_primary']=='')?'':$domain['Colour_primary'])?>">
 					<label for="floatingInput">Primary colour</label>
-					<div class="colorPreview" style="height: 60%; position: absolute; top: 20%; right: 10px; width: auto; aspect-ratio: 1 / 1; background: <? print(($domain['Colour_primary']=='')?'':$domain['Colour_primary'])?>; "></dic>
+					<div class="colorPreview" style="height: 60%; position: absolute; top: 20%; right: 10px; width: auto; aspect-ratio: 1 / 1; background: <? print(($domain['Colour_primary']=='')?'':$domain['Colour_primary'])?>; "></div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="secondary_colour">
