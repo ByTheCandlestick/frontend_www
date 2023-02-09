@@ -164,7 +164,7 @@
 									$pdf->Cell($pdf->GetStringWidth($address['number_name'].' '.$address['line_1']), $pdf->GetStringHeight($pdf->fs_h5), $address['number_name'].' '.$address['line_1'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($address['line_2']), $pdf->GetStringHeight($pdf->fs_h5), $address['line_2'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($address['town']), $pdf->GetStringHeight($pdf->fs_h5), $address['town'], $pdf->dev_outline, 2, "L");
-									$pdf->Cell($pdf->GetStringWidth($address['county']), $pdf->GetStringHeight($pdf->fs_h5), $address['county'], $pdf->dev_outline, 2, "L");
+									//$pdf->Cell($pdf->GetStringWidth($address['county']), $pdf->GetStringHeight($pdf->fs_h5), $address['county'], $pdf->dev_outline, 2, "L");
 									//$pdf->Cell($pdf->GetStringWidth($address['country']), $pdf->GetStringHeight($pdf->fs_h5), $address['country'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($address['postcode']), $pdf->GetStringHeight($pdf->fs_h5), $address['postcode'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Email']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Email'], $pdf->dev_outline, 2, "L");
