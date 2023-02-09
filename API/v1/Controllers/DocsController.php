@@ -146,7 +146,7 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 0, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 0, "L");
 								// Invoice Date
-									$pdf->Cell($pdf->GetStringWidth(), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
+									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Created'], $pdf->dev_outline, 0, "C");
 								// invoice Table
 									$pdf->InvoiceTable($headers, $widths, $items,5, 50, $tableColour, $textColor, $this->fs_h6);
 							// Footer
