@@ -157,7 +157,7 @@
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 37);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Created'], $pdf->dev_outline, 0, "C");
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items, 10, 70, $tableColour, $textColor, $this->fs_h6);
+									$pdf->InvoiceTable($headers, $widths, $items, 10, 90, $tableColour, $textColor, $this->fs_h6);
 							// Footer
 							// Output document
 							$pdf->Output();
