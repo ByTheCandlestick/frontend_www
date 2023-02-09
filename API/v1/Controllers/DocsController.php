@@ -99,7 +99,7 @@
 							$invoice = $mdl_docs->getOrderInfo($arr_docs_info['inv']);
 							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
-							$curr = iconv('UTF-8', 'ASCII//TRANSLIT', CurrencySymbolUtil::getSymbol('GBP'));
+							$curr = iconv('UTF-8', 'cp1252//IGNORE', CurrencySymbolUtil::getSymbol('GBP'));
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(120, 20, 20, 30);
 							$tableColour = array(51, 51, 51);
