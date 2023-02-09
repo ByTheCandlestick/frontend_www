@@ -26,6 +26,7 @@
 			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
 			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2]);
 			// Header
+			$this->SetFont('Raleway', 'B', $fontSize);
 			$this->SetLineWidth(0.5);
 			$this->SetXY($posx, $posy);
 			$this->Cell($w[0],7,$header[0],'B',0,'L');
