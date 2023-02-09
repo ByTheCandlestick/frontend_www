@@ -1,7 +1,7 @@
 <?php
-require_once('Mapping.php');
 declare(strict_types=1);
 use InvalidArgumentException;
+require_once('Mapping.php');
 
 class CurrencySymbolUtil {
 	public static function getSymbol(string $currency): string {
