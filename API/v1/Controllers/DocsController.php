@@ -113,20 +113,20 @@
 							$tableColour = array(51, 51, 51);
 							$textColor = array(28, 92, 147);
 							// Initialize
-							$pdf = new PDF();
-							$pdf->SetDisplayMode('default', 'two');
-							$pdf->AliasNbPages();
+								$pdf = new PDF();
+								$pdf->SetDisplayMode('default', 'two');
+								$pdf->AliasNbPages();
 							// Fonts
-							$pdf->AddFont('Raleway', '', 'raleway.php', 1);
-							$pdf->AddFont('Raleway', 'B', 'ralewayb.php', 1);
-							$pdf->AddFont('Raleway', 'I', 'ralewayi.php', 1);
-							$pdf->AddFont('Raleway', 'BI', 'ralewaybi.php', 1);
-							$pdf->AddFont('RalewayThin', '', 'ralewayt.php', 1);
-							$pdf->AddFont('RalewayThin', 'B', 'ralewaytb.php', 1);
-							$pdf->AddFont('RalewayThin', 'I', 'ralewayti.php', 1);
-							$pdf->AddFont('RalewayThin', 'BI', 'ralewaytbi.php', 1);
+								$pdf->AddFont('Raleway', '', 'raleway.php', 1);
+								$pdf->AddFont('Raleway', 'B', 'ralewayb.php', 1);
+								$pdf->AddFont('Raleway', 'I', 'ralewayi.php', 1);
+								$pdf->AddFont('Raleway', 'BI', 'ralewaybi.php', 1);
+								$pdf->AddFont('RalewayThin', '', 'ralewayt.php', 1);
+								$pdf->AddFont('RalewayThin', 'B', 'ralewaytb.php', 1);
+								$pdf->AddFont('RalewayThin', 'I', 'ralewayti.php', 1);
+								$pdf->AddFont('RalewayThin', 'BI', 'ralewaytbi.php', 1);
 							// Create first page
-							$pdf->AddPage();
+								$pdf->AddPage();
 							// Header
 								// Logo
 									$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
