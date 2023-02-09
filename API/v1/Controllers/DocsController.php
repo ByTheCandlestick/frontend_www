@@ -144,7 +144,7 @@
 									$pdf->SetXY(10, 40);
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Name'], $pdf->dev_outline, 1, "L");
-									$pdf->SetFont('Raleway', '', $pdf->fs_p);
+									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
 									$pdf->Cell($pdf->GetStringWidth($address['number_name'].' '.$address['line_1']), $pdf->GetStringHeight($pdf->fs_p), $address['number_name'].' '.$address['line_1'], $pdf->dev_outline, 1, "L");
 									$pdf->Cell($pdf->GetStringWidth($address['line_2']), $pdf->GetStringHeight($pdf->fs_p), $address['line_2'], $pdf->dev_outline, 1, "L");
 									$pdf->Cell($pdf->GetStringWidth($address['town']), $pdf->GetStringHeight($pdf->fs_p), $address['town'], $pdf->dev_outline, 1, "L");
