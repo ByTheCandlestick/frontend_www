@@ -141,7 +141,7 @@
 									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 							// Content
 								// Invoice ID
-									$pds->SetXY(5,40);
+									$pdf->SetXY(5, 40);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
