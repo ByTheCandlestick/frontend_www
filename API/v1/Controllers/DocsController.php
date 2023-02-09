@@ -34,21 +34,21 @@
 					$this->Cell($w[0], 6, '', 'B', 0, 'L');
 					$this->Cell($w[1], 6, '', 'B', 0, 'C');
 					$this->Cell($w[2], 6, 'Savings:', 'B', 0, 'R');
-					$this->Cell($w[3], 6, number_format(floatval($row[1]), 2), 'B', 0, 'R');
+					$this->Cell($w[3], 6, $curr.number_format(floatval($row[1]), 2), 'B', 0, 'R');
 				} else if($row[0] == "totalRow") {
 					$this->SetFont('Raleway', 'B', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, '');
 					$this->Cell($w[1], 6, '');
 					$this->Cell($w[2], 6, 'Total:', 0, 0, 'R');
-					$this->Cell($w[3], 6, number_format(floatval($row[1]), 2), 0, 0, 'R');
+					$this->Cell($w[3], 6, $curr.number_format(floatval($row[1]), 2), 0, 0, 'R');
 				} else {
 					$this->SetFont('Raleway', '', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, $row[0], 'B', 0, 'L');
 					$this->Cell($w[1], 6, number_format(floatval($row[1])), 'B', 0, 'C');
-					$this->Cell($w[2], 6, number_format(floatval($row[2]), 2), 'B', 0, 'R');
-					$this->Cell($w[3], 6, number_format(floatval($row[3]), 2), 'B', 0, 'R');
+					$this->Cell($w[2], 6, $curr.number_format(floatval($row[2]), 2), 'B', 0, 'R');
+					$this->Cell($w[3], 6, $curr.number_format(floatval($row[3]), 2), 'B', 0, 'R');
 				}
 			}
 			// Closing line
@@ -98,6 +98,8 @@
 							$invoice = $mdl_docs->getOrderInfo($arr_docs_info['inv']);
 							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
+							$fmt = new NumberFormatter( "en-gb@currency=".$invoice['Currency'], NumberFormatter::CURRENCY );
+							$curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(120, 20, 20, 30);
 							$tableColour = array(51, 51, 51);
@@ -158,8 +160,8 @@
 									$pdf->Cell($pdf->GetStringWidth($date), $pdf->GetStringHeight($pdf->fs_h5), $date, $pdf->dev_outline, 2, "R");
 
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_h2);
-									$pdf->SetX($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Subtotal'])+10));
-									$pdf->Cell($pdf->GetStringWidth($invoice['Subtotal']), $pdf->GetStringHeight($pdf->fs_h2), $invoice['Subtotal'], $pdf->dev_outline, 2, "R");
+									$pdf->SetX($pdf->GetPageWidth()-($pdf->GetStringWidth($curr.$invoice['Subtotal'])+10));
+									$pdf->Cell($pdf->GetStringWidth($curr.$invoice['Subtotal']), $pdf->GetStringHeight($pdf->fs_h2), $curr.$invoice['Subtotal'], $pdf->dev_outline, 2, "R");
 								// Customer details
 									$pdf->SetXY(10, 40);
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
