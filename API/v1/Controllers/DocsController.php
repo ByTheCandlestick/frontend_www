@@ -150,13 +150,17 @@
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Invoice ID'])+10), 40);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Invoice ID'], $pdf->dev_outline, 2, "R");
+
 									$dt = new DateTime($invoice['Created']);
 									$date = $dt->format('dS F Y');
 									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($date)+10), 46);
 									$pdf->Cell($pdf->GetStringWidth($date), $pdf->GetStringHeight($pdf->fs_h5), $date, $pdf->dev_outline, 2, "R");
-								// Customer details
 
+									$pdf->SetFont('Raleway', '', $pdf->fs_h2);
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Subtotal'])+10), 46);
+									$pdf->Cell($pdf->GetStringWidth($invoice['Subtotal']), $pdf->GetStringHeight($pdf->fs_h2), $invoice['Subtotal'], $pdf->dev_outline, 2, "R");
+								// Customer details
 									$pdf->SetXY(10, 40);
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Name'], $pdf->dev_outline, 2, "L");
