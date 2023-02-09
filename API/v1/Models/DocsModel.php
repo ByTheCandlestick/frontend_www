@@ -27,5 +27,20 @@
 			public function getUserAddress(string $id) {
 				return $this->Execute(sprintf("SELECT * FROM `User addresses` WHERE `id`='%s'", $id), 4)[0];
 			}
+		/** get_currency_symbol
+		 * 
+		 */
+			function get_currency_symbol($string) {
+				$fmt = new NumberFormatter( "en-gb@currency=".$string, NumberFormatter::CURRENCY);
+				$curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+				$symbol = '';
+				$length = mb_strlen($curr, 'utf-8');
+				for ($i = 0; $i < $length; $i++) {
+					$char = mb_substr($curr, $i, 1, 'utf-8');
+					if (!ctype_digit($char) && !ctype_punct($char))
+						$symbol .= $char;
+				}
+				return $symbol;
+			}
 	}
 ?>
