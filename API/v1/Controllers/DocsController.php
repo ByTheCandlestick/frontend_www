@@ -64,6 +64,7 @@
 		public function Invoice() {
 			// Vars
 				$mdl_docs = new DocsModel();
+				$CurrencySymbolUtil = new CurrencySymbolUtil();
 				$requestMethod = $_SERVER['REQUEST_METHOD'];
 				$arr_docs_info = $this->getQueryStringParams();
 				$str_response = "";
