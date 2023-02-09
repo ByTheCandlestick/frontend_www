@@ -11,7 +11,14 @@
 		public $fs_h5 = 12.8;
 		public $fs_h6 = 11.2;
 		public $fs_p = 16;
-
+		function Footer() {
+			 // Position at 1.5 cm from bottom
+			 $this->SetY(-15);
+			 // Arial italic 8
+			 $this->SetFont('Ralewayt','I',8);
+			 // Page number
+		    $this->Cell(0,10,'Thaml you for your custom',0,0,'C');
+		}
 		function GetStringHeight(int $fs) {
 			return ceil($fs/3)+1;
 		}
