@@ -151,14 +151,14 @@
 	<script>
 		$(function () {
 			$('div[name=meta_colour] input').colorpicker().on('colorpickerChange colorpickerCreate', function (e) {
-				$('div[name=meta_colour] .colorPreview').css("", e.value);
+				$('div[name=meta_colour] .colorPreview').css("background", e.value);
 			});
 			$('div[name=primary_colour] input').colorpicker().on('colorpickerChange colorpickerCreate', function (e) {
-				$('div[name=primary_colour] .colorPreview').css("", e.value);
+				$('div[name=primary_colour] .colorPreview').css("background", e.value);
 
 			});
 			$('div[name=secondary_colour] input').colorpicker().on('colorpickerChange colorpickerCreate', function (e) {
-				$('div[name=secondary_colour] .colorPreview').css("", e.value);
+				$('div[name=secondary_colour] .colorPreview').css("background", e.value);
 				
 			});
 		});
