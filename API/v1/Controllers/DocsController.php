@@ -185,9 +185,8 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Phone'], $pdf->dev_outline, 2, "L");
 								// invoice Table
 									$pdf->InvoiceTable($headers, $widths, $items, 10, 80, $tableColour, $textColor, $this->fs_h6, $curr);
-							// Footer
 							// Output document
-							$pdf->Output();
+								$pdf->Output();
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
