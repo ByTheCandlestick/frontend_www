@@ -49,7 +49,7 @@
 							}
 						?>
 					</select>
-					<label for="floatingInput">Page type</label>
+					<label for="floatingInput">Theme</label>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="status">
