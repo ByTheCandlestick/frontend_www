@@ -1,11 +1,8 @@
-<?php declare(strict_types=1);
-
-
+<?php
+declare(strict_types=1);
 namespace Currency\Util;
 
-
-final class CurrencySymbolMapping
-{
+final class CurrencySymbolMapping {
     const VALUES = [
         'AED' => 'د.إ',
         'AFN' => '؋',
@@ -182,8 +179,7 @@ final class CurrencySymbolMapping
         'ZWD' => 'Z$'
     ];
 
-    public static function values(): array
-    {
+    public static function values(): array {
         return self::VALUES;
     }
 }
