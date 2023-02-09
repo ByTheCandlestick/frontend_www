@@ -170,7 +170,7 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Email']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Email'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Phone'], $pdf->dev_outline, 2, "L");
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items, 10, 90, $tableColour, $textColor, $this->fs_h6);
+									$pdf->InvoiceTable($headers, $widths, $items, 10, 80, $tableColour, $textColor, $this->fs_h6);
 							// Footer
 							// Output document
 							$pdf->Output();
