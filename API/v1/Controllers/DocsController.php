@@ -38,7 +38,7 @@
 				} else if($row[0] == "totalRow") {
 					$this->SetFont('Raleway', 'B', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
-					$this->Cell($w[0], 6, '', 0 0, 'L');
+					$this->Cell($w[0], 6, '', 0, 0, 'L');
 					$this->Cell($w[1], 6, '', 0, 0, 'C');
 					$this->Cell($w[2], 6, 'Total:', 0, 0, 'R');
 					$this->Cell($w[3], 6, number_format(floatval($row[1]), 2), 0, 0, 'R');
