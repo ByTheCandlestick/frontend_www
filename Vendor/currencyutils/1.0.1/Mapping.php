@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-namespace Currency\Util;
 
 final class CurrencySymbolMapping {
     const VALUES = [
@@ -178,7 +177,6 @@ final class CurrencySymbolMapping {
         'ZAR' => 'R',
         'ZWD' => 'Z$'
     ];
-
     public static function values(): array {
         return self::VALUES;
     }
