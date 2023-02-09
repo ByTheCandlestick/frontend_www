@@ -14,7 +14,7 @@
 		public function GetStringHeight(int $fs) {
 			return ceil($fs/3)+1;
 		}
-		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0), $fontSize) {
+		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0), $fontSize, $curr) {
 			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
 			$this->SetTextColor($textCol[0], $textCol[1], $textCol[2]);
 			// Header
@@ -176,7 +176,7 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Email']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Email'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Phone'], $pdf->dev_outline, 2, "L");
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items, 10, 80, $tableColour, $textColor, $this->fs_h6);
+									$pdf->InvoiceTable($headers, $widths, $items, 10, 80, $tableColour, $textColor, $this->fs_h6, $curr);
 							// Footer
 							// Output document
 							$pdf->Output();
