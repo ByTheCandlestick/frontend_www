@@ -143,9 +143,14 @@
 								// Invoice ID
 									$pdf->SetXY(5, 40);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
-									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
-									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
-									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($address['number_name'].' '.$address['line_1']), $pdf->GetStringHeight($pdf->fs_h6), $address['number_name'].' '.$address['line_1'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($address['line_2']), $pdf->GetStringHeight($pdf->fs_h6), $address['line_2'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($address['town']), $pdf->GetStringHeight($pdf->fs_h6), $address['town'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($address['county']), $pdf->GetStringHeight($pdf->fs_h6), $address['county'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($address['country']), $pdf->GetStringHeight($pdf->fs_h6), $address['country'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($address['postcode']), $pdf->GetStringHeight($pdf->fs_h6), $address['postcode'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['Email']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Email'], $pdf->dev_outline, 1, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Phone'], $pdf->dev_outline, 1, "L");
 								// Invoice Date
 									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Created'], $pdf->dev_outline, 0, "C");
 								// invoice Table
