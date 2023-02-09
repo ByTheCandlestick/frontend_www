@@ -141,10 +141,10 @@
 									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 							// Content
 								// Invoice ID
-									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
-									$pdf->Cell($pdf->GetStringWidth($invoice['']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
-									$pdf->Cell($pdf->GetStringWidth($invoice['']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
-									$pdf->Cell($pdf->GetStringWidth($invoice['']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 0, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 0, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 0, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 0, "L");
 								// Invoice Date
 									$pdf->Cell($pdf->GetStringWidth(), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
 								// invoice Table
