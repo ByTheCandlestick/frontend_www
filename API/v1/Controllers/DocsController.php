@@ -145,7 +145,7 @@
 										}
 									}
 								// Divider
-									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
+									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 37);
 							// Content
 								$pdf->SetTextColor(28, 92, 147);
 								// Invoice Date / ID
