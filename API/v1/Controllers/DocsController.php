@@ -98,7 +98,7 @@
 							$invoice = $mdl_docs->getOrderInfo($arr_docs_info['inv']);
 							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
-							$fmt = new NumberFormatter( "en-gb@currency=".$invoice['Currency'], NumberFormatter::CURRENCY );
+							$fmt = new NumberFormatter( "en-gb@currency=".$invoice['Currency'], NumberFormatter::CURRENCY);
 							$curr = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(120, 20, 20, 30);
