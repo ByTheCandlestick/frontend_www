@@ -140,13 +140,53 @@
 			</div>
 		</div>
 		<hr>
-		<h5>Permissions</h5>
-		<div class="col-12 col-md-6 col-lg-3" name="permission">
-			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-				<label for="floatingInput">Permission</label>
+		<!--
+			<h5>Permissions</h5>
+			<div class="col-12 col-md-6 col-lg-3" name="permission">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
+					<label for="floatingInput">Permission</label>
+				</div>
 			</div>
-		</div>
+			<hr>
+		-->
+			<h5>Defaults</h5>
+			<div class="col-12 col-md-6">
+				<div class="row">
+					<div class="col-12 col-md-6" name="styles">
+						<h5>Styles</h5>
+						<?
+							$query = DB_Query("SELECT * FROM `Website styles` WHERE `Active`=1 ORDER BY `importance` ASC");
+							while($row = mysqli_fetch_array($query)) {
+								print('
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'">
+										<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
+											' . $row['Name'] . '
+										</label>
+									</div>
+								');
+							}
+						?>
+					</div>
+					<div class="col-12 col-md-6" name="scripts">
+						<h5>Scripts</h5>
+						<?
+							$query = DB_Query("SELECT * FROM `Website scripts` WHERE `Active`=1 ORDER BY `importance` ASC");
+							while($row = mysqli_fetch_array($query)) {
+								print('
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="'.$row['ID'].'" id="ScriptCheckboxes-'.$row['ID'].'">
+										<label class="form-check-label" for="ScriptCheckboxes-'.$row['ID'].'">
+											' . $row['Name'] . '
+										</label>
+									</div>
+								');
+							}
+						?>
+					</div>
+				</div>
+			</div>
 	</section>
 	<script>
 		$(function () {
