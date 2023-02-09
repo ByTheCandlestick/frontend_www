@@ -1,5 +1,5 @@
 <?php
-	confApiKey();
+	//confApiKey();
 	$obj_DocsController	= new DocsController();
 	if(isset($uri[2]) && $uri[2]=="Invoice"):
 		$str_MethodName		= $uri[2];
