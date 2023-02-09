@@ -141,7 +141,7 @@
 									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 							// Content
 								// Invoice ID
-//									$pdf->SetTextColor(28, 92, 147);
+									$pdf->SetTextColor(28, 92, 147);
 
 									$pdf->SetXY(10, 40);
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
