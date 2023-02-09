@@ -154,7 +154,7 @@
 								// Invoice Date
 									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Created'], $pdf->dev_outline, 0, "C");
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items,5, 60, $tableColour, $textColor, $this->fs_h6);
+									$pdf->InvoiceTable($headers, $widths, $items,5, 70, $tableColour, $textColor, $this->fs_h6);
 							// Footer
 							// Output document
 							$pdf->Output();
