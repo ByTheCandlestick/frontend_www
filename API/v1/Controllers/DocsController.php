@@ -145,8 +145,17 @@
 								// Divider
 									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 							// Content
-								// Invoice ID
-									$pdf->SetTextColor(28, 92, 147);
+								$pdf->SetTextColor(28, 92, 147);
+								// Invoice Date / ID
+									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Invoice ID'])+10), 40);
+									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Invoice ID'], $pdf->dev_outline, 2, "R");
+									$dt = new DateTime($invoice['Created']);
+									$date = $dt->format('d/m/Y');
+									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 46);
+									$pdf->Cell($pdf->GetStringWidth($date), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Created'], $pdf->dev_outline, 2, "R");
+								// Customer details
 
 									$pdf->SetXY(10, 40);
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
@@ -160,15 +169,6 @@
 									$pdf->Cell($pdf->GetStringWidth($address['postcode']), $pdf->GetStringHeight($pdf->fs_h5), $address['postcode'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Email']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Email'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Phone'], $pdf->dev_outline, 2, "L");
-								// Invoice Date / ID
-									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
-									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Invoice ID'])+10), 40);
-									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Invoice ID'], $pdf->dev_outline, 2, "R");
-									$dt = new DateTime($invoice['Created']);
-									$date = $dt->format('d/m/Y');
-									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
-									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 46);
-									$pdf->Cell($pdf->GetStringWidth($date), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Created'], $pdf->dev_outline, 2, "R");
 								// invoice Table
 									$pdf->InvoiceTable($headers, $widths, $items, 10, 90, $tableColour, $textColor, $this->fs_h6);
 							// Footer
