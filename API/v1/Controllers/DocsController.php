@@ -155,8 +155,10 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Phone'], $pdf->dev_outline, 1, "L");
 								// Invoice Date / ID
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 40);
-									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Invoice ID'], $pdf->dev_outline, 0, "R");
-									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Created'], $pdf->dev_outline, 0, "R");
+									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
+									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Invoice ID'], $pdf->dev_outline, 1, "R");
+									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
+									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Created'], $pdf->dev_outline, 1, "R");
 								// invoice Table
 									$pdf->InvoiceTable($headers, $widths, $items, 10, 90, $tableColour, $textColor, $this->fs_h6);
 							// Footer
