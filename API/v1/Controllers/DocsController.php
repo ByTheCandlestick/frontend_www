@@ -94,7 +94,7 @@
 							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
-							$widths = array(130, 20, 20, 30);
+							$widths = array(125, 20, 20, 30);
 							$tableColour = array(28, 92, 147);
 							$textColor = array(28, 92, 147);
 							// Initialize
@@ -155,7 +155,7 @@
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 37);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Created'], $pdf->dev_outline, 0, "C");
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items, 10, 65, $tableColour, $textColor, $this->fs_h6);
+									$pdf->InvoiceTable($headers, $widths, $items, 10, 70, $tableColour, $textColor, $this->fs_h6);
 							// Footer
 							// Output document
 							$pdf->Output();
