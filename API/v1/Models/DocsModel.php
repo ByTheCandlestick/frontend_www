@@ -20,5 +20,11 @@
 				$arr[$i] = array('totalRow', $t, '', '');
 				return $arr;
 			}
+		/** getUserAddress
+		 * 
+		 */
+			public function getUserAddress(string $id) {
+				return $this->Execute(sprintf("SELECT * FROM `Users adresses` WHERE `ID`='%s'", $id), 4)[0];
+			}
 	}
 ?>

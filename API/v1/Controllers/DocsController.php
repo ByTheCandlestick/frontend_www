@@ -28,6 +28,7 @@
 			// Data
 			$posy++;
 			foreach($data as $row) {
+
 				if($row[0] == "totalRow") {
 					$this->SetFont('Raleway', 'B', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
@@ -90,9 +91,10 @@
 							];
 
 							$invoice = $mdl_docs->getOrderInfo($arr_docs_info['inv']);
+							$items = $mdl_docs->getItemInfo($invoice['Items']);
+							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(130, 20, 20, 30);
-							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$tableColour = array(28, 92, 147);
 							$textColor = array(28, 92, 147);
 							// Initialize
@@ -123,7 +125,6 @@
 									$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 									$pdf->SetXY(5, 30);
 									$pdf->Cell($pdf->GetStringWidth($tx_website), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
-								// Customer details
 								// Items
 									$pdf->SetFont('Raleway', '', $pdf->fs_h6);
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems))+5), 30);
@@ -140,7 +141,12 @@
 									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 							// Content
 								// Invoice ID
+									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
+									$pdf->Cell($pdf->GetStringWidth($invoice['']), $pdf->GetStringHeight($pdf->fs_h6), $invoice[''], $pdf->dev_outline, 0, "L");
 								// Invoice Date
+									$pdf->Cell($pdf->GetStringWidth(), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
 								// invoice Table
 									$pdf->InvoiceTable($headers, $widths, $items,5, 50, $tableColour, $textColor, $this->fs_h6);
 							// Footer
