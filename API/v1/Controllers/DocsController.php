@@ -155,7 +155,7 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Phone'], $pdf->dev_outline, 1, "L");
 								// Invoice Date / ID
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
-									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 40);
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Invoice ID'])+10), 40);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Invoice ID'], $pdf->dev_outline, 1, "R");
 									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 46);
