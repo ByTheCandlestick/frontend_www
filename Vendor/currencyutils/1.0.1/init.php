@@ -1,10 +1,11 @@
 <?php
+require_once('Mapping.php');
 declare(strict_types=1);
 use InvalidArgumentException;
 
 class CurrencySymbolUtil {
 	public static function getSymbol(string $currency): string {
-        $currencySymbolMapping = CurrencySymbolMapping::values();
+        $currencySymbolMapping = CurrencySymbolMapping->values();
         /** @var string $symbol */
         $symbol = $currencySymbolMapping[$currency] ?? null;
         if ($symbol === null) {
