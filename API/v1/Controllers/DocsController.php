@@ -12,7 +12,7 @@
 		public $fs_p = 16;
 
 		public function GetStringHeight(int $fs) {
-			return ceil($fs/3)+1;
+			return ceil($fs/3);
 		}
 		function InvoiceTable($header, $w, $data, $posx, $posy, $drawCol = array(0, 0, 0), $textCol = array(0, 0, 0), $fontSize) {
 			$this->SetDrawColor($drawCol[0], $drawCol[1], $drawCol[2]);
