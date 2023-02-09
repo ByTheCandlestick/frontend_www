@@ -6,6 +6,8 @@
 			$page = mysqli_fetch_assoc($query);
 			$styles = explode(',', $page['Default styles']);
 			$scripts = explode(',', $page['Default scripts']);
+		} else {
+			$styles = $scripts = array();
 		}
 ?>
 	<section>
