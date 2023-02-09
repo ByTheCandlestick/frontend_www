@@ -160,7 +160,7 @@
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Invoice ID'])+10), 40);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Invoice ID'], $pdf->dev_outline, 2, "R");
 									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
-									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 46);
+									//$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 46);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Created'], $pdf->dev_outline, 2, "R");
 								// invoice Table
 									$pdf->InvoiceTable($headers, $widths, $items, 10, 90, $tableColour, $textColor, $this->fs_h6);
