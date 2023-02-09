@@ -1,7 +1,7 @@
 <?
 	if(strToLower(QS) == "new"){
 		isset($_GET['domainID']) && $_GET['domainID']!="" ? $domainID=$_GET['domainID'] : $domainID=-1;
-		if() {
+		if($domainID != -1) {
 			$query = DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", $domainID));
 			$page = mysqli_fetch_assoc($query);
 			$styles = explode(',', $page['Default styles']);
