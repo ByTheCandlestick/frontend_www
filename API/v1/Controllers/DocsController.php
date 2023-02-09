@@ -28,8 +28,14 @@
 			// Data
 			$posy++;
 			foreach($data as $row) {
-
-				if($row[0] == "totalRow") {
+				if($row[0] == "savingsRow") {
+					$this->SetFont('Raleway', 'B', $fontSize);
+					$this->SetXY($posx, $posy=$posy + 6);
+					$this->Cell($w[0], 6, '', 'B', 0, 'L');
+					$this->Cell($w[1], 6, '', 'B', 0, 'C');
+					$this->Cell($w[2], 6, 'Savings:', 'B', 0, 'R');
+					$this->Cell($w[3], 6, number_format(floatval($row[1]), 2), 'B', 0, 'R');
+				} else if($row[0] == "totalRow") {
 					$this->SetFont('Raleway', 'B', $fontSize);
 					$this->SetXY($posx, $posy=$posy + 6);
 					$this->Cell($w[0], 6, '', 'B', 0, 'L');
@@ -95,7 +101,7 @@
 							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
 							$widths = array(120, 20, 20, 30);
-							$tableColour = array(28, 92, 147);
+							$tableColour = array(51, 51, 51);
 							$textColor = array(28, 92, 147);
 							// Initialize
 							$pdf = new PDF();
