@@ -1,13 +1,12 @@
 <?
 	if(strToLower(QS) == "new"){
 		isset($_GET['domainID']) && $_GET['domainID']!="" ? $domainID=$_GET['domainID'] : $domainID=-1;
+		$styles = $scripts = array();
 		if($domainID != -1) {
 			$query = DB_Query(sprintf("SELECT * FROM `Website domains` WHERE `ID`=%s", $domainID));
 			$page = mysqli_fetch_assoc($query);
 			$styles = explode(',', $page['Default styles']);
 			$scripts = explode(',', $page['Default scripts']);
-		} else {
-			$styles = $scripts = array();
 		}
 ?>
 	<section>
