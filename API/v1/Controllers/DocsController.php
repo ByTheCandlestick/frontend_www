@@ -141,7 +141,7 @@
 									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 							// Content
 								// Invoice ID
-									$pdf->SetXY(5, 40);
+									$pdf->SetXY(5, 37);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Name']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Name'], $pdf->dev_outline, 1, "L");
 									$pdf->Cell($pdf->GetStringWidth($address['number_name'].' '.$address['line_1']), $pdf->GetStringHeight($pdf->fs_h6), $address['number_name'].' '.$address['line_1'], $pdf->dev_outline, 1, "L");
 									$pdf->Cell($pdf->GetStringWidth($address['line_2']), $pdf->GetStringHeight($pdf->fs_h6), $address['line_2'], $pdf->dev_outline, 1, "L");
@@ -152,7 +152,7 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Email']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Email'], $pdf->dev_outline, 1, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Phone'], $pdf->dev_outline, 1, "L");
 								// Invoice Date / ID
-									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+5), 40);
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+5), 37);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Created']), $pdf->GetStringHeight($pdf->fs_h6), $invoice['Created'], $pdf->dev_outline, 0, "C");
 								// invoice Table
 									$pdf->InvoiceTable($headers, $widths, $items,5, 70, $tableColour, $textColor, $this->fs_h6);
