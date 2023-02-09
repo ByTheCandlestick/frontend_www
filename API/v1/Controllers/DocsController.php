@@ -15,7 +15,7 @@
 			// Position at 1.5 cm from bottom
 			$this->SetY(-15);
 			// Arial italic 8
-			$this->SetFont('Ralewayt', 'I', 8);
+			$this->SetFont('RalewayThin', 'I', 8);
 			// Page number
 		 	$this->Cell(0, 10, 'Thank you for your custom', $this->dev_outline, 0, 'C');
 		}
