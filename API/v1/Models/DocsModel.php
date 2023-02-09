@@ -24,7 +24,7 @@
 		 * 
 		 */
 			public function getUserAddress(string $id) {
-				return $this->Execute(sprintf("SELECT * FROM `Users adresses` WHERE `ID`='%s'", $id), 4)[0];
+				return $this->Execute(sprintf("SELECT * FROM `Users adresses` WHERE `id`='%s'", $id), 4)[0];
 			}
 	}
 ?>
