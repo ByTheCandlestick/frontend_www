@@ -10,39 +10,7 @@
 		public $fs_h5 = 12.8;
 		public $fs_h6 = 11.2;
 		public $fs_p = 16;
-		function Header() {
-			// Logo
-				$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
-			// Company Name
-				$this->SetTextColor(28, 92, 147);
-				$this->SetFont('Raleway', '', $this->fs_h1);
-				$this->SetXY($this->GetPageWidth()-($this->GetStringWidth($tx_company)+5), 13);
-				$this->Cell($this->GetStringWidth($tx_company), $this->GetStringHeight($this->fs_h1), $tx_company, $this->dev_outline, 0, "C");
-/*
-			// Website
-				$this->SetTextColor(255, 127, 0);
-				$this->SetFont('Raleway', '', $this->fs_h6);
-				$this->SetXY(5, 30);
-				$this->Cell($this->GetStringWidth($tx_website), $this->GetStringHeight($this->fs_h6), $tx_website, $this->dev_outline, 0, "C");
-			// Items
-				$this->SetFont('Raleway', '', $this->fs_h6);
-				$this->SetXY($this->GetPageWidth()-($this->GetStringWidth($tx_elems_str = join(" | ", $tx_elems))+5), 30);
-				$c = count($tx_elems);
-				for($i=0; $i<$c; $i++) {
-					$this->SetTextColor(255, 127, 0);
-					$this->Cell($this->GetStringWidth($tx_elems[$i]), $this->GetStringHeight($this->fs_h6), $tx_elems[$i], $this->dev_outline, 0, "C");
-					if($i != ($c-1)) {
-						$this->SetTextColor(28, 92, 147);
-						$this->Cell($this->GetStringWidth(" | "), $this->GetStringHeight($this->fs_h6), " | ", $this->dev_outline, 0, "C");
-					}
-				}
-			// Divider
-				$this->Line(5, 35, $this->GetPageWidth()-5, 35);
-*/
-		}
-		function Footer() {
-			
-		}
+
 		function GetStringHeight(int $fs) {
 			return ceil($fs/3)+1;
 		}
@@ -152,6 +120,32 @@
 							// Create first page
 							$pdf->AddPage();
 							// Header
+								// Logo
+									$pdf->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
+								// Company Name
+									$pdf->SetTextColor(28, 92, 147);
+									$pdf->SetFont('Raleway', '', $pdf->fs_h1);
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_company)+5), 13);
+									$pdf->Cell($pdf->GetStringWidth($tx_company), $pdf->GetStringHeight($pdf->fs_h1), $tx_company, $pdf->dev_outline, 0, "C");
+								// Website
+									$pdf->SetTextColor(255, 127, 0);
+									$pdf->SetFont('Raleway', '', $pdf->fs_h6);
+									$pdf->SetXY(5, 30);
+									$pdf->Cell($pdf->GetStringWidth($tx_website), $pdf->GetStringHeight($pdf->fs_h6), $tx_website, $pdf->dev_outline, 0, "C");
+								// Items
+									$pdf->SetFont('Raleway', '', $pdf->fs_h6);
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($tx_elems_str = join(" | ", $tx_elems))+5), 30);
+									$c = count($tx_elems);
+									for($i=0; $i<$c; $i++) {
+										$pdf->SetTextColor(255, 127, 0);
+										$pdf->Cell($pdf->GetStringWidth($tx_elems[$i]), $pdf->GetStringHeight($pdf->fs_h6), $tx_elems[$i], $pdf->dev_outline, 0, "C");
+										if($i != ($c-1)) {
+											$pdf->SetTextColor(28, 92, 147);
+											$pdf->Cell($pdf->GetStringWidth(" | "), $pdf->GetStringHeight($pdf->fs_h6), " | ", $pdf->dev_outline, 0, "C");
+										}
+									}
+								// Divider
+									$pdf->Line(5, 35, $pdf->GetPageWidth()-5, 35);
 							// Content
 								$pdf->SetTextColor(28, 92, 147);
 								// Invoice Date / ID
