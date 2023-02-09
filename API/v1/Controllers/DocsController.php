@@ -157,8 +157,8 @@
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($date)+10), 46);
 									$pdf->Cell($pdf->GetStringWidth($date), $pdf->GetStringHeight($pdf->fs_h5), $date, $pdf->dev_outline, 2, "R");
 
-									$pdf->SetFont('Raleway', '', $pdf->fs_h2);
-									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Subtotal'])+10), 46);
+									$pdf->SetFont('Raleway', 'B', $pdf->fs_h2);
+//									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Subtotal'])+10), 46);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Subtotal']), $pdf->GetStringHeight($pdf->fs_h2), $invoice['Subtotal'], $pdf->dev_outline, 2, "R");
 								// Customer details
 									$pdf->SetXY(10, 40);
