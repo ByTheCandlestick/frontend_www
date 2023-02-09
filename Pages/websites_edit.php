@@ -123,7 +123,7 @@
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($domain['Colour_secondary']=='')?'No domain was set':'')?>" value="<? print(($domain['Colour_secondary']=='')?'':$domain['Colour_secondary'])?>">
 					<label for="floatingInput">Secondary colour</label>
-					<dic for="floatingInput" style="height: 60%; position: absolute; top: 20%; right: 10px; width: auto; aspect-ratio: 1 / 1; background: <? print(($domain['Colour_secondary']=='')?'':$domain['Colour_secondary'])?>; "></dic>
+					<div class="colorPreview" style="height: 60%; position: absolute; top: 20%; right: 10px; width: auto; aspect-ratio: 1 / 1; background: <? print(($domain['Colour_secondary']=='')?'':$domain['Colour_secondary'])?>; "></div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3" name="logo">
@@ -150,9 +150,15 @@
 	</section>
 	<script>
 		$(function () {
-			$('div[name=meta_colour] input').colorpicker();
-			$('div[name=primary_colour] input').colorpicker();
-			$('div[name=secondary_colour] input').colorpicker();
+			$('div[name=meta_colour] input').colorpicker().on('colorpickerChange colorpickerCreate', function (e) {
+				$('div[name=meta_colour] input').css("", e.value());
+			});
+			$('div[name=primary_colour] input').colorpicker().on('colorpickerChange colorpickerCreate', function (e) {
+
+			});
+			$('div[name=secondary_colour] input').colorpicker().on('colorpickerChange colorpickerCreate', function (e) {
+				
+			});
 		});
 	</script>
 <?
