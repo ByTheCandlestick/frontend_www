@@ -154,7 +154,7 @@
 									$date = $dt->format('d/m/Y');
 									$pdf->SetFont('Raleway', '', $pdf->fs_h5);
 									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Created'])+10), 46);
-									$pdf->Cell($pdf->GetStringWidth($date), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Created'], $pdf->dev_outline, 2, "R");
+									$pdf->Cell($pdf->GetStringWidth($date), $pdf->GetStringHeight($pdf->fs_h5), $date, $pdf->dev_outline, 2, "R");
 								// Customer details
 
 									$pdf->SetXY(10, 40);
