@@ -94,7 +94,7 @@
 							$items = $mdl_docs->getItemInfo($invoice['Items']);
 							$address = $mdl_docs->getUserAddress($invoice['Billing address']);
 							$headers = array('Name', 'Quantity', 'Price ea', 'Subtotal');
-							$widths = array(125, 20, 20, 30);
+							$widths = array(120, 20, 20, 30);
 							$tableColour = array(28, 92, 147);
 							$textColor = array(28, 92, 147);
 							// Initialize
