@@ -13,11 +13,12 @@
 		function Header() {
 			// Logo
 				$this->Image(__ROOT__.'/images/partners/candlestick/logo.png', 10, 5, 20);
-/*			// Company Name
+			// Company Name
 				$this->SetTextColor(28, 92, 147);
 				$this->SetFont('Raleway', '', $this->fs_h1);
 				$this->SetXY($this->GetPageWidth()-($this->GetStringWidth($tx_company)+5), 13);
 				$this->Cell($this->GetStringWidth($tx_company), $this->GetStringHeight($this->fs_h1), $tx_company, $this->dev_outline, 0, "C");
+/*
 			// Website
 				$this->SetTextColor(255, 127, 0);
 				$this->SetFont('Raleway', '', $this->fs_h6);
