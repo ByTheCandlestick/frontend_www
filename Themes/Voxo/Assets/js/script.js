@@ -630,7 +630,7 @@ $(document).ready(function() {
 								difference	= (newTotal - currTotal);
 								newSubtotal	= (currSubtotal + difference).toFixed(2);
 
-								(quantity == 1)? $(".cartSubtract").val("\u{f1f8}"): $(".cartSubtract").val("\u{2d}");
+								(quantity == 1)? $("cart-item[prod-sku="+sku+"] .cartSubtract").val("\u{f1f8}"): $("cart-item[prod-sku="+sku+"] .cartSubtract").val("\u{2d}");
 								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
 								$("p.subtotal.h4").text(currency + newSubtotal);
 							} else {
@@ -680,7 +680,7 @@ $(document).ready(function() {
 										$(this).hide(500)
 									});
 								}
-								(quantity == 1)? $(".cartSubtract").val("\u{f1f8}"): $(".cartSubtract").val("\u{2d}");
+								(quantity == 1)? $("cart-item[prod-sku="+sku+"] .cartSubtract").val("\u{f1f8}"): $("cart-item[prod-sku="+sku+"] .cartSubtract").val("\u{2d}");
 								$("cart-item[prod-sku="+sku+"] .priceTotal").val(currency + newTotal);
 								$("p.subtotal.h4").text(currency + newSubtotal);
 							}
