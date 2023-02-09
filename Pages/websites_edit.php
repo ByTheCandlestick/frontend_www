@@ -145,6 +145,13 @@
 			</div>
 		</div>
 	</section>
+	<script>
+		$(function () {
+			$('div[name=meta_colour] input').colorpicker();
+			$('div[name=primary_colour] input').colorpicker();
+			$('div[name=secondary_colour] input').colorpicker();
+		});
+	</script>
 <?
 	} else {
 ?>
