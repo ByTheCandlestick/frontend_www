@@ -148,7 +148,7 @@
 								$pdf->SetTextColor(28, 92, 147);
 								// Invoice Date / ID
 									$pdf->SetFont('Raleway', 'B', $pdf->fs_p);
-									$pdf->SetX($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Invoice ID'])+10));
+									$pdf->SetXY($pdf->GetPageWidth()-($pdf->GetStringWidth($invoice['Invoice ID'])+10), 40);
 									$pdf->Cell($pdf->GetStringWidth($invoice['Invoice ID']), $pdf->GetStringHeight($pdf->fs_p), $invoice['Invoice ID'], $pdf->dev_outline, 2, "R");
 
 									$dt = new DateTime($invoice['Created']);
