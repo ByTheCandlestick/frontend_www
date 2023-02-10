@@ -155,7 +155,7 @@
 				<?
 					$query = DB_Query("SELECT * FROM `Website styles` WHERE `Active`=1 ORDER BY `importance` ASC");
 					while($row = mysqli_fetch_array($query)) {
-						(in_array($row['ID'], $scripts))?$checked=" checked":$checked="";
+						(in_array($row['ID'], $styles))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
 								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].' '.$checked.'">
