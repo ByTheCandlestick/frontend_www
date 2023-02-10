@@ -3,7 +3,6 @@
 		if($user_ok) {
 			if($userperm[$website_info['Permission']] != 1) {
 				$user_ok = false;
-				print_r('ERROR HERE');
 			}
 		}
 //		require_user_ok();
