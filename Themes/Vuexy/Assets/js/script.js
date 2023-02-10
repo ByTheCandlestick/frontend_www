@@ -1171,8 +1171,8 @@
 					url: api_url + '/Website/',
 					data: {
 						'api_key': api_key,
-						'style': styles.join(","),
-						'script': scripts.join(","),
+						'styles': styles.join(","),
+						'scripts': scripts.join(","),
 						'name': $("div[name=name] input").val(),
 						'domain': $("div[name=domain] input").val(),
 						'page_type': $("div[name=page_type]").find("option:selected").val(),
@@ -1215,8 +1215,8 @@
 					url: api_url + '/Website/' + sid + '/',
 					data: {
 						'api_key': api_key,
-						'style': styles.join(","),
-						'script': scripts.join(","),
+						'styles': styles.join(","),
+						'scripts': scripts.join(","),
 						'name': $("div[name=name] input").val(),
 						'domain': $("div[name=domain] input").val(),
 						'page_type': $("div[name=page_type]").find("option:selected").val(),
