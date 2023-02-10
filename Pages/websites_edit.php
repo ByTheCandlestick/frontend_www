@@ -3,7 +3,6 @@
 		$domain = mysqli_fetch_assoc($query);
 		$styles = explode(',', $domain['Default styles']);
 		$scripts = explode(',', $domain['Default scripts']);
-		print_r($domain);
 ?>
 	<section>
 		<!-- Section Header -->
@@ -151,6 +150,7 @@
 					<label for="floatingInput">Permission</label>
 				</div>
 			</div>
+			<?=$domain['Default styles'])?>
 			<div class="col-6 col-md-3" name="styles">
 				<h5>Default Styles</h5>
 				<?
