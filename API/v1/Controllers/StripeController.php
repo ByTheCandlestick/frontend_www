@@ -114,7 +114,7 @@
 									if ($payment_status == 'succeeded') {
 										exit($this->sendOutput( // SUCCESS - Return invoice number
 											Json_encode(array(
-												'status' => 'success',
+												//'status' => 'success',
 												'invoice' => $invoice_number
 											)),
 											array("Content-Type: application/json", "HTTP/1.1 200 OK")
