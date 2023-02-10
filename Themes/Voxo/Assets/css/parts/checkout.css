@@ -110,7 +110,7 @@
 	transform: translateX(-50%);
 	grid-template-areas:	"postcode	postcode	postcode	.			.			visa		visa	"
 							"number		number		number		number		number		number		.		"
-							"expiry		expiry		expiry			.			ccv			ccv			.		";
+							"expiry		expiry		expiry		expiry		ccv			.			ccv		";
 }
 
 .subContainer input {
