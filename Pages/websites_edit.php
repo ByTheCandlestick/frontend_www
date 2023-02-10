@@ -150,7 +150,7 @@
 					<label for="floatingInput">Permission</label>
 				</div>
 			</div>
-			<?=$domain['Default styles'])?>
+			<?=$domain['Default styles']?>
 			<div class="col-6 col-md-3" name="styles">
 				<h5>Default Styles</h5>
 				<?
