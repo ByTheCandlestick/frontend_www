@@ -1165,10 +1165,14 @@
 		domain: {
 			/** @final */
 			create() {
+				var styles = [];	$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
+				var scripts = [];	$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
 				$.ajax({
 					url: api_url + '/Website/',
 					data: {
 						'api_key': api_key,
+						'style': styles.join(","),
+						'script': scripts.join(","),
 						'name': $("div[name=name] input").val(),
 						'domain': $("div[name=domain] input").val(),
 						'page_type': $("div[name=page_type]").find("option:selected").val(),
@@ -1205,10 +1209,14 @@
 			},
 			/** @final */
 			update(sid) {
+				var styles = [];	$("div[name=styles]").children().find("input[type=checkbox]:checked").each((index, element) => { styles.push($(element).val()); });
+				var scripts = [];	$("div[name=scripts]").children().find("input[type=checkbox]:checked").each((index, element) => { scripts.push($(element).val()); });
 				$.ajax({
 					url: api_url + '/Website/' + sid + '/',
 					data: {
 						'api_key': api_key,
+						'style': styles.join(","),
+						'script': scripts.join(","),
 						'name': $("div[name=name] input").val(),
 						'domain': $("div[name=domain] input").val(),
 						'page_type': $("div[name=page_type]").find("option:selected").val(),
