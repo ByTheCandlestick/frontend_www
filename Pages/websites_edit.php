@@ -150,7 +150,6 @@
 					<label for="floatingInput">Permission</label>
 				</div>
 			</div>
-			<?print_r($styles)?>
 			<div class="col-6 col-md-3" name="styles">
 				<h5>Default Styles</h5>
 				<?
@@ -159,7 +158,7 @@
 						(in_array($row['ID'], $styles))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].' '.$checked.'">
+								<input class="form-check-input" type="checkbox" value="' . $row['ID'] . '" id="StyleCheckboxes-'.$row['ID'].'" '.$checked.'>
 								<label class="form-check-label" for="StyleCheckboxes-'.$row['ID'].'">
 									' . $row['Name'] . '
 								</label>
@@ -176,7 +175,7 @@
 						(in_array($row['ID'], $scripts))?$checked=" checked":$checked="";
 						print('
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="'.$row['ID'].'" id="ScriptCheckboxes-'.$row['ID'].' '.$checked.'">
+								<input class="form-check-input" type="checkbox" value="'.$row['ID'].'" id="ScriptCheckboxes-'.$row['ID'].'" '.$checked.'>
 								<label class="form-check-label" for="ScriptCheckboxes-'.$row['ID'].'">
 									' . $row['Name'] . '
 								</label>
