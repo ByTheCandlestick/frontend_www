@@ -3,9 +3,10 @@
 		if($user_ok) {
 			if($userperm[$website_info['Permission']] != 1) {
 				$user_ok = false;
+				print_r('ERROR HERE');
 			}
 		}
-		require_user_ok();
+//		require_user_ok();
 	// Determine the required row from the page requested
 		$domainID = domainID();
 		if(QS_SUBPAGE != NULL) {
