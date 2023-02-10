@@ -3,6 +3,7 @@
 		$domain = mysqli_fetch_assoc($query);
 		$styles = explode(',', $domain['Default styles']);
 		$scripts = explode(',', $domain['Default scripts']);
+		print_r($domain['Default styles']);
 ?>
 	<section>
 		<!-- Section Header -->
