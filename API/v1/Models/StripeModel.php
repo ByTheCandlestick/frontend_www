@@ -94,19 +94,16 @@
 		 * 
 		 */
 			public function getAddressID($uid, $number, $address1, $address2, $town, $county, $country, $postcode) {
-				return $this->Execute("SELECT
-									`id`
-								FROM
-									`User addresses`
-								WHERE
-									`uid`=$uid AND
-									`number_name`=$number AND
-									`line_1`='$address1' AND
-									`line_2`='$address2' AND
-									`town`='$town' AND
-									`county`='$county' AND
-									`country`='$country' AND
-									`postcode`='$postcode'", 2)[0];
+				return $this->Execute("	SELECT 	`id`
+										FROM 	`User addresses`
+										WHERE	`uid`=$uid AND
+												`number_name`='$number' AND
+												`line_1`='$address1' AND
+												`line_2`='$address2' AND
+												`town`='$town' AND
+												`county`='$county' AND
+												`country`='$country' AND
+												`postcode`='$postcode'", 2)[0];
 			}
 		/** invoiceCount
 		 * 
