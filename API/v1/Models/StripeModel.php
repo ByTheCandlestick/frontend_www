@@ -55,11 +55,11 @@
 		 */
 			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $price_tax, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus) {
 				$paidAmount = $paidAmount / 100;
-				$this->Execute("INSERT INTO
-									`Transactions`
-										(`Transaction ID`, `Type`, `Status`, `Invoice ID`, `Charge ID`, `Subtotal`, `Processing Fees`, `Tax`, `Deposit`, `Currency`, `Notes`, `UID`, `Name`, `Email`, `Phone`, `Items`, `Ship by`, `Shipping by`, `Billing address`, `Modified`, `Created`)
-									VALUES
-										('$txn', 'Order', '$paymentStatus', '$invoice_number', '$chg', '$price', '$fees', '$price_tax', '$paidAmount', '$currency', '$notes', '$uid', '$name', '$email', '$phone', '$items', '', '$shipping', '$address_id', now(), now())", 1);
+				echo$this->Execute(print(sprintf("INSERT INTO
+				`Transactions`
+					(`Transaction ID`, `Type`, `Status`, `Invoice ID`, `Charge ID`, `Subtotal`, `Processing Fees`, `Tax`, `Deposit`, `Currency`, `Notes`, `UID`, `Name`, `Email`, `Phone`, `Items`, `Ship by`, `Shipping by`, `Billing address`, `Modified`, `Created`)
+				VALUES
+					('$txn', 'Order', '$paymentStatus', '$invoice_number', '$chg', '$price', '$fees', '$price_tax', '$paidAmount', '$currency', '$notes', '$uid', '$name', '$email', '$phone', '$items', '', '$shipping', '$address_id', now(), now())")), 1);
 			}
 		/** uploadAddress
 		 * 
