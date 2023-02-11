@@ -66,28 +66,25 @@
 		 * 
 		 */
 			public function uploadAddress($uid, $number,  $address1, $address2, $town, $county, $country, $postcode) {
-				$this->Execute("INSERT INTO
-									`User addresses`(`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`)
-								SELECT
-									$uid, '$number', '$address1', '$address2', '$town', '$county', '$country', '$postcode'
-								FROM
-									DUAL
-								WHERE NOT EXISTS(
+				$this->Execute(print("INSERT INTO
+									`User addresses` (`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`)
 									SELECT
-										*
-									FROM
-										`User addresses`
-									WHERE
-									`uid`=$uid AND
-									`number_name`=$number AND
-									`line_1`='$address1' AND
-									`line_2`='$address2' AND
-									`town`='$town' AND
-									`county`='$county' AND
-									`country`='$country' AND
-									`postcode`='$postcode'
-									LIMIT 1
-								);", 1);
+										$uid, '$number', '$address1', '$address2', '$town', '$county', '$country', '$postcode'
+									FROM DUAL
+									WHERE NOT EXISTS(
+										SELECT *
+										FROM `User addresses`
+										WHERE
+											`uid`=$uid AND
+											`number_name`=$number AND
+											`line_1`='$address1' AND
+											`line_2`='$address2' AND
+											`town`='$town' AND
+											`county`='$county' AND
+											`country`='$country' AND
+											`postcode`='$postcode'
+										LIMIT 1
+									);"), 1);
 			}
 		/** getAddressID
 		 * 
