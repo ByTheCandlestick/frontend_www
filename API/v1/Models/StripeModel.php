@@ -55,7 +55,7 @@
 		 */
 			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $price_tax, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus) {
 				$paidAmount = $paidAmount / 100;
-				echo$this->Execute(sprintf("INSERT INTO
+				$this->Execute(sprintf("INSERT INTO
 				`Transactions`
 					(`Transaction ID`, `Type`, `Status`, `Invoice ID`, `Charge ID`, `Subtotal`, `Processing Fees`, `Tax`, `Deposit`, `Currency`, `Notes`, `UID`, `Name`, `Email`, `Phone`, `Items`, `Ship to`, `Shipping by`, `Billing address`, `Modified`, `Created`)
 				VALUES
