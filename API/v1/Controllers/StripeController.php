@@ -43,8 +43,7 @@
 							$name = $fname . ' ' . $lname;
 						// Select or create customer
 							$customer = $mdl_stripe->searchCustomer($stripe, $email, $uid);
-							if(!$customer) {
-								// Customer does not exist, Create new.
+							if(!$customer) { // Customer does not exist, Create new.
 								try {
 									$customer = $mdl_stripe->createCustomer($stripe, $fname, $lname, $phone, $email, $uid, $address1, $address2, $town, $county, $postcode, $token);
 								} catch (Exception $e) {
