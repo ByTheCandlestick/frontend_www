@@ -990,9 +990,9 @@ $(document).ready(function() {
 		 });
 		$('.shipping-address select').change(function() {
 			if($(this).val() == 0) {
-				$('.newAddress-billing').removeClass('d-none');
+				$('.newAddress-shipping').removeClass('d-none');
 			} else {
-				$('.newAddress-billing').addClass('d-none');
+				$('.newAddress-shipping').addClass('d-none');
 			}
 		 });
 	/**
