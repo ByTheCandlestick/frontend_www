@@ -44,7 +44,7 @@
 			public function createCharge($stripe, $customer, $pricePennies, $currency, $items) {
 				return $stripe->charges->create([
 					'customer' => $customer->id,
-					'amount'   => $pricePennies,
+					'amount' => $pricePennies,
 					'currency' => $currency,
 					'description' => $items
 				]);
@@ -55,43 +55,13 @@
 		 */
 			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus, $network, $last4, $exp_M, $exp_Y) {
 				$paidAmount = $paidAmount / 100;
-				$this->Execute(
-					sprintf(
-						"INSERT INTO `Transactions`
-							(`Transaction ID`,	`Type`,	 `Status`,	`Invoice ID`,	`Charge ID`, `Subtotal`, `Processing Fees`,	`Tax`,	`Deposit`, `Currency`,	`Notes`, `UID`,	`Name`, `Email`, `Phone`,	`Items`, `Ship to`,	`Shipping by`,	`Billing address`, `Card network`,	`Last 4`,	`Expires month`, `Expires year`, `Modified`, `Created`)
-						VALUES
-							('%s',				'%s',	 '%s',		'%s',			'%s',		 '%s',		 '%s',				'%s',	'%s',		'%s',		'%s',	 '%s',	'%s',	'%s',	 '%s',		'%s',	 '%s',		'%s',			'%s',				'%s'		'%s'		'%s',			 '%s',			 now(),		 now())",
-							$txn,
-							'Order',
-							$paymentStatus,
-							$invoice_number,
-							$chg,
-							$price,
-							$fees,
-							(round(($paidAmount - $fees)*0.2, 2)),
-							$paidAmount,
-							$currency,
-							$notes,
-							$uid,
-							$name,
-							$email,
-							$phone,
-							$items,
-							'',
-							$shipping,
-							$network,
-							$address_id,
-							$last4,
-							$exp_M,
-							$exp_Y
-					),1
-				);
+				$this->Execute(sprintf("INSERT INTO `Transactions` (`Transaction ID`, `Type`, `Status`, `Invoice ID`, `Charge ID`, `Subtotal`, `Processing Fees`, `Tax`, `Deposit`, `Currency`, `Notes`, `UID`, `Name`, `Email`, `Phone`, `Items`, `Ship to`, `Shipping by`, `Billing address`, `Card network`, `Last 4`, `Expires month`, `Expires year`, `Modified`, `Created`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' '%s' '%s', '%s', now(), now())", $txn, 'Order', $paymentStatus, $invoice_number, $chg, $price, $fees, (round(($paidAmount - $fees)*0.2, 2)), $paidAmount, $currency, $notes, $uid, $name, $email, $phone, $items, '', $shipping, $network, $address_id, $last4, $exp_M, $exp_Y ), 1);
 			}
 		/** uploadAddress
 		 * 
 		 * 
 		 */
-			public function uploadAddress($uid, $number,  $address1, $address2, $town, $county, $country, $postcode) {
+			public function uploadAddress($uid, $number, $address1, $address2, $town, $county, $country, $postcode) {
 				if($this->Execute(sprintf("SELECT COUNT(*) FROM `User addresses` WHERE `uid`=%s AND `number_name`='%s' AND `line_1`='%s' AND `line_2`='%s' AND `town`='%s' AND `county`='%s' AND `country`='%s' AND `postcode`='%s'", $uid, $number, $address1, $address2, $town, $county, $country, $postcode), 2)[0] == 0) {
 					return $this->Execute(sprintf("INSERT INTO `User addresses`(`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`) VALUES( %s, '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $uid, $number, $address1, $address2, $town, $county, $country, $postcode), 1);
 				}
