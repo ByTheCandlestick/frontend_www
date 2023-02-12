@@ -958,19 +958,20 @@ $(document).ready(function() {
 	/**
 	 * ADDRESS SEARCH
 	 */
-		$("input.form-control[name=postcode]").on('keydown', function(event) {
-			if (address.searchTimer) {
-				clearTimeout(address.searchTimer);
+		$("input").on('keydown', function(event) {
+			if($(event.target).attr('name') == 'postcode') {
+				if (address.searchTimer) {
+					clearTimeout(address.searchTimer);
+				}
+				address.searchTimer = setTimeout(function() {
+					$(	"input.form-control[name=address1],"+
+						"input.form-control[name=address2],"+
+						"input.form-control[name=town],"+
+						"input.form-control[name=county],"+
+						"input.form-control[name=country]").val("")
+					address.lookup(this, $(event.target).find('input[name=postcode]').val());
+				}, 400);
 			}
-			address.searchTimer = setTimeout(function() {
-				$(	"input.form-control[name=address1],"+
-					"input.form-control[name=address2],"+
-					"input.form-control[name=town],"+
-					"input.form-control[name=county],"+
-					"input.form-control[name=country]").val("")
-					console.log(event);
-				address.lookup(this, $(this).find('input[name=postcode]').val());
-			}, 400);
 		});
 	/**
 	 * Payment address options
