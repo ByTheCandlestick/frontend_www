@@ -28,53 +28,53 @@
 
 				<div class="row newAddress-billing d-none">
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
+						<div class="form-floating mb-3 pe-2 col-12 col-lg-6">
 							<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>
 							<label for="floatingInput-FName">Firstname *</label>
 						</div>
-						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
+						<div class="form-floating mb-3 ps-2 col-12 col-lg-6">
 							<input type="text" name="lastname" class="form-control" id="floatingInput-LName" autocomplete="family-name" required>
 							<label for="floatingInput-LName">Lastname *</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12 col-lg-7">
+						<div class="form-floating mb-3 pe-2 col-12 col-lg-7">
 							<input type="text" name="number" class="form-control" id="floatingInput-number" autocomplete="" required>
 							<label for="floatingInput-number">House number / name *</label>
 						</div>
-						<div class="form-floating mb-3 px-2 col-12 col-lg-5">
+						<div class="form-floating mb-3 ps-2 col-12 col-lg-5">
 							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
 							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12">
+						<div class="form-floating mb-3 px-0 col-12">
 							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" disabled required>
 							<label for="floatingInput-Addr">Street name</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
+						<div class="form-floating mb-3 pe-2 col-12 col-lg-6">
 							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" disabled >
 							<label for="floatingInput-Addr2">District</label>
 						</div>
-						<div class="form-floating mb-3 px-2 col-6">
+						<div class="form-floating mb-3 ps-2 col-12 col-lg-6">
 							<input type="text" name="town" class="form-control" id="floatingInput-town" disabled required>
 							<label for="floatingInput-town">Town</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-6">
+						<div class="form-floating mb-3 pe-2 col-12 col-lg-6">
 							<input type="text" name="county" class="form-control" id="floatingInput-county" disabled required>
 							<label for="floatingInput-county">County</label>
 						</div>
-						<div class="form-floating mb-3 px-2 col-6">
+						<div class="form-floating mb-3 ps-2 col-12 col-lg-6">
 							<input type="text" name="country" class="form-control" id="floatingInput-country" disabled required>
 							<label for="floatingInput-country">Country</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-floating mb-3 px-2 col-12">
+						<div class="form-floating mb-3 px-0 col-12">
 							<input type="text" name="phone" class="form-control" id="floatingInput-phone" autocomplete="tel" required>
 							<label for="floatingInput-phone">Primary contact number *</label>
 						</div>
