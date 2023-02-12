@@ -957,7 +957,7 @@ $(document).ready(function() {
 		}
 	/**
 	 * ADDRESS SEARCH
-	 */
+
 		$("input").on('keydown', function(event) {
 			if($(event.target).attr('name') == 'postcode') {
 				if (address.searchTimer) {
