@@ -31,10 +31,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-6 text-center">
-					<a class="btn btn-outline-secondary" href="javascript:cart.reload();" role="button">Update cart</a>
-				</div>
-				<div class="col-6 text-center">
+				<div class="col-6 offset-6 text-center">
 					<a class="btn btn-secondary" href="/Cart/Checkout" role="button">Checkout</a>
 				</div>
 			</div>
