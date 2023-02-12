@@ -2,11 +2,12 @@
 	<div class="col-lg-5">
 		<div class="mb-3 px-3 px-lg-3 col-lg-10">
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>
-				<h2>Shipping Address</h2>
+				<h2>Billing Address</h2>
 				<div class="row">
 					<div class="form-floating py-1">
 						<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
-							<option value="0" selected>Please select an address</option>
+							<option value="-1" selected>Please select an address</option>
+							<option value="0"> + New address</option>
 						<?
 							$items = DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `UID`=%s ORDER BY `ID` ASC", $userdata['ID']));
 							foreach($items as $item) {
@@ -25,7 +26,7 @@
 					</div>
 				</div>
 			<?} else { ?>
-				<h2>Shipping Address</h2>
+				<h2>Billing Address</h2>
 				<div class="row">
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
