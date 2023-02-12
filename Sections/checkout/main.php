@@ -138,7 +138,7 @@
 			<?} ?>
 			<h2>Shipping Address</h2>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="" id="same_billing_delivery" checked>
+				<input class="form-check-input same_billing_delivery" type="checkbox" value="" id="same_billing_delivery" checked>
 				<label class="form-check-label" for="same_billing_delivery">Delivery address is the same as billing address</label>
 			</div>
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>

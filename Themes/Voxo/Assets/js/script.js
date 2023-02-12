@@ -972,7 +972,7 @@ $(document).ready(function() {
 			}, 400);
 		});
 	/**
-	 * Payment address dropdowns
+	 * Payment address options
 	 */
 		$('.billing-address select').change(function() {
 			if($(this).val() == 0) {
@@ -981,6 +981,13 @@ $(document).ready(function() {
 				$('.newAddress-billing').addClass('d-none');
 			}
 		});
+		 $('.same_billing_delivery').change(function() {
+			 if($(this).val() == 0) {
+				 $('.shipping-address').removeClass('d-none');
+			 } else {
+				 $('.shipping-address').addClass('d-none');
+			 }
+		 });
 		$('.shipping-address select').change(function() {
 			if($(this).val() == 0) {
 				$('.newAddress-billing').removeClass('d-none');
