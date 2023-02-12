@@ -936,6 +936,7 @@ $(document).ready(function() {
 			}
 			// handle the payments through the API
 			function paymentSubmit() {
+				// Get payment form
 				var paymentFrm = $("#paymentFrm").find('input');
 				data = api_key_data + "&";
 				paymentFrm.each(function() {
@@ -945,7 +946,9 @@ $(document).ready(function() {
 				});
 				$.ajax({
 					url: api_url + '/Stripe/',
-					data: data,
+					data: {
+						'api_key': api_key,
+					},
 					type: 'PUT',
 					xhrFields: {
 						withCredentials: true,
