@@ -66,7 +66,8 @@
 		 * 
 		 */
 			public function uploadAddress($uid, $number,  $address1, $address2, $town, $county, $country, $postcode) {
-				$this->Execute(print(sprintf("SELECT COUNT(*) FROM `User addresses` WHERE `uid`=%s AND `number_name`='%s' AND `line_1`='%s' AND `line_2`='%s' AND `town`='%s' AND `county`='%s' AND `country`='%s' AND `postcode`='%s'", $uid, $number, $address1, $address2, $town, $county, $country, $postcode)), 2);
+				if($this->Execute(sprintf("SELECT COUNT(*) FROM `User addresses` WHERE `uid`=%s AND `number_name`='%s' AND `line_1`='%s' AND `line_2`='%s' AND `town`='%s' AND `county`='%s' AND `country`='%s' AND `postcode`='%s'", $uid, $number, $address1, $address2, $town, $county, $country, $postcode), 2)[0] == 0) {
+					print_r('here');
 			}
 		/** getAddressID
 		 * 
