@@ -9,7 +9,11 @@
 						$items = DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `UID`=%s ORDER BY `ID` ASC", $userdata['ID']));
 						foreach($items as $item) {
 							$value = $item['ID'];
-							$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'];
+							if($item['Name'] != '') {
+								$name = $item['Name'];
+							} else {
+								$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'];
+							}
 							print(sprintf('
 								<option value="%s">%s</option>
 							', $value, $name));
