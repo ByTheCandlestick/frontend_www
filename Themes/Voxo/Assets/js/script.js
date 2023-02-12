@@ -756,6 +756,7 @@ $(document).ready(function() {
 			lookup(elem) {
 				if (address.searchTimer) clearTimeout(address.searchTimer);
 
+				console.log(elem);
 				base = elem.closest('.row');
 				postcode = $(elem).val();
 				$(base).find("input.form-control[name=address1],"+
