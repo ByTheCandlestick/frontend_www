@@ -53,12 +53,12 @@
 		 * 
 		 * 
 		 */
-			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus, $last4, $exp_M, $exp_Y) {
+			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus, $network, $last4, $exp_M, $exp_Y) {
 				$paidAmount = $paidAmount / 100;
 				$this->Execute(
 					sprintf(
 						"INSERT INTO `Transactions`
-							(`Transaction ID`,	`Type`,	 `Status`,	`Invoice ID`,	`Charge ID`, `Subtotal`, `Processing Fees`,	`Tax`,	`Deposit`, `Currency`,	`Notes`, `UID`,	`Name`, `Email`, `Phone`,	`Items`, `Ship to`,	`Shipping by`,	`Billing address`, `Card type`,	`Last 4`,	`Expires month`, `Expires year`, `Modified`, `Created`)
+							(`Transaction ID`,	`Type`,	 `Status`,	`Invoice ID`,	`Charge ID`, `Subtotal`, `Processing Fees`,	`Tax`,	`Deposit`, `Currency`,	`Notes`, `UID`,	`Name`, `Email`, `Phone`,	`Items`, `Ship to`,	`Shipping by`,	`Billing address`, `Card network`,	`Last 4`,	`Expires month`, `Expires year`, `Modified`, `Created`)
 						VALUES
 							('%s',				'%s',	 '%s',		'%s',			'%s',		 '%s',		 '%s',				'%s',	'%s',		'%s',		'%s',	 '%s',	'%s',	'%s',	 '%s',		'%s',	 '%s',		'%s',			'%s',				'%s'		'%s'		'%s',			 '%s',			 now(),		 now())",
 							$txn,
@@ -79,7 +79,7 @@
 							$items,
 							'',
 							$shipping,
-							$cardType,
+							$network,
 							$address_id,
 							$last4,
 							$exp_M,
