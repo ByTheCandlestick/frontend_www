@@ -15,7 +15,7 @@
 								if($item['Name'] != '') {
 									$name = $item['Name'];
 								} else {
-									$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'];
+									$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'].', '.$item['postcode'];
 								}
 								print(sprintf('
 									<option value="%s">%s</option>
@@ -130,7 +130,7 @@
 								if($item['Name'] != '') {
 									$name = $item['Name'];
 								} else {
-									$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'];
+									$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'].', '.$item['postcode'];
 								}
 								print(sprintf('
 									<option value="%s">%s</option>
