@@ -3,7 +3,7 @@
 		<div class="mb-3 px-3 px-lg-3 col-lg-10">
 			<h2>Billing Address</h2>
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>
-				<div class="row">
+				<div class="row billing-address d-none">
 					<div class="form-floating py-1">
 						<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
 							<option value="-1" selected>Please select an address</option>
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 			<?} else { ?>
-				<div class="row">
+				<div class="row billing-address d-none">
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
 							<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>
@@ -87,7 +87,7 @@
 				<label class="form-check-label" for="same_billing_delivery">Delivery address is the same as billing address</label>
 			</div>
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>
-				<div class="row">
+				<div class="row shipping-address d-none">
 					<div class="form-floating py-1">
 						<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
 							<option value="-1" selected>Please select an address</option>
@@ -110,7 +110,7 @@
 					</div>
 				</div>
 			<?} else { ?>
-				<div class="row">
+				<div class="row shipping-address d-none">
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
 							<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>
