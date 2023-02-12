@@ -43,7 +43,7 @@
 							<label for="floatingInput-number">House number / name *</label>
 						</div>
 						<div class="form-floating mb-3 ps-1 col-12 col-lg-5">
-							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
+							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" onKeyDown="address.lookup(this)" required>
 							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
 					</div>
@@ -98,7 +98,7 @@
 							<label for="floatingInput-number">House number / name *</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-5">
-							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
+							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" onKeyDown="address.lookup(this)" required>
 							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
 					</div>
@@ -182,7 +182,7 @@
 							<label for="floatingInput-number">House number / name *</label>
 						</div>
 						<div class="form-floating mb-3 ps-1 col-12 col-lg-5">
-							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
+							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" onKeyDown="address.lookup(this)" required>
 							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
 					</div>
@@ -237,7 +237,7 @@
 							<label for="floatingInput-number">House number / name *</label>
 						</div>
 						<div class="form-floating mb-3 px-2 col-12 col-lg-5">
-							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
+							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" onKeyDown="address.lookup(this)" required>
 							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
 					</div>
