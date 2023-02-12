@@ -997,6 +997,7 @@ $(document).ready(function() {
 	 */
 		$(window).bind('beforeunload', () => {
 			newURI = document.activeElement.href;
+			console.log(newURI);
 			$('.preloader-container').fadeIn();
 			if (newURI.match("^mailto") ||
 				newURI.match("^tel")) {
