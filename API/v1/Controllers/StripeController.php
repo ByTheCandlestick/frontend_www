@@ -91,6 +91,7 @@
 										$invoice_number .= '0';
 									}
 									$invoice_number .=$inv_counts;
+									print_r($chargeJson);
 									$mdl_stripe->uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping = 0, $address_id, $price, $chargeJson['amount'], $chargeJson['application_fee_amount'], $chargeJson['currency'], $status = 1, $chargeJson['balance_transaction'], $chargeJson['id'], $chargeJson['status']);
 									$payment_id = $conn->insert_id;
 								// Empty users cart
