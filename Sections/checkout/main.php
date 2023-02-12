@@ -278,7 +278,7 @@
 		</div>
 	</div>
 	<div class="col-lg-6">
-		<div class="mb-3 col-lg-8 offset-lg-2">
+		<div class="mb-3 col-lg-8 offset-lg-2 position-sticky" style="top: 90px;">
 			<div class="card-container">
 				<div class="mGrid">
 					<div class="total">
