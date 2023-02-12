@@ -133,7 +133,7 @@
 						<p><?=(date('dS F Y', strtotime($invoice['Estimated delivery date'])))?></p>
 					</div>
 					<div class="col-6 col-md-3 pb-3">
-						<h5>Shipped:</h5>
+						<h5></h5>
 						<p></p>
 					</div>
 					<div class="col-6 col-md-3 pb-3">
