@@ -983,9 +983,9 @@ $(document).ready(function() {
 		});
 		 $('.same_billing_delivery').change(function() {
 			 if($(this).is(':checked')) {
-				 $('.shipping-address').removeClass('d-none');
+				$('.shipping-address').addClass('d-none');
 			 } else {
-				 $('.shipping-address').addClass('d-none');
+				$('.shipping-address').removeClass('d-none');
 			 }
 		 });
 		$('.shipping-address select').change(function() {
