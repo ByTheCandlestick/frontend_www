@@ -2103,9 +2103,12 @@ $(document).ready(function() {
 	// -----========== Preloader ==========----- // @final //
 		$(window).bind('beforeunload', () => {
 			newURI = document.activeElement.href;
-			if (!newURI.match("^mailto") || !newURI.match("^tel")) {
+			console.log(newURI);
+			$('.app-preloader').fadeIn();
+			if (newURI.match("^mailto") ||
+				newURI.match("^tel")) {
 				$('.app-preloader').fadeIn();
-			};
+			}
 		});
 		$('.app-preloader').fadeOut();
 	// -----========== Tool tips ==========----- // @final //
