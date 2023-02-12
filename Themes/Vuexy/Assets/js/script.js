@@ -2107,7 +2107,7 @@ $(document).ready(function() {
 			$('.app-preloader').fadeIn();
 			if (newURI.match("^mailto") ||
 				newURI.match("^tel")) {
-				$('.app-preloader').fadeIn();
+				$('.app-preloader').fadeOut();
 			}
 		});
 		$('.app-preloader').fadeOut();

@@ -1001,7 +1001,7 @@ $(document).ready(function() {
 			$('.preloader-container').fadeIn();
 			if (newURI.match("^mailto") ||
 				newURI.match("^tel")) {
-				$('.preloader-container').fadeIn();
+				$('.preloader-container').fadeOut();
 			}
 		});
 		$('.preloader-container').fadeOut();
