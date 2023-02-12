@@ -222,11 +222,19 @@
 			</div>
 
 			<div class="col-12">
-				<h5>Stripe</h5>
+				<h5>Financials</h5>
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 						<a name="charge_id" class="form-control border-0" id="floatingInput" href="/Transactions/View/<? print($invoice['Transaction ID'])?>"><?=$invoice['Transaction ID']?></a>
 						<label for="floatingInput">Transaction ID</label>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
+						<input type="text" class="form-control" id="floatingInput" value="************<? print($invoice['Last 4'])?>" disabled>
+						<label for="floatingInput">Card number</label>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 form-floating mb-3">
+						<input type="text" class="form-control" id="floatingInput" value="<?=($invoice['Expires month'].'/'.$invoice['Expires year'])?>" disabled>
+						<label for="floatingInput">Expires</label>
 					</div>
 				</div>
 			</div>
