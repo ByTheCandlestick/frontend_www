@@ -968,6 +968,7 @@ $(document).ready(function() {
 					"input.form-control[name=town],"+
 					"input.form-control[name=county],"+
 					"input.form-control[name=country]").val("")
+					console.log(this);
 				address.lookup(this, $(this).find('input[name=postcode]').val());
 			}, 400);
 		});
