@@ -99,7 +99,7 @@
 		<!-- Section Header -->
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1></h1>
+				<h1> Order information</h1>
 			</div>
 			<div class="col-12 col-md-6 text-md-end">
 				<div class="row">
