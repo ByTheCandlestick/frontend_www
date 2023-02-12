@@ -982,7 +982,7 @@ $(document).ready(function() {
 			}
 		});
 		 $('.same_billing_delivery').change(function() {
-			 if($(this).val() == 0) {
+			 if($(this).is(':checked')) {
 				 $('.shipping-address').removeClass('d-none');
 			 } else {
 				 $('.shipping-address').addClass('d-none');
