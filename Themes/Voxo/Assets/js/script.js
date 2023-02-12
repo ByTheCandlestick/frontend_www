@@ -996,8 +996,10 @@ $(document).ready(function() {
 	 * PRELOADER
 	 */
 		$(window).bind('beforeunload', () => {
-			console.log(document.activeElement.href);
-			$('.preloader-container').fadeIn();
+			newURI = document.activeElement.href;
+			if (!newURI.match("^mailto:") || !newURI.match("^tel:")) {
+				$('.preloader-container').fadeIn();
+			}
 		});
 		$('.preloader-container').fadeOut();
 

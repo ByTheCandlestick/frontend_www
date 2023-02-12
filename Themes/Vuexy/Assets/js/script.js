@@ -2101,7 +2101,12 @@ $(document).ready(function() {
 	// -----========== Alerts on load ==========----- // @final //
 		if(misc.getQueryParams('al_ty') != null && misc.getQueryParams('al_tx') != null) alert.simple(decodeURIComponent(misc.getQueryParams('al_tx')), decodeURIComponent(misc.getQueryParams('al_ty')));
 	// -----========== Preloader ==========----- // @final //
-		$(window).bind('beforeunload', () => {$('.app-preloader').fadeIn();});
+		$(window).bind('beforeunload', () => {
+			newURI = document.activeElement.href;
+			if (!newURI.match("^mailto:") || !newURI.match("^tel:")) {
+				$('.app-preloader').fadeIn();
+			};
+		});
 		$('.app-preloader').fadeOut();
 	// -----========== Tool tips ==========----- // @final //
 		$('[data-toggle="tooltip"]').tooltip();
