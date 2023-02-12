@@ -758,15 +758,13 @@ $(document).ready(function() {
 
 				base = elem.closest('.row');
 				postcode = $(elem).val();
+				$(base).find("input.form-control[name=address1],"+
+					"input.form-control[name=address2],"+
+					"input.form-control[name=town],"+
+					"input.form-control[name=county],"+
+					"input.form-control[name=country]").val("");
 
 				address.searchTimer = setTimeout(function() {
-					$(base+"input.form-control[name=address1],").val("");
-					$(base+"input.form-control[name=address2],").val("");
-					$(base+"input.form-control[name=town],").val("");
-					$(base+"input.form-control[name=county],").val("");
-					$(base+"input.form-control[name=country]").val("");
-
-
 					$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 						if (json["status"] === "OK") {
 							// For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
