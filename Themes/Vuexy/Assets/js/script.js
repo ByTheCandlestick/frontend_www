@@ -2105,8 +2105,8 @@ $(document).ready(function() {
 			newURI = document.activeElement.href;
 			console.log(newURI);
 			$('.app-preloader').fadeIn();
-			if (newURI.match("^mailto") ||
-				newURI.match("^tel")) {
+			if (newURI.startsWith("mailto") ||
+				newURI.startsWith("tel")) {
 				$('.app-preloader').fadeOut();
 			}
 		});
