@@ -754,18 +754,18 @@ $(document).ready(function() {
 		address = {
 			searchTimer: null,
 			lookup(item) {
-				
-				if (address.searchTimer) {
-					clearTimeout(address.searchTimer);
-				}
-				address.searchTimer = setTimeout(function() {
-					$(	"input.form-control[name=address1],"+
-						"input.form-control[name=address2],"+
-						"input.form-control[name=town],"+
-						"input.form-control[name=county],"+
-						"input.form-control[name=country]").val("")
+				if (address.searchTimer) clearTimeout(address.searchTimer);
 
-						postcode = $(item).val();
+				base = elem.closest('.row');
+				postcode = $(item).val();
+
+				address.searchTimer = setTimeout(function() {
+					$(base+"input.form-control[name=address1],").val("");
+					$(base+"input.form-control[name=address2],").val("");
+					$(base+"input.form-control[name=town],").val("");
+					$(base+"input.form-control[name=county],").val("");
+					$(base+"input.form-control[name=country]").val("");
+
 
 					$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 						if (json["status"] === "OK") {
@@ -776,23 +776,23 @@ $(document).ready(function() {
 									case "postal_code":
 										break;
 									case "route":
-										$(item).find("input[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
+										$(base).find("input[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
 										break;
 									case "postal_town":
-										$(item).find("input[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
+										$(base).find("input[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
 										break;
 									case "locality":
-										$(item).find("input[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
+										$(base).find("input[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
 										break;
 									case "administrative_area_level_2":
-										$(item).find("input[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
+										$(base).find("input[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
 										break;
 									case "country":
-										$(item).find("input[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
+										$(base).find("input[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
 										break;
 									default: 
-										if($(item).find("input[name=town]").val() === $(item).find("input[name=address2]").val()){
-											$(item).find("input[name=address2]").val("");
+										if($(base).find("input[name=town]").val() === $(base).find("input[name=address2]").val()){
+											$(base).find("input[name=address2]").val("");
 										}
 										return;
 								}
@@ -836,7 +836,6 @@ $(document).ready(function() {
 						alerts.icon("exclamation", "An error occurred, Please try again", "warning");
 					});
 				}, 400);
-
 			},
 			enterManual() {
 
