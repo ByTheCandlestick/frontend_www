@@ -81,12 +81,6 @@
 						// Confirm and upload the transaction info to the DB
 							if ($chargeJson['amount_refunded'] == 0 && empty($chargeJson['failure_code']) && $chargeJson['paid'] == 1 && $chargeJson['captured'] == 1) {
 								// Transaction details  
-									$transactionID = $chargeJson['balance_transaction'];
-									$paidAmount = $chargeJson['amount'];
-									$paidCurrency = $chargeJson['currency'];
-									$payment_status = $chargeJson['status'];
-									$fees = $chargeJson['application_fee_amount'];
-									$price_tax	= round(($paidAmount - $fees) * 0.2, 2);
 								// Save address info
 									$mdl_stripe->uploadAddress($uid, $number, $address1, $address2, $town, $county, $country, $postcode);
 									$address_id = $mdl_stripe->getAddressID($uid, $number, $address1, $address2, $town, $county, $country, $postcode);
@@ -97,7 +91,7 @@
 										$invoice_number .= '0';
 									}
 									$invoice_number .=$inv_counts;
-									$mdl_stripe->uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping = 0, $address_id, $price, $price_tax, $paidAmount, $fees, $currency, $status = 1, $transactionID, $chargeJson['id'], $payment_status);
+									$mdl_stripe->uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping = 0, $address_id, $price, $chargeJson['amount'], $chargeJson['application_fee_amount'], $chargeJson['currency'], $status = 1, $chargeJson['balance_transaction'], $chargeJson['id'], $chargeJson['status']);
 									$payment_id = $conn->insert_id;
 								// Empty users cart
 									if(!$mdl_stripe->emptyCart($uid)){
@@ -110,7 +104,7 @@
 										));
 									}
 								// Check if payment was successful
-									if ($payment_status == 'succeeded') {
+									if ($chargeJson['status'] == 'succeeded') {
 										exit($this->sendOutput( // SUCCESS - Return invoice number
 											Json_encode(array(
 												'status' => 'success',

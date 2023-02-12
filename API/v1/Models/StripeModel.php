@@ -53,7 +53,7 @@
 		 * 
 		 * 
 		 */
-			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $price_tax, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus) {
+			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus) {
 				$paidAmount = $paidAmount / 100;
 				$this->Execute(
 					sprintf(
@@ -68,7 +68,7 @@
 							$chg,
 							$price,
 							$fees,
-							$price_tax,
+							(round(($paidAmount - $fees)*0.2, 2)),
 							$paidAmount,
 							$currency,
 							$notes,
