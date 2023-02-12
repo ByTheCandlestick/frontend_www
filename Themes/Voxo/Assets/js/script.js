@@ -753,11 +753,11 @@ $(document).ready(function() {
 	// Address
 		address = {
 			searchTimer: null,
-			lookup(item) {
+			lookup(elem) {
 				if (address.searchTimer) clearTimeout(address.searchTimer);
 
 				base = elem.closest('.row');
-				postcode = $(item).val();
+				postcode = $(elem).val();
 
 				address.searchTimer = setTimeout(function() {
 					$(base+"input.form-control[name=address1],").val("");
