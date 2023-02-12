@@ -958,7 +958,7 @@ $(document).ready(function() {
 	/**
 	 * ADDRESS SEARCH
 	 */
-		$("input.form-control[name=postcode]").on('keydown', function() {
+		$("input.form-control[name=postcode]").on('keydown', function(event) {
 			if (address.searchTimer) {
 				clearTimeout(address.searchTimer);
 			}
@@ -968,7 +968,7 @@ $(document).ready(function() {
 					"input.form-control[name=town],"+
 					"input.form-control[name=county],"+
 					"input.form-control[name=country]").val("")
-					console.log($(this));
+					console.log(event);
 				address.lookup(this, $(this).find('input[name=postcode]').val());
 			}, 400);
 		});
