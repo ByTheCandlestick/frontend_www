@@ -958,7 +958,6 @@ $(document).ready(function() {
 	/**
 	 * ADDRESS SEARCH
 	 */
-		
 		$("input.form-control[name=postcode]").on('keydown', function() {
 			if (address.searchTimer) {
 				clearTimeout(address.searchTimer);
@@ -972,7 +971,23 @@ $(document).ready(function() {
 				address.lookup();
 			}, 400);
 		});
-
+	/**
+	 * Payment address dropdowns
+	 */
+		$('.billing-address input').change(function() {
+			if($(this).val == 0) {
+				$('.newAddress-billing').addClass('d-none');
+			} else {
+				$('.newAddress-billing').removeClass('d-none');
+			}
+		});
+		$('.shipping-address input').change(function() {
+			if($(this).val == 0) {
+				$('.newAddress-billing').addClass('d-none');
+			} else {
+				$('.newAddress-billing').removeClass('d-none');
+			}
+		 });
 	/**
 	 * Preloader
 	 */
