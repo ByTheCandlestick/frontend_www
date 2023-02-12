@@ -229,7 +229,7 @@
 						<label for="floatingInput">Transaction ID</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-1 form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Card type'])?>" disabled>
+						<input type="text" class="form-control" id="floatingInput" value="<? print($invoice['Card network'])?>" disabled>
 						<label for="floatingInput">Card network</label>
 					</div>
 					<div class="col-12 col-md-6 col-lg-2 form-floating mb-3">
