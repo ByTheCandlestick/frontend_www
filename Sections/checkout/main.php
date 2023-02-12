@@ -1,8 +1,8 @@
 <form id="paymentFrm" class="row" action="" method="POST">
 	<div class="col-lg-5">
 		<div class="mb-3 px-3 px-lg-3 col-lg-10">
+			<h2>Billing Address</h2>
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>
-				<h2>Billing Address</h2>
 				<div class="row">
 					<div class="form-floating py-1">
 						<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
@@ -26,7 +26,6 @@
 					</div>
 				</div>
 			<?} else { ?>
-				<h2>Billing Address</h2>
 				<div class="row">
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
@@ -82,12 +81,12 @@
 					</div>
 				</div>
 			<?} ?>
+			<h2>Shipping Address</h2>
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="" id="same_billing_delivery" checked>
 				<label class="form-check-label" for="same_billing_delivery">Delivery address is the same as billing address</label>
 			</div>
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>
-				<h2>Shipping Address</h2>
 				<div class="row">
 					<div class="form-floating py-1">
 						<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
@@ -111,7 +110,6 @@
 					</div>
 				</div>
 			<?} else { ?>
-				<h2>Shipping Address</h2>
 				<div class="row">
 					<div class="row">
 						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
