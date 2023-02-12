@@ -138,7 +138,10 @@
 					</div>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Delivery mode: </h5>
-						<p><?=($invoice['Shipping by'])?></p>
+						<?
+							$deliveryMode = MySQLi_fetch_row(DB_Query(sprintf("SELECT `Name` FROM `Product shippings` WHERE `ID`='%s'", $invoice['Shipping by'])))[0];
+						?>
+						<p><?=($deliveryMode)?></p>
 					</div>
 				</div>
 				<div class="col-12 order-progress-stepper">
