@@ -66,23 +66,13 @@
 		 * 
 		 */
 			public function uploadAddress($uid, $number,  $address1, $address2, $town, $county, $country, $postcode) {
-				$this->Execute(print("	INSERT INTO `User addresses` (`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`)
-											SELECT `uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`
-											FROM `User addresses`
-											WHERE NOT EXISTS(
-												SELECT *
-												FROM `User addresses`
-												WHERE
-													`uid`=$uid AND
-													`number_name`='$number' AND
-													`line_1`='$address1' AND
-													`line_2`='$address2' AND
-													`town`='$town' AND
-													`county`='$county' AND
-													`country`='$country' AND
-													`postcode`='$postcode'
-												LIMIT 1
-											);"), 1);
+				$this->Execute(print("	INSERT INTO `User addresses`(`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`)
+											SELECT NewRow
+											FROM ( VALUES ($uid, '$number', '$address1', '$address2', '$town', '$county', '$country', '$postcode'))
+											AS NewRow
+										WHERE NOT EXISTS(	SELECT 1
+															FROM   `User addresses` AS Tbl
+															WHERE  Tbl.number_name = NewNames.number_name );"), 1);
 			}
 		/** getAddressID
 		 * 
