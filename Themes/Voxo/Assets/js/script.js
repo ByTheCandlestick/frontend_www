@@ -765,6 +765,8 @@ $(document).ready(function() {
 						"input.form-control[name=county],"+
 						"input.form-control[name=country]").val("")
 
+						postcode = $(this).val();
+
 					$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 						if (json["status"] === "OK") {
 							// For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
