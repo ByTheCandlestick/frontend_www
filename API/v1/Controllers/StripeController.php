@@ -86,7 +86,7 @@
 									$paidCurrency = $chargeJson['currency'];
 									$payment_status = $chargeJson['status'];
 									$fees = $chargeJson['application_fee_amount'];
-									$price_tax	= round(($price - $fees) * 0.2, 2);
+									$price_tax	= round(($paidAmount - $fees) * 0.2, 2);
 								// Save address info
 									$mdl_stripe->uploadAddress($uid, $number, $address1, $address2, $town, $county, $country, $postcode);
 									$address_id = $mdl_stripe->getAddressID($uid, $number, $address1, $address2, $town, $county, $country, $postcode);
