@@ -764,77 +764,77 @@ $(document).ready(function() {
 						"input.form-control[name=town],"+
 						"input.form-control[name=county],"+
 						"input.form-control[name=country]").val("")
-					address.lookup(this, $(event.target).find('input[name=postcode]').val());
-				}, 400);
 
-				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
-					if (json["status"] === "OK") {
-						// For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
-						json["results"][0]["address_components"].forEach(checkDataAvailable);
-						function checkDataAvailable(data){
-							switch(data["types"][0]) {
-								case "postal_code":
+					$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
+						if (json["status"] === "OK") {
+							// For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
+							json["results"][0]["address_components"].forEach(checkDataAvailable);
+							function checkDataAvailable(data){
+								switch(data["types"][0]) {
+									case "postal_code":
+										break;
+									case "route":
+										$(item).find("input[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
+										break;
+									case "postal_town":
+										$(item).find("input[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
+										break;
+									case "locality":
+										$(item).find("input[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
+										break;
+									case "administrative_area_level_2":
+										$(item).find("input[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
+										break;
+									case "country":
+										$(item).find("input[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
+										break;
+									default: 
+										if($(item).find("input[name=town]").val() === $(item).find("input[name=address2]").val()){
+											$(item).find("input[name=address2]").val("");
+										}
+										return;
+								}
+							}
+							// Display the JSON structure of this data on the page purely for use here on codepen
+							var json = JSON.stringify(json, null, 2);
+							$(".jsonOutput").empty();
+							$(".jsonOutput").append(json);
+						} else {
+							console.log("There was an error with the Google API and no data was returned");
+							// Add gracefull degradation for following error codes in the APP
+							// https://developers.google.com/maps/documentation/geocoding/intro#StatusCodes
+							// ZERO_RESULTS
+							// OVER_QUERY_LIMIT
+							// REQUEST_DENIED
+							// INVALID_REQUEST
+							// UNKNOWN_ERROR
+							switch(json["status"]) {
+								case "ZERO_RESULTS":
+									console.log("No results found");
 									break;
-								case "route":
-									$(item).find("input[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
+								case "OVER_QUERY_LIMIT":
+									console.log("Over alloted query limit");
 									break;
-								case "postal_town":
-									$(item).find("input[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
+								case "REQUEST_DENIED":
+									console.log("Access blocked");
 									break;
-								case "locality":
-									$(item).find("input[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
+								case "INVALID_REQUEST":
+									console.log("Query address missing");
 									break;
-								case "administrative_area_level_2":
-									$(item).find("input[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
-									break;
-								case "country":
-									$(item).find("input[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
+								case "UNKNOWN_ERROR":
+									console.log("Google server error");
 									break;
 								default: 
-									if($(item).find("input[name=town]").val() === $(item).find("input[name=address2]").val()){
-										$(item).find("input[name=address2]").val("");
-									}
 									return;
-							}
+								}
+						
 						}
-						// Display the JSON structure of this data on the page purely for use here on codepen
-						var json = JSON.stringify(json, null, 2);
-						$(".jsonOutput").empty();
-						$(".jsonOutput").append(json);
-					} else {
-						console.log("There was an error with the Google API and no data was returned");
-						// Add gracefull degradation for following error codes in the APP
-						// https://developers.google.com/maps/documentation/geocoding/intro#StatusCodes
-						// ZERO_RESULTS
-						// OVER_QUERY_LIMIT
-						// REQUEST_DENIED
-						// INVALID_REQUEST
-						// UNKNOWN_ERROR
-						switch(json["status"]) {
-							case "ZERO_RESULTS":
-								console.log("No results found");
-								break;
-							case "OVER_QUERY_LIMIT":
-								console.log("Over alloted query limit");
-								break;
-							case "REQUEST_DENIED":
-								console.log("Access blocked");
-								break;
-							case "INVALID_REQUEST":
-								console.log("Query address missing");
-								break;
-							case "UNKNOWN_ERROR":
-								console.log("Google server error");
-								break;
-							default: 
-								return;
-							}
-					
-					}
-				}).fail(() => {
-					console.log("There was a network error and no data was returned");
-					alerts.icon("exclamation", "An error occurred, Please try again", "warning");
-				});
+					}).fail(() => {
+						console.log("There was a network error and no data was returned");
+						alerts.icon("exclamation", "An error occurred, Please try again", "warning");
+					});
+				}, 400);
+
 			},
 			enterManual() {
 
