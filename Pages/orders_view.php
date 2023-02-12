@@ -125,12 +125,12 @@
 				<div class="mb-2 row p-2 border text-center">
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Order date: </h5>
-						<p><?=(date('dS F Y', strtotime($invoice['Created'])))?></p>
+						<p><?=(date('dS F y', strtotime($invoice['Created'])))?></p>
 					</div>
 					<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Estimated delivery date: </h5>
-						<p><?=(date('dS F Y', strtotime($invoice['Estimated delivery date'])))?></p>
+						<p><?=(date('dS F y', strtotime($invoice['Estimated delivery date'])))?></p>
 					</div>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Shipped:</h5>
