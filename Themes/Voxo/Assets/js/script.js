@@ -975,14 +975,14 @@ $(document).ready(function() {
 	 * Payment address dropdowns
 	 */
 		$('.billing-address input').change(function() {
-			if($(this).val == 0) {
+			if($('.billing-address input').val == 0) {
 				$('.newAddress-billing').addClass('d-none');
 			} else {
 				$('.newAddress-billing').removeClass('d-none');
 			}
 		});
 		$('.shipping-address input').change(function() {
-			if($(this).val == 0) {
+			if($('.shipping-address input').val == 0) {
 				$('.newAddress-billing').addClass('d-none');
 			} else {
 				$('.newAddress-billing').removeClass('d-none');
