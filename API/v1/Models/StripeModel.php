@@ -79,6 +79,7 @@
 							$items,
 							'',
 							$shipping,
+							$cardType,
 							$address_id,
 							$last4,
 							$exp_M,
