@@ -753,8 +753,8 @@ $(document).ready(function() {
 	// Address
 		address = {
 			searchTimer: null,
-			lookup() {
-				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + $("input[name=postcode]").val() + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
+			lookup(item, postcode) {
+				$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 					if (json["status"] === "OK") {
 						// For each address field check if the values we need are available and if they are add the text they contain into the relevant field in the UI
 						json["results"][0]["address_components"].forEach(checkDataAvailable);
@@ -763,23 +763,23 @@ $(document).ready(function() {
 								case "postal_code":
 									break;
 								case "route":
-									$("input.form-control[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
+									$(item).find("input[name=address1]").val(json["results"][0]["address_components"][1]["long_name"]);
 									break;
 								case "postal_town":
-									$("input.form-control[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
+									$(item).find("input[name=town]").val(json["results"][0]["address_components"][2]["long_name"]);
 									break;
 								case "locality":
-									$("input.form-control[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
+									$(item).find("input[name=address2]").val(json["results"][0]["address_components"][3]["long_name"]);
 									break;
 								case "administrative_area_level_2":
-									$("input.form-control[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
+									$(item).find("input[name=county]").val(json["results"][0]["address_components"][4]["long_name"]);
 									break;
 								case "country":
-									$("input.form-control[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
+									$(item).find("input[name=country]").val(json["results"][0]["address_components"][5]["long_name"]);
 									break;
 								default: 
-									if($("input.form-control[name=town]").val() === $("input.form-control[name=address2]").val()){
-										$("input.form-control[name=address2]").val("");
+									if($(item).find("input[name=town]").val() === $(item).find("input[name=address2]").val()){
+										$(item).find("input[name=address2]").val("");
 									}
 									return;
 							}
@@ -968,7 +968,7 @@ $(document).ready(function() {
 					"input.form-control[name=town],"+
 					"input.form-control[name=county],"+
 					"input.form-control[name=country]").val("")
-				address.lookup();
+				address.lookup(this, $(this).find('input[name=postcode]').val());
 			}, 400);
 		});
 	/**
