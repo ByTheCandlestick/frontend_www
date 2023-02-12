@@ -969,14 +969,7 @@ $(document).ready(function() {
 			}
 		}
 	/**
-	 * ADDRESS SEARCH
-
-		$("input").on('keydown', function(event) {
-			if($(event.target).attr('name') == 'postcode') {
-			}
-		});
-	/**
-	 * Payment address options
+	 * ADDRESS OPTIONS
 	 */
 		$('.billing-address select').change(function() {
 			if($(this).val() == 0) {
@@ -1000,9 +993,10 @@ $(document).ready(function() {
 			}
 		 });
 	/**
-	 * Preloader
+	 * PRELOADER
 	 */
-		$(window).bind('beforeunload', function() {
+		$(window).bind('beforeunload', () => {
+			alert('document.activeElement.href');
 			$('.preloader-container').fadeIn();
 		});
 		$('.preloader-container').fadeOut();
