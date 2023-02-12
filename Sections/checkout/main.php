@@ -150,7 +150,7 @@
 						<?
 							$items = DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `UID`=%s ORDER BY `ID` ASC", $userdata['ID']));
 							foreach($items as $item) {
-								$value = $item['ID'];
+								$value = $item['id'];
 								if($item['Name'] != '') {
 									$name = $item['Name'];
 								} else {
