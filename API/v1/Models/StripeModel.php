@@ -67,7 +67,7 @@
 		 */
 			public function uploadAddress($uid, $number,  $address1, $address2, $town, $county, $country, $postcode) {
 				if($this->Execute(sprintf("SELECT COUNT(*) FROM `User addresses` WHERE `uid`=%s AND `number_name`='%s' AND `line_1`='%s' AND `line_2`='%s' AND `town`='%s' AND `county`='%s' AND `country`='%s' AND `postcode`='%s'", $uid, $number, $address1, $address2, $town, $county, $country, $postcode), 2)[0] == 0) {
-					return $this->Execute(sprintf("INSERT INTO `User accounts`(`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`) VALUES( %s, '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $uid, $number, $address1, $address2, $town, $county, $country, $postcode), 1);
+					return $this->Execute(print(sprintf("INSERT INTO `User accounts`(`uid`, `number_name`, `line_1`, `line_2`, `town`, `county`, `country`, `postcode`) VALUES( %s, '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $uid, $number, $address1, $address2, $town, $county, $country, $postcode)), 1);
 				}
 			}
 		/** getAddressID
