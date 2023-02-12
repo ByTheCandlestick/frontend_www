@@ -5,8 +5,16 @@
 				<h2>Shipping Address</h2>
 				<div class="form-floating py-1">
 					<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
-						<option value="0" selected="">--</option>
-						<option value="1">yellow</option>
+					<?
+						$items = DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `UID`=%s ORDER BY `ID` ASC", $userdata['ID']));
+						foreach($items as $item) {
+							$value = $item['ID'];
+							$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'];
+							print(sprintf('
+								<option value="%s">%s</option>
+							', $value, $name));
+						}
+					?>
 					</select>
 					<label for="select-address">Please select your address</label>
 				</div>
