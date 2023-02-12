@@ -765,7 +765,7 @@ $(document).ready(function() {
 						"input.form-control[name=county],"+
 						"input.form-control[name=country]").val("")
 
-						postcode = $(this).val();
+						postcode = $(item).val();
 
 					$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "&key=AIzaSyA14e6x_MFMOMI22v2HsBd6xWRqVSXcWd8").done((json) => {
 						if (json["status"] === "OK") {
