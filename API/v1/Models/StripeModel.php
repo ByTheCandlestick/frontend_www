@@ -55,29 +55,33 @@
 		 */
 			public function uploadSalesOrder($invoice_number, $uid, $name, $email, $phone, $items, $notes, $shipping, $address_id, $price, $price_tax, $paidAmount, $fees, $currency, $status, $txn, $chg, $paymentStatus) {
 				$paidAmount = $paidAmount / 100;
-				$this->Execute(sprintf("INSERT INTO `Transactions`
-											(`Transaction ID`,	`Type`,	 `Status`,	`Invoice ID`,	`Charge ID`, `Subtotal`, `Processing Fees`,	`Tax`,	`Deposit`, `Currency`,	`Notes`, `UID`,	`Name`, `Email`, `Phone`,	`Items`, `Ship to`,	`Shipping by`,	`Billing address`,	`Modified`,	`Created`)
-										VALUES
-											('%s',				'%s',	 '%s',		'%s',			'%s',		 '%s',		 '%s',				'%s',	'%s',		'%s',		'%s',	 '%s',	'%s',	'%s',	 '%s',		'%s',	 '%s',		'%s',			'%s',				now(),		now())",
-											$txn,
-											'Order',
-											$paymentStatus,
-											$invoice_number,
-											$chg,
-											$price,
-											$fees,
-											$price_tax,
-											$paidAmount,
-											$currency,
-											$notes,
-											$uid,
-											$name,
-											$email,
-											$phone,
-											$items,
-											'',
-											$shipping,
-											$address_id), 1);
+				$this->Execute(
+					sprintf(
+						"INSERT INTO `Transactions`
+							(`Transaction ID`,	`Type`,	 `Status`,	`Invoice ID`,	`Charge ID`, `Subtotal`, `Processing Fees`,	`Tax`,	`Deposit`, `Currency`,	`Notes`, `UID`,	`Name`, `Email`, `Phone`,	`Items`, `Ship to`,	`Shipping by`,	`Billing address`,	`Modified`,	`Created`)
+						VALUES
+							('%s',				'%s',	 '%s',		'%s',			'%s',		 '%s',		 '%s',				'%s',	'%s',		'%s',		'%s',	 '%s',	'%s',	'%s',	 '%s',		'%s',	 '%s',		'%s',			'%s',				now(),		now())",
+							$txn,
+							'Order',
+							$paymentStatus,
+							$invoice_number,
+							$chg,
+							$price,
+							$fees,
+							$price_tax,
+							$paidAmount,
+							$currency,
+							$notes,
+							$uid,
+							$name,
+							$email,
+							$phone,
+							$items,
+							'',
+							$shipping,
+							$address_id
+					),1
+				);
 			}
 		/** uploadAddress
 		 * 
