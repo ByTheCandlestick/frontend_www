@@ -974,15 +974,15 @@ $(document).ready(function() {
 	/**
 	 * Payment address dropdowns
 	 */
-		$('.billing-address input').change(function() {
-			if($('.billing-address input').val == 0) {
+		$('.billing-address select').change(function() {
+			if($('.billing-address select').val == 0) {
 				$('.newAddress-billing').removeClass('d-none');
 			} else {
 				$('.newAddress-billing').addClass('d-none');
 			}
 		});
-		$('.shipping-address input').change(function() {
-			if($('.shipping-address input').val == 0) {
+		$('.shipping-address select').change(function() {
+			if($('.shipping-address select').val == 0) {
 				$('.newAddress-billing').removeClass('d-none');
 			} else {
 				$('.newAddress-billing').addClass('d-none');
