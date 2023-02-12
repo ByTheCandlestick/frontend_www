@@ -28,11 +28,11 @@
 
 				<div class="row newAddress-billing d-none">
 					<div class="row">
-						<div class="form-floating  my-3 pe-2 col-12 col-lg-6">
+						<div class="form-floating my-3 pe-2 col-12 col-lg-6">
 							<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>
 							<label for="floatingInput-FName">Firstname *</label>
 						</div>
-						<div class="form-floating  my-3 ps-2 col-12 col-lg-6">
+						<div class="form-floating my-3 ps-2 col-12 col-lg-6">
 							<input type="text" name="lastname" class="form-control" id="floatingInput-LName" autocomplete="family-name" required>
 							<label for="floatingInput-LName">Lastname *</label>
 						</div>
@@ -142,80 +142,78 @@
 				<label class="form-check-label" for="same_billing_delivery">Delivery address is the same as billing address</label>
 			</div>
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>
-				<div class="row shipping-address d-none">
-					<div class="form-floating py-1">
-						<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
-							<option value="-1" selected>Please select an address</option>
-							<option value="0"> + New address</option>
-						<?
-							$items = DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `UID`=%s ORDER BY `ID` ASC", $userdata['ID']));
-							foreach($items as $item) {
-								$value = $item['id'];
-								if($item['Name'] != '') {
-									$name = $item['Name'];
-								} else {
-									$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'];
-								}
-								print(sprintf('
-									<option value="%s">%s</option>
-								', $value, $name));
+				<div class="form-floating shipping-address d-none">
+					<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
+						<option value="-1" selected>Please select an address</option>
+						<option value="0"> + New address</option>
+					<?
+						$items = DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `UID`=%s ORDER BY `ID` ASC", $userdata['ID']));
+						foreach($items as $item) {
+							$value = $item['id'];
+							if($item['Name'] != '') {
+								$name = $item['Name'];
+							} else {
+								$name = $item['number_name'].' '.$item['line_1'].', '.$item['town'];
 							}
-						?>
-						</select>
-					</div>
+							print(sprintf('
+								<option value="%s">%s</option>
+							', $value, $name));
+						}
+					?>
+					</select>
+				</div>
 
-					<div class="row newAddress-shipping d-none">
-						<div class="row">
-							<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-								<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>
-								<label for="floatingInput-FName">Firstname *</label>
-							</div>
-							<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-								<input type="text" name="lastname" class="form-control" id="floatingInput-LName" autocomplete="family-name" required>
-								<label for="floatingInput-LName">Lastname *</label>
-							</div>
+				<div class="row newAddress-shipping d-none">
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
+							<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>
+							<label for="floatingInput-FName">Firstname *</label>
 						</div>
-						<div class="row">
-							<div class="form-floating mb-3 px-2 col-12 col-lg-7">
-								<input type="text" name="number" class="form-control" id="floatingInput-number" autocomplete="" required>
-								<label for="floatingInput-number">House number / name *</label>
-							</div>
-							<div class="form-floating mb-3 px-2 col-12 col-lg-5">
-								<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
-								<label for="floatingInput-postcode">Postcode *</label>
-							</div>
+						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
+							<input type="text" name="lastname" class="form-control" id="floatingInput-LName" autocomplete="family-name" required>
+							<label for="floatingInput-LName">Lastname *</label>
 						</div>
-						<div class="row">
-							<div class="form-floating mb-3 px-2 col-12">
-								<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" disabled required>
-								<label for="floatingInput-Addr">Street name</label>
-							</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-12 col-lg-7">
+							<input type="text" name="number" class="form-control" id="floatingInput-number" autocomplete="" required>
+							<label for="floatingInput-number">House number / name *</label>
 						</div>
-						<div class="row">
-							<div class="form-floating mb-3 px-2 col-12 col-lg-6">
-								<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" disabled >
-								<label for="floatingInput-Addr2">District</label>
-							</div>
-							<div class="form-floating mb-3 px-2 col-6">
-								<input type="text" name="town" class="form-control" id="floatingInput-town" disabled required>
-								<label for="floatingInput-town">Town</label>
-							</div>
+						<div class="form-floating mb-3 px-2 col-12 col-lg-5">
+							<input type="text" name="postcode" class="form-control" id="floatingInput-postcode" autocomplete="postal-code" required>
+							<label for="floatingInput-postcode">Postcode *</label>
 						</div>
-						<div class="row">
-							<div class="form-floating mb-3 px-2 col-6">
-								<input type="text" name="county" class="form-control" id="floatingInput-county" disabled required>
-								<label for="floatingInput-county">County</label>
-							</div>
-							<div class="form-floating mb-3 px-2 col-6">
-								<input type="text" name="country" class="form-control" id="floatingInput-country" disabled required>
-								<label for="floatingInput-country">Country</label>
-							</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-12">
+							<input type="text" name="address1" class="form-control" id="floatingInput-Addr1" disabled required>
+							<label for="floatingInput-Addr">Street name</label>
 						</div>
-						<div class="row">
-							<div class="form-floating mb-3 px-2 col-12">
-								<input type="text" name="phone" class="form-control" id="floatingInput-phone" autocomplete="tel" required>
-								<label for="floatingInput-phone">Primary contact number *</label>
-							</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-12 col-lg-6">
+							<input type="text" name="address2" class="form-control" id="floatingInput-Addr2" disabled >
+							<label for="floatingInput-Addr2">District</label>
+						</div>
+						<div class="form-floating mb-3 px-2 col-6">
+							<input type="text" name="town" class="form-control" id="floatingInput-town" disabled required>
+							<label for="floatingInput-town">Town</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-6">
+							<input type="text" name="county" class="form-control" id="floatingInput-county" disabled required>
+							<label for="floatingInput-county">County</label>
+						</div>
+						<div class="form-floating mb-3 px-2 col-6">
+							<input type="text" name="country" class="form-control" id="floatingInput-country" disabled required>
+							<label for="floatingInput-country">Country</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-floating mb-3 px-2 col-12">
+							<input type="text" name="phone" class="form-control" id="floatingInput-phone" autocomplete="tel" required>
+							<label for="floatingInput-phone">Primary contact number *</label>
 						</div>
 					</div>
 				</div>
