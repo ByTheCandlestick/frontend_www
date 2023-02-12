@@ -80,8 +80,8 @@
 							'',
 							$shipping,
 							$address_id,
-							$last4
-							$exp_M
+							$last4,
+							$exp_M,
 							$exp_Y
 					),1
 				);
