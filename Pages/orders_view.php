@@ -130,7 +130,7 @@
 					<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Estimated delivery date: </h5>
-						<p><?=(date('d M Y', strtotime($invoice['Created'].'+ 7 days')))?></p>
+						<p><?=($invoice['Estimated delivery date'])?></p>
 					</div>
 					<div class="col-6 col-md-3 pb-3">
 						<h5>Shipped:</h5>
