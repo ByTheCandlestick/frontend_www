@@ -3,7 +3,7 @@
 		<div class="mb-3 px-3 px-lg-3 col-lg-10">
 			<h2>Billing Address</h2>
 			<?if (DB_Query(sprintf("SELECT * FROM `User addresses` WHERE `uid`='%s'", $userdate['ID']))) { ?>
-				<div class="row billing-address d-none">
+				<div class="row billing-address">
 					<div class="form-floating py-1">
 						<select id="select-address" class="form-select py-2" onclick="$(this).removeClass('is-invalid')">
 							<option value="-1" selected>Please select an address</option>
