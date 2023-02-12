@@ -124,6 +124,10 @@
 			<div class="col-12">
 				<div class="mb-2 row p-2 border text-center">
 					<div class="col-6 col-md-3 pb-3">
+						<h5>Order ID:</h5>
+						<p><?= ($invoice['Invoice ID']) ?></p>
+					</div>
+					<div class="col-6 col-md-3 pb-3">
 						<h5>Order date: </h5>
 						<p><?=(date('dS F Y', strtotime($invoice['Created'])))?></p>
 					</div>
@@ -133,11 +137,7 @@
 						<p><?=(date('dS F Y', strtotime($invoice['Estimated delivery date'])))?></p>
 					</div>
 					<div class="col-6 col-md-3 pb-3">
-						<h5></h5>
-						<p></p>
-					</div>
-					<div class="col-6 col-md-3 pb-3">
-						<h5>Shipped by: </h5>
+						<h5>Delivery mode: </h5>
 						<p><?=($invoice['Shipping by'])?></p>
 					</div>
 				</div>

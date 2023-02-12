@@ -95,17 +95,16 @@
 			</div>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Order date: </h5>
-				<p><?= (date('d M Y', strtotime($order['Created'])))?></p>
+				<p><?=(date('dS F Y', strtotime($order['Created'])))?></p>
 			</div>
 			<hr class="d-block d-md-none" style="border-top: dashed 1px #dddddd;"/>
 			<div class="col-6 col-md-3 pb-3">
 				<h5>Estimated delivery date: </h5>
-				<!--<p><?= (date('d M Y', strtotime($order['Created'].'+ 7 days')))?></p>-->
-				<p><?= (date('d M Y', strtotime($order['Estimated delivery date'])))?></p>
+				<p><?=(date('d M Y', strtotime($order['Estimated delivery date'])))?></p>
 			</div>
 			<div class="col-6 col-md-3 pb-3">
-				<h5>Shipped by: </h5>
-				<p><?= ($order['Shipping by']) ?></p>
+				<h5>Delivery mode: </h5>
+				<p><?=($order['Shipping by'])?></p>
 			</div>
 		</div>
 		<div class="col-12 order-progress-stepper">
