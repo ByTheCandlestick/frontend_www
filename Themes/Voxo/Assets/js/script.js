@@ -996,7 +996,7 @@ $(document).ready(function() {
 	 * PRELOADER
 	 */
 		$(window).bind('beforeunload', () => {
-			alert('document.activeElement.href');
+			console.log(document.activeElement.href);
 			$('.preloader-container').fadeIn();
 		});
 		$('.preloader-container').fadeOut();
