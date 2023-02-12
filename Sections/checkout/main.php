@@ -28,11 +28,11 @@
 
 				<div class="row newAddress-billing d-none">
 					<div class="row">
-						<div class="form-floating  m-3 pe-2 col-12 col-lg-6">
+						<div class="form-floating  my-3 pe-2 col-12 col-lg-6">
 							<input type="text" name="firstname" class="form-control" id="floatingInput-FName" autocomplete="given-name" required>
 							<label for="floatingInput-FName">Firstname *</label>
 						</div>
-						<div class="form-floating  m-3 ps-2 col-12 col-lg-6">
+						<div class="form-floating  my-3 ps-2 col-12 col-lg-6">
 							<input type="text" name="lastname" class="form-control" id="floatingInput-LName" autocomplete="family-name" required>
 							<label for="floatingInput-LName">Lastname *</label>
 						</div>
