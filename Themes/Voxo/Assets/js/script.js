@@ -980,18 +980,18 @@ $(document).ready(function() {
 			} else {
 				$('.newAddress-billing').addClass('d-none');
 				if ($(this).val() > 0) {
-					$('.newAddress-billing input[name=firstname]').val($('.billing-address').attr('fname'));
-					$('.newAddress-billing input[name=lastname]').val($('.billing-address').attr('lname'));
-					$('.newAddress-billing input[name=number]').val($('.billing-address').attr('number_name'));
-					$('.newAddress-billing input[name=address1]').val($('.billing-address').attr('line1'));
-					$('.newAddress-billing input[name=address2]').val($('.billing-address').attr('line2'));
-					$('.newAddress-billing input[name=town]').val($('.billing-address').attr('town'));
-					$('.newAddress-billing input[name=county]').val($('.billing-address').attr('county'));
-					$('.newAddress-billing input[name=country]').val($('.billing-address').attr('country'));
-					$('.newAddress-billing input[name=postcode]').val($('.billing-address').attr('postcode'));
-					$('.newAddress-billing input[name=phone]').val($('.billing-address').attr('phone'));
+					$('.newAddress-billing input[name=firstname]').val($(this).attr('fname'));
+					$('.newAddress-billing input[name=lastname]').val($(this).attr('lname'));
+					$('.newAddress-billing input[name=number]').val($(this).attr('number_name'));
+					$('.newAddress-billing input[name=address1]').val($(this).attr('line1'));
+					$('.newAddress-billing input[name=address2]').val($(this).attr('line2'));
+					$('.newAddress-billing input[name=town]').val($(this).attr('town'));
+					$('.newAddress-billing input[name=county]').val($(this).attr('county'));
+					$('.newAddress-billing input[name=country]').val($(this).attr('country'));
+					$('.newAddress-billing input[name=postcode]').val($(this).attr('postcode'));
+					$('.newAddress-billing input[name=phone]').val($(this).attr('phone'));
 				} else {
-					
+
 				}
 			}
 		});
