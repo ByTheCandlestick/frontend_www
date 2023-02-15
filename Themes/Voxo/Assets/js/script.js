@@ -978,6 +978,7 @@ $(document).ready(function() {
 			if($(this).val() == 0) {
 				$('.newAddress-billing').removeClass('d-none');
 			} else {
+				$('.newAddress-billing').addClass('d-none');
 				if ($(this).val() > 0) {
 					$('.newAddress-billing input[name=firstname]').val($('.billing-address').attr('fname'));
 					$('.newAddress-billing input[name=lastname]').val($('.billing-address').attr('lname'));
@@ -990,7 +991,7 @@ $(document).ready(function() {
 					$('.newAddress-billing input[name=postcode]').val($('.billing-address').attr('postcode'));
 					$('.newAddress-billing input[name=phone]').val($('.billing-address').attr('phone'));
 				} else {
-					$('.newAddress-billing').addClass('d-none');
+					
 				}
 			}
 		});
