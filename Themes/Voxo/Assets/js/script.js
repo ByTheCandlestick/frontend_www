@@ -979,7 +979,16 @@ $(document).ready(function() {
 				$('.newAddress-billing').removeClass('d-none');
 			} else {
 				if ($(this).val() > 0) {
-					$('.newAddress-billing').removeClass('d-none');
+					$('.newAddress-billing input[name=firstname]').val($('.billing-address').attr('fname'));
+					$('.newAddress-billing input[name=lastname]').val($('.billing-address').attr('lname'));
+					$('.newAddress-billing input[name=number]').val($('.billing-address').attr('number_name'));
+					$('.newAddress-billing input[name=address1]').val($('.billing-address').attr('line1'));
+					$('.newAddress-billing input[name=address2]').val($('.billing-address').attr('line2'));
+					$('.newAddress-billing input[name=town]').val($('.billing-address').attr('town'));
+					$('.newAddress-billing input[name=county]').val($('.billing-address').attr('county'));
+					$('.newAddress-billing input[name=country]').val($('.billing-address').attr('country'));
+					$('.newAddress-billing input[name=postcode]').val($('.billing-address').attr('postcode'));
+					$('.newAddress-billing input[name=phone]').val($('.billing-address').attr('phone'));
 				} else {
 					$('.newAddress-billing').addClass('d-none');
 				}
@@ -988,16 +997,6 @@ $(document).ready(function() {
 		 $('.same_billing_delivery').change(function() {
 			 if($(this).is(':checked')) {
 				$('.shipping-address').addClass('d-none');
-				$('.newAddress-shipping input[name=firstname]').val($('.billing-address').attr('fname'));
-				$('.newAddress-shipping input[name=lastname]').val($('.billing-address').attr('lname'));
-				$('.newAddress-shipping input[name=number]').val($('.billing-address').attr('number_name'));
-				$('.newAddress-shipping input[name=address1]').val($('.billing-address').attr('line1'));
-				$('.newAddress-shipping input[name=address2]').val($('.billing-address').attr('line2'));
-				$('.newAddress-shipping input[name=town]').val($('.billing-address').attr('town'));
-				$('.newAddress-shipping input[name=county]').val($('.billing-address').attr('county'));
-				$('.newAddress-shipping input[name=country]').val($('.billing-address').attr('country'));
-				$('.newAddress-shipping input[name=postcode]').val($('.billing-address').attr('postcode'));
-				$('.newAddress-shipping input[name=phone]').val($('.billing-address').attr('phone'));
 			 } else {
 				$('.shipping-address').removeClass('d-none');
 			 }
