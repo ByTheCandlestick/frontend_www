@@ -978,12 +978,26 @@ $(document).ready(function() {
 			if($(this).val() == 0) {
 				$('.newAddress-billing').removeClass('d-none');
 			} else {
-				$('.newAddress-billing').addClass('d-none');
+				if ($(this).val() > 0) {
+					$('.newAddress-billing').removeClass('d-none');
+				} else {
+					$('.newAddress-billing').addClass('d-none');
+				}
 			}
 		});
 		 $('.same_billing_delivery').change(function() {
 			 if($(this).is(':checked')) {
 				$('.shipping-address').addClass('d-none');
+				$('.newAddress-shipping input[name=firstname]').val($('.billing-address').attr(''));
+				$('.newAddress-shipping input[name=lastname]').val();
+				$('.newAddress-shipping input[name=number]').val();
+				$('.newAddress-shipping input[name=postcode]').val();
+				$('.newAddress-shipping input[name=address1]').val();
+				$('.newAddress-shipping input[name=address2]').val();
+				$('.newAddress-shipping input[name=town]').val();
+				$('.newAddress-shipping input[name=county]').val();
+				$('.newAddress-shipping input[name=country]').val();
+				$('.newAddress-shipping input[name=phone]').val();
 			 } else {
 				$('.shipping-address').removeClass('d-none');
 			 }
