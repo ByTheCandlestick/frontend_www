@@ -990,12 +990,24 @@ $(document).ready(function() {
 					$('.newAddress-billing input[name=country]').val($(this).find(':selected').attr('country'));
 					$('.newAddress-billing input[name=postcode]').val($(this).find(':selected').attr('postcode'));
 					$('.newAddress-billing input[name=phone]').val($(this).find(':selected').attr('phone'));
+					if($('.same_billing_delivery').is(':checked')) {
+						$('.newAddress-shipping input[name=firstname]').val($(this).find(':selected').attr('fname'));
+						$('.newAddress-shipping input[name=lastname]').val($(this).find(':selected').attr('lname'));
+						$('.newAddress-shipping input[name=number]').val($(this).find(':selected').attr('number_name'));
+						$('.newAddress-shipping input[name=address1]').val($(this).find(':selected').attr('line1'));
+						$('.newAddress-shipping input[name=address2]').val($(this).find(':selected').attr('line2'));
+						$('.newAddress-shipping input[name=town]').val($(this).find(':selected').attr('town'));
+						$('.newAddress-shipping input[name=county]').val($(this).find(':selected').attr('county'));
+						$('.newAddress-shipping input[name=country]').val($(this).find(':selected').attr('country'));
+						$('.newAddress-shipping input[name=postcode]').val($(this).find(':selected').attr('postcode'));
+						$('.newAddress-shipping input[name=phone]').val($(this).find(':selected').attr('phone'));
+					}
 				} else {
 
 				}
 			}
 		});
-		 $('.same_billing_delivery').change(function() {
+		$('.same_billing_delivery').change(function() {
 			 if($(this).is(':checked')) {
 				$('.shipping-address').addClass('d-none');
 			 } else {
