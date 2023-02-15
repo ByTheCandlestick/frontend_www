@@ -19,7 +19,7 @@
 								}
 								print(sprintf('
 									<option number_name="%s" line1="%s" line2="%s" town="%s" county="%s" country="%s" postcode="%s" value="%s">%s</option>
-								', $item['number_name'], $item['line 1'], $item['line 2'], $item['town'], $item['county'], $item['country'], $item['postcode'], $value, $name));
+								', $item['number_name'], $item['line_1'], $item['line_2'], $item['town'], $item['county'], $item['country'], $item['postcode'], $value, $name));
 							}
 						?>
 						</select>
