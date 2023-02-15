@@ -980,16 +980,16 @@ $(document).ready(function() {
 			} else {
 				$('.newAddress-billing').addClass('d-none');
 				if ($(this).val() > 0) {
-					$('.newAddress-billing input[name=firstname]').val($(this).fing(':selected').attr('fname'));
-					$('.newAddress-billing input[name=lastname]').val($(this).fing(':selected').attr('lname'));
-					$('.newAddress-billing input[name=number]').val($(this).fing(':selected').attr('number_name'));
-					$('.newAddress-billing input[name=address1]').val($(this).fing(':selected').attr('line1'));
-					$('.newAddress-billing input[name=address2]').val($(this).fing(':selected').attr('line2'));
-					$('.newAddress-billing input[name=town]').val($(this).fing(':selected').attr('town'));
-					$('.newAddress-billing input[name=county]').val($(this).fing(':selected').attr('county'));
-					$('.newAddress-billing input[name=country]').val($(this).fing(':selected').attr('country'));
-					$('.newAddress-billing input[name=postcode]').val($(this).fing(':selected').attr('postcode'));
-					$('.newAddress-billing input[name=phone]').val($(this).fing(':selected').attr('phone'));
+					$('.newAddress-billing input[name=firstname]').val($(this).find(':selected').attr('fname'));
+					$('.newAddress-billing input[name=lastname]').val($(this).find(':selected').attr('lname'));
+					$('.newAddress-billing input[name=number]').val($(this).find(':selected').attr('number_name'));
+					$('.newAddress-billing input[name=address1]').val($(this).find(':selected').attr('line1'));
+					$('.newAddress-billing input[name=address2]').val($(this).find(':selected').attr('line2'));
+					$('.newAddress-billing input[name=town]').val($(this).find(':selected').attr('town'));
+					$('.newAddress-billing input[name=county]').val($(this).find(':selected').attr('county'));
+					$('.newAddress-billing input[name=country]').val($(this).find(':selected').attr('country'));
+					$('.newAddress-billing input[name=postcode]').val($(this).find(':selected').attr('postcode'));
+					$('.newAddress-billing input[name=phone]').val($(this).find(':selected').attr('phone'));
 				} else {
 
 				}
