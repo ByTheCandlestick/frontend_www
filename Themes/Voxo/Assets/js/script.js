@@ -1003,7 +1003,28 @@ $(document).ready(function() {
 						$('.newAddress-shipping input[name=phone]').val($(this).find(':selected').attr('phone'));
 					}
 				} else {
-
+					$('.newAddress-billing input[name=firstname]').val('');
+					$('.newAddress-billing input[name=lastname]').val('');
+					$('.newAddress-billing input[name=number]').val('');
+					$('.newAddress-billing input[name=address1]').val('');
+					$('.newAddress-billing input[name=address2]').val('');
+					$('.newAddress-billing input[name=town]').val('');
+					$('.newAddress-billing input[name=county]').val('');
+					$('.newAddress-billing input[name=country]').val('');
+					$('.newAddress-billing input[name=postcode]').val('');
+					$('.newAddress-billing input[name=phone]').val('');
+					if($('.same_billing_delivery').is(':checked')) {
+						$('.newAddress-shipping input[name=firstname]').val('');
+						$('.newAddress-shipping input[name=lastname]').val('');
+						$('.newAddress-shipping input[name=number]').val('');
+						$('.newAddress-shipping input[name=address1]').val('');
+						$('.newAddress-shipping input[name=address2]').val('');
+						$('.newAddress-shipping input[name=town]').val('');
+						$('.newAddress-shipping input[name=county]').val('');
+						$('.newAddress-shipping input[name=country]').val('');
+						$('.newAddress-shipping input[name=postcode]').val('');
+						$('.newAddress-shipping input[name=phone]').val('');
+					}
 				}
 			}
 		});
@@ -1012,6 +1033,16 @@ $(document).ready(function() {
 				$('.shipping-address').addClass('d-none');
 			 } else {
 				$('.shipping-address').removeClass('d-none');
+				$('.newAddress-shipping input[name=firstname]').val('');
+				$('.newAddress-shipping input[name=lastname]').val('');
+				$('.newAddress-shipping input[name=number]').val('');
+				$('.newAddress-shipping input[name=address1]').val('');
+				$('.newAddress-shipping input[name=address2]').val('');
+				$('.newAddress-shipping input[name=town]').val('');
+				$('.newAddress-shipping input[name=county]').val('');
+				$('.newAddress-shipping input[name=country]').val('');
+				$('.newAddress-shipping input[name=postcode]').val('');
+				$('.newAddress-shipping input[name=phone]').val('');
 			 }
 		 });
 		$('.shipping-address select').change(function() {
@@ -1019,6 +1050,29 @@ $(document).ready(function() {
 				$('.newAddress-shipping').removeClass('d-none');
 			} else {
 				$('.newAddress-shipping').addClass('d-none');
+				if ($(this).val() > 0) {
+					$('.newAddress-shipping input[name=firstname]').val($(this).find(':selected').attr('fname'));
+					$('.newAddress-shipping input[name=lastname]').val($(this).find(':selected').attr('lname'));
+					$('.newAddress-shipping input[name=number]').val($(this).find(':selected').attr('number_name'));
+					$('.newAddress-shipping input[name=address1]').val($(this).find(':selected').attr('line1'));
+					$('.newAddress-shipping input[name=address2]').val($(this).find(':selected').attr('line2'));
+					$('.newAddress-shipping input[name=town]').val($(this).find(':selected').attr('town'));
+					$('.newAddress-shipping input[name=county]').val($(this).find(':selected').attr('county'));
+					$('.newAddress-shipping input[name=country]').val($(this).find(':selected').attr('country'));
+					$('.newAddress-shipping input[name=postcode]').val($(this).find(':selected').attr('postcode'));
+					$('.newAddress-shipping input[name=phone]').val($(this).find(':selected').attr('phone'));
+				} else {
+					$('.newAddress-shhipping input[name=firstname]').val('');
+					$('.newAddress-shhipping input[name=lastname]').val('');
+					$('.newAddress-shhipping input[name=number]').val('');
+					$('.newAddress-shhipping input[name=address1]').val('');
+					$('.newAddress-shhipping input[name=address2]').val('');
+					$('.newAddress-shhipping input[name=town]').val('');
+					$('.newAddress-shhipping input[name=county]').val('');
+					$('.newAddress-shhipping input[name=country]').val('');
+					$('.newAddress-shhipping input[name=postcode]').val('');
+					$('.newAddress-shhipping input[name=phone]').val('');
+				}
 			}
 		 });
 	/**
