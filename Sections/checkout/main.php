@@ -18,8 +18,8 @@
 									$name = $item['number_name'].' '.$item['line_1'].', '.$item['postcode'];
 								}
 								print(sprintf('
-									<option number_name="%s" line1="%s" line2="%s" town="%s" dounty="%s" country="%s" postcode="%s" value="%s">%s</option>
-								', $item['number_name'], $item['line1'], $item['line2'], $item['town'], $item['county'], $item['country'], $item['postcode'], $value, $name));
+									<option number_name="%s" line1="%s" line2="%s" town="%s" county="%s" country="%s" postcode="%s" value="%s">%s</option>
+								', $item['number_name'], $item['line 1'], $item['line 2'], $item['town'], $item['county'], $item['country'], $item['postcode'], $value, $name));
 							}
 						?>
 						</select>
