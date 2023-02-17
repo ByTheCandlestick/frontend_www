@@ -89,7 +89,16 @@
 					</div>
 					<div class="col-5">
 						<h3>
-							<?=($lastYearIncome[1] == 0)?'<i class="far fa-infinity"></i>':number_format(((($currYearIncome[1] - $lastYearIncome[1])/$lastYearIncome[1])*100), 2);?>%
+							<?
+								if($lastYearIncome[1] == $currYearIncome[1]) {
+									print('<i class="far fa-hyphen"></i>');
+								} elseif($lastYearIncome[1] == 0) {
+									print('<i class="far fa-infinity"></i>');
+								} else {
+									print(number_format(((($currYearIncome[1] - $lastYearIncome[1])/$lastYearIncome[1])*100), 2));
+								}
+							?>
+							%
 						</h3>
 					</div>
 				</div>
@@ -126,7 +135,16 @@
 					</div>
 					<div class="col-5">
 						<h3>
-							<?=($lastMonthIncome[1] == 0)?'<i class="far fa-infinity"></i>':number_format(((($currMonthIncome[1]-$lastMonthIncome[1])/$lastMonthIncome[1])*100), 2);?>%
+							<?
+								if($lastYearIncome[1] == $currYearIncome[1]) {
+									print('<i class="far fa-hyphen"></i>');
+								} elseif($lastYearIncome[1] == 0) {
+									print('<i class="far fa-infinity"></i>');
+								} else {
+									print(number_format(((($currMonthIncome[1]-$lastMonthIncome[1])/$lastMonthIncome[1])*100), 2));
+								}
+							?>
+							%
 						</h3>
 					</div>
 				</div>
