@@ -66,10 +66,10 @@
 						<p class="card-text">
 							<span>
 								<?
-									if($currYearIncome['Currency'] == 0) {
+									if($currYearIncome['Value'] == 0) {
 										print('NaN');
 									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome['Value'] );
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome['Currency'] );
 										print($fmt->format(number_format($currYearIncome['Value'], 2)));
 									}
 								?>
