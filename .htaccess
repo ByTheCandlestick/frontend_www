@@ -4,9 +4,6 @@ Options -Indexes
 Options +FollowSymLinks
 ErrorDocument 404 /Error/404/
 #
-#	Change the PHP Configuration
-	php_value short_open_tag 1;
-#
 #	Allow REST api request methods. GET POST PUT and DELETE
 	<Limit GET POST PUT DELETE PATCH>
 		Allow from all
