@@ -136,9 +136,9 @@
 					<div class="col-5">
 						<h3>
 							<?
-								if($lastYearIncome[1] == $currYearIncome[1]) {
+								if($lastMonthIncome[1] == $currMonthIncome[1]) {
 									print('<i class="far fa-hyphen"></i>');
-								} elseif($lastYearIncome[1] == 0) {
+								} elseif($lastMonthIncome[1] == 0) {
 									print('<i class="far fa-infinity"></i>');
 								} else {
 									print(number_format(((($currMonthIncome[1]-$lastMonthIncome[1])/$lastMonthIncome[1])*100), 2));
