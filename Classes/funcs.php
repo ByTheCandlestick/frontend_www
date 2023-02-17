@@ -47,7 +47,7 @@
 	 *	The script thay connects to the DB
 	 *	@param string $sql The SQL script required to execute, replacing the table with %s
 	 *	@param array $DBinfo A predefined list including all DB info for the required DB
-	 *	@return mysqli_query
+	 *	@return mysqli_result
 	 */
 		function DB_Query($sql, $DBinfo = ADMIN) {
 			if(!$conn = mysqli_connect($DBinfo[0], $DBinfo[1], $DBinfo[2], $DBinfo[3])) {
@@ -100,17 +100,16 @@
 			foreach($scriptsheets as $script) {
 				if($result = DB_Query("SELECT `Location` FROM `Website scripts` WHERE `ID`='$script'")) {
 					$res = mysqli_fetch_array($result);
-					$scriptLocation = $res['Location'];
 
-					if($preload == 1) {
+					if($res['Preload'] == 1) {
 						echo sprintf(
 							'<script src="%s" type="text/javascript"></script>',
-							$scriptLocation
+							$res['Location']
 						);
 					} else {
 						echo sprintf(
 							'<script src="%s" type="text/javascript"></script>',
-							$scriptLocation
+							$res['Location']
 						);
 					}
 				}
