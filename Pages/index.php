@@ -172,16 +172,20 @@
 							</span>
 							</br>
 							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=4"))[0])?> To be Delivered
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=3"))[0])?> To be Delivered
 							</span>
 						</p>
 					</div>
 					<div class="col-5 text-end">
 						<h3>
 							<?
-							if() {
-
-							}
+								if(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`<4"))[0] < 10) {
+									print('<i class="fa-duotone fa-circle-exclamation"></i>');
+								} elseif(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`<4"))[0] < 20) {
+									print('<i class="fa-duotone fa-triangle-exclamation"></i>');
+								} else {
+									print('<i class="fa-duotone fa-hexagon-exclamation"></i>');
+								}
 							?>
 						</h3>
 					</div>
