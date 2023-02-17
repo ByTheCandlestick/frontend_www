@@ -66,6 +66,7 @@
 						<p class="card-text">
 							<span>
 								<?
+								print_r($currYearIncome);
 									if($currYearIncome['Value'] == 0) {
 										print('NaN');
 									} else {
