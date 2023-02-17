@@ -135,12 +135,12 @@
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
-					<h5 class="col-12 card-title">INCOME YoY</h5>
+					<h5 class="col-12 card-title">OPEN ORDERS</h5>
 					<div class="col-7">
 						<p class="card-text">
 							<span>
 								<?
-									if($currYearIncome[1] == 0 && $currYearExpences[1] == 0) {
+									if($currYearIncome[1] == 0) {
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
@@ -172,7 +172,7 @@
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
-					<h5 class="col-12 card-title">INCOME MoM</h5>
+					<h5 class="col-12 card-title">UNRESOLVED COMPLAINTS</h5>
 					<div class="col-7">
 						<p class="card-text row">
 							<span>
