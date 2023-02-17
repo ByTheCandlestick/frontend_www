@@ -81,7 +81,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
-										print($fmt->format(number_format($lastYearIncome[1], 2)));
+										print($fmt->format($lastYearIncome[1], 2));
 									}
 								?>
 							</span>
@@ -107,7 +107,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
-										print($fmt->format(number_format($currYearIncome[1] - $currYearExpences[1], 2)));
+										print($fmt->format($currYearIncome[1] - $currYearExpences[1], 2));
 									}
 								?>
 							</span>
@@ -118,7 +118,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
-										print($fmt->format(number_format($lastYearIncome[1] - $lastYearExpences[1], 2)));
+										print($fmt->format($lastYearIncome[1] - $lastYearExpences[1], 2));
 									}
 								?>
 							</span>
@@ -144,7 +144,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
-										print($fmt->format(number_format($currMonthIncome[1], 2)));
+										print($fmt->format($currMonthIncome[1], 2));
 									}
 								?>
 							</span>
@@ -155,7 +155,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
-										print($fmt->format(number_format($lastMonthIncome[1], 2)));
+										print($fmt->format($lastMonthIncome[1], 2));
 									}
 								?>
 							</span>
@@ -181,7 +181,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
-										print($fmt->format(number_format($currMonthIncome[1] - $currMonthExpences[1], 2)));
+										print($fmt->format($currMonthIncome[1] - $currMonthExpences[1], 2));
 									}
 								?>
 							</span>
@@ -192,7 +192,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
-										print($fmt->format(number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)));
+										print($fmt->format($lastMonthIncome[1] - $lastMonthExpences[1], 2));
 									}
 								?>
 							</span>
