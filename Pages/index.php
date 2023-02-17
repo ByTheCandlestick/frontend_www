@@ -58,7 +58,7 @@
 <section>
 	<!-- Section Body -->
 	<div class="row" name="Sales snippets">
-		<div class="col-12 col-md-6 col-lg-3 p-2"> // Sales YoY
+		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">SALES YoY</h5>
@@ -95,7 +95,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2"> // Sales MoM
+		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">SALES MoM</h5>
@@ -132,7 +132,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2"> // No. of open orders
+		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">INCOME YoY</h5>
@@ -169,7 +169,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2"> // No. of complaints
+		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">INCOME MoM</h5>
