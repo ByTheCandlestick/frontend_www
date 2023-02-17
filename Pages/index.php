@@ -67,11 +67,11 @@
 							<span>
 								<?
 								print_r($currYearIncome);
-									if($currYearIncome['Value'] == 0) {
+									if($currYearIncome[1] == 0) {
 										print('NaN');
 									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome['Currency'] );
-										print($fmt->format($currYearIncome['Value'], 2));
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
+										print($fmt->format($currYearIncome[1], 2));
 									}
 								?>
 							</span>
