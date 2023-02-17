@@ -137,7 +137,7 @@
 							</span>
 						</p>
 					</div>
-					<div class="col-5">
+					<div class="col-5 text-end">
 						<h3>
 							<?
 								if($lastMonthIncome[1] == $currMonthIncome[1]) {
@@ -182,7 +182,7 @@
 							</span>
 						</p>
 					</div>
-					<div class="col-5">
+					<div class="col-5 text-end">
 						<h3>
 							<?=($lastYearIncome[1] - $lastYearExpences[1] == 0)?'<i class="far fa-infinity"></i>':number_format((($currYearIncome[1] - $currYearExpences[1] - $lastYearIncome[1] - $lastYearExpences[1])/($lastYearIncome[1] - $lastYearExpences[1])*100), 2);?>%
 						</h3>
