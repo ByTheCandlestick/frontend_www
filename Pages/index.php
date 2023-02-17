@@ -65,6 +65,7 @@
 					<div class="col-7">
 						<p class="card-text">
 							<span>
+								Current: 
 								<?
 									if($currYearIncome[1] == 0) {
 										print('NaN');
@@ -76,6 +77,7 @@
 							</span>
 							</br>
 							<span>
+								Last: 
 								<?
 									if($lastYearIncome[1] == 0) {
 										print('NaN');
@@ -97,8 +99,7 @@
 								} else {
 									print(number_format(((($currYearIncome[1] - $lastYearIncome[1])/$lastYearIncome[1])*100), 2));
 								}
-							?>
-							%
+							?>%
 						</h3>
 					</div>
 				</div>
@@ -111,6 +112,7 @@
 					<div class="col-7">
 						<p class="card-text row">
 							<span>
+								Current: 
 								<?
 									if($currMonthIncome[1] == 0) {
 										print('NaN');
@@ -122,6 +124,7 @@
 							</span>
 							</br>
 							<span>
+								Last: 
 								<?
 									if($lastMonthIncome[1] == 0) {
 										print('NaN');
@@ -143,8 +146,7 @@
 								} else {
 									print(number_format(((($currMonthIncome[1]-$lastMonthIncome[1])/$lastMonthIncome[1])*100), 2));
 								}
-							?>
-							%
+							?>%
 						</h3>
 					</div>
 				</div>
