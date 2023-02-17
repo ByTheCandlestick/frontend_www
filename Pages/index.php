@@ -58,7 +58,7 @@
 <section>
 	<!-- Section Body -->
 	<div class="row" name="Sales snippets">
-		<div class="col-12 col-md-6 col-lg-3 p-2">
+		<div class="col-12 col-md-6 col-lg-3 p-2"> // Sales YoY
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">SALES YoY</h5>
@@ -89,50 +89,13 @@
 					</div>
 					<div class="col-5">
 						<h3>
-							<?=($lastYearIncome[1] == 0)?'<i class="far fa-infinity"></i>':(($currYearIncome[1] - $lastYearIncome[1]) / $lastYearIncome[1]) * 100;?>%
+							<?=($lastYearIncome[1] == 0)?'<i class="far fa-infinity"></i>':number_format(((($currYearIncome[1] - $lastYearIncome[1])/$lastYearIncome[1])*100), 2);?>%
 						</h3>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="card h-100">
-				<div class="card-body row">
-					<h5 class="col-12 card-title">INCOME YoY</h5>
-					<div class="col-7">
-						<p class="card-text">
-							<span>
-								<?
-									if($currYearIncome[1] == 0 && $currYearExpences[1] == 0) {
-										print('NaN');
-									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
-										print($fmt->format($currYearIncome[1] - $currYearExpences[1], 2));
-									}
-								?>
-							</span>
-							</br>
-							<span>
-								<?
-									if($lastYearIncome[1] == 0 && $lastYearExpences[1] == 0) {
-										print('NaN');
-									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
-										print($fmt->format($lastYearIncome[1] - $lastYearExpences[1], 2));
-									}
-								?>
-							</span>
-						</p>
-					</div>
-					<div class="col-5">
-						<h3>
-							<?=(number_format($lastYearIncome[1] - $lastYearExpences[1], 2) == 0)?'<i class="far fa-infinity"></i>':((number_format($currYearIncome[1] - $currYearExpences[1], 2) - number_format($lastYearIncome[1] - $lastYearExpences[1], 2)) / number_format($lastYearIncome[1] - $lastYearExpences[1], 2)) * 100;?>%
-						</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
+		<div class="col-12 col-md-6 col-lg-3 p-2"> // Sales MoM
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">SALES MoM</h5>
@@ -163,13 +126,50 @@
 					</div>
 					<div class="col-5">
 						<h3>
-							<?=($lastMonthIncome[1] == 0)?'<i class="far fa-infinity"></i>':(($currMonthIncome[1] - $lastMonthIncome[1]) / $lastMonthIncome[1]) * 100;?>%
+							<?=($lastMonthIncome[1] == 0)?'<i class="far fa-infinity"></i>':number_format(((($currMonthIncome[1]-$lastMonthIncome[1])/$lastMonthIncome[1])*100), 2);?>%
 						</h3>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 col-lg-3 p-2">
+		<div class="col-12 col-md-6 col-lg-3 p-2"> // No. of open orders
+			<div class="card h-100">
+				<div class="card-body row">
+					<h5 class="col-12 card-title">INCOME YoY</h5>
+					<div class="col-7">
+						<p class="card-text">
+							<span>
+								<?
+									if($currYearIncome[1] == 0 && $currYearExpences[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
+										print($fmt->format($currYearIncome[1] - $currYearExpences[1], 2));
+									}
+								?>
+							</span>
+							</br>
+							<span>
+								<?
+									if($lastYearIncome[1] == 0 && $lastYearExpences[1] == 0) {
+										print('NaN');
+									} else {
+										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
+										print($fmt->format($lastYearIncome[1] - $lastYearExpences[1], 2));
+									}
+								?>
+							</span>
+						</p>
+					</div>
+					<div class="col-5">
+						<h3>
+							<?=($lastYearIncome[1] - $lastYearExpences[1] == 0)?'<i class="far fa-infinity"></i>':number_format((($currYearIncome[1] - $currYearExpences[1] - $lastYearIncome[1] - $lastYearExpences[1])/($lastYearIncome[1] - $lastYearExpences[1])*100), 2);?>%
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-3 p-2"> // No. of complaints
 			<div class="card h-100">
 				<div class="card-body row">
 					<h5 class="col-12 card-title">INCOME MoM</h5>
