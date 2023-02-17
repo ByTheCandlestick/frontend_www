@@ -180,11 +180,11 @@
 						<h3>
 							<?
 								if(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`<4"))[0] < 10) {
-									print('<i class="fa-duotone fa-circle-exclamation"></i>');
+									print('<i class="text-primary fad fa-2x fa-circle-exclamation"></i>');
 								} elseif(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`<4"))[0] < 20) {
-									print('<i class="fa-duotone fa-triangle-exclamation"></i>');
+									print('<i class="text-warning fad fa-2x fa-triangle-exclamation"></i>');
 								} else {
-									print('<i class="fa-duotone fa-hexagon-exclamation"></i>');
+									print('<i class="text-danger fad fa-2x fa-hexagon-exclamation"></i>');
 								}
 							?>
 						</h3>
