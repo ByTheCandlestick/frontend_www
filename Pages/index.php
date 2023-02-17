@@ -160,25 +160,29 @@
 					<div class="col-7">
 						<p class="card-text">
 							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=0"))[0])?>To be acknowleged
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=0"))[0])?> To be acknowleged
 							</span>
 							</br>
 							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=1"))[0])?>To be Assembled
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=1"))[0])?> To be Assembled
 							</span>
 							</br>
 							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=2"))[0])?>To be shipped
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=2"))[0])?> To be shipped
 							</span>
 							</br>
 							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=4"))[0])?>To be Delivered
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=4"))[0])?> To be Delivered
 							</span>
 						</p>
 					</div>
 					<div class="col-5 text-end">
 						<h3>
-							<?=($lastYearIncome[1] - $lastYearExpences[1] == 0)?'<i class="far fa-infinity"></i>':number_format((($currYearIncome[1] - $currYearExpences[1] - $lastYearIncome[1] - $lastYearExpences[1])/($lastYearIncome[1] - $lastYearExpences[1])*100), 2);?>%
+							<?
+							if() {
+
+							}
+							?>
 						</h3>
 					</div>
 				</div>
