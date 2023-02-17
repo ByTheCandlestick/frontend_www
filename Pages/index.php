@@ -61,7 +61,7 @@
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
-					<h5 class="col-12 card-title">SALES YoY</h5>
+					<h5 class="col-12 card-title">YEARLY SALES</h5>
 					<div class="col-7">
 						<p class="card-text">
 							<span>
@@ -98,7 +98,7 @@
 		<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="card h-100">
 				<div class="card-body row">
-					<h5 class="col-12 card-title">SALES MoM</h5>
+					<h5 class="col-12 card-title">MONTHLY SALES</h5>
 					<div class="col-7">
 						<p class="card-text row">
 							<span>
