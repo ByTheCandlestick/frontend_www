@@ -71,7 +71,7 @@
 										print('NaN');
 									} else {
 										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome['Currency'] );
-										print($fmt->format(number_format($currYearIncome['Value'], 2)));
+										print($fmt->format($currYearIncome['Value'], 2));
 									}
 								?>
 							</span>
