@@ -160,25 +160,19 @@
 					<div class="col-7">
 						<p class="card-text">
 							<span>
-								<?
-									if($currYearIncome[1] == 0) {
-										print('NaN');
-									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currYearIncome[0] );
-										print($fmt->format($currYearIncome[1] - $currYearExpences[1], 2));
-									}
-								?>
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=0"))[0])?>To be acknowleged
 							</span>
 							</br>
 							<span>
-								<?
-									if($lastYearIncome[1] == 0 && $lastYearExpences[1] == 0) {
-										print('NaN');
-									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastYearIncome[0] );
-										print($fmt->format($lastYearIncome[1] - $lastYearExpences[1], 2));
-									}
-								?>
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=1"))[0])?>To be Assembled
+							</span>
+							</br>
+							<span>
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=2"))[0])?>To be shipped
+							</span>
+							</br>
+							<span>
+								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=4"))[0])?>To be Delivered
 							</span>
 						</p>
 					</div>
