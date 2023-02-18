@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	console.log($('rw').attr('data'));
 	/*
 	 * ---====--- VARIABLES ---====---
 	 */
@@ -367,6 +366,7 @@ $(document).ready(function() {
 				$(".main-form__body--input").each(function() {
 					fieldCount += 1;
 					var function_name = $(this).attr("name");
+					console.log(eval("validate." + function_name + "()"));
 					if (eval("validate." + function_name + "()")) {
 						count += 1;
 					}
@@ -452,7 +452,6 @@ $(document).ready(function() {
 			},
 			login: function() {
 				if (validate.form()) {
-					
 					$.ajax({
 						url: api_url + '/Users/Session/',
 						data: {
