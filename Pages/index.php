@@ -160,7 +160,7 @@
 					<div class="col-7">
 						<p class="card-text">
 							<span>
-								<?=((($a=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=0"))[0])>0)? $a." To be acknowleged.</span></br><span>": "")?>
+								<?=((($a=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=0"))[0])>0)? $a." To be Acknowleged.</span></br><span>": "")?>
 								<?=((($b=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=1"))[0])>0)? $b." To be Assembled.</span></br><span>": "")?>
 								<?=((($c=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=2"))[0])>0)? $c." To be Shipped.</span></br><span>": "")?>
 								<?=((($d=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=3"))[0])>0)? $d." To be Delivered.": "")?>
@@ -191,31 +191,21 @@
 					<div class="col-7">
 						<p class="card-text row">
 							<span>
-								<?
-									if($currMonthIncome[1] == 0 && $currMonthExpences[1] == 0) {
-										print('NaN');
-									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $currMonthIncome[0] );
-										print($fmt->format($currMonthIncome[1] - $currMonthExpences[1], 2));
-									}
-								?>
-							</span>
-							</br>
-							<span>
-								<?
-									if($lastMonthIncome[1] == 0 && $lastMonthExpences[1] == 0) {
-										print('NaN');
-									} else {
-										$fmt->setTextAttribute( $fmt::CURRENCY_CODE, $lastMonthIncome[0] );
-										print($fmt->format($lastMonthIncome[1] - $lastMonthExpences[1], 2));
-									}
-								?>
+								11
 							</span>
 						</p>
 					</div>
 					<div class="col-5 text-end">
 						<h3>
-							<?=(number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2) == 0)?'<i class="far fa-infinity"></i>':((number_format($currMonthIncome[1] - $currMonthExpences[1], 2) - number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)) / number_format($lastMonthIncome[1] - $lastMonthExpences[1], 2)) * 100;?>%
+							<?
+								if(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`<4"))[0] < 10) {
+									print('<i class="text-primary fad fa-2x fa-circle-exclamation"></i>');
+								} elseif(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`<4"))[0] < 20) {
+									print('<i class="text-warning fad fa-2x fa-triangle-exclamation"></i>');
+								} else {
+									print('<i class="text-danger fad fa-2x fa-hexagon-exclamation"></i>');
+								}
+							?>
 						</h3>
 					</div>
 				</div>
