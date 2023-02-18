@@ -451,6 +451,7 @@ $(document).ready(function() {
 			},
 			login: function() {
 				if (validate.form()) {
+					console.log($('rw').attr('data'));
 					$.ajax({
 						url: api_url + '/Users/Session/',
 						data: {
