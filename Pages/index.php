@@ -190,9 +190,9 @@
 					<h5 class="col-12 card-title">UNRESOLVED COMPLAINTS</h5>
 					<div class="col-7">
 						<p class="card-text row">
-							<span>
+							<h3>
 								11
-							</span>
+							</h3>
 						</p>
 					</div>
 					<div class="col-5 text-end">
