@@ -160,19 +160,11 @@
 					<div class="col-7">
 						<p class="card-text">
 							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=0"))[0])?> To be acknowleged.
-							</span>
-							</br>
-							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=1"))[0])?> To be Assembled.
-							</span>
-							</br>
-							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=2"))[0])?> To be Shipped.
-							</span>
-							</br>
-							<span>
-								<?=(mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=3"))[0])?> To be Delivered.
+								<?=((($a=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=0"))[0])>0)? $a." To be acknowleged.</span></br><span>": "")?>
+								<?=((($b=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=1"))[0])>0)? $b." To be Assembled.</span></br><span>": "")?>
+								<?=((($c=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=2"))[0])>0)? $c." To be Shipped.</span></br><span>": "")?>
+								<?=((($d=mysqli_fetch_row(DB_QUERY("SELECT COUNT(*) FROM `Transactions` WHERE `Type`='Order' AND `Shipping status`=3"))[0])>0)? $d." To be Delivered.": "")?>
+								<?=(($a=$b=$c=$d=0)? "No open orders.": "")?>
 							</span>
 						</p>
 					</div>
