@@ -366,6 +366,7 @@ $(document).ready(function() {
 				$(".main-form__body--input").each(function() {
 					fieldCount += 1;
 					var function_name = $(this).attr("name");
+					console.log(eval("validate." + function_name + "()"));
 					if (eval("validate." + function_name + "()")) {
 						count += 1;
 					}
@@ -480,7 +481,7 @@ $(document).ready(function() {
 										window.location = window.location.protocol+'//' + $('rw').attr('data');
 									}
 								}
-								location.reload();
+								//location.reload();
 							} else {
 								console.log(body.status);
 							}
