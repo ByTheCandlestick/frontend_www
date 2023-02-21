@@ -106,7 +106,10 @@
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<?
-						echo getHostByName(getHostName());
+						function executed() {
+							var_dump(__FUNCTION__);
+						}
+						executed();
 					?>
 					<!-- ===== Preloader ===== -->
 						<div class="app-preloader">
