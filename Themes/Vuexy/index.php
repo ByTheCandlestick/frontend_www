@@ -107,7 +107,7 @@
 				<div class="app-container">
 					<?
 						function executed($one, $two) {
-							var_dump(__FUNCTION__);
+							var_dump(func_get_args());
 						}
 						executed("1", 2);
 					?>
