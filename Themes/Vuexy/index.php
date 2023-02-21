@@ -107,7 +107,11 @@
 				<div class="app-container">
 					<?
 						function executed($one, $two) {
-							var_dump(func_get_args());
+							$foo="";
+							$dmp = var_dump(func_get_args());
+							eval("\$foo=$dmp;");
+							var_dump($foo);
+							//join(", ", $arr);
 						}
 						executed("1", 2);
 					?>
