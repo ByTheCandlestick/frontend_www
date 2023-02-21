@@ -12,7 +12,7 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Executes all tasks
 						// Functions
 						try {
@@ -23,11 +23,11 @@
 						// Submit application
 						$str_response = '\n['.date('r').'] - successfully run \'Daily\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					else:
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -48,7 +48,7 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Executes all tasks
 						// Functions
 						try {
@@ -60,11 +60,11 @@
 						// Submit application
                     	$str_response = '\n['.date('r').'] successfully run \'Weekly\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					else:
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -85,7 +85,7 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Executes all tasks
 						// Functions
 						try {
@@ -96,11 +96,11 @@
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Bi-monthly\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					else:
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -121,7 +121,7 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Executes all tasks
 						// Functions
 						try {
@@ -132,11 +132,11 @@
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Monthly\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					else:
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -157,7 +157,7 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Executes all tasks
 						// Functions
 						try {
@@ -168,11 +168,11 @@
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Bi-annual\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					else:
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -193,7 +193,7 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗹 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Executes all tasks
 						// Functions
 						try {
@@ -204,11 +204,11 @@
 						// Submit application
                     	$str_response = '\n['.date('r').'] - successfully run \'Annual\' tasks;';
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					else:
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
 					$this->sendOutput(

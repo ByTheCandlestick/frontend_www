@@ -28,7 +28,7 @@
                             if(!$this->ValidateEmail($arr_page_info['email'])) throw new Error("ERR-SUP-7");
                             if(!$this->ValidatePhone($arr_page_info['phone'])) throw new Error("ERR-SUP-8");
 						} catch(Error $er) {
-							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
+							 
 						}
 					// Submit application
 						try{
@@ -42,13 +42,13 @@
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					$this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found");
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Unknown
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Unknown
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				else:											// (U)nsupported-- 🗹 --	The method is unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
 				$this->sendOutput(
@@ -69,9 +69,9 @@
                 $str_response = "";
             // Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE		-- 🗷 --	Unknown
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗹 --	Updates a page
 					// Confirmations
 						try{
@@ -127,7 +127,7 @@
 						}
 					//
 				else:											// (U)nsupported-- 🗹 --	The method is unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
 				$this->sendOutput(

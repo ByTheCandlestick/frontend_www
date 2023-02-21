@@ -66,11 +66,11 @@
 							$this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error");
 						}
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					else:
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -91,7 +91,7 @@
 					$str_response = "";
 				// Functions 									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗹 --	Read userdata
 						try {
 							$arr_User = $mdl_User->GetUserById($arr[0]);

@@ -191,7 +191,7 @@
 					<div class="col-7">
 						<p class="card-text row">
 							<h3>
-								11
+								--
 							</h3>
 						</p>
 					</div>

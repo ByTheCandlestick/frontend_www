@@ -42,9 +42,9 @@
 						}
 					//
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- ☐ --	Remove an item from a users cart
 					// Confirmations
 						try{
@@ -94,13 +94,13 @@
 				$str_response = "";
 			// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
 					$this->throwError("TODO: List users cart", "HTTP/1.1 404 Not Found");
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unsupported
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				else:
 					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
 				endif;

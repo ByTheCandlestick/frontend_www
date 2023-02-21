@@ -7,7 +7,8 @@
 		 * @result boolean
 		 */
 			public function CreatePage(array $info) {
-				return$this->Execute(sprintf("INSERT INTO `Website pages`(`page_url`, `page_name`, `subpage_url`, `page_title`, `style_ids`,`script_ids`, `domain_id`, `menu_item`, `menu_icon`, `menu_order`, `menu_url`, `Permission`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $info['menu_url'], $info['permission']), 1);
+				$menu_url = ($info['subpage_url']!='')? '/'.ucfirst($info['page_url']).'/'.ucfirst($info['subpage_url']).'/': '/'.ucfirst($info['page_url']).'/';
+				return$this->Execute(sprintf("INSERT INTO `Website pages`(`page_url`, `page_name`, `subpage_url`, `page_title`, `style_ids`,`script_ids`, `domain_id`, `menu_item`, `menu_icon`, `menu_order`, `menu_url`, `Permission`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $menu_url, $info['permission']), 1);
 			}
 		/** ReadPage
 		 * Reads info about a website page
@@ -35,7 +36,8 @@
 		 * @result boolean
 		 */
 			public function UpdatePage(string $sid, array $info) {
-				return $this->Execute(sprintf("UPDATE `Website pages` SET `page_url`='%s', `page_name`='%s', `subpage_url`='%s', `page_title`='%s', `style_ids`='%s',`script_ids`='%s',`domain_id`='%s', `menu_item`='%s', `menu_icon`='%s',`menu_order`='%s',`menu_url`='%s',`Permission`='%s' WHERE `ID`='%s'", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $info['menu_url'], $info['permission'], $sid), 1);
+				$menu_url = ($info['subpage_url']!='')? '/'.ucfirst($info['page_url']).'/'.ucfirst($info['subpage_url']).'/': '/'.ucfirst($info['page_url']).'/';
+				return $this->Execute(sprintf("UPDATE `Website pages` SET `page_url`='%s', `page_name`='%s', `subpage_url`='%s', `page_title`='%s', `style_ids`='%s',`script_ids`='%s',`domain_id`='%s', `menu_item`='%s', `menu_icon`='%s',`menu_order`='%s',`menu_url`='%s',`Permission`='%s' WHERE `ID`='%s'", $info['page_url'], $info['name'], $info['subpage_url'], $info['title'], $info['style'], $info['script'], $info['domain_id'], $info['menu_item'], $info['menu_icon'], $info['menu_order'], $menu_url, $info['permission'], $sid), 1);
 			}
 		/** DeletePage
 		 * Updates a website page

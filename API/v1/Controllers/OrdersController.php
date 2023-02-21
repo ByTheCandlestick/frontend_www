@@ -12,9 +12,9 @@
 				$str_response = "";
 			// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Unknown
-						$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unknosn
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Update status
 					// Confirmations
 						try {
@@ -41,9 +41,9 @@
 						}
 					//
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unknown
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				else:
-					$this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
 				$this->sendOutput(

@@ -38,7 +38,7 @@
 							}
 						//
                     elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
-                        $this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found");
+                        exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
                     elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Update a permission name / default
 						// Confirmations
 							try{

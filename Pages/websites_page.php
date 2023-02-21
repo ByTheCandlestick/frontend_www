@@ -89,12 +89,6 @@
 							<label for="floatingInput">Icon</label>
 						</div>
 					</div>
-					<div class="col-12 col-lg-6" name="menu_url">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="" value="">
-							<label for="floatingInput">URL</label>
-						</div>
-					</div>
 					<h5>Permissions</h5>
 					<div class="col-12 col-lg-6" name="permission">
 						<div class="form-floating mb-3">
@@ -250,12 +244,6 @@
 						<div class="form-floating mb-3">
 							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_icon']=='')?'No title was set':'')?>" value="<? print(($page['menu_icon']=='')?'':$page['menu_icon'])?>">
 							<label for="floatingInput">Icon</label>
-						</div>
-					</div>
-					<div class="col-12 col-lg-6" name="menu_url">
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="floatingInput" placeholder="<? print(($page['menu_url']=='')?'No title was set':'')?>" value="<? print(($page['menu_url']=='')?'':$page['menu_url'])?>">
-							<label for="floatingInput">URL</label>
 						</div>
 					</div>
 					<h5>Permissions</h5>
