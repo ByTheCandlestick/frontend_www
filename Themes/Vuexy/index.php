@@ -106,10 +106,10 @@
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<?
-						function executed() {
+						function executed($one, $two) {
 							var_dump(__FUNCTION__);
 						}
-						executed();
+						executed("1", 2);
 					?>
 					<!-- ===== Preloader ===== -->
 						<div class="app-preloader">
