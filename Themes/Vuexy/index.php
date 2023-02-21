@@ -106,7 +106,7 @@
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<?
-						getHostByName(getHostName());
+						echo getHostByName(getHostName());
 					?>
 					<!-- ===== Preloader ===== -->
 						<div class="app-preloader">
