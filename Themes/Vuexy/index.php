@@ -105,11 +105,6 @@
 				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== App ===== -->
 				<div class="app-container">
-					<?
-						function executed($one, $two) {
-						}
-						executed("1", 2);
-					?>
 					<!-- ===== Preloader ===== -->
 						<div class="app-preloader">
 							<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
