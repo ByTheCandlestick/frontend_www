@@ -1,6 +1,5 @@
 <?
 	class BaseModel {
-
 		/**
 		 * 
 		 */
@@ -70,6 +69,10 @@
 				throw new Exception($e->getMessage());
 			}
 			return false;
+		}
+
+		public function uploadAudit(string $func, array $args, string $string) {
+			$this->Execute(sprintf("INSERT INTO `Audit trail`(`Timestamp`, `Function`, `Args`, `String`, `User ID`) VALUES(now(), '%s', '%s', '%s', '%s')", $func, $args, $string, $uid), 1);
 		}
 	}
 ?>
