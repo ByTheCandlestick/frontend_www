@@ -1171,6 +1171,7 @@
 					url: api_url + '/Website/',
 					data: {
 						'api_key': api_key,
+						'uid': $('.profile-btn').children('span')[0].attr('user-id'),
 						'styles': styles.join(","),
 						'scripts': scripts.join(","),
 						'name': $("div[name=name] input").val(),
@@ -1215,6 +1216,7 @@
 					url: api_url + '/Website/' + sid + '/',
 					data: {
 						'api_key': api_key,
+						'uid': $('.profile-btn').children('span')[0].attr('user-id'),
 						'styles': styles.join(","),
 						'scripts': scripts.join(","),
 						'name': $("div[name=name] input").val(),
@@ -1257,6 +1259,7 @@
 					url: api_url + '/Website/' + sid + '/',
 					data: {
 						'api_key': api_key,
+						'uid': $('.profile-btn').children('span')[0].attr('user-id'),
 					},
 					type: 'DELETE',
 					xhrFields: {
