@@ -75,22 +75,22 @@
 
 		/** uploadAudit
 		 * 
-		 *	@param	string	$func
-		 *	@param	array	$args
-		 *	@param	string	$string
+		 *	@param	string	$f
+		 *	@param	array	$a
+		 *	@param	string	$s
 		 *	@return	void
 		 */
-			public function uploadAudit(string $func, array $args, string $string, string $uid = "0") {
+			public function uploadAudit(string $f, array $a, string $s, string $uid = "0") {
 				$arr = array();
-				print_r($args);
-				foreach($args as $x) {
+				print_r($a);
+				foreach($a as $x) {
 					array_push($arr, gettype($x)."(".strlen($x).") ".$x);
 				}
 				$this->Execute(sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`) VALUES(`%s`, now(), '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
-					$func,
+					$f,
 					join(", ", $arr),
-					$string,
+					$s,
 					$uid
 				), 1);
 			}
