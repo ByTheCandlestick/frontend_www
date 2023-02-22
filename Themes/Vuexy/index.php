@@ -107,9 +107,12 @@
 				<div class="app-container">
 					<?
 						function executed($one, $two) {
+							$arr = array();
 							foreach(func_get_args() as $x) {
-								echo gettype($x)."(".strlen($x).")";
+								array_push($arr, gettype($x)."(".strlen($x).")");
 							}
+
+							echo join(", ", $arr);
 						}
 						executed("1", 2);
 					?>
