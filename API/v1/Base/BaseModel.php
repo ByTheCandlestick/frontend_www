@@ -82,6 +82,7 @@
 		 */
 			public function uploadAudit(string $func, array $args, string $string, string $uid = "0") {
 				$arr = array();
+				print_r($args);
 				foreach($args as $x) {
 					array_push($arr, gettype($x)."(".strlen($x).") ".$x);
 				}
