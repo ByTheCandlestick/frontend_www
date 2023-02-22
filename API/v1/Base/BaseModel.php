@@ -73,6 +73,21 @@
 				return false;
 			}
 
+		/** arrToStr
+		 * 
+		 * @param	array	$a
+		 */
+			public function arrToStr(array $a, string $s) {
+				$arr = array();
+				foreach($a as $x) {
+					if(gettype($x) == 'array') {
+						array_push($arr, gettype($x)."(".strlen($x).") ".$x);
+					} else {
+						$this->arrToStr($x, ', ');
+					}
+				}
+				return join(", ", $arr);
+			}
 		/** uploadAudit
 		 * 
 		 *	@param	string	$f
@@ -81,15 +96,10 @@
 		 *	@return	void
 		 */
 			public function uploadAudit(string $f, array $a, string $s, string $uid = "0") {
-				$arr = array();
-				print_r($a);
-				foreach($a as $x) {
-					array_push($arr, gettype($x)."(".strlen($x).") ".$x);
-				}
 				$this->Execute(sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`) VALUES(`%s`, now(), '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
 					$f,
-					join(", ", $arr),
+					$this->arrToStr($a, ', '),
 					$s,
 					$uid
 				), 1);
