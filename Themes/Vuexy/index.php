@@ -109,7 +109,7 @@
 						function executed($one, $two) {
 							$arr = array();
 							foreach(func_get_args() as $x) {
-								array_push($arr, gettype($x)."(".strlen($x).")");
+								array_push($arr, gettype($x)."(".strlen($x).") ".$x);
 							}
 
 							echo join(", ", $arr);
