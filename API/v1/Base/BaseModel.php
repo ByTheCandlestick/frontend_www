@@ -96,14 +96,13 @@
 		 *	@return	void
 		 */
 			public function uploadAudit(string $f, array $a, string $s, string $uid = "0") {
-				$this->Execute($sss = sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`) VALUES(`%s`, now(), '%s', '%s', '%s', '%s')",
+				$this->Execute(sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`) VALUES('%s', now(), '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
 					$f,
 					$this->arrToStr($a, ', '),
 					$s,
 					$uid
 				), 1);
-				print_r($sss);
 			}
 	}
 ?>
