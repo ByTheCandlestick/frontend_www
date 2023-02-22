@@ -80,7 +80,7 @@
 		 *	@param	string	$string
 		 *	@return	void
 		 */
-			public function uploadAudit(string $func, array $args, string $string, string $uid) {
+			public function uploadAudit(string $func, array $args, string $string, string $uid = 0) {
 				$arr = array();
 				foreach($args as $x) {
 					array_push($arr, gettype($x)."(".strlen($x).") ".$x);
