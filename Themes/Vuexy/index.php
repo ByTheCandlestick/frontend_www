@@ -108,7 +108,7 @@
 					<?
 						function executed($one, $two) {
 							foreach(func_get_args() as $x) {
-								gettype($x);
+								echo gettype($x)."(".strlen($x).")";
 							}
 						}
 						executed("1", 2);
