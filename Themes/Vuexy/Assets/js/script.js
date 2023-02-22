@@ -1243,7 +1243,7 @@
 					},
 					success(body) {
 						if(body.status == "success") {
-							$(location).attr('href', '/Websites/?al_ty=success&al_tx=Successfully updated the website');
+							//$(location).attr('href', '/Websites/?al_ty=success&al_tx=Successfully updated the website');
 						} else {
 							alert.simple("An error has occurred. Please try again later", "danger");
 						}
