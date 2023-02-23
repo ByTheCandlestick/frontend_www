@@ -105,27 +105,6 @@
 				<script src="/script.js" type="text/javascript"></script>
 			<!-- ===== App ===== -->
 				<div class="app-container">
-					<?
-						function executed($a) {
-							$arr = array();
-							foreach($a as $x) {
-								if(gettype($x) == 'array') {
-									array_push($arr, executed($x, ', '));
-								} else {
-									array_push($arr, gettype($x)."(".strlen($x).") ".$x);
-								}
-							}
-							return join(", ", $arr);
-						}
-						$a = array(
-								"one",
-								array(
-									2,
-									true
-								)
-							);
-						print_r(executed($a));
-					?>
 					<!-- ===== Preloader ===== -->
 						<div class="app-preloader">
 							<svg class="pl" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
