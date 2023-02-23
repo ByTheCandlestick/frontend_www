@@ -110,7 +110,7 @@
 							$arr = array();
 							foreach($a as $x) {
 								if(gettype($x) == 'array') {
-									executed($x, ', ');
+									array_push($arr, executed($x, ', '));
 								} else {
 									array_push($arr, gettype($x)."(".strlen($x).") ".$x);
 								}
