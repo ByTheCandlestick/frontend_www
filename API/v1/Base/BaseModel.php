@@ -98,8 +98,7 @@
 			public function uploadAudit(string $f, $r, string $s, string $uid = "0") {
 				
 				$a = array();
-				foreach($r->getParameters() as $parameter)
-				{
+				foreach($r as $parameter) {
 					$name = $parameter->getName();
 					$a[$name] = ${$name};
 				}
