@@ -95,11 +95,10 @@
 		 *	@param	string	$s
 		 *	@return	void
 		 */
-			public function uploadAudit(string $f, string $s, string $uid = "0") {
+			public function uploadAudit(string $f, $r, string $s, string $uid = "0") {
 				
 				$a = array();
-				$ref = new ReflectionFunction($f);
-				foreach($ref->getParameters() as $parameter)
+				foreach($r->getParameters() as $parameter)
 				{
 					$name = $parameter->getName();
 					$a[$name] = ${$name};
