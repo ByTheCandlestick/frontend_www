@@ -95,7 +95,15 @@
 		 *	@param	string	$s
 		 *	@return	void
 		 */
-			public function uploadAudit(string $f, array $a, string $s, string $uid = "0") {
+			public function uploadAudit(string $f, string $s, string $uid = "0") {
+				
+				$a = array();
+				$ref = new ReflectionFunction($f);
+				foreach($ref->getParameters() as $parameter)
+				{
+					$name = $parameter->getName();
+					$a[$name] = ${$name};
+				}
 				$this->Execute(sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`) VALUES('%s', now(), '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
 					$f,

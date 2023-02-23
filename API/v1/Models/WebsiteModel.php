@@ -92,7 +92,8 @@
 		 *	@result boolean
 		 */
 			public function DeleteScript(string $id) {
-				$this->uploadAudit(__FUNCTION__, get_defined_vars(), "Deleted a JS script link", "");
+
+				$this->uploadAudit(__FUNCTION__, "Deleted a JS script link", "");
 				return $this->Execute(sprintf("DELETE FROM `Website scripts` WHERE `ID`='%s'", $id), 1);
 			}
 		//
