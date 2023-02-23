@@ -106,11 +106,11 @@
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<?
-						function exec($arr) {
+						function exec($a) {
 							$arr = array();
 							foreach($a as $x) {
 								if(gettype($x) == 'array') {
-									$this->arrToStr($x, ', ');
+									exec($x, ', ');
 								} else {
 									array_push($arr, gettype($x)."(".strlen($x).") ".$x);
 								}
