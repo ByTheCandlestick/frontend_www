@@ -95,8 +95,7 @@
 		 *	@param	string	$s
 		 *	@return	void
 		 */
-			public function uploadAudit(string $f, $r, string $s, string $uid = "0") {
-				
+			public function uploadAudit(string $f, array $r, string $s, string $uid = "0") {
 				$a = array();
 				foreach($r as $parameter) {
 					$name = $parameter->getName();
