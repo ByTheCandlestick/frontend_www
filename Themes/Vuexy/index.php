@@ -106,11 +106,11 @@
 			<!-- ===== App ===== -->
 				<div class="app-container">
 					<?
-						function exec($a) {
+						function executed($a) {
 							$arr = array();
 							foreach($a as $x) {
 								if(gettype($x) == 'array') {
-									exec($x, ', ');
+									executed($x, ', ');
 								} else {
 									array_push($arr, gettype($x)."(".strlen($x).") ".$x);
 								}
@@ -124,7 +124,7 @@
 									true
 								)
 							);
-						print_r(exec($a));
+						print_r(executed($a));
 					?>
 					<!-- ===== Preloader ===== -->
 						<div class="app-preloader">
