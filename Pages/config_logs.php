@@ -26,7 +26,7 @@
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
 		<div name="logData" class="mw-unset w-unset">
-			<table>
+			<table class="table">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
