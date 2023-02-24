@@ -1,4 +1,6 @@
-
+<?
+	print_r(mysqli_fetch_row(DB_QUERY(sprintf("SELECT `ID`, CONCAT(`First_name`, ' ', `Last_name`) as 'Name' FROM `User accounts`"))));
+?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
