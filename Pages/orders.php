@@ -32,12 +32,12 @@
 		<table class="ordersTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
+					<th scope="col"></th>
 					<th scope="col">#</th>
 					<th scope="col">Date</th>
 					<th scope="col">Subtotal</th>
 					<th scope="col">Tax</th>
 					<th scope="col">Fees</th>
-					<th scope="col">Status</th>
 					<th scope="col">txn ID</th>
 					<th scope="col"></th>
 				</tr>
@@ -62,12 +62,12 @@
 							}
 							print('
 								<tr>
-									<th scope="row">'.$editable.'</th>
+									<th scope="row">'.$status.'</td>
+									<th>'.$editable.'</th>
 									<td>'.$x['Created'].'</td>
 									<td>'.$x['Subtotal'].'</td>
 									<td>'.$x['Processing fees'].'</td>
 									<td>'.$x['Tax'].'</td>
-									<td>'.$status.'</td>
 									<td>'.$x['Transaction ID'].'</td>
 									<td>
 										<a href="javascript:orders.printReciept('.$x['Invoice ID'].');">
