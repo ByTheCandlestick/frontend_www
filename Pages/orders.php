@@ -47,19 +47,18 @@
 					if(count($orders) > 0) {
 						foreach($orders as $x) {
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
-							switch($x['Shipping status']){
-								// To be accepted
-									case '0':	$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
-								// To be Made
-									case "1":	$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be made"></i>';
-								// To be Sent to delivery company
-									case "2":	$status = '<i class="text-warning fa-duotone fa-user" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be dispatched"></i>';
-								// To be Delivered
-									case "3":	$status = '<i class="text-warning fa-duotone fa-box" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting delivery confirmation"></i>';
-								// Completed and Delivered
-									case "4":	$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
-								// Defaults
-									default:	$status = sprintf('<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="ERROR: Unknown status, %s"></i>', var_export($x['Shipping status'], true));
+							if($x['Shipping status'] == 0){ // To be accepted
+								$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
+							} else if($x['Shipping status'] == 1) { // To be Made
+								$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be made"></i>';
+							} else if($x['Shipping status'] == 2) { // To be Sent to delivery company
+								$status = '<i class="text-warning fa-duotone fa-user" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be dispatched"></i>';
+							} else if($x['Shipping status'] == 3) { // To be Delivered
+								$status = '<i class="text-warning fa-duotone fa-box" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting delivery confirmation"></i>';
+							} else if($x['Shipping status'] == 4) { // Completed and Delivered
+								$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
+							} else { // Defaults
+								$status = sprintf('<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="ERROR: Unknown status, %s"></i>', var_export($x['Shipping status'], true));
 							}
 							print('
 								<tr>
