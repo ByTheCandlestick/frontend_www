@@ -47,23 +47,18 @@
 					if(count($orders) > 0) {
 						foreach($orders as $x) {
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
-							switch ($x['Shipping status']) {
-								case 0:
-									// To be accepted
-									$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
-								case 1:
-									// To be Made
-									$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be made"></i>';
-								case 2:
-									// To be Sent to delivery company
-									$status = '<i class="text-warning fa-duotone fa-user" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be dispatched"></i>';
-								case 3:
-									// To be Delivered
-									$status = '<i class="text-warning fa-duotone fa-box" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting delivery confirmation"></i>';
-								case 4:
-									// Complete and Delivered
-									$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
-							}
+							switch($x['Shipping status']):
+								// To be accepted
+									case <1:	$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
+								// To be Made
+									case <2:	$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be made"></i>';
+								// To be Sent to delivery company
+									case <3:	$status = '<i class="text-warning fa-duotone fa-user" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be dispatched"></i>';
+								// To be Delivered
+									case <4:	$status = '<i class="text-warning fa-duotone fa-box" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting delivery confirmation"></i>';
+								// Completed and Delivered
+									default:	$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
+							endswitch;
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
