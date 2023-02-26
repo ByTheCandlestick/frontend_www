@@ -47,7 +47,7 @@
 					if(count($orders) > 0) {
 						foreach($orders as $x) {
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
-							switch($x['Shipping status']):
+							switch($x['Shipping status']){
 								// To be accepted
 									case "0":	$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
 								// To be Made
@@ -60,7 +60,7 @@
 									case "4":	$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
 								// Defaults
 									default:	$status = sprintf('<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="Error: %s is not a valid value"></i>', var_export($x['Shipping status'], true));
-							endswitch;
+							}
 							print('
 								<tr>
 									<th scope="row">'.$editable.'</th>
