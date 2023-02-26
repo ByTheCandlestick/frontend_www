@@ -49,7 +49,7 @@
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
 							switch($x['Shipping status']){
 								// To be accepted
-									case "0":	$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
+									case '0':	$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
 								// To be Made
 									case "1":	$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be made"></i>';
 								// To be Sent to delivery company
@@ -59,7 +59,7 @@
 								// Completed and Delivered
 									case "4":	$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
 								// Defaults
-									default:	$status = sprintf('<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="ERROR: Unknown status %s"></i>', var_export($x['Shipping status'], true));
+									default:	$status = sprintf('<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="ERROR: Unknown status, %s"></i>', var_export($x['Shipping status'], true));
 							}
 							print('
 								<tr>
