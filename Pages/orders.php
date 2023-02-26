@@ -47,8 +47,7 @@
 					if(count($orders) > 0) {
 						foreach($orders as $x) {
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
-							var_dump((int)$x['Shipping status']);
-							switch((int)$x['Shipping status']):
+							switch($x['Shipping status']):
 								// To be accepted
 									case 0:	$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
 								// To be Made
