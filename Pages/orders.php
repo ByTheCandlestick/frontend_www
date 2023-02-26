@@ -59,7 +59,7 @@
 								// Completed and Delivered
 									case 4:	$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
 								// Defaults
-									default:	$status = '<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="Error"></i>';
+									default:$status = sprintf('<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="Error: %s is not a valid value"></i>', var_export($x['Shipping status'], true));
 							endswitch;
 							print('
 								<tr>
