@@ -47,21 +47,22 @@
 					if(count($orders) > 0) {
 						foreach($orders as $x) {
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
-							if($x['Shipping status']<1) {
-								// To be accepted
-								$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
-							} elseif($x['Shipping status']<2) {
-								// To be Made
-								$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be made"></i>';
-							} elseif($x['Shipping status']<3) {
-								// To be Sent to delivery company
-								$status = '<i class="text-warning fa-duotone fa-user" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be dispatched"></i>';
-							} elseif($x['Shipping status']<4) {
-								// To be Delivered
-								$status = '<i class="text-warning fa-duotone fa-box" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be delivered"></i>';
-							} else {
-								// Complete and Delivered
-								$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
+							switch ($x['Shipping status']) {
+								case 0:
+									// To be accepted
+									$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be confirmed"></i>';
+								case 1:
+									// To be Made
+									$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be made"></i>';
+								case 2:
+									// To be Sent to delivery company
+									$status = '<i class="text-warning fa-duotone fa-user" data-toggle="tooltip" data-placement="right" data-bs-original-title="To be dispatched"></i>';
+								case 3:
+									// To be Delivered
+									$status = '<i class="text-warning fa-duotone fa-box" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting delivery confirmation"></i>';
+								case 4:
+									// Complete and Delivered
+									$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
 							}
 							print('
 								<tr>
