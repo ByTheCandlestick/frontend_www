@@ -59,7 +59,7 @@
 								// Completed and Delivered
 									case(4):	$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
 								// Defaults
-									default:	$status = '<i class="text-error fa-solid fa-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="Error"></i>';
+									default:	$status = '<i class="text-danger fa-solid fa-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="Error"></i>';
 							endswitch;
 							print('
 								<tr>
