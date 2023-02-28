@@ -115,7 +115,8 @@
 		 *
 		 *	@final
 		 */
-			public function UpdateUser(int $uid, array $update, array $info) {
+			public function UpdateUser(int $uid, array $update, array $info, string $id) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Update a User", "Users", $id);
 				$vars = array();
 				if($update['uname']) { array_push($vars, "`Username`='" . $info['uname']."'"); }
 				if($update['fname']) { array_push($vars, "`First_name`='" . $info['fname']."'"); }
@@ -127,7 +128,6 @@
 				if($update['e_active']) { array_push($vars, "`Email_active`=" . $info['e_active']); }
 				if($update['u_active']) { array_push($vars, "`Active`=" . $info['u_active']); }
 				if($update['pass']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
-				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Update a User", "Users", $uid);
 				return $this->Execute("UPDATE `User accounts` SET" . implode(', ', $vars) . " WHERE `ID`=".$uid, 1);
 			}
 		/** ConfirmEmail
@@ -177,7 +177,8 @@
 		 *	
 		 *	@todo
 		 */
-			public function updatePermissions(array $perms, string $uid) {
+			public function updatePermissions(array $perms, string $uid, string $id) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Deleted a user", "Users", $id);
 				array_shift($perms);
 				$keys = array_keys($perms);
 				$vals = $perms;
@@ -194,10 +195,10 @@
 		 *	
 		 *	@todo
 		 */
-			public function deleteUser(string $uid) {
+			public function deleteUser(string $uid, string $id) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Deleted a user: ".$id, "Users", $id);
 				$this->Execute(sprintf("DELETE FROM `User accounts` WHERE `ID`='%s'", $uid), 1);
 				$this->Execute(sprintf("DELETE FROM `User permissions` WHERE `UID`='%s'", $uid), 1);
-				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Deleted a user", "Website", $uid);
 				return true;
 			}
 		/**	updateOauth

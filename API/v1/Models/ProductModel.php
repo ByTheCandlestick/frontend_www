@@ -125,7 +125,8 @@
 		 * 
 		 * 
 		 */
-			public function updateProduct(string $sku, array $info) {
+			public function updateProduct(string $sku, array $info, string $uid) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Updated a Product", "Products", $uid);
 				return $this->Execute(sprintf("
 				UPDATE
 					`Product`
@@ -192,8 +193,9 @@
 		/** createSKU
 		 * 
 		 *	@return string
-			*/
-			public function createSKU() {
+		 */
+			public function createSKU(string $uid) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Created a new SKU", "Products", $uid);
 				if($this->Execute($q="SELECT `SKU` FROM `Product` ORDER BY SKU DESC LIMIT 1", 5)>0) {
 					return intval($this->Execute($q, 3)['SKU']) + 1;
 				} else {
@@ -204,7 +206,8 @@
 		 * 
 		 *	@return string
 		 */
-			public function createUPC(string $productCode, array $info) {
+			public function createUPC(string $productCode, array $info, string $uid) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Created a new UPC", "Products", $uid);
 				$UPC  = '7';
 				$UPC .= $this->Execute(sprintf("SELECT `Reference` FROM `Partner accounts` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
 				$UPC .= $productCode;
@@ -224,7 +227,8 @@
 		 * 
 		 * 
 		 */
-			public function createProduct(string $sku, string $upc, array $info) {
+			public function createProduct(string $sku, string $upc, array $info, string $uid) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Created a new Product", "Products", $uid);
 				return $this->Execute(print(sprintf("INSERT INTO `Product`(`SKU`, `UPC`, `Discontinued`, `Active`, `Title`, `Images`, `Collection_ID`, `Category_ID`, `Currency`, `GrossProfit`, `RetailPrice`, `NetPrice`, `GrossPrice`, `ProfitMargin`, `Discount`, `DiscountType`, `DiscountAmount`, `Container_ID`, `Wick_ID`, `WickStand_ID`, `Material_ID`, `Fragrance_ID`, `Colour_ID`, `Packaging_ID`, `Shipping_ID`, `DescriptionShort`, `DescriptionLong`, `Slug`, `made_by_ID` ) VALUES ('%s', '%s', %s, %s, '%s', '%s', %s, %s, '%s', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', '%s', %s )",
 					$sku,
 					$upc,
@@ -260,7 +264,8 @@
 		/** deleteProduct
 		 * 
 		 */
-			public function deleteProduct(string $sku) {
+			public function deleteProduct(string $sku, string $uid) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Celeted a product", "Products", $uid);
 				return $this->Execute(sprintf("DELETE FROM `Product` WHERE `SKU`='%s'", $sku), 1);
 			}
 	}
