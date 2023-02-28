@@ -43,6 +43,7 @@
 					<th scope="col">Command</th>
 					<th scope="col">Arguments</th>
 					<th scope="col">IP</th>
+					<th scope="col">Timestamp</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -54,12 +55,14 @@
 							?>
 								<tr>
 									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
+									<td><?=$row['ID']?></td>
+									<td><?=$users[$row['User ID']]?></td>
+									<td><?=$row['Category']?></td>
+									<td><?=$row['String']?></td>
+									<td><?=$row['Function']?></td>
+									<td><?=$row['Args']?></td>
+									<td><?=$row['IP']?></td>
+									<td><?=$row['Timestamp']?></td>
 								</tr>
 							<?
 						}
