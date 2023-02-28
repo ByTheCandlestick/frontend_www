@@ -40,15 +40,13 @@
 					<th scope="col">User</th>
 					<th scope="col">Category</th>
 					<th scope="col">String</th>
-					<th scope="col">Command</th>
-					<th scope="col">Arguments</th>
 					<th scope="col">IP</th>
 					<th scope="col">Timestamp</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?
-					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `Function`, LEFT(`Args`, 20) as `Args`, `IP`, `Timestamp` FROM `Audit trail`"));
+					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail`"));
 					if($query) {
 						while($row = mysqli_fetch_assoc($query)){
 							?>
@@ -57,8 +55,6 @@
 									<td><?=$users[$row['User ID']]?></td>
 									<td><?=$row['Category']?></td>
 									<td><?=$row['String']?></td>
-									<td><?=$row['Function']?></td>
-									<td><?=$row['Args']?></td>
 									<td><?=$row['IP']?></td>
 									<td><?=$row['Timestamp']?></td>
 								</tr>
