@@ -54,7 +54,6 @@
 						while($row = mysqli_fetch_assoc($query)){
 							?>
 								<tr>
-									<th scope="row">1</th>
 									<td><?=$row['ID']?></td>
 									<td><?=$users[$row['User ID']]?></td>
 									<td><?=$row['Category']?></td>
