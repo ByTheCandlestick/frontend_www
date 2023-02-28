@@ -3,6 +3,7 @@
 	$query = DB_QUERY(sprintf("SELECT `ID`, CONCAT(`First_name`, ' ', `Last_name`) as 'Name' FROM `User accounts`"));
 	if($query) {
 		while($row = mysqli_fetch_assoc($query)){
+			print_r($row);
 			$users[$row['ID']] == $row['Name'];
 		}
 	}
