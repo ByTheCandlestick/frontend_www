@@ -24,9 +24,9 @@
 		 *  @return array
 		 *	@final
 		 */
-		public function GetUserId(string $emailid) {
-			return $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Email`='$email'", 4)[0];
-		}
+			public function GetUserId(string $emailid) {
+				return $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Email`='$email'", 4)[0];
+			}
 		/**	ListSessions
 		 *  Creates a list of all user sessions for a specific user
 		 *	@param	array	$arr_user_info
@@ -127,6 +127,7 @@
 				if($update['e_active']) { array_push($vars, "`Email_active`=" . $info['e_active']); }
 				if($update['u_active']) { array_push($vars, "`Active`=" . $info['u_active']); }
 				if($update['pass']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Update a User", "Users", $uid);
 				return $this->Execute("UPDATE `User accounts` SET" . implode(', ', $vars) . " WHERE `ID`=".$uid, 1);
 			}
 		/** ConfirmEmail
@@ -196,6 +197,7 @@
 			public function deleteUser(string $uid) {
 				$this->Execute(sprintf("DELETE FROM `User accounts` WHERE `ID`='%s'", $uid), 1);
 				$this->Execute(sprintf("DELETE FROM `User permissions` WHERE `UID`='%s'", $uid), 1);
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Deleted a user", "Website", $uid);
 				return true;
 			}
 		/**	updateOauth

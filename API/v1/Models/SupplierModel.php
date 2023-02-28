@@ -7,6 +7,7 @@
 		 * @result boolean
 		 */
 			public function CreateSupplier(array $info) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Updated a supplier", "Suppliers", $uid);
 				return $this->Execute(sprintf("INSERT INTO `Suppliers`(`Reference`, `Name`, `Email`, `Phone`, `Opening Hours`) VALUES ('%s', '%s', '%s', '%s', '%s')", $info['reference'], $info['name'], $info['email'], $info['phone'], $info['hours']), 1);
 			}
 		/** UpdateSupplier
@@ -17,6 +18,7 @@
 		 * @result boolean
 		 */
 			public function UpdateSupplier(string $sid, array $info) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Updated a supplier", "Suppliers", $uid);
 				return $this->Execute(sprintf("UPDATE `Suppliers` SET `Reference`='%s', `Name`='%s', `Email`='%s', `Phone`='%s', `Opening Hours`='%s' WHERE `ID`='%s'", $info['reference'], $info['name'], $info['email'], $info['phone'], $info['hours'], $sid), 1);
 			}
 		/** DeleteSupplier
@@ -26,6 +28,7 @@
 		 * @result boolean
 		 */
 			public function DeleteSupplier(string $pid) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Updated a supplier", "Suppliers", $uid);
 				return $this->Execute(sprintf("DELETE FROM `Suppliers` WHERE `ID`='%s'", $pid), 1);
 			}
 		//
