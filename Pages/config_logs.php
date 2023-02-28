@@ -1,6 +1,9 @@
 <?
-	$sql = mysqli_fetch_array(DB_QUERY(sprintf("SELECT `ID`, CONCAT(`First_name`, ' ', `Last_name`) as 'Name' FROM `User accounts`")));
-	print_r($sql);
+	query = DB_QUERY(sprintf("SELECT `ID`, CONCAT(`First_name`, ' ', `Last_name`) as 'Name' FROM `User accounts`")));
+	if($query) {
+		while($row = mysqli_fetch_assoc($query)){
+		}
+	}
 ?>
 <section>
 	<!-- Section Header -->
