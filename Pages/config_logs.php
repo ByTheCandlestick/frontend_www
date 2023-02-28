@@ -49,7 +49,7 @@
 			<tbody>
 				<?
 					$users = array();
-					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `Function`, LEFT(`Args`, 20), `IP`, `Timestamp` FROM `Audit trail`"));
+					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `Function`, LEFT(`Args`, 20) as `Args`, `IP`, `Timestamp` FROM `Audit trail`"));
 					if($query) {
 						while($row = mysqli_fetch_assoc($query)){
 							?>
