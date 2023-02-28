@@ -4,7 +4,7 @@
 	if($query) {
 		while($row = mysqli_fetch_assoc($query)){
 			print_r($row);
-			$users =+[$row['ID'] => $row['Name']];
+			$users += [$row['ID'] => $row['Name']];
 		}
 	}
 	print_r($users);
