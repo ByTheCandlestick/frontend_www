@@ -101,9 +101,7 @@
 				print_r($p);
 				$a = array();	$i = 0;
 				foreach($p as $parameter) {
-					$a[$i++] = Gettype($parameter);
-					$a[$i] .= '('.strlen($parameter).') ';
-					$a[$i] .= '\\\''.$parameter.'\\\'';
+					$a[$i++] = gettype($parameter).'('.strlen($parameter).') \\\''.$parameter.'\\\'';
 				}
 				$this->Execute(sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`, `Category`) VALUES('%s', now(), '%s', '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
