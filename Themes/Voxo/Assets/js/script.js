@@ -948,6 +948,7 @@ $(document).ready(function() {
 				$.ajax({
 					url: api_url + '/Stripe/',
 					data: {
+						'uid': $('.profile-btn span').attr('user-id'),
 						'api_key': api_key,
 					},
 					type: 'PUT',
