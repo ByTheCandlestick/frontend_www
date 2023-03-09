@@ -21,8 +21,7 @@
          *  @return
          */
 			public function add(int $uid, int $sku, int $qty, string $opt) {
-				$reflection = new ReflectionFunction(__FUNCTION__);
-				$this->uploadAudit(__FUNCTION__, $reflection->getParameters(), "Item added to users cart", "Cart", $uid);
+				//$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Item added to users cart", "Cart", $uid);
 				// check if line already exists,
 				if($this->Execute(sprintf("SELECT * FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 5) > 0) {
 					// Get qty on existing line
