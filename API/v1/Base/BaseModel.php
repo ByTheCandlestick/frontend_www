@@ -98,6 +98,7 @@
 		 *	@return	void
 		 */
 			public function uploadAudit($f, array $p, string $s, string $category, string $uid = "0") {
+				print_r($p);
 				$a = array();	$i = 0;
 				foreach($p as $parameter) {
 					$a[$i++] = Gettype($parameter);
