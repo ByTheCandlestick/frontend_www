@@ -21,7 +21,6 @@
          *  @return
          */
 			public function add(int $uid, int $sku, int $qty, string $opt) {
-				print_r((new ReflectionFunctionAbstract(__FUNCTION__))->getParameters());
 				try {
 					$this->uploadAudit(__FUNCTION__, (new ReflectionFunctionAbstract(__FUNCTION__))->getParameters(), "Item added to users cart", "Cart", $uid);
 				} catch(Exception $ex) {
