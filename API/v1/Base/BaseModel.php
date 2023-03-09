@@ -98,12 +98,11 @@
 		 *	@return	void
 		 */
 			public function uploadAudit($f, array $p, string $s, string $category, string $uid = "0") {
-				$a = array();
-				$i = 0;
+				$a = array();	$i = 0;
 				foreach($p as $parameter) {
 					$a[$i++] = Gettype($parameter);
 					$a[$i] .= '('.strlen($parameter).') ';
-					$a[$i] .= '\''.$parameter.'\'';
+					$a[$i] .= '\\\''.$parameter.'\\\'';
 				}
 				$this->Execute($sql = sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`, `Category`) VALUES('%s', now(), '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
