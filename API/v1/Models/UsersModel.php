@@ -151,7 +151,6 @@
 					$this->Execute("INSERT INTO `Mail`(`From`, `To`, `Cc`, `Bcc`, `Subject`, `Message`, `Archived?`, `Status`) VALUES ('$f', '$t', '$c', '$b', '$s', '$m', '0', 'Error')", 1);
 					return false;
 				}
-				mail($to,$subject,$txt,$headers);
 			}
 		/** ConfirmUser
 		 *
