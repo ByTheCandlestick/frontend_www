@@ -91,15 +91,19 @@
 		/** uploadAudit
 		 * 
 		 *	@param			$f
-		 *	@param	array	$a
+		 *	@param	array	$p
 		 *	@param	string	$s
+		 *	@param	string	$category
+		 *	@param	int		$uid		0
 		 *	@return	void
 		 */
-			public function uploadAudit($f, array $r, string $s, string $category, string $uid = "0") {
+			public function uploadAudit($f, array $p, string $s, string $category, string $uid = "0") {
 				$a = array();
-				foreach($r as $parameter) {
-					$name = $parameter->getName();
-					$a[$name] = ${$name};
+				$i = 0;
+				foreach($p as $parameter) {
+					$a[$i++] = Gettype($parameter);
+					$a[$i] .= '('.strlen($parameter).') ';
+					$a[$i] .= '\''.$parameter.'\'';
 				}
 				$this->Execute(sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`, `Category`) VALUES('%s', now(), '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
