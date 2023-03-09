@@ -1,6 +1,6 @@
 <?php
 	class ImagesController extends BaseController {
-		/** "/Images/Upload" Endpoint
+		/** "/Images/Create" Endpoint
 		 *	@final Complete
 		 *	@return JSON
 		 */

@@ -36,7 +36,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_page->CreatePage($arr_page_info)) {	// Success
+							if($mdl_page->CreatePage($arr_page_info, $arr_page_info['uid'])) {	// Success
 								$resp = array('status'=>'success');
 								$arr_page_info['id'] = $mdl_page->ReadPageID($arr_page_info)['ID'];
 								$resp['info'] = $arr_page_info;
@@ -100,7 +100,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_page->UpdatePage($arr[0], $arr_page_info)) {	// Success
+							if($mdl_page->UpdatePage($arr[0], $arr_page_info, $arr_page_info['uid'])) {	// Success
 								$resp = array('status'=>'success');
 								$resp['info'] = $arr_page_info;
 								$str_response = json_encode($resp);
@@ -126,7 +126,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_page->DeletePage($arr[0])) {	// Success
+							if($mdl_page->DeletePage($arr[0], $arr_page_info['uid'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-PAG-1");
