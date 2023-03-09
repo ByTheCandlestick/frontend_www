@@ -21,7 +21,7 @@
 							$query = DB_QUERY(sprintf("SELECT `Category` FROM `Audit trail` GROUP BY `Category`"));
 							if($query) {
 								while($row = mysqli_fetch_assoc($query)){
-									printf('<option value="%s">%s</option>', $log['Category'], $log['Category']);
+									printf('<option value="%s">%s</option>', $row['Category'], $row['Category']);
 								}
 							}
 						?>
