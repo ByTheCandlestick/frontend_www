@@ -43,7 +43,7 @@
 		 * @return
 		 */
 			public function remove(int $uid, int $sku, string $opt, string $qty) {
-				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Items removed from users cart", "Cart", $uid);
+				$this->uploadAudit(__FUNCTION__, array($uid, $sku, $opt, $qty), "Items removed from users cart", "Cart", $uid);
 				$new_qty = $this->Execute(sprintf("SELECT `Quantity` FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 2)[0] - $qty;
 				if($new_qty == 0) {
 					return $this->Execute(sprintf("DELETE FROM `User carts` WHERE `UID`=%s AND `Options`='%s' AND `SKU`=%s", $uid, $opt, $sku), 1);
