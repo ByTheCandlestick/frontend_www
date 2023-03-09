@@ -163,7 +163,7 @@
 		 *	@todo
 		 */
 			public function ConfirmSession(string $seccode) {
-				print_r($this->Execute(sprintf("SELECT COUNT(*) FROM `User sessions` WHERE `Session_code`=%s LIMIT 1", $seccode), 2)[0]);
+				print_r($this->Execute(sprintf("SELECT COUNT(*) FROM `User sessions` WHERE `Session_code`=%s LIMIT 1", $seccode), 2));
 				return false;
 			}
 		/** ConfirmPassword
