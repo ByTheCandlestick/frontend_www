@@ -22,7 +22,7 @@
          */
 			public function add(int $uid, int $sku, int $qty, string $opt) {
 				try {
-					$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Item added to users cart", "Cart", $uid);
+					$this->uploadAudit(__FUNCTION__, array($uid, $sku, $qty, $opt), "Item added to users cart", "Cart", $uid);
 				} catch(Exception $ex) {
 
 				}
