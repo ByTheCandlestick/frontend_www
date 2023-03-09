@@ -111,7 +111,8 @@
 						$update = array();	$info = array();
 						// Confirmations
 							try {
-								( isset($arr_user_info['pass'])  && $arr_user_info['pass']!="" )? $update['p']=true		: $update['p']=false;
+								( isset($arr_user_info['pass1'])  && $arr_user_info['pass1']!="" &&
+								  isset($arr_user_info['pass2'])  && $arr_user_info['pass2']!="" )? $update['p']=true		: $update['p']=false;
 								( isset($arr_user_info['uname']) && $arr_user_info['uname']!="")? $update['uname']=true	: $update['uname']=false;
 								( isset($arr_user_info['fname']) && $arr_user_info['fname']!="")? $update['fname']=true	: $update['fname']=false;
 								( isset($arr_user_info['lname']) && $arr_user_info['lname']!="")? $update['lname']=true	: $update['lname']=false;
