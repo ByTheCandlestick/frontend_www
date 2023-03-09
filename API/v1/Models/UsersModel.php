@@ -127,7 +127,7 @@
 				if($update['d_analytics']) { array_push($vars, "`Disable_analytics`=" . $info['d_analytics']); }
 				if($update['e_active']) { array_push($vars, "`Email_active`=" . $info['e_active']); }
 				if($update['u_active']) { array_push($vars, "`Active`=" . $info['u_active']); }
-				if($update['pass']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
+				if($update['p']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
 				return $this->Execute("UPDATE `User accounts` SET" . implode(', ', $vars) . " WHERE `ID`=".$uid, 1);
 			}
 		/** ConfirmEmail
