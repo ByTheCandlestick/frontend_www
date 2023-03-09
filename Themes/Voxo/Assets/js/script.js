@@ -544,7 +544,7 @@ $(document).ready(function() {
 						alerts.icon('info', 'No info has been changed')
 					} else {
 						$.ajax({
-							url:  + '/Users/' + user_id + '/',
+							url: api_url + '/Users/' + user_id + '/',
 							data: data,
 							type: 'POST',
 							xhrFields: {
