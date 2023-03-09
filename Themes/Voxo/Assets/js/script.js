@@ -480,8 +480,9 @@ $(document).ready(function() {
 									} else {
 										window.location = window.location.protocol+'//' + $('rw').attr('data');
 									}
+								} else {
+									location.reload();
 								}
-								//location.reload();
 							} else {
 								console.log(body.status);
 							}
