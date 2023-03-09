@@ -538,7 +538,8 @@ $(document).ready(function() {
 					if (pwd_new != '') data += '&pass1=' + pwd_new;
 					pwd_conf = $('.account_details-password_conf').val();
 					if (pwd_conf != '') data += '&pass2=' + pwd_conf;
-					user_id = $('userdata').attr('user_id')
+					user_id = $('userdata').attr('user_id');
+					data += '&uid=' + user_id;
 
 					if (data == api_key_data + '&pass=' + pwd_old) {
 						alerts.icon('info', 'No info has been changed')
