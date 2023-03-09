@@ -62,12 +62,13 @@
 							if(!$mdl_product->validateShipping($arr_product_info['shipping']))		Throw new Error('ERR-PRD-41');
 							if(!$mdl_product->validateMadeBy($arr_product_info['made_by']))			Throw new Error('ERR-PRD-42');
 							if(!$mdl_product->validateSlug($arr_product_info['slug']))				Throw new Error('ERR-PRD-43');
+							if(!$mdl_product->validateSlug($arr_product_info['uid']))				Throw new Error('ERR-PRD-43');
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
 					// Submit
 						try {
-							if($mdl_product->createProduct($arr_product_info['sku'] = $mdl_product->createSKU(), $mdl_product->createUPC($arr_product_info['sku'], $arr_product_info), $arr_product_info)) {	// Success
+							if($mdl_product->createProduct($arr_product_info['sku'] = $mdl_product->createSKU($arr_product_info['uid']), $mdl_product->createUPC($arr_product_info['sku'], $arr_product_info, $arr_product_info['uid']), $arr_product_info, $arr_product_info['uid'])) {	// Success
 								$resp = array('status'=>'success');
 								$resp['info'] = $arr_product_info;
 								$str_response = json_encode($resp);
@@ -135,6 +136,7 @@
 							if(!isset($arr_product_info['description_long']))	Throw new Error('ERR-PRD-27');
 							if(!isset($arr_product_info['description_short']))	Throw new Error('ERR-PRD-28');
 							if(!isset($arr_product_info['slug']))				Throw new Error('ERR-PRD-29');
+							if(!isset($arr_product_info['uid']))				Throw new Error('ERR-PRD-29');
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
@@ -160,7 +162,7 @@
 						}
 					// Submit
 						try {
-							if($mdl_product->updateProduct($arr_product_info['id'], $arr_product_info)) {	// Success
+							if($mdl_product->updateProduct($arr_product_info['id'], $arr_product_info, $arr_product_info['uid'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								Throw new Error('ERR-PRD-45');
@@ -172,6 +174,7 @@
 					// Confirmations
 						try{
 							if(!isset($arr_product_info['id']))	Throw new Error('ERR-PRD-1');
+							if(!isset($arr_product_info['uid']))	Throw new Error('ERR-PRD-1');
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
@@ -183,7 +186,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_product->deleteProduct($arr_product_info['id'])) {	// Success
+							if($mdl_product->deleteProduct($arr_product_info['id'], $arr_product_info['uid'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-PRD-1");

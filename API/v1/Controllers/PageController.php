@@ -166,6 +166,7 @@
 							if(!isset($arr_page_info['display_type']))	throw new Error("ERR-LAY-1");
 							if(!isset($arr_page_info['sections']))		throw new Error("ERR-LAY-2");
 							if(!isset($arr_page_info['page']))			throw new Error("ERR-LAY-3");
+							if(!isset($arr_page_info['uid']))			throw new Error("ERR-LAY-4");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
@@ -177,7 +178,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_page->UpdateLayout($arr[0], $arr_page_info)) {	// Success
+							if($mdl_page->UpdateLayout($arr[0], $arr_page_info, $arr_page_info['uid'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-PAG-7");

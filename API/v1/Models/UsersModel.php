@@ -25,7 +25,7 @@
 		 *	@final
 		 */
 			public function GetUserId(string $emailid) {
-				return $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Email`='$email'", 4)[0];
+				return $this->Execute("SELECT `ID` FROM `User accounts` WHERE `Email`='$emailid'", 4)[0];
 			}
 		/**	ListSessions
 		 *  Creates a list of all user sessions for a specific user
@@ -146,9 +146,9 @@
 				// Send the message
 				$sent = mail($t, $s, $m, $h);
 				if($sent) {
-					return $this->Execute("INSERT INTO `Mail`(`From`, `To`, `Cc`, `Bcc`, `Subject`, `Message`, `Archived?`, `Status`) VALUES ('$f', '$t', '$c', '$b', '$s', '$m', '0', 'Sent')", 1);
+					return $this->Execute("INSERT INTO `Mail`(`From`, `To`, `Cc`, `Bcc`, `Subject`, `Message`, `Archived?`, `Status`) VALUES ('no-reply@thecandlestick.co.uk', '$t', '', '', '$s', '$m', '0', 'Sent')", 1);
 				} else {
-					$this->Execute("INSERT INTO `Mail`(`From`, `To`, `Cc`, `Bcc`, `Subject`, `Message`, `Archived?`, `Status`) VALUES ('$f', '$t', '$c', '$b', '$s', '$m', '0', 'Error')", 1);
+					$this->Execute("INSERT INTO `Mail`(`From`, `To`, `Cc`, `Bcc`, `Subject`, `Message`, `Archived?`, `Status`) VALUES ('no-reply@thecandlestick.co.uk', '$t', '', '', '$s', '$m', '0', 'Error')", 1);
 					return false;
 				}
 			}

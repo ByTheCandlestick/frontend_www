@@ -27,7 +27,7 @@
 						// Submit application
 							try{
 								$mdl_conf = new ConfigModel();
-								$status = $mdl_conf->createPermission($arr_conf_info['name'], $arr_conf_info['default']);
+								$status = $mdl_conf->createPermission($arr_conf_info['name'], $arr_conf_info['default'], $arr_conf_info['uid']);
 								if($status) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
@@ -57,7 +57,7 @@
 						// Submit application
 							try{
 								$mdl_conf = new ConfigModel();
-								$status = $mdl_conf->updatePermission($arr_conf_info['oldName'], $arr_conf_info['newName'], $arr_conf_info['default']);
+								$status = $mdl_conf->updatePermission($arr_conf_info['oldName'], $arr_conf_info['newName'], $arr_conf_info['default'], $arr_conf_info['uid']);
 								if($status) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
@@ -83,7 +83,7 @@
 						// Submit application
 							try{
 								$mdl_conf = new ConfigModel();
-								$status = $mdl_conf->deletePermission($arr_conf_info['name']);
+								$status = $mdl_conf->deletePermission($arr_conf_info['name'], $arr_conf_info['uid']);
 								if($status) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
@@ -94,7 +94,7 @@
 							}
 						//
                     else:
-                        $this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
+                        $this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
                     endif;
                 // Send output
                     $this->sendOutput(

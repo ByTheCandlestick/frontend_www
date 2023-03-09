@@ -74,7 +74,7 @@
 						}
 					//
 				else:
-					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
+					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
 				endif;
 			// Send output
 				$this->sendOutput(
@@ -96,13 +96,13 @@
 				/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE	-- 🗷 --	Unsupported
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)EAD	-- 🗷 --	Unsupported
-					$this->throwError("TODO: List users cart", "HTTP/1.1 404 Not Found");
+					$this->throwError("TODO: List users cart", "HTTP/1.1 404 Not Found", '', '', '');
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unsupported
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unsupported
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				else:
-					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
+					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
 				endif;
 			// Send output
 				$this->sendOutput(

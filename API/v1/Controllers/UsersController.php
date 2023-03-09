@@ -46,7 +46,7 @@
 							try{
 								if($mdl_User->Register($arr_user_info)) {	// Success
 									$resp = array('status'=>'success');
-									$arr_user_info['id'] = $mdl_page->GetUserId($arr_user_info['email'])['ID'];
+									$arr_user_info['id'] = $mdl_User->GetUserId($arr_user_info['email'])['ID'];
 									$resp['info'] = $arr_user_info;
 									$str_response = json_encode($resp);
 								} else {		// Error submitting
@@ -63,7 +63,7 @@
 							$arr_Users = $mdl_User->ListUsers($int_Limit);
 							$str_response = json_encode($arr_Users);
 						} catch(Error $er) {
-							$this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error");
+							$this->throwError($er->getMessage(), "HTTP/1.1 500 Internal Server Error", '', '', '');
 						}
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
@@ -99,13 +99,13 @@
 								if(isset($arr_User[0][$arr[1]])) {
 									$str_response = json_encode($arr_User[0][$arr[1]]);
 								} else {
-									$this->throwError("The offset '$arr[1]' you were looking for was not found.", "HTTP/1.1 404 Not Found");
+									$this->throwError("The offset '$arr[1]' you were looking for was not found.", "HTTP/1.1 404 Not Found", '', '', '');
 								}
 							} else {
 								$str_response = json_encode($arr_User);
 							}
 						} catch (Error $ex) {
-							$this->throwError($ex->getMessage()." - Something went wrong! Please contact support.", "HTTP/1.1 500 Internal Server Error");
+							$this->throwError($ex->getMessage()." - Something went wrong! Please contact support.", "HTTP/1.1 500 Internal Server Error", '', '', '');
 						}
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗹 --	Update user
 						$update = array();	$info = array();
@@ -179,7 +179,7 @@
 						// Submit application
 							$mdl_User->ConfirmEmail($info['email']);
 							try {
-								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info)) {
+								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info, $arr_user_info['uid'])) {
 									$str_response = json_encode(array('status'=>'success'));
 								} else {
 									throw new Error("ERR-SUP-7");
@@ -190,17 +190,17 @@
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗹 --	Remove user
 						// Submit application
 							try{
-								if($mdl_User->deleteUser($arr[0])) {	// Success
+								if($mdl_User->deleteUser($arr[0], $arr_user_info['uid'])) {	// Success
 									$str_response = json_encode(array('status'=>'success'));
 								} else {		// Error submitting
 									exit($error = array("status", "ERR-SUP-9"));
 								}
 							} catch(Exception $ex) {
-								exit($this->throwError($ex->getMessage()." - Something went wrong! Please contact support.", "HTTP/1.1 500 Internal Server Error"));
+								exit($this->throwError($ex->getMessage()." - Something went wrong! Please contact support.", "HTTP/1.1 500 Internal Server Error", '', '', ''));
 							}
 						//
 					else:
-						$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
+						$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
 					endif;
 				// send output
 					$this->sendOutput(
@@ -254,9 +254,9 @@
 							}
 						//
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Lists all sessions
-						exit($this->throwError("TODO: This request has not yet been finished", "HTTP/1.1 500 Not Found"));
+						exit($this->throwError("TODO: This request has not yet been finished", "HTTP/1.1 500 Not Found", '', '', ''));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found", '', '', ''));
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗹 --	Logs the user out and removes the session
 						// Confirmations
 							try{
@@ -283,7 +283,7 @@
 							}
 						//
 					else:
-						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity"));
+						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', ''));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -305,9 +305,9 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE		-- 🗹 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found", '', '', ''));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found", '', '', ''));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Unknown
 						// Confirmations
 							try{
@@ -323,7 +323,7 @@
 							}
 						// Submit application
 							try{
-								if($mdl_User->updatePermissions($arr_user_info, $arr[0])) {	// Success
+								if($mdl_User->updatePermissions($arr_user_info, $arr[0], $arr_user_info['uid'])) {	// Success
 									$str_response = json_encode(array("status" => "success"));
 								} else {		// Error submitting
 									throw new Error("ERR-PRM-11");
@@ -333,9 +333,9 @@
 							}
 						//
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗹 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found", '', '', ''));
 					else:
-						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity"));
+						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', ''));
 					endif;
 				// Send output
 					$this->sendOutput(
@@ -357,9 +357,9 @@
 					$str_response = "";
 				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
 					/**/if(strtoupper($requestMethod) == "PUT"):	// (C)REATE		-- 🗹 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found", '', '', ''));
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found", '', '', ''));
 					elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Unknown
 						// Confirmations
 							try{
@@ -387,9 +387,9 @@
 							}
 						//
 					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗹 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found"));
+						exit($this->throwError("Unknown Request type for this function", "HTTP/1.1 404 Not Found", '', '', ''));
 					else:
-						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity"));
+						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', ''));
 					endif;
 				// Send output
 					$this->sendOutput(

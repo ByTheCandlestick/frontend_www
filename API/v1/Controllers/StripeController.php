@@ -53,7 +53,7 @@
 						// Create and attempt the charge on the users card.
 							if(empty($api_error) && $customer) {
 								try {
-									$charge = $mdl_stripe->createCharge($stripe, $customer, $pricePennies, $currency, $items);
+									$charge = $mdl_stripe->createCharge($stripe, $customer, $pricePennies, $currency, $items, $uid);
 								} catch (Exception $e) {
 									$api_error = $e->getMessage();
 								}
@@ -142,6 +142,7 @@
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Refund a transaction
+					if(!isset($arr_stripe_info['uid']) || $arr_stripe_info['uid'] == "")			throw new Error("ERR-STR-1");
 					// Retrieve stripe token and user info from the submitted form 
 						$amount = 
 					// Create intent for the refund
@@ -201,7 +202,7 @@
 					// Print refund info
 						if($refund['status'] == "succeeded") {
 							// Upload refund details to the database.
-								$mdl_stripe->uploadRefund($refund['id'], $refund['amount'], $refund['currency'], $refund['balance_transaction'], $refund['charge'], $refund['status']);
+								$mdl_stripe->uploadRefund($refund['id'], $refund['amount'], $refund['currency'], $refund['balance_transaction'], $refund['charge'], $refund['status'], $arr_stripe_info['uid']);
 							// Send output
 							exit($this->sendOutput( // Successfully refunded
 								Json_encode(array(

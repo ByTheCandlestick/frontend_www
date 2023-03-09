@@ -184,7 +184,7 @@
 									$pdf->Cell($pdf->GetStringWidth($invoice['Email']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Email'], $pdf->dev_outline, 2, "L");
 									$pdf->Cell($pdf->GetStringWidth($invoice['Phone']), $pdf->GetStringHeight($pdf->fs_h5), $invoice['Phone'], $pdf->dev_outline, 2, "L");
 								// invoice Table
-									$pdf->InvoiceTable($headers, $widths, $items, 10, 80, $tableColour, $textColor, $this->fs_h6, $curr);
+									$pdf->InvoiceTable($headers, $widths, $items, 10, 80, $tableColour, $textColor, $pdf->fs_h6, $curr);
 							// Output document
 								$pdf->Output();
 						} catch(Error $er) {
@@ -196,7 +196,7 @@
 				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE	-- 🗷 --	Unsupported
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				else:
-					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity");
+					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
 				endif;
 			// Send output
 				$this->sendOutput(

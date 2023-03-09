@@ -21,13 +21,13 @@
 							if(isset($arr_orders_info['status'])	&& $arr_orders_info['status'] !== "")	new Error("ERR-STA-1");
 							if(isset($arr_orders_info['invoice'])	&& $arr_orders_info['invoice'] !== "")	new Error("ERR-STA-2");
 						} catch (Error $er) {
-							$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found");
+							$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 						}
 					// Validation
 						try {
 							// Nothing to validate
 						} catch (Error $er) {
-							$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found");
+							$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 						}
 					// Submit application
 						try{

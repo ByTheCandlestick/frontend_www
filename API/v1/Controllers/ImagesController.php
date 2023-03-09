@@ -52,7 +52,7 @@
 								imagepng($img);
 								$str_response = ob_get_contents();
 							} catch(Error $er) {
-								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found");
+								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 							}
 						//
 					elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
@@ -132,7 +132,7 @@
 								throw new Error('No image selected');
 							endif;
 						} catch(Error $er) {
-							$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found");
+							$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 						}
 					//
 				elseif(strtoupper($requestMethod) == "POST"):	// (U)PDATE	-- 🗷 --	Unknown
