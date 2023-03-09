@@ -266,7 +266,7 @@
 							}
 						// Validation
 							try{
-								if(!$mdl_User->ConfirmSession($arr_user_info['session_code'])) throw new Exception("Session code used was not valid");
+								if(!$mdl_User->ConfirmSession($arr_user_info['session_code'])) throw new Error("Session code used was not valid");
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
