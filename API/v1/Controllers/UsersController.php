@@ -156,6 +156,7 @@
 										throw new Error("ERR-SUP-3");
 									else:
 										$info['email'] = $arr_user_info['email'];
+										$mdl_User->ConfirmEmail($info['email']);
 									endif;
 								}
 								if($update['phone']) {
@@ -182,7 +183,6 @@
 								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 							}
 						// Submit application
-							$mdl_User->ConfirmEmail($info['email']);
 							try {
 								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info, $arr_user_info['uid'])) {
 									$str_response = json_encode(array('status'=>'success'));
