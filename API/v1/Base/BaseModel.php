@@ -83,7 +83,7 @@
 					if(gettype($x) == 'array') {
 						array_push($arr, $this->arrToStr($x, ', '));
 					} else {
-						array_push($arr, gettype($x)."(".strlen($x).") ".$x);
+						array_push($arr, gettype($x)."(".strlen($x).") \'".$x."\'");
 					}
 				}
 				return join(", ", $arr);
