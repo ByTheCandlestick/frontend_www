@@ -7,7 +7,7 @@
 		 * @result boolean
 		 */
 			public function CreateSupplier(array $info, string $uid) {
-				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Updated a supplier", "Suppliers", $uid);
+				$this->uploadAudit(__FUNCTION__, array($info), "Updated a supplier", "Suppliers", $uid);
 				return $this->Execute(sprintf("INSERT INTO `Suppliers`(`Reference`, `Name`, `Email`, `Phone`, `Opening Hours`) VALUES ('%s', '%s', '%s', '%s', '%s')", $info['reference'], $info['name'], $info['email'], $info['phone'], $info['hours']), 1);
 			}
 		/** UpdateSupplier
@@ -18,7 +18,7 @@
 		 * @result boolean
 		 */
 			public function UpdateSupplier(string $sid, array $info, string $uid) {
-				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Updated a supplier", "Suppliers", $uid);
+				$this->uploadAudit(__FUNCTION__, array($sid, $info), "Updated a supplier", "Suppliers", $uid);
 				return $this->Execute(sprintf("UPDATE `Suppliers` SET `Reference`='%s', `Name`='%s', `Email`='%s', `Phone`='%s', `Opening Hours`='%s' WHERE `ID`='%s'", $info['reference'], $info['name'], $info['email'], $info['phone'], $info['hours'], $sid), 1);
 			}
 		/** DeleteSupplier
@@ -27,9 +27,9 @@
 		 * @param string $sid - Supplier ID
 		 * @result boolean
 		 */
-			public function DeleteSupplier(string $pid, string $uid) {
-				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Updated a supplier", "Suppliers", $uid);
-				return $this->Execute(sprintf("DELETE FROM `Suppliers` WHERE `ID`='%s'", $pid), 1);
+			public function DeleteSupplier(string $sid, string $uid) {
+				$this->uploadAudit(__FUNCTION__, array($sid), "Updated a supplier", "Suppliers", $uid);
+				return $this->Execute(sprintf("DELETE FROM `Suppliers` WHERE `ID`='%s'", $sid), 1);
 			}
 		//
 	}
