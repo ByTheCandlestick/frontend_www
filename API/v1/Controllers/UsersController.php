@@ -123,9 +123,10 @@
 								( isset($arr_user_info['e_active']) && $arr_user_info['e_active']!="")? $update['e_active']=true	: $update['e_active']=false;
 								( isset($arr_user_info['u_active']) && $arr_user_info['u_active']!="")? $update['u_active']=true	: $update['u_active']=false;
 
+								$userPass = $mdl_User->GetUserById($arr[0])[0]['pass'];
+								$arr_user_info['pass'] = hash('sha512', $arr_user_info['pass']);
+								if($userPass == $arr_user_info['pass']) throw new Error('The wrong password has been given. Unable to update.') ;
 								if( $update['p'] ) {
-									$userPass = $mdl_User->GetUserById($arr[0])[0]['pass'];
-									$arr_user_info['pass'] = hash('sha512', $arr_user_info['pass']);
 
 									if( isset($arr_user_info['pass1']) && $arr_user_info['pass1']!=""):
 										if(isset($arr_user_info['pass2']) && $arr_user_info['pass2']!=""):
