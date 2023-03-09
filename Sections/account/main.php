@@ -1,4 +1,4 @@
-<userdata user_id="" username="">
+<userdata user_id="<?=$userdata['ID']?>">
 <section class="row container-fluid">
 	<header class="row mb-4	">
 		<h2 class="col-11">My account</h2>
