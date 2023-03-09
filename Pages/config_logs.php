@@ -46,7 +46,7 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` ORDER BY `Timestamp` DESC"));
+					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` ORDER BY `ID` DESC"));
 					if($query) {
 						while($row = mysqli_fetch_assoc($query)){
 							?>
