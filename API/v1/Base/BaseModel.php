@@ -104,7 +104,7 @@
 					$a[$i] .= '('.strlen($parameter).') ';
 					$a[$i] .= '\\\''.$parameter.'\\\'';
 				}
-				$this->Execute($sql = sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`, `Category`) VALUES('%s', now(), '%s', '%s', '%s', '%s')",
+				$this->Execute($sql = sprintf("INSERT INTO `Audit trail`(`IP`, `Timestamp`, `Function`, `Args`, `String`, `User ID`, `Category`) VALUES('%s', now(), '%s', '%s', '%s', '%s', '%s')",
 					getHostByName(getHostName()),
 					$f,
 					$this->arrToStr($a, ', '),
