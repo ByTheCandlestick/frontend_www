@@ -32,12 +32,12 @@
 		<table class="ordersTable table table-striped table-hover">
 			<thead class="sticky-top">
 				<tr>
+					<th scope="col"></th>
 					<th scope="col">#</th>
 					<th scope="col">Date</th>
 					<th scope="col">Subtotal</th>
 					<th scope="col">Tax</th>
 					<th scope="col">Fees</th>
-					<th scope="col">Status</th>
 					<th scope="col">txn ID</th>
 					<th scope="col"></th>
 				</tr>
@@ -47,30 +47,27 @@
 					if(count($orders) > 0) {
 						foreach($orders as $x) {
 							$editable = ($userperm['adm_access-orders']==1)?'<a href="/Orders/View/'.$x['Invoice ID'].'">'.$x['Invoice ID'].'</a>':$x['Invoice ID'];
-							if($x['Shipping status']<1) {
-								// To be accepted
-								$status = '<i class="text-primary fa-duotone fa-circle-exclamation"></i>';
-							} elseif($x['Shipping status']<2) {
-								// To be Made
-								$status = '<i class="text-warning fa-duotone fa-industry-windows"></i>';
-							} elseif($x['Shipping status']<3) {
-								// To be Sent to delivery company
-								$status = '<i class="text-warning fa-duotone fa-user"></i>';
-							} elseif($x['Shipping status']<4) {
-								// To be Delivered
-								$status = '<i class="text-warning fa-duotone fa-box"></i>';
-							} else {
-								// Complete and Delivered
-								$status = '<i class="text-success fa-solid fa-check"></i>';
+							if($x['Shipping status'] == 0){ // To be accepted
+								$status = '<i class="text-primary fa-duotone fa-circle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting store confirmation"></i>';
+							} else if($x['Shipping status'] == 1) { // To be Made
+								$status = '<i class="text-warning fa-duotone fa-industry-windows" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting manufacture"></i>';
+							} else if($x['Shipping status'] == 2) { // To be Sent to delivery company
+								$status = '<i class="text-warning fa-duotone fa-user" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting dispatched"></i>';
+							} else if($x['Shipping status'] == 3) { // To be Delivered
+								$status = '<i class="text-warning fa-duotone fa-box" data-toggle="tooltip" data-placement="right" data-bs-original-title="Awaiting delivery confirmation"></i>';
+							} else if($x['Shipping status'] == 4) { // Completed and Delivered
+								$status = '<i class="text-success fa-solid fa-check" data-toggle="tooltip" data-placement="right" data-bs-original-title="Completed"></i>';
+							} else { // Defaults
+								$status = sprintf('<i class="text-danger fa-solid fa-triangle-exclamation" data-toggle="tooltip" data-placement="right" data-bs-original-title="ERROR: Unknown status, %s"></i>', var_export($x['Shipping status'], true));
 							}
 							print('
 								<tr>
-									<th scope="row">'.$editable.'</th>
+									<th scope="row">'.$status.'</td>
+									<th>'.$editable.'</th>
 									<td>'.$x['Created'].'</td>
 									<td>'.$x['Subtotal'].'</td>
 									<td>'.$x['Processing fees'].'</td>
 									<td>'.$x['Tax'].'</td>
-									<td>'.$status.'</td>
 									<td>'.$x['Transaction ID'].'</td>
 									<td>
 										<a href="javascript:orders.printReciept('.$x['Invoice ID'].');">

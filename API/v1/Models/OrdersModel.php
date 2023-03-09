@@ -7,6 +7,7 @@
 		 * @return bool	
 		 */
 			public function updateStatus(string $s, string $i) {
+				$this->uploadAudit(__FUNCTION__, (new ReflectionFunction(__FUNCTION__))->getParameters(), "Changes status of order", "Orders", $uid);
 				return $this->Execute(sprintf("UPDATE `Transactions` SET `Shipping status`='%s' WHERE `Invoice ID`='%s' AND `Type`='Order'", $s, $i), 1);
 			}
 	}
