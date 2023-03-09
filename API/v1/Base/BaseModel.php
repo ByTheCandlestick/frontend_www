@@ -90,12 +90,12 @@
 			}
 		/** uploadAudit
 		 * 
-		 *	@param	string	$f
+		 *	@param			$f
 		 *	@param	array	$a
 		 *	@param	string	$s
 		 *	@return	void
 		 */
-			public function uploadAudit(string $f, array $r, string $s, string $category, string $uid = "0") {
+			public function uploadAudit($f, array $r, string $s, string $category, string $uid = "0") {
 				$a = array();
 				foreach($r as $parameter) {
 					$name = $parameter->getName();

@@ -31,7 +31,7 @@
 						}
 					// Submit application
 						try{
-							if($mdl_orders->updateStatus($arr_orders_info['status'], $arr_orders_info['invoice'])) {	// Success
+							if($mdl_orders->updateStatus($arr_orders_info['status'], $arr_orders_info['invoice'], $arr_orders_info['uid'])) {	// Success
 								$str_response = json_encode(array('status'=>'success'));
 							} else {		// Error submitting
 								throw new Error("ERR-STA-3");
