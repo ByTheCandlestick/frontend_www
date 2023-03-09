@@ -76,8 +76,10 @@
 		/** arrToStr
 		 * 
 		 * @param	array	$a
+		 * @param	array	$j	', '
+		 * @return	string
 		 */
-			public function arrToStr(array $a, string $s) {
+			public function arrToStr(array $a, string $j = ', ') {
 				$arr = array();
 				foreach($a as $x) {
 					if(gettype($x) == 'array') {
@@ -86,7 +88,7 @@
 						array_push($arr, gettype($x)."(".strlen($x).") \'".$x."\'");
 					}
 				}
-				return join(", ", $arr);
+				return join($j, $arr);
 			}
 		/** uploadAudit
 		 * 
