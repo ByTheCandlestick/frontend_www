@@ -14,20 +14,19 @@
 			<h1>Logs</h1>
 		</div>
 		<div class="col-12 col-md-3">
-			<!--
 				<div class="form-floating" name="logSelector">
 					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;">
-						<option value="">Please select a log...</option>
+						<option value="">Please select a category...</option>
 						<?
-							/*
-								foreach(getDirContents(__ROOT__, '.log') as $log) {
-									printf('<option value="%s">%s</option>', $log['Path'], $log['File']);
+							$query = DB_QUERY(sprintf("SELECT `Category` FROM `Audit trail` GROUP BY `Category`"));
+							if($query) {
+								while($row = mysqli_fetch_assoc($query)){
+									printf('<option value="%s">%s</option>', $log['Category'], $log['Category']);
 								}
-							*/
+							}
 						?>
 					</select>
 				</div>
-			-->
 		</div>
 	</div>
 	<hr>
