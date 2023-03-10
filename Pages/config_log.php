@@ -56,7 +56,7 @@
 					<label for="floatingInput">DST</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<a name="charge_id" class="form-control border-0 disabled" id="floatingInput" href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z"><?=($geo['latitude'].', '.$geo['longitude'])?></a>
+					<a name="charge_id" class="form-control disabled" id="floatingInput" href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z"><?=($geo['latitude'].', '.$geo['longitude'])?></a>
 					<label for="floatingInput">Coordinates</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
