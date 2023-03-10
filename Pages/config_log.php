@@ -38,10 +38,14 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<? $s = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])) ?>
-			<? $geo = json_decode($s, true) ?>
-			<? $s = file_get_contents(sprintf("https://www.timeapi.io/api/Time/current/zone?timeZone=%s", $geo['timezone'])) ?>
-			<? $time = json_decode($s, true) ?>
+			<? 
+				$geoRAW = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP']));
+				sleep(2);
+				$timeRAW = file_get_contents(sprintf("https://www.timeapi.io/api/Time/current/zone?timeZone=%s", $geo['timezone']));
+				sleep(2);
+				$geo = json_decode($geoRAW, true);
+				$time = json_decode($timeRAW, true);
+			?>
 			<h5>IP</h5>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
