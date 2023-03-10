@@ -82,7 +82,7 @@
 			public function arrToStr(array $a, string $j = ', ') {
 				$arr = array();
 				foreach($a as $x) {
-					if(gettype($x[0]) == 'array') {
+					if(gettype($x[1]) == 'array') {
 						array_push($arr, $x[0].'['.$this->arrToStr($x, ', ').']');
 					} else {
 						array_push($arr, $x[0].'['.gettype($x)."(".strlen($x).") \'".$x."\']");
