@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="col-12 col-lg-6 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<? print($row['String'])?>" disabled>
-					<label for="floatingInput">Goods price</label>
+					<label for="floatingInput">String description</label>
 				</div>
 			</div>
 		</div>
