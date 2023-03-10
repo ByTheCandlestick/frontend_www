@@ -41,6 +41,7 @@
 			<h5>IP</h5>
 			<?
 				$geo = json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])));
+				print_r($geo);
 			?>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -62,7 +63,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<a name="charge_id" class="form-control border-0" id="floatingInput" href="href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z""><?=($geo['latitude'].''.$geo['longitude'])?></a>
+					<a name="charge_id" class="form-control border-0" id="floatingInput" href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z"><?=($geo['latitude'].''.$geo['longitude'])?></a>
 					<label for="floatingInput">Coordinates</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
