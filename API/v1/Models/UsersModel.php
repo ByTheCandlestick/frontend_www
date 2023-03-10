@@ -118,6 +118,7 @@
 			public function UpdateUser(int $uid, array $update, array $info, string $id) {
 				$this->uploadAudit(__FUNCTION__, array($uid, $update, $info), "Update a User", "Users", $id);
 				$vars = array();
+				if($update['pass']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
 				if($update['uname']) { array_push($vars, "`Username`='" . $info['uname']."'"); }
 				if($update['fname']) { array_push($vars, "`First_name`='" . $info['fname']."'"); }
 				if($update['lname']) { array_push($vars, "`Last_name`='" . $info['lname']."'"); }
@@ -127,7 +128,6 @@
 				if($update['d_analytics']) { array_push($vars, "`Disable_analytics`=" . $info['d_analytics']); }
 				if($update['e_active']) { array_push($vars, "`Email_active`=" . $info['e_active']); }
 				if($update['u_active']) { array_push($vars, "`Active`=" . $info['u_active']); }
-				if($update['p']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
 				print_r($sql = sprintf("UPDATE `User accounts` SET %s WHERE `ID`=%s", implode(', ', $vars), $uid));
 				return $this->Execute($sql, 1);
 			}

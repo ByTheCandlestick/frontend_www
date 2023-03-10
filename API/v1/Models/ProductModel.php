@@ -121,6 +121,13 @@
 				if(strlen($slug) <= 5) return false;
 				return true;
 			}
+		/** validateSlug
+		 * 
+		 * 
+		 */
+			public function ReadProduct($slug) {
+				return true;
+			}
 		/** updateProduct
 		 * 
 		 * 
@@ -212,7 +219,7 @@
 				$UPC  = '7';
 				$UPC .= $this->Execute(sprintf("SELECT `Reference` FROM `Partner accounts` WHERE `ID`='%s'", $info['made_by']), 3)['Reference'];
 				$UPC .= $productCode;
-				$i=1;
+				$i=1;$even=$odd=0;
 				foreach(str_split($UPC) as $int) {
 					if($i % 2 == 0) {
 						$even += $int;
