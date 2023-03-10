@@ -41,7 +41,6 @@
 			<h5>IP</h5>
 			<?
 				$geo = json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])), true);
-				print_r($geo);
 			?>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -57,10 +56,6 @@
 					<label for="floatingInput">DST</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['organization'])?>" disabled>
-					<label for="floatingInput">ISP</label>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<a name="charge_id" class="form-control border-0" id="floatingInput" href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z"><?=($geo['latitude'].', '.$geo['longitude'])?></a>
 					<label for="floatingInput">Coordinates</label>
 				</div>
@@ -69,12 +64,24 @@
 					<label for="floatingInput">Country</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['region'])?>" disabled>
+					<label for="floatingInput">Region</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['city'])?>" disabled>
 					<label for="floatingInput">City</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['postal_code'])?>" disabled>
 					<label for="floatingInput">Postcode</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['organization'])?>" disabled>
+					<label for="floatingInput">ISP</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="AS<? print($geo['asn'])?>" disabled>
+					<label for="floatingInput">ISP ASN</label>
 				</div>
 			</div>
 		</div>
