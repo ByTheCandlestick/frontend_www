@@ -21,11 +21,13 @@
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
 
+
 		<div class="col-12">
-			<div class="mb-2 row p-2 border text-center">
-				<div class="col-6 col-md-3 pb-3">
-					<h5>Order ID:</h5>
-					<p><?=($row['ID'])?></p>
+			<h5>Taxonomy</h5>
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($row['string'])?>" disabled>
+					<label for="floatingInput">Goods price</label>
 				</div>
 			</div>
 		</div>
