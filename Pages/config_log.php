@@ -41,7 +41,7 @@
 			<h5>IP</h5>
 			<?
 				$geo = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP']));
-				$geo = json_decode($geo);
+				$geo = json_decode($geo, true);
 				print_r($geo);
 			?>
 			<div class="row">
