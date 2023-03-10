@@ -40,8 +40,9 @@
 		<div class="col-12">
 			<h5>IP</h5>
 			<?
-			$geo = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP']));
-			print_r($geo);
+				print_r($url=sprintf("https://ip.seeip.org/geoip/%s", $row['IP']));
+				$geo = file_get_contents($url);
+				print_r($geo);
 			?>
 			<div class="row">
 				<div class="col-12 col-lg-6 form-floating mb-3">
