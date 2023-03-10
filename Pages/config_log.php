@@ -6,7 +6,7 @@
 			$users += [$row['ID'] => $row['Name']];
 		}
 	}
-	$query = DB_QUERY(sprintf("SELECT * FROM `Audit history` WHERE `ID`='%s'", QS));
+	$query = DB_QUERY(sprintf("SELECT * FROM `Audit trail` WHERE `ID`=%s", QS));
 	if(mysqli_num_rows($query) > 0) {
 		$row = mysqli_fetch_assoc($query)
 ?>
