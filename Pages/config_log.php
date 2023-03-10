@@ -6,12 +6,15 @@
 			$users += [$row['ID'] => $row['Name']];
 		}
 	}
+	$query = DB_QUERY(sprintf("SELECT * FROM `Audit history` WHERE `ID`='%s'", QS));
+	if($query) {
+		$row = mysqli_fetch_assoc($query)
 ?>
 <section>
 	<!-- Section Header -->
 	<div class="row">
 		<div class="col-12 col-md-9">
-			<h1>Logs</h1>
+			<h1>Log #<?=$row['ID']?></h1>
 		</div>
 	</div>
 	<hr>
@@ -19,3 +22,6 @@
 	<div class="row overflow-scroll">
 	</div>
 </section>
+<?
+	}
+?>
