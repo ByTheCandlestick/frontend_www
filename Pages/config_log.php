@@ -24,15 +24,15 @@
 			<h5>General</h5>
 			<div class="row">
 				<div class="col-12 col-lg-6 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($row['String'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($row['String'])?>" disabled>
 					<label for="floatingInput">String description</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($row['Category'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($row['Category'])?>" disabled>
 					<label for="floatingInput">Category</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($row['Timestamp'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($row['Timestamp'])?>" disabled>
 					<label for="floatingInput">Timestamp</label>
 				</div>
 			</div>
@@ -42,15 +42,15 @@
 			<h5>IP</h5>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['ip'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['ip'])?>" disabled>
 					<label for="floatingInput">IP address</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['timezone'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['timezone'])?>" disabled>
 					<label for="floatingInput">timezone</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['offset'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['offset'])?>" disabled>
 					<label for="floatingInput">DST</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -58,27 +58,27 @@
 					<label for="floatingInput">Coordinates</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['country'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['country'])?>" disabled>
 					<label for="floatingInput">Country</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['region'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['region'])?>" disabled>
 					<label for="floatingInput">Region</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['city'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['city'])?>" disabled>
 					<label for="floatingInput">City</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['postal_code'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['postal_code'])?>" disabled>
 					<label for="floatingInput">Postcode</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['organization'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['organization'])?>" disabled>
 					<label for="floatingInput">ISP</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="AS<? print($geo['asn'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="AS<?=($geo['asn'])?>" disabled>
 					<label for="floatingInput">ISP ASN</label>
 				</div>
 			</div>
@@ -91,12 +91,8 @@
 					<label for="floatingInput">User</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($row['Category'])?>" disabled>
-					<label for="floatingInput">Category</label>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($row['Timestamp'])?>" disabled>
-					<label for="floatingInput">Timestamp</label>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($users[$row['User ID']][1])?>" disabled>
+					<label for="floatingInput">Email address</label>
 				</div>
 			</div>
 		</div>
