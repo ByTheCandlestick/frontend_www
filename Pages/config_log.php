@@ -49,7 +49,23 @@
 					<label for="floatingInput">IP address</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['region'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['timezone'])?>" disabled>
+					<label for="floatingInput">timezone</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['offset'])?>" disabled>
+					<label for="floatingInput">DST</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['organization'])?>" disabled>
+					<label for="floatingInput">ISP</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<a name="charge_id" class="form-control border-0" id="floatingInput" href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z"><?=($geo['latitude'].','.$geo['longitude'])?></a>
+					<label for="floatingInput">Coordinates</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['country'])?>" disabled>
 					<label for="floatingInput">Country</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -59,24 +75,6 @@
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['postal_code'])?>" disabled>
 					<label for="floatingInput">Postcode</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<a name="charge_id" class="form-control border-0" id="floatingInput" href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z"><?=($geo['latitude'].''.$geo['longitude'])?></a>
-					<label for="floatingInput">Coordinates</label>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['timzone'])?>" disabled>
-					<label for="floatingInput">timezone</label>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['offset'])?>" disabled>
-					<label for="floatingInput">DST</label>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['orginization'])?>" disabled>
-					<label for="floatingInput">ISP</label>
 				</div>
 			</div>
 		</div>
