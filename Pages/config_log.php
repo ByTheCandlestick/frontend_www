@@ -20,6 +20,15 @@
 	<hr>
 	<!-- Section Body -->
 	<div class="row overflow-scroll">
+
+		<div class="col-12">
+			<div class="mb-2 row p-2 border text-center">
+				<div class="col-6 col-md-3 pb-3">
+					<h5>Order ID:</h5>
+					<p><?=($row['ID'])?></p>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 <?
