@@ -116,7 +116,7 @@
 					<?
 						$args = str_replace("], ", "],\n", $row['Args']);
 						$lines = ($x=count(preg_split('/\n/', $args)) > 10)? 10: $x;
-						print_r($lines);
+						print_r('lines='.$lines);
 					?>
 					<textarea type="text" class="form-control" id="floatingInput" rows="<?=($lines)?>" style="height: unset;" disabled><?=($args)?></textarea>
 					<label for="floatingInput">Args</label>
