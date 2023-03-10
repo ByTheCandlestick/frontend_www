@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<? $geo = json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])), true); ?>
+			<?$geo=json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])), true)?>
 			<h5>IP</h5>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -50,7 +50,7 @@
 					<label for="floatingInput">timezone</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['offset'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['offset'])?>" disabled>
 					<label for="floatingInput">DST</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
