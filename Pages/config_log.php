@@ -113,7 +113,7 @@
 					<label for="floatingInput">Function</label>
 				</div>
 				<div class="col-12 col-lg-10 form-floating mb-3">
-					<textarea type="text" class="form-control" id="floatingInput" rows="7" style="height: unset;" disabled><?=($row['Args'])?></textarea>
+					<textarea type="text" class="form-control" id="floatingInput" rows="7" style="height: unset;" disabled><?=(preg_replace("], ", "],\n", $row['Args']))?></textarea>
 					<label for="floatingInput">Args</label>
 				</div>
 			</div>
