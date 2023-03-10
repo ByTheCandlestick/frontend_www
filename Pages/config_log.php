@@ -38,7 +38,9 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<? $geo=json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])), true) ?>
+			<? $s = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])) ?>
+			<? print_r($s) ?>
+			<? $geo = json_decode($s, true) ?>
 			<? print_r($geo) ?>
 			<h5>IP</h5>
 			<div class="row">
