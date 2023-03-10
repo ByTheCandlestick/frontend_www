@@ -7,7 +7,7 @@
 		}
 	}
 	$query = DB_QUERY(sprintf("SELECT * FROM `Audit history` WHERE `ID`='%s'", QS));
-	if($query) {
+	if(mysqli_num_rows($query) > 0) {
 		$row = mysqli_fetch_assoc($query)
 ?>
 <section>
