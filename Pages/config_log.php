@@ -87,7 +87,7 @@
 			<h5>General</h5>
 			<div class="row">
 				<div class="col-12 col-md-3 col-lg-3 form-floating mb-3">
-					<a name="charge_id" class="form-control disabled" id="floatingInput" href="/User/View/<?=$row['User ID']?>/"><?=($users[$row['User ID']])?></a>
+					<a name="charge_id" class="form-control disabled" id="floatingInput" href="/User/View/<?=$row['User ID']?>/"><?=($users[$row['User ID']][0])?></a>
 					<label for="floatingInput">User</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
