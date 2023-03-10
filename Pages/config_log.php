@@ -1,9 +1,9 @@
 <?
 	$users = array();
-	$query = DB_QUERY(sprintf("SELECT `ID`, CONCAT(`First_name`, ' ', `Last_name`) as 'Name' FROM `User accounts`"));
+	$query = DB_QUERY(sprintf("SELECT `ID`, CONCAT(`First_name`, ' ', `Last_name`) as 'Name', `Email` FROM `User accounts`"));
 	if($query) {
 		while($row = mysqli_fetch_assoc($query)){
-			$users += [$row['ID'] => $row['Name']];
+			$users += [$row['ID'] => [$row['Name'], $row['Email']]];
 		}
 	}
 	$query = DB_QUERY(sprintf("SELECT * FROM `Audit trail` WHERE `ID`=%s", QS));
@@ -86,7 +86,7 @@
 		<div class="col-12">
 			<h5>General</h5>
 			<div class="row">
-				<div class="col-12 col-lg-6 form-floating mb-3">
+				<div class="col-12 col-md-3 col-lg-3 form-floating mb-3">
 					<a name="charge_id" class="form-control disabled" id="floatingInput" href="/User/View/<?=$row['User ID']?>/"><?=($users[$row['User ID']])?></a>
 					<label for="floatingInput">User</label>
 				</div>
