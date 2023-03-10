@@ -115,9 +115,7 @@
 				<div class="col-12 col-lg-10 form-floating mb-3">
 					<?
 						$args = str_replace("], ", "],\n", $row['Args']);
-						$a = preg_split('/\n/', $args);
-						print_r($a);
-						$x = count($a);
+						$x = count(preg_split('/\n/', $args));
 						$lines = ($x > 10)? 10: $x;
 						print_r('lines='.$lines);
 					?>
