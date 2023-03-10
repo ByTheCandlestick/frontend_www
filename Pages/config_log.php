@@ -93,7 +93,7 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<h5>General</h5>
+			<h5>User</h5>
 			<div class="row">
 				<div class="col-12 col-md-3 col-lg-3 form-floating mb-3">
 					<a name="charge_id" class="form-control disabled" id="floatingInput" href="/User/View/<?=$row['User ID']?>/"><?=($users[$row['User ID']][0])?></a>
@@ -101,6 +101,19 @@
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<?=($users[$row['User ID']][1])?>" disabled>
+					<label for="floatingInput">Email address</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<h5>Functions -- Development only</h5>
+			<div class="row">
+				<div class="col-12 col-lg-2 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<?=($row['Function'])?>" disabled>
+					<label for="floatingInput">User</label>
+				</div>
+				<div class="col-12 col-lg-10 form-floating mb-3">
+					<textarea type="text" class="form-control" id="floatingInput" disabled><?=($row['Args'])?></input>
 					<label for="floatingInput">Email address</label>
 				</div>
 			</div>
