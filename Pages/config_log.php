@@ -40,6 +40,8 @@
 		<div class="col-12">
 			<? $s = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])) ?>
 			<? $geo = json_decode($s, true) ?>
+			<? $s = file_get_contents(sprintf("https://www.timeapi.io/api/Time/current/zone?timeZone=%s", $geo['timezone'])) ?>
+			<? $time = json_decode($s, true) ?>
 			<h5>IP</h5>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
@@ -49,6 +51,10 @@
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['timezone'])?>" disabled>
 					<label for="floatingInput">Timezone</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<?=($time['time'])?>" disabled>
+					<label for="floatingInput">Time</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['offset']/3600)?> hour(s)" disabled>
