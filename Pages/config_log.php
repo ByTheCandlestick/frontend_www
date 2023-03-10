@@ -62,7 +62,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['latitude'].''.$geo['longitude'])?>" disabled>
+					<a name="charge_id" class="form-control border-0" id="floatingInput" href="href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z""><?=($geo['latitude'].''.$geo['longitude'])?></a>
 					<label for="floatingInput">Coordinates</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
