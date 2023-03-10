@@ -83,9 +83,9 @@
 				$arr = array();
 				foreach($a as $x) {
 					if(gettype($x[1]) == 'array') {
-						array_push($arr, $x[0].'['.$this->arrToStr($x, ', ').']');
+						array_push($arr, $x[0].'['.$this->arrToStr($x[1], ', ').']');
 					} else {
-						array_push($arr, $x[0].'['.gettype($x)."(".strlen($x).") \'".$x."\']");
+						array_push($arr, $x[0].'['.gettype($x[1])."(".strlen($x[1]).") \'".$x[1]."\']");
 					}
 				}
 				return join($j, $arr);
