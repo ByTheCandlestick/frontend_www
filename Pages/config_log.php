@@ -39,9 +39,7 @@
 		</div>
 		<div class="col-12">
 			<? $s = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])) ?>
-			<? print_r($s) ?>
 			<? $geo = json_decode($s, true) ?>
-			<? print_r($geo) ?>
 			<h5>IP</h5>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
