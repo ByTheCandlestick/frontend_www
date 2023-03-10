@@ -113,7 +113,7 @@
 					<label for="floatingInput">User</label>
 				</div>
 				<div class="col-12 col-lg-10 form-floating mb-3">
-					<textarea type="text" class="form-control" id="floatingInput" disabled><?=($row['Args'])?></textarea>
+					<textarea type="text" class="form-control" id="floatingInput" rows="5" disabled><?=($row['Args'])?></textarea>
 					<label for="floatingInput">Email address</label>
 				</div>
 			</div>
