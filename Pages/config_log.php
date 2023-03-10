@@ -41,7 +41,6 @@
 			<? 
 				$geoRAW = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP']));
 				$timeRAW = file_get_contents(sprintf("https://www.timeapi.io/api/Time/current/zone?timeZone=%s", $geo['timezone']));
-				sleep(5);
 				$geo = json_decode($geoRAW, true);
 				$time = json_decode($timeRAW, true);
 			?>
