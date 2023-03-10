@@ -113,7 +113,11 @@
 					<label for="floatingInput">Function</label>
 				</div>
 				<div class="col-12 col-lg-10 form-floating mb-3">
-					<textarea type="text" class="form-control" id="floatingInput" rows="7" style="height: unset;" disabled><?=(preg_replace("], ", "],\n", $row['Args']))?></textarea>
+					<?
+						$args = preg_replace("], ", "],\n", $row['Args']);
+						$lines = ($x=count($args) > 10)?10:$x;
+					?>
+					<textarea type="text" class="form-control" id="floatingInput" rows="<?=($lines)?>" style="height: unset;" disabled><?=($args)?></textarea>
 					<label for="floatingInput">Args</label>
 				</div>
 			</div>
