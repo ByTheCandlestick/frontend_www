@@ -116,7 +116,7 @@
 					<?
 						$args = $row['Args'];
 						print_r($args);
-						$args = preg_replace("], ", "],\n", $args);
+						$args = preg_replace("/], /", "],\n", $args);
 						print_r($args);
 						$lines = ($x=count($args) > 10)? 10: $x;
 					?>
