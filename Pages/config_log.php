@@ -23,7 +23,7 @@
 
 
 		<div class="col-12">
-			<h5>Taxonomy</h5>
+			<h5>General</h5>
 			<div class="row">
 				<div class="col-12 col-lg-6 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<? print($row['String'])?>" disabled>
