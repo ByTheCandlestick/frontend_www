@@ -53,12 +53,12 @@
 					<label for="floatingInput">Timezone</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<?=($time['time'])?>" disabled>
-					<label for="floatingInput">Time</label>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['offset']/3600)?> hour(s)" disabled>
 					<label for="floatingInput">DST</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<?=($time['time'])?>" disabled>
+					<label for="floatingInput">Time (NOT LIVE)</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<a name="charge_id" class="form-control disabled" id="floatingInput" href="https://www.google.co.uk/maps/@<?=$geo['latitude']?>,<?=$geo['longitude']?>,15z"><?=($geo['latitude'].', '.$geo['longitude'])?></a>
