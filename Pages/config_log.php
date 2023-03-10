@@ -40,8 +40,7 @@
 		<div class="col-12">
 			<h5>IP</h5>
 			<?
-				$geo = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP']));
-				$geo = json_decode($geo, true);
+				$geo = json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])), true);
 				print_r($geo);
 			?>
 			<div class="row">
