@@ -51,7 +51,7 @@
 					<label for="floatingInput">Timezone</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['offset'])?>" disabled>
+					<input type="text" class="form-control" id="floatingInput" value="<?=($geo['offset']/3600)?> hour(s)" disabled>
 					<label for="floatingInput">DST</label>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
