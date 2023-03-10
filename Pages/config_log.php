@@ -42,6 +42,7 @@
 			<?
 				$geo = file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP']));
 				$geo = json_decode($geo);
+				print_r($geo);
 			?>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
