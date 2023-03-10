@@ -35,10 +35,9 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
-					<th scope="col">User</th>
+					<th scope="col">Title</th>
 					<th scope="col">Category</th>
-					<th scope="col">String</th>
+					<th scope="col">User</th>
 					<th scope="col">IP</th>
 					<th scope="col">Timestamp</th>
 				</tr>
@@ -50,10 +49,9 @@
 						while($row = mysqli_fetch_assoc($query)){
 							?>
 								<tr>
-									<td><?=$row['ID']?></td>
-									<td><?=$users[$row['User ID']]?></td>
+									<td><a href="/Logs/Item/<?=$row['ID']?>/"><?=$row['String']?></a></td>
 									<td><?=$row['Category']?></td>
-									<td><?=$row['String']?></td>
+									<td><?=$users[$row['User ID']]?></td>
 									<td><?=$row['IP']?></td>
 									<td><?=$row['Timestamp']?></td>
 								</tr>
