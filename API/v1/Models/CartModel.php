@@ -21,7 +21,8 @@
          *  @return
          */
 			public function add(int $uid, int $sku, int $qty, string $opt) {
-				$this->uploadAudit(__FUNCTION__, array($uid, $sku, $qty, $opt), "Item added to users cart", "Cart", $uid);
+				$vars = array(array('uid', $uid), array('sku', $sku), array('qty', $qty), array('opt', $opt));
+				$this->uploadAudit(__FUNCTION__, $vars, "Item added to users cart", "Cart", $uid);
 				// check if line already exists
 				if($this->Execute(sprintf("SELECT * FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 5) > 0) {
 					// Get qty on existing line
@@ -43,7 +44,8 @@
 		 * @return
 		 */
 			public function remove(int $uid, int $sku, string $opt, string $qty) {
-				$this->uploadAudit(__FUNCTION__, array($uid, $sku, $opt, $qty), "Items removed from users cart", "Cart", $uid);
+				$vars = array(array('uid', $uid), array('sku', $sku), array('opt', $opt), array('qty', $qty));
+				$this->uploadAudit(__FUNCTION__, $vars, "Items removed from users cart", "Cart", $uid);
 				$new_qty = $this->Execute(sprintf("SELECT `Quantity` FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 2)[0] - $qty;
 				if($new_qty == 0) {
 					return $this->Execute(sprintf("DELETE FROM `User carts` WHERE `UID`=%s AND `Options`='%s' AND `SKU`=%s", $uid, $opt, $sku), 1);

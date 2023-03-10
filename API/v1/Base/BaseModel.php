@@ -82,10 +82,10 @@
 			public function arrToStr(array $a, string $j = ', ') {
 				$arr = array();
 				foreach($a as $x) {
-					if(gettype($x) == 'array') {
-						array_push($arr, $this->arrToStr($x, ', '));
+					if(gettype($x[0]) == 'array') {
+						array_push($arr, $x[0].'['.$this->arrToStr($x, ', ').']');
 					} else {
-						array_push($arr, gettype($x)."(".strlen($x).") \'".$x."\'");
+						array_push($arr, $x[0].'['.gettype($x)."(".strlen($x).") \'".$x."\']");
 					}
 				}
 				return join($j, $arr);
