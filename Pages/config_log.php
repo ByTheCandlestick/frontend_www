@@ -38,10 +38,8 @@
 			</div>
 		</div>
 		<div class="col-12">
+			<? $geo = json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])), true); ?>
 			<h5>IP</h5>
-			<?
-				$geo = json_decode(file_get_contents(sprintf("https://ip.seeip.org/geoip/%s", $row['IP'])), true);
-			?>
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="<? print($geo['ip'])?>" disabled>
@@ -82,6 +80,23 @@
 				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
 					<input type="text" class="form-control" id="floatingInput" value="AS<? print($geo['asn'])?>" disabled>
 					<label for="floatingInput">ISP ASN</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<h5>General</h5>
+			<div class="row">
+				<div class="col-12 col-lg-6 form-floating mb-3">
+					<a name="charge_id" class="form-control disabled" id="floatingInput" href="/User/View/<?=$row['User ID']?>/"><?=($users[$row['User ID']])?></a>
+					<label for="floatingInput">User</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($row['Category'])?>" disabled>
+					<label for="floatingInput">Category</label>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 form-floating mb-3">
+					<input type="text" class="form-control" id="floatingInput" value="<? print($row['Timestamp'])?>" disabled>
+					<label for="floatingInput">Timestamp</label>
 				</div>
 			</div>
 		</div>
