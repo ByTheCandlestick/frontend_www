@@ -67,7 +67,7 @@
 							$str .= sprintf("WHERE `Category`='%s' AND `User ID`='%s'", $_GET['category'], $_GET['user']);
 						} elseif($_GET['category'] != '') {
 							$str .= sprintf("WHERE `Category`='%s'", $_GET['category']);
-						} else {
+						} elseif($_GET['user'] != '') {
 							$str .= sprintf("WHERE `User ID`='%s'", $_GET['user']);
 						}
 					}
