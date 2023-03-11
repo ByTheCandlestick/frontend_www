@@ -11,16 +11,16 @@
 			}
 		/** GetUserByID
 		 *  Gets user by User ID
-		 *  @param int $uid
+		 *  @param string $uid
 		 *  @return array
 		 *	@final
 		 */
-			public function GetUserById(int $uid) {
+			public function GetUserById(string $uid) {
 				return $this->Execute("SELECT * FROM `User accounts` WHERE `ID`=$uid", 4);
 			}
 		/** GetUserID
 		 *  Gets user by User ID
-		 *  @param int $uid
+		 *  @param string $uid
 		 *  @return array
 		 *	@final
 		 */
@@ -115,7 +115,7 @@
 		 *
 		 *	@final
 		 */
-			public function UpdateUser(int $uid, array $update, array $info, string $id) {
+			public function UpdateUser(string $uid, array $update, array $info, string $id) {
 				$vars = array(array('uid', $uid), array('update', $update), array('info', $info), array('id', $id));
 				$this->uploadAudit(__FUNCTION__, $vars, "Update a User", "Users", $id);
 				$vars = array();

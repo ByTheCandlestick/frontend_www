@@ -3,7 +3,7 @@
 		/** checkUser
 		 * 
 		 */
-			public function checkUser(int $uid) {
+			public function checkUser(string $uid) {
 				return $this->Execute(sprintf("SELECT * FROM `User accounts` WHERE `ID`=%s", $uid), 5) > 0 ;
 			}
 		/** checkItem
@@ -14,13 +14,13 @@
 			}
         /** add
          *  Adds the item SKU and options to a users cart
-         *  @param int $uid
+         *  @param string $uid
          *  @param int $sku
          *  @param int $qty
          *  @param string $opt
          *  @return
          */
-			public function add(int $uid, int $sku, int $qty, string $opt) {
+			public function add(string $uid, int $sku, int $qty, string $opt) {
 				$vars = array(array('uid', $uid), array('sku', $sku), array('qty', $qty), array('opt', $opt));
 				$this->uploadAudit(__FUNCTION__, $vars, "Item added to users cart", "Cart", $uid);
 				// check if line already exists
@@ -43,7 +43,7 @@
 		 * @param int qty
 		 * @return
 		 */
-			public function remove(int $uid, int $sku, string $opt, string $qty) {
+			public function remove(string $uid, int $sku, string $opt, string $qty) {
 				$vars = array(array('uid', $uid), array('sku', $sku), array('opt', $opt), array('qty', $qty));
 				$this->uploadAudit(__FUNCTION__, $vars, "Items removed from users cart", "Cart", $uid);
 				$new_qty = $this->Execute(sprintf("SELECT `Quantity` FROM `User carts` WHERE `UID`=%s AND `SKU`='%s' AND `Options`='%s'", $uid, $sku, $opt), 2)[0] - $qty;

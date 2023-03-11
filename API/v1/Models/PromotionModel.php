@@ -2,7 +2,7 @@
 	class PromotionModel extends BaseModel {
         /** Create
          *  Creates a new promotion
-         *  @param int $uid
+         *  @param string $uid
          *  @param int $sku
          *  @param int $qty
          *  @param string $opt
@@ -21,7 +21,7 @@
 			}
         /** Update
          *  Updates a promotion
-         *  @param int $uid
+         *  @param string $uid
          *  @param int $sku
          *  @param int $qty
          *  @param string $opt

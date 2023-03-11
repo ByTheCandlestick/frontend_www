@@ -2,13 +2,13 @@
 	class AnalyticsModel extends BaseModel {
         /** add
          *  Adds the item SKU and options to a users cart
-         *  @param int $uid
+         *  @param string $uid
          *  @param int $sku
          *  @param int $qty
          *  @param string $opt
          *  @return
          */
-			public function add(int $uid, int $sku, int $qty, string $opt) {
+			public function add(string $uid, int $sku, int $qty, string $opt) {
 				try {
 					// UserID is real / active
 					if(!$this->Execute("SELECT * FROM `User accounts` WHERE `UID`='$uid'", 1)) {
