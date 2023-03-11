@@ -307,10 +307,9 @@
 		wait(sec, func) {
 			setTimeout(func,sec*1000);
 		},
-		filterLogs(cat, dropdown) {
+		filterLogs(dropdown) {
 			str = $(dropdown).find("option:selected").val().toLowerCase();
-			categ = cat;
-			misc.reloadWithQueryStringVars({categ : str});
+			misc.reloadWithQueryStringVars({category: str});
 		},
 		reloadWithQueryStringVars(queryStringVars) {
 			var existingQueryVars = location.search ? location.search.substring(1).split("&") : [],
@@ -337,6 +336,10 @@
 			} else {
 				window.location.href = location.href;
 			}
+		},
+		sprintf(str) {
+			var args = [].slice.call(arguments, 1), i = 0;
+			return str.replace(/%s/g, () => args[i++]);
 		},
 	}
 	/** @final */
