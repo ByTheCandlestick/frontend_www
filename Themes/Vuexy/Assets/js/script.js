@@ -307,9 +307,13 @@
 		wait(sec, func) {
 			setTimeout(func,sec*1000);
 		},
-		filterLogs(dropdown) {
+		filterLogs(cat, dropdown) {
 			str = $(dropdown).find("option:selected").val().toLowerCase();
-			misc.reloadWithQueryStringVars({category: str});
+			if(cat == 'user') {
+				misc.reloadWithQueryStringVars({user: str});
+			} else if(cat == 'category') {
+				misc.reloadWithQueryStringVars({category: str});
+			}
 		},
 		reloadWithQueryStringVars(queryStringVars) {
 			var existingQueryVars = location.search ? location.search.substring(1).split("&") : [],

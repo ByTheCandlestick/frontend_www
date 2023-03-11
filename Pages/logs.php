@@ -16,7 +16,7 @@
 		<div class="col-12 col-md-3">
 			<div class="row">
 				<div class="col-12 col-md-6 form-floating" name="logSelector">
-					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs(this)">
+					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs('user', this)">
 						<option value="">Please select a user...</option>
 						<?
 							$query = DB_QUERY(sprintf("SELECT `User ID` FROM `Audit trail` GROUP BY `User ID`"));
@@ -29,7 +29,7 @@
 					</select>
 				</div>
 				<div class="col-12 col-md-6 form-floating" name="logSelector">
-					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs(this)">
+					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs('category', this)">
 						<option value="">Please select a category...</option>
 						<?
 							$query = DB_QUERY(sprintf("SELECT `Category` FROM `Audit trail` GROUP BY `Category`"));
@@ -59,8 +59,9 @@
 			</thead>
 			<tbody>
 				<?
-					$str = (isset($_GET['category']) && $_GET['category'] != '')? sprintf(" WHERE `Category`='%s'", $_GET['category']): '';
-					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail`%s ORDER BY `ID` DESC LIMIT %s", $str, $config['Maximum list size']));
+					$str[0] = (isset($_GET['category']) && $_GET['category'] != '')? sprintf(" `Category`='%s'", $_GET['category']): '';
+					$str[1] = (isset($_GET['category']) && $_GET['category'] != '')? sprintf(" `User ID`='%s'", $_GET['user']): '';
+					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` WHERE %s ORDER BY `ID` DESC LIMIT %s", implode('AND', $str), $config['Maximum list size']));
 					if($query) {
 						while($row = mysqli_fetch_assoc($query)){
 							?>
