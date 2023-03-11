@@ -44,7 +44,8 @@
 			</thead>
 			<tbody>
 				<?
-					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` ORDER BY `ID` DESC LIMIT %s", $config['Maximum list size']));
+					$str = (isset($_GET['category']) && $_GET['category'] != '')? sprintf(" WHERE `Category`='%s'", $_GET['category']): '';
+					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail`%s ORDER BY `ID` DESC LIMIT %s", $str, $config['Maximum list size']));
 					if($query) {
 						while($row = mysqli_fetch_assoc($query)){
 							?>
