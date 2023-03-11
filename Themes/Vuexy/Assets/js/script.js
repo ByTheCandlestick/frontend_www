@@ -308,8 +308,7 @@
 			setTimeout(func,sec*1000);
 		},
 		filterLogs(cat, dropdown) {
-			console.log($(dropdown).find("option:selected").val().toLowerCase());
-			//reloadWithQueryStringVars();
+			misc.reloadWithQueryStringVars({cat, $(dropdown).find("option:selected").val().toLowerCase()});
 		},
 		reloadWithQueryStringVars(queryStringVars) {
 			var existingQueryVars = location.search ? location.search.substring(1).split("&") : [],
