@@ -16,7 +16,7 @@
 			<button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab" aria-controls="shipping" aria-selected="false">Shipping</button>
 		</li>
 		<li class="nav-item" role="presentation">
-			<button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients" type="button" role="tab" aria-controls="ingredients" aria-selected="false">Ingredients</button>
+			<button class="nav-link" id="Materials-tab" data-bs-toggle="tab" data-bs-target="#Materials" type="button" role="tab" aria-controls="Materials" aria-selected="false">Materials</button>
 		</li>
 	</ul>
 	<div class="tab-content" id="myTabContent">
@@ -29,7 +29,7 @@
 		<div class="tab-pane fade p-3" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
 			<?=($text['ShippingInfo']);?>
 		</div>
-		<div class="tab-pane fade p-3" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
+		<div class="tab-pane fade p-3" id="Materials" role="tabpanel" aria-labelledby="Materials-tab">
 			
 		</div>
 	</div>

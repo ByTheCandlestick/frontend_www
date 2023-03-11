@@ -47,7 +47,7 @@
 	<div class="accordion-item">
 		<h2 class="accordion-header" id="accordion-item-3">
 			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-4" aria-expanded="true" aria-controls="accordion-collapse-3">
-				Ingredients
+				Materials
 			</button>
 		</h2>
 		<div id="accordion-collapse-3" class="accordion-collapse collapse" aria-labelledby="accordion-item-4" data-bs-parent="#product-accordian">
