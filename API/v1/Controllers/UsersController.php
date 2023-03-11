@@ -129,7 +129,7 @@
 										if(isset($arr_user_info['pass2']) && $arr_user_info['pass2']!=""):
 											$update['pass'] = true;
 										else:
-											throw new Error("ERR-UUSR-1");
+											throw new Error("ERR-UUP-1");
 										endif;
 									endif;
 								}
@@ -146,14 +146,14 @@
 
 								if($update['uname']) {
 									if(strlen($arr_user_info['uname']) < 6):
-										throw new Error("ERR-SUP-2");
+										throw new Error("ERR-UUP-2");
 									else:
 										$info['username'] = $arr_user_info['uname'];
 									endif;
 								}
 								if($update['email']) {
 									if(!$this->ValidateEmail($arr_user_info['email'])):
-										throw new Error("ERR-SUP-3");
+										throw new Error("ERR-UUP-3");
 									else:
 										$info['email'] = $arr_user_info['email'];
 										$mdl_User->ConfirmEmail($info['email']);
@@ -161,16 +161,16 @@
 								}
 								if($update['phone']) {
 									if(!$this->ValidatePhone($arr_user_info['phone'])):
-										throw new Error("ERR-SUP-4");
+										throw new Error("ERR-UUP-4");
 									else:
 										$info['phone'] = $arr_user_info['phone'];
 									endif;
 								}
 								if($update['p']) {
 									if($arr_user_info['pass1'] != $arr_user_info['pass2'])
-										throw new Error("ERR-SUP-5");
+										throw new Error("ERR-UUP-5");
 									if($this->ValidatePaswd($arr_user_info['pass1']) != 'success')
-										throw new Error("ERR-SUP-6");
+										throw new Error("ERR-UUP-6");
 									$info['pass'] = hash('sha512', $arr_user_info['pass1']);
 								}
 								if($update['fname']) {
@@ -187,7 +187,7 @@
 								if($mdl_User->UpdateUser($arr[0], $update, $arr_user_info, $arr_user_info['uid'])) {
 									$str_response = json_encode(array('status'=>'success'));
 								} else {
-									throw new Error("ERR-SUP-7");
+									throw new Error("ERR-UUP-7");
 								}
 							} catch(Error $er) {
 								exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
