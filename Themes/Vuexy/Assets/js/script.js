@@ -109,6 +109,7 @@
 					url: api_url + '/Config/Permission/',
 					data: {
 						'api_key': api_key,
+						'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 						'name': n,
 						'default': d,
 					},
@@ -132,6 +133,7 @@
 					url: api_url + '/Config/Permission/',
 					data: {
 						'api_key': api_key,
+						'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 						'newName': n,
 						'oldName': o,
 						'default': d,
@@ -156,6 +158,7 @@
 					url: api_url + '/Config/Permission/',
 					data: {
 						'api_key': api_key,
+						'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 						'name': n,
 					},
 					type: 'DELETE',
@@ -235,6 +238,7 @@
 				url: api_url + '/Mail/Send/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'f':f, 't':t, 'c':c,
 					'b':b, 's':s, 'm':m,
 				},
@@ -374,6 +378,7 @@
 					url: api_url + '/Stripe/Refund/',
 					data: {
 						'api_key': api_key,
+						'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 						'value': $('input[name=refundCurrValue]').val(),
 						'ch_id': $('a[name=charge_id]').html()
 					},
@@ -405,6 +410,7 @@
 				url: api_url + '/Orders/Status/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'status': newStatus,
 					'invoice': invoice,
 				},
@@ -442,6 +448,7 @@
 				url: api_url + '/Product/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'title': $("div[name=title] input").val(),
 					'collection': $("div[name=range]").find("option:selected").val(),
 					'images': $("div[name=images] input").val(),
@@ -493,6 +500,7 @@
 				url: api_url + '/Product/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'id': pid,
 					'title': $("div[name=title] input").val(),
 					'collection': $("div[name=range]").find("option:selected").val(),
@@ -545,6 +553,7 @@
 				url: api_url + '/Product/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'id': pid,
 				},
 				type: 'DELETE',
@@ -721,6 +730,7 @@
 						url: api_url + '/Product/Container/' + cid + '/',
 						data: {
 							'api_key': api_key,
+							'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 							'name': $("div[name=name] input").val(),
 							'supplier': $("div[name=supplier]").find("option:selected").val(),
 							'supplier_ref': $("div[name=itemref] input").val(),
@@ -752,6 +762,7 @@
 						url: api_url + '/Product/Container/' + cid + '/',
 						data: {
 							'api_key': api_key,
+							'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 							'name': $("div[name=name] input").val(),
 							'supplier': $("div[name=supplier]").find("option:selected").val(),
 							'supplier_ref': $("div[name=itemref] input").val(),
@@ -963,6 +974,7 @@
 				url: api_url + '/Supplier/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'reference': $("div[name=reference] input").val(),
 					'name': $("div[name=name] input").val(),
 					'website': $("div[name=website] input").val(),
@@ -993,6 +1005,7 @@
 				url: api_url + '/Supplier/' + sid + '/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'reference': $("div[name=reference] input").val(),
 					'name': $("div[name=name] input").val(),
 					'email': $("div[name=email] input").val(),
@@ -1022,6 +1035,7 @@
 				url: api_url + '/Supplier/' + sid + '/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 				},
 				type: 'DELETE',
 				xhrFields: {
@@ -1048,6 +1062,7 @@
 				url: api_url + '/Users/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'uname': $("div[name=username] input").val(),
 					'fname': $("div[name=firstname] input").val(),
 					'lname': $("div[name=lastname] input").val(),
@@ -1080,6 +1095,7 @@
 				url: api_url + '/Users/' + uid + '/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'uname': $("div[name=username] input").val(),
 					'fname': $("div[name=firstname] input").val(),
 					'lname': $("div[name=lastname] input").val(),
@@ -1112,6 +1128,7 @@
 				url: api_url + '/Users/' + uid + '/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 				},
 				type: 'DELETE',
 				xhrFields: {
@@ -1133,6 +1150,7 @@
 		savePerm(uid) {
 			data = {
 				'api_key': api_key,
+				'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 			};
 			$.each($(".form-check").find("label"), function() {
 				var name = $(this).attr('for'),
@@ -1288,6 +1306,7 @@
 					url: api_url + '/Page/',
 					data: {
 						'api_key': api_key,
+						'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 						'style': styles.join(","),
 						'script': scripts.join(","),
 						'name': $("div[name=name] input").val(),
@@ -1324,6 +1343,7 @@
 					url: api_url + '/Page/' + pid + '/',
 					data: {
 						'api_key': api_key,
+						'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 						'style': styles.join(","),
 						'script': scripts.join(","),
 						'name': $("div[name=name] input").val(),
@@ -1356,6 +1376,7 @@
 			delete(pid) {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 				}
 				$.ajax({
 					url: api_url + '/Page/' + pid + '/',
@@ -1417,6 +1438,7 @@
 				}
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'display_type': (($("input[name=display_type]:checked").length === 0)?0:1),
 					'sections': elementString,
 					'page': $("div[name=name] input").val(),
@@ -1655,6 +1677,7 @@
 			create() {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'location': $("div[name=location] input").val(),
 					'importance': $("div[name=importance] input").val(),
@@ -1684,6 +1707,7 @@
 			update(id) {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'location': $("div[name=location] input").val(),
 					'importance': $("div[name=importance] input").val(),
@@ -1713,6 +1737,7 @@
 			delete(id) {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 				}
 				$.ajax({
 					url: api_url + '/Website/Style/' + id + '/',
@@ -1740,6 +1765,7 @@
 			create() {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'location': $("div[name=location] input").val(),
 					'importance': $("div[name=importance] input").val(),
@@ -1768,6 +1794,7 @@
 			update(id) {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'location': $("div[name=location] input").val(),
 					'importance': $("div[name=importance] input").val(),
@@ -1797,6 +1824,7 @@
 			delete(id) {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 				};
 				$.ajax({
 					url: api_url + '/Website/Script/' + id + '/',
@@ -1824,6 +1852,7 @@
 			create() {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'description': $("div[name=description] input").val(),
 					'location': $("div[name=location] input").val(),
@@ -1852,6 +1881,7 @@
 			update(id) {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'description': $("div[name=description] input").val(),
 					'location': $("div[name=location] input").val(),
@@ -1880,6 +1910,7 @@
 			delete(id) {
 				data = {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 				};
 				$.ajax({
 					url: api_url + '/Website/Theme/' + id + '/',
@@ -1912,6 +1943,7 @@
 				url: api_url + '/Promotion/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'description': $("div[name=description] textarea").val(),
 					'percentage': $("div[name=percentage] input").val(),
@@ -1947,6 +1979,7 @@
 				url: api_url + '/Promotion/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'id': id,
 					'name': $("div[name=name] input").val(),
 					'description': $("div[name=description] textarea").val(),
@@ -1977,7 +2010,27 @@
 		},
 		/** @todo: make */
 		delete() {
-
+			$.ajax({
+				url: api_url + '/Promotion/',
+				data: {
+					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
+				},
+				type: 'DELETE',
+				xhrFields: {
+					withCredentials: true,
+				},
+				success(body) {
+					if(body.status == "success") {
+						$(location).attr('href', '/Promotions/?al_ty=success&al_tx=Successfully updated the promotion');
+					} else {
+						alert.simple("An error has occurred. Please try again later", "danger");
+					}
+				},
+				error(body) {
+					alert.simple("An error has occurred. Please try again later", "danger");
+				}
+			});
 		}
 	}
 	/** @final */
@@ -1988,6 +2041,7 @@
 				url: api_url + '/Partner/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'name': $("div[name=name] input").val(),
 					'slug': $("div[name=slug]").find("input").val(),
 					'link': $("div[name=link]").find("input").val(),
@@ -2020,6 +2074,7 @@
 				url: api_url + '/Partner/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'id': id,
 					'name': $("div[name=name] input").val(),
 					'slug': $("div[name=slug]").find("input").val(),
@@ -2052,6 +2107,7 @@
 				url: api_url + '/Partner/',
 				data: {
 					'api_key': api_key,
+					'uid': $($('.profile-btn').children('span')[0]).attr('user-id'),
 					'id': id,
 				},
 				type: 'DELETE',
