@@ -308,7 +308,7 @@
 			setTimeout(func,sec*1000);
 		},
 		filterLogs(cat, dropdown) {
-			console.log(dropdown);
+			console.log($(dropdown).find("option:selected").val());
 			//reloadWithQueryStringVars();
 		},
 		reloadWithQueryStringVars(queryStringVars) {
