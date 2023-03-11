@@ -22,7 +22,8 @@
 							$query = DB_QUERY(sprintf("SELECT `User ID` FROM `Audit trail` GROUP BY `User ID`"));
 							if($query) {
 								while($row = mysqli_fetch_assoc($query)){
-									printf('<option value="%s">%s</option>', $row['User ID'], $users[$row['User ID']]);
+									($_GET['user'] != '' && strtolower($row['User ID'])==$_GET['user'])? $selected='selected':$selected='';
+									printf('<option value="%s" %s>%s</option>', $row['User ID'], $selected, $users[$row['User ID']]);
 								}
 							}
 						?>
@@ -35,7 +36,8 @@
 							$query = DB_QUERY(sprintf("SELECT `Category` FROM `Audit trail` GROUP BY `Category`"));
 							if($query) {
 								while($row = mysqli_fetch_assoc($query)){
-									printf('<option value="%s">%s</option>', $row['Category'], $row['Category']);
+									($_GET['category'] != '' && strtolower($row['Category'])==$_GET['category'])? $selected='selected':$selected='';
+									printf('<option value="%s" %s>%s</option>', $row['Category'], $selected, $row['Category']);
 								}
 							}
 						?>
