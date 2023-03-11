@@ -307,7 +307,9 @@
 		wait(sec, func) {
 			setTimeout(func,sec*1000);
 		},
-		
+		filterLogs() {
+			console.log('HERE');
+		}
 	}
 	/** @final */
 	mode = {
