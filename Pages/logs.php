@@ -71,7 +71,8 @@
 							$str .= sprintf("WHERE `User ID`='%s'", $_GET['user']);
 						}
 					}
-					$query = DB_QUERY(sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` %s ORDER BY `ID` DESC LIMIT %s", $str, $config['Maximum list size']));
+					$query = DB_QUERY($sql = sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` %s ORDER BY `ID` DESC LIMIT %s", $str, $config['Maximum list size']));
+					print_r($sql);
 					if($query) {
 						while($row = mysqli_fetch_assoc($query)){
 							?>
