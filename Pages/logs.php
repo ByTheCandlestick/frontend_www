@@ -62,11 +62,11 @@
 					$str = '';
 					if($_GET['category'] != '' || $_GET['user'] != '') {
 						if($_GET['category'] != '' && $_GET['user'] != '') {
-							$str .= "WHERE `Category`='%s' AND `User ID`='%s'";
+							$str .= sprintf("WHERE `Category`='%s' AND `User ID`='%s'", $_GET['Category'], $_GET['User ID']);
 						} elseif($_GET['category'] != '') {
-							$str .= "WHERE `Category`='%s'";
+							$str .= sprintf("WHERE `Category`='%s'", $_GET['Category']);
 						} else {
-							$str .= "WHERE `User ID`='%s'";
+							$str .= sprintf("WHERE `User ID`='%s'", $_GET['User ID']);
 						}
 					}
 					$query = DB_QUERY($sql = sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` %s ORDER BY `ID` DESC LIMIT %s", $str, $config['Maximum list size']));
