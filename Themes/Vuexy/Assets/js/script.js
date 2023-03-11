@@ -309,7 +309,7 @@
 		},
 		filterLogs(cat, dropdown) {
 			str = $(dropdown).find("option:selected").val().toLowerCase();
-			misc.reloadWithQueryStringVars({cat, str});
+			misc.reloadWithQueryStringVars({cat: str});
 		},
 		reloadWithQueryStringVars(queryStringVars) {
 			var existingQueryVars = location.search ? location.search.substring(1).split("&") : [],
