@@ -117,7 +117,7 @@
 		 */
 			public function UpdateUser(string $id, array $update, array $info, string $uid) {
 				$vars = array(array('id', $id), array('update', $update), array('info', $info), array('uid', $uid));
-				$this->uploadAudit(__FUNCTION__, $vars, "Updated a User: ".id, "Users", $uid);
+				$this->uploadAudit(__FUNCTION__, $vars, "Updated a User: ".$id, "Users", $uid);
 				$vars = array();
 				if($update['pass']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
 				if($update['uname']) { array_push($vars, "`Username`='" . $info['uname']."'"); }
