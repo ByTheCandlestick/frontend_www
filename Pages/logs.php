@@ -59,9 +59,17 @@
 			</thead>
 			<tbody>
 				<?
-					$str[0] = (isset($_GET['category']) && $_GET['category'] != '')? sprintf(" `Category`='%s'", $_GET['category']): '';
-					$str[1] = (isset($_GET['category']) && $_GET['category'] != '')? sprintf(" `User ID`='%s'", $_GET['user']): '';
-					$query = DB_QUERY($sql = sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` WHERE %s ORDER BY `ID` DESC LIMIT %s", implode('AND', $str), $config['Maximum list size']));
+					$str = '';
+					if($_GET['category'] != '' || $_GET['user'] != '') {
+						if($_GET['category'] != '' && $_GET['user'] != '') {
+							$str .= "WHERE `Category`='%s' AND `User ID`='%s'";
+						} elseif($_GET['category'] != '') {
+							$str .= "WHERE `Category`='%s'";
+						} else {
+							$str .= "WHERE `User ID`='%s'";
+						}
+					}
+					$query = DB_QUERY($sql = sprintf("SELECT `ID`, `User ID`, `Category`, `String`, `IP`, `Timestamp` FROM `Audit trail` %s ORDER BY `ID` DESC LIMIT %s", implode('AND', $str), $config['Maximum list size']));
 					print_r($sql);
 					if($query) {
 						while($row = mysqli_fetch_assoc($query)){
