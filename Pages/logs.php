@@ -14,7 +14,8 @@
 			<h1>Logs</h1>
 		</div>
 		<div class="col-12 col-md-3">
-				<div class="form-floating" name="logSelector">
+			<div class="row">
+				<div class="col-12 col-md-6 form-floating" name="logSelector">
 					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs(this)">
 						<option value="">Please select a category...</option>
 						<?
@@ -27,6 +28,20 @@
 						?>
 					</select>
 				</div>
+				<div class="col-12 col-md-6 form-floating" name="logSelector">
+					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs(this)">
+						<option value="">Please select a category...</option>
+						<?
+							$query = DB_QUERY(sprintf("SELECT `Category` FROM `Audit trail` GROUP BY `Category`"));
+							if($query) {
+								while($row = mysqli_fetch_assoc($query)){
+									printf('<option value="%s">%s</option>', $row['Category'], $row['Category']);
+								}
+							}
+						?>
+					</select>
+				</div>
+			</div>
 		</div>
 	</div>
 	<hr>
