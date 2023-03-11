@@ -17,7 +17,7 @@
 			<div class="row">
 				<div class="col-12 col-md-6 form-floating" name="logSelector">
 					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs('user', this)">
-						<option value="">Please select a user...</option>
+						<option>Please select a user...</option>
 						<?
 							$query = DB_QUERY(sprintf("SELECT `User ID` FROM `Audit trail` GROUP BY `User ID`"));
 							if($query) {
@@ -31,7 +31,7 @@
 				</div>
 				<div class="col-12 col-md-6 form-floating" name="logSelector">
 					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs('category', this)">
-						<option value="">Please select a category...</option>
+						<option>Please select a category...</option>
 						<?
 							$query = DB_QUERY(sprintf("SELECT `Category` FROM `Audit trail` GROUP BY `Category`"));
 							if($query) {
