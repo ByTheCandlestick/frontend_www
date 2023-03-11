@@ -116,7 +116,8 @@
 		 *	@final
 		 */
 			public function UpdateUser(int $uid, array $update, array $info, string $id) {
-				$this->uploadAudit(__FUNCTION__, array($uid, $update, $info), "Update a User", "Users", $id);
+				$vars = array(array('uid', $uid), array('update', $update), array('info', $info), array('id', $id));
+				$this->uploadAudit(__FUNCTION__, $vars, "Update a User", "Users", $id);
 				$vars = array();
 				if($update['pass']) { array_push($vars, "`Password`='" . $info['pass1']."'"); }
 				if($update['uname']) { array_push($vars, "`Username`='" . $info['uname']."'"); }
@@ -178,7 +179,8 @@
 		 *	@todo
 		 */
 			public function updatePermissions(array $perms, string $uid, string $id) {
-				$this->uploadAudit(__FUNCTION__, array($perms, $uid), "Deleted a user", "Users", $id);
+				$vars = array(array('perms', $perms), array('uid', $uid), array('id', $id));
+				$this->uploadAudit(__FUNCTION__, $vars, "Deleted a user", "Users", $id);
 				array_shift($perms);
 				$keys = array_keys($perms);
 				$vals = $perms;
@@ -196,7 +198,8 @@
 		 *	@todo
 		 */
 			public function deleteUser(string $uid, string $id) {
-				$this->uploadAudit(__FUNCTION__, array($uid), "Deleted a user: ".$id, "Users", $id);
+				$vars = array(array('uid', $uid), array('id', $id));
+				$this->uploadAudit(__FUNCTION__, $vars, "Deleted a user: ".$id, "Users", $id);
 				$this->Execute(sprintf("DELETE FROM `User accounts` WHERE `ID`='%s'", $uid), 1);
 				$this->Execute(sprintf("DELETE FROM `User permissions` WHERE `UID`='%s'", $uid), 1);
 				return true;
