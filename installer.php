@@ -10,36 +10,61 @@
 	<form id="msform">
 		<!-- progressbar -->
 		<ul id="progressbar">
-			<li class="active">Account Setup</li>
-			<li>Social Profiles</li>
-			<li>Personal Details</li>
+			<li class="active">Company Setup</li>
+			<li>Default Users</li>
+			<li>Security</li>
+			<li>Databases</li>
 		</ul>
 		<!-- fieldsets -->
 		<fieldset>
-			<h2 class="fs-title">Create your account</h2>
-			<h3 class="fs-subtitle">This is step 1</h3>
-			<input type="text" name="email" placeholder="Email" />
-			<input type="password" name="pass" placeholder="Password" />
-			<input type="password" name="cpass" placeholder="Confirm Password" />
+			<h2 class="fs-title">Create your company</h2>
+			<h3 class="fs-subtitle">Here you can set up all of the default company information.</h3>
+
+			<input type="text" name="companyName" placeholder="LexCorp" />
+			<input type="text" name="companyAddress" placeholder="LexCorp Tower, Metropolis" />
+			<input type="tel" name="companyPhone" placeholder="08320031986" />
+			<input type="email" name="companyEmail" placeholder="Lex@lexcorp.com" />
+			<textarea name="companydomains" placeholder="seperate domains with ';'"></textarea>
+
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
 		<fieldset>
-			<h2 class="fs-title">Social Profiles</h2>
-			<h3 class="fs-subtitle">Your presence on the social network</h3>
-			<input type="text" name="twitter" placeholder="Twitter" />
-			<input type="text" name="facebook" placeholder="Facebook" />
-			<input type="text" name="gplus" placeholder="Google Plus" />
+			<h2 class="fs-title">Create your user</h2>
+			<h3 class="fs-subtitle">This will be the default administrator user</h3>
+
+			<input type="text" name="companyName" placeholder="Username" />
+			<input type="text" name="companyName" placeholder="Firstname" />
+			<input type="text" name="companyName" placeholder="Lastname" />
+			<input type="email" name="companyName" placeholder="Email" />
+			<input type="tel" name="companyName" placeholder="Phone" />
+			<input type="password" name="companyName" placeholder="" />
+			<input type="password" name="companyName" placeholder="" />
+
+			<input type="button" name="previous" class="previous action-button" value="Previous" />
+			<input type="button" name="next" class="next action-button" value="Next" />
+		</fieldset>
+		<fieldset>
+			<h2 class="fs-title">Security Details</h2>
+			<h3 class="fs-subtitle">Here you should enter security information to keep the website as secure as possible. DO NOT SHARE THIS INFORMATION.</h3>
+
+			<input type="text" name="salt" placeholder="Salt" />
+			<input type="text" name="pepper" placeholder="Pepper" />
+			<input type="text" name="encryption" placeholder="Password Encryption" />
+
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
 		<fieldset>
 			<h2 class="fs-title">Personal Details</h2>
 			<h3 class="fs-subtitle">We will never sell it</h3>
+
 			<input type="text" name="fname" placeholder="First Name" />
 			<input type="text" name="lname" placeholder="Last Name" />
 			<input type="text" name="phone" placeholder="Phone" />
 			<textarea name="address" placeholder="Address"></textarea>
+
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
+			<input type="button" name="next" class="next action-button" value="Next" />
 			<a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a>
 		</fieldset>
 	</form>
