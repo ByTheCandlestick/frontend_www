@@ -508,7 +508,8 @@
 						}
 					}
 					Object.keys(data).forEach(key => {
-						console.log(key, data[key]);
+						coneole.log(key);
+						console.log(data[key]);
 					});
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
