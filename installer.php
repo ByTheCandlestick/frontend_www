@@ -431,7 +431,7 @@
 				.progress,
 				.log {
 					position:relative;
-					margin-top:60px;
+					margin-top:20px;
 					width:400px;
 					height:20px;
 					background:#eee
