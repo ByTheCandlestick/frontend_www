@@ -7,6 +7,13 @@
 	<html>
 		<head>
 			<style>
+
+				html {
+					height: 100%;
+					background: linear-gradient(rgba(196, 102, 0, .6), rgba(155, 89, 182, .6));
+					background-attachment: fixed
+				}
+
 				body {
 					display:flex;
 					align-items:center;
@@ -436,16 +443,18 @@
 					margin-top:20px;
 					width:400px;
 					height:20px;
-					background:#eee
+					background:#eeeeee80;
+					border-radius: 10px;
 				}
 				.progress:after {
-					content:"";
-					position:absolute;
-					top:0;
-					left:0;
-					width:0;
-					height:100%;
-					background:#637373;
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 0;
+					height: 100%;
+					background: #E91E63;
+					border-radius: 10px;
 				}
 				.log {
 					height: 150px;
@@ -457,7 +466,7 @@
 				.log pre {
 					white-space: pre-wrap;
 					overflow-y: scroll;
-					margin: 0;
+					margin: 0 0 0 15px;
 					top: 0;
 					position: absolute;
 					height: 100%;
@@ -489,7 +498,7 @@
 			</div>
 			<div class="progress"></div>
 			<div class="log" style="white-space: pre-wrap;">
-				<pre>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
+				<pre><br/>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
 			<script>
 				var data = [
@@ -530,10 +539,6 @@
 				data.forEach((element) => {
 					fetch("/installer.php", {
 						method: "post",
-						headers: {
-							'Accept': 'application/json',
-							'Content-Type': 'application/json'
-						},
 						body: JSON.stringify(element)
 					}).then( (res) => {
 						console.log(res);
