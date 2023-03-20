@@ -498,19 +498,43 @@
 							'name': '<?=$_POST['company-name']?>',
 							'address': '<?=$_POST['company-address']?>',
 							'phone': '<?=$_POST['company-phone']?>',
-							'email': '<?=$_POST['company-email']?>'
+							'email': '<?=$_POST['company-email']?>',
 						},
 						'user': {
-
+							'username': '<?=$_POST['user-username']?>',
+							'firstname': '<?=$_POST['user-firstname']?>',
+							'lastname': '<?=$_POST['user-lastname']?>',
+							'email': '<?=$_POST['user-email']?>',
+							'phone': '<?=$_POST['user-phone']?>',
+							'password': '<?=$_POST['user-password']?>',
+							'password2': '<?=$_POST['user-password2']?>'
 						},
 						'domain': {
-
+							'www': '<?=$_POST['domain-www']?>',
+							'admin': '<?=$_POST['domain-admin']?>',
+							'xpos': '<?=$_POST['domain-xpos']?>',
+							'blog': '<?=$_POST['domain-blog']?>',
+							'api': '<?=$_POST['domain-api']?>',
+						},
+						'databases': {
+							'core-address': '<?=$_POST['db1-address']?>',
+							'core-username': '<?=$_POST['db1-username']?>',
+							'core-password': '<?=$_POST['db1-password']?>',
+							'analytics-address': '<?=$_POST['db2-address']?>',
+							'analytics-username': '<?=$_POST['db2-username']?>',
+							'analytics-password': '<?=$_POST['db2-password']?>',
+						},
+						'security': {
+							'security-salt': '<?=$_POST['security-salt']?>',
+							'security-pepper': '<?=$_POST['security-pepper']?>',
+							'security-encryption': '<?=$_POST['security-encryption']?>',
 						}
 					}
-					Object.keys(data).forEach(key => {
-						coneole.log(key);
-						console.log(data[key]);
-					});
+					for (let key in data) {
+						console.log(key, data[key]);
+					}
+
+					/*
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
 					xhr.onreadystatechange = function () {
@@ -520,6 +544,7 @@
 						}
 					};
 					xhr.send(data);
+					*/
 				}
 			</script>
 		</body>
@@ -750,8 +775,8 @@
 					<span><input validation="6" valid="false" type="text" name="domain-www" placeholder="Public store *" /><p title="The public web-store, usually www.example.com">?</p></span>
 					<span><input validation="6" valid="false" type="text" name="domain-admin" placeholder="Admin *" /><p title="The admin website for managing all orders etc. Usually admin.example.com">?</p></span>
 					<span><input validation="6" valid="false" type="text" name="domain-blog" placeholder="Blog *" /><p title="the public blog website, usually blog.example.com">?</p></span>
-					<span><input validation="6" valid="false" type="text" name="domain-blog" placeholder="xPos *" /><p title="the in-person xPos terminsl, usually xpos.example.com">?</p></span>
-					<span><input validation="6" valid="false" type="text" name="domain-blog" placeholder="api *" /><p title="The api domain for all others to communicate to. usually api.example.com">?</p></span>
+					<span><input validation="6" valid="false" type="text" name="domain-xpos" placeholder="xPos *" /><p title="the in-person xPos terminsl, usually xpos.example.com">?</p></span>
+					<span><input validation="6" valid="false" type="text" name="domain-api" placeholder="api *" /><p title="The api domain for all others to communicate to. usually api.example.com">?</p></span>
 
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
 					<input type="button" name="next" class="next action-button" value="Next" />
@@ -782,7 +807,7 @@
 					<span><input validation="0" valid="false" type="text" name="security-salt" placeholder="Salt *" /><p title="The 'salt' is a small bit of text added to the start of the password before it is encrypted">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="security-pepper" placeholder="Pepper *" /><p title="The 'pepper' is a small bit of text added to the end of the password before it is encrypted">?</p></span>
 					<span>
-						<select name="cars" id="cars">
+						<select name="security-encryption">
 							<option value="0" selected>-- Password Encryption *</option>
 							<option value="md2">md2</option>
 							<option value="md4">md4</option>
@@ -806,7 +831,7 @@
 					</span>
 
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
-					<input type="submit" name="next" class="submit action-button" value="Submit" />
+					<input type="submit" name="GUI" class="submit action-button" value="Submit" />
 				</fieldset>
 			</form>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
