@@ -277,174 +277,72 @@
 					left:108px
 				}
 				@keyframes right_arm {
-					0% {
-					transform:rotate(70deg)
+					0% { transform:rotate(70deg) }
+					10% { transform:rotate(8deg) }
+					15% { transform:rotate(20deg) }
+					20% { transform:rotate(10deg) }
+					25% { transform:rotate(26deg) }
+					30% { transform:rotate(10deg) }
+					35% { transform:rotate(28deg) }
+					40% { transform:rotate(9deg) }
+					45% { transform:rotate(28deg) }
+					50% {transform:rotate(8deg) }
+					58% { transform:rotate(74deg) }
+					62% { transform:rotate(70deg) }
 				}
-				10% {
-					transform:rotate(8deg)
+				@keyframes left_arm {
+					0% { transform:rotate(-70deg) }
+					10% { transform:rotate(6deg) }
+					15% { transform:rotate(-18deg) }
+					20% { transform:rotate(5deg) }
+					25% { transform:rotate(-18deg) }
+					30% { transform:rotate(5deg) }
+					35% { transform:rotate(-17deg) }
+					40% { transform:rotate(5deg) }
+					45% { transform:rotate(-18deg) }
+					50% { transform:rotate(6deg) }
+					58% { transform:rotate(-74deg) }
+					62% { transform:rotate(-70deg) }
 				}
-				15% {
-					transform:rotate(20deg)
+				@keyframes right_hand {
+					0% { transform:rotate(-40deg) }
+					10% { transform:rotate(-20deg) }
+					15% { transform:rotate(-5deg) }
+					20% { transform:rotate(-60deg) }
+					25% { transform:rotate(0deg) }
+					30% { transform:rotate(-60deg) }
+					35% { transform:rotate(0deg) }
+					40% { transform:rotate(-40deg) }
+					45% { transform:rotate(-60deg) }
+					50% { transform:rotate(10deg) }
+					60% { transform:rotate(-40deg) }
 				}
-				20% {
-					transform:rotate(10deg)
+				@keyframes right_finger {
+					0% { transform:translateY(16px) }
+					10% { transform:none }
+					50% { transform:none }
+					60% { transform:translateY(16px) }
 				}
-				25% {
-					transform:rotate(26deg)
+				@keyframes left_finger {
+					0% { transform:scaleX(0) }
+					10% { transform:scaleX(1) rotate(6deg) }
+					15% { transform:scaleX(1) rotate(0deg) }
+					20% { transform:scaleX(1) rotate(8deg) }
+					25% { transform:scaleX(1) rotate(0deg) }
+					30% { transform:scaleX(1) rotate(7deg) }
+					35% { transform:scaleX(1) rotate(0deg) }
+					40% { transform:scaleX(1) rotate(5deg) }
+					45% { transform:scaleX(1) rotate(0deg) }
+					50% { transform:scaleX(1) rotate(6deg) }
+					58% { transform:scaleX(0) }
 				}
-				30% {
-					transform:rotate(10deg)
+				@keyframes head {
+					0% { transform:rotate(-3deg) }
+					10% { transform:translatex(10px) rotate(7deg) }
+					50% { transform:translatex(0px) rotate(0deg) }
+					56% { transform:rotate(-3deg) }
 				}
-				35% {
-					transform:rotate(28deg)
-				}
-				40% {
-					transform:rotate(9deg)
-				}
-				45% {
-					transform:rotate(28deg)
-				}
-				50% {
-					transform:rotate(8deg)
-				}
-				58% {
-					transform:rotate(74deg)
-				}
-				62% {
-					transform:rotate(70deg)
-				}
-				}@keyframes left_arm {
-					0% {
-					transform:rotate(-70deg)
-				}
-				10% {
-					transform:rotate(6deg)
-				}
-				15% {
-					transform:rotate(-18deg)
-				}
-				20% {
-					transform:rotate(5deg)
-				}
-				25% {
-					transform:rotate(-18deg)
-				}
-				30% {
-					transform:rotate(5deg)
-				}
-				35% {
-					transform:rotate(-17deg)
-				}
-				40% {
-					transform:rotate(5deg)
-				}
-				45% {
-					transform:rotate(-18deg)
-				}
-				50% {
-					transform:rotate(6deg)
-				}
-				58% {
-					transform:rotate(-74deg)
-				}
-				62% {
-					transform:rotate(-70deg)
-				}
-				}@keyframes right_hand {
-					0% {
-					transform:rotate(-40deg)
-				}
-				10% {
-					transform:rotate(-20deg)
-				}
-				15% {
-					transform:rotate(-5deg)
-				}
-				20% {
-					transform:rotate(-60deg)
-				}
-				25% {
-					transform:rotate(0deg)
-				}
-				30% {
-					transform:rotate(-60deg)
-				}
-				35% {
-					transform:rotate(0deg)
-				}
-				40% {
-					transform:rotate(-40deg)
-				}
-				45% {
-					transform:rotate(-60deg)
-				}
-				50% {
-					transform:rotate(10deg)
-				}
-				60% {
-					transform:rotate(-40deg)
-				}
-				}@keyframes right_finger {
-					0% {
-					transform:translateY(16px)
-				}
-				10% {
-					transform:none
-				}
-				50% {
-					transform:none
-				}
-				60% {
-					transform:translateY(16px)
-				}
-				}@keyframes left_finger {
-					0% {
-					transform:scaleX(0)
-				}
-				10% {
-					transform:scaleX(1) rotate(6deg)
-				}
-				15% {
-					transform:scaleX(1) rotate(0deg)
-				}
-				20% {
-					transform:scaleX(1) rotate(8deg)
-				}
-				25% {
-					transform:scaleX(1) rotate(0deg)
-				}
-				30% {
-					transform:scaleX(1) rotate(7deg)
-				}
-				35% {
-					transform:scaleX(1) rotate(0deg)
-				}
-				40% {
-					transform:scaleX(1) rotate(5deg)
-				}
-				45% {
-					transform:scaleX(1) rotate(0deg)
-				}
-				50% {
-					transform:scaleX(1) rotate(6deg)
-				}
-				58% {
-					transform:scaleX(0)
-				}
-				}@keyframes head {
-					0% {
-					transform:rotate(-3deg)
-				}
-				10% {
-					transform:translatex(10px) rotate(7deg)
-				}
-				50% {
-					transform:translatex(0px) rotate(0deg)
-				}
-				56% {
-					transform:rotate(-3deg)
-				}
-				}.objects {
+				.objects {
 					position:relative;
 					width:200px;
 					height:240px
@@ -510,54 +408,28 @@
 					border-color:transparent transparent #89beb3
 				}
 				@keyframes path_circle {
-					0% {
-					transform:translateY(0)
+					0% { transform:translateY(0) }
+					10% { transform:translateY(-100px) rotate(-5deg) }
+					55% { transform:translateY(-100px) rotate(-360deg) }
+					58% { transform:translateY(-100px) rotate(-360deg) }
+					63% { transform:rotate(-360deg) }
 				}
-				10% {
-					transform:translateY(-100px) rotate(-5deg)
+				@keyframes path_square {
+					0% { transform:translateY(0) }
+					10% { transform:translateY(-155px) translatex(-15px) rotate(10deg) }
+					55% { transform:translateY(-155px) translatex(-15px) rotate(-350deg) }
+					57% { transform:translateY(-155px) translatex(-15px) rotate(-350deg) }
+					63% { transform:rotate(-360deg) }
 				}
-				55% {
-					transform:translateY(-100px) rotate(-360deg)
+				@keyframes path_triangle {
+					000% { transform:translateY(0) }
+					010% { transform:translateY(-172px) translatex(10px) rotate(-10deg) }
+					055% { transform:translateY(-172px) translatex(10px) rotate(-365deg) }
+					058% { transform:translateY(-172px) translatex(10px) rotate(-365deg) }
+					063% { transform:rotate(-360deg) }
 				}
-				58% {
-					transform:translateY(-100px) rotate(-360deg)
-				}
-				63% {
-					transform:rotate(-360deg)
-				}
-				}@keyframes path_square {
-					0% {
-					transform:translateY(0)
-				}
-				10% {
-					transform:translateY(-155px) translatex(-15px) rotate(10deg)
-				}
-				55% {
-					transform:translateY(-155px) translatex(-15px) rotate(-350deg)
-				}
-				57% {
-					transform:translateY(-155px) translatex(-15px) rotate(-350deg)
-				}
-				63% {
-					transform:rotate(-360deg)
-				}
-				}@keyframes path_triangle {
-					0% {
-					transform:translateY(0)
-				}
-				10% {
-					transform:translateY(-172px) translatex(10px) rotate(-10deg)
-				}
-				55% {
-					transform:translateY(-172px) translatex(10px) rotate(-365deg)
-				}
-				58% {
-					transform:translateY(-172px) translatex(10px) rotate(-365deg)
-				}
-				63% {
-					transform:rotate(-360deg)
-				}
-				}.progress {
+				.progress,
+				.log {
 					position:relative;
 					margin-top:60px;
 					width:400px;
@@ -572,20 +444,44 @@
 					width:0;
 					height:100%;
 					background:#637373;
-					animation:progress 20s linear infinite
 				}
-				@keyframes progress {
-					from {
-					width:0
-				}
-				to {
-					width:100%
-				}
+				.log {
+					height: 100px;
+					overflow: hidden;
+					padding: unset;
+					color: mediumvioletred;
+					white-space: pre-wrap;
 				}
 			</style>
 		</head>
 		<body>
-			<div class="scene"><div class="objects"><div class="square"></div><div class="circle"></div><div class="triangle"></div></div><div class="wizard"><div class="body"></div><div class="right-arm"><div class="right-hand"></div></div><div class="left-arm"><div class="left-hand"></div></div><div class="head"><div class="beard"></div><div class="face"><div class="adds"></div></div><div class="hat"><div class="hat-of-the-hat"></div><div class="four-point-star --first"></div><div class="four-point-star --second"></div><div class="four-point-star --third"></div></div></div></div></div><div class="progress"></div>
+			<div class="scene">
+				<div class="objects">
+					<div class="square"></div>
+					<div class="circle"></div>
+					<div class="triangle"></div>
+				</div>
+				<div class="wizard">
+					<div class="body"></div>
+					<div class="right-arm"><div class="right-hand"></div></div>
+					<div class="left-arm"><div class="left-hand"></div></div>
+					<div class="head">
+						<div class="beard"></div>
+						<div class="face"><div class="adds"></div></div>
+						<div class="hat">
+							<div class="hat-of-the-hat"></div>
+							<div class="four-point-star --first"></div>
+							<div class="four-point-star --second"></div>
+							<div class="four-point-star --third"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="progress"></div>
+			<div class="log" style="height: 100px;overflow: hidden;padding: unset;color: mediumvioletred; white-space: pre-wrap;">
+				<pre>Building Pendryn for you!</pre>
+				<pre>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
+			</div>
 		</body>
 	</html>
 
