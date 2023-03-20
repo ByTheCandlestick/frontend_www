@@ -890,57 +890,58 @@
 			<script>
 				var current_fs,next_fs,previous_fs,left,opacity,scale,animating;$(".next").click((function(){if(animating)return!1;animating=!0,current_fs=$(this).parent(),next_fs=$(this).parent().next(),$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active"),next_fs.show(),current_fs.animate({opacity:0},{step:function(e,t){scale=1-.2*(1-e),left=50*e+"%",opacity=1-e,current_fs.css({transform:"scale("+scale+")",position:"absolute"}),next_fs.css({left:left,opacity:opacity})},duration:800,complete:function(){current_fs.hide(),animating=!1},easing:"easeInOutBack"})})),$(".previous").click((function(){if(animating)return!1;animating=!0,current_fs=$(this).parent(),previous_fs=$(this).parent().prev(),$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active"),previous_fs.show(),current_fs.animate({opacity:0},{step:function(e,t){scale=.8+.2*(1-e),left=50*(1-e)+"%",opacity=1-e,current_fs.css({left:left}),previous_fs.css({transform:"scale("+scale+")",opacity:opacity})},duration:800,complete:function(){current_fs.hide(),animating=!1},easing:"easeInOutBack"})}));
 				$('input').bind('input propertychange', function() {
-					console.log(this);
-					x=$(this).attr('validation');
-					var mailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-					var phoneRegex = /\(?([0-9]{5})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
-					var usernameRegex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
-					var addressRegex = /\b\d{1,6} +.{2,25}\b(avenue|ave|court|ct|street|st|drive|dr|lane|ln|road|rd|blvd|plaza|parkway|pkwy)/;
-					var passwordRegex = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
-					var urlRegex = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%\/.\w-]*)?\??(?:[-+=&;%@.\w])#?(?:[\w]))?)/;
-					if(x==1) { // Address
-						if(addressRegex.test($(this).val())) {
-							$(this).attr('valid', true)
-						} else {
-							$(this).attr('valid', false)
+					$('#companyInfo input').each(function () {
+						x=$(this).attr('validation');
+						var mailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+						var phoneRegex = /\(?([0-9]{5})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
+						var usernameRegex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
+						var addressRegex = /\b\d{1,6} +.{2,25}\b(avenue|ave|court|ct|street|st|drive|dr|lane|ln|road|rd|blvd|plaza|parkway|pkwy)/;
+						var passwordRegex = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
+						var urlRegex = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%\/.\w-]*)?\??(?:[-+=&;%@.\w])#?(?:[\w]))?)/;
+						if(x==1) { // Address
+							if(addressRegex.test($(this).val())) {
+								$(this).attr('valid', true)
+							} else {
+								$(this).attr('valid', false)
+							}
+						} else if(x==2) { // Phone
+							if(phoneRegex.test($(this).val())) {
+								$(this).attr('valid', true)
+							} else {
+								$(this).attr('valid', false)
+							}
+						} else if(x==3) { // Email
+							if(mailRegex.test($(this).val())) {
+								$(this).attr('valid', true)
+							} else {
+								$(this).attr('valid', false)
+							}
+						} else if(x==4) { // Username
+							if(usernameRegex.test($(this).val())) {
+								$(this).attr('valid', true)
+							} else {
+								$(this).attr('valid', false)
+							}
+						} else if(x==5) { // Username
+							if(passwordRegex.test($(this).val())) {
+								$(this).attr('valid', true)
+							} else {
+								$(this).attr('valid', false)
+							}
+						} else  if(x==6) { // Username
+							if(urlRegex.test($(this).val())) {
+								$(this).attr('valid', true)
+							} else {
+								$(this).attr('valid', false)
+							}
+						} else{
+							if($(this).val().length > 3) {
+								$(this).attr('valid', true)
+							} else {
+								$(this).attr('valid', false)
+							}
 						}
-					} else if(x==2) { // Phone
-						if(phoneRegex.test($(this).val())) {
-							$(this).attr('valid', true)
-						} else {
-							$(this).attr('valid', false)
-						}
-					} else if(x==3) { // Email
-						if(mailRegex.test($(this).val())) {
-							$(this).attr('valid', true)
-						} else {
-							$(this).attr('valid', false)
-						}
-					} else if(x==4) { // Username
-						if(usernameRegex.test($(this).val())) {
-							$(this).attr('valid', true)
-						} else {
-							$(this).attr('valid', false)
-						}
-					} else if(x==5) { // Username
-						if(passwordRegex.test($(this).val())) {
-							$(this).attr('valid', true)
-						} else {
-							$(this).attr('valid', false)
-						}
-					} else  if(x==6) { // Username
-						if(urlRegex.test($(this).val())) {
-							$(this).attr('valid', true)
-						} else {
-							$(this).attr('valid', false)
-						}
-					} else{
-						if($(this).val().length > 3) {
-							$(this).attr('valid', true)
-						} else {
-							$(this).attr('valid', false)
-						}
-					}
+					});
 				});
 			</script>
 		</body>
