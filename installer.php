@@ -184,9 +184,9 @@ body {
 		<ul id="progressbar">
 			<li class="active">Company Setup</li>
 			<li>Default Users</li>
-			<li>Security</li>
-			<li>Databases</li>
 			<li>Domains</li>
+			<li>Databases</li>
+			<li>Security</li>
 		</ul>
 		<!-- fieldsets -->
 		<fieldset> <!-- Company info -->
@@ -260,7 +260,6 @@ body {
 					<option value=""></option>
 					<option value=""></option>
 				</select>
-				<input type="text" name="security-encryption" placeholder="" />
 				<p title="The type of encryption you would like to use">?</p>
 			</span>
 
