@@ -446,11 +446,19 @@
 					background:#637373;
 				}
 				.log {
-					height: 100px;
+					height: 150px;
 					overflow: hidden;
 					padding: unset;
 					color: mediumvioletred;
 					white-space: pre-wrap;
+				}
+				.log pre {
+					white-space: pre-wrap;
+					overflow-y: scroll;
+					margin: 0;
+					top: 0;
+					position: absolute;
+					height: 100%;
 				}
 			</style>
 		</head>
@@ -479,8 +487,7 @@
 			</div>
 			<div class="progress"></div>
 			<div class="log" style="white-space: pre-wrap;">
-				<pre>Building Pendryn for you!
-This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
+				<pre>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
 		</body>
 	</html>
