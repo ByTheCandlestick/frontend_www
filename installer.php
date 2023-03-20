@@ -797,10 +797,10 @@
 					<h2 class="fs-title">Create your company</h2>
 					<h3 class="fs-subtitle">Here you can set up all of the default company information.</h3>
 			
-					<span><input validation="0" type="text" name="company-name" placeholder="Company Name *" required/><p title="This will be the name of your company displayed">?</p></span>
-					<span><input validation="1" type="text" name="company-address" placeholder="Company Address *" required/><p title="The address for the company to be displayed at the bottom of the website">?</p></span>
-					<span><input validation="2" type="tel" name="company-phone" placeholder="Company Phone" /><p title="The public phone number for your company (Optional)">?</p></span>
-					<span><input validation="3" type="email" name="company-email" placeholder="Company Email *" required/><p title="The public email address for your company">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="company-name" placeholder="Company Name *" required/><p title="This will be the name of your company displayed">?</p></span>
+					<span><input validation="1" valid="false" type="text" name="company-address" placeholder="Company Address *" required/><p title="The address for the company to be displayed at the bottom of the website">?</p></span>
+					<span><input validation="2" valid="false" type="tel" name="company-phone" placeholder="Company Phone" /><p title="The public phone number for your company (Optional)">?</p></span>
+					<span><input validation="3" valid="false" type="email" name="company-email" placeholder="Company Email *" required/><p title="The public email address for your company">?</p></span>
 
 					<input type="button" name="next" class="next action-button" value="Next" />
 				</fieldset>
@@ -901,7 +901,7 @@
 					} else if(x==4) {
 
 					} else {
-
+						$(this).attr('valid', true)
 					}
 				});
 			</script>
