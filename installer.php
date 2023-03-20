@@ -893,13 +893,20 @@
 					console.log(this);
 					x=$(this).attr('validation');
 					var mailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+					var phoneRegex = /\(?([0-9]{5})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
 					if(x==1) { // Address
-
+						$(this).attr('valid', true)
 					} else if(x==2) { // Phone
-
+						if(phoneRegex.test($(this).val())) {
+							$(this).attr('valid', true)
+						} else {
+							$(this).attr('valid', false)
+						}
 					} else if(x==3) { // Email
 						if(mailRegex.test($(this).val())) {
-						$(this).attr('valid', true)
+							$(this).attr('valid', true)
+						} else {
+							$(this).attr('valid', false)
 						}
 					} else if(x==4) {
 
