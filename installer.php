@@ -797,10 +797,10 @@
 					<h2 class="fs-title">Create your company</h2>
 					<h3 class="fs-subtitle">Here you can set up all of the default company information.</h3>
 			
-					<span><input type="text" name="company-name" placeholder="Company Name *" required/><p title="This will be the name of your company displayed">?</p></span>
-					<span><input type="text" name="company-address" placeholder="Company Address *" required/><p title="The address for the company to be displayed at the bottom of the website">?</p></span>
-					<span><input type="tel" name="company-phone" placeholder="Company Phone" /><p title="The public phone number for your company (Optional)">?</p></span>
-					<span><input type="email" name="company-email" placeholder="Company Email *" required/><p title="The public email address for your company">?</p></span>
+					<span><input validation="0" type="text" name="company-name" placeholder="Company Name *" required/><p title="This will be the name of your company displayed">?</p></span>
+					<span><input validation="1" type="text" name="company-address" placeholder="Company Address *" required/><p title="The address for the company to be displayed at the bottom of the website">?</p></span>
+					<span><input validation="2" type="tel" name="company-phone" placeholder="Company Phone" /><p title="The public phone number for your company (Optional)">?</p></span>
+					<span><input validation="3" type="email" name="company-email" placeholder="Company Email *" required/><p title="The public email address for your company">?</p></span>
 
 					<input type="button" name="next" class="next action-button" value="Next" />
 				</fieldset>
@@ -889,6 +889,20 @@
 			<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 			<script>
 				var current_fs,next_fs,previous_fs,left,opacity,scale,animating;$(".next").click((function(){if(animating)return!1;animating=!0,current_fs=$(this).parent(),next_fs=$(this).parent().next(),$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active"),next_fs.show(),current_fs.animate({opacity:0},{step:function(e,t){scale=1-.2*(1-e),left=50*e+"%",opacity=1-e,current_fs.css({transform:"scale("+scale+")",position:"absolute"}),next_fs.css({left:left,opacity:opacity})},duration:800,complete:function(){current_fs.hide(),animating=!1},easing:"easeInOutBack"})})),$(".previous").click((function(){if(animating)return!1;animating=!0,current_fs=$(this).parent(),previous_fs=$(this).parent().prev(),$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active"),previous_fs.show(),current_fs.animate({opacity:0},{step:function(e,t){scale=.8+.2*(1-e),left=50*(1-e)+"%",opacity=1-e,current_fs.css({left:left}),previous_fs.css({transform:"scale("+scale+")",opacity:opacity})},duration:800,complete:function(){current_fs.hide(),animating=!1},easing:"easeInOutBack"})}));
+				$('input').bind('input propertychange', function() {
+					console.log(this);
+					if(x==1) { // Address
+						
+					} else if(x==2) { // Phone
+
+					} else if(x==3) { // Email
+
+					} else if(x==4) {
+
+					} else {
+
+					}
+				});
 			</script>
 		</body>
 	</html>
