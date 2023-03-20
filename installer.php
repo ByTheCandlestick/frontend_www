@@ -490,7 +490,9 @@
 				<pre>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
 			<script>
+				console.log('here');
 				window.document.onload = function(e){ 
+					console.log('loaded');
 					var xhr = new XMLHttpRequest();
 					var url = "installer.php";
 					var data = [
