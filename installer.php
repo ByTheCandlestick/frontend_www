@@ -1,6 +1,6 @@
 <?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == '1') {
-		
+		var_dump($_POST);
 	} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
 ?>
 	<!DOCTYPE html>
@@ -496,6 +496,14 @@
 				var url = "installer.php";
 				var data = [
 					{
+						'core-address': '<?=$_POST['db1-address']?>',
+						'core-username': '<?=$_POST['db1-username']?>',
+						'core-password': '<?=$_POST['db1-password']?>',
+					}, {
+						'analytics-address': '<?=$_POST['db2-address']?>',
+						'analytics-username': '<?=$_POST['db2-username']?>',
+						'analytics-password': '<?=$_POST['db2-password']?>',
+					}, {
 						'name': '<?=$_POST['company-name']?>',
 						'address': '<?=$_POST['company-address']?>',
 						'phone': '<?=$_POST['company-phone']?>',
@@ -514,13 +522,6 @@
 						'xpos': '<?=$_POST['domain-xpos']?>',
 						'blog': '<?=$_POST['domain-blog']?>',
 						'api': '<?=$_POST['domain-api']?>',
-					}, {
-						'core-address': '<?=$_POST['db1-address']?>',
-						'core-username': '<?=$_POST['db1-username']?>',
-						'core-password': '<?=$_POST['db1-password']?>',
-						'analytics-address': '<?=$_POST['db2-address']?>',
-						'analytics-username': '<?=$_POST['db2-username']?>',
-						'analytics-password': '<?=$_POST['db2-password']?>',
 					}, {
 						'security-salt': '<?=$_POST['security-salt']?>',
 						'security-pepper': '<?=$_POST['security-pepper']?>',
