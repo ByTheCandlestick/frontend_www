@@ -538,7 +538,7 @@
 							console.log(response);
 						}
 					};
-					xhr.send(element);
+					xhr.send(new URLSearchParams(element).toString());
 				});
 			</script>
 		</body>
