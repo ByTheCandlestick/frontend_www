@@ -808,13 +808,13 @@
 					<h2 class="fs-title">Create your user</h2>
 					<h3 class="fs-subtitle">This will be the default administrator user</h3>
 
-					<span><input type="text" name="user-username" placeholder="Username *" required/><p title="The username you would like to use to log in to all created websites">?</p></span>
-					<span><input type="text" name="user-firstname" placeholder="Firstname *" required/><p title="Your first name">?</p></span>
-					<span><input type="text" name="user-lastname" placeholder="Lastname *" required/><p title="Your last name">?</p></span>
-					<span><input type="email" name="user-email" placeholder="Email *" required/><p title="Your email address">?</p></span>
-					<span><input type="tel" name="user-phone" placeholder="Phone *" required/><p title="Your contact number">?</p></span>
-					<span><input type="password" name="user-password" placeholder="Password *" required/><p title="The password used to log in to all created websites">?</p></span>
-					<span><input type="password" name="user-password2" placeholder="Repeat password *" required/><p title="Repeat above password">?</p></span>
+					<span><input validation="4" valid="false" type="text" name="user-username" placeholder="Username *" required/><p title="The username you would like to use to log in to all created websites">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="user-firstname" placeholder="Firstname *" required/><p title="Your first name">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="user-lastname" placeholder="Lastname *" required/><p title="Your last name">?</p></span>
+					<span><input validation="3" valid="false" type="email" name="user-email" placeholder="Email *" required/><p title="Your email address">?</p></span>
+					<span><input validation="2" valid="false" type="tel" name="user-phone" placeholder="Phone *" required/><p title="Your contact number">?</p></span>
+					<span><input validation="5" valid="false" type="password" name="user-password" placeholder="Password *" required/><p title="The password used to log in to all created websites">?</p></span>
+					<span><input validation="5" valid="false" type="password" name="user-password2" placeholder="Repeat password *" required/><p title="Repeat above password">?</p></span>
 
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
 					<input type="button" name="next" class="next action-button" value="Next" />
@@ -823,11 +823,11 @@
 					<h2 class="fs-title">Domains</h2>
 					<h3 class="fs-subtitle">Please enter the domains you would like to use with the following websites</h3>
 
-					<span><input type="text" name="domain-www" placeholder="Public store *" /><p title="The public web-store, usually www.example.com">?</p></span>
-					<span><input type="text" name="domain-admin" placeholder="Admin *" /><p title="The admin website for managing all orders etc. Usually admin.example.com">?</p></span>
-					<span><input type="text" name="domain-blog" placeholder="Blog *" /><p title="the public blog website, usually blog.example.com">?</p></span>
-					<span><input type="text" name="domain-blog" placeholder="xPos *" /><p title="the in-person xPos terminsl, usually xpos.example.com">?</p></span>
-					<span><input type="text" name="domain-blog" placeholder="api *" /><p title="The api domain for all others to communicate to. usually api.example.com">?</p></span>
+					<span><input validation="6" valid="false" type="text" name="domain-www" placeholder="Public store *" /><p title="The public web-store, usually www.example.com">?</p></span>
+					<span><input validation="6" valid="false" type="text" name="domain-admin" placeholder="Admin *" /><p title="The admin website for managing all orders etc. Usually admin.example.com">?</p></span>
+					<span><input validation="6" valid="false" type="text" name="domain-blog" placeholder="Blog *" /><p title="the public blog website, usually blog.example.com">?</p></span>
+					<span><input validation="6" valid="false" type="text" name="domain-blog" placeholder="xPos *" /><p title="the in-person xPos terminsl, usually xpos.example.com">?</p></span>
+					<span><input validation="6" valid="false" type="text" name="domain-blog" placeholder="api *" /><p title="The api domain for all others to communicate to. usually api.example.com">?</p></span>
 
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
 					<input type="button" name="next" class="next action-button" value="Next" />
@@ -837,13 +837,13 @@
 					<h3 class="fs-subtitle">Please enter the information you would like to use with the following databases.</h3>
 
 					<p>Central Database</p>
-					<span><input type="text" name="db1-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
-					<span><input type="text" name="db1-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
-					<span><input type="text" name="db1-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db1-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db1-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db1-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 					<p>Analytics Database</p>
-					<span><input type="text" name="db2-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
-					<span><input type="text" name="db2-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
-					<span><input type="text" name="db2-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db2-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db2-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db2-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
 					<input type="button" name="next" class="next action-button" value="Next" />
@@ -855,8 +855,8 @@
 						DO NOT SHARE THIS INFORMATION.
 					</h3>
 
-					<span><input type="text" name="security-salt" placeholder="Salt *" /><p title="The 'salt' is a small bit of text added to the start of the password before it is encrypted">?</p></span>
-					<span><input type="text" name="security-pepper" placeholder="Pepper *" /><p title="The 'pepper' is a small bit of text added to the end of the password before it is encrypted">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="security-salt" placeholder="Salt *" /><p title="The 'salt' is a small bit of text added to the start of the password before it is encrypted">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="security-pepper" placeholder="Pepper *" /><p title="The 'pepper' is a small bit of text added to the end of the password before it is encrypted">?</p></span>
 					<span>
 						<select name="cars" id="cars">
 							<option value="0" selected>-- Password Encryption *</option>
@@ -896,6 +896,8 @@
 					var phoneRegex = /\(?([0-9]{5})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
 					var usernameRegex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
 					var addressRegex = /\b\d{1,6} +.{2,25}\b(avenue|ave|court|ct|street|st|drive|dr|lane|ln|road|rd|blvd|plaza|parkway|pkwy)/;
+					var passwordRegex = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
+					var urlRegex = ((([A-Za-z]{3,9}:(?://)?)(?:[-;:&=+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=+\$,\w]+@)[A-Za-z0-9.-]+)((?:/[+~%/.\w-]*)?\??(?:[-+=&;%@.\w])#?(?:[\w]))?)
 					if(x==1) { // Address
 						if(addressRegex.test($(this).val())) {
 							$(this).attr('valid', true)
@@ -920,7 +922,19 @@
 						} else {
 							$(this).attr('valid', false)
 						}
-					} else {
+					} else if(x==5) { // Username
+						if(passwordRegex.test($(this).val())) {
+							$(this).attr('valid', true)
+						} else {
+							$(this).attr('valid', false)
+						}
+					} else  if(x==6) { // Username
+						if(urlRegex.test($(this).val())) {
+							$(this).attr('valid', true)
+						} else {
+							$(this).attr('valid', false)
+						}
+					} else{
 						if($(this).val().length > 3) {
 							$(this).attr('valid', true)
 						} else {
