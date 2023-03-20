@@ -33,40 +33,20 @@
 			<thead class="sticky-top">
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">type</th>
-					<th scope="col">Status</th>
-					<th scope="col">Value</th>
-					<th scope="col">Modified</th>
-					<th scope="col">Created</th>
+					<th scope="col">Description</th>
+					<th scope="col">Type</th>
+					<th scope="col">File</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?
 					if(count($sections) > 0) {
 						foreach($sections as $x) {
-							if($x['Type'] == 'Refund') {
-								$textCol = "danger";
-								$valueDirection = "-";
-								$link = '<a href="/Sections/View/'.urlencode($x['Refund ID']).'/">'.$x['Section ID'].'</a>';
-							} elseif($x['Type'] == 'Order') {
-								$textCol = "success";
-								$valueDirection = "+";
-								$link = '<a href="/Sections/View/'.urlencode($x['Charge ID']).'/">'.$x['Section ID'].'</a>';
-							} else {
-								$textCol = "muted";
-								$valueDirection = "±";
-								$link = $x['Section ID'];
-							}
 							print('
 								<tr>
-									<th scope="row">
-										'.$link.'
-									</th>
-									<td>'.$x['Type'].'</td>
-									<td>'.$x['Status'].'</td>
-									<td class="text-'.$textCol.'">'.$valueDirection.number_format($x['Subtotal'], 2).'</td>
-									<td>'.$x['Modified'].'</td>
-									<td>'.$x['Created'].'</td>
+									<th scope="row">'.$x['short_description'].'</th>
+									<td>'.$x['section_type'].'</td>
+									<td>'.$x['section_url'].'</td>
 								</tr>
 							');
 						}
