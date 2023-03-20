@@ -534,7 +534,7 @@
 							'Accept': 'application/json',
 							'Content-Type': 'application/json'
 						},
-						body: JSON.stringify(element)
+						body: JSON.parse(JSON.stringify(element))
 					}).then( (res) => {
 						console.log(res);
 					});
