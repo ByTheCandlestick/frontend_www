@@ -43,7 +43,9 @@
 						foreach($sections as $x) {
 							print('
 								<tr>
-									<th scope="row"> <a href="/Sections/View/'.$x['id'].'/">'.$x['section_type'].'</a> </td>
+									<th scope="row">
+										<a href="/Sections/View/'.$x['id'].'/">'.$x['section_type'].'</a>
+									</td>
 									<td>'.$x['short_description'].'</th>
 									<td>'.$x['section_url'].'</td>
 								</tr>
