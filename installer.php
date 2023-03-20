@@ -493,37 +493,37 @@
 				var xhr = new XMLHttpRequest();
 				var url = "installer.php";
 				var data = [
-					[
-						'<?=$_POST['company-name']?>',
-						'<?=$_POST['company-address']?>',
-						'<?=$_POST['company-phone']?>',
-						'<?=$_POST['company-email']?>',
-					], [
-						'<?=$_POST['user-username']?>',
-						'<?=$_POST['user-firstname']?>',
-						'<?=$_POST['user-lastname']?>',
-						'<?=$_POST['user-email']?>',
-						'<?=$_POST['user-phone']?>',
-						'<?=$_POST['user-password']?>',
-						'<?=$_POST['user-password2']?>'
-					], [
-						'<?=$_POST['domain-www']?>',
-						'<?=$_POST['domain-admin']?>',
-						'<?=$_POST['domain-xpos']?>',
-						'<?=$_POST['domain-blog']?>',
-						'<?=$_POST['domain-api']?>',
-					], [
-						'<?=$_POST['db1-address']?>',
-						'<?=$_POST['db1-username']?>',
-						'<?=$_POST['db1-password']?>',
-						'<?=$_POST['db2-address']?>',
-						'<?=$_POST['db2-username']?>',
-						'<?=$_POST['db2-password']?>',
-					], [
-						'<?=$_POST['security-salt']?>',
-						'<?=$_POST['security-pepper']?>',
-						'<?=$_POST['security-encryption']?>',
-					]
+					{
+						'name': '<?=$_POST['company-name']?>',
+						'address': '<?=$_POST['company-address']?>',
+						'phone': '<?=$_POST['company-phone']?>',
+						'email': '<?=$_POST['company-email']?>',
+					}, {
+						'username': '<?=$_POST['user-username']?>',
+						'firstname': '<?=$_POST['user-firstname']?>',
+						'lastname': '<?=$_POST['user-lastname']?>',
+						'email': '<?=$_POST['user-email']?>',
+						'phone': '<?=$_POST['user-phone']?>',
+						'password': '<?=$_POST['user-password']?>',
+						'password2': '<?=$_POST['user-password2']?>'
+					}, {
+						'www': '<?=$_POST['domain-www']?>',
+						'admin': '<?=$_POST['domain-admin']?>',
+						'xpos': '<?=$_POST['domain-xpos']?>',
+						'blog': '<?=$_POST['domain-blog']?>',
+						'api': '<?=$_POST['domain-api']?>',
+					}, {
+						'core-address': '<?=$_POST['db1-address']?>',
+						'core-username': '<?=$_POST['db1-username']?>',
+						'core-password': '<?=$_POST['db1-password']?>',
+						'analytics-address': '<?=$_POST['db2-address']?>',
+						'analytics-username': '<?=$_POST['db2-username']?>',
+						'analytics-password': '<?=$_POST['db2-password']?>',
+					}, {
+						'security-salt': '<?=$_POST['security-salt']?>',
+						'security-pepper': '<?=$_POST['security-pepper']?>',
+						'security-encryption': '<?=$_POST['security-encryption']?>',
+					}
 				]
 				
 				data.forEach(element => console.log(element));
