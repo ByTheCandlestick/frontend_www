@@ -729,13 +729,55 @@
 			<form id="msform" method="post" action="/installer.php" >
 				<!-- progressbar -->
 				<ul id="progressbar">
-					<li class="active">Company Setup</li>
+					<li class="active">Welcome</li>
+					<li>Licence</li>
+					<li>Company Setup</li>
 					<li>Default Users</li>
 					<li>Domains</li>
 					<li>Databases</li>
 					<li>Security</li>
 				</ul>
 				<!-- fieldsets -->
+				<fieldset> <!-- Welcome -->
+					<h2 class="fs-title">Welcome to Pendryn!</h2>
+					<h3 class="fs-subtitle">Shop like a pro - online and on the go!</h3>
+					<p>
+						Hello there, and welcome to our installation wizard for Pendryn!
+						We're thrilled that you've decided to give our product a try and we can't wait to show you how it can simplify your workflow.
+						Our team has put a lot of love and care into creating a user-friendly platform that's both easy to use and packed with powerful features.
+						We're here to guide you through the installation process and make sure that you have everything you need to get started.
+						Let's get going and discover how our software can help you achieve your goals with ease!</p>
+					<input type="button" name="next" class="next action-button" value="Next" />
+				</fieldset>
+				<fieldset> <!-- Licence -->
+					<h2 class="fs-title">Licence!</h2>
+					<h3 class="fs-subtitle">Before you get started, we kindly ask that you review and accept our license and terms. This helps ensure a positive experience for everyone and protects your rights as a user. Thank you for your cooperation!</h3>
+					<p>
+						<h4>Fair Use Terms and Conditions</h4>
+						Please read these terms and conditions ("Terms") carefully before using our website ("Product"). By using our Product, you agree to be bound by these Terms.
+						</br></br>
+						<h4>Licence</h4>
+						This product is protected under the GNU Affero General Public License (GNU AGPL).
+						</br></br>
+						<h4>Ownership and Purchase</h4>
+						You must purchase our Product prior to use. You are granted a non-exclusive, non-transferable license to use the Product for your personal or business use only. All rights, title, and interest in and to the Product, including all intellectual property rights, are and will remain the exclusive property of the owner.
+						</br></br>
+						<h4>Piracy</h4>
+						Piracy is illegal and strictly prohibited. You agree not to reproduce, distribute, modify, sell, or exploit any part of the Product without the prior written consent of the owner. Any unauthorized use may lead to legal action.
+						</br></br>
+						<h4>Defamation and Changes</h4>
+						You agree not to use the Product in any manner that could damage, disable, overburden, or impair it. You also agree not to use the Product to defame, harass, or threaten any person or entity. Any attempt to modify, reverse-engineer, or create derivative works of the Product is strictly prohibited.
+						</br></br>
+						<h4>Termination and Refund</h4>
+						We reserve the right to terminate your license to use the Product at any time, with or without cause, and without notice. In the event of termination, you must immediately cease all use of the Product and destroy all copies of the Product in your possession. No refund will be provided in case of termination or violation of these Terms.
+						</br></br>
+						<h4>Statutory rights</h4>
+						These Terms do not affect your statutory rights.
+					</p>
+					
+					<input type="button" name="previous" class="previous action-button" value="Previous" />
+					<input type="button" name="next" class="next action-button" value="Accept" />
+				</fieldset>
 				<fieldset> <!-- Company info -->
 					<h2 class="fs-title">Create your company</h2>
 					<h3 class="fs-subtitle">Here you can set up all of the default company information.</h3>
@@ -745,6 +787,7 @@
 					<span><input validation="2" valid="false" type="tel" name="company-phone" placeholder="Company Phone" /><p title="The public phone number for your company (Optional)">?</p></span>
 					<span><input validation="3" valid="false" type="email" name="company-email" placeholder="Company Email *" required/><p title="The public email address for your company">?</p></span>
 
+					<input type="button" name="previous" class="previous action-button" value="Previous" />
 					<input type="button" name="next" class="next action-button" value="Next" />
 				</fieldset>
 				<fieldset> <!-- User Info -->
@@ -791,7 +834,7 @@
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
 					<input type="button" name="next" class="next action-button" value="Next" />
 				</fieldset>
-				<fieldset> <!-- Security Info -->
+				<fieldset> <!-- Security `Info -->
 					<h2 class="fs-title">Security Details</h2>
 					<h3 class="fs-subtitle">
 						Here you should enter security information to keep the website as secure as possible.
