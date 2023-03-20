@@ -49,9 +49,8 @@ body {
 
 #msform fieldset span p {
     cursor: help;
-    position: absolute;
-    right: 10px;
-    top: 14px;
+    position: relative;
+	margin: 14px 0px 0px 5px;
 }
 
 #msform input,
