@@ -490,59 +490,55 @@
 				<pre>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
 			<script>
-				console.log('here');
-				document.onload = function(e){ 
-					console.log('loaded');
-					var xhr = new XMLHttpRequest();
-					var url = "installer.php";
-					var data = [
-						[
-							'<?=$_POST['company-name']?>',
-							'<?=$_POST['company-address']?>',
-							'<?=$_POST['company-phone']?>',
-							'<?=$_POST['company-email']?>',
-						], [
-							'<?=$_POST['user-username']?>',
-							'<?=$_POST['user-firstname']?>',
-							'<?=$_POST['user-lastname']?>',
-							'<?=$_POST['user-email']?>',
-							'<?=$_POST['user-phone']?>',
-							'<?=$_POST['user-password']?>',
-							'<?=$_POST['user-password2']?>'
-						], [
-							'<?=$_POST['domain-www']?>',
-							'<?=$_POST['domain-admin']?>',
-							'<?=$_POST['domain-xpos']?>',
-							'<?=$_POST['domain-blog']?>',
-							'<?=$_POST['domain-api']?>',
-						], [
-							'<?=$_POST['db1-address']?>',
-							'<?=$_POST['db1-username']?>',
-							'<?=$_POST['db1-password']?>',
-							'<?=$_POST['db2-address']?>',
-							'<?=$_POST['db2-username']?>',
-							'<?=$_POST['db2-password']?>',
-						], [
-							'<?=$_POST['security-salt']?>',
-							'<?=$_POST['security-pepper']?>',
-							'<?=$_POST['security-encryption']?>',
-						]
+				var xhr = new XMLHttpRequest();
+				var url = "installer.php";
+				var data = [
+					[
+						'<?=$_POST['company-name']?>',
+						'<?=$_POST['company-address']?>',
+						'<?=$_POST['company-phone']?>',
+						'<?=$_POST['company-email']?>',
+					], [
+						'<?=$_POST['user-username']?>',
+						'<?=$_POST['user-firstname']?>',
+						'<?=$_POST['user-lastname']?>',
+						'<?=$_POST['user-email']?>',
+						'<?=$_POST['user-phone']?>',
+						'<?=$_POST['user-password']?>',
+						'<?=$_POST['user-password2']?>'
+					], [
+						'<?=$_POST['domain-www']?>',
+						'<?=$_POST['domain-admin']?>',
+						'<?=$_POST['domain-xpos']?>',
+						'<?=$_POST['domain-blog']?>',
+						'<?=$_POST['domain-api']?>',
+					], [
+						'<?=$_POST['db1-address']?>',
+						'<?=$_POST['db1-username']?>',
+						'<?=$_POST['db1-password']?>',
+						'<?=$_POST['db2-address']?>',
+						'<?=$_POST['db2-username']?>',
+						'<?=$_POST['db2-password']?>',
+					], [
+						'<?=$_POST['security-salt']?>',
+						'<?=$_POST['security-pepper']?>',
+						'<?=$_POST['security-encryption']?>',
 					]
-					
-					data.forEach(element => console.log(element));
+				]
+				
+				data.forEach(element => console.log(element));
 
-					/*
-					xhr.open("POST", url, true);
-					xhr.setRequestHeader("Content-Type", "application/json");
-					xhr.onreadystatechange = function () {
-						if (xhr.readyState === 4 && xhr.status === 200) {
-							const response = JSON.parse(xhr.responseText);
-							console.log(response);
-						}
-					};
-					xhr.send(data);
-					*/
-				}
+				/*
+				xhr.open("POST", url, true);
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						const response = JSON.parse(xhr.responseText);
+						console.log(response);
+					}
+				};
+				xhr.send(data);
+				*/
 			</script>
 		</body>
 	</html>
