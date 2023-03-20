@@ -1,5 +1,5 @@
 <?php
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' || true) {
+	if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_POST['GUI'] == '1') {
 ?>
 	<!DOCTYPE html>
 	<html>
@@ -489,18 +489,34 @@
 			<div class="log" style="white-space: pre-wrap;">
 				<pre>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
-<?
-		sleep(5);
-?>
-		<script>alert('here')</script>
-<?
-		sleep(5);
-?>
-		<script>alert('here')</script>
-<?
-		sleep(5);
-?>
-		<script>alert('here')</script>
+			<script>
+				window.document.onload = function(e){ 
+					const xhr = new XMLHttpRequest();
+					const url = "installer.php";
+					const data = [
+						[
+							'company-name' => '<?=$_POST['company-name']?>',
+							'company-address' => '<?=$_POST['company-address']?>'
+							'company-phone' => '<?=$_POST['company-phone']?>'
+							'company-email' => '<?=$_POST['company-email']?>'
+						], [
+						], [
+						]]
+
+					data.forEach(element => (element) {
+						console.log(element)
+					});
+					xhr.open("POST", url, true);
+					xhr.setRequestHeader("Content-Type", "application/json");
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState === 4 && xhr.status === 200) {
+							const response = JSON.parse(xhr.responseText);
+							console.log(response);
+						}
+					};
+					xhr.send(data);
+				}
+			</script>
 		</body>
 	</html>
 <?
