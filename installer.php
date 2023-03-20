@@ -493,7 +493,7 @@
 				window.document.onload = function(e){ 
 					const xhr = new XMLHttpRequest();
 					const url = "installer.php";
-					const data = {
+					var data = {
 						'company': {
 							'name': '<?=$_POST['company-name']?>',
 							'address': '<?=$_POST['company-address']?>',
