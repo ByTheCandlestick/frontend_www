@@ -179,7 +179,7 @@ body {
 	</style>
 </head>
 <body>
-	<form id="msform">
+	<form id="msform" method="post" action="/installer.php" >
 		<!-- progressbar -->
 		<ul id="progressbar">
 			<li class="active">Company Setup</li>
@@ -193,10 +193,10 @@ body {
 			<h2 class="fs-title">Create your company</h2>
 			<h3 class="fs-subtitle">Here you can set up all of the default company information.</h3>
 	
-			<span><input type="text" name="companyName" placeholder="Company Name" /><p title="This will be the name of your company">?</p></span>
-			<span><input type="text" name="companyAddress" placeholder="Company Address" /><p title="">?</p></span>
-			<span><input type="tel" name="companyPhone" placeholder="Company phone" /><p title="">?</p></span>
-			<span><input type="email" name="companyEmail" placeholder="Company Email" /><p title="">?</p></span>
+			<span><input type="text" name="company-name" placeholder="Company Name *" required/><p title="This will be the name of your company displayed">?</p></span>
+			<span><input type="text" name="company-address" placeholder="Company Address *" required/><p title="The address for the company to be displayed at the bottom of the website">?</p></span>
+			<span><input type="tel" name="company-phone" placeholder="Company Phone" /><p title="The public phone number for your company (Optional)">?</p></span>
+			<span><input type="email" name="company-email" placeholder="Company Email *" required/><p title="The public email address for your company">?</p></span>
 
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
@@ -204,13 +204,13 @@ body {
 			<h2 class="fs-title">Create your user</h2>
 			<h3 class="fs-subtitle">This will be the default administrator user</h3>
 
-			<span><input type="text" name="companyName" placeholder="Username" /><p title="">?</p></span>
-			<span><input type="text" name="companyName" placeholder="Firstname" /><p title="">?</p></span>
-			<span><input type="text" name="companyName" placeholder="Lastname" /><p title="">?</p></span>
-			<span><input type="email" name="companyName" placeholder="Email" /><p title="">?</p></span>
-			<span><input type="tel" name="companyName" placeholder="Phone" /><p title="">?</p></span>
-			<span><input type="password" name="companyName" placeholder="Password" /><p title="">?</p></span>
-			<span><input type="password" name="companyName" placeholder="Repeat password" /><p title="">?</p></span>
+			<span><input type="text" name="user-username" placeholder="Username *" required/><p title="The username you would like to use to log in to all created websites">?</p></span>
+			<span><input type="text" name="user-firstname" placeholder="Firstname *" required/><p title="Your first name">?</p></span>
+			<span><input type="text" name="user-lastname" placeholder="Lastname *" required/><p title="Your last name">?</p></span>
+			<span><input type="email" name="user-email" placeholder="Email *" required/><p title="Your email address">?</p></span>
+			<span><input type="tel" name="user-phone" placeholder="Phone *" required/><p title="Your contact number">?</p></span>
+			<span><input type="password" name="user-password" placeholder="Password *" required/><p title="The password used to log in to all created websites">?</p></span>
+			<span><input type="password" name="user-password2" placeholder="Repeat password *" required/><p title="Repeat above password">?</p></span>
 
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
@@ -219,11 +219,11 @@ body {
 			<h2 class="fs-title">Domains</h2>
 			<h3 class="fs-subtitle">Please enter the domains you would like to use with the following websites</h3>
 
-			<span><input type="text" name="domain-www" placeholder="Public store" /><p title="">?</p></span>
-			<span><input type="text" name="domain-admin" placeholder="Admin" /><p title="">?</p></span>
-			<span><input type="text" name="domain-blog" placeholder="Blog" /><p title="">?</p></span>
-			<span><input type="text" name="domain-blog" placeholder="xPos" /><p title="">?</p></span>
-			<span><input type="text" name="domain-blog" placeholder="api" /><p title="">?</p></span>
+			<span><input type="text" name="domain-www" placeholder="Public store *" /><p title="The public web-store, usually www.example.com">?</p></span>
+			<span><input type="text" name="domain-admin" placeholder="Admin *" /><p title="The admin website for managing all orders etc. Usually admin.example.com">?</p></span>
+			<span><input type="text" name="domain-blog" placeholder="Blog *" /><p title="the public blog website, usually blog.example.com">?</p></span>
+			<span><input type="text" name="domain-blog" placeholder="xPos *" /><p title="the in-person xPos terminsl, usually xpos.example.com">?</p></span>
+			<span><input type="text" name="domain-blog" placeholder="api *" /><p title="The api domain for all others to communicate to. usually api.example.com">?</p></span>
 
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
@@ -233,29 +233,39 @@ body {
 			<h3 class="fs-subtitle">Please enter the information you would like to use with the following databases.</h3>
 
 			<p>Central Database</p>
-			<span><input type="text" name="DB1-address" placeholder="Address" /><p title="">?</p></span>
-			<span><input type="text" name="DB1-username" placeholder="Username" /><p title="">?</p></span>
-			<span><input type="text" name="DB1-password" placeholder="Password" /><p title="">?</p></span>
+			<span><input type="text" name="db1-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
+			<span><input type="text" name="db1-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
+			<span><input type="text" name="db1-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 			<p>Analytics Database</p>
-			<span><input type="text" name="DB2-address" placeholder="Address" /><p title="">?</p></span>
-			<span><input type="text" name="DB2-username" placeholder="Username" /><p title="">?</p></span>
-			<span><input type="text" name="DB2-password" placeholder="Password" /><p title="">?</p></span>
+			<span><input type="text" name="db2-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
+			<span><input type="text" name="db2-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
+			<span><input type="text" name="db2-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
 		<fieldset> <!-- Security Info -->
 			<h2 class="fs-title">Security Details</h2>
-			<h3 class="fs-subtitle">Here you should enter security information to keep the website as secure as possible. DO NOT SHARE THIS INFORMATION.</h3>
+			<h3 class="fs-subtitle">
+				Here you should enter security information to keep the website as secure as possible.
+				DO NOT SHARE THIS INFORMATION.
+			</h3>
 
-			<span><input type="text" name="salt" placeholder="Salt" /><p title="">?</p></span>
-			<span><input type="text" name="pepper" placeholder="Pepper" /><p title="">?</p></span>
-			<span><input type="text" name="encryption" placeholder="Password Encryption" /><p title="">?</p></span>
+			<span><input type="text" name="security-salt" placeholder="Salt" /><p title="The 'salt' is a small bit of text added to the start of the password before it is encrypted">?</p></span>
+			<span><input type="text" name="security-pepper" placeholder="Pepper" /><p title="The 'pepper' is a small bit of text added to the end of the password before it is encrypted">?</p></span>
+			<span>
+				<select name="cars" id="cars">
+					<option value="0" selected>-- Password Encryption --</option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+				</select>
+				<input type="text" name="security-encryption" placeholder="" />
+				<p title="The type of encryption you would like to use">?</p>
+			</span>
 
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
-			<input type="button" name="next" class="next action-button" value="Next" />
-
-			<a href="#" class="submit action-button" target="_top">Submit</a>
+			<input type="submit" name="next" class="submit action-button" value="Submit" />
 		</fieldset>
 	</form>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
