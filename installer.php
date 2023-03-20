@@ -493,18 +493,22 @@
 				window.document.onload = function(e){ 
 					const xhr = new XMLHttpRequest();
 					const url = "installer.php";
-					const data = [
-						[
-							'company-name' => '<?=$_POST['company-name']?>',
-							'company-address' => '<?=$_POST['company-address']?>'
-							'company-phone' => '<?=$_POST['company-phone']?>'
-							'company-email' => '<?=$_POST['company-email']?>'
-						], [
-						], [
-						]]
+					const data = {
+						'company': {
+							'name': '<?=$_POST['company-name']?>',
+							'address': '<?=$_POST['company-address']?>',
+							'phone': '<?=$_POST['company-phone']?>',
+							'email': '<?=$_POST['company-email']?>'
+						},
+						'user': {
 
-					data.forEach(element => (element) {
-						console.log(element)
+						},
+						'domain': {
+
+						}
+					}
+					Object.keys(data).forEach(key => {
+						console.log(key, data[key]);
 					});
 					xhr.open("POST", url, true);
 					xhr.setRequestHeader("Content-Type", "application/json");
