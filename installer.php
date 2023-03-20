@@ -1,7 +1,7 @@
 <?php
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == '1') {
+	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
 		var_dump($_POST);
-	} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
+	} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == 'Submit') {
 ?>
 	<!DOCTYPE html>
 	<html>
