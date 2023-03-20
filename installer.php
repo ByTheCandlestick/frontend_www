@@ -55,6 +55,7 @@ body {
 }
 
 #msform input,
+#msform select,
 #msform textarea {
     padding: 15px;
     border: 1px solid #ccc;
