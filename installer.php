@@ -492,8 +492,6 @@
 				<pre>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
 			<script>
-				var xhr = new XMLHttpRequest();
-				var url = "installer.php";
 				var data = [
 					{
 						'core-address': '<?=$_POST['db1-address']?>',
@@ -530,15 +528,16 @@
 				]
 				
 				data.forEach((element) => {
-					xhr.open("POST", url, true);
-					xhr.setRequestHeader("Content-Type", "application/json");
-					xhr.onreadystatechange = function () {
-						if (xhr.readyState === 4 && xhr.status === 200) {
-							const response = JSON.parse(xhr.responseText);
-							console.log(response);
-						}
-					};
-					xhr.send(new URLSearchParams(element).toString());
+					fetch("/installer.php", {
+						method: "post",
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(element)
+					}).then( (res) => {
+						console.log(res);
+					});
 				});
 			</script>
 		</body>
