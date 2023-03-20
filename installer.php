@@ -491,8 +491,8 @@
 			</div>
 			<script>
 				window.document.onload = function(e){ 
-					const xhr = new XMLHttpRequest();
-					const url = "installer.php";
+					var xhr = new XMLHttpRequest();
+					var url = "installer.php";
 					var data = {
 						'company': {
 							'name': '<?=$_POST['company-name']?>',
@@ -530,9 +530,10 @@
 							'security-encryption': '<?=$_POST['security-encryption']?>',
 						}
 					}
-					for (let key in data) {
+					Object.keys(data).forEach(key=>{
 						console.log(key, data[key]);
-					}
+					})
+
 
 					/*
 					xhr.open("POST", url, true);
