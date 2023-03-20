@@ -893,7 +893,9 @@
 					console.log(this);
 					x=$(this).attr('validation')
 					if(x==1) { // Address
-						
+						if($(this).value().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+
+						}
 					} else if(x==2) { // Phone
 
 					} else if(x==3) { // Email
