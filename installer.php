@@ -538,7 +538,7 @@
 							console.log(response);
 						}
 					};
-					xhr.send(data);
+					xhr.send(element);
 				});
 			</script>
 		</body>
