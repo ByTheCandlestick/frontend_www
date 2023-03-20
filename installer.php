@@ -491,7 +491,7 @@
 			</div>
 			<script>
 				console.log('here');
-				window.document.onload = function(e){ 
+				document.onload = function(e){ 
 					console.log('loaded');
 					var xhr = new XMLHttpRequest();
 					var url = "installer.php";
