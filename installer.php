@@ -177,7 +177,7 @@ body {
 			<li>Domains</li>
 		</ul>
 		<!-- fieldsets -->
-		<fieldset>
+		<fieldset> <!-- Company info -->
 			<h2 class="fs-title">Create your company</h2>
 			<h3 class="fs-subtitle">Here you can set up all of the default company information.</h3>
 
@@ -188,7 +188,7 @@ body {
 
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
-		<fieldset>
+		<fieldset> <!-- User Info -->
 			<h2 class="fs-title">Create your user</h2>
 			<h3 class="fs-subtitle">This will be the default administrator user</h3>
 
@@ -203,18 +203,22 @@ body {
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
-		<fieldset>
-			<h2 class="fs-title">Security Details</h2>
-			<h3 class="fs-subtitle">Here you should enter security information to keep the website as secure as possible. DO NOT SHARE THIS INFORMATION.</h3>
+    <fieldset> <!-- Domain Info -->
+			<h2 class="fs-title">Domains</h2>
+			<h3 class="fs-subtitle">Please enter the domains you would like to use with the following websites</h3>
 
-			<input type="text" name="salt" placeholder="Salt" />
-			<input type="text" name="pepper" placeholder="Pepper" />
-			<input type="text" name="encryption" placeholder="Password Encryption" />
+			<input type="text" name="domain-www" placeholder="Public store" />
+			<input type="text" name="domain-admin" placeholder="Admin" />
+			<input type="text" name="domain-blog" placeholder="Blog" />
+			<input type="text" name="domain-blog" placeholder="xPos" />
+			<input type="text" name="domain-blog" placeholder="api" />
 
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
+
+			<a href="#" class="submit action-button" target="_top">Submit</a>
 		</fieldset>
-		<fieldset>
+    <fieldset> <!-- Database Info -->
 			<h2 class="fs-title">Databases</h2>
 			<h3 class="fs-subtitle">Please enter the information you would like to use with the following databases.</h3>
 
@@ -232,20 +236,16 @@ body {
 
 			<a href="#" class="submit action-button" target="_top">Submit</a>
 		</fieldset>
-    <fieldset>
-			<h2 class="fs-title">Domains</h2>
-			<h3 class="fs-subtitle">Please enter the domains you would like to use with the following websites</h3>
+		<fieldset> <!-- Security Info -->
+			<h2 class="fs-title">Security Details</h2>
+			<h3 class="fs-subtitle">Here you should enter security information to keep the website as secure as possible. DO NOT SHARE THIS INFORMATION.</h3>
 
-			<input type="text" name="domain-www" placeholder="Public store" />
-			<input type="text" name="domain-admin" placeholder="Admin" />
-			<input type="text" name="domain-blog" placeholder="Blog" />
-			<input type="text" name="domain-blog" placeholder="xPos" />
-			<input type="text" name="domain-blog" placeholder="api" />
+			<input type="text" name="salt" placeholder="Salt" />
+			<input type="text" name="pepper" placeholder="Pepper" />
+			<input type="text" name="encryption" placeholder="Password Encryption" />
 
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
-
-			<a href="#" class="submit action-button" target="_top">Submit</a>
 		</fieldset>
 	</form>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
