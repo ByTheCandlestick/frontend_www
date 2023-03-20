@@ -18,6 +18,18 @@
 				<div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
 				</div>
 				<div class="col-12 col-lg-6">
+					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onChange="misc.filterLogs('user', this)">
+						<option value="">Please select a type...</option>
+						<?
+							$query = DB_QUERY(sprintf("SELECT `section_type` FROM `Website sections` GROUP BY `section_type`"));
+							if($query) {
+								while($row = mysqli_fetch_assoc($query)){
+									($_GET['user'] != '' && strtolower($row['User ID'])==$_GET['user'])? $selected='selected':$selected='';
+									printf('<option value="%s" %s>%s</option>', $row['User ID'], $selected, $users[$row['User ID']]);
+								}
+							}
+						?>
+					</select>
 					<div class="form-floating">
 						<input type="text" class="form-control tableFilter" id="tableSearch" placeholder="">
 						<label for="tableSearch" class="ps-5">Search</label>
