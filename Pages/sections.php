@@ -44,7 +44,8 @@
 						foreach($sections as $x) {
 							print('
 								<tr>
-									<th scope="row">'.$x['short_description'].'</th>
+									<th scope="row">'.$x['id'].'</td>
+									<td>'.$x['short_description'].'</th>
 									<td>'.$x['section_type'].'</td>
 									<td>'.$x['section_url'].'</td>
 								</tr>
