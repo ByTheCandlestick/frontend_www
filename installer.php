@@ -489,9 +489,20 @@
 			<div class="log" style="white-space: pre-wrap;">
 				<pre>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
+<?
+		sleep(5);
+?>
+		<script>alert('here')</script>
+<?
+		sleep(5);
+?>
+		<script>alert('here')</script>
+<?
+		sleep(5);
+?>
+		<script>alert('here')</script>
 		</body>
 	</html>
-
 <?
 	} else {
 ?>
