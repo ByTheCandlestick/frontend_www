@@ -895,8 +895,13 @@
 					var mailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 					var phoneRegex = /\(?([0-9]{5})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
 					var usernameRegex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
+					var addressRegex = /\b\d{1,6} +.{2,25}\b(avenue|ave|court|ct|street|st|drive|dr|lane|ln|road|rd|blvd|plaza|parkway|pkwy)/;
 					if(x==1) { // Address
-						$(this).attr('valid', true)
+						if(addressRegex.test($(this).val())) {
+							$(this).attr('valid', true)
+						} else {
+							$(this).attr('valid', false)
+						}
 					} else if(x==2) { // Phone
 						if(phoneRegex.test($(this).val())) {
 							$(this).attr('valid', true)
