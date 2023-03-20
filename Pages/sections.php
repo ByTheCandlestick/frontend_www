@@ -33,8 +33,8 @@
 			<thead class="sticky-top">
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Description</th>
 					<th scope="col">Type</th>
+					<th scope="col">Description</th>
 					<th scope="col">File</th>
 				</tr>
 			</thead>
@@ -45,8 +45,8 @@
 							print('
 								<tr>
 									<th scope="row">'.$x['id'].'</td>
-									<td>'.$x['short_description'].'</th>
 									<td>'.$x['section_type'].'</td>
+									<td>'.$x['short_description'].'</th>
 									<td>'.$x['section_url'].'</td>
 								</tr>
 							');
