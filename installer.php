@@ -1,5 +1,5 @@
 <?php
-	if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_POST['GUI'] == '1') {
+	if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == '1') {
 ?>
 	<!DOCTYPE html>
 	<html>
@@ -526,19 +526,17 @@
 					}
 				]
 				
-				data.forEach(element => console.log(element));
-
-				/*
-				xhr.open("POST", url, true);
-				xhr.setRequestHeader("Content-Type", "application/json");
-				xhr.onreadystatechange = function () {
-					if (xhr.readyState === 4 && xhr.status === 200) {
-						const response = JSON.parse(xhr.responseText);
-						console.log(response);
-					}
-				};
-				xhr.send(data);
-				*/
+				data.forEach((element) => {
+					xhr.open("POST", url, true);
+					xhr.setRequestHeader("Content-Type", "application/json");
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState === 4 && xhr.status === 200) {
+							const response = JSON.parse(xhr.responseText);
+							console.log(response);
+						}
+					};
+					xhr.send(data);
+				});
 			</script>
 		</body>
 	</html>
