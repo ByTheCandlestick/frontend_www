@@ -2,7 +2,168 @@
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<style>
-    @import url(https://fonts.googleapis.com/css?family=Montserrat);*{margin:0;padding:0}html{height:100%;background:linear-gradient(rgba(196,102,0,.6),rgba(155,89,182,.6))}body{font-family:montserrat,arial,verdana}#msform{width:100vw;margin:50px auto;text-align:center;position:relative}#msform fieldset{background:#fff;border:0 none;border-radius:3px;box-shadow:0 0 15px 1px rgba(0,0,0,.4);padding:20px 30px;box-sizing:border-box;width:80%;margin:0 10%;position:relative}#msform fieldset:not(:first-of-type){display:none}#msform input,#msform textarea{padding:15px;border:1px solid #ccc;border-radius:3px;margin-bottom:10px;width:100%;box-sizing:border-box;font-family:montserrat;color:#2c3e50;font-size:13px}#msform .action-button{width:100px;background:#27ae60;font-weight:700;color:#fff;border:0 none;border-radius:1px;cursor:pointer;padding:10px;margin:10px 5px;text-decoration:none;font-size:14px}#msform .action-button:hover,#msform .action-button:focus{box-shadow:0 0 0 2px #fff,0 0 0 3px #27ae60}.fs-title{font-size:15px;text-transform:uppercase;color:#2c3e50;margin-bottom:10px}.fs-subtitle{font-weight:400;font-size:13px;color:#666;margin-bottom:20px}#progressbar{margin-bottom:30px;overflow:hidden;counter-reset:step;display:flex}#progressbar li{list-style-type:none;color:#fff;text-transform:uppercase;font-size:9px;width:33.33%;float:left;position:relative}#progressbar li:before{content:counter(step);counter-increment:step;width:20px;line-height:20px;display:block;font-size:10px;color:#333;background:#fff;border-radius:3px;margin:0 auto 5px auto}#progressbar li:after{content:'';width:100%;height:2px;background:#fff;position:absolute;left:-50%;top:9px;z-index:-1}#progressbar li:first-child:after{content:none}#progressbar li.active:before,#progressbar li.active:after{background:#27ae60;color:#fff}@media (min-width:576px){#msform{width:85vw}}@media (min-width:768px){#msform{width:70vw}}@media (min-width:992px){#msform{width:60vw}}@media (min-width:1200px){#msform{width:50vw}}@media (min-width:1400px){#msform{width:40vw}}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%;
+    background: linear-gradient(rgba(196, 102, 0, .6), rgba(155, 89, 182, .6))
+}
+
+body {
+    font-family: montserrat, arial, verdana
+}
+
+#msform {
+    width: 100vw;
+    margin: 50px auto;
+    text-align: center;
+    position: relative
+}
+
+#msform fieldset {
+    background: #fff;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, .4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2c3e50;
+    font-size: 13px
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #27ae60;
+    font-weight: 700;
+    color: #fff;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-size: 14px
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #27ae60
+}
+
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2c3e50;
+    margin-bottom: 10px
+}
+
+.fs-subtitle {
+    font-weight: 400;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+    display: flex;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: #fff;
+    border-radius: 3px;
+    margin: 0 auto 5px auto
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1
+}
+
+#progressbar li:first-child:after {
+    content: none
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #27ae60;
+    color: #fff
+}
+@media(min-width: 576px) and (max-width: 767px) {
+    #msform {
+        width: 70vw;
+    }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+    #msform {
+        width: 60vw;
+    }
+}
+@media(min-width: 992px) and (max-width: 1199px) {
+    #msform {
+        width: 50vw;
+    }
+}
+@media(min-width: 1200px) and (max-width: 1399px) {
+    #msform {
+        width: 45vw;
+    }
+}
+@media(min-width: 1400px) {
+    #msform {
+        width: 40vw;
+    }
+}
+
 	</style>
 </head>
 <body>
