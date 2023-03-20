@@ -24,7 +24,6 @@
 							if(!isset($arr_page_info['menu_item']))		throw new Error("ERR-PAG-8");
 							if(!isset($arr_page_info['menu_order']))	throw new Error("ERR-PAG-9");
 							if(!isset($arr_page_info['menu_icon']))		throw new Error("ERR-PAG-10");
-							if(!isset($arr_page_info['menu_url']))		throw new Error("ERR-PAG-11");
 						} catch(Error $er) {
 							exit($this->throwError($er->getMessage(), $er->getLine(), $er->getFile(), $er->getTrace(), "HTTP/1.1 500 Internal Server Error"));
 						}
