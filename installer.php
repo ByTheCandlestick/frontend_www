@@ -479,8 +479,8 @@
 			</div>
 			<div class="progress"></div>
 			<div class="log" style="white-space: pre-wrap;">
-				<pre>Building Pendryn for you!</pre>
-				<pre>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
+				<pre>Building Pendryn for you!
+This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
 		</body>
 	</html>
