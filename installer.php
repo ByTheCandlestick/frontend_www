@@ -892,14 +892,14 @@
 				$('input').bind('input propertychange', function() {
 					console.log(this);
 					x=$(this).attr('validation');
-					var = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+					var mailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 					if(x==1) { // Address
 
 					} else if(x==2) { // Phone
 
 					} else if(x==3) { // Email
 						if(mailRegex.test($(this).val())) {
-							$(this).attr('valid', true)
+						$(this).attr('valid', true)
 						}
 					} else if(x==4) {
 
