@@ -15,21 +15,15 @@
 		</div>
 		<div class="col-12 col-md-6 text-md-end">
 			<div class="row">
-				<div class="col-12 col-lg-6 d-block d-md-flex justify-content-end align-items-center p-0">
+				<div class="col-6 col-md-4 form-floating" name="logSelector">
+					<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onchange="misc.filterLogs('user', this)">
+						<option value="">Please select a type...</option>
+						
+					</select>
 				</div>
-				<div class="col-12 col-lg-6">
-					<div class="row">
-						<div class="col-6 col-md-4 form-floating" name="logSelector">
-							<select class="form-control" id="LogSelect" style="padding: unset; appearance: auto; -webkit-appearance: auto; -moz-appearance: auto;" onchange="misc.filterLogs('user', this)">
-								<option value="">Please select a type...</option>
-								
-							</select>
-						</div>
-						<div class="col-6 col-md-4 form-floating">
-							<input type="text" class="form-control tableFilter" id="tableSearch" placeholder="">
-							<label for="tableSearch" class="ps-5">Search</label>
-						</div>
-					</div>
+				<div class="col-6 col-md-4 form-floating">
+					<input type="text" class="form-control tableFilter" id="tableSearch" placeholder="">
+					<label for="tableSearch" class="ps-5">Search</label>
 				</div>
 			</div>
 		</div>
