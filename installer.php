@@ -897,7 +897,7 @@
 					var usernameRegex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
 					var addressRegex = /\b\d{1,6} +.{2,25}\b(avenue|ave|court|ct|street|st|drive|dr|lane|ln|road|rd|blvd|plaza|parkway|pkwy)/;
 					var passwordRegex = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
-					var urlRegex = ((([A-Za-z]{3,9}:(?://)?)(?:[-;:&=+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=+\$,\w]+@)[A-Za-z0-9.-]+)((?:/[+~%/.\w-]*)?\??(?:[-+=&;%@.\w])#?(?:[\w]))?)
+					var urlRegex = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%\/.\w-]*)?\??(?:[-+=&;%@.\w])#?(?:[\w]))?)/;
 					if(x==1) { // Address
 						if(addressRegex.test($(this).val())) {
 							$(this).attr('valid', true)
