@@ -140,7 +140,7 @@ body {
 }
 @media(min-width: 576px) and (max-width: 767px) {
     #msform {
-        width: 70vw;
+        width: 75vw;
     }
 }
 @media(min-width: 768px) and (max-width: 991px) {
@@ -174,6 +174,7 @@ body {
 			<li>Default Users</li>
 			<li>Security</li>
 			<li>Databases</li>
+			<li>Domains</li>
 		</ul>
 		<!-- fieldsets -->
 		<fieldset>
@@ -184,7 +185,6 @@ body {
 			<input type="text" name="companyAddress" placeholder="LexCorp Tower, Metropolis" />
 			<input type="tel" name="companyPhone" placeholder="08320031986" />
 			<input type="email" name="companyEmail" placeholder="Lex@lexcorp.com" />
-			<textarea name="companydomains" placeholder="seperate domains with ';'"></textarea>
 
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
@@ -215,17 +215,37 @@ body {
 			<input type="button" name="next" class="next action-button" value="Next" />
 		</fieldset>
 		<fieldset>
-			<h2 class="fs-title">Personal Details</h2>
-			<h3 class="fs-subtitle">We will never sell it</h3>
+			<h2 class="fs-title">Databases</h2>
+			<h3 class="fs-subtitle">Please enter the information you would like to use with the following databases.</h3>
 
-			<input type="text" name="fname" placeholder="First Name" />
-			<input type="text" name="lname" placeholder="Last Name" />
-			<input type="text" name="phone" placeholder="Phone" />
-			<textarea name="address" placeholder="Address"></textarea>
+      <p>Central Database</p>
+			<input type="text" name="DB1-address" placeholder="Address" />
+			<input type="text" name="DB1-username" placeholder="Username" />
+			<input type="text" name="DB1-password" placeholder="Password" />
+      <p>Analytics Database</p>
+			<input type="text" name="DB2-address" placeholder="Address" />
+			<input type="text" name="DB2-username" placeholder="Username" />
+			<input type="text" name="DB2-password" placeholder="Password" />
 
 			<input type="button" name="previous" class="previous action-button" value="Previous" />
 			<input type="button" name="next" class="next action-button" value="Next" />
-			<a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a>
+
+			<a href="#" class="submit action-button" target="_top">Submit</a>
+		</fieldset>
+    <fieldset>
+			<h2 class="fs-title">Domains</h2>
+			<h3 class="fs-subtitle">Please enter the domains you would like to use with the following websites</h3>
+
+			<input type="text" name="domain-www" placeholder="Public store" />
+			<input type="text" name="domain-admin" placeholder="Admin" />
+			<input type="text" name="domain-blog" placeholder="Blog" />
+			<input type="text" name="domain-blog" placeholder="xPos" />
+			<input type="text" name="domain-blog" placeholder="api" />
+
+			<input type="button" name="previous" class="previous action-button" value="Previous" />
+			<input type="button" name="next" class="next action-button" value="Next" />
+
+			<a href="#" class="submit action-button" target="_top">Submit</a>
 		</fieldset>
 	</form>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
