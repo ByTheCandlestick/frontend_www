@@ -251,14 +251,28 @@ body {
 				DO NOT SHARE THIS INFORMATION.
 			</h3>
 
-			<span><input type="text" name="security-salt" placeholder="Salt" /><p title="The 'salt' is a small bit of text added to the start of the password before it is encrypted">?</p></span>
-			<span><input type="text" name="security-pepper" placeholder="Pepper" /><p title="The 'pepper' is a small bit of text added to the end of the password before it is encrypted">?</p></span>
+			<span><input type="text" name="security-salt" placeholder="Salt *" /><p title="The 'salt' is a small bit of text added to the start of the password before it is encrypted">?</p></span>
+			<span><input type="text" name="security-pepper" placeholder="Pepper *" /><p title="The 'pepper' is a small bit of text added to the end of the password before it is encrypted">?</p></span>
 			<span>
 				<select name="cars" id="cars">
-					<option value="0" selected>-- Password Encryption --</option>
-					<option value=""></option>
-					<option value=""></option>
-					<option value=""></option>
+					<option value="0" selected>-- Password Encryption *</option>
+					<option value="md2">md2</option>
+					<option value="md4">md4</option>
+					<option value="md5">md5</option>
+					<option value="sha1">sha1</option>
+					<option value="sha256">sha256</option>
+					<option value="sha384">sha384</option>
+					<option value="sha512">sha512</option>
+					<option value="ripemd128">ripemd128</option>
+					<option value="ripemd160">ripemd160</option>
+					<option value="ripemd256">ripemd256</option>
+					<option value="ripemd320">ripemd320</option>
+					<option value="whirlpool">whirlpool</option>
+					<option value="snefru">snefru</option>
+					<option value="gost">gost</option>
+					<option value="adler32">adler32</option>
+					<option value="crc32">crc32</option>
+					<option value="crc32b">crc32b</option>
 				</select>
 				<p title="The type of encryption you would like to use">?</p>
 			</span>
