@@ -504,6 +504,7 @@
 			<script>
 				var progressbar = $('.progressInner');
 				var onePercent = progressbar.width() / 50;
+				progressbar.width(0);
 				var data = [
 					{	type: 'db1',
 						weight: 20,
