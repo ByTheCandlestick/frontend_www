@@ -1,6 +1,6 @@
 <?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
-		var_dump($_POST);
+		print(json_encode($_POST));
 	} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == 'Submit') {
 ?>
 	<!DOCTYPE html>
@@ -274,16 +274,16 @@
 					transform:rotate(156.66deg) skew(45deg)
 				}
 				.head .hat .four-point-star.--first {
-					bottom:28px;
-					left:46px
+					bottom:24px;
+					left:51px
 				}
 				.head .hat .four-point-star.--second {
-					bottom:40px;
+					bottom:47px;
 					left:80px
 				}
 				.head .hat .four-point-star.--third {
 					bottom:15px;
-					left:108px
+					left:97px
 				}
 				@keyframes right_arm {
 					0% { transform:rotate(70deg) }
@@ -446,12 +446,12 @@
 					background:#eeeeee80;
 					border-radius: 10px;
 				}
-				.progress:after {
+				.progressInner {
 					content: "";
 					position: absolute;
 					top: 0;
 					left: 0;
-					width: 0;
+					width: 50%;
 					height: 100%;
 					background: #E91E63;
 					border-radius: 10px;
@@ -496,52 +496,70 @@
 					</div>
 				</div>
 			</div>
-			<div class="progress"></div>
+			<div class="progress"><div class="progressInner"></div></div>
 			<div class="log" style="white-space: pre-wrap;">
 				<pre><br/>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
 			</div>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script>
+				var progressbar = $('.progressInner');
+				var onePercent = progressbar.width() / 50;
 				var data = [
-					{
-						'core-address': '<?=$_POST['db1-address']?>',
-						'core-username': '<?=$_POST['db1-username']?>',
-						'core-password': '<?=$_POST['db1-password']?>',
-					}, {
-						'analytics-address': '<?=$_POST['db2-address']?>',
-						'analytics-username': '<?=$_POST['db2-username']?>',
-						'analytics-password': '<?=$_POST['db2-password']?>',
-					}, {
-						'name': '<?=$_POST['company-name']?>',
-						'address': '<?=$_POST['company-address']?>',
-						'phone': '<?=$_POST['company-phone']?>',
-						'email': '<?=$_POST['company-email']?>',
-					}, {
-						'username': '<?=$_POST['user-username']?>',
-						'firstname': '<?=$_POST['user-firstname']?>',
-						'lastname': '<?=$_POST['user-lastname']?>',
-						'email': '<?=$_POST['user-email']?>',
-						'phone': '<?=$_POST['user-phone']?>',
-						'password': '<?=$_POST['user-password']?>',
-						'password2': '<?=$_POST['user-password2']?>'
-					}, {
-						'www': '<?=$_POST['domain-www']?>',
-						'admin': '<?=$_POST['domain-admin']?>',
-						'xpos': '<?=$_POST['domain-xpos']?>',
-						'blog': '<?=$_POST['domain-blog']?>',
-						'api': '<?=$_POST['domain-api']?>',
-					}, {
-						'security-salt': '<?=$_POST['security-salt']?>',
-						'security-pepper': '<?=$_POST['security-pepper']?>',
-						'security-encryption': '<?=$_POST['security-encryption']?>',
+					{	type: 'db1',
+						weight: 20,
+						Address: '<?=$_POST['db1-address']?>',
+						Username: '<?=$_POST['db1-username']?>',
+						Password: '<?=$_POST['db1-password']?>',
+					}, {type: 'db2',
+						weight: 20,
+						Address: '<?=$_POST['db2-address']?>',
+						Username: '<?=$_POST['db2-username']?>',
+						Password: '<?=$_POST['db2-password']?>',
+					}, {type: 'company',
+						weight: 15,
+						Name: '<?=$_POST['company-name']?>',
+						Address: '<?=$_POST['company-address']?>',
+						Phone: '<?=$_POST['company-phone']?>',
+						Email: '<?=$_POST['company-email']?>',
+					}, {type: 'user',
+						weight: 15,
+						Username: '<?=$_POST['user-username']?>',
+						Firstname: '<?=$_POST['user-firstname']?>',
+						Lastname: '<?=$_POST['user-lastname']?>',
+						Email: '<?=$_POST['user-email']?>',
+						Phone: '<?=$_POST['user-phone']?>',
+						Password: '<?=$_POST['user-password']?>',
+						Password2: '<?=$_POST['user-password2']?>'
+					}, {type: 'domain',
+						weight: 15,
+						Www: '<?=$_POST['domain-www']?>',
+						Admin: '<?=$_POST['domain-admin']?>',
+						Xpos: '<?=$_POST['domain-xpos']?>',
+						Blog: '<?=$_POST['domain-blog']?>',
+						Api: '<?=$_POST['domain-api']?>',
+					}, {type: 'security',
+						weight: 15,
+						Salt: '<?=$_POST['security-salt']?>',
+						Sepper: '<?=$_POST['security-pepper']?>',
+						Encryption: '<?=$_POST['security-encryption']?>',
 					}
 				]
 				
 				data.forEach((element) => {
-					fetch("/installer.php", {
-						method: "post",
-						body: JSON.stringify(element)
-					}).then( (res) => {
-						console.log(res);
+					$.ajax({
+						method: "POST",
+						url: "/installer.php",
+						data: element
+					}).done(function(res) {
+						resJSON = JSON.parse(res);
+						
+						var curWidth = progressbar.width();
+						var addWidth = resJSON.weight * onePercent;
+						var newWidth = curWidth+addWidth;
+						console.log(curWidth);
+						console.log(addWidth);
+						console.log(newWidth);
+						//$(".progressInner").width((Number(resJSON.weight) + Number($(".progressInner").width()))+"%");
 					});
 				});
 				
