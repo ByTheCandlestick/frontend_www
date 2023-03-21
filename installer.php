@@ -559,7 +559,7 @@
 						console.log(curWidth);
 						console.log(addWidth);
 						console.log(newWidth);
-						//$(".progressInner").width((Number(resJSON.weight) + Number($(".progressInner").width()))+"%");
+						$(".progressInner").width(newWidth);
 					});
 				});
 				
