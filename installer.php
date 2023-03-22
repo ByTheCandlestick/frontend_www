@@ -17,7 +17,7 @@
 					} else {
 						throw new Error('Directory does not exist.');
 					}					
-				// Download the zip file
+				// Download and extract the zip file
 					$zip_file = "repo.zip";
 					file_put_contents($zip_file, file_get_contents("https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/Live.zip"));
 					$zip = new ZipArchive;
@@ -28,7 +28,7 @@
 						throw new Error("Failed to open the zip file.");
 					}
 					unlink($zip_file);
-				//  Move all repo files to base
+				// Move all files to base folder and remove the temporary folder
 					if ($dir = opendir('./frontend_www-Live/')) {
 						while (($file = readdir($dir)) !== false) {
 							if ($file[0] == '.') continue;
@@ -40,7 +40,11 @@
 					}
 					// Close the directory
 					closedir($dir);
-				//
+				// TEMP FILE
+					$file = fopen("vars.php", "w");
+					$text = "<?\n\tdefine('STRIPE_API', ['', '']);\n\tdefine('ADMIN', ['', '', '', '']);\n\tdefine('ANALYTICS', ['', '', '', '']);\n?>";
+					fwrite($file, $text);
+					fclose($file);
 				$status["status"] = "Success";
 			} catch(Error $er) {
 				$status["status"] = "Error";
@@ -127,7 +131,13 @@
 					}
 					mysqli_close($conn);
 				// Write the DB info in the vars.php file
-				// TODO
+					$file_path = "./vars.php";
+					$file = fopen($file_path, "r+");
+					$new_contents = trim(str_replace("define('ADMIN', ['', '', '', '']);", sprintf("define('ADMIN', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
+					ftruncate($file, 0);
+					rewind($file);
+					fwrite($file, $new_contents);
+					fclose($file);
 				// Return success statement
 					$status["status"] = "Success";
 			} catch(Error $er) {
@@ -164,7 +174,13 @@
 					}
 					mysqli_close($conn);
 				// Write the DB info in the vars.php file
-					// TODO
+					$file_path = "./vars.php";
+					$file = fopen($file_path, "r+");
+					$new_contents = trim(str_replace("define('ANALYTICS', ['', '', '', '']);", sprintf("define('ANALYTICS', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
+					ftruncate($file, 0);
+					rewind($file);
+					fwrite($file, $new_contents);
+					fclose($file);
 				// Return success statement
 					$status["status"] = "Success";
 			} catch(Error $er) {
@@ -173,15 +189,127 @@
 			}
 			print_r(json_encode($status));
 		} else if($_POST['type'] == 'company') {
-			//Upload company information
-		} else if($_POST['type'] == 'user') {
-			//Upload user information
-		} else if($_POST['type'] == 'domain') {
-			//Upload domain information
+			try {
+				//Upload company information
+					require('./vars.php');
+					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+					$sql_strings = [
+						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Name', '%s')",$_POST['Name']),
+						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Address', '%s')",$_POST['Address']),
+						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Phone', '%s')",$_POST['Phone']),
+						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Email', '%s')",$_POST['Email'])
+					];
+					foreach ($sql_strings as $sql) {
+						if(!($query = mysqli_query($conn, $sql)))
+							throw new Error("Error populating database with company data");
+					}
+					mysqli_close($conn);
+				// Return success statement
+					$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["message"] = $er->getMessage();
+			}
+			print_r(json_encode($status));
 		} else if($_POST['type'] == 'security') {
-			//Upload security information
+			try {
+				//Upload security information
+					require('./vars.php');
+					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+					$sql_strings = [
+						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security Salt', '%s')", $_POST['Salt']),
+						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security pepper', '%s')", $_POST['Pepper']),
+						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security encryption', '%s')", $_POST['Encryption'])
+					];
+					foreach ($sql_strings as $sql) {
+						if(!($query = mysqli_query($conn, $sql)))
+							throw new Error("Error populating database with security data");
+					}
+					mysqli_close($conn);
+				// Return success statement
+					$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["message"] = $er->getMessage();
+			}
+			print_r(json_encode($status));
+		} else if($_POST['type'] == 'user') {
+			try {
+				//Upload user information
+					require('./vars.php');
+					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+					$hash = mysqli_fetch_row(mysqli_query($conn, "SELECT `Value` FROM `Config` WHERE `Key`='Security encryption'"))[0];
+					$password = hash($hash, $_POST['Password']);
+					if(!($query = mysqli_query($conn, sprintf("INSERT INTO `User accounts`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Phone`, `Created`, `Disable_analytics`, `Active`) VALUES('%s', '%s', '%s', '%s', '%s', '%s', 'now()', '1', '1')", $_POST['Username'], $_POST['Email'], $_POST['Firstname'], $_POST['Lastname'], $password, $_POST['Phone']))))
+						throw new Error("Error populating database with user data");
+					mysqli_close($conn);
+				// TODO User permissions
+				// Return success statement
+					$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["message"] = $er->getMessage();
+			}
+			print_r(json_encode($status));
+		} else if($_POST['type'] == 'domain') {
+			try {
+				//Upload domain information
+					require('./vars.php');
+					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+					$sql_strings = [
+						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '1', 'www_access')", $_POST['Www']),
+						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '1', 'blg_access')", $_POST['Blog']),
+						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '2', 'adm_access')", $_POST['Admin']),
+						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '3', 'pos_access')", $_POST['Xpos']),
+						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '4', 'api_access')", $_POST['Api']),
+					];
+					foreach ($sql_strings as $sql) {
+						if(!($query = mysqli_query($conn, $sql)))
+							throw new Error("Error populating database with domains");
+					}
+					mysqli_close($conn);
+				// Return success statement
+					$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["message"] = $er->getMessage();
+			}
+			print_r(json_encode($status));
+		} else if($_POST['type'] == 'stripe') {
+			try {
+				// Write the stripe API info in the vars.php file
+					$file_path = "./vars.php";
+					$file = fopen($file_path, "r+");
+					$new_contents = trim(str_replace("define('STRIPE_API', ['', '', '', '']);", sprintf("define('STRIPE_API', ['%s', '%s']);", $_POST['PK'], $_POST['SK']), fread($file, filesize($file_path))), "\0");
+					ftruncate($file, 0);
+					rewind($file);
+					fwrite($file, $new_contents);
+					fclose($file);
+				// Return success statement
+					$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["message"] = $er->getMessage();
+			}
+			print_r(json_encode($status));
+		} else if(substr($_POST['type'], 0, 3) === "sql") {
+			try {
+				// Write the requested data to the database
+					$status["message"] = $_POST['toSetup'];
+				// Return success statement
+					$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["message"] = $er->getMessage();
+			}
+			print_r(json_encode($status));
 		}
 	} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == 'Submit') {
+		if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+			$protocol = "https";
+		} else {
+			$protocol = "http";
+		}
 ?>
 	<!DOCTYPE html>
 	<html>
@@ -667,11 +795,8 @@
 					font-weight: bold;
 					display: inherit;
 				}
-				.confetti-wrapper {
-					position: relative;
-					min-height: 100vh;
-					min-width: 100vw;
-					z-index: 2;
+				.jquery-modal.blocker.current {
+					overflow: hidden;
 				}
 
 				[class|=confetti] {
@@ -723,15 +848,18 @@
 			<div id="modal-success" class="modal">
 				<h1>installation success!</h1>
 				<p>I am absolutely thrilled to congratulate you on successfully installing your new website, This accomplishment is a testament to your dedication, hard work, and technical prowess. As you embark on this exciting journey with Pendryn, you are opening up a world of opportunities and experiences for your users. Your creativity and ingenuity have come to life in the form of this fantastic platform, and I have no doubt that it will grow and evolve into something truly remarkable. Cheers to your incredible achievement, and may Pendryn exceed all your expectations and become a beacon of success in the digital realm!</p>
-				<a href="<?php print($_POST['domain-www'])?>">Click here to go to your new website!.</a>
+				<a href="<?=$protocol?>://<?php print($_POST['domain-www'])?>/">Click here to go to your new website!.</a>
 			</div>
-			<div class="confetti-wrapper"></div>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js" integrity="sha512-ztxZscxb55lKL+xmWGZEbBHekIzy+1qYKHGZTWZYH1GUwxy0hiA18lW6ORIMj4DHRgvmP/qGcvqwEyFFV7OYVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script>
 				var onePercent = $('.progress').width() / 100;
 				elements = [
 					{	type: 'install',
+						phpini: '',
+						download: '',
+						extract: '',
+						move: '',
 					},{	type: 'db1',
 						Address: '<?=$_POST['db1-address']?>',
 						Name: '<?=$_POST['db1-name']?>',
@@ -747,6 +875,10 @@
 						Address: '<?=$_POST['company-address']?>',
 						Phone: '<?=$_POST['company-phone']?>',
 						Email: '<?=$_POST['company-email']?>',
+					}, {type: 'security',
+						Salt: '<?=$_POST['security-salt']?>',
+						Sepper: '<?=$_POST['security-pepper']?>',
+						Encryption: '<?=$_POST['security-encryption']?>',
 					}, {type: 'user',
 						Username: '<?=$_POST['user-username']?>',
 						Firstname: '<?=$_POST['user-firstname']?>',
@@ -754,17 +886,39 @@
 						Email: '<?=$_POST['user-email']?>',
 						Phone: '<?=$_POST['user-phone']?>',
 						Password: '<?=$_POST['user-password']?>',
-						Password2: '<?=$_POST['user-password2']?>',
 					}, {type: 'domain',
 						Www: '<?=$_POST['domain-www']?>',
 						Admin: '<?=$_POST['domain-admin']?>',
 						Xpos: '<?=$_POST['domain-xpos']?>',
 						Blog: '<?=$_POST['domain-blog']?>',
 						Api: '<?=$_POST['domain-api']?>',
-					}, {type: 'security',
-						Salt: '<?=$_POST['security-salt']?>',
-						Sepper: '<?=$_POST['security-pepper']?>',
-						Encryption: '<?=$_POST['security-encryption']?>',
+					}, {type: 'stripe',
+						SK: '<?=$_POST['stripe-sk']?>',
+						PK: '<?=$_POST['stripe-pk']?>',
+					}, {type: 'sql API setup',
+						toSetup: 'API Setup',
+					}, {type: 'sql Pages',
+						toSetup: 'pages',
+					}, {type: 'sql Sections',
+						toSetup: 'sections',
+					}, {type: 'sql Images',
+						toSetup: 'images',
+					}, {type: 'sql Counters',
+						toSetup: 'counters',
+					}, {type: 'sql Partners',
+						toSetup: 'partners',
+					}, {type: 'sql Ratings',
+						toSetup: 'partner ratings',
+					}, {type: 'sql Website pages',
+						toSetup: 'Website pages',
+					}, {type: 'sql Website scripts ',
+						toSetup: 'Website scripts',
+					}, {type: 'sql Website sections',
+						toSetup: 'Website sections',
+					}, {type: 'sql Website styles',
+						toSetup: 'Website styles',
+					}, {type: 'sql Website themes',
+						toSetup: 'Website themes',
 					}
 				]
 				totalVars = 0;
@@ -793,6 +947,7 @@
 							clickClose: false,
 							showClose: false
 						});
+						$('.confetti-wrapper').show();
 						for(var i = 0; i < 150; i++){create(i);}
 					} catch(error) {
 						$(".log pre").html($(".log pre").html()+"<p>"+error+"</p>");
@@ -827,7 +982,7 @@
 						"left" : Math.random()*100+"%",
 						"opacity" : Math.random()+0.5,
 						"transform" : "rotate("+Math.random()*360+"deg)"
-					}).appendTo('.confetti-wrapper');  
+					}).appendTo('.jquery-modal.blocker.current');
 					
 					drop(i);
 				}
@@ -925,7 +1080,7 @@
 				}
 
 				#msform .action-button {
-					width: 100px;
+					width: auto;
 					background: #27ae60;
 					font-weight: 700;
 					color: #fff;
@@ -1055,11 +1210,13 @@
 				<!-- progressbar -->
 				<ul id="progressbar">
 					<li class="active">Welcome</li>
+					<li>Warnings</li>
 					<li>Licence</li>
 					<li>Company Setup</li>
 					<li>Default Users</li>
 					<li>Domains</li>
 					<li>Databases</li>
+					<li>Payments</li>
 					<li>Security</li>
 				</ul>
 				<!-- fieldsets -->
@@ -1075,7 +1232,17 @@
 					<input type="button" name="next" class="next action-button" value="Next" />
 				</fieldset>
 				<fieldset> <!-- Licence -->
-					<h2 class="fs-title">Licence!</h2>
+					<h2 class="fs-title">WARNING</h2>
+					<h3 class="fs-subtitle">Please read the following warning carefully before proceeding with the installation. Your attention to this matter is very important.</h3>
+					<p>
+						<b>This installation process will delete all files within the installation folder and completely wipe any existing data in the databases you specify during setup. Please make sure to back up any important files and data before proceeding</b>
+					</p>
+					
+					<input type="button" name="previous" class="previous action-button" value="I need more time" />
+					<input type="button" name="next" class="next action-button" value="Ready!" />
+				</fieldset>
+				<fieldset> <!-- Licence -->
+					<h2 class="fs-title">Terms and conditions</h2>
 					<h3 class="fs-subtitle">Before you get started, we kindly ask that you review and accept our license and terms. This helps ensure a positive experience for everyone and protects your rights as a user. Thank you for your cooperation!</h3>
 					<p>
 						<h4>Fair Use Terms and Conditions</h4>
@@ -1157,6 +1324,16 @@
 					<span><input validation="0" valid="false" type="text" name="db1-name" placeholder="Name *" /><p title="The name for the database to connect to">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db2-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db2-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
+
+					<input type="button" name="previous" class="previous action-button" value="Previous" />
+					<input type="button" name="next" class="next action-button" value="Next" />
+				</fieldset>
+				<fieldset> <!-- Database Info -->
+					<h2 class="fs-title">Stripe API keys</h2>
+					<h3 class="fs-subtitle">We  take the security of your information seriously. Rest assured that the secret keys you submit are confidential and will never be shared with anyone.</h3>
+
+					<span><input validation="0" valid="false" type="text" name="stripe-pk" placeholder="Stripe Public Key *" /><p title="This can be found on your stripe developers page">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="stripe-sk" placeholder="Stripe Secret Key *" /><p title="This can be found on your stripe developers page">?</p></span>
 
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
 					<input type="button" name="next" class="next action-button" value="Next" />
