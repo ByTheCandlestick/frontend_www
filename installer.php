@@ -3,6 +3,9 @@
 		$status = array();
 		if($_POST['type'] == 'install') {
 			try {
+				// Enable short opening tags
+				ini_set('short_open_tag', 1);
+
 				$repo_url = "https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/Live.zip";
 				$zip_file = "repo.zip";
 				// Download the zip file
