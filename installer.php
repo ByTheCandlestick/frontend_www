@@ -2,9 +2,7 @@
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
 		if($_POST['type'] == 'install') {
 			$status = array(
-				"type" => $_POST['type'],
 				"weight" => $_POST['weight'],
-				"status" => ""
 			);
 			try {
 				$repo_url = "https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/Live.zip";
@@ -23,14 +21,12 @@
 				$status["status"] = "Success";
 			} catch(Error $er) {
 				$status["status"] = "Error";
-				$status["Message"] = $er;
+				$status["message"] = $er;
 			}
 			print_r(json_encode($status));
 		} else if($_POST['type'] == 'db1') {
 			$status = array(
-				"type" => $_POST['type'],
 				"weight" => $_POST['weight'],
-				"status" => ""
 			);
 			try {
 				$servername = $_POST['Address'];
@@ -45,8 +41,10 @@
 					if(!$result || $result->num_rows <= 0) throw new Error("Database does not exist!");
 					$conn->close();
 				// Setup database
+				$status["status"] = "Success";
 			} catch(Error $er) {
-
+				$status["status"] = "Error";
+				$status["message"] = $er;
 			}
 		} else if($_POST['type'] == 'db2') {
 			// Check if database exists.
@@ -663,7 +661,7 @@
 									$(".progressInner").width($('.progressInner').width()+(res.weight * onePercent));
 									$(".log pre").html($(".log pre").html()+"<p>Successfully setup section "+res.type+".</p>");
 								} else {
-									throw new Error('Unable to setup \''+data.type+'\' section.');
+									throw new Error(data.message);
 								}
 							});
 						}
