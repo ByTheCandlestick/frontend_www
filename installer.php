@@ -1,13 +1,63 @@
 <?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
-		print(json_encode($_POST));
+		if($_POST['type'] == 'install') {
+			$status = array(
+				"type" => $_POST['type'],
+				"weight" => $_POST['weight'],
+				"status" => ""
+			);
+			try {
+				$repo_url = "https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/Live.zip";
+				$zip_file = "repo.zip";
+				// Download the zip file
+				file_put_contents($zip_file, file_get_contents($repo_url));
+				$zip = new ZipArchive;
+				if ($zip->open($zip_file) === true) {
+					$extract_path = "extracted";
+					$zip->extractTo($extract_path);
+					$zip->close();
+				} else {
+					throw new Error("Failed to open the zip file.");
+				}
+				unlink($zip_file);
+				$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["Message"] = $er;
+			}
+			print_r(json_encode($status));
+		} else if($_POST['type'] == 'db1') {
+			$servername = $_POST['Address'];
+			$username = $_POST['Username'];
+			$password = $_POST['Password'];
+			$dbname = $_POST['Name'];
+			// Check if database exists.
+				$conn = new mysqli($servername, $username, $password);
+				if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
+				$sql = "SHOW DATABASES LIKE '$dbname'";
+				$result = $conn->query($sql);
+				($result && $result->num_rows > 0)?print("Database exists!"):print("Database does not exist!");
+				$conn->close();
+			// Setup database
+		} else if($_POST['type'] == 'db2') {
+			// Check if database exists.
+			// Setup database
+		} else if($_POST['type'] == 'company') {
+			//Upload company information
+		} else if($_POST['type'] == 'user') {
+			//Upload user information
+		} else if($_POST['type'] == 'domain') {
+			//Upload domain information
+		} else if($_POST['type'] == 'security') {
+			//Upload security information
+		}
 	} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == 'Submit') {
 ?>
 	<!DOCTYPE html>
 	<html>
 		<head>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.css" integrity="sha512-JP49dvydjvdq6qd31grbdqIeExUyLFFIIneoetY/cJ+eQeJ6ok5HhaM4kQfIeQV4maAMGQ5kf4In3T7VKwMufg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 			<style>
-
 				html {
 					height: 100%;
 					background: linear-gradient(rgba(196, 102, 0, .6), rgba(155, 89, 182, .6));
@@ -22,7 +72,8 @@
 					flex-wrap:wrap;
 					width:100vw;
 					height:100vh;
-					overflow:hidden
+					overflow:hidden;
+					font-family: montserrat, arial, verdana;
 				}
 				.scene {
 					display:flex
@@ -431,11 +482,11 @@
 					63% { transform:rotate(-360deg) }
 				}
 				@keyframes path_triangle {
-					000% { transform:translateY(0) }
-					010% { transform:translateY(-172px) translatex(10px) rotate(-10deg) }
-					055% { transform:translateY(-172px) translatex(10px) rotate(-365deg) }
-					058% { transform:translateY(-172px) translatex(10px) rotate(-365deg) }
-					063% { transform:rotate(-360deg) }
+					0% { transform:translateY(0) }
+					10% { transform:translateY(-172px) translatex(10px) rotate(-10deg) }
+					55% { transform:translateY(-172px) translatex(10px) rotate(-365deg) }
+					58% { transform:translateY(-172px) translatex(10px) rotate(-365deg) }
+					63% { transform:rotate(-360deg) }
 				}
 				.progress,
 				.log {
@@ -451,25 +502,62 @@
 					position: absolute;
 					top: 0;
 					left: 0;
-					width: 50%;
+					width: 0;
 					height: 100%;
 					background: #E91E63;
 					border-radius: 10px;
+					transition: width 1s;
 				}
 				.log {
 					height: 150px;
 					overflow: hidden;
 					padding: unset;
 					color: mediumvioletred;
-					white-space: pre-wrap;
+				}
+				.log pre::-webkit-scrollbar {
+					display: none;
 				}
 				.log pre {
+					-ms-overflow-style: none;
+					scrollbar-width: none;
 					white-space: pre-wrap;
-					overflow-y: scroll;
+					overflow: auto;
 					margin: 0 0 0 15px;
-					top: 0;
-					position: absolute;
 					height: 100%;
+				}
+				.log pre p {
+					margin: unset;
+				}
+				.modal a {
+					text-decoration: none;
+					color: orange;
+					border: 2px orange solid;
+					padding: 5px;
+					border-radius: 5px;
+					font-weight: bold;
+					display: inherit;
+				}
+				.confetti-wrapper {
+					position: relative;
+					min-height: 100vh;
+					min-width: 100vw;
+					z-index: 2;
+				}
+
+				[class|=confetti] {
+					position: absolute;
+				}
+
+				.red {
+					background-color: #d13447;
+				}
+
+				.yellow {
+					background-color: #ffbf00;
+				}
+
+				.blue {
+					background-color: #263672;
 				}
 			</style>
 		</head>
@@ -497,82 +585,149 @@
 				</div>
 			</div>
 			<div class="progress"><div class="progressInner"></div></div>
-			<div class="log" style="white-space: pre-wrap;">
-				<pre><br/>Building Pendryn for you!<br/>This may take some time, Please let this work and do not turn off or restart or close this device.</pre>
+			<div class="log">
+				<pre>
+					<p>Building Pendryn for you!<br/>This may take several minutes. Please do not turn off, restart or close this device.</p>
+				</pre>
 			</div>
+			<div id="modal-success" class="modal">
+				<h1>installation success!</h1>
+				<p>I am absolutely thrilled to congratulate you on successfully installing your new website, This accomplishment is a testament to your dedication, hard work, and technical prowess. As you embark on this exciting journey with Pendryn, you are opening up a world of opportunities and experiences for your users. Your creativity and ingenuity have come to life in the form of this fantastic platform, and I have no doubt that it will grow and evolve into something truly remarkable. Cheers to your incredible achievement, and may Pendryn exceed all your expectations and become a beacon of success in the digital realm!</p>
+				<a href="<?php print($_POST['domain-www'])?>">Click here to go to your new website!.</a>
+			</div>
+			<div class="confetti-wrapper"></div>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js" integrity="sha512-ztxZscxb55lKL+xmWGZEbBHekIzy+1qYKHGZTWZYH1GUwxy0hiA18lW6ORIMj4DHRgvmP/qGcvqwEyFFV7OYVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script>
-				var progressbar = $('.progressInner');
-				var onePercent = progressbar.width() / 50;
-				progressbar.width(0);
-				var data = [
-					{	type: 'db1',
-						weight: 20,
+				var onePercent = $('.progress').width() / 100;
+				elements = [
+					{	type: 'install',
+					},{	type: 'db1',
 						Address: '<?=$_POST['db1-address']?>',
+						Name: '<?=$_POST['db1-name']?>',
 						Username: '<?=$_POST['db1-username']?>',
 						Password: '<?=$_POST['db1-password']?>',
 					}, {type: 'db2',
-						weight: 20,
 						Address: '<?=$_POST['db2-address']?>',
+						Name: '<?=$_POST['db2-name']?>',
 						Username: '<?=$_POST['db2-username']?>',
 						Password: '<?=$_POST['db2-password']?>',
 					}, {type: 'company',
-						weight: 15,
 						Name: '<?=$_POST['company-name']?>',
 						Address: '<?=$_POST['company-address']?>',
 						Phone: '<?=$_POST['company-phone']?>',
 						Email: '<?=$_POST['company-email']?>',
 					}, {type: 'user',
-						weight: 15,
 						Username: '<?=$_POST['user-username']?>',
 						Firstname: '<?=$_POST['user-firstname']?>',
 						Lastname: '<?=$_POST['user-lastname']?>',
 						Email: '<?=$_POST['user-email']?>',
 						Phone: '<?=$_POST['user-phone']?>',
 						Password: '<?=$_POST['user-password']?>',
-						Password2: '<?=$_POST['user-password2']?>'
+						Password2: '<?=$_POST['user-password2']?>',
 					}, {type: 'domain',
-						weight: 15,
 						Www: '<?=$_POST['domain-www']?>',
 						Admin: '<?=$_POST['domain-admin']?>',
 						Xpos: '<?=$_POST['domain-xpos']?>',
 						Blog: '<?=$_POST['domain-blog']?>',
 						Api: '<?=$_POST['domain-api']?>',
 					}, {type: 'security',
-						weight: 15,
 						Salt: '<?=$_POST['security-salt']?>',
 						Sepper: '<?=$_POST['security-pepper']?>',
 						Encryption: '<?=$_POST['security-encryption']?>',
 					}
 				]
-				
-				data.forEach((element) => {
-					$.ajax({
+				totalVars = 0;
+				elements.forEach(element => {
+					totalVars += Object.keys(element).length;
+				});
+				postData(elements, totalVars);
+				async function postData(elements) {
+					try {
+						var count, successes = 0
+						for (const data of elements) {
+							keys = Object.keys(data).length;
+							data['weight'] = (keys / totalVars) * 100;
+							await request(data).then((res) => {
+								res = JSON.parse(res);
+								if(res.status.toLowerCase() == "success") {
+									$(".progressInner").width($('.progressInner').width()+(res.weight * onePercent));
+									$(".log pre").html($(".log pre").html()+"<p>Successfully setup section "+res.type+".</p>");
+								} else {
+									throw new Error('Unable to setup \''+data.type+'\' section.');
+								}
+							});
+						}
+						$("#modal-success").modal({
+							escapeClose: false,
+							clickClose: false,
+							showClose: false
+						});
+						for(var i = 0; i < 150; i++){create(i);}
+					} catch(error) {
+						$(".log pre").html($(".log pre").html()+error);
+						console.log(error);
+					}
+				}
+				function request(data) {
+					return $.ajax({
 						method: "POST",
 						url: "/installer.php",
-						data: element
-					}).done(function(res) {
-						resJSON = JSON.parse(res);
-						
-						var curWidth = progressbar.width();
-						var addWidth = resJSON.weight * onePercent;
-						var newWidth = curWidth+addWidth;
-						console.log(curWidth);
-						console.log(addWidth);
-						console.log(newWidth);
-						$(".progressInner").width(newWidth);
+						data: data
 					});
-				});
-				
+				}
+				function create(i) {
+					var width = Math.random() * 8;
+					var height = width * 0.4;
+					var colourIdx = Math.ceil(Math.random() * 3);
+					var colour = "red";
+					switch(colourIdx) {
+						case 1:
+						colour = "yellow";
+						break;
+						case 2:
+						colour = "blue";
+						break;
+						default:
+						colour = "red";
+					}
+					$('<div class="confetti-'+i+' '+colour+'"></div>').css({
+						"width" : width+"px",
+						"height" : height+"px",
+						"top" : -Math.random()*20+"%",
+						"left" : Math.random()*100+"%",
+						"opacity" : Math.random()+0.5,
+						"transform" : "rotate("+Math.random()*360+"deg)"
+					}).appendTo('.confetti-wrapper');  
+					
+					drop(i);
+				}
+				function drop(x) {
+					$('.confetti-'+x).animate({
+						top: "100%",
+						left: "+="+Math.random()*15+"%"
+					}, Math.random()*2000 + 4000, function() {
+						reset(x);
+					});
+				}
+				function reset(x) {
+					$('.confetti-'+x).animate({
+						"top" : -Math.random()*20+"%",
+						"left" : "-="+Math.random()*15+"%"
+					}, 0, function() {
+						drop(x);             
+					});
+				}
 			</script>
 		</body>
 	</html>
-<?
+<?php
 	} else {
 ?>
 	<!DOCTYPE html>
 	<html>
 		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<style>
 				@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
@@ -595,7 +750,8 @@
 					width: 100vw;
 					margin: 50px auto;
 					text-align: center;
-					position: relative
+					position: relative;
+					padding-bottom: 20px;
 				}
 
 				#msform fieldset {
@@ -604,9 +760,8 @@
 					border-radius: 3px;
 					box-shadow: 0 0 15px 1px rgba(0, 0, 0, .4);
 					padding: 20px 30px;
+					width: 100%;
 					box-sizing: border-box;
-					width: 80%;
-					margin: 0 10%;
 					position: relative
 				}
 
@@ -620,6 +775,7 @@
 				}
 
 				#msform fieldset span p {
+					display: none;
 					cursor: help;
 					position: relative;
 					margin: 14px 0px 0px 5px;
@@ -722,27 +878,43 @@
 					background: #27ae60;
 					color: #fff
 				}
-				@media(min-width: 576px) and (max-width: 767px) {
+				#msform {
+					width: 100vw;
+				}
+				@media (min-width: 320px) {
+					#msform {
+						width: 90vw;
+					}
+				}
+				@media (min-width: 480px) {
 					#msform {
 						width: 75vw;
 					}
 				}
-				@media(min-width: 768px) and (max-width: 991px) {
+				@media (min-width: 768px) {
+					#msform fieldset span p {
+						display: block;
+					}
 					#msform {
 						width: 60vw;
 					}
 				}
-				@media(min-width: 992px) and (max-width: 1199px) {
+				@media (min-width: 992px) {
 					#msform {
 						width: 50vw;
 					}
 				}
-				@media(min-width: 1200px) and (max-width: 1399px) {
+				@media (min-width: 1024px) {
+					#msform {
+						width: 47vw;
+					}
+				}
+				@media (min-width: 1200px) {
 					#msform {
 						width: 45vw;
 					}
 				}
-				@media(min-width: 1400px) {
+				@media (min-width: 1400px) {
 					#msform {
 						width: 40vw;
 					}
@@ -848,10 +1020,12 @@
 
 					<p>Central Database</p>
 					<span><input validation="0" valid="false" type="text" name="db1-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db1-name" placeholder="Name *" /><p title="The name for the database to connect to">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db1-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db1-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 					<p>Analytics Database</p>
 					<span><input validation="0" valid="false" type="text" name="db2-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db1-name" placeholder="Name *" /><p title="The name for the database to connect to">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db2-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db2-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 
@@ -964,6 +1138,6 @@
 			</script>
 		</body>
 	</html>
-<?
+<?php
 	}
 ?>
