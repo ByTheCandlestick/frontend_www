@@ -6,7 +6,7 @@
 			'code' => $userdata['Zoho Mail Auth Code'],
 			'client_id' => $config['Zoho Client ID'],
 			'client_secret' => $config['Zoho Client Secret'],
-			'redirect_uri' => 'http://admin.candlestick-indev.co.uk/OauthCallback.php',
+			'redirect_uri' => 'http://admin.thecandlestick.co.uk/OauthCallback.php',
 			'grant_type' => 'authorization_code',
 		]);
 		// cURL
@@ -45,7 +45,7 @@
 						&grant_type=authorization_code\
 						&client_id=<?print($config['Zoho Client ID'])?>\
 						&client_secret=<?print($config['Zoho Client Secret'])?>\
-						&redirect_uri=http://admin.candlestick-indev.co.uk/OauthCallback.php',
+						&redirect_uri=http://admin.thecandlestick.co.uk/OauthCallback.php',
                 type: 'POST',
                 success: function(body) {
 					console.log(body);

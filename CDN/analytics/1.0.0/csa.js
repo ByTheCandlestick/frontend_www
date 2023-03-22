@@ -15,5 +15,5 @@ window.onclick = (e) => {
 }
 window.onunload = () => {
 	f.saveUnloadMetrics();
-	navigator.sendBeacon( "http://api.candlestick-indev.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a));
+	navigator.sendBeacon( "http://api.thecandlestick.co.uk/v1/analytics/?api_key="+m.api_key+"&analytics="+JSON.stringify(a));
 }

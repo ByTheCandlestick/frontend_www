@@ -24,12 +24,12 @@
 	"orientation": "portrait",
 	"icons": [
 		{
-			"src": "http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/",
+			"src": "http://api.thecandlestick.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/",
 			"type": "image/png",
 			"sizes": "512x512",
 			"purpose": "any"
 		}, {
-			"src": "http://api.candlestick-indev.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/",
+			"src": "http://api.thecandlestick.co.uk/v1/Images/Fetch/candlestickLogo_20220530162542/",
 			"type": "image/png",
 			"sizes": "512x512",
 			"purpose": "maskable"
