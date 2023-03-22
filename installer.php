@@ -19,7 +19,7 @@
 					}					
 				// Download and extract the zip file
 					$zip_file = "repo.zip";
-					file_put_contents($zip_file, file_get_contents("https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/Live.zip"));
+					file_put_contents($zip_file, file_get_contents("https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/InDev.zip"));
 					$zip = new ZipArchive;
 					if ($zip->open($zip_file) === true) {
 						$zip->extractTo("./");
@@ -29,14 +29,14 @@
 					}
 					unlink($zip_file);
 				// Move all files to base folder and remove the temporary folder
-					if ($dir = opendir('./frontend_www-Live/')) {
+					if ($dir = opendir('./frontend_www-InDev/')) {
 						while (($file = readdir($dir)) !== false) {
 							if ($file[0] == '.') continue;
-							if (!rename($source_file = './frontend_www-Live/' . $file, $target_file = './' . $file)) {
+							if (!rename($source_file = './frontend_www-InDev/' . $file, $target_file = './' . $file)) {
 								throw new Error("Error moving file $file. $source_file -> $target_file.");
 							}
 						}
-						rmdir('./frontend_www-Live/');
+						rmdir('./frontend_www-InDev/');
 					}
 					// Close the directory
 					closedir($dir);
