@@ -27,18 +27,27 @@
 			}
 			print_r(json_encode($status));
 		} else if($_POST['type'] == 'db1') {
-			$servername = $_POST['Address'];
-			$username = $_POST['Username'];
-			$password = $_POST['Password'];
-			$dbname = $_POST['Name'];
-			// Check if database exists.
-				$conn = new mysqli($servername, $username, $password);
-				if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
-				$sql = "SHOW DATABASES LIKE '$dbname'";
-				$result = $conn->query($sql);
-				($result && $result->num_rows > 0)?print("Database exists!"):print("Database does not exist!");
-				$conn->close();
-			// Setup database
+			$status = array(
+				"type" => $_POST['type'],
+				"weight" => $_POST['weight'],
+				"status" => ""
+			);
+			try {
+				$servername = $_POST['Address'];
+				$username = $_POST['Username'];
+				$password = $_POST['Password'];
+				$dbname = $_POST['Name'];
+				// Check if database exists.
+					$conn = new mysqli($servername, $username, $password);
+					if ($conn->connect_error) throw new Error("Connection failed: " . $conn->connect_error);
+					$sql = "SHOW DATABASES LIKE '$dbname'";
+					$result = $conn->query($sql);
+					if(!$result || $result->num_rows <= 0) throw new Error("Database does not exist!");
+					$conn->close();
+				// Setup database
+			} catch(Error $er) {
+
+			}
 		} else if($_POST['type'] == 'db2') {
 			// Check if database exists.
 			// Setup database
