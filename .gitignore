@@ -1,2 +1,2 @@
 # Ignore the config file as this will house sensitive data for the user and will be generated at time of installation
-./Classes/config.php
+/Classes/config.php
