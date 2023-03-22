@@ -1,1 +1,2 @@
 # frontend_www
+To install the website on your own server, download the installer file and run that on your website, It will handle all of the configuration and downloading for you! All you have to do is answer a few questions!
