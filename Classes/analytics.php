@@ -14,7 +14,7 @@
 		// Get referrer
 			if(!isset($_SERVER['HTTP_REFERER'])) {
 				$referrer = 'New tab';
-			} else if($_SERVER['HTTP_REFERER']=='https://thecandlestick.co.uk/' || startsWith($_SERVER['HTTP_REFERER'], 'https://thecandlestick.co.uk/')) {
+			} else if($_SERVER['HTTP_REFERER']==URL_WWW || startsWith($_SERVER['HTTP_REFERER'], URL_WWW)) {
 				$referrer = null;
 			} else {
 				$referrer = $_SERVER['HTTP_REFERER'];

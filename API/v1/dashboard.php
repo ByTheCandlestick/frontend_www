@@ -5,7 +5,7 @@
 			<meta charset="UTF-8">
 			<title>dashboard | By The Candlestick API</title>
 			<link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css" />
-			<link rel="shortcut icon" href="https://www.thecandlestick.co.uk/assets/images/logos/logo - transparent.svg" type="image/x-icon">
+			<link rel="shortcut icon" href="<?=__API__.'/Images/Fetch/candlestickLogo_20220530162542/'?>" type="image/x-icon">
 			<style>
 				html {
 					box-sizing: border-box;
