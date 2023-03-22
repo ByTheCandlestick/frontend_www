@@ -1,9 +1,7 @@
 <?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
+		$status = array();
 		if($_POST['type'] == 'install') {
-			$status = array(
-				"weight" => $_POST['weight'],
-			);
 			try {
 				$repo_url = "https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/Live.zip";
 				$zip_file = "repo.zip";
@@ -13,6 +11,7 @@
 				if ($zip->open($zip_file) === true) {
 					$extract_path = "extracted";
 					$zip->extractTo($extract_path);
+					// TODO
 					$zip->close();
 				} else {
 					throw new Error("Failed to open the zip file.");
@@ -21,34 +20,55 @@
 				$status["status"] = "Success";
 			} catch(Error $er) {
 				$status["status"] = "Error";
-				$status["message"] = $er;
+				$status["message"] = $er->getMessage();
 			}
 			print_r(json_encode($status));
 		} else if($_POST['type'] == 'db1') {
-			$status = array(
-				"weight" => $_POST['weight'],
-			);
 			try {
-				$servername = $_POST['Address'];
-				$username = $_POST['Username'];
-				$password = $_POST['Password'];
-				$dbname = $_POST['Name'];
 				// Check if database exists.
-					$conn = new mysqli($servername, $username, $password);
-					if ($conn->connect_error) throw new Error("Connection failed: " . $conn->connect_error);
-					$sql = "SHOW DATABASES LIKE '$dbname'";
-					$result = $conn->query($sql);
+					$_POST['Address'] = 'access908228976.webspace-data.io';
+					$_POST['Username'] = 'access908228976.webspace-data.io';
+					$_POST['Password'] = 'CandleStick2603';
+
+					if(!$conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'])) {
+						throw new Error('Unable to connect to the central DB, Please try again later');
+					}
+
+					$result = $conn->query(sprintf("SHOW DATABASES LIKE '%s'", $_POST['Name']));
 					if(!$result || $result->num_rows <= 0) throw new Error("Database does not exist!");
+
 					$conn->close();
 				// Setup database
+					// TODO
 				$status["status"] = "Success";
 			} catch(Error $er) {
 				$status["status"] = "Error";
-				$status["message"] = $er;
+				$status["message"] = $er->getMessage();
 			}
+			print_r(json_encode($status));
 		} else if($_POST['type'] == 'db2') {
-			// Check if database exists.
-			// Setup database
+			try {
+				// Check if database exists.
+					$_POST['Address'] = 'access908228976.webspace-data.io';
+					$_POST['Username'] = 'access908228976.webspace-data.io';
+					$_POST['Password'] = 'CandleStick2603';
+
+					if(!$conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'])) {
+						throw new Error('Unable to connect to the central DB, Please try again later');
+					}
+
+					$result = $conn->query(sprintf("SHOW DATABASES LIKE '%s'", $_POST['Name']));
+					if(!$result || $result->num_rows <= 0) throw new Error("Database does not exist!");
+
+					$conn->close();
+				// Setup database
+					// TODO
+				$status["status"] = "Success";
+			} catch(Error $er) {
+				$status["status"] = "Error";
+				$status["message"] = $er->getMessage();
+			}
+			print_r(json_encode($status));
 		} else if($_POST['type'] == 'company') {
 			//Upload company information
 		} else if($_POST['type'] == 'user') {
@@ -658,10 +678,10 @@
 							await request(data).then((res) => {
 								res = JSON.parse(res);
 								if(res.status.toLowerCase() == "success") {
-									$(".progressInner").width($('.progressInner').width()+(res.weight * onePercent));
-									$(".log pre").html($(".log pre").html()+"<p>Successfully setup section "+res.type+".</p>");
+									$(".progressInner").width($('.progressInner').width()+(data.weight * onePercent));
+									$(".log pre").html($(".log pre").html()+"<p>Successfully setup section: "+data.type+".</p>");
 								} else {
-									throw new Error(data.message);
+									throw new Error(res.message);
 								}
 							});
 						}
@@ -672,8 +692,7 @@
 						});
 						for(var i = 0; i < 150; i++){create(i);}
 					} catch(error) {
-						$(".log pre").html($(".log pre").html()+error);
-						console.log(error);
+						$(".log pre").html($(".log pre").html()+"<p>"+error+"</p>");
 					}
 				}
 				function request(data) {
