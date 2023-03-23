@@ -15,12 +15,14 @@
 	$endpoint = preg_replace('/\/v[0-9](\/.*)/', '$2 $1', strtok($_SERVER["REQUEST_URI"], '?'));
 	if($endpoint !== '/') {
 		if($_SERVER['REQUEST_METHOD'] == 'PUT') {
+			$data = file_get_contents("php://input");
 		   require_once("./endpoints/".explode('/', $endpoint)[1].".php");
 		   $result = call_user_func($endpoints["C:$endpoint"], $data);
 		   exit();
 	   } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 		   $data = $_GET;
 		   require_once("./endpoints/".explode('/', $endpoint)[1].".php");
+		   print_r($endpoints["R:$endpoint"]);
 		   $result = call_user_func($endpoints["R:$endpoint"], $data);
 		   exit();
 	   } else if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -30,7 +32,7 @@
 		   exit();
 	   } else if($_SERVER['REQUEST_METHOD'] == 'DELETE') {
 		   require_once("./endpoints/".explode('/', $endpoint)[1].".php");
-		   $result = call_user_func($endpoints["D:$endpoint"], $data);
+		   $result = call_user_func($endpoints["D:$endpoint"]);
 		   exit();
 	   } else {
 		   $result = array(
