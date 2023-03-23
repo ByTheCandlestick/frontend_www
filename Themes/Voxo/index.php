@@ -92,7 +92,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/style.css">
+				<link rel="stylesheet" href="style.css">
 			<!-- ===== EOS ===== -->
 		</head>
 		<body class="online" onLoad="cookie.acceptanceCheck();">
