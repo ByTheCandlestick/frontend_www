@@ -49,7 +49,7 @@
 										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
 									}
 
-								$str_response = imagepng($img, NULL, 100);
+								$str_response = imagepng($img);
 							} catch(Error $er) {
 								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 							}

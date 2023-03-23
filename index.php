@@ -34,4 +34,9 @@
 				}
 			}
 		}
+	if (ob_get_length() > 0) {
+		ob_end_flush();
+	} else {
+		ob_end_clean();
+	}
 ?>
