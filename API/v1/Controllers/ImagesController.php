@@ -125,9 +125,8 @@
 										default:
 									}
 								// Get image
-								$img = imagecreatefrompng(__ROOT__.$i['Location']);
 								ob_start();
-								imagepng($img);
+								imagepng(imagecreatefrompng(__ROOT__.$i['Location']));
 								$image = ob_get_contents();
 								ob_end_clean();
 								// Get the image
