@@ -1,5 +1,4 @@
 <?
-	ob_start();
 	date_default_timezone_set('Europe/London');
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/config.php');
@@ -14,8 +13,14 @@
 				if($_GET['ext'] == "php") {
 					include_once($path);
 				} else {
-					header('Content-Type: text/css; charset=UTF-8');
-					print(file_get_contents($path));
+					ob_start();
+						header('Content-Type: text/css; charset=UTF-8');
+						print(file_get_contents($path));
+					if (ob_get_length() > 0) {
+						ob_end_flush();
+					} else {
+						ob_end_clean();
+					}
 				}
 			} else {
 				header('Content-Type: text/json');
@@ -32,9 +37,4 @@
 				}
 			}
 		}
-	if (ob_get_length() > 0) {
-		ob_end_flush();
-	} else {
-		ob_end_clean();
-	}
 ?>
