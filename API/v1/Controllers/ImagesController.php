@@ -51,6 +51,7 @@
 								ob_start();
 								imagepng($img);
 								$str_response = ob_get_contents();
+								ob_end_clean();
 							} catch(Error $er) {
 								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 							}
