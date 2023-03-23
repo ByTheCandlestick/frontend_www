@@ -91,20 +91,7 @@
 						print(printStyles($layout_row['style_ids']));
 					}
 				?>
-				<link rel="stylesheet" href="/parts/app-alerts.css">
-				<link rel="stylesheet" href="/parts/app-colours.css">
-				<link rel="stylesheet" href="/parts/app-container.css">
-				<link rel="stylesheet" href="/parts/app-header.css">
-				<link rel="stylesheet" href="/parts/app-scrollbar.css">
-				<link rel="stylesheet" href="/parts/app-search.css">
-				<link rel="stylesheet" href="/parts/app-section.css">
-				<link rel="stylesheet" href="/parts/app-sidebar.css">
-				<link rel="stylesheet" href="/parts/custom-bootstrap.css">
-				<link rel="stylesheet" href="/parts/general.css">
-				<link rel="stylesheet" href="/parts/input.css">
-				<link rel="stylesheet" href="/parts/preloader.css">
-				<link rel="stylesheet" href="/parts/responsive.css">
-				<link rel="stylesheet" href="/parts/tables.css">
+				<link rel="stylesheet" href="/style.css">
 			<!-- ===== EOS =====-->
 		</head>
 		<body>
