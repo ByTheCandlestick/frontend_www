@@ -52,13 +52,9 @@
 		 */
 			protected function sendOutput($data, $httpHeaders=array()) {
 				header_remove('Set-Cookie');
-		
 				if(is_array($httpHeaders) && count($httpHeaders)) {
-					foreach ($httpHeaders as $httpHeader) {
-						header($httpHeader);
-					}
+					header(implode('; ', array_slice($result, 1)))
 				}
-
 				print($data);
 			}
 		/** Validate user email address.
