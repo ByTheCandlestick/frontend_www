@@ -128,7 +128,7 @@
 								$this->sendOutput(
 									file_get_contents(__ROOT__.$i['Location']),
 									array(
-										"Content-Type: ".$ctype,
+										"Content-Type: text/plain",//.$ctype,
 										"Content-Length: " . filesize(__ROOT__.$i['Location']),
 										"HTTP/1.1 200 OK"
 									)
