@@ -66,7 +66,7 @@
 				// Send output
 					$this->sendOutput(
 						$str_response,
-						array("Content-Type: text/plain","HTTP/1.1 200 OK")
+						array("Content-Type: text/text","HTTP/1.1 200 OK")
 					);
 				// End of function
 		}
