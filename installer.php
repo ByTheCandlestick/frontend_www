@@ -1,4 +1,4 @@
-<?php
+	<?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
 		// Vars
 			// GitHub
@@ -7,32 +7,52 @@
 				$tree = "InDev";
 			// General
 				$filename = basename(__FILE__);
-				$filepath = dirname(__FILE__);
+				$filepath = realpath(__FILE__);
 				$ignore = array(".", "..");
 				$delete = array(".gitignore", ".gitattributes", "README.md");
 			// Configuration File
 				$conf_file = "./Classes/config.php";
 		// Functions
 			function delete_directory($dir_path) {
+				global $filepath;
 				if (is_dir($dir_path)) {
 					$dir_handle = opendir($dir_path);
 					while (($file = readdir($dir_handle)) !== false) {
 						if ($file != "." && $file != "..") {
-							if (is_dir($dir_path . "/" . $file)) {
-								delete_directory($dir_path . "/" . $file);
+							$path = $dir_path . "/" . $file;
+							if (is_dir($path)) {
+								delete_directory($path);
 							} else {
-								if ($file != basename(__FILE__)) {
-									unlink($dir_path . "/" . $file);
+								if (is_file($path)) {
+									if (realpath($path) != $filepath) {
+										unlink($path);
+									}
 								}
 							}
 						}
 					}
 					closedir($dir_handle);
-					if ($dir_path != dirname(__FILE__)) {
-						rmdir($dir_path);
-					}
+					rmdir($dir_path);
 				}
-			}		
+			}
+			function download_repository() {
+				global $organization, $repo, $tree;
+				$zip_file = "repo.zip";
+				file_put_contents($zip_file, file_get_contents("https://github.com/$organization/$repo/archive/refs/heads/$tree.zip"));
+				$zip = new ZipArchive;
+				if ($zip->open($zip_file) === true) {
+					$zip->extractTo("./");
+					$zip->close();
+				} else {
+					throw new Error("Failed to open the zip file.");
+				}
+				unlink($zip_file);
+			}
+			function move_repository() {
+				global $repo, $tree, $filepath;
+				
+				rmdir("./$repo-$tree/");
+			}
 		// Request Types
 			$status = array();
 			$status["files"] = array();
@@ -41,7 +61,7 @@
 					// Enable short opening tags
 						ini_set('short_open_tag', 1);
 					// Empty the base folder
-						delete_directory($filename);
+						delete_directory($filepath);
 					// Confirm the files have been deleted
 						if (is_dir($filepath)) {
 							$dir_handle = opendir($filepath);
@@ -52,28 +72,9 @@
 							}
 						}
 					// Download and extract the zip file
-						$zip_file = "repo.zip";
-						file_put_contents($zip_file, file_get_contents("https://github.com/$organization/$repo/archive/refs/heads/$tree.zip"));
-						$zip = new ZipArchive;
-						if ($zip->open($zip_file) === true) {
-							$zip->extractTo("./");
-							$zip->close();
-						} else {
-							throw new Error("Failed to open the zip file.");
-						}
-						unlink($zip_file);
+						download_repository();
 					// Move all files to base folder and remove the temporary folder
-						if ($dir = opendir('./frontend_www-InDev/')) {
-							while (($file = readdir($dir)) !== false) {
-								if ($file[0] == '.') continue;
-								if (!rename($source_file = './frontend_www-InDev/' . $file, $target_file = './' . $file)) {
-									throw new Error("Error moving file $file. $source_file -> $target_file.");
-								}
-							}
-							rmdir('./frontend_www-InDev/');
-						}
-						closedir($dir);
-						rmdir("./$repo-$tree/");
+						move_repository();
 					// TEMP FILE
 						$file = fopen($conf_file, "w");
 						$text = "<?\n\tdefine('STRIPE_API', ['', '']);\n\tdefine('ADMIN', ['', '', '', '']);\n\tdefine('ANALYTICS', ['', '', '', '']);\n?>";
