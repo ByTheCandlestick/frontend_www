@@ -49,7 +49,7 @@
 										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
 									}
 								ob_start();
-								imagepng($img), NULL, 100;
+								imagepng($img);
 								$str_response = ob_get_contents();
 								ob_end_clean();
 							} catch(Error $er) {
