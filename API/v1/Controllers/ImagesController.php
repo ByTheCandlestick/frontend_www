@@ -49,7 +49,7 @@
 										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
 									}
 								imagepng($img);
-								$str_response = ob_get_contents();
+								print_r($str_response = ob_get_contents());
 							} catch(Error $er) {
 								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 							}
@@ -66,7 +66,7 @@
 				// Send output
 					$this->sendOutput(
 						$str_response,
-						array("Content-Type: image/png","HTTP/1.1 200 OK")
+						array("Content-Type: text/text","HTTP/1.1 200 OK")
 					);
 				// End of function
 		}
