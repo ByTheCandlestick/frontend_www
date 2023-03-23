@@ -1,4 +1,12 @@
-	<?php
+<?php
+/**		Installer v0.5
+ * 	The installer is a simple and easy way to get Pendryn EPOS and ECommerce
+ * 	up and running on your own webserver.
+ * 	We are currently on version 0.5, Always use the latest version to make
+ * 	sure your website is up-to-date with all of the latest fixes!
+ * 
+ * 
+ */
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
 		// Vars
 			// GitHub
@@ -185,20 +193,7 @@
 						mysqli_close($conn);
 					// Write the DB info in the config file
 						$file = fopen($conf_file, "r+");
-						$new_contents = str_replace(
-							"define('ADMIN', ['', '', '', '']);",
-							sprintf(
-								"define('ADMIN', ['%s', '%s', '%s', '%s']);",
-								$_POST['Address'],
-								$_POST['Username'],
-								$_POST['Password'],
-								$_POST['Name']
-							),
-							fread(
-								$file,
-								filesize($conf_file)
-							)
-						);
+						$new_contents = str_replace( "define('ADMIN', ['', '', '', '']);", sprintf( "define('ADMIN', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'],$_POST['Password'], $_POST['Name'] ), fread( $file, filesize($conf_file) ) );
 						rewind($file);
 						fwrite($file, $new_contents);
 						fclose($file);
@@ -1383,7 +1378,7 @@
 					<span><input validation="0" valid="false" type="text" name="db1-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 					<p>Analytics Database</p>
 					<span><input validation="0" valid="false" type="text" name="db2-address" placeholder="Address *" /><p title="Usually an ip address or a domain">?</p></span>
-					<span><input validation="0" valid="false" type="text" name="db1-name" placeholder="Name *" /><p title="The name for the database to connect to">?</p></span>
+					<span><input validation="0" valid="false" type="text" name="db2-name" placeholder="Name *" /><p title="The name for the database to connect to">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db2-username" placeholder="Username *" /><p title="The username associated with the database">?</p></span>
 					<span><input validation="0" valid="false" type="text" name="db2-password" placeholder="Password *" /><p title="The password associated with the database for login">?</p></span>
 
