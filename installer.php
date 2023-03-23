@@ -49,9 +49,19 @@
 				unlink($zip_file);
 			}
 			function move_repository() {
-				global $repo, $tree, $filepath;
-				
-				rmdir("./$repo-$tree/");
+				if (!is_dir($source)) return false;
+				if (!is_dir($target)) mkdir($target);
+				$files = scandir($source);
+				foreach ($files as $file) {
+					if ($file == '.' || $file == '..') continue;
+					$path = $source . '/' . $file;
+					if (is_dir($path)) {
+						move_repository($path, $target . '/' . $file);
+						rmdir($path);
+					} else {
+						rename($path, $target . '/' . $file);
+					}
+				}
 			}
 		// Request Types
 			$status = array();
@@ -74,7 +84,8 @@
 					// Download and extract the zip file
 						download_repository();
 					// Move all files to base folder and remove the temporary folder
-						move_repository();
+						move_repository("./$repo-$tree", "./");
+						rmdir("./$repo-$tree/");
 					// TEMP FILE
 						$file = fopen($conf_file, "w");
 						$text = "<?\n\tdefine('STRIPE_API', ['', '']);\n\tdefine('ADMIN', ['', '', '', '']);\n\tdefine('ANALYTICS', ['', '', '', '']);\n?>";
