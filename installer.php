@@ -48,20 +48,27 @@
 				}
 				unlink($zip_file);
 			}
-			function move_repository() {
-				if (!is_dir($source)) return false;
-				if (!is_dir($target)) mkdir($target);
-				$files = scandir($source);
-				foreach ($files as $file) {
-					if ($file == '.' || $file == '..') continue;
-					$path = $source . '/' . $file;
-					if (is_dir($path)) {
-						move_repository($path, $target . '/' . $file);
-						rmdir($path);
-					} else {
-						rename($path, $target . '/' . $file);
+			function move_repository($source, $target) {
+				$dir = opendir($source);
+				if (!file_exists($dest)) {
+					mkdir($target);
+				}
+				while (($file = readdir($dir)) !== false) {
+					if ($file != "." && $file != "..") {
+						$src_path = $source . "/" . $file;
+						$dest_path = $target . "/" . $file;
+						if (is_file($src_path)) {
+							if($file == ".htaccess")
+								$dest_path = "$dest_path.tmp";
+							rename($src_path, $dest_path);
+						} else {
+							move_repository($src_path, $dest_path);
+							rmdir($src_path);
+						}
 					}
 				}
+				closedir($dir);
+			
 			}
 		// Request Types
 			$status = array();
@@ -178,8 +185,20 @@
 						mysqli_close($conn);
 					// Write the DB info in the config file
 						$file = fopen($conf_file, "r+");
-						$new_contents = trim(str_replace("define('ADMIN', ['', '', '', '']);", sprintf("define('ADMIN', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
-						ftruncate($file, 0);
+						$new_contents = str_replace(
+							"define('ADMIN', ['', '', '', '']);",
+							sprintf(
+								"define('ADMIN', ['%s', '%s', '%s', '%s']);",
+								$_POST['Address'],
+								$_POST['Username'],
+								$_POST['Password'],
+								$_POST['Name']
+							),
+							fread(
+								$file,
+								filesize($conf_file)
+							)
+						);
 						rewind($file);
 						fwrite($file, $new_contents);
 						fclose($file);
@@ -220,7 +239,7 @@
 						mysqli_close($conn);
 					// Write the DB info in the config file
 						$file = fopen($conf_file, "r+");
-						$new_contents = trim(str_replace("define('ANALYTICS', ['', '', '', '']);", sprintf("define('ANALYTICS', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
+						$new_contents = trim(str_replace("define('ANALYTICS', ['', '', '', '']);", sprintf("define('ANALYTICS', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($conf_file))), "\0");
 						ftruncate($file, 0);
 						rewind($file);
 						fwrite($file, $new_contents);
@@ -323,7 +342,7 @@
 				try {
 					// Write the stripe API info in the vars.php file
 						$file = fopen($conf_file, "r+");
-						$new_contents = trim(str_replace("define('STRIPE_API', ['', '', '', '']);", sprintf("define('STRIPE_API', ['%s', '%s']);", $_POST['PK'], $_POST['SK']), fread($file, filesize($file_path))), "\0");
+						$new_contents = trim(str_replace("define('STRIPE_API', ['', '', '', '']);", sprintf("define('STRIPE_API', ['%s', '%s']);", $_POST['PK'], $_POST['SK']), fread($file, filesize($conf_file))), "\0");
 						ftruncate($file, 0);
 						rewind($file);
 						fwrite($file, $new_contents);
