@@ -123,10 +123,14 @@
 										default:
 									}
 								// Get the image
-								$str_response	= file_get_contents(__ROOT__.$i['Location']);
-								$arr_http		= array("Content-Type: ".$ctype,
-														"Content-Length: " . filesize(__ROOT__.$i['Location']),
-														"HTTP/1.1 200 OK");
+								$this->sendOutput(
+									file_get_contents(__ROOT__.$i['Location']),
+									array(
+										"Content-Type: ".$ctype,
+										"Content-Length: " . filesize(__ROOT__.$i['Location']),
+										"HTTP/1.1 200 OK"
+									)
+								);
 							else:
 								throw new Error('No image selected');
 							endif;

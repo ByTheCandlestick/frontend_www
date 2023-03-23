@@ -1,30 +1,61 @@
-<?
-	if(QS_PAGE!="index") {
-		// Include the base files
-		require_once('./API/'.QS_PAGE.'/Base/Bootstrap.php');
-		require_once('./API/'.QS_PAGE.'/Base/BaseController.php');
-		require_once('./API/'.QS_PAGE.'/Base/BaseModel.php');
-		if($uri[1]!="") {
-			// API Functions
-			require_once("./API/$uri[0]/Models/$uri[1]Model.php");
-			require_once("./API/$uri[0]/Controllers/$uri[1]Controller.php");
-			require_once("./API/$uri[0]/Core/$uri[1]Context.php");
-		} else {
-			print('There was an issue with your request. There was also an issue with getting the backup page. Please contact the system admin to repair.');
+<?php
+	// Define your API endpoints
+		$endpoints = [
+			'users' => [
+				'methods' => ['GET', 'POST'],
+				'callback' => function ($request) {
+					// handle GET and POST requests for the /users endpoint
+					// and return a response in the correct format
+					// based on the data being requested or sent
+					return [
+						'status' => 'success',
+						'data' => [
+							'users' => []
+						]
+					];
+				}
+			],
+			'posts' => [
+				'methods' => ['GET', 'POST'],
+				'callback' => function ($request) {
+					// handle GET and POST requests for the /posts endpoint
+					// and return a response in the correct format
+					// based on the data being requested or sent
+					return [
+						'status' => 'success',
+						'data' => [
+							'posts' => []
+						]
+					];
+				}
+			]
+		];
+	// Check the request method and endpoint, and call the appropriate callback function
+		$requestMethod = $_SERVER['REQUEST_METHOD'];
+		$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+		$parts = explode('/', $uri);
+		$endpoint = $parts[1];
+
+		if (!isset($endpoints[$endpoint])) {
+			http_response_code(404);
+			echo json_encode([
+				'status' => 'error',
+				'message' => 'Endpoint not found'
+			]);
+			exit();
 		}
-	} else {
-		$return = array(
-			"Status" => "error",
-			"Description" => "Please choose a version from the list below.",
-			"Versions" => array(),
-		);
-		$fh = opendir("./API");
-		while(($entry = readdir($fh)) !== false) {
-			if($entry != "." && $entry != "..") {
-				array_push($return['Versions'], '/'.$entry.'/');
-			}
+
+		if (!in_array($requestMethod, $endpoints[$endpoint]['methods'])) {
+			http_response_code(405);
+			echo json_encode([
+				'status' => 'error',
+				'message' => 'Method not allowed'
+			]);
+			exit();
 		}
-		fclose($fh);
-		print(json_encode($return));
-	}
+		$response = call_user_func($endpoints[$endpoint]['callback'], $_REQUEST);
+	// Return the response in the appropriate format
+		http_response_code(200);
+		header('Content-Type: application/json');
+		echo json_encode($response);
 ?>
