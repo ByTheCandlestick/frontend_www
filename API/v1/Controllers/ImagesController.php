@@ -48,9 +48,17 @@
 										$img_txt_al_y = (($i_height / 2) - 5);
 										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
 									}
+
 								ob_start();
-								imagepng($img);
+
+								imagepng($img, NULL, 100);
 								$str_response = ob_get_contents();
+								
+								if (ob_get_length() > 0) {
+									ob_end_flush();
+								} else {
+									ob_end_clean();
+								}
 							} catch(Error $er) {
 								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
 							}

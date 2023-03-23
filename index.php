@@ -14,8 +14,10 @@
 					include_once($path);
 				} else {
 					ob_start();
-						header('Content-Type: text/'.$_GET['ext'].'; charset=UTF-8');
+
+						header('Content-Type: text/'.$_GET['ext']);
 						print(file_get_contents($path));
+
 					if (ob_get_length() > 0) {
 						ob_end_flush();
 					} else {
