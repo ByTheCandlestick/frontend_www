@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono|Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900|Montserrat:100,300,400|Josefin+Sans:300,400,700&display=swap');
+
+@import url('./parts/app-colours.css');
+@import url('./parts/general.css');
+@import url('./parts/custom-bootstrap.css');
+
+@import url('./parts/about-list.css');
+@import url('./parts/about.css');
+@import url('./parts/app-back-to-top.css');
+@import url('./parts/boutique.css');
+@import url('./parts/breadcrumbs.css');
+@import url('./parts/checkout.css');
+@import url('./parts/contact-us.css');
+@import url('./parts/counts.css');
+@import url('./parts/faq.css');
+@import url('./parts/footer.css');
+@import url('./parts/forms.css');
+@import url('./parts/app-gdpr.css');
+@import url('./parts/app-header.css');
+@import url('./parts/hero-carousel.css');
+@import url('./parts/hero-jumbotron.css');
+@import url('./parts/portfolio-details.css');
+@import url('./parts/portfolio.css');
+@import url('./parts/app-preloader.css');
+@import url('./parts/product.css');
+@import url('./parts/section.css');
+@import url('./parts/services.css');
+@import url('./parts/team.css');
+@import url('./parts/app-topbar.css');
