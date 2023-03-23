@@ -1,61 +1,31 @@
 <?php
-	// Define your API endpoints
-		$endpoints = [
-			'users' => [
-				'methods' => ['GET', 'POST'],
-				'callback' => function ($request) {
-					// handle GET and POST requests for the /users endpoint
-					// and return a response in the correct format
-					// based on the data being requested or sent
-					return [
-						'status' => 'success',
-						'data' => [
-							'users' => []
-						]
-					];
-				}
-			],
-			'posts' => [
-				'methods' => ['GET', 'POST'],
-				'callback' => function ($request) {
-					// handle GET and POST requests for the /posts endpoint
-					// and return a response in the correct format
-					// based on the data being requested or sent
-					return [
-						'status' => 'success',
-						'data' => [
-							'posts' => []
-						]
-					];
-				}
-			]
-		];
-	// Check the request method and endpoint, and call the appropriate callback function
-		$requestMethod = $_SERVER['REQUEST_METHOD'];
-		$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-		$parts = explode('/', $uri);
-		$endpoint = $parts[1];
+	date_default_timezone_set('Europe/London');
+	require_once('./Classes/funcs.php');
+	require_once('./Classes/config.php');
+	require_once('./Classes/vars.php');
+	require_once('./Classes/endpoints.php');
 
-		if (!isset($endpoints[$endpoint])) {
-			http_response_code(404);
-			echo json_encode([
-				'status' => 'error',
-				'message' => 'Endpoint not found'
-			]);
-			exit();
-		}
+	if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
+		header('Access-Control-Allow-Headers: Content-Type');
+		header('Access-Control-Max-Age: 86400');
+		header('Content-Length: 0');
+		exit();
+	}
 
-		if (!in_array($requestMethod, $endpoints[$endpoint]['methods'])) {
-			http_response_code(405);
-			echo json_encode([
-				'status' => 'error',
-				'message' => 'Method not allowed'
-			]);
-			exit();
-		}
-		$response = call_user_func($endpoints[$endpoint]['callback'], $_REQUEST);
-	// Return the response in the appropriate format
-		http_response_code(200);
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		$data = json_decode(file_get_contents("php://input"), true);
+		$endpoint = strtok($_SERVER["REQUEST_URI"],'?');
+		$result = call_user_func($endpoints[$endpoint], $data);
+		header('Access-Control-Allow-Origin: *');
 		header('Content-Type: application/json');
-		echo json_encode($response);
+		print(json_encode($result));
+		exit();
+	} else {
+		header('Access-Control-Allow-Origin: *');
+		header('Content-Type: text/json');
+		print(json_encode(array("error"=>"Invalid request method")));
+		exit();
+	}
 ?>
