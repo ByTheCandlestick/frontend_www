@@ -53,7 +53,7 @@
 			protected function sendOutput($data, $httpHeaders=array()) {
 				header_remove('Set-Cookie');
 				if(is_array($httpHeaders) && count($httpHeaders)) {
-					header(implode('; ', array_slice($result, 1)));
+					header(implode('; ', array_slice($httpHeaders, 1)));
 				}
 				print($data);
 			}
