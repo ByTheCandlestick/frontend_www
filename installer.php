@@ -1,309 +1,340 @@
 <?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['GUI'])) {
-		$status = array();
-		if($_POST['type'] == 'install') {
-			try {
-				// Enable short opening tags
-					ini_set('short_open_tag', 1);
-				// Empty the base folder
-					$dir = './';
-					if (is_dir($dir)) {
-						$files = scandir($dir);
-						foreach ($files as $file) {
-							if ($file != '.' && $file != '..' && $file != 'installer.php') {
-								unlink($dir.'/'.$file);
+		// Vars
+			// GitHub
+				$organization = "ByTheCandlestick";
+				$repo = "frontend_www";
+				$tree = "InDev";
+			// General
+				$filename = basename(__FILE__);
+				$filepath = dirname(__FILE__);
+				$ignore = array(".", "..");
+				$delete = array(".gitignore", ".gitattributes", "README.md");
+			// Configuration File
+				$conf_file = "./Classes/config.php";
+		// Functions
+			function delete_directory($dir_path) {
+				if (is_dir($dir_path)) {
+					$dir_handle = opendir($dir_path);
+					while (($file = readdir($dir_handle)) !== false) {
+						if ($file != "." && $file != "..") {
+							if (is_dir($dir_path . "/" . $file)) {
+								delete_directory($dir_path . "/" . $file);
+							} else {
+								if ($file != basename(__FILE__)) {
+									unlink($dir_path . "/" . $file);
+								}
 							}
 						}
-					} else {
-						throw new Error('Directory does not exist.');
-					}					
-				// Download and extract the zip file
-					$zip_file = "repo.zip";
-					file_put_contents($zip_file, file_get_contents("https://github.com/ByTheCandlestick/frontend_www/archive/refs/heads/InDev.zip"));
-					$zip = new ZipArchive;
-					if ($zip->open($zip_file) === true) {
-						$zip->extractTo("./");
-						$zip->close();
-					} else {
-						throw new Error("Failed to open the zip file.");
 					}
-					unlink($zip_file);
-				// Move all files to base folder and remove the temporary folder
-					if ($dir = opendir('./frontend_www-InDev/')) {
-						while (($file = readdir($dir)) !== false) {
-							if ($file[0] == '.') continue;
-							if (!rename($source_file = './frontend_www-InDev/' . $file, $target_file = './' . $file)) {
-								throw new Error("Error moving file $file. $source_file -> $target_file.");
+					closedir($dir_handle);
+					if ($dir_path != dirname(__FILE__)) {
+						rmdir($dir_path);
+					}
+				}
+			}		
+		// Request Types
+			$status = array();
+			$status["files"] = array();
+			if($_POST['type'] == 'install') {
+				try {
+					// Enable short opening tags
+						ini_set('short_open_tag', 1);
+					// Empty the base folder
+						delete_directory($filename);
+					// Confirm the files have been deleted
+						if (is_dir($filepath)) {
+							$dir_handle = opendir($filepath);
+							while (($file = readdir($dir_handle)) !== false) {
+								if ($file != "." && $file != ".." && $file != $filename) {
+									throw new Error("There has been an error in emptying directory. $filepath -> $file");
+								}
 							}
 						}
-						rmdir('./frontend_www-InDev/');
-					}
-					// Close the directory
-					closedir($dir);
-				// TEMP FILE
-					$file = fopen("vars.php", "w");
-					$text = "<?\n\tdefine('STRIPE_API', ['', '']);\n\tdefine('ADMIN', ['', '', '', '']);\n\tdefine('ANALYTICS', ['', '', '', '']);\n?>";
-					fwrite($file, $text);
-					fclose($file);
-				$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		} else if($_POST['type'] == 'db1') {
-			try {
-				// Check if database exists.
-					if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'])))
-						throw new Error('Unable to connect to the central database, Please try again later');
-					if(!($query = mysqli_query($conn, sprintf("SHOW DATABASES LIKE '%s'", $_POST['Name']))) || mysqli_num_rows($query) <= 0)
-						throw new Error("Database does not exist!");
-					mysqli_close($conn);
-				// check if database exists
-					if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name'])))
-						throw new Error('Unable to connect to the central database, Please try again later');
-				// Empty database
-					if($query = mysqli_query($conn, "SHOW TABLES"))
-						while($row = mysqli_fetch_array($query)) {
-							mysqli_query($conn, "DROP TABLE IF EXISTS `".$row[0]."`");
+					// Download and extract the zip file
+						$zip_file = "repo.zip";
+						file_put_contents($zip_file, file_get_contents("https://github.com/$organization/$repo/archive/refs/heads/$tree.zip"));
+						$zip = new ZipArchive;
+						if ($zip->open($zip_file) === true) {
+							$zip->extractTo("./");
+							$zip->close();
+						} else {
+							throw new Error("Failed to open the zip file.");
 						}
-				// Setup Database
-					$sql_strings = [
-						"CREATE TABLE IF NOT EXISTS `API Allowed hosts`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(32) NOT NULL,`Hostname` varchar(128) NOT NULL,`Remote address` varchar(15) NOT NULL,`Active?` tinyint(1) NOT NULL,`Last Used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `API Controllers`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Controller` varchar(64) NOT NULL,`Active?` tinyint(1) NOT NULL,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `API Keys`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Key` varchar(256) NOT NULL,`Deny hosts?` tinyint(1) NOT NULL DEFAULT '1',`Active?` int(11) NOT NULL,`Last Used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `API Versions`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Version` varchar(16) NOT NULL,`Public?` tinyint(1) NOT NULL DEFAULT '0',`Active?` tinyint(1) NOT NULL DEFAULT '1',`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Audit trail`(`ID` int(11) NOT NULL AUTO_INCREMENT,`User ID` int(11)DEFAULT NULL,`Category` varchar(32) NOT NULL,`IP` varchar(15) NOT NULL,`Timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,`Function` varchar(255) NOT NULL,`Args` text NOT NULL,`String` text NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Blog posts`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,`UID` int(11) NOT NULL,`Title` varchar(128) NOT NULL,`Content` text NOT NULL,`Image` varchar(128) NOT NULL,`Scheduled_for` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,`Slug` varchar(32) NOT NULL,`Comments active?` tinyint(1) NOT NULL DEFAULT '1',`Active?` tinyint(1) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Config`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Key` varchar(64) NOT NULL,`Value` varchar(256) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Images`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Location` varchar(64) NOT NULL,`Name` varchar(32) NOT NULL,`Description` text NOT NULL,`Alt` text NOT NULL,`Slug` varchar(64) NOT NULL,`Active?` tinyint(1) NOT NULL,PRIMARY KEY(`ID`),UNIQUE KEY `slug`(`Slug`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Item counters`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(128) NOT NULL,`SQL String` varchar(1024) NOT NULL,`Active` tinyint(1) NOT NULL DEFAULT '1',`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Partner accounts`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Reference` int(5) NOT NULL,`Name` varchar(64) NOT NULL,`Public` tinyint(1) NOT NULL DEFAULT '1',`About short` varchar(256) NOT NULL,`About long` text NOT NULL,`Logo image` text NOT NULL,`Shop link` text NOT NULL,`Email` varchar(128) NOT NULL,`Phone` int(10) NOT NULL,`Rating` int(1) NOT NULL,`Slug` text NOT NULL,`Active` int(11) NOT NULL,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Partner ratings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`UID` int(11) NOT NULL,`PID` int(11) NOT NULL,`Rating` int(1) NOT NULL,`Verified` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Product`(`SKU` int(11) NOT NULL,`UPC` bigint(12) NOT NULL,`Discontinued` tinyint(4) NOT NULL,`Active` tinyint(4) NOT NULL,`Title` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Images` text COLLATE utf8mb4_unicode_ci NOT NULL,`Collection_ID` int(11) NOT NULL,`Category_ID` int(11) NOT NULL,`Currency` varchar(4)COLLATE utf8mb4_unicode_ci NOT NULL,`GrossProfit` double NOT NULL,`RetailPrice` double NOT NULL,`NetPrice` double NOT NULL,`GrossPrice` double NOT NULL,`ProfitMargin` double NOT NULL,`Discount` tinyint(1) NOT NULL,`DiscountType` varchar(16)COLLATE utf8mb4_unicode_ci NOT NULL,`DiscountAmount` int(11)DEFAULT NULL,`Container_ID` int(11) NOT NULL,`Wick_ID` int(11) NOT NULL,`WickStand_ID` int(11) NOT NULL,`Material_ID` int(11) NOT NULL,`Fragrance_ID` int(11) NOT NULL,`Colour_ID` int(11) NOT NULL,`Packaging_ID` int(11) NOT NULL,`Shipping_ID` int(11) NOT NULL,`PromoValue` double NOT NULL,`QtyOnHand` int(11) NOT NULL,`QtyAvailable` int(11) NOT NULL,`QtySold` int(11) NOT NULL,`QtyToBeShipped` int(11) NOT NULL,`QtyShipped` int(11) NOT NULL,`DescriptionShort` text COLLATE utf8mb4_unicode_ci NOT NULL,`DescriptionLong` text COLLATE utf8mb4_unicode_ci NOT NULL,`Variants` text COLLATE utf8mb4_unicode_ci NOT NULL,`Slug` varchar(64)COLLATE utf8mb4_unicode_ci NOT NULL,`CalculatePricing` tinyint(1) NOT NULL DEFAULT '1',`made_by_ID` varchar(64)COLLATE utf8mb4_unicode_ci NOT NULL,PRIMARY KEY(`SKU`),UNIQUE KEY `Slug`(`Slug`),KEY `Colour`(`Colour_ID`),KEY `Container`(`Container_ID`),KEY `Category`(`Category_ID`),KEY `Collection`(`Collection_ID`),KEY `Shipping`(`Shipping_ID`),KEY `Material`(`Material_ID`),KEY `Packaging`(`Packaging_ID`),KEY `Wick stand`(`WickStand_ID`),KEY `Wick`(`Wick_ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product categories`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Active` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product collections`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(64) NOT NULL,`Active` tinyint(1) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Product colours`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`Quantity(g)` double NOT NULL,`Reccommended %` double NOT NULL,`Price(bulk)` double NOT NULL,`Price(g)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product containers`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(96)COLLATE utf8mb4_unicode_ci NOT NULL,`Type` varchar(20)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`ItemRef` varchar(128)COLLATE utf8mb4_unicode_ci NOT NULL,`Size(cl)` double NOT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`),KEY `Supplier`(`Supplier`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product fragrances`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(ea)` double NOT NULL,`Quantity(cl)` double NOT NULL,`Price(cl)` double NOT NULL,`Reccommended %` double NOT NULL,`Top notes` text COLLATE utf8mb4_unicode_ci,`Heart notes` text COLLATE utf8mb4_unicode_ci,`Base notes` text COLLATE utf8mb4_unicode_ci,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product materials`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Base` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Size(kg)` double NOT NULL,`Size(cl)` double NOT NULL,`Price(bulk)` double NOT NULL,`Price(kg)` double NOT NULL,`Price(g)` double NOT NULL,`Price(cl)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`),KEY `Supplier`(`Supplier`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product packagings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product ratings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`UID` int(11) NOT NULL,`SKU` varchar(32) NOT NULL,`Rating` int(1) NOT NULL,`Verified` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Product shippings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(ea)` double NOT NULL,`Max weight` double NOT NULL,`Max length` double NOT NULL,`Max width` double NOT NULL,`Max height` double NOT NULL,`Timescale` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product wicks`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Type` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Width(mm)` double DEFAULT NULL,`Height(mm)` double NOT NULL,`Thickness(mm)` double DEFAULT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`ReccommendedWickStand` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Product wickstands`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Type` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Promotions`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(127) NOT NULL,`Description` varchar(512) NOT NULL,`Images` varchar(1024) NOT NULL,`Voucher` varchar(32) NOT NULL,`Type` tinyint(1) NOT NULL,`Category IDs` varchar(512) NOT NULL,`Collection IDs` varchar(512) NOT NULL,`Item IDs` varchar(512) NOT NULL,`Percentage discount` int(11) NOT NULL,`Scheduled start` date NOT NULL,`Scheduled end` date NOT NULL,`Active` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `section_carousel`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(16) NOT NULL,`Title` varchar(64) NOT NULL,`description` text NOT NULL,`image_url` text NOT NULL,`button_1_enabled` tinyint(1) NOT NULL DEFAULT '0',`button_1_text` varchar(16)DEFAULT NULL,`button_1_link` varchar(64)DEFAULT NULL,`button_2_enabled` tinyint(1) NOT NULL DEFAULT '0',`button_2_text` varchar(16)DEFAULT NULL,`button_2_link` varchar(64)DEFAULT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `section_CTAs`(`ID` int(11) NOT NULL,`type` varchar(8) NOT NULL,`title` varchar(16) NOT NULL,`subtitle` varchar(128) NOT NULL,`description` text NOT NULL,`icon1` varchar(16)DEFAULT NULL,`icon1_colour_before` varchar(8)DEFAULT NULL,`icon1_colour_after` varchar(8)DEFAULT NULL,`icon1_text` text,`icon2` varchar(16)DEFAULT NULL,`icon2_colour_before` varchar(8)DEFAULT NULL,`icon2_colour_after` varchar(8)DEFAULT NULL,`icon2_text` text,`icon3` varchar(16)DEFAULT NULL,`icon3_colour_before` varchar(8)DEFAULT NULL,`icon3_colour_after` varchar(8)DEFAULT NULL,`icon3_text` text,`active` tinyint(1) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;					",
-						"CREATE TABLE IF NOT EXISTS `section_jumbotron`(`id` int(11) NOT NULL AUTO_INCREMENT,`title` varchar(32) NOT NULL,`image` varchar(32) NOT NULL,`Header` varchar(32)DEFAULT NULL,`subtitle` varchar(64)DEFAULT NULL,`button_1_enable` tinyint(1) NOT NULL,`button_1_text` varchar(16)DEFAULT NULL,`button_1_link` varchar(64)DEFAULT NULL,`button_2_enable` tinyint(1) NOT NULL,`button_2_text` varchar(16)DEFAULT NULL,`button_2_link` varchar(64)DEFAULT NULL,PRIMARY KEY(`id`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `section_topbar_ticker`(`ID` int(11) NOT NULL AUTO_INCREMENT,`locale` varchar(5) NOT NULL,`TextEncoded` text NOT NULL,`websiteID` int(11) NOT NULL,`Enabled` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Shop texts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(16) NOT NULL, `Text` text NOT NULL, `Active` tinyint(1) NOT NULL, UNIQUE KEY `name` (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Suppliers` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Reference` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL, `Name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL, `Website` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL, `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL, `Phone` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL, `Opening Hours` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL, `Created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, `Active` int(11) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`), UNIQUE KEY `Reference` (`Reference`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-						"CREATE TABLE IF NOT EXISTS `Transactions`(`Transaction ID` varchar(32) NOT NULL,`Type` varchar(16) NOT NULL,`Status` varchar(16) NOT NULL,`Invoice ID` varchar(11)DEFAULT NULL,`Charge ID` varchar(32)DEFAULT NULL,`Refund ID` varchar(32)DEFAULT NULL,`Subtotal` float DEFAULT NULL,`Processing fees` double DEFAULT NULL,`Tax` double DEFAULT NULL,`Deposit` double DEFAULT NULL,`Currency` varchar(4)DEFAULT NULL,`Notes` text,`UID` int(11)DEFAULT NULL,`Name` varchar(64)DEFAULT NULL,`Email` varchar(64)DEFAULT NULL,`Phone` varchar(64)DEFAULT NULL,`Items` text,`Ship to` int(11)DEFAULT NULL,`Shipping status` int(11) NOT NULL,`Billing address` int(11)DEFAULT NULL,`Shipping by` int(11)DEFAULT NULL,`Estimated delivery date` date DEFAULT NULL,`Card network` varchar(32) NOT NULL,`Last 4` int(11) NOT NULL,`Expires year` int(11) NOT NULL,`Expires month` int(11) NOT NULL,`Modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,`Created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`Transaction ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `User accounts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Username` varchar(64) NOT NULL, `Email` varchar(345) NOT NULL, `First_name` varchar(64) NOT NULL, `Last_name` varchar(64) NOT NULL, `Password` varchar(256) NOT NULL, `Change_password` tinyint(1) NOT NULL DEFAULT '0', `Phone` varchar(13) DEFAULT NULL, `Created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, `Disable_analytics` tinyint(1) NOT NULL DEFAULT '0', `Active` tinyint(1) NOT NULL DEFAULT '1', `Email_active` tinyint(1) NOT NULL DEFAULT '0', `Zoho Mail Access Code` varchar(255) DEFAULT NULL, `Zoho Mail Auth Code` varchar(70) DEFAULT NULL, `Zoho Mail Refresh Code` varchar(70) DEFAULT NULL, PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `User addresses` ( `id` int(11) NOT NULL AUTO_INCREMENT, `uid` int(11) NOT NULL, `Name` varchar(64) NOT NULL, `firstname` varchar(128) NOT NULL, `lastname` varchar(128) NOT NULL, `number_name` varchar(128) NOT NULL, `line_1` varchar(64) NOT NULL, `line_2` varchar(64) NOT NULL, `town` varchar(64) NOT NULL, `county` varchar(64) NOT NULL, `country` varchar(64) NOT NULL, `postcode` varchar(10) NOT NULL, `phone` varchar(14) NOT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `User carts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `UID` int(11) NOT NULL, `SKU` int(11) NOT NULL, `Quantity` int(11) NOT NULL, `Options` varchar(256) NOT NULL, `Active` tinyint(1) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `User notifications` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `UID` int(11) NOT NULL, `Content` text NOT NULL, `Active` tinyint(1) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `User oauths` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `UID` int(11) NOT NULL, `Scope` varchar(255) NOT NULL, `Access code` varchar(70) NOT NULL, `Access expiry` timestamp NULL DEFAULT NULL, `Refresh code` varchar(70) NOT NULL, PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `User permissions`(`UID` int(11) NOT NULL,`adm_access` tinyint(1) NOT NULL DEFAULT '0',`adm_access-analytics` tinyint(1) NOT NULL DEFAULT '0',`adm_access-assistance` tinyint(1) NOT NULL DEFAULT '0',`adm_access-config` tinyint(1) NOT NULL DEFAULT '0',`adm_access-mail` tinyint(1) NOT NULL DEFAULT '0',`adm_access-orders` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-categories` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-categories-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-collections` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-collections-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-colours` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-colours-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-comodities` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-containers` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-containers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-fragrances` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-fragrances-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-materials` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-materials-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-packagings` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-packagings-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-shippings` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-shippings-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wicks` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wicks-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wickstands` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wickstands-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-suppliers` tinyint(1) NOT NULL DEFAULT '0',`adm_access-suppliers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-transactions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-cart` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-cart-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-permissions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-styles` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-styles-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-scripts` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-scripts-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-themes` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-themes-edit` tinyint(1) NOT NULL DEFAULT '0',`blg_access` tinyint(1) NOT NULL DEFAULT '1',`pos_access` tinyint(1) NOT NULL DEFAULT '0',`www_access` tinyint(1) NOT NULL DEFAULT '1',`adm_access-api` tinyint(1) NOT NULL DEFAULT '0',`adm_access-api-controllers` tinyint(1) NOT NULL DEFAULT '0',`adm_access-api-controllers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-api-versions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-categories` tinyint(1) NOT NULL DEFAULT '0',`adm_access-categories-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-page` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-page-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-hosts` tinyint(1) NOT NULL DEFAULT '0',`api_access-hosts-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-keys` tinyint(1) NOT NULL DEFAULT '0',`api_access-keys-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-versions` tinyint(1) NOT NULL DEFAULT '0',`api_access-versions-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-controllers` tinyint(1) NOT NULL DEFAULT '0',`api_access-controllers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-partners` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog` tinyint(1) NOT NULL DEFAULT '0',`adm_access-images` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-reports` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-interactions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-posts` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-posts-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-dev` tinyint(1) NOT NULL DEFAULT '0',`adm_access-promotions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-promotion-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-promotion-new` tinyint(1) NOT NULL DEFAULT '0',`adm_access-partners-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-partners-new` tinyint(1) NOT NULL DEFAULT '0',`adm_access-sections` tinyint(1) NOT NULL DEFAULT '0',`adm_access-sections-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-logs` int(11) NOT NULL DEFAULT '0',PRIMARY KEY(`UID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `User sessions` ( `UID` int(11) NOT NULL, `Session_code` varchar(64) NOT NULL, `IP_address` varchar(15) NOT NULL, `Start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, `Last accessed` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00', `Active` tinyint(1) NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Website domains` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Domain` varchar(64) NOT NULL, `Name` varchar(64) NOT NULL, `Page_type` int(11) DEFAULT NULL, `Maintenance` tinyint(128) NOT NULL, `Meta_title` varchar(128) NOT NULL, `Meta_keywords` varchar(128) NOT NULL, `Meta_description` varchar(128) NOT NULL, `Meta_colour` varchar(128) NOT NULL, `Colour_primary` varchar(128) NOT NULL, `Colour_secondary` varchar(128) NOT NULL, `Default styles` varchar(255) NOT NULL, `Default scripts` varchar(255) NOT NULL, `Title` varchar(128) NOT NULL, `Slogan` varchar(128) NOT NULL, `Email` varchar(128) NOT NULL, `Phone` varchar(128) NOT NULL, `Logo` varchar(128) NOT NULL, `Favicon` varchar(128) NOT NULL, `Permission` varchar(32) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Website pages` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `domain_id` int(11) NOT NULL, `page_url` text NOT NULL, `subpage_url` varchar(32) DEFAULT NULL, `page_name` varchar(32) NOT NULL, `page_title` text NOT NULL, `style_ids` text NOT NULL, `script_ids` text NOT NULL, `menu_item` tinyint(1) NOT NULL DEFAULT '0', `menu_icon` varchar(16) DEFAULT NULL, `menu_order` int(11) NOT NULL DEFAULT '0', `menu_url` varchar(64) DEFAULT NULL, `Counter ID` int(11) NOT NULL DEFAULT '0', `display_type` tinyint(1) NOT NULL DEFAULT '1', `section_ids` varchar(256) DEFAULT NULL, `page_file` varchar(64) DEFAULT NULL, `Permission` varchar(64) NOT NULL, `Public?` tinyint(1) NOT NULL, `Active` tinyint(1) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Website scripts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(64) NOT NULL, `Location` text NOT NULL, `Importance` int(11) NOT NULL, `Active` tinyint(1) NOT NULL, PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Website sections` ( `ID` int(4) NOT NULL, `Description` varchar(64) NOT NULL, `Type` varchar(16) NOT NULL, `Url` varchar(64) NOT NULL, `Hint` varchar(128) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Website styles` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(32) NOT NULL, `Location` text NOT NULL, `Preload` tinyint(1) NOT NULL, `Importance` int(11) NOT NULL, `Active` tinyint(1) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `Website themes` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(32) NOT NULL, `Description` varchar(256) NOT NULL, `Location` varchar(32) NOT NULL, `Active` tinyint(1) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Category` FOREIGN KEY (`Category_ID`) REFERENCES `Product categories` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Collection` FOREIGN KEY (`Collection_ID`) REFERENCES `Product collections` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Colour` FOREIGN KEY (`Colour_ID`) REFERENCES `Product colours` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Container` FOREIGN KEY (`Container_ID`) REFERENCES `Product containers` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Material` FOREIGN KEY (`Material_ID`) REFERENCES `Product materials` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Packaging` FOREIGN KEY (`Packaging_ID`) REFERENCES `Product packagings` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Shipping` FOREIGN KEY (`Shipping_ID`) REFERENCES `Product shippings` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Wick` FOREIGN KEY (`Wick_ID`) REFERENCES `Product wicks` (`ID`);",
-						"ALTER TABLE `Product` ADD CONSTRAINT `Wick stand` FOREIGN KEY (`WickStand_ID`) REFERENCES `Product wickstands` (`ID`);",
-						"ALTER TABLE `Product containers` ADD CONSTRAINT `Product containers_ibfk_1` FOREIGN KEY (`Supplier`) REFERENCES `Suppliers` (`Reference`);",
-						"ALTER TABLE `Product materials` ADD CONSTRAINT `Supplier` FOREIGN KEY (`Supplier`) REFERENCES `Suppliers` (`Reference`);"
-					];
-					foreach ($sql_strings as $sql) {
-						if(!($query = mysqli_query($conn, $sql)))
-							throw new Error("Error populating database: " . mysqli_error($conn));
-					}
-					mysqli_close($conn);
-				// Write the DB info in the vars.php file
-					$file_path = "./vars.php";
-					$file = fopen($file_path, "r+");
-					$new_contents = trim(str_replace("define('ADMIN', ['', '', '', '']);", sprintf("define('ADMIN', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
-					ftruncate($file, 0);
-					rewind($file);
-					fwrite($file, $new_contents);
-					fclose($file);
-				// Return success statement
-					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		} else if($_POST['type'] == 'db2') {
-			try {
-				// Check if database exists.
-					if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'])))
-						throw new Error('Unable to connect to the central database, Please try again later');
-					if(!($query = mysqli_query($conn, sprintf("SHOW DATABASES LIKE '%s'", $_POST['Name']))) || mysqli_num_rows($query) <= 0)
-						throw new Error("Database does not exist!");
-					mysqli_close($conn);
-				// check if database exists
-					if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name'])))
-						throw new Error('Unable to connect to the central database, Please try again later');
-				// Empty database
-					if($query = mysqli_query($conn, "SHOW TABLES"))
-						while($row = mysqli_fetch_array($query)) {
-							mysqli_query($conn, "DROP TABLE IF EXISTS `".$row[0]."`");
+						unlink($zip_file);
+					// Move all files to base folder and remove the temporary folder
+						if ($dir = opendir('./frontend_www-InDev/')) {
+							while (($file = readdir($dir)) !== false) {
+								if ($file[0] == '.') continue;
+								if (!rename($source_file = './frontend_www-InDev/' . $file, $target_file = './' . $file)) {
+									throw new Error("Error moving file $file. $source_file -> $target_file.");
+								}
+							}
+							rmdir('./frontend_www-InDev/');
 						}
-				// Setup Database
-					$sql_strings = [
-						"CREATE TABLE IF NOT EXISTS `load_time`(`ID` int(11) NOT NULL,`timestamp` datetime NOT NULL,`uri` text NOT NULL,`time` int(11) NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8",
-						"CREATE TABLE IF NOT EXISTS `page_views`(`ID` int(11) NOT NULL AUTO_INCREMENT,`timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,`uri` text NOT NULL,`uri_full` text NOT NULL,`country` text NOT NULL,`city` text NOT NULL,`ip` varchar(15) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `referrers`(`ID` int(11) NOT NULL,`timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,`referrer` text NOT NULL,`uri` text NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-						"CREATE TABLE IF NOT EXISTS `session_time`(`ID` int(11) NOT NULL,`timestamp` datetime NOT NULL,`uri` text NOT NULL,`time` int(11) NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8;",
-					];
-					foreach ($sql_strings as $sql) {
-						if(!($query = mysqli_query($conn, $sql)))
-							throw new Error("Error populating database: " . mysqli_error($conn));
-					}
-					mysqli_close($conn);
-				// Write the DB info in the vars.php file
-					$file_path = "./vars.php";
-					$file = fopen($file_path, "r+");
-					$new_contents = trim(str_replace("define('ANALYTICS', ['', '', '', '']);", sprintf("define('ANALYTICS', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
-					ftruncate($file, 0);
-					rewind($file);
-					fwrite($file, $new_contents);
-					fclose($file);
-				// Return success statement
+						closedir($dir);
+						rmdir("./$repo-$tree/");
+					// TEMP FILE
+						$file = fopen($conf_file, "w");
+						$text = "<?\n\tdefine('STRIPE_API', ['', '']);\n\tdefine('ADMIN', ['', '', '', '']);\n\tdefine('ANALYTICS', ['', '', '', '']);\n?>";
+						fwrite($file, $text);
+						fclose($file);
 					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if($_POST['type'] == 'db1') {
+				try {
+					// Check if database exists.
+						if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'])))
+							throw new Error('Unable to connect to the central database, Please try again later');
+						if(!($query = mysqli_query($conn, sprintf("SHOW DATABASES LIKE '%s'", $_POST['Name']))) || mysqli_num_rows($query) <= 0)
+							throw new Error("Database does not exist!");
+						mysqli_close($conn);
+					// check if database exists
+						if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name'])))
+							throw new Error('Unable to connect to the central database, Please try again later');
+					// Empty database
+						if($query = mysqli_query($conn, "SHOW TABLES"))
+							while($row = mysqli_fetch_array($query)) {
+								mysqli_query($conn, "DROP TABLE IF EXISTS `".$row[0]."`");
+							}
+					// Setup Database
+						$sql_strings = [
+							"CREATE TABLE IF NOT EXISTS `API Allowed hosts`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(32) NOT NULL,`Hostname` varchar(128) NOT NULL,`Remote address` varchar(15) NOT NULL,`Active?` tinyint(1) NOT NULL,`Last Used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `API Controllers`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Controller` varchar(64) NOT NULL,`Active?` tinyint(1) NOT NULL,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `API Keys`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Key` varchar(256) NOT NULL,`Deny hosts?` tinyint(1) NOT NULL DEFAULT '1',`Active?` int(11) NOT NULL,`Last Used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `API Versions`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Version` varchar(16) NOT NULL,`Public?` tinyint(1) NOT NULL DEFAULT '0',`Active?` tinyint(1) NOT NULL DEFAULT '1',`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Audit trail`(`ID` int(11) NOT NULL AUTO_INCREMENT,`User ID` int(11)DEFAULT NULL,`Category` varchar(32) NOT NULL,`IP` varchar(15) NOT NULL,`Timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,`Function` varchar(255) NOT NULL,`Args` text NOT NULL,`String` text NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Blog posts`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,`UID` int(11) NOT NULL,`Title` varchar(128) NOT NULL,`Content` text NOT NULL,`Image` varchar(128) NOT NULL,`Scheduled_for` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,`Slug` varchar(32) NOT NULL,`Comments active?` tinyint(1) NOT NULL DEFAULT '1',`Active?` tinyint(1) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Config`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Key` varchar(64) NOT NULL,`Value` varchar(256) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Images`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Location` varchar(64) NOT NULL,`Name` varchar(32) NOT NULL,`Description` text NOT NULL,`Alt` text NOT NULL,`Slug` varchar(64) NOT NULL,`Active?` tinyint(1) NOT NULL,PRIMARY KEY(`ID`),UNIQUE KEY `slug`(`Slug`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Item counters`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(128) NOT NULL,`SQL String` varchar(1024) NOT NULL,`Active` tinyint(1) NOT NULL DEFAULT '1',`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Partner accounts`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Reference` int(5) NOT NULL,`Name` varchar(64) NOT NULL,`Public` tinyint(1) NOT NULL DEFAULT '1',`About short` varchar(256) NOT NULL,`About long` text NOT NULL,`Logo image` text NOT NULL,`Shop link` text NOT NULL,`Email` varchar(128) NOT NULL,`Phone` int(10) NOT NULL,`Rating` int(1) NOT NULL,`Slug` text NOT NULL,`Active` int(11) NOT NULL,`Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Partner ratings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`UID` int(11) NOT NULL,`PID` int(11) NOT NULL,`Rating` int(1) NOT NULL,`Verified` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Product`(`SKU` int(11) NOT NULL,`UPC` bigint(12) NOT NULL,`Discontinued` tinyint(4) NOT NULL,`Active` tinyint(4) NOT NULL,`Title` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Images` text COLLATE utf8mb4_unicode_ci NOT NULL,`Collection_ID` int(11) NOT NULL,`Category_ID` int(11) NOT NULL,`Currency` varchar(4)COLLATE utf8mb4_unicode_ci NOT NULL,`GrossProfit` double NOT NULL,`RetailPrice` double NOT NULL,`NetPrice` double NOT NULL,`GrossPrice` double NOT NULL,`ProfitMargin` double NOT NULL,`Discount` tinyint(1) NOT NULL,`DiscountType` varchar(16)COLLATE utf8mb4_unicode_ci NOT NULL,`DiscountAmount` int(11)DEFAULT NULL,`Container_ID` int(11) NOT NULL,`Wick_ID` int(11) NOT NULL,`WickStand_ID` int(11) NOT NULL,`Material_ID` int(11) NOT NULL,`Fragrance_ID` int(11) NOT NULL,`Colour_ID` int(11) NOT NULL,`Packaging_ID` int(11) NOT NULL,`Shipping_ID` int(11) NOT NULL,`PromoValue` double NOT NULL,`QtyOnHand` int(11) NOT NULL,`QtyAvailable` int(11) NOT NULL,`QtySold` int(11) NOT NULL,`QtyToBeShipped` int(11) NOT NULL,`QtyShipped` int(11) NOT NULL,`DescriptionShort` text COLLATE utf8mb4_unicode_ci NOT NULL,`DescriptionLong` text COLLATE utf8mb4_unicode_ci NOT NULL,`Variants` text COLLATE utf8mb4_unicode_ci NOT NULL,`Slug` varchar(64)COLLATE utf8mb4_unicode_ci NOT NULL,`CalculatePricing` tinyint(1) NOT NULL DEFAULT '1',`made_by_ID` varchar(64)COLLATE utf8mb4_unicode_ci NOT NULL,PRIMARY KEY(`SKU`),UNIQUE KEY `Slug`(`Slug`),KEY `Colour`(`Colour_ID`),KEY `Container`(`Container_ID`),KEY `Category`(`Category_ID`),KEY `Collection`(`Collection_ID`),KEY `Shipping`(`Shipping_ID`),KEY `Material`(`Material_ID`),KEY `Packaging`(`Packaging_ID`),KEY `Wick stand`(`WickStand_ID`),KEY `Wick`(`Wick_ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product categories`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Active` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product collections`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(64) NOT NULL,`Active` tinyint(1) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Product colours`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`Quantity(g)` double NOT NULL,`Reccommended %` double NOT NULL,`Price(bulk)` double NOT NULL,`Price(g)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product containers`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(96)COLLATE utf8mb4_unicode_ci NOT NULL,`Type` varchar(20)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`ItemRef` varchar(128)COLLATE utf8mb4_unicode_ci NOT NULL,`Size(cl)` double NOT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`),KEY `Supplier`(`Supplier`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product fragrances`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(ea)` double NOT NULL,`Quantity(cl)` double NOT NULL,`Price(cl)` double NOT NULL,`Reccommended %` double NOT NULL,`Top notes` text COLLATE utf8mb4_unicode_ci,`Heart notes` text COLLATE utf8mb4_unicode_ci,`Base notes` text COLLATE utf8mb4_unicode_ci,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product materials`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Base` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Size(kg)` double NOT NULL,`Size(cl)` double NOT NULL,`Price(bulk)` double NOT NULL,`Price(kg)` double NOT NULL,`Price(g)` double NOT NULL,`Price(cl)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`),KEY `Supplier`(`Supplier`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product packagings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product ratings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`UID` int(11) NOT NULL,`SKU` varchar(32) NOT NULL,`Rating` int(1) NOT NULL,`Verified` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Product shippings`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(ea)` double NOT NULL,`Max weight` double NOT NULL,`Max length` double NOT NULL,`Max width` double NOT NULL,`Max height` double NOT NULL,`Timescale` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product wicks`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Type` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Width(mm)` double DEFAULT NULL,`Height(mm)` double NOT NULL,`Thickness(mm)` double DEFAULT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`ReccommendedWickStand` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Product wickstands`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Type` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Supplier` int(11) NOT NULL,`ItemRef` varchar(45)COLLATE utf8mb4_unicode_ci NOT NULL,`Price(bulk)` double NOT NULL,`Quantity` int(11) NOT NULL,`Price(ea)` double NOT NULL,`Active` int(11) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Promotions`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(127) NOT NULL,`Description` varchar(512) NOT NULL,`Images` varchar(1024) NOT NULL,`Voucher` varchar(32) NOT NULL,`Type` tinyint(1) NOT NULL,`Category IDs` varchar(512) NOT NULL,`Collection IDs` varchar(512) NOT NULL,`Item IDs` varchar(512) NOT NULL,`Percentage discount` int(11) NOT NULL,`Scheduled start` date NOT NULL,`Scheduled end` date NOT NULL,`Active` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `section_carousel`(`ID` int(11) NOT NULL AUTO_INCREMENT,`Name` varchar(16) NOT NULL,`Title` varchar(64) NOT NULL,`description` text NOT NULL,`image_url` text NOT NULL,`button_1_enabled` tinyint(1) NOT NULL DEFAULT '0',`button_1_text` varchar(16)DEFAULT NULL,`button_1_link` varchar(64)DEFAULT NULL,`button_2_enabled` tinyint(1) NOT NULL DEFAULT '0',`button_2_text` varchar(16)DEFAULT NULL,`button_2_link` varchar(64)DEFAULT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `section_CTAs`(`ID` int(11) NOT NULL,`type` varchar(8) NOT NULL,`title` varchar(16) NOT NULL,`subtitle` varchar(128) NOT NULL,`description` text NOT NULL,`icon1` varchar(16)DEFAULT NULL,`icon1_colour_before` varchar(8)DEFAULT NULL,`icon1_colour_after` varchar(8)DEFAULT NULL,`icon1_text` text,`icon2` varchar(16)DEFAULT NULL,`icon2_colour_before` varchar(8)DEFAULT NULL,`icon2_colour_after` varchar(8)DEFAULT NULL,`icon2_text` text,`icon3` varchar(16)DEFAULT NULL,`icon3_colour_before` varchar(8)DEFAULT NULL,`icon3_colour_after` varchar(8)DEFAULT NULL,`icon3_text` text,`active` tinyint(1) NOT NULL DEFAULT '1',PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;					",
+							"CREATE TABLE IF NOT EXISTS `section_jumbotron`(`id` int(11) NOT NULL AUTO_INCREMENT,`title` varchar(32) NOT NULL,`image` varchar(32) NOT NULL,`Header` varchar(32)DEFAULT NULL,`subtitle` varchar(64)DEFAULT NULL,`button_1_enable` tinyint(1) NOT NULL,`button_1_text` varchar(16)DEFAULT NULL,`button_1_link` varchar(64)DEFAULT NULL,`button_2_enable` tinyint(1) NOT NULL,`button_2_text` varchar(16)DEFAULT NULL,`button_2_link` varchar(64)DEFAULT NULL,PRIMARY KEY(`id`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `section_topbar_ticker`(`ID` int(11) NOT NULL AUTO_INCREMENT,`locale` varchar(5) NOT NULL,`TextEncoded` text NOT NULL,`websiteID` int(11) NOT NULL,`Enabled` tinyint(1) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Shop texts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(16) NOT NULL, `Text` text NOT NULL, `Active` tinyint(1) NOT NULL, UNIQUE KEY `name` (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Suppliers` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Reference` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL, `Name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL, `Website` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL, `Email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL, `Phone` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL, `Opening Hours` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL, `Created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, `Active` int(11) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`), UNIQUE KEY `Reference` (`Reference`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+							"CREATE TABLE IF NOT EXISTS `Transactions`(`Transaction ID` varchar(32) NOT NULL,`Type` varchar(16) NOT NULL,`Status` varchar(16) NOT NULL,`Invoice ID` varchar(11)DEFAULT NULL,`Charge ID` varchar(32)DEFAULT NULL,`Refund ID` varchar(32)DEFAULT NULL,`Subtotal` float DEFAULT NULL,`Processing fees` double DEFAULT NULL,`Tax` double DEFAULT NULL,`Deposit` double DEFAULT NULL,`Currency` varchar(4)DEFAULT NULL,`Notes` text,`UID` int(11)DEFAULT NULL,`Name` varchar(64)DEFAULT NULL,`Email` varchar(64)DEFAULT NULL,`Phone` varchar(64)DEFAULT NULL,`Items` text,`Ship to` int(11)DEFAULT NULL,`Shipping status` int(11) NOT NULL,`Billing address` int(11)DEFAULT NULL,`Shipping by` int(11)DEFAULT NULL,`Estimated delivery date` date DEFAULT NULL,`Card network` varchar(32) NOT NULL,`Last 4` int(11) NOT NULL,`Expires year` int(11) NOT NULL,`Expires month` int(11) NOT NULL,`Modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,`Created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(`Transaction ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `User accounts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Username` varchar(64) NOT NULL, `Email` varchar(345) NOT NULL, `First_name` varchar(64) NOT NULL, `Last_name` varchar(64) NOT NULL, `Password` varchar(256) NOT NULL, `Change_password` tinyint(1) NOT NULL DEFAULT '0', `Phone` varchar(13) DEFAULT NULL, `Created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, `Disable_analytics` tinyint(1) NOT NULL DEFAULT '0', `Active` tinyint(1) NOT NULL DEFAULT '1', `Email_active` tinyint(1) NOT NULL DEFAULT '0', `Zoho Mail Access Code` varchar(255) DEFAULT NULL, `Zoho Mail Auth Code` varchar(70) DEFAULT NULL, `Zoho Mail Refresh Code` varchar(70) DEFAULT NULL, PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `User addresses` ( `id` int(11) NOT NULL AUTO_INCREMENT, `uid` int(11) NOT NULL, `Name` varchar(64) NOT NULL, `firstname` varchar(128) NOT NULL, `lastname` varchar(128) NOT NULL, `number_name` varchar(128) NOT NULL, `line_1` varchar(64) NOT NULL, `line_2` varchar(64) NOT NULL, `town` varchar(64) NOT NULL, `county` varchar(64) NOT NULL, `country` varchar(64) NOT NULL, `postcode` varchar(10) NOT NULL, `phone` varchar(14) NOT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `User carts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `UID` int(11) NOT NULL, `SKU` int(11) NOT NULL, `Quantity` int(11) NOT NULL, `Options` varchar(256) NOT NULL, `Active` tinyint(1) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `User notifications` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `UID` int(11) NOT NULL, `Content` text NOT NULL, `Active` tinyint(1) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `User oauths` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `UID` int(11) NOT NULL, `Scope` varchar(255) NOT NULL, `Access code` varchar(70) NOT NULL, `Access expiry` timestamp NULL DEFAULT NULL, `Refresh code` varchar(70) NOT NULL, PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `User permissions`(`UID` int(11) NOT NULL,`adm_access` tinyint(1) NOT NULL DEFAULT '0',`adm_access-analytics` tinyint(1) NOT NULL DEFAULT '0',`adm_access-assistance` tinyint(1) NOT NULL DEFAULT '0',`adm_access-config` tinyint(1) NOT NULL DEFAULT '0',`adm_access-mail` tinyint(1) NOT NULL DEFAULT '0',`adm_access-orders` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-categories` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-categories-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-collections` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-collections-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-colours` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-colours-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-comodities` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-containers` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-containers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-fragrances` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-fragrances-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-materials` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-materials-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-packagings` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-packagings-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-shippings` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-shippings-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wicks` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wicks-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wickstands` tinyint(1) NOT NULL DEFAULT '0',`adm_access-products-wickstands-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-suppliers` tinyint(1) NOT NULL DEFAULT '0',`adm_access-suppliers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-transactions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-cart` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-cart-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-users-permissions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-styles` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-styles-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-scripts` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-scripts-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-themes` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-themes-edit` tinyint(1) NOT NULL DEFAULT '0',`blg_access` tinyint(1) NOT NULL DEFAULT '1',`pos_access` tinyint(1) NOT NULL DEFAULT '0',`www_access` tinyint(1) NOT NULL DEFAULT '1',`adm_access-api` tinyint(1) NOT NULL DEFAULT '0',`adm_access-api-controllers` tinyint(1) NOT NULL DEFAULT '0',`adm_access-api-controllers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-api-versions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-categories` tinyint(1) NOT NULL DEFAULT '0',`adm_access-categories-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-page` tinyint(1) NOT NULL DEFAULT '0',`adm_access-websites-page-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-hosts` tinyint(1) NOT NULL DEFAULT '0',`api_access-hosts-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-keys` tinyint(1) NOT NULL DEFAULT '0',`api_access-keys-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-versions` tinyint(1) NOT NULL DEFAULT '0',`api_access-versions-edit` tinyint(1) NOT NULL DEFAULT '0',`api_access-controllers` tinyint(1) NOT NULL DEFAULT '0',`api_access-controllers-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-partners` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog` tinyint(1) NOT NULL DEFAULT '0',`adm_access-images` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-reports` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-interactions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-posts` tinyint(1) NOT NULL DEFAULT '0',`adm_access-blog-posts-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-dev` tinyint(1) NOT NULL DEFAULT '0',`adm_access-promotions` tinyint(1) NOT NULL DEFAULT '0',`adm_access-promotion-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-promotion-new` tinyint(1) NOT NULL DEFAULT '0',`adm_access-partners-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-partners-new` tinyint(1) NOT NULL DEFAULT '0',`adm_access-sections` tinyint(1) NOT NULL DEFAULT '0',`adm_access-sections-edit` tinyint(1) NOT NULL DEFAULT '0',`adm_access-logs` int(11) NOT NULL DEFAULT '0',PRIMARY KEY(`UID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `User sessions` ( `UID` int(11) NOT NULL, `Session_code` varchar(64) NOT NULL, `IP_address` varchar(15) NOT NULL, `Start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, `Last accessed` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00', `Active` tinyint(1) NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Website domains` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Domain` varchar(64) NOT NULL, `Name` varchar(64) NOT NULL, `Page_type` int(11) DEFAULT NULL, `Maintenance` tinyint(128) NOT NULL, `Meta_title` varchar(128) NOT NULL, `Meta_keywords` varchar(128) NOT NULL, `Meta_description` varchar(128) NOT NULL, `Meta_colour` varchar(128) NOT NULL, `Colour_primary` varchar(128) NOT NULL, `Colour_secondary` varchar(128) NOT NULL, `Default styles` varchar(255) NOT NULL, `Default scripts` varchar(255) NOT NULL, `Title` varchar(128) NOT NULL, `Slogan` varchar(128) NOT NULL, `Email` varchar(128) NOT NULL, `Phone` varchar(128) NOT NULL, `Logo` varchar(128) NOT NULL, `Favicon` varchar(128) NOT NULL, `Permission` varchar(32) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Website pages` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `domain_id` int(11) NOT NULL, `page_url` text NOT NULL, `subpage_url` varchar(32) DEFAULT NULL, `page_name` varchar(32) NOT NULL, `page_title` text NOT NULL, `style_ids` text NOT NULL, `script_ids` text NOT NULL, `menu_item` tinyint(1) NOT NULL DEFAULT '0', `menu_icon` varchar(16) DEFAULT NULL, `menu_order` int(11) NOT NULL DEFAULT '0', `menu_url` varchar(64) DEFAULT NULL, `Counter ID` int(11) NOT NULL DEFAULT '0', `display_type` tinyint(1) NOT NULL DEFAULT '1', `section_ids` varchar(256) DEFAULT NULL, `page_file` varchar(64) DEFAULT NULL, `Permission` varchar(64) NOT NULL, `Public?` tinyint(1) NOT NULL, `Active` tinyint(1) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Website scripts` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(64) NOT NULL, `Location` text NOT NULL, `Importance` int(11) NOT NULL, `Active` tinyint(1) NOT NULL, PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Website sections` ( `ID` int(4) NOT NULL, `Description` varchar(64) NOT NULL, `Type` varchar(16) NOT NULL, `Url` varchar(64) NOT NULL, `Hint` varchar(128) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Website styles` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(32) NOT NULL, `Location` text NOT NULL, `Preload` tinyint(1) NOT NULL, `Importance` int(11) NOT NULL, `Active` tinyint(1) NOT NULL DEFAULT '1', PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `Website themes` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(32) NOT NULL, `Description` varchar(256) NOT NULL, `Location` varchar(32) NOT NULL, `Active` tinyint(1) NOT NULL, PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Category` FOREIGN KEY (`Category_ID`) REFERENCES `Product categories` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Collection` FOREIGN KEY (`Collection_ID`) REFERENCES `Product collections` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Colour` FOREIGN KEY (`Colour_ID`) REFERENCES `Product colours` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Container` FOREIGN KEY (`Container_ID`) REFERENCES `Product containers` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Material` FOREIGN KEY (`Material_ID`) REFERENCES `Product materials` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Packaging` FOREIGN KEY (`Packaging_ID`) REFERENCES `Product packagings` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Shipping` FOREIGN KEY (`Shipping_ID`) REFERENCES `Product shippings` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Wick` FOREIGN KEY (`Wick_ID`) REFERENCES `Product wicks` (`ID`);",
+							"ALTER TABLE `Product` ADD CONSTRAINT `Wick stand` FOREIGN KEY (`WickStand_ID`) REFERENCES `Product wickstands` (`ID`);",
+							"ALTER TABLE `Product containers` ADD CONSTRAINT `Product containers_ibfk_1` FOREIGN KEY (`Supplier`) REFERENCES `Suppliers` (`Reference`);",
+							"ALTER TABLE `Product materials` ADD CONSTRAINT `Supplier` FOREIGN KEY (`Supplier`) REFERENCES `Suppliers` (`Reference`);"
+						];
+						foreach ($sql_strings as $sql) {
+							if(!($query = mysqli_query($conn, $sql)))
+								throw new Error("Error populating database: " . mysqli_error($conn));
+						}
+						mysqli_close($conn);
+					// Write the DB info in the config file
+						$file = fopen($conf_file, "r+");
+						$new_contents = trim(str_replace("define('ADMIN', ['', '', '', '']);", sprintf("define('ADMIN', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
+						ftruncate($file, 0);
+						rewind($file);
+						fwrite($file, $new_contents);
+						fclose($file);
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if($_POST['type'] == 'db2') {
+				try {
+					// Check if database exists.
+						if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'])))
+							throw new Error('Unable to connect to the central database, Please try again later');
+						if(!($query = mysqli_query($conn, sprintf("SHOW DATABASES LIKE '%s'", $_POST['Name']))) || mysqli_num_rows($query) <= 0)
+							throw new Error("Database does not exist!");
+						mysqli_close($conn);
+					// check if database exists
+						if(!($conn = mysqli_connect($_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name'])))
+							throw new Error('Unable to connect to the central database, Please try again later');
+					// Empty database
+						if($query = mysqli_query($conn, "SHOW TABLES"))
+							while($row = mysqli_fetch_array($query)) {
+								mysqli_query($conn, "DROP TABLE IF EXISTS `".$row[0]."`");
+							}
+					// Setup Database
+						$sql_strings = [
+							"CREATE TABLE IF NOT EXISTS `load_time`(`ID` int(11) NOT NULL,`timestamp` datetime NOT NULL,`uri` text NOT NULL,`time` int(11) NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8",
+							"CREATE TABLE IF NOT EXISTS `page_views`(`ID` int(11) NOT NULL AUTO_INCREMENT,`timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,`uri` text NOT NULL,`uri_full` text NOT NULL,`country` text NOT NULL,`city` text NOT NULL,`ip` varchar(15) NOT NULL,PRIMARY KEY(`ID`))ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `referrers`(`ID` int(11) NOT NULL,`timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,`referrer` text NOT NULL,`uri` text NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+							"CREATE TABLE IF NOT EXISTS `session_time`(`ID` int(11) NOT NULL,`timestamp` datetime NOT NULL,`uri` text NOT NULL,`time` int(11) NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+						];
+						foreach ($sql_strings as $sql) {
+							if(!($query = mysqli_query($conn, $sql)))
+								throw new Error("Error populating database: " . mysqli_error($conn));
+						}
+						mysqli_close($conn);
+					// Write the DB info in the config file
+						$file = fopen($conf_file, "r+");
+						$new_contents = trim(str_replace("define('ANALYTICS', ['', '', '', '']);", sprintf("define('ANALYTICS', ['%s', '%s', '%s', '%s']);", $_POST['Address'], $_POST['Username'], $_POST['Password'], $_POST['Name']), fread($file, filesize($file_path))), "\0");
+						ftruncate($file, 0);
+						rewind($file);
+						fwrite($file, $new_contents);
+						fclose($file);
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if($_POST['type'] == 'company') {
+				try {
+					//Upload company information
+						require($conf_file);
+						$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+						$sql_strings = [
+							sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Name', '%s')",$_POST['Name']),
+							sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Address', '%s')",$_POST['Address']),
+							sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Phone', '%s')",$_POST['Phone']),
+							sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Email', '%s')",$_POST['Email'])
+						];
+						foreach ($sql_strings as $sql) {
+							if(!($query = mysqli_query($conn, $sql)))
+								throw new Error("Error populating database with company data");
+						}
+						mysqli_close($conn);
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if($_POST['type'] == 'security') {
+				try {
+					//Upload security information
+						require($conf_file);
+						$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+						$sql_strings = [
+							sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security Salt', '%s')", $_POST['Salt']),
+							sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security pepper', '%s')", $_POST['Pepper']),
+							sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security encryption', '%s')", $_POST['Encryption'])
+						];
+						foreach ($sql_strings as $sql) {
+							if(!($query = mysqli_query($conn, $sql)))
+								throw new Error("Error populating database with security data");
+						}
+						mysqli_close($conn);
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if($_POST['type'] == 'user') {
+				try {
+					//Upload user information
+						require($conf_file);
+						$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+						$hash = mysqli_fetch_row(mysqli_query($conn, "SELECT `Value` FROM `Config` WHERE `Key`='Security encryption'"))[0];
+						$password = hash($hash, $_POST['Password']);
+						if(!($query = mysqli_query($conn, sprintf("INSERT INTO `User accounts`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Phone`, `Created`, `Disable_analytics`, `Active`) VALUES('%s', '%s', '%s', '%s', '%s', '%s', 'now()', '1', '1')", $_POST['Username'], $_POST['Email'], $_POST['Firstname'], $_POST['Lastname'], $password, $_POST['Phone']))))
+							throw new Error("Error populating database with user data");
+						mysqli_close($conn);
+					// TODO User permissions
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if($_POST['type'] == 'domain') {
+				try {
+					//Upload domain information
+						require($conf_file);
+						$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
+						$sql_strings = [
+							sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '1', 'www_access')", $_POST['Www']),
+							sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '1', 'blg_access')", $_POST['Blog']),
+							sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '2', 'adm_access')", $_POST['Admin']),
+							sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '3', 'pos_access')", $_POST['Xpos']),
+							sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '4', 'api_access')", $_POST['Api']),
+						];
+						foreach ($sql_strings as $sql) {
+							if(!($query = mysqli_query($conn, $sql)))
+								throw new Error("Error populating database with domains");
+						}
+						mysqli_close($conn);
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if($_POST['type'] == 'stripe') {
+				try {
+					// Write the stripe API info in the vars.php file
+						$file = fopen($conf_file, "r+");
+						$new_contents = trim(str_replace("define('STRIPE_API', ['', '', '', '']);", sprintf("define('STRIPE_API', ['%s', '%s']);", $_POST['PK'], $_POST['SK']), fread($file, filesize($file_path))), "\0");
+						ftruncate($file, 0);
+						rewind($file);
+						fwrite($file, $new_contents);
+						fclose($file);
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
+			} else if(substr($_POST['type'], 0, 3) === "sql") {
+				try {
+					// Write the requested data to the database
+						$status["message"] = $_POST['toSetup'];
+					// Return success statement
+						$status["status"] = "Success";
+				} catch(Error $er) {
+					$status["status"] = "Error";
+					$status["message"] = $er->getMessage();
+				}
+				print_r(json_encode($status));
 			}
-			print_r(json_encode($status));
-		} else if($_POST['type'] == 'company') {
-			try {
-				//Upload company information
-					require('./vars.php');
-					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
-					$sql_strings = [
-						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Name', '%s')",$_POST['Name']),
-						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Address', '%s')",$_POST['Address']),
-						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Phone', '%s')",$_POST['Phone']),
-						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Company Email', '%s')",$_POST['Email'])
-					];
-					foreach ($sql_strings as $sql) {
-						if(!($query = mysqli_query($conn, $sql)))
-							throw new Error("Error populating database with company data");
-					}
-					mysqli_close($conn);
-				// Return success statement
-					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		} else if($_POST['type'] == 'security') {
-			try {
-				//Upload security information
-					require('./vars.php');
-					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
-					$sql_strings = [
-						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security Salt', '%s')", $_POST['Salt']),
-						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security pepper', '%s')", $_POST['Pepper']),
-						sprintf("INSERT INTO `Config`(`Key`, `Value`) VALUES('Security encryption', '%s')", $_POST['Encryption'])
-					];
-					foreach ($sql_strings as $sql) {
-						if(!($query = mysqli_query($conn, $sql)))
-							throw new Error("Error populating database with security data");
-					}
-					mysqli_close($conn);
-				// Return success statement
-					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		} else if($_POST['type'] == 'user') {
-			try {
-				//Upload user information
-					require('./vars.php');
-					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
-					$hash = mysqli_fetch_row(mysqli_query($conn, "SELECT `Value` FROM `Config` WHERE `Key`='Security encryption'"))[0];
-					$password = hash($hash, $_POST['Password']);
-					if(!($query = mysqli_query($conn, sprintf("INSERT INTO `User accounts`(`Username`, `Email`, `First_name`, `Last_name`, `Password`, `Phone`, `Created`, `Disable_analytics`, `Active`) VALUES('%s', '%s', '%s', '%s', '%s', '%s', 'now()', '1', '1')", $_POST['Username'], $_POST['Email'], $_POST['Firstname'], $_POST['Lastname'], $password, $_POST['Phone']))))
-						throw new Error("Error populating database with user data");
-					mysqli_close($conn);
-				// TODO User permissions
-				// Return success statement
-					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		} else if($_POST['type'] == 'domain') {
-			try {
-				//Upload domain information
-					require('./vars.php');
-					$conn = mysqli_connect(ADMIN[0], ADMIN[1], ADMIN[2], ADMIN[3]);
-					$sql_strings = [
-						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '1', 'www_access')", $_POST['Www']),
-						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '1', 'blg_access')", $_POST['Blog']),
-						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '2', 'adm_access')", $_POST['Admin']),
-						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '3', 'pos_access')", $_POST['Xpos']),
-						sprintf("INSERT INTO `Website domains`(`Domain`, `Page_type`, `Permission`) VALUES('%s', '4', 'api_access')", $_POST['Api']),
-					];
-					foreach ($sql_strings as $sql) {
-						if(!($query = mysqli_query($conn, $sql)))
-							throw new Error("Error populating database with domains");
-					}
-					mysqli_close($conn);
-				// Return success statement
-					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		} else if($_POST['type'] == 'stripe') {
-			try {
-				// Write the stripe API info in the vars.php file
-					$file_path = "./vars.php";
-					$file = fopen($file_path, "r+");
-					$new_contents = trim(str_replace("define('STRIPE_API', ['', '', '', '']);", sprintf("define('STRIPE_API', ['%s', '%s']);", $_POST['PK'], $_POST['SK']), fread($file, filesize($file_path))), "\0");
-					ftruncate($file, 0);
-					rewind($file);
-					fwrite($file, $new_contents);
-					fclose($file);
-				// Return success statement
-					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		} else if(substr($_POST['type'], 0, 3) === "sql") {
-			try {
-				// Write the requested data to the database
-					$status["message"] = $_POST['toSetup'];
-				// Return success statement
-					$status["status"] = "Success";
-			} catch(Error $er) {
-				$status["status"] = "Error";
-				$status["message"] = $er->getMessage();
-			}
-			print_r(json_encode($status));
-		}
 	} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['GUI'] == 'Submit') {
 		if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
 			$protocol = "https";
