@@ -1,17 +1,25 @@
 <?php
-	function getUser($id) {
-		// TODO: Implement function
-	}
-
-	function createUser($data) {
-		// TODO: Implement function
-	}
-
-	function updateUser($id, $data) {
-		// TODO: Implement function
-	}
-
-	function deleteUser($id) {
-		// TODO: Implement function
+	class validate {
+		function email($id) {
+			// TODO: Implement function
+		}
+		function phone($id) {
+			// TODO: Implement function
+		}
+		function username($id) {
+			// TODO: Implement function
+		}
+		function firstname($id) {
+			// TODO: Implement function
+		}
+		function lastname($id) {
+			// TODO: Implement function
+		}
+		function passwordStrength($id) {
+			// TODO: Implement function
+		}
+		function passwordComparison($id) {
+			// TODO: Implement function
+		}
 	}
 ?>
