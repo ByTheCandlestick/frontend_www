@@ -28,7 +28,6 @@
 					/**/if(strtoupper($requestMethod) == "GET"):	// (R)EAD		-- 🗹 --	Display images
 						// Submit application
 							try {
-								ob_start();
 								$img = imagecreate($i_width, $i_height);
 								// Background colour
 									list($i_background_r, $i_background_g, $i_background_b) = sscanf($i_background, "%02x%02x%02x");
@@ -115,7 +114,6 @@
 						// Submit request
 						try {
 							if($i_slug !== null):
-								ob_start();
 								// Get the image ctype
 									$filename = basename($i['Location']);
 									$file_extension = strtolower(substr(strrchr($filename,"."),1));
