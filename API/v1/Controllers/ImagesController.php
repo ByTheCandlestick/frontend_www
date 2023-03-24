@@ -28,7 +28,7 @@
 					/**/if(strtoupper($requestMethod) == "GET"):	// (R)EAD		-- 🗹 --	Display images
 						// Submit application
 							try {
-								$img = imagecreate($i_width, $i_height);
+								$img = imagecreatetruecolor($i_width, $i_height);
 								// Background colour
 									list($i_background_r, $i_background_g, $i_background_b) = sscanf($i_background, "%02x%02x%02x");
 									$bg = imagecolorallocate($img, $i_background_r, $i_background_g, $i_background_b);
@@ -50,7 +50,7 @@
 									}
 								imagepng($img);
 								$arr_http = array(
-										"Content-Type: text/css",
+										"Content-Type: image/png",
 										"HTTP/1.1 200 OK"
 								);
 							} catch(Error $er) {
