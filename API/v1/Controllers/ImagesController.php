@@ -132,9 +132,8 @@
 									}
 								// Get the image
 								$img = imagecreatefrompng(__ROOT__.$i['Location']);
-								ob_clean();
+
 								imagepng($img);
-								$str_response = ob_get_contents();
 								$arr_http = array(
 										"Content-Type: ".$ctype,
 										"Content-Length: " . filesize(__ROOT__.$i['Location']),
