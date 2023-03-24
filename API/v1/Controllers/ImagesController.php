@@ -52,7 +52,6 @@
 								ob_clean();
 								imagepng($img);
 								$str_response = ob_get_contents();
-								ob_end_clean();
 								$arr_http = array(
 										"Content-Type: image/png",
 										"Content-Length: ".strlen($str_response),
@@ -136,7 +135,6 @@
 								ob_clean();
 								imagepng($img);
 								$str_response = ob_get_contents();
-								ob_end_clean();
 								$arr_http = array(
 										"Content-Type: ".$ctype,
 										"Content-Length: " . filesize(__ROOT__.$i['Location']),
