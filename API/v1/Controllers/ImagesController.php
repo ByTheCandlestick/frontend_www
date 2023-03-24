@@ -50,7 +50,7 @@
 									}
 								imagepng($img);
 								$arr_http = array(
-										"Content-Type: image/png",
+										"Content-Type: text/css",
 										"HTTP/1.1 200 OK"
 								);
 							} catch(Error $er) {
@@ -123,7 +123,7 @@
 										case "jpeg":	$ctype="image/jpeg";	break;
 										case "jpg":		$ctype="image/jpeg";	break;
 										case "gif":		$ctype="image/gif";		break;
-										default:
+										default:		$ctype="image/png";		break;
 									}
 								// Get the image
 								$img = imagecreatefrompng(__ROOT__.$i['Location']);
