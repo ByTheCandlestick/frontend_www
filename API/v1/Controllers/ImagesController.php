@@ -125,14 +125,16 @@
 										default:
 									}
 								// Get the image
-								$this->sendOutput(
-									file_get_contents(__ROOT__.$i['Location']),
-									array(
+								imagecreatefrompng(__ROOT__.$i['Location']);
+								ob_start();
+									imagepng($img);
+									$str_response = ob_get_contents();
+								ob_end_clean();
+								$arr_http = array(
 										"Content-Type: ".$ctype,
 										"Content-Length: " . filesize(__ROOT__.$i['Location']),
 										"HTTP/1.1 200 OK"
 									)
-								);
 							else:
 								throw new Error('No image selected');
 							endif;
