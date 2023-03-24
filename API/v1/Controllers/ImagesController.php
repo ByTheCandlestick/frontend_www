@@ -134,7 +134,7 @@
 										"Content-Type: ".$ctype,
 										"Content-Length: " . filesize(__ROOT__.$i['Location']),
 										"HTTP/1.1 200 OK"
-									)
+								);
 							else:
 								throw new Error('No image selected');
 							endif;
