@@ -51,7 +51,6 @@
 								imagepng($img);
 								$arr_http = array(
 										"Content-Type: image/png",
-										"Content-Length: ".strlen($str_response),
 										"HTTP/1.1 200 OK"
 								);
 							} catch(Error $er) {
