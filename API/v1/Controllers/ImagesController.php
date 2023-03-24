@@ -48,9 +48,13 @@
 										$img_txt_al_y = (($i_height / 2) - 5);
 										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
 									}
-								imagepng($img);
+								ob_start();
+									imagepng($img);
+									$str_response = ob_get_contents();
+								ob_end_clean();
 								$arr_http = array(
 										"Content-Type: image/png",
+										"Content-Length: ".strlen($str_response),
 										"HTTP/1.1 200 OK"
 								);
 							} catch(Error $er) {
@@ -128,10 +132,14 @@
 								// Get the image
 								$img = imagecreatefrompng(__ROOT__.$i['Location']);
 
-								imagepng($img);
+								ob_start();
+									imagepng($img);
+									$str_response = ob_get_contents();
+								ob_end_clean();
 								$arr_http = array(
-										"Content-Type: ".$ctype,
-										"HTTP/1.1 200 OK"
+									"Content-Type: ".$ctype,
+									"Content-Length: ".strlen($str_response),
+									"HTTP/1.1 200 OK"
 								);
 							else:
 								throw new Error('No image selected');
