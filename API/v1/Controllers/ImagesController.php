@@ -35,8 +35,6 @@
 								// Foreground colour
 									list($i_colour_r, $i_colour_g, $i_colour_b) = sscanf($i_colour, "%02x%02x%02x");
 									$fg = imagecolorallocate($img, $i_colour_r, $i_colour_g, $i_colour_b);
-								// Background
-									imageFill($img, 0, 0, $bg);
 								// Image Text
 									if(is_array($i_text)) {
 										$txt_offset = ($i_height / 2) - ((count($i_text) * 16) / 2);
@@ -137,8 +135,8 @@
 
 								ob_start();
 									imagepng($img);
-									$str_response = ob_get_contents();
 									imagedestroy($img);
+									$str_response = ob_get_contents();
 								ob_end_clean();
 								$arr_http = array(
 									"Content-Type: ".$ctype,
