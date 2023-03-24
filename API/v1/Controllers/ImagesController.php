@@ -131,7 +131,7 @@
 										default:
 									}
 								// Get the image
-								imagecreatefrompng(__ROOT__.$i['Location']);
+								$img = imagecreatefrompng(__ROOT__.$i['Location']);
 								ob_start();
 									imagepng($img);
 									$str_response = ob_get_contents();
