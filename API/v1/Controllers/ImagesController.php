@@ -124,11 +124,9 @@
 										case "gif":		$ctype="image/gif";		break;
 										default:
 									}
-								// Get image
-									imagepng(imagecreatefrompng(__ROOT__.$i['Location']));
 								// Get the image
 								$this->sendOutput(
-									'',
+									file_get_contents(__ROOT__.$i['Location']),
 									array(
 										"Content-Type: ".$ctype,
 										"Content-Length: " . filesize(__ROOT__.$i['Location']),
