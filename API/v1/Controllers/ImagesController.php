@@ -50,13 +50,13 @@
 									}
 								ob_start();
 									imagepng($img);
-									imagedestroy($img);
 									$str_response = ob_get_contents();
+									imagedestroy($img);
 								ob_end_clean();
 								$arr_http = array(
-										"Content-Type: image/png",
-										"Content-Length: ".strlen($str_response),
-										"HTTP/1.1 200 OK"
+									"Content-Type: image/png",
+									"Content-Length: ".strlen($str_response),
+									"HTTP/1.1 200 OK"
 								);
 							} catch(Error $er) {
 								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
@@ -135,8 +135,8 @@
 
 								ob_start();
 									imagepng($img);
-									imagedestroy($img);
 									$str_response = ob_get_contents();
+									imagedestroy($img);
 								ob_end_clean();
 								$arr_http = array(
 									"Content-Type: ".$ctype,
