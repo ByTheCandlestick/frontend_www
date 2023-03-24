@@ -49,6 +49,7 @@
 										$img_txt_al_y = (($i_height / 2) - 5);
 										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
 									}
+								ob_clean();
 								imagepng($img);
 								$str_response = ob_get_contents();
 								ob_end_clean();
@@ -132,6 +133,7 @@
 									}
 								// Get the image
 								$img = imagecreatefrompng(__ROOT__.$i['Location']);
+								ob_clean();
 								imagepng($img);
 								$str_response = ob_get_contents();
 								ob_end_clean();
