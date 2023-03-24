@@ -52,6 +52,7 @@
 									}
 								ob_start();
 									imagepng($img);
+									imagedestroy($img);
 									$str_response = ob_get_contents();
 								ob_end_clean();
 								$arr_http = array(
@@ -137,6 +138,7 @@
 								ob_start();
 									imagepng($img);
 									$str_response = ob_get_contents();
+									imagedestroy($img);
 								ob_end_clean();
 								$arr_http = array(
 									"Content-Type: ".$ctype,
