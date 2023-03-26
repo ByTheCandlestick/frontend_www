@@ -171,7 +171,7 @@
 
 	/** require_user_ok
 	 *	If you require The user to be logged in - this checks if they are logged in and Redirects them if they are not.
-	 *	@return Redirect
+	 *
 	 */
 		function require_user_ok() {
 			global $user_ok;
