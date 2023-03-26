@@ -199,7 +199,7 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				$this->sendOutput(
+				return $this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
 				);

@@ -58,7 +58,7 @@
 									$api_error = $e->getMessage();
 								}
 							} else {
-								exit($this->sendOutput(
+								exit(return $this->sendOutput(
 									Json_encode(array(
 										'status' => 'error',
 										'reason' => 'Unable to create customer account',
@@ -70,7 +70,7 @@
 							if (empty($api_error) && $charge) {
 								$chargeJson = $charge->jsonSerialize();
 							} else {
-								exit($this->sendOutput(
+								exit(return $this->sendOutput(
 									Json_encode(array(
 										'status' => 'error',
 										'reason' => 'Charge creation failed! Try a different card',
@@ -95,7 +95,7 @@
 									$payment_id = $conn->insert_id;
 								// Empty users cart
 									if(!$mdl_stripe->emptyCart($uid)){
-										exit($this->sendOutput( // Declined
+										exit(return $this->sendOutput( // Declined
 											Json_encode(array(
 												'status' => 'error',
 												'reason' => 'Unable to empty the users cart!',
@@ -105,7 +105,7 @@
 									}
 								// Check if payment was successful
 									if ($chargeJson['status'] == 'succeeded') {
-										exit($this->sendOutput( // SUCCESS - Return invoice number
+										exit(return $this->sendOutput( // SUCCESS - Return invoice number
 											Json_encode(array(
 												'status' => 'success',
 												'invoice' => $invoice_number
@@ -113,7 +113,7 @@
 											array("Content-Type: application/json", "HTTP/1.1 200 OK")
 										));
 									} else {
-										exit($this->sendOutput( // Declined
+										exit(return $this->sendOutput( // Declined
 											Json_encode(array(
 												'status' => 'error',
 												'reason' => 'Your Payment was declined!',
@@ -122,7 +122,7 @@
 										));
 									}
 							} else {
-								exit($this->sendOutput(
+								exit(return $this->sendOutput(
 									Json_encode(array(
 										'status' => 'error',
 										'reason' => 'Transaction failled!',
@@ -131,7 +131,7 @@
 								));
 							}
 					} else {
-						exit($this->sendOutput(
+						exit(return $this->sendOutput(
 							Json_encode(array(
 								'status' => 'error',
 								'reason' => 'Error in the form submission!',
@@ -162,7 +162,7 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				$this->sendOutput(
+				return $this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
 				);
@@ -204,14 +204,14 @@
 							// Upload refund details to the database.
 								$mdl_stripe->uploadRefund($refund['id'], $refund['amount'], $refund['currency'], $refund['balance_transaction'], $refund['charge'], $refund['status'], $arr_stripe_info['uid']);
 							// Send output
-							exit($this->sendOutput( // Successfully refunded
+							exit(return $this->sendOutput( // Successfully refunded
 								Json_encode(array(
 									'status' => 'success',
 								)),
 								array("Content-Type: application/json", "HTTP/1.1 200 OK")
 							));
 						} else {
-							exit($this->sendOutput( // Declined
+							exit(return $this->sendOutput( // Declined
 								Json_encode(array(
 									'status' => 'error',
 									'reason' => 'Unable to send refund to the user!',
@@ -230,7 +230,7 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				$this->sendOutput(
+				return $this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
 				);

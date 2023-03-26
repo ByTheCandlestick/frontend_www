@@ -5,7 +5,7 @@
 		 *	@final				DO NOT OVERWRITE
 		 */
 			public function __call($name, $arguments) {
-				$this->sendOutput('', array('HTTP/1.1 404 Not Found'));
+				return $this->sendOutput('', array('HTTP/1.1 404 Not Found'));
 			}
 		/** Get URI elements.
 		 * 
@@ -32,7 +32,7 @@
 		 *  @return null
 		 */
 			protected function throwError($str_ErrorDesc, $line, $file, $trace, $str_ErrorHeader) {
-				$this->sendOutput(
+				return $this->sendOutput(
 					json_encode(
 						array(
 							"error" => $str_ErrorDesc,
