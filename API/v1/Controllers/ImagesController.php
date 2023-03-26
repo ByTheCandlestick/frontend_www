@@ -50,6 +50,9 @@
 											$img_txt_al_y = (($i_height / 2) - 5);
 											imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
 										}
+										print_r($image_vars);
+										print_r("<br/>");
+
 										print_r("Height: $i_height<br/>");
 										print_r("Width: $i_width<br/>");
 										print_r("Background: $i_background<br/>");
