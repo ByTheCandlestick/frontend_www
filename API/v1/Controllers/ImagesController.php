@@ -56,9 +56,6 @@
 										imagedestroy($img);
 									ob_end_clean();
 									$arr_http = array(
-										"Content-type: image/png",
-										"Content-Length: ".strlen($str_response),
-										"HTTP/1.1 200 OK"
 									);
 								} catch(Error $er) {
 									$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
@@ -76,7 +73,11 @@
 					// Send output
 						$this->sendOutput(
 							$str_response,
-							$arr_http
+							array (
+								"Content-type: image/png",
+								"Content-Length: ".strlen($str_response),
+								"HTTP/1.1 200 OK"
+							)
 						);
 					// End of function
 			}
