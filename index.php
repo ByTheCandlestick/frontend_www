@@ -13,8 +13,12 @@
 					if($_GET['ext'] == "php") {
 						include_once($path);
 					} else {
-						header('Content-Type: text/'.$_GET['ext']);
-						print(file_get_contents($path));
+						ob_start();
+							header('Content-Type: text/'.$_GET['ext']);
+							print(file_get_contents($path));
+							$return = ob_get_contents();
+						ob_end_clean();
+						print($return);
 					}
 				} else {
 					header('Content-Type: text/json');
