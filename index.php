@@ -1,5 +1,4 @@
 <?
-	ob_start();
 	date_default_timezone_set('Europe/London');
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/config.php');
@@ -10,6 +9,7 @@
 		}
 	// Display file if get[file] and get[ext] is set, else display theme index file for the eheme
 		if(isset($_GET['file']) && isset($_GET['ext'])) {
+			ob_start();
 			if(file_exists($path = sprintf("%s/Themes/%s/Assets/%s/%s.%s", __ROOT__, __THEME__, $_GET['ext'], $_GET['file'], $_GET['ext']))) {
 				if($_GET['ext'] == "php") {
 					include_once($path);
@@ -23,6 +23,11 @@
 				header('Content-Type: text/json');
 				print(json_encode(array("error"=>"File not found")));
 			}
+			if (ob_get_length() > 0) {
+				ob_end_flush();
+			} else {
+				ob_end_clean();
+			}
 		} else {
 			if($website_info['Maintenance']) {
 				require_once('./Pages/maintenance.php');
@@ -34,9 +39,4 @@
 				}
 			}
 		}
-	if (ob_get_length() > 0) {
-		ob_end_flush();
-	} else {
-		ob_end_clean();
-	}
 ?>
