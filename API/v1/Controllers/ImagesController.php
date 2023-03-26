@@ -52,7 +52,7 @@
 										}
 									ob_start();
 										imagepng($img);
-										$str_response = ob_get_contents();
+										//$str_response = ob_get_contents();
 										imagedestroy($img);
 									ob_end_clean();
 									$arr_http = array(
