@@ -3,7 +3,7 @@
 	require_once('./Classes/config.php');
 
 	var_dump(get_defined_vars());
-
+/*
 	require_once('./Classes/functions.php');
 	require_once('./Classes/variables.php');
 	// Set www. as subdomain if no subdomain exists
