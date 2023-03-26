@@ -20,6 +20,8 @@
 			$query = sprintf("SELECT * FROM `Website pages`  WHERE `page_url`='%s' AND `domain_id`='%s' LIMIT 1", QS_PAGE, $domainID);
 		}
 	// get the page information
+		print_r(QS_PAGE);
+		print_r(mysqli_num_rows($layout_results = DB_Query($query)));
 		if(QS_PAGE!=null && mysqli_num_rows($layout_results = DB_Query($query)) > 0) {
 			while($layout_row = mysqli_fetch_assoc($layout_results)) {
 ?>
