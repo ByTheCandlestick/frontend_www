@@ -6,6 +6,8 @@
 		 */
 			public function create(array $image_vars) {
 				// Vars
+					error_reporting(E_ALL);
+					ini_set('display_errors', 1);
 					$requestMethod = $_SERVER['REQUEST_METHOD'];
 					$arr_user_info = $this->getQueryStringParams();
 					$str_response = "";
