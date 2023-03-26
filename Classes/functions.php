@@ -12,6 +12,7 @@
 		print("<script> window.location.assign(\"$url\"); </script>'");
 		exit();
 	}
+
 	/**	domainID
 	 *	Gets the domain ID for the current domain
 	 *	@return int
@@ -20,6 +21,7 @@
 		function domainID() {
 			return mysqli_fetch_array(DB_Query(sprintf("SELECT `ID` FROM `Website domains` WHERE `Domain`='%s'", $_SERVER['HTTP_HOST'])))[0];
 		}
+
 	/**	getThemepage
 	 *	Returns the name of the theme and optionally requires the theme index page.
 	 *	@param bool $require
@@ -43,6 +45,7 @@
 				return false;
 			}
 		}
+
 	/**	DB_QUERY
 	 *	The script thay connects to the DB
 	 *	@param string $sql The SQL script required to execute, replacing the table with %s
@@ -165,6 +168,7 @@
 			}
 			print('</div></main>');
 		}
+
 	/** require_user_ok
 	 *	If you require The user to be logged in - this checks if they are logged in and Redirects them if they are not.
 	 *	@return Redirect
@@ -188,6 +192,7 @@
 				ob_end_clean();
 			}
 		}
+
 	/**	getDirContents
 	 * 	Gets the content of a specified directory and subdirectories.
 	 *	@param	string	$directory - The base directory to search.
