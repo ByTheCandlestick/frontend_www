@@ -1,4 +1,4 @@
-<?php
+<?
 	/** Supplier API
 	 * @final
 	 */

@@ -1,4 +1,4 @@
-<?php
+<?
 	class AnalyticsModel extends BaseModel {
         /** add
          *  Adds the item SKU and options to a users cart

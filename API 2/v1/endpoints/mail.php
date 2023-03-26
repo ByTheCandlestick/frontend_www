@@ -1,4 +1,4 @@
-<?php
+<?
 	function getMail($data) {
 		if (isset($data['id'])) {
 			return getMail($data['id']);

@@ -1,4 +1,4 @@
-<?php
+<?
 	class OrdersModel extends BaseModel {
 		/** updateStatus
 		 * 

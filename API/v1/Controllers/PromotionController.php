@@ -1,4 +1,4 @@
-<?php
+<?
 	class PromotionController extends BaseController {
 		/** "/Promotion/{uid}" Endpoint - Get list of Products
 		 *	

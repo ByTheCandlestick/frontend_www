@@ -1,4 +1,4 @@
-<?php
+<?
 	class OrdersController extends BaseController {
 		/** "/Orders/Status" Endpoint
 		 *	@final

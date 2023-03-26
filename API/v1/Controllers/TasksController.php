@@ -1,4 +1,4 @@
-<?php
+<?
 	class TasksController extends BaseController {
 		/** "/Tasks/Daily/" Endpoint - Executes all daily tasks
 		 *	@final Complete

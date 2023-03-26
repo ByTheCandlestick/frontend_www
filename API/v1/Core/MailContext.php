@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_MailController	= new MailController();
 	if(isset($uri[2]) && strtolower($uri[2])=="send"):

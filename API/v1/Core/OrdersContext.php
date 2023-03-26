@@ -1,4 +1,4 @@
-<?php
+<?
 //	confOrigin();
 	$obj_OrdersController	= new OrdersController();
 	if(isset($uri[2]) && $uri[2]!==""):

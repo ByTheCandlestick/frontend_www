@@ -1,4 +1,4 @@
-<?php
+<?
 	function getPage($data) {
 		if (isset($data['id'])) {
 			return getPage($data['id']);

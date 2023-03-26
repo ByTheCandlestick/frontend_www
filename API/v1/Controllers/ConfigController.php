@@ -1,4 +1,4 @@
-<?php
+<?
 	class ConfigController extends BaseController {
 		/** "/Config/" Endpoint
 		 *	

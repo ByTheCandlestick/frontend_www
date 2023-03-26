@@ -1,4 +1,4 @@
-<?php
+<?
 	class validate {
 		function email($id) {
 			// TODO: Implement function

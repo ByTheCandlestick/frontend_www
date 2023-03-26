@@ -1,4 +1,4 @@
-<?php
+<?
 	function getProduct($data) {
 		if (isset($data['id'])) {
 			return getProduct($data['id']);

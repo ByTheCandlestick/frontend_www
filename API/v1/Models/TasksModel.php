@@ -1,4 +1,4 @@
-<?php
+<?
 	class TasksModel extends BaseModel {
 		/**	resetTransactions
 		 * 	sets a new base transaction for each day

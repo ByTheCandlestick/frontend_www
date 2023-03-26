@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_PartnerController	= new PartnerController();
 	if(isset($uri[2]) && $uri[2]==""):

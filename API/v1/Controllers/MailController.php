@@ -1,4 +1,4 @@
-<?php
+<?
 	class MailController extends BaseController {
 		/** "/Mail/Send/" Endpoint
 		 *	

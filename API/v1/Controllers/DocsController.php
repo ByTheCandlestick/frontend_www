@@ -1,4 +1,4 @@
-<?php
+<?
 	// Require fpdf PHP library
 	require_once(__ROOT__ . '/Vendor/fpdf/1.85/init.php');
 	require_once(__ROOT__ . '/Vendor/currencyutils/1.0.1/init.php');

@@ -1,4 +1,4 @@
-<?php
+<?
 	class PageController extends BaseController {
 		/** "/Page/" Endpoint
 		 * @final

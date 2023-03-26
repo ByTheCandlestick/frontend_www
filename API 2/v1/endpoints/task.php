@@ -1,4 +1,4 @@
-<?php
+<?
 	function getTask($data) {
 		if (isset($data['id'])) {
 			return getTask($data['id']);

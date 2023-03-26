@@ -1,4 +1,4 @@
-<?php
+<?
 	//confApiKey();
 	$obj_DocsController	= new DocsController();
 	if(isset($uri[2]) && $uri[2]=="Invoice"):

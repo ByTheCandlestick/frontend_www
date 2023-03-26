@@ -1,4 +1,4 @@
-<?php
+<?
 	date_default_timezone_set('Europe/London');
 	require_once('./funcs.php');
 	require_once('./config.php');

@@ -1,4 +1,4 @@
-<?php
+<?
 	function getOrder($data) {
 		if (isset($data['id'])) {
 			return getOrder($data['id']);

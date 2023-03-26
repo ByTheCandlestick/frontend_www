@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_ProductController	= new ProductController();
 	if(isset($uri[2]) && strtolower($uri[2])=="container"):

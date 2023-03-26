@@ -1,4 +1,4 @@
-<?php
+<?
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		if($_POST['payload']) { // Only respond to POST requests from Github
 			$payload = json_decode($_POST['payload'], true);

@@ -1,4 +1,4 @@
-<?php
+<?
 	class PartnerModel extends BaseModel {
         /** Create
          *  Creates a new partner

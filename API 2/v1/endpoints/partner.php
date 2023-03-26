@@ -1,4 +1,4 @@
-<?php
+<?
 	function getPartner($data) {
 		if (isset($data['id'])) {
 			return getPartner($data['id']);

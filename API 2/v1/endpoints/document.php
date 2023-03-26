@@ -1,4 +1,4 @@
-<?php
+<?
 	function getDocument($data) {
 		if (isset($data['id'])) {
 			return getDocument($data['id']);

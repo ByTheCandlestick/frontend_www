@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_ConfigController	= new ConfigController();
 	if(isset($uri[2]) && strtolower($uri[2])=="permission"):

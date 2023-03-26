@@ -1,4 +1,4 @@
-<?php
+<?
 	function getStripe($data) {
 		if (isset($data['id'])) {
 			return getStripe($data['id']);

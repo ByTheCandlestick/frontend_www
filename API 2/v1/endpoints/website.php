@@ -1,4 +1,4 @@
-<?php
+<?
 	function getWebsite($data) {
 		if (isset($data['id'])) {
 			return getWebsite($data['id']);

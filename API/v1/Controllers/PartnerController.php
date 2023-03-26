@@ -1,4 +1,4 @@
-<?php
+<?
 	class PartnerController extends BaseController {
 		/** "/Partner/{uid}" Endpoint - Get list of Products
 		 *	

@@ -1,4 +1,4 @@
-<?php
+<?
 	/** Website API
 	 * @final
 	 */

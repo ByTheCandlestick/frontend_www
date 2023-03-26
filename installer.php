@@ -1,4 +1,4 @@
-<?php
+<?
 /**		Installer v0.5
  * 	The installer is a simple and easy way to get Pendryn EPOS and ECommerce
  * 	up and running on your own webserver.
@@ -905,7 +905,7 @@
 			<div id="modal-success" class="modal">
 				<h1>installation success!</h1>
 				<p>I am absolutely thrilled to congratulate you on successfully installing your new website, This accomplishment is a testament to your dedication, hard work, and technical prowess. As you embark on this exciting journey with Pendryn, you are opening up a world of opportunities and experiences for your users. Your creativity and ingenuity have come to life in the form of this fantastic platform, and I have no doubt that it will grow and evolve into something truly remarkable. Cheers to your incredible achievement, and may Pendryn exceed all your expectations and become a beacon of success in the digital realm!</p>
-				<a href="<?=$protocol?>://<?php print($_POST['domain-www'])?>/">Click here to go to your new website!.</a>
+				<a href="<?=$protocol?>://<?=$_POST['domain-www']?>/">Click here to go to your new website!.</a>
 			</div>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js" integrity="sha512-ztxZscxb55lKL+xmWGZEbBHekIzy+1qYKHGZTWZYH1GUwxy0hiA18lW6ORIMj4DHRgvmP/qGcvqwEyFFV7OYVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -1062,7 +1062,7 @@
 			</script>
 		</body>
 	</html>
-<?php
+<?
 	} else {
 ?>
 	<!DOCTYPE html>
@@ -1501,6 +1501,6 @@
 			</script>
 		</body>
 	</html>
-<?php
+<?
 	}
 ?>

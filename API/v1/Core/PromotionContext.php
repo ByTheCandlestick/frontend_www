@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_PromotionController	= new PromotionController();
 	if(isset($uri[2]) && $uri[2]==""):

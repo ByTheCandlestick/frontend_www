@@ -1,4 +1,4 @@
-<?php
+<?
 	function getPromotion($data) {
 		if (isset($data['id'])) {
 			return getPromotion($data['id']);

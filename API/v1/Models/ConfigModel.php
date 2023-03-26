@@ -1,4 +1,4 @@
-<?php
+<?
 	class ConfigModel extends BaseModel {
 		/** createPermission
 		 *  @return bool

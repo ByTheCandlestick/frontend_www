@@ -1,4 +1,4 @@
-<?php
+<?
 	class ImagesController extends BaseController {
 		/** "/Images/Create" Endpoint
 		 *	@final Complete

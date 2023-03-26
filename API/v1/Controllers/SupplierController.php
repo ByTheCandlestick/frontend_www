@@ -1,4 +1,4 @@
-<?php
+<?
 	class SupplierController extends BaseController {
 		/** "/Supplier/" Endpoint
 		 * @final

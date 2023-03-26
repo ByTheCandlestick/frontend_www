@@ -1,4 +1,4 @@
-<?php
+<?
 	class CartController extends BaseController {
 		/** "/Cart/" Endpoint - Get list of Products
 		 *	

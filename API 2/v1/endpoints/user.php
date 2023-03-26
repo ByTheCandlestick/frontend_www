@@ -1,4 +1,4 @@
-<?php
+<?
 	function getUser($data) {
 		if (isset($data['id'])) {
 			return getUser($data['id']);

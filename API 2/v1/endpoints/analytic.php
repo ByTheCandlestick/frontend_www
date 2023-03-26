@@ -1,4 +1,4 @@
-<?php
+<?
 	function getAnalytic($data) {
 		if (isset($data['id'])) {
 			return getAnalytic($data['id']);

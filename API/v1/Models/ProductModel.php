@@ -1,4 +1,4 @@
-<?php
+<?
 	class ProductModel extends BaseModel {
 		/** validateTitle
 		 * 

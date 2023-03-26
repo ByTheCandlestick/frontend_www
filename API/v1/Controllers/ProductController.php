@@ -1,4 +1,4 @@
-<?php
+<?
 	class ProductController extends BaseController {
 		/** "/Product/" Endpoint
 		 *	@todo

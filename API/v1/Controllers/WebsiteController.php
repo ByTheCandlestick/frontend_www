@@ -1,4 +1,4 @@
-<?php
+<?
 	class WebsiteController extends BaseController {
 		/** "/Website/" Endpoint
 		 * @final

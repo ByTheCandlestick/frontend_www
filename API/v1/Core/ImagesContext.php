@@ -1,4 +1,4 @@
-<?php
+<?
 //	confOrigin();
 	$obj_ImagesController	= new ImagesController();
 	if(isset($uri[2]) && $uri[2]!==""):

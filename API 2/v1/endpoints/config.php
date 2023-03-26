@@ -1,4 +1,4 @@
-<?php
+<?
 	function getConfig($data) {
 		if (isset($data['id'])) {
 			return getConfig($data['id']);

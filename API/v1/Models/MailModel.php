@@ -1,4 +1,4 @@
-<?php
+<?
 	class MailModel extends BaseModel {
         /** Send
          *  @return

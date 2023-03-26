@@ -1,4 +1,4 @@
-<?php
+<?
 	class ImageModel extends BaseModel {
 		/**
 		 * 

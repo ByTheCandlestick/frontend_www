@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_StripeController	= new StripeController();
 	if(isset($uri[2]) && $uri[2]==""):

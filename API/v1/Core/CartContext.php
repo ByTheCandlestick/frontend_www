@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_CartController	= new CartController();
 	if(isset($uri[2]) && $uri[2]==""):

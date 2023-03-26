@@ -1,4 +1,4 @@
-<?php
+<?
 	function getCart($data) {
 		if (isset($data['id'])) {
 			return getCart($data['id']);

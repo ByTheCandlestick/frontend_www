@@ -1,4 +1,4 @@
-<?php
+<?
 	confApiKey();
 	$obj_AnalyticsController	= new AnalyticsController();
 	if(isset($uri[2]) && $uri[2]==""):

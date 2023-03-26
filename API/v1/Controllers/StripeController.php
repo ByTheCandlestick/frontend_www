@@ -1,4 +1,4 @@
-<?php
+<?
 	class StripeController extends BaseController {
 		/** "/Stripe/" Endpoint
 		 *	@final

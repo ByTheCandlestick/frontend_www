@@ -1,4 +1,4 @@
-<?php
+<?
     $endpoints = [
 		/** Analytic
 		 * "/Analytic/" Endpoint

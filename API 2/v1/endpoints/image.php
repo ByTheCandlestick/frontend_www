@@ -1,4 +1,4 @@
-<?php
+<?
 	function getImage($data) {
 		if (isset($data['id'])) {
 			return getImage($data['id']);

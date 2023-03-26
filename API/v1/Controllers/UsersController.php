@@ -1,4 +1,4 @@
-<?php
+<?
 	class UsersController extends BaseController {
 		/** "/Users/" Endpoint - Get list of Users
 		 *	@final Complete

@@ -1,4 +1,4 @@
-<?php
+<?
 	class PromotionModel extends BaseModel {
         /** Create
          *  Creates a new promotion

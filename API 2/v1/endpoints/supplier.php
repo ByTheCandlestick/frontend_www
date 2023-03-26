@@ -1,4 +1,4 @@
-<?php
+<?
 	function getSupplier($data) {
 		if (isset($data['id'])) {
 			return getSupplier($data['id']);
