@@ -1,6 +1,6 @@
 <?
 	date_default_timezone_set('Europe/London');
-	//require_once('./Classes/config.php');
+	require_once('./Classes/config.php');
 	require_once('./Classes/functions.php');
 	require_once('./Classes/variables.php');
 	// Set www. as subdomain if no subdomain exists
