@@ -1,7 +1,6 @@
 <?php
 //	confOrigin();
 	$obj_ImagesController	= new ImagesController();
-	print_r($uri);
 	if(isset($uri[2]) && $uri[2]!==""):
 		$str_MethodName		= $uri[2];
 		$str_MethodOptions	= array_splice($uri, 3);
