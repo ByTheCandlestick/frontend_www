@@ -16,12 +16,14 @@
 					} else {
 						header('Content-Type: text/'.$_GET['ext']);
 						print(file_get_contents($path));
+						$return = ob_get_contents();
 					}
 				} else {
 					header('Content-Type: text/json');
 					print(json_encode(array("error"=>"File not found")));
 				}
 			ob_end_clean();
+			print($return);
 		} else {
 			if($website_info['Maintenance']) {
 				require_once('./Pages/maintenance.php');
