@@ -32,7 +32,5 @@
 				}
 			}
 		}
-		$resp = ob_get_contents();
 	ob_end_clean();
-	print_r($resp);
 ?>
