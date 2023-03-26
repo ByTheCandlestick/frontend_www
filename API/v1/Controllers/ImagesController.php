@@ -35,6 +35,8 @@
 								// Foreground colour
 									list($i_colour_r, $i_colour_g, $i_colour_b) = sscanf($i_colour, "%02x%02x%02x");
 									$fg = imagecolorallocate($img, $i_colour_r, $i_colour_g, $i_colour_b);
+								// Image Background
+									imagefill($img, 0, 0, $bg);
 								// Image Text
 									if(is_array($i_text)) {
 										$txt_offset = ($i_height / 2) - ((count($i_text) * 16) / 2);
