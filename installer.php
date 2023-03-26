@@ -58,7 +58,7 @@
 			}
 			function move_repository($source, $target) {
 				$dir = opendir($source);
-				if (!file_exists($dest)) {
+				if (!file_exists($target)) {
 					mkdir($target);
 				}
 				while (($file = readdir($dir)) !== false) {

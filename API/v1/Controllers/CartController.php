@@ -77,10 +77,10 @@
 					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Cart/{uid}" Endpoint - Get list of Products
@@ -105,10 +105,10 @@
 					$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 	}

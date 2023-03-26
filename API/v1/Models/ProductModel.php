@@ -38,7 +38,7 @@
 		 * 
 		 * 
 		 */
-			public function validateCurrency() {
+			public function validateCurrency($curr) {
 				return true;
 			}
 		/** validateContainer

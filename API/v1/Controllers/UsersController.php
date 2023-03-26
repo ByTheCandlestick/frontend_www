@@ -73,10 +73,10 @@
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 		/** "/Users/{ id }" Endpoint - Get user by ID
@@ -208,10 +208,10 @@
 						$this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', '');
 					endif;
 				// send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", 'HTTP/1.1 200 OK')
-					);
+					));
 				// End of function
 			}
 		/** "/Users/Session/" Endpoint - Log user in
@@ -291,10 +291,10 @@
 						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', ''));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 		/** "/Users/Perms/" Endpoint - Log user in
@@ -343,10 +343,10 @@
 						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', ''));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 		/** "/Users/OAuth/" Endpoint - Submitts auth code
@@ -397,10 +397,10 @@
 						exit($this->throwError("Method not supported", "HTTP/1.1 422 Unprocessable Entity", '', '', ''));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 	}

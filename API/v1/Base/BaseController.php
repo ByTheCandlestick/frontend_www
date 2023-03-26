@@ -5,7 +5,10 @@
 		 *	@final				DO NOT OVERWRITE
 		 */
 			public function __call($name, $arguments) {
-				return $this->sendOutput('', array('HTTP/1.1 404 Not Found'));
+				exit($this->sendOutput(
+					'',
+					array('HTTP/1.1 404 Not Found')
+				));
 			}
 		/** Get URI elements.
 		 * 
@@ -32,7 +35,7 @@
 		 *  @return null
 		 */
 			protected function throwError($str_ErrorDesc, $line, $file, $trace, $str_ErrorHeader) {
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					json_encode(
 						array(
 							"error" => $str_ErrorDesc,
@@ -42,15 +45,14 @@
 						)
 					),
 					array("Content-Type: application/json", $str_ErrorHeader)
-				);
+				));
 			}
 		/** sendOutput
 		 *  Send API output.
-		 *  @param array $data
+		 *  @param string $data
 		 *  @param array $httpHeaders
-		 *  @return string
 		 */
-			protected function sendOutput($data, $httpHeaders=array()) {
+			protected function sendOutput($data, $http_status, $httpHeaders=array()) {
 				header_remove('Set-Cookie');
 				if(is_array($httpHeaders) && count($httpHeaders)) {
 					foreach ($httpHeaders as $httpHeader) {

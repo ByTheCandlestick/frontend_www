@@ -30,10 +30,10 @@
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: Text/plain", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 		/** "/Tasks/Weekly/" Endpoint - Executes all weekly tasks
@@ -67,10 +67,10 @@
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
         /** "/Tasks/Bimonthly/" Endpoint - Executes all Biannual tasks
@@ -103,10 +103,10 @@
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 		/** "/Tasks/Monthly/" Endpoint - Executes all monthly tasks
@@ -139,10 +139,10 @@
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 		/** "/Tasks/Biannually/" Endpoint - Executes all Biannual tasks
@@ -175,10 +175,10 @@
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
 		/** "/Tasks/Annualy/" Endpoint - Executes all annual tasks
@@ -211,10 +211,10 @@
 						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 					endif;
 				// Send output
-					return $this->sendOutput(
+					exit($this->sendOutput(
 						$str_response,
 						array("Content-Type: application/json", "HTTP/1.1 200 OK")
-					);
+					));
 				// End of function
 			}
     }

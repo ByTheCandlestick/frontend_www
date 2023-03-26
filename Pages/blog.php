@@ -39,7 +39,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `Blog posts` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']");
+                                $query = DB_Query("SELECT * FROM `Blog posts` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']);
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         ($row['Timestamp'] != $row['Scheduled_for'])? $scheduled='&#x2713;' : $scheduled='&#x2717;' ;
@@ -87,7 +87,6 @@
                 </div>
             </div>
         </div>
-        <!--
 		<?}if($userperm['adm_access-blog-interactions']==1) {?>
         <div class="col-12 col-md-6 col-lg-4 p-2">
             <div class="card h-auto h-md-100">
@@ -114,7 +113,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT LEFT(`Key` , 7) as 'Key1', RIGHT(`Key` , 5) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']");
+                                $query = DB_Query("SELECT LEFT(`Key` , 7) as 'Key1', RIGHT(`Key` , 5) as 'Key2', `Last used` FROM `API Keys` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']);
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -181,7 +180,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `API Versions` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']");
+                                $query = DB_Query("SELECT * FROM `API Versions` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']);
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('
@@ -247,7 +246,7 @@
                         </thead>
                         <tbody>
                             <?
-                                $query = DB_Query("SELECT * FROM `API Controllers` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']");
+                                $query = DB_Query("SELECT * FROM `API Controllers` WHERE `Active?`=1 LIMIT ".$config['Maximum mini-list size']);
                                 if(mysqli_num_rows($query) > 0) {
                                     while ($row = mysqli_fetch_array($query)) {
                                         print('

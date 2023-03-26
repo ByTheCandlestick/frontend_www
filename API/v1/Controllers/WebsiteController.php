@@ -48,10 +48,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Website/{ID}/" Endpoint
@@ -136,10 +136,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Website/Style/" Endpoint
@@ -191,10 +191,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Website/Style/{ID}/" Endpoint
@@ -268,10 +268,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Website/Script/" Endpoint
@@ -322,10 +322,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Website/Script/{ID}/" Endpoint
@@ -398,10 +398,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Website/Theme/" Endpoint
@@ -452,10 +452,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 		/** "/Website/Theme/{ID}/" Endpoint
@@ -528,10 +528,10 @@
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
 				endif;
 			// Send output
-				return $this->sendOutput(
+				exit($this->sendOutput(
 					$str_response,
 					array("Content-Type: application/json", "HTTP/1.1 200 OK")
-				);
+				));
 			// End of function
 		}
 	}
