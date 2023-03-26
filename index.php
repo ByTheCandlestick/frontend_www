@@ -1,8 +1,8 @@
 <?
 	date_default_timezone_set('Europe/London');
-	require_once('./Classes/functions.php');
 	require_once('./Classes/config.php');
 	require_once('./Classes/variables.php');
+	require_once('./Classes/functions.php');
 	// Set www. as subdomain if no subdomain exists
 		if($website_info['Subdomain'] == null) {
 			header('Location: '.($_SERVER['HTTPS']?'https://www.':'http://www.').$_SERVER['HTTP_HOST'].'/');
