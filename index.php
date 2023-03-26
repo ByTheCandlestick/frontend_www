@@ -3,6 +3,10 @@
 	//require_once('./Classes/config.php');
 	require_once('./Classes/functions.php');
 	require_once('./Classes/variables.php');
+
+	var_dump(get_defined_vars());
+
+	
 	// Set www. as subdomain if no subdomain exists
 		if($website_info['Subdomain'] == null) {
 			header('Location: '.($_SERVER['HTTPS']?'https://www.':'http://www.').$_SERVER['HTTP_HOST'].'/');
