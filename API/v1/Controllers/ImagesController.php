@@ -69,7 +69,6 @@
 							$str_response,
 							array (
 								"Content-type: image/png",
-								"Content-Length: ".strlen($str_response),
 								"HTTP/1.1 200 OK"
 							)
 						);
