@@ -416,7 +416,7 @@
 				loadTime($analytics_ID, $timestamp, $uri_full, round(($analytics_endTime - $analytics_startTime) * 1000, 5));
 			}
 		} else {
-			header('location: /Error/404');
+			header('location: /Error/404/');
 		}
 	// EOF
 ?>
