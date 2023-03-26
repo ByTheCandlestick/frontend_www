@@ -1,4 +1,5 @@
 <?
+	ob_start();
 	date_default_timezone_set('Europe/London');
 	require_once('./Classes/funcs.php');
 	require_once('./Classes/config.php');
@@ -13,12 +14,8 @@
 					if($_GET['ext'] == "php") {
 						include_once($path);
 					} else {
-						ob_start();
-							header('Content-Type: text/'.$_GET['ext']);
-							print(file_get_contents($path));
-							$return = ob_get_contents();
-						ob_end_clean();
-						print($return);
+						header('Content-Type: text/'.$_GET['ext']);
+						print(file_get_contents($path));
 					}
 				} else {
 					header('Content-Type: text/json');
@@ -35,4 +32,5 @@
 				}
 			}
 		}
+	ob_end_clean();
 ?>
