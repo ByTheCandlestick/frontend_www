@@ -32,7 +32,10 @@
 				// Send output
 					exit($this->sendOutput(
 						$str_response,
-						array("Content-Type: Text/plain", "HTTP/1.1 200 OK")
+						"HTTP/1.1 200 OK",
+						array(
+							"Content-Type: application/json"
+						)
 					));
 				// End of function
 			}
@@ -69,7 +72,10 @@
 				// Send output
 					exit($this->sendOutput(
 						$str_response,
-						array("Content-Type: application/json", "HTTP/1.1 200 OK")
+						"HTTP/1.1 200 OK",
+						array(
+							"Content-Type: application/json"
+						)
 					));
 				// End of function
 			}
@@ -105,7 +111,10 @@
 				// Send output
 					exit($this->sendOutput(
 						$str_response,
-						array("Content-Type: application/json", "HTTP/1.1 200 OK")
+						"HTTP/1.1 200 OK",
+						array(
+							"Content-Type: application/json"
+						)
 					));
 				// End of function
 			}
@@ -141,7 +150,10 @@
 				// Send output
 					exit($this->sendOutput(
 						$str_response,
-						array("Content-Type: application/json", "HTTP/1.1 200 OK")
+						"HTTP/1.1 200 OK",
+						array(
+							"Content-Type: application/json"
+						)
 					));
 				// End of function
 			}
@@ -177,7 +189,10 @@
 				// Send output
 					exit($this->sendOutput(
 						$str_response,
-						array("Content-Type: application/json", "HTTP/1.1 200 OK")
+						"HTTP/1.1 200 OK",
+						array(
+							"Content-Type: application/json"
+						)
 					));
 				// End of function
 			}
@@ -213,7 +228,10 @@
 				// Send output
 					exit($this->sendOutput(
 						$str_response,
-						array("Content-Type: application/json", "HTTP/1.1 200 OK")
+						"HTTP/1.1 200 OK",
+						array(
+							"Content-Type: application/json"
+						)
 					));
 				// End of function
 			}

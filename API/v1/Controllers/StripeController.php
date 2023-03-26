@@ -58,24 +58,22 @@
 									$api_error = $e->getMessage();
 								}
 							} else {
-								exit($this->sendOutput(
+								exit($this->throwError(
 									Json_encode(array(
-										'status' => 'error',
-										'reason' => 'Unable to create customer account',
-									)),
-									array("Content-Type: application/json", "HTTP/1.1 500 Internal server error")
-								));
+									'status' => 'error',
+									'reason' => 'Unable to create customer account',
+								))
+								, "", "", "", "HTTP/1.1 500 Internal server error"));
 							}
 						// Retrieve payment details  and check if the payment was successful
 							if (empty($api_error) && $charge) {
 								$chargeJson = $charge->jsonSerialize();
 							} else {
-								exit($this->sendOutput(
+								exit($this->throwError(
 									Json_encode(array(
 										'status' => 'error',
 										'reason' => 'Charge creation failed! Try a different card',
-									)),
-									array("Content-Type: application/json", "HTTP/1.1 500 Internal server error")
+									)), "", "", "", "HTTP/1.1 500 Internal server error"
 								));
 							}
 						// Confirm and upload the transaction info to the DB
@@ -95,13 +93,12 @@
 									$payment_id = $conn->insert_id;
 								// Empty users cart
 									if(!$mdl_stripe->emptyCart($uid)){
-										exit($this->sendOutput( // Declined
+										exit($this->throwError(
 											Json_encode(array(
-												'status' => 'error',
-												'reason' => 'Unable to empty the users cart!',
-											)),
-											array("Content-Type: application/json", "HTTP/1.1 500 Internal server error")
-										));
+											'status' => 'error',
+											'reason' => 'Unable to empty the users cart!',
+										))
+										, "", "", "", "HTTP/1.1 500 Internal server error"));
 									}
 								// Check if payment was successful
 									if ($chargeJson['status'] == 'succeeded') {
@@ -113,31 +110,28 @@
 											array("Content-Type: application/json", "HTTP/1.1 200 OK")
 										));
 									} else {
-										exit($this->sendOutput( // Declined
+										exit($this->throwError(
 											Json_encode(array(
-												'status' => 'error',
-												'reason' => 'Your Payment was declined!',
-											)),
-											array("Content-Type: application/json", "HTTP/1.1 500 Internal server error")
-										));
+											'status' => 'error',
+											'reason' => 'Your Payment was declined!',
+										))
+										, "", "", "", "HTTP/1.1 500 Internal server error"));
 									}
 							} else {
-								exit($this->sendOutput(
+								exit($this->throwError(
 									Json_encode(array(
-										'status' => 'error',
-										'reason' => 'Transaction failled!',
-									)),
-									array("Content-Type: application/json", "HTTP/1.1 500 Internal server error")
-								));
+									'status' => 'error',
+									'reason' => 'Transaction failled!',
+								))
+								, "", "", "", "HTTP/1.1 500 Internal server error"));
 							}
 					} else {
-						exit($this->sendOutput(
+						exit($this->throwError(
 							Json_encode(array(
-								'status' => 'error',
-								'reason' => 'Error in the form submission!',
-							)),
-							array("Content-Type: application/json", "HTTP/1.1 500 Internal server error")
-						));
+							'status' => 'error',
+							'reason' => 'Error in the form submission!',
+						))
+						, "", "", "", "HTTP/1.1 500 Internal server error"));
 					}
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
 					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
@@ -204,20 +198,14 @@
 							// Upload refund details to the database.
 								$mdl_stripe->uploadRefund($refund['id'], $refund['amount'], $refund['currency'], $refund['balance_transaction'], $refund['charge'], $refund['status'], $arr_stripe_info['uid']);
 							// Send output
-							exit($this->sendOutput( // Successfully refunded
-								Json_encode(array(
-									'status' => 'success',
-								)),
-								array("Content-Type: application/json", "HTTP/1.1 200 OK")
-							));
+							$str_response = Json_encode(array( 'status' => 'success')); // Successfully refunded
 						} else {
-							exit($this->sendOutput( // Declined
+							exit($this->throwError(
 								Json_encode(array(
-									'status' => 'error',
-									'reason' => 'Unable to send refund to the user!',
-								)),
-								array("Content-Type: application/json", "HTTP/1.1 500 Internal server error")
-							)); 
+								'status' => 'error',
+								'reason' => 'Unable to send refund to the user!',
+							))
+							, "", "", "", "HTTP/1.1 500 Internal server error"));
 						}
 					// EOF
 				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown

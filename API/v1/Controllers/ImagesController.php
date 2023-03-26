@@ -24,59 +24,59 @@
 						"Example: /    1000   /     500    /     87919E     /  Example /   ff860d   /"
 					);
 				}
-				// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
-					/**/if(strtoupper($requestMethod) == "GET"):	// (R)EAD		-- 🗹 --	Display images
-						// Submit application
-							try {
-								$img = imagecreatetruecolor($i_width, $i_height);
-								// Background colour
-									list($i_background_r, $i_background_g, $i_background_b) = sscanf($i_background, "%02x%02x%02x");
-									$bg = imagecolorallocate($img, $i_background_r, $i_background_g, $i_background_b);
-								// Foreground colour
-									list($i_colour_r, $i_colour_g, $i_colour_b) = sscanf($i_colour, "%02x%02x%02x");
-									$fg = imagecolorallocate($img, $i_colour_r, $i_colour_g, $i_colour_b);
-								// Image Text
-									if(is_array($i_text)) {
-										$txt_offset = ($i_height / 2) - ((count($i_text) * 16) / 2);
-										for($i=0; $i < count($i_text);$i++) {
-											$img_txt_al_x = (($i_width / 2) - ((strlen($i_text[$i])*9) / 2));
-											$img_txt_al_y = ($i * 16) + $txt_offset;
-											imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text[$i], $fg );
-										}
-									} else {
-										$img_txt_al_x = (($i_width / 2) - ((strlen($i_text)*9) / 2));
-										$img_txt_al_y = (($i_height / 2) - 5);
-										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
+			// Functions									☐ Incomplete / 🗹 Complete / 🗷 VOID
+				/**/if(strtoupper($requestMethod) == "GET"):	// (R)EAD		-- 🗹 --	Display images
+					// Submit application
+						try {
+							$img = imagecreatetruecolor($i_width, $i_height);
+							// Background colour
+								list($i_background_r, $i_background_g, $i_background_b) = sscanf($i_background, "%02x%02x%02x");
+								$bg = imagecolorallocate($img, $i_background_r, $i_background_g, $i_background_b);
+							// Foreground colour
+								list($i_colour_r, $i_colour_g, $i_colour_b) = sscanf($i_colour, "%02x%02x%02x");
+								$fg = imagecolorallocate($img, $i_colour_r, $i_colour_g, $i_colour_b);
+							// Image Text
+								if(is_array($i_text)) {
+									$txt_offset = ($i_height / 2) - ((count($i_text) * 16) / 2);
+									for($i=0; $i < count($i_text);$i++) {
+										$img_txt_al_x = (($i_width / 2) - ((strlen($i_text[$i])*9) / 2));
+										$img_txt_al_y = ($i * 16) + $txt_offset;
+										imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text[$i], $fg );
 									}
-								ob_start();
-									imagepng($img);
-									$str_response = ob_get_contents();
-									imagedestroy($img);
-								ob_end_clean();
-								$arr_http = array(
-									"Content-Type: image/png",
-									"Content-Length: ".strlen($str_response),
-									"HTTP/1.1 200 OK"
-								);
-							} catch(Error $er) {
-								$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
-							}
-						//
-					elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
-					elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
-					elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Unknown
-						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
-					else:
-						exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
-					endif;
-				// Send output
-					exit($this->sendOutput(
-						$str_response,
-						$arr_http
-					));
-				// End of function
+								} else {
+									$img_txt_al_x = (($i_width / 2) - ((strlen($i_text)*9) / 2));
+									$img_txt_al_y = (($i_height / 2) - 5);
+									imagestring( $img, 5, $img_txt_al_x, $img_txt_al_y, $i_text, $fg );
+								}
+							ob_start();
+								imagepng($img);
+								$str_response = ob_get_contents();
+								imagedestroy($img);
+							ob_end_clean();
+							$arr_http = array(
+								"Content-Type: image/png",
+								"Content-Length: ".strlen($str_response),
+							);
+						} catch(Error $er) {
+							$this->throwError($er->getMessage(), "HTTP/1.1 404 Not Found", '', '', '');
+						}
+					//
+				elseif(strtoupper($requestMethod) == "GET"):	// (R)READ		-- 🗷 --	Unknown
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
+				elseif(strtoupper($requestMethod) == "POST"):	// (U)UPDATE	-- 🗷 --	Unknown
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
+				elseif(strtoupper($requestMethod) == "DELETE"):	// (D)ELETE		-- 🗷 --	Unknown
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
+				else:
+					exit($this->throwError("Unknown Request type for this function", "", "", "", "HTTP/1.1 404 Not Found"));
+				endif;
+			// Send output
+				exit($this->sendOutput(
+					$str_response,
+					"HTTP/1.1 200 OK",
+					$arr_http
+				));
+			// End of function
 		}
 		/** "/Images/Fetch" Endpoint
 		 *	@todo
@@ -160,6 +160,7 @@
 			// Send output
 				exit($this->sendOutput(
 					$str_response,
+					"HTTP/1.1 200 OK",
 					$arr_http
 				));
 			// End of function
@@ -186,7 +187,10 @@
 			// Send output
 				exit($this->sendOutput(
 					$str_response,
-					array("Content-Type: application/json", "HTTP/1.1 200 OK")
+					"HTTP/1.1 200 OK",
+					array(
+						"Content-Type: application/json"
+					)
 				));
 			// End of function
 		}

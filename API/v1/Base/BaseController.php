@@ -44,7 +44,8 @@
 							"trace" => $trace,
 						)
 					),
-					array("Content-Type: application/json", $str_ErrorHeader)
+					$str_ErrorHeader,
+					array("Content-Type: application/json")
 				));
 			}
 		/** sendOutput
@@ -52,13 +53,10 @@
 		 *  @param string $data
 		 *  @param array $httpHeaders
 		 */
-			protected function sendOutput($data, $http_status, $httpHeaders=array()) {
+			protected function sendOutput($data, $http_status, $http_headers=array()) {
 				header_remove('Set-Cookie');
-				if(is_array($httpHeaders) && count($httpHeaders)) {
-					foreach ($httpHeaders as $httpHeader) {
-						header($httpHeader);
-					}
-				}
+				header($http_status);
+				header(implode('; ', $http_headers));
 				print($data);
 			}
 		/** Validate user email address.

@@ -201,7 +201,10 @@
 			// Send output
 				exit($this->sendOutput(
 					$str_response,
-					array("Content-Type: application/pdf", "HTTP/1.1 200 OK")
+					"HTTP/1.1 200 OK",
+					array(
+						"Content-Type: application/pdf"
+					)
 				));
 			// End of function
 		}

@@ -9,7 +9,7 @@
 			$str_MethodName		= "LayoutByPageID";
 			$str_MethodOptions	= array_splice($uri, 3);
 		else:
-			$obj_PageController->throwError("Unknown function", "HTTP/1.1 404 Not Found");
+			$obj_PageController->throwError("Unknown function", "", "", "", "HTTP/1.1 404 Not Found");
 		endif;
 	elseif(isset($uri[2]) && $uri[2]!==""):
 		$str_MethodName		= "PageByID";
