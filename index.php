@@ -1,5 +1,4 @@
 <?
-	ob_start();
 	date_default_timezone_set('Europe/London');
 	require_once('./Classes/config.php');
 	require_once('./Classes/functions.php');
@@ -32,5 +31,4 @@
 				}
 			}
 		}
-	ob_end_flush();
 ?>
